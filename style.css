@@ -1,0 +1,11 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; background-color: #000; color: #fff; text-align: center; }
+.hero { padding: 100px 20px; border-bottom: 2px solid #D4AF37; }
+.logo { width: 200px; margin-bottom: 20px; }
+h1 { font-size: 2.5rem; margin-bottom: 10px; color: #D4AF37; letter-spacing: 3px; }
+h2 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; }
+#countdown { font-size: 2rem; color: #D4AF37; margin: 30px 0; font-weight: bold; }
+#mission { padding: 50px 20px; background-color: #111; line-height: 1.8; }
+.social-icons img { width: 40px; margin: 15px; filter: brightness(0) invert(1); }
+footer { padding: 30px; font-size: 0.8rem; color: #888; }
+a { color: #D4AF37; text-decoration: none; }
