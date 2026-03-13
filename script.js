@@ -1,27 +1,23 @@
-// Countdown Timer
-const countdown = document.getElementById('countdown');
-const eventDate = new Date('2026-05-29T00:00:00').getTime();
+const eventDate = new Date('May 29, 2026 00:00:00').getTime();
 
 function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = eventDate - now;
+    const now = new Date().getTime();
+    const distance = eventDate - now;
 
-  const days = Math.floor(distance / (1000*60*60*24));
-  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-  const seconds = Math.floor((distance % (1000*60)) / 1000);
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdown.innerHTML = ${days}d ${hours}h ${minutes}m ${seconds}s;
+    document.getElementById("countdown").innerHTML = d + "d " + h + "h " + m + "m " + s + "s ";
 
-  if(distance < 0) {
-    countdown.innerHTML = "EVENT LIVE!";
-  }
+    if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "THE WORLD STAGE IS LIVE";
+    }
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Disable image dragging
-document.querySelectorAll('img, video').forEach(el => {
-  el.setAttribute('draggable', false);
-});
+// Protection
+document.addEventListener('dragstart', function(e) { if (e.target.nodeName === 'IMG') e.preventDefault(); });
