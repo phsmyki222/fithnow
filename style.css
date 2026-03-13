@@ -1,92 +1,122 @@
-/* Reset default margins */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-}
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
 
 /* Hero Section */
 .hero {
-    background: url('images/stadium.jpg') no-repeat center center/cover;
-    padding: 100px 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.logo {
-    width: 200px;
-    margin-bottom: 20px;
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: gold;
-    text-shadow: 0 0 10px #ffd700;
+.video-overlay {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.5);
 }
 
-.hero h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #fff;
+.hero-text {
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #FFD700;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
+.hero-text .logo { width:150px; margin-bottom:20px; }
 
-/* Countdown */
 #countdown {
-    font-size: 2rem;
-    color: gold;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px #ffd700;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 20px;
 }
 
-/* Mission Section */
-#mission {
-    padding: 50px 20px;
-    background-color: #111;
-    font-size: 1.2rem;
+/* Video Sections */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  margin-bottom:50px;
 }
 
-/* 360° Rotation Section */
-#rotation {
-    padding: 50px 20px;
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.rotation {
-    width: 300px;
-    height: auto;
-    border: 2px solid gold;
+.section-text {
+  position: absolute;
+  top:10%;
+  left:50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Perfume Section */
+.perfume-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: #111;
+  color: #FFD700;
+}
+
+.perfume-rotate {
+  width: 300px;
+  height: 400px;
+  margin: 30px auto;
+  perspective: 1000px;
+}
+
+.perfume-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  animation: spin360 5s linear infinite;
+}
+
+@keyframes spin360 {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
 }
 
 /* Social Media */
-#social {
-    padding: 50px 20px;
-    background-color: #111;
+.social {
+  text-align: center;
+  margin: 50px 0;
 }
 
-.social-icons img {
-    width: 50px;
-    margin: 0 10px;
-    transition: transform 0.3s, filter 0.3s;
+.social a {
+  margin: 0 10px;
+  display: inline-block;
 }
 
-.social-icons img:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 10px #ffd700);
+.social img {
+  width:40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
 }
+
+.social img:hover { transform: scale(1.2); }
 
 /* Footer */
 footer {
-    padding: 30px 20px;
-    background-color: #000;
-    font-size: 1rem;
+  text-align: center;
+  padding:20px;
+  background:#000;
+  color:#FFD700;
 }
