@@ -1,57 +1,56 @@
-// COUNTDOWN 1 – GOLD
-function countdown1() {
-    const targetDate = new Date("May 29, 2026 00:00:00").getTime();
-    const countdownEl = document.getElementById("timer1");
+/* PHRINUSOMYIS MASTER SCRIPT - ZERO ERROR VERSION */
 
-    setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+// SET THE TARGET DATE: MAY 29, 2026
+const targetDate = new Date("May 29, 2026 00:00:00").getTime();
 
-        const days = Math.floor(distance / (1000*60*60*24));
-        const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-        const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-        const seconds = Math.floor((distance % (1000*60)) / 1000);
+function updateCountdowns() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-        countdownEl.innerHTML = <span style="color:#FFD700;">${days}d ${hours}h ${minutes}m ${seconds}s</span>;
-    }, 1000);
+    // Time calculations for days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Update all timer displays if they exist on the page
+    const timers = ["timer1", "timer2", "timer3"];
+    
+    timers.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.innerHTML = ${days}d ${hours}h ${minutes}m ${seconds}s;
+        }
+    });
+
+    // If the countdown is finished
+    if (distance < 0) {
+        clearInterval(timerInterval);
+        const allTimers = document.querySelectorAll('[id^="timer"]');
+        allTimers.forEach(t => t.innerHTML = "THE EVENT IS LIVE");
+    }
 }
 
-// COUNTDOWN 2 – DIGITAL
-function countdown2() {
-    const targetDate = new Date("May 29, 2026 00:00:00").getTime();
-    const countdownEl = document.getElementById("timer2");
+// Run the timer every 1 second
+const timerInterval = setInterval(updateCountdowns, 1000);
 
-    setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+// Initialize immediately on load
+updateCountdowns();
 
-        const days = Math.floor(distance / (1000*60*60*24));
-        const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-        const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-        const seconds = Math.floor((distance % (1000*60)) / 1000);
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('header nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 70, // Adjusts for the fixed header height
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
-        countdownEl.innerHTML = <span style="color:red;">${days}</span>d <span style="color:blue;">${hours}</span>h <span style="color:white;">${minutes}</span>m <span style="color:yellow;">${seconds}</span>s;
-    }, 1000);
-}
-
-// COUNTDOWN 3 – 4K CINEMATIC
-function countdown3() {
-    const targetDate = new Date("May 29, 2026 00:00:00").getTime();
-    const countdownEl = document.getElementById("timer3");
-
-    setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        const days = Math.floor(distance / (1000*60*60*24));
-        const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-        const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-        const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-        countdownEl.innerHTML = <span style="color:#00FFFF;">${days}</span>d <span style="color:#FF00FF;">${hours}</span>h <span style="color:#FFFF00;">${minutes}</span>m <span style="color:#FF8C00;">${seconds}</span>s;
-    }, 1000);
-}
-
-countdown1();
-countdown2();
-countdown3();
+console.log("PHRINUSOMYIS System Online - All Systems Functional.");
