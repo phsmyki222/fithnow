@@ -1,153 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHRINUSOMYIS – Commanding the World Stage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHRINUSOMYIS | Commanding the World Stage</title>
+    <meta name="author" content="Victor Seth A - CEO & Founder">
+    <style>
+        :root {
+            --gold: #FFD700;
+            --black: #000000;
+            --white: #ffffff;
+        }
 
-  <!-- SEO Metadata -->
-  <meta name="description" content="PHRINUSOMYIS is world-class stadium experiences, global productions, and unforgettable moments. Audiences worldwide witness unmatched precision, luxury, and authority in elite entertainment.">
-  <meta name="keywords" content="PHRINUSOMYIS, stadium experiences, global productions, luxury events, elite entertainment, Victor Seth A, CEO, immersive shows">
-  <meta name="author" content="Victor Seth A">
+        body {
+            margin: 0;
+            background: var(--black);
+            color: var(--gold);
+            font-family: 'Times New Roman', serif; /* Classic Luxury Feel */
+            overflow-x: hidden;
+            user-select: none;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" href="phrinusomyis_logo.png" type="image/png">
+        /* 1. Header */
+        header {
+            height: 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+        }
+        .logo { height: 100px; }
+        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
 
-  <!-- Open Graph / Social Sharing (optional for SEO) -->
-  <meta property="og:title" content="PHRINUSOMYIS – Commanding the World Stage">
-  <meta property="og:description" content="PHRINUSOMYIS is world-class stadium experiences, global productions, and unforgettable moments. Audiences worldwide witness unmatched precision, luxury, and authority in elite entertainment.">
-  <meta property="og:image" content="phrinusomyis_logo.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.PHRINUSOMYIS.com">
+        /* Sections & Video Logic */
+        section { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 50px 20px; }
+        
+        .v-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+        
+        .overlay-card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border: 2px solid var(--gold);
+            max-width: 900px;
+            text-align: center;
+        }
 
+        /* 3, 7, 9. Countdown Styling */
+        .timer-display { font-size: 50px; font-weight: bold; letter-spacing: 5px; margin: 20px 0; }
+        
+        /* 7. Rainbow Logic */
+        .rainbow-digit {
+            display: inline-block;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 60px;
+        }
+
+        /* 10. Luxury 360 Rotation */
+        .rotate-360 { height: 120px; animation: spin 10s linear infinite; }
+        @keyframes spin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+
+        /* 16. Hidden Meta */
+        .hidden-seo { display: none; }
+
+        @media (max-width: 768px) {
+            .logo { height: 70px; }
+            .timer-display { font-size: 32px; }
+        }
+    </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
-  <!-- HEADER / TOP MENU -->
-  <header id="header">
-    <div class="logo">
-      <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
-    </div>
-    <nav class="menu">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#elite-experience">Elite Experience</a></li>
-        <li><a href="#phrinusomyis">PHRINUSOMYIS</a></li>
-        <li><a href="#luxury">Luxury Creations</a></li>
-        <li><a href="#countdown">Countdown</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <img src="phrinusomyis_logo.png" class="logo">
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#luxury">LUXURY</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
 
-  <!-- HERO SECTION -->
-  <section id="home">
-    <h1>PHRINUSOMYIS – Commanding the World Stage</h1>
-    <p>PHRINUSOMYIS is world-class stadium experiences, powerful global productions, and unforgettable moments. Every performance, every spectacle, every venue reflects unmatched precision, luxury, and authority. Audiences worldwide witness excellence and innovation — experiences that have defined elite entertainment.</p>
-  </section>
+    <section id="home">
+        <div class="overlay-card">
+            <h1>PHRINUSOMYIS – Commanding the World Stage</h1>
+            <p>Unmatched precision, luxury, and authority in elite entertainment.</p>
+        </div>
+    </section>
 
-  <!-- COUNTDOWN 1 – GOLD -->
-  <section id="countdown1">
-    <h2>Countdown to the Next Extraordinary Event</h2>
-    <div class="timer" id="timer1">
-      <!-- Countdown JS will populate here -->
-    </div>
-  </section>
+    <section id="countdown1">
+        <h2>Countdown to the Next Extraordinary Event</h2>
+        <div id="gold-timer" class="timer-display">00 : 00 : 00 : 00</div>
+        <p>Artist & stadium location reveal upon countdown</p>
+    </section>
 
-  <!-- VIDEO 1 – STADIUM OUTSIDE -->
-  <section id="video1">
-    <video src="phrinusomyis_stadium_outside_elite.mp4" controls muted autoplay loop></video>
-    <div class="overlay-text">
-      <h2>PHRINUSOMYIS Elite Stadium Experience</h2>
-      <p>Every seat, every moment, and every performance is crafted for unparalleled comfort and awe-inspiring energy.</p>
-    </div>
-  </section>
+    <section>
+        <video src="phrinusomyis_stadium_outside_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
+        <div class="overlay-card">
+            <h3>PHRINUSOMYIS Elite Stadium Experience</h3>
+            <p>Crafted for unparalleled comfort and awe-inspiring energy.</p>
+        </div>
+    </section>
 
-  <!-- VIDEO 2 – STADIUM INSIDE -->
-  <section id="video2">
-    <video src="phrinusomyis_stadium_inside_elite.mp4" controls muted autoplay loop></video>
-    <div class="overlay-text">
-      <h2>PHRINUSOMYIS World-Class Production</h2>
-      <p>Transforming stadiums into iconic arenas of music, light, and spectacle. Every element is engineered to inspire awe and leave a lasting impression.</p>
-    </div>
-  </section>
+    <section>
+        <h2>Prepare for the Next Elite Experience</h2>
+        <div id="rainbow-timer" class="timer-display"></div>
+    </section>
 
-  <!-- 360° LOGO SHOWCASE -->
-  <section id="logo360">
-    <h2>PHRINUSOMYIS Emblem</h2>
-    <img src="phrinusomyis_logo_360.png" alt="PHRINUSOMYIS 360 Logo">
-  </section>
+    <section id="luxury">
+        <h3>PHRINUSOMYIS Luxury & Elite Creations</h3>
+        <img src="phrinusomyis_perfume_front.png" class="rotate-360">
+    </section>
 
-  <!-- COUNTDOWN 3 – RAINBOW CINEMATIC -->
-  <section id="countdown3">
-    <h2>Prepare for the Next Elite Experience</h2>
-    <div class="timer" id="timer3">
-      <!-- Countdown JS will populate here -->
-    </div>
-  </section>
+    <section id="contact">
+        <h2>Contact PHRINUSOMYIS</h2>
+        <a href="mailto:info@PHRINUSOMYIS.com" style="font-size: 2rem; color: var(--gold);">info@PHRINUSOMYIS.com</a>
+        <p style="margin-top: 30px;">YouTube | TikTok | Instagram | Facebook | Twitter/X</p>
+    </section>
 
-  <!-- VIDEO 3 – ICONIC STADIUM -->
-  <section id="video3">
-    <video src="phrinusomyis_stadium_elite.mp4" controls muted autoplay loop></video>
-    <div class="overlay-text">
-      <h2>PHRINUSOMYIS Iconic Venue Experience</h2>
-      <p>Every great event begins with the stage we create for the audience. Precision, luxury, and mastery define every showcase.</p>
-    </div>
-  </section>
+    <div class="hidden-seo">Victor Seth A - CEO & Founder</div>
 
-  <!-- COUNTDOWN 2 – DIGITAL COLORS -->
-  <section id="countdown2">
-    <h2>Countdown to the Global Production Reveal</h2>
-    <div class="timer" id="timer2">
-      <!-- Countdown JS will populate here -->
-    </div>
-  </section>
+    <script>
+        const target = new Date("May 29, 2026 00:00:00").getTime();
 
-  <!-- LUXURY CREATIONS – 360° PERFUME -->
-  <section id="luxury">
-    <h2>PHRINUSOMYIS Luxury & Elite Creations</h2>
-    <p>Exclusive luxury items reflecting elegance, refinement, and sophistication.</p>
-    <img src="phrinusomyis_perfume_front.png" alt="PHRINUSOMYIS 360 Perfume">
-  </section>
+        function runTimers() {
+            const now = new Date().getTime();
+            const gap = target - now;
 
-  <!-- CONCERT VIDEO -->
-  <section id="concert">
-    <video src="phrinusomyis_concert.mp4" controls muted autoplay loop></video>
-    <div class="overlay-text">
-      <h2>PHRINUSOMYIS Concert Showcase</h2>
-      <p>International superstars performing at the world's most iconic venues.</p>
-    </div>
-  </section>
+            const d = Math.floor(gap / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            const s = Math.floor((gap % (1000 * 60)) / 1000).toString().padStart(2, '0');
 
-  <!-- PHRINUSOMYIS ELITE TEXT -->
-  <section id="phrinusomyis">
-    <p>PHRINUSOMYIS elite productions captivate audiences with immersive sound, visionary lighting, and masterful staging. Every performance is engineered to create awe, excitement, and lifelong memories. PHRINUSOMYIS excellence in entertainment worldwide.</p>
-  </section>
+            const full = d + h + m + s;
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact PHRINUSOMYIS</h2>
-    <a href="mailto:info@PHRINUSOMYIS.com">info@PHRINUSOMYIS.com</a>
-  </section>
+            // Update Gold
+            document.getElementById('gold-timer').innerText = `${d} : ${h} : ${m} : ${s}`;
 
-  <!-- SOCIAL MEDIA ICONS -->
-  <section id="social-media">
-    <img src="phrinusomyis_youtube.png" alt="YouTube">
-    <img src="phrinusomyis_tiktok.png" alt="TikTok">
-    <img src="phrinusomyis_instagram.png" alt="Instagram">
-    <img src="phrinusomyis_facebook.png" alt="Facebook">
-    <img src="phrinusomyis_twitter.png" alt="Twitter/X">
-  </section>
+            // Update Rainbow
+            const rainColors = [
+                ['#FF0000', '#0000FF'], ['#FFA500', '#008000'], ['#FFFF00', '#800080'], ['#FF69B4', '#00FFFF'],
+                ['#FF00FF', '#00FF00'], ['#4B0082', '#008080'], ['#EE82EE', '#800000'], ['#FFD700', '#000080']
+            ];
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Copyright 2026 PHRINUSOMYIS – All Rights Reserved</p>
-  </footer>
+            let rainHTML = "";
+            full.split('').forEach((char, i) => {
+                rainHTML += `<span class="rainbow-digit" style="background-image: linear-gradient(to bottom, ${rainColors[i][0]} 50%, ${rainColors[i][1]} 50%)">${char}</span>`;
+            });
+            document.getElementById('rainbow-timer').innerHTML = rainHTML;
+        }
 
-  <!-- HIDDEN CEO METADATA -->
-  <div id="ceo-meta" style="display:none;">
-    <span>Victor Seth A – CEO & Founder of PHRINUSOMYIS</span>
-  </div>
-
+        setInterval(runTimers, 1000);
+        runTimers();
+    </script>
 </body>
 </html>
