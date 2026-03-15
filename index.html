@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHRINUSOMYIS | Commanding the World Stage</title>
+    <meta name="author" content="Victor Seth A - CEO & Founder">
+    <style>
+        :root { --gold: #FFD700; --black: #000000; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--black); color: var(--gold); font-family: 'Times New Roman', serif; overflow-x: hidden; user-select: none; }
+        header { height: 100px; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); }
+        .logo { height: 80px; }
+        section { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; text-align: center; padding: 100px 20px; }
+        .v-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+        .overlay { background: rgba(0, 0, 0, 0.75); padding: 40px; border: 1px solid var(--gold); max-width: 850px; }
+        .timer-unit { font-weight: bold; margin: 20px 0; letter-spacing: 5px; }
+        #timer1 { font-size: 50px; color: var(--gold); }
+        #timer2 { font-size: 45px; font-family: monospace; }
+        #timer3 { font-size: 60px; font-weight: 900; }
+        .rainbow-digit { display: inline-block; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .rotate-360 { height: 120px; animation: spinAsset 20s linear infinite; filter: drop-shadow(0 0 10px var(--gold)); }
+        @keyframes spinAsset { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+        footer { padding: 60px; font-size: 12px; border-top: 1px solid #222; opacity: 0.7; }
+        .hidden-seo { display: none; }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <header>
+        <img src="phrinusomyis_logo.png" class="logo">
+        <nav style="color:white;">HOME | EXPERIENCE | LUXURY | CONTACT</nav>
+    </header>
+
+    <section id="home">
+        <div class="overlay">
+            <h1>PHRINUSOMYIS – Commanding the World Stage</h1>
+            <p>Unmatched precision, luxury, and authority in elite stadium experiences.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Countdown to the Next Extraordinary Event</h2>
+        <div id="timer1" class="timer-unit">00 : 00 : 00 : 00</div>
+    </section>
+
+    <section>
+        <video src="phrinusomyis_stadium_outside.mp4" class="v-bg" autoplay muted loop playsinline></video>
+        <div class="overlay">
+            <h3>PHRINUSOMYIS Elite Stadium Experience</h3>
+            <p>Every seat and performance is crafted for unparalleled luxury.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Prepare for the Next Elite Experience</h2>
+        <div id="timer3" class="timer-unit"></div>
+    </section>
+
+    <section>
+        <video src="phrinusomyis_stadium_inside.mp4" class="v-bg" autoplay muted loop playsinline></video>
+        <div class="overlay">
+            <h3>World-Class Production</h3>
+            <p>Transforming stadiums into iconic arenas of music and light.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Global Production Reveal</h2>
+        <div id="timer2" class="timer-unit"></div>
+    </section>
+
+    <section id="luxury">
+        <h3>PHRINUSOMYIS Luxury Creations</h3>
+        <img src="phrinusomyis_perfume_front.png" class="rotate-360">
+    </section>
+
+    <div class="hidden-seo">Victor Seth A - CEO & Founder of PHRINUSOMYIS</div>
+
+    <footer>
+        <p>Copyright 2026 PHRINUSOMYIS – All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const target = new Date("May 29, 2026 00:00:00").getTime();
+        const rainColors = [['#FF0000', '#0000FF'], ['#FFA500', '#008000'], ['#FFFF00', '#800080'], ['#FF69B4', '#00FFFF'], ['#FF00FF', '#00FF00'], ['#4B0082', '#008080'], ['#EE82EE', '#800000'], ['#FFD700', '#000080']];
+        const digiColors = ["#FF0000", "#0000FF", "#008000", "#FFFF00", "#FFA500", "#800080", "#00FFFF", "#FF00FF"];
+
+        function update() {
+            const now = new Date().getTime();
+            const gap = target - now;
+            const d = Math.floor(gap / 86400000).toString().padStart(2, '0');
+            const h = Math.floor((gap % 86400000) / 3600000).toString().padStart(2, '0');
+            const m = Math.floor((gap % 3600000) / 60000).toString().padStart(2, '0');
+            const s = Math.floor((gap % 60000) / 1000).toString().padStart(2, '0');
+            const fullStr = d + h + m + s;
+
+            document.getElementById('timer1').innerText = `${d} : ${h} : ${m} : ${s}`;
+            let rainHTML = "";
+            fullStr.split('').forEach((char, i) => {
+                rainHTML += `<span class="rainbow-digit" style="background-image: linear-gradient(to bottom, ${rainColors[i][0]} 50%, ${rainColors[i][1]} 50%)">${char}</span>`;
+            });
+            document.getElementById('timer3').innerHTML = rainHTML;
+            let digiHTML = "";
+            fullStr.split('').forEach((char, i) => {
+                digiHTML += `<span style="color: ${digiColors[i]}">${char}</span>`;
+            });
+            document.getElementById('timer2').innerHTML = digiHTML;
+        }
+        setInterval(update, 1000);
+        update();
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+</body>
+</html>
