@@ -9,68 +9,87 @@
         :root {
             --gold: #FFD700;
             --black: #000000;
-            --white: #ffffff;
         }
 
         body {
             margin: 0;
             background: var(--black);
             color: var(--gold);
-            font-family: 'Times New Roman', serif; /* Classic Luxury Feel */
+            font-family: 'Times New Roman', serif;
             overflow-x: hidden;
             user-select: none;
+            -webkit-user-select: none;
         }
 
         /* 1. Header */
         header {
-            height: 120px;
+            height: 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 5%;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
         }
-        .logo { height: 100px; }
-        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
+        .logo { height: 80px; }
+        nav a { color: white; margin-left: 20px; text-decoration: none; font-size: 14px; letter-spacing: 1px; }
 
-        /* Sections & Video Logic */
-        section { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 50px 20px; }
-        
-        .v-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-        
-        .overlay-card {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 40px;
-            border: 2px solid var(--gold);
-            max-width: 900px;
+        /* Sections */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             text-align: center;
+            padding: 60px 20px;
         }
 
-        /* 3, 7, 9. Countdown Styling */
-        .timer-display { font-size: 50px; font-weight: bold; letter-spacing: 5px; margin: 20px 0; }
+        /* Video Logic */
+        .v-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .overlay-text {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border: 1px solid var(--gold);
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* 3, 7, 9. Countdown Styles */
+        .timer-unit { font-size: 50px; font-weight: bold; margin: 20px 0; letter-spacing: 5px; }
         
-        /* 7. Rainbow Logic */
+        /* 7. Rainbow Split CSS */
         .rainbow-digit {
             display: inline-block;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-size: 60px;
+            font-weight: 900;
+            padding: 0 2px;
         }
 
-        /* 10. Luxury 360 Rotation */
-        .rotate-360 { height: 120px; animation: spin 10s linear infinite; }
-        @keyframes spin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-
-        /* 16. Hidden Meta */
-        .hidden-seo { display: none; }
-
-        @media (max-width: 768px) {
-            .logo { height: 70px; }
-            .timer-display { font-size: 32px; }
+        /* 10. 360 Rotation */
+        .asset-360 {
+            height: 120px;
+            animation: rotate360 15s linear infinite;
         }
+        @keyframes rotate360 {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        footer { padding: 40px; font-size: 12px; border-top: 1px solid #222; }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -85,48 +104,53 @@
     </header>
 
     <section id="home">
-        <div class="overlay-card">
-            <h1>PHRINUSOMYIS – Commanding the World Stage</h1>
-            <p>Unmatched precision, luxury, and authority in elite entertainment.</p>
+        <div class="overlay-text">
+            <h1 style="font-size: 2.5rem;">PHRINUSOMYIS – Commanding the World Stage</h1>
+            <p>PHRINUSOMYIS is world-class stadium experiences, powerful global productions, and unforgettable moments.</p>
         </div>
     </section>
 
-    <section id="countdown1">
-        <h2>Countdown to the Next Extraordinary Event</h2>
-        <div id="gold-timer" class="timer-display">00 : 00 : 00 : 00</div>
+    <section>
+        <h2 style="letter-spacing: 3px;">Countdown to the Next Extraordinary Event</h2>
+        <div id="gold-timer" class="timer-unit">00 : 00 : 00 : 00</div>
         <p>Artist & stadium location reveal upon countdown</p>
     </section>
 
     <section>
         <video src="phrinusomyis_stadium_outside_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
-        <div class="overlay-card">
+        <div class="overlay-text">
             <h3>PHRINUSOMYIS Elite Stadium Experience</h3>
-            <p>Crafted for unparalleled comfort and awe-inspiring energy.</p>
+            <p>Every seat, every moment, and every performance is crafted for unparalleled comfort.</p>
         </div>
     </section>
 
     <section>
         <h2>Prepare for the Next Elite Experience</h2>
-        <div id="rainbow-timer" class="timer-display"></div>
+        <div id="rainbow-timer" class="timer-unit"></div>
     </section>
 
     <section id="luxury">
         <h3>PHRINUSOMYIS Luxury & Elite Creations</h3>
-        <img src="phrinusomyis_perfume_front.png" class="rotate-360">
+        <img src="phrinusomyis_perfume_front.png" class="asset-360">
+        <p style="margin-top: 20px;">Exclusive luxury items reflecting elegance and refinement.</p>
     </section>
 
     <section id="contact">
         <h2>Contact PHRINUSOMYIS</h2>
-        <a href="mailto:info@PHRINUSOMYIS.com" style="font-size: 2rem; color: var(--gold);">info@PHRINUSOMYIS.com</a>
-        <p style="margin-top: 30px;">YouTube | TikTok | Instagram | Facebook | Twitter/X</p>
+        <a href="mailto:info@PHRINUSOMYIS.com" style="color: var(--gold); font-size: 24px; text-decoration: none;">info@PHRINUSOMYIS.com</a>
+        <div style="margin-top: 30px; letter-spacing: 2px;">
+            YOUTUBE | TIKTOK | INSTAGRAM | FACEBOOK | TWITTER/X
+        </div>
     </section>
 
-    <div class="hidden-seo">Victor Seth A - CEO & Founder</div>
+    <footer>
+        <p>Copyright 2026 PHRINUSOMYIS – All Rights Reserved</p>
+    </footer>
 
     <script>
         const target = new Date("May 29, 2026 00:00:00").getTime();
 
-        function runTimers() {
+        function update() {
             const now = new Date().getTime();
             const gap = target - now;
 
@@ -135,26 +159,28 @@
             const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             const s = Math.floor((gap % (1000 * 60)) / 1000).toString().padStart(2, '0');
 
-            const full = d + h + m + s;
-
-            // Update Gold
+            // 1. Update Gold Timer
             document.getElementById('gold-timer').innerText = `${d} : ${h} : ${m} : ${s}`;
 
-            // Update Rainbow
+            // 2. Update Rainbow Split Timer
+            const fullStr = d + h + m + s;
             const rainColors = [
                 ['#FF0000', '#0000FF'], ['#FFA500', '#008000'], ['#FFFF00', '#800080'], ['#FF69B4', '#00FFFF'],
                 ['#FF00FF', '#00FF00'], ['#4B0082', '#008080'], ['#EE82EE', '#800000'], ['#FFD700', '#000080']
             ];
 
             let rainHTML = "";
-            full.split('').forEach((char, i) => {
+            fullStr.split('').forEach((char, i) => {
                 rainHTML += `<span class="rainbow-digit" style="background-image: linear-gradient(to bottom, ${rainColors[i][0]} 50%, ${rainColors[i][1]} 50%)">${char}</span>`;
             });
             document.getElementById('rainbow-timer').innerHTML = rainHTML;
         }
 
-        setInterval(runTimers, 1000);
-        runTimers();
+        setInterval(update, 1000);
+        update();
+        
+        // Disable Right Click
+        document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
 </html>
