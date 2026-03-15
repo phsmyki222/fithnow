@@ -1,0 +1,103 @@
+{
+  "site": {
+    "name": "PHRINUSOMYIS",
+    "domain": "https://www.PHRINUSOMYIS.com",
+    "description": "PHRINUSOMYIS is world-class stadium experiences, global productions, and unforgettable moments. Audiences worldwide witness unmatched precision, luxury, and authority in elite entertainment.",
+    "keywords": ["PHRINUSOMYIS", "stadium experiences", "global productions", "luxury events", "elite entertainment", "Victor Seth A", "CEO", "immersive shows"],
+    "SEO": {
+      "meta_description": "PHRINUSOMYIS is world-class stadium experiences, global productions, and unforgettable moments. Audiences worldwide witness unmatched precision, luxury, and authority in elite entertainment.",
+      "author": "Victor Seth A",
+      "og_title": "PHRINUSOMYIS – Commanding the World Stage",
+      "og_description": "PHRINUSOMYIS is world-class stadium experiences, global productions, and unforgettable moments. Audiences worldwide witness unmatched precision, luxury, and authority in elite entertainment.",
+      "og_image": "phrinusomyis_logo.png",
+      "og_type": "website",
+      "og_url": "https://www.PHRINUSOMYIS.com"
+    },
+    "CEO": {
+      "name": "Victor Seth A",
+      "title": "CEO & Founder",
+      "hidden": true
+    },
+    "sections": [
+      {
+        "id": "home",
+        "title": "PHRINUSOMYIS – Commanding the World Stage",
+        "content": "PHRINUSOMYIS is world-class stadium experiences, powerful global productions, and unforgettable moments. Every performance, every spectacle, every venue reflects unmatched precision, luxury, and authority. Audiences worldwide witness excellence and innovation — experiences that have defined elite entertainment."
+      },
+      {
+        "id": "countdown1",
+        "title": "Countdown to the Next Extraordinary Event",
+        "type": "gold"
+      },
+      {
+        "id": "video1",
+        "title": "PHRINUSOMYIS Elite Stadium Experience",
+        "video": "phrinusomyis_stadium_outside_elite.mp4",
+        "overlay_text": "Every seat, every moment, and every performance is crafted for unparalleled comfort and awe-inspiring energy."
+      },
+      {
+        "id": "video2",
+        "title": "PHRINUSOMYIS World-Class Production",
+        "video": "phrinusomyis_stadium_inside_elite.mp4",
+        "overlay_text": "Transforming stadiums into iconic arenas of music, light, and spectacle. Every element is engineered to inspire awe and leave a lasting impression."
+      },
+      {
+        "id": "logo360",
+        "title": "PHRINUSOMYIS Emblem",
+        "image": "phrinusomyis_logo_360.png"
+      },
+      {
+        "id": "countdown3",
+        "title": "Prepare for the Next Elite Experience",
+        "type": "rainbow_dual_color"
+      },
+      {
+        "id": "video3",
+        "title": "PHRINUSOMYIS Iconic Venue Experience",
+        "video": "phrinusomyis_stadium_elite.mp4",
+        "overlay_text": "Every great event begins with the stage we create for the audience. Precision, luxury, and mastery define every showcase."
+      },
+      {
+        "id": "countdown2",
+        "title": "Countdown to the Global Production Reveal",
+        "type": "digital_multi_color"
+      },
+      {
+        "id": "luxury",
+        "title": "PHRINUSOMYIS Luxury & Elite Creations",
+        "content": "Exclusive luxury items reflecting elegance, refinement, and sophistication.",
+        "image": "phrinusomyis_perfume_front.png"
+      },
+      {
+        "id": "concert",
+        "title": "PHRINUSOMYIS Concert Showcase",
+        "video": "phrinusomyis_concert.mp4",
+        "overlay_text": "International superstars performing at the world's most iconic venues."
+      },
+      {
+        "id": "phrinusomyis",
+        "title": "PHRINUSOMYIS Elite",
+        "content": "PHRINUSOMYIS elite productions captivate audiences with immersive sound, visionary lighting, and masterful staging. Every performance is engineered to create awe, excitement, and lifelong memories. PHRINUSOMYIS excellence in entertainment worldwide."
+      },
+      {
+        "id": "contact",
+        "title": "Contact PHRINUSOMYIS",
+        "email": "info@PHRINUSOMYIS.com"
+      },
+      {
+        "id": "social_media",
+        "icons": [
+          "phrinusomyis_youtube.png",
+          "phrinusomyis_tiktok.png",
+          "phrinusomyis_instagram.png",
+          "phrinusomyis_facebook.png",
+          "phrinusomyis_twitter.png"
+        ]
+      },
+      {
+        "id": "footer",
+        "content": "Copyright 2026 PHRINUSOMYIS – All Rights Reserved"
+      }
+    ]
+  }
+}
