@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHRINUSOMYIS | Commanding the World Stage</title>
-    <meta name="author" content="Victor Seth A - CEO & Founder">
     <style>
         :root { --gold: #FFD700; --black: #000000; }
         * { box-sizing: border-box; }
@@ -13,18 +12,19 @@
         .logo { height: 80px; }
         section { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; text-align: center; padding: 100px 20px; }
         .v-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-        .overlay { background: rgba(0, 0, 0, 0.75); padding: 40px; border: 1px solid var(--gold); max-width: 850px; }
+        .overlay { background: rgba(0, 0, 0, 0.75); padding: 40px; border: 1px solid var(--gold); max-width: 850px; margin: 20px; }
         .timer-unit { font-weight: bold; margin: 20px 0; letter-spacing: 5px; }
         #timer1 { font-size: 50px; color: var(--gold); }
         #timer2 { font-size: 45px; font-family: monospace; }
         #timer3 { font-size: 60px; font-weight: 900; }
         .rainbow-digit { display: inline-block; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .rotate-360 { height: 150px; animation: spinAsset 20s linear infinite; filter: drop-shadow(0 0 15px var(--gold)); }
+        .social-icon { width: 40px; margin: 10px; transition: 0.3s; }
         @keyframes spinAsset { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-        footer { padding: 60px; font-size: 12px; border-top: 1px solid #222; opacity: 0.7; }
+        footer { padding: 60px; text-align: center; border-top: 1px solid #222; }
     </style>
 </head>
-<body oncontextmenu="return false;">
+<body>
 
     <header>
         <img src="phrinusomyis_logo.png" class="logo">
@@ -32,51 +32,73 @@
     </header>
 
     <section>
-        <div class="overlay">
-            <h1>PHRINUSOMYIS</h1>
-            <p>Commanding the World Stage with Elite Stadium Productions.</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Next Extraordinary Event</h2>
-        <div id="timer1" class="timer-unit">00 : 00 : 00 : 00</div>
-    </section>
-
-    <section>
         <video src="phrinusomyis_stadium_outside_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
         <div class="overlay">
-            <h3>The Outside Vision</h3>
+            <h1>PHRINUSOMYIS</h1>
+            <p>Commanding the World Stage. Witness the exterior of a global masterpiece.</p>
         </div>
     </section>
 
     <section>
-        <h2>Elite Experience Reveal</h2>
-        <div id="timer3" class="timer-unit"></div>
+        <div class="overlay">
+            <h2>The Countdown to Excellence</h2>
+            <div id="timer1" class="timer-unit">00 : 00 : 00 : 00</div>
+        </div>
     </section>
 
     <section>
         <video src="phrinusomyis_stadium_inside_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
         <div class="overlay">
-            <h3>The Interior Masterpiece</h3>
+            <h3>Elite Interior Design</h3>
+            <p>Step inside the architectural precision of PHRINUSOMYIS.</p>
         </div>
     </section>
 
     <section>
-        <h2>Global Production Countdown</h2>
-        <div id="timer2" class="timer-unit"></div>
+        <div class="overlay">
+            <h2>Experience the Spectrum</h2>
+            <div id="timer3" class="timer-unit"></div>
+        </div>
     </section>
 
     <section>
-        <h3>PHRINUSOMYIS Luxury</h3>
-        <img src="phrinusomyis_perfume_front.png" class="rotate-360">
+        <video src="phrinusomyis_stadium_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
+        <div class="overlay">
+            <h3>The Sovereign View</h3>
+            <p>Unrivaled perspectives in global stadium production.</p>
+        </div>
     </section>
 
     <section>
-        <img src="phrinusomyis_logo_360.png" class="rotate-360">
+        <div class="overlay">
+            <h2>Global Production Reveal</h2>
+            <div id="timer2" class="timer-unit"></div>
+        </div>
+    </section>
+
+    <section>
+        <video src="phrinusomyis_concert.mp4" class="v-bg" autoplay muted loop playsinline></video>
+        <div class="overlay">
+            <h3>International Performances</h3>
+            <p>Where world-class music meets the PHRINUSOMYIS stage.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="overlay">
+            <h3>Luxury Creations</h3>
+            <img src="phrinusomyis_perfume_front.png" class="rotate-360">
+            <img src="phrinusomyis_logo_360.png" class="rotate-360">
+        </div>
     </section>
 
     <footer>
+        <div>
+            <img src="phrinusomyis_facebook.png" class="social-icon">
+            <img src="phrinusomyis_instagram.png" class="social-icon">
+            <img src="phrinusomyis_youtube.png" class="social-icon">
+            <img src="phrinusomyis_twitter.png" class="social-icon">
+        </div>
         <p>Copyright 2026 PHRINUSOMYIS – All Rights Reserved</p>
     </footer>
 
