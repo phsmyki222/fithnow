@@ -1,17 +1,16 @@
 /**
- * PHRINUSOMYIS MASTER LOGIC FILE
- * Version: 1.0 (Year 3001/6001 Precision)
- * Features: Gold Countdown Engine, 360° Asset Management, Security Locks
+ * PHRINUSOMYIS Official Terminal Logic
+ * Target Launch: May 1, 2026
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. MAY 2026 GOLD COUNTDOWN ENGINE ---
-    const targetDate = new Date("May 1, 2026 00:00:00").getTime();
+    // 1. Set the Target Date (May 2026)
+    const launchDate = new Date("May 1, 2026 00:00:00").getTime();
 
-    function updateTimers() {
+    function updateAllCountdowns() {
         const now = new Date().getTime();
-        const distance = targetDate - now;
+        const distance = launchDate - now;
 
         // Time calculations
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -19,93 +18,66 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Format: 00d / 00h / 00m / 00s
-        const displayString = `${String(days).padStart(2, '0')}d / ${String(hours).padStart(2, '0')}h / ${String(minutes).padStart(2, '0')}m / ${String(seconds).padStart(2, '0')}s`;
-        const digitalString = `${String(days).padStart(2, '0')} : ${String(hours).padStart(2, '0')} : ${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}`;
+        // Map to the different IDs in your HTML
+        const timeData = {
+            d: days.toString().padStart(2, '0'),
+            h: hours.toString().padStart(2, '0'),
+            m: minutes.toString().padStart(2, '0'),
+            s: seconds.toString().padStart(2, '0')
+        };
 
-        // Inject into Blueprint Sections
-        // Section #countdown1 (Gold)
-        const goldTimer = document.querySelector('#countdown1 .timer-display');
-        if (goldTimer) goldTimer.innerText = displayString;
+        // Update Countdown 1 (Gold)
+        updateElement('d1', timeData.d);
+        updateElement('h1', timeData.h);
+        updateElement('m1', timeData.m);
+        updateElement('s1', timeData.s);
 
-        // Section #countdown3 (Rainbow) & #countdown2 (Multi-color)
-        const rainbowTimer = document.querySelector('#countdown3 .timer-display');
-        if (rainbowTimer) rainbowTimer.innerText = digitalString;
+        // Update Countdown 2 (Multi-color)
+        updateElement('d2', timeData.d);
+        updateElement('h2', timeData.h);
+        updateElement('m2', timeData.m);
+        updateElement('s2', timeData.s);
 
-        const multiTimer = document.querySelectorAll('#countdown2 .timer-display span');
-        if (multiTimer.length === 4) {
-            multiTimer[0].innerText = String(days).padStart(2, '0');
-            multiTimer[1].innerText = String(hours).padStart(2, '0');
-            multiTimer[2].innerText = String(minutes).padStart(2, '0');
-            multiTimer[3].innerText = String(seconds).padStart(2, '0');
+        // Update Countdown 3 (Rainbow)
+        updateElement('d3', timeData.d);
+        updateElement('h3', timeData.h);
+        updateElement('m3', timeData.m);
+        updateElement('s3', timeData.s);
+
+        // If the countdown is finished
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.querySelectorAll('.timer-display').forEach(el => {
+                el.innerHTML = "EVENT LIVE";
+            });
         }
     }
 
-    // Run timer every second
-    setInterval(updateTimers, 1000);
-    updateTimers();
+    function updateElement(id, value) {
+        const el = document.getElementById(id);
+        if (el) el.innerText = value;
+    }
 
-    // --- 2. 360° INTERACTIVE ROTATION (MOBILE FRIENDLY) ---
-    // This allows the user to "spin" the assets with their finger or mouse
-    const rotateAssets = document.querySelectorAll('.rotating-asset, .rotate-360');
-    
-    rotateAssets.forEach(asset => {
-        let isDragging = false;
-        let startX;
-        let currentRotation = 0;
+    // Run every second
+    const timerInterval = setInterval(updateAllCountdowns, 1000);
+    updateAllCountdowns(); // Initial call
 
-        asset.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX;
-        });
-
-        window.addEventListener('mouseup', () => { isDragging = false; });
-
-        window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            const x = e.pageX;
-            const walk = (x - startX) * 0.5; // Sensitivity
-            asset.style.transform = `rotateY(${currentRotation + walk}deg)`;
-        });
-
-        // Touch support for Mobile
-        asset.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].pageX;
-            isDragging = true;
-        });
-
-        asset.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const x = e.touches[0].pageX;
-            const walk = (x - startX) * 0.5;
-            asset.style.transform = `rotateY(${currentRotation + walk}deg)`;
-        });
-
-        asset.addEventListener('touchend', () => { isDragging = false; });
-    });
-
-    // --- 3. 12K VIEW: SMOOTH SCROLL & ENTRANCE ---
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // --- 4. SECURITY & ASSET PROTECTION ---
-    // Disabling right-click is already in the HTML, but this doubles the security
+    // 2. Global Security: Disable Right-Click on Media
     document.addEventListener('contextmenu', (e) => {
         if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
             e.preventDefault();
         }
     }, false);
 
-    // Stop users from dragging images off the site
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('dragstart', (e) => e.preventDefault());
+    // 3. Smooth Scroll for Navigation
+    document.querySelectorAll('.nav-menu a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const section = document.querySelector(this.getAttribute('href'));
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 
 });
