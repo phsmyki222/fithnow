@@ -2,207 +2,232 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PHRINUSOMYIS | Commanding the World Stage</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHRINUSOMYIS | World-Class Elite Entertainment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;900&display=swap" rel="stylesheet">
     <style>
-        /* GLOBAL 12M AESTHETIC SETTINGS */
         :root {
-            --gold: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            --solid-gold: #D4AF37;
-            --deep-black: #050505;
+            --gold: #D4AF37;
+            --black: #050505;
+            --glass: rgba(0, 0, 0, 0.85);
         }
 
-        body {
-            background-color: var(--deep-black);
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            text-align: center;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--black); 
+            color: #fff; 
+            font-family: 'Montserrat', sans-serif; 
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* 1. STICKY MENU */
-        header.sticky-header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background: rgba(5, 5, 5, 0.95);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            z-index: 9999;
-            box-sizing: border-box;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        /* Global Typography */
+        h1, h2, .gold-title { 
+            font-family: 'Cinzel', serif; 
+            color: var(--gold); 
+            text-transform: uppercase; 
+            letter-spacing: 3px;
         }
 
-        .logo img { height: 50px; }
+        /* 1. Header */
+        .main-header {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 50px; background: var(--glass); backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .logo { height: 50px; }
+        .nav-menu a { 
+            color: #fff; text-decoration: none; margin-left: 25px; 
+            font-size: 0.85rem; font-weight: 400; transition: 0.3s;
+        }
+        .nav-menu a:hover { color: var(--gold); }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+        /* Generic Section Spacing */
+        section { padding: 100px 10%; text-align: center; width: 100%; }
+
+        /* Video Containers */
+        .video-box { position: relative; width: 100%; max-width: 1200px; margin: 40px auto; }
+        video { width: 100%; height: auto; border: 1px solid #1a1a1a; }
+        .video-overlay { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 100%; pointer-events: none;
         }
 
-        /* GOLD TEXT UTILITY */
-        .gold-overlay-text {
-            background: var(--gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            text-transform: uppercase;
-            padding: 10px;
+        /* 360 Rotation */
+        .rotating-asset { 
+            width: 300px; height: 300px; margin: 40px auto;
+            animation: rotate360 15s linear infinite; 
+        }
+        @keyframes rotate360 { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+
+        /* Countdown Styles */
+        .timer-grid { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
+        .time-unit { display: flex; flex-direction: column; align-items: center; }
+        .time-unit span { font-weight: 900; line-height: 1; }
+        
+        /* Countdown 1: Gold */
+        #countdown1 .time-unit span { color: var(--gold); font-size: 3rem; }
+        
+        /* Countdown 3: Rainbow */
+        #countdown3 .time-unit span {
+            font-size: 6rem;
+            background: linear-gradient(to bottom, #FF0000 50%, #00FFFF 50%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* VIDEO CONTAINER SCALING */
-        .content-section {
-            padding: 50px 10%;
-            position: relative;
-        }
+        /* Countdown 2: Multi-color */
+        .red { color: #FF0000; } .blue { color: #0000FF; } 
+        .yellow { color: #FFFF00; } .cyan { color: #00FFFF; }
+        #countdown2 .time-unit span { font-size: 3rem; }
 
-        .video-box {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
+        /* Contact & Social */
+        .contact-link { color: var(--gold); font-size: 1.5rem; text-decoration: none; }
+        .social-icons { display: flex; justify-content: center; gap: 20px; margin: 40px 0; }
+        .social-icons img { height: 30px; filter: grayscale(1) invert(1); transition: 0.3s; }
+        .social-icons img:hover { filter: none; transform: scale(1.1); }
 
-        video {
-            width: 100%;
-            display: block;
-        }
+        footer { padding: 40px; border-top: 1px solid #1a1a1a; font-size: 0.8rem; opacity: 0.6; }
 
-        .video-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            font-size: 1.5rem;
-            z-index: 5;
-        }
-
-        /* 360 ASSETS */
-        .rotate-360 {
-            width: 300px;
-            margin: 20px auto;
-            animation: rotation 10s infinite linear;
-        }
-
-        @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(359deg); } }
-
-        /* TIMER STYLES */
-        .timer-display { font-size: 2.5rem; margin: 20px 0; font-family: monospace; }
-        .rainbow-text {
-            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* MOBILE OPTIMIZATION */
-        @media (max-width: 768px) {
-            nav { display: none; } 
-            .video-label { font-size: 1rem; }
-            .timer-display { font-size: 1.5rem; }
-        }
+        /* Protection */
+        img, video { -webkit-user-drag: none; pointer-events: auto; }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
-    <header class="sticky-header">
-        <div class="logo"><img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS"></div>
-        <nav>
+    <header class="main-header">
+        <img src="phrinusomyis_logo.png" alt="Logo" class="logo">
+        <nav class="nav-menu">
             <a href="#home">Home</a>
             <a href="#video1">Elite Experience</a>
             <a href="#phrinusomyis">PHRINUSOMYIS</a>
             <a href="#luxury">Luxury Creations</a>
-            <a href="#countdown1">Countdown</a>
+            <a href="#countdown3">Countdown</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section id="home" class="content-section">
-        <h1 class="gold-overlay-text" style="font-size: 2.5rem;">PHRINUSOMYIS – Commanding the World Stage</h1>
-        <p style="max-width: 800px; margin: 0 auto;">PHRINUSOMYIS is world-class stadium experiences, powerful global productions, and unforgettable moments. Every performance, every spectacle, every venue reflects unmatched precision, luxury, and authority.</p>
+    <section id="home" style="padding-top: 180px;">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">PHRINUSOMYIS – Commanding the World Stage</h1>
+        <p style="max-width: 800px; margin: 0 auto; font-weight: 300;">PHRINUSOMYIS is world-class stadium experiences, powerful global productions, and unforgettable moments. Every performance, every spectacle, every venue reflects unmatched precision, luxury, and authority.</p>
     </section>
 
-    <section id="countdown1" class="content-section">
-        <h2 style="color: var(--solid-gold);">Countdown to the Next Extraordinary Event</h2>
-        <div class="timer-display" style="color: var(--solid-gold);">00d / 00h / 00m / 00s</div>
+    <section id="countdown1">
+        <h2>Countdown to the Next Extraordinary Event</h2>
+        <div class="timer-grid" id="timer1">
+            <div class="time-unit"><span id="d1">00</span><label>Days</label></div>
+            <div class="time-unit"><span id="h1">00</span><label>Hours</label></div>
+            <div class="time-unit"><span id="m1">00</span><label>Min</label></div>
+            <div class="time-unit"><span id="s1">00</span><label>Sec</label></div>
+        </div>
     </section>
 
-    <section id="video1" class="content-section">
+    <section id="video1">
         <div class="video-box">
             <video autoplay muted loop playsinline src="phrinusomyis_stadium_outside_elite.mp4"></video>
-            <div class="video-label gold-overlay-text">PHRINUSOMYIS Elite Stadium Experience</div>
+            <div class="video-overlay"><h2 class="gold-title">PHRINUSOMYIS Elite Stadium Experience</h2></div>
         </div>
+        <p>Precision, luxury, and mastery define every showcase. Each event is engineered to impress. Excellence is the standard for every venue.</p>
     </section>
 
-    <section id="video2" class="content-section">
-        <p>Step inside for the pinnacle of stadium production mastery. Every seat, sightline, and element is designed for perfection.</p>
+    <section id="video2">
+        <p style="margin-bottom: 20px;">Step inside for the pinnacle of stadium production mastery. Every seat, sightline, and element is designed for perfection.</p>
         <div class="video-box">
             <video autoplay muted loop playsinline src="phrinusomyis_stadium_inside_elite.mp4"></video>
-            <div class="video-label gold-overlay-text">PHRINUSOMYIS Elite World-Class Production</div>
+            <div class="video-overlay"><h2 class="gold-title">PHRINUSOMYIS Elite World-Class Production</h2></div>
         </div>
     </section>
 
-    <section id="logo360" class="content-section">
-        <img src="phrinusomyis_logo_360.png" alt="Logo 360" class="rotate-360">
+    <section id="logo360">
+        <img src="phrinusomyis_logo_360.png" alt="360 Logo" class="rotating-asset">
     </section>
 
-    <section id="video3" class="content-section">
+    <section id="video3">
         <div class="video-box">
             <video autoplay muted loop playsinline src="phrinusomyis_stadium_elite.mp4"></video>
-            <div class="video-label gold-overlay-text">PHRINUSOMYIS Iconic Venue Experience</div>
+            <div class="video-overlay"><h2 class="gold-title">PHRINUSOMYIS Iconic Venue Experience</h2></div>
         </div>
+        <p>Precision, luxury, and mastery define every showcase. Each event is engineered to impress. Excellence is the standard for every venue.</p>
     </section>
 
-    <section id="countdown3" class="content-section">
+    <section id="countdown3">
         <h2>Prepare for the Next Elite Experience</h2>
-        <div class="timer-display rainbow-text">00 : 00 : 00 : 00</div>
-    </section>
-
-    <section id="countdown2" class="content-section">
-        <h2>Countdown to the Global Production Reveal</h2>
-        <div class="timer-display">
-            <span style="color:red">00</span> : <span style="color:blue">00</span> : <span style="color:yellow">00</span> : <span style="color:cyan">00</span>
+        <div class="timer-grid" id="timer3">
+            <div class="time-unit"><span id="d3">00</span><label>Days</label></div>
+            <div class="time-unit"><span id="h3">00</span><label>Hours</label></div>
+            <div class="time-unit"><span id="m3">00</span><label>Min</label></div>
+            <div class="time-unit"><span id="s3">00</span><label>Sec</label></div>
         </div>
     </section>
 
-    <section id="luxury" class="content-section">
-        <img src="phrinusomyis_perfume_front.png" alt="Perfume 360" class="rotate-360">
-        <p class="gold-overlay-text">PHRINUSOMYIS Luxury & Elite Creations.</p>
+    <section id="countdown2">
+        <h2>Countdown to the Global Production Reveal</h2>
+        <div class="timer-grid">
+            <div class="time-unit"><span class="red" id="d2">00</span><label>Days</label></div>
+            <div class="time-unit"><span class="blue" id="h2">00</span><label>Hours</label></div>
+            <div class="time-unit"><span class="yellow" id="m2">00</span><label>Min</label></div>
+            <div class="time-unit"><span class="cyan" id="s2">00</span><label>Sec</label></div>
+        </div>
     </section>
 
-    <section id="concert" class="content-section">
+    <section id="luxury">
+        <img src="phrinusomyis_perfume_front.png" alt="Perfume" class="rotating-asset">
+        <h2 style="margin-top:20px;">PHRINUSOMYIS Luxury & Elite Creations</h2>
+        <p>Exclusive luxury items reflecting elegance, refinement, and sophistication.</p>
+    </section>
+
+    <section id="concert">
         <div class="video-box">
             <video autoplay muted loop playsinline src="phrinusomyis_concert.mp4"></video>
-            <div class="video-label gold-overlay-text">PHRINUSOMYIS Concert Showcase</div>
+            <div class="video-overlay"><h2 class="gold-title">PHRINUSOMYIS Concert Showcase</h2></div>
         </div>
+        <p>International superstars performing at the world's most iconic venues. Precision and production excellence define every show.</p>
     </section>
 
-    <section id="phrinusomyis" class="content-section">
-        <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">PHRINUSOMYIS elite productions captivate audiences with immersive sound, visionary lighting, and masterful staging.</p>
+    <section id="phrinusomyis" style="background: #000;">
+        <p style="font-size: 1.2rem; max-width: 900px; margin: 0 auto; color: #aaa;">
+            PHRINUSOMYIS elite productions captivate audiences with immersive sound, visionary lighting, and masterful staging. Every performance is engineered to create awe, excitement, and lifelong memories.
+        </p>
     </section>
 
-    <section id="contact" class="content-section">
-        <h2 class="gold-overlay-text">Contact PHRINUSOMYIS</h2>
-        <a href="mailto:info@PHRINUSOMYIS.com" style="color: #fff; font-size: 1.2rem;">info@PHRINUSOMYIS.com</a>
+    <section id="contact">
+        <h2>Contact PHRINUSOMYIS</h2>
+        <a href="mailto:info@PHRINUSOMYIS.com" class="contact-link">info@PHRINUSOMYIS.com</a>
     </section>
 
-    <footer style="padding: 40px 0; border-top: 1px solid #222;">
-        <p>Copyright 2026 PHRINUSOMYIS – All Rights Reserved</p>
+    <div class="social-icons">
+        <img src="phrinusomyis_youtube.png" alt="YT">
+        <img src="phrinusomyis_tiktok.png" alt="TT">
+        <img src="phrinusomyis_instagram.png" alt="IG">
+        <img src="phrinusomyis_facebook.png" alt="FB">
+        <img src="phrinusomyis_twitter.png" alt="X">
+    </div>
+
+    <footer>
+        <center>Copyright 2026 PHRINUSOMYIS – All Rights Reserved</center>
     </footer>
 
+    <script>
+        const targetDate = new Date("May 1, 2026 00:00:00").getTime();
+
+        function updateTimers() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const ids = ['1', '2', '3'];
+            ids.forEach(id => {
+                document.getElementById('d'+id).innerText = d;
+                document.getElementById('h'+id).innerText = h;
+                document.getElementById('m'+id).innerText = m;
+                document.getElementById('s'+id).innerText = s;
+            });
+        }
+        setInterval(updateTimers, 1000);
+    </script>
 </body>
 </html>
