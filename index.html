@@ -10,9 +10,7 @@
     <style>
         /* --- SOVEREIGN DESIGN SYSTEM --- */
         :root { --gold: #FFD700; --black: #000000; --white: #ffffff; }
-        
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
         body { 
             background-color: var(--black); 
             color: var(--gold); 
@@ -20,7 +18,6 @@
             overflow-x: hidden; 
             line-height: 1.6;
         }
-
         /* Glass Header */
         header {
             height: 100px;
@@ -36,13 +33,10 @@
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.2);
         }
-
         .logo-img { height: 70px; filter: drop-shadow(0 0 5px var(--gold)); }
-
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 20px; }
         nav ul li a { color: var(--white); text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; }
-
         /* Section Layouts */
         section {
             min-height: 100vh;
@@ -54,7 +48,6 @@
             text-align: center;
             padding: 100px 20px;
         }
-
         .v-bg {
             position: absolute;
             top: 0;
@@ -64,42 +57,35 @@
             object-fit: cover;
             z-index: -1;
         }
-
         .overlay-box {
             background: rgba(0, 0, 0, 0.8);
             padding: 40px;
             border: 1px solid var(--gold);
             max-width: 800px;
-            backdrop-filter: blur(5px);
+           backdrop-filter: blur(5px);
         }
-
         h1, h2, h3 { text-transform: uppercase; letter-spacing: 5px; margin-bottom: 20px; }
-
         /* Timer Engine Styles */
         .timer { font-weight: bold; margin: 20px 0; letter-spacing: 5px; }
         #timer1 { font-size: 50px; color: var(--gold); }
         #timer2 { font-size: 45px; font-family: 'Courier New', monospace; }
         #timer3 { font-size: 65px; font-weight: 900; }
-        
         .rainbow-digit { 
             display: inline-block; 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
-
         /* 360 Rotation */
         .rotate-360 {
             height: 250px;
             margin: 40px 0;
             animation: spinY 15s linear infinite;
-            filter: drop-shadow(0 0 20px var(--gold));
+           filter: drop-shadow(0 0 20px var(--gold));
         }
-
         @keyframes spinY {
             from { transform: rotateY(0deg); }
             to { transform: rotateY(360deg); }
         }
-
         /* Contact & Socials */
         #contact a {
             color: var(--gold);
@@ -108,7 +94,6 @@
             font-weight: bold;
             border-bottom: 2px solid var(--gold);
         }
-
         .social-row img {
             width: 45px;
             margin: 15px;
@@ -116,12 +101,10 @@
             filter: grayscale(1) brightness(2);
         }
         .social-row img:hover { filter: grayscale(0) brightness(1); transform: scale(1.1); }
-
         footer { padding: 50px; opacity: 0.6; font-size: 12px; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo"><img src="phrinusomyis_logo.png" class="logo-img"></div>
         <nav>
@@ -132,7 +115,6 @@
             </ul>
         </nav>
     </header>
-
     <section id="home">
         <div class="overlay-box">
             <h1>PHRINUSOMYIS</h1>
@@ -140,7 +122,6 @@
             <p>Unmatched precision, luxury, and authority in elite entertainment.</p>
         </div>
     </section>
-
     <section>
         <video src="phrinusomyis_stadium_outside_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
         <div class="overlay-box">
@@ -148,12 +129,10 @@
             <div class="timer" id="timer1">00 : 00 : 00 : 00</div>
         </div>
     </section>
-
     <section>
         <h2>PHRINUSOMYIS Emblem</h2>
         <img src="phrinusomyis_logo_360.png" class="rotate-360">
     </section>
-
     <section>
         <video src="phrinusomyis_stadium_inside_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
         <div class="overlay-box">
@@ -161,7 +140,6 @@
             <div class="timer" id="timer3"></div>
         </div>
     </section>
-
     <section>
         <video src="phrinusomyis_stadium_elite.mp4" class="v-bg" autoplay muted loop playsinline></video>
         <div class="overlay-box">
@@ -169,7 +147,6 @@
             <p>Every venue reflects unmatched precision.</p>
         </div>
     </section>
-
     <section id="luxury">
         <div class="overlay-box">
             <h2>Luxury Creations</h2>
@@ -177,7 +154,6 @@
             <div class="timer" id="timer2"></div>
         </div>
     </section>
-
     <section>
         <video src="phrinusomyis_concert.mp4" class="v-bg" autoplay muted loop playsinline></video>
         <div class="overlay-box">
@@ -185,7 +161,6 @@
             <p>International superstars on the PHRINUSOMYIS stage.</p>
         </div>
     </section>
-
     <section id="contact">
         <div class="overlay-box">
             <h2>Connect with Authority</h2>
@@ -199,29 +174,23 @@
             </div>
         </div>
     </section>
-
     <footer>
         <p>© 2026 PHRINUSOMYIS – ALL RIGHTS RESERVED</p>
     </footer>
-
     <script>
         const targetDate = new Date("May 29, 2026 00:00:00").getTime();
         const rainColors = [['#FF0000', '#0000FF'], ['#FFA500', '#008000'], ['#FFFF00', '#800080'], ['#FF69B4', '#00FFFF'], ['#FF00FF', '#00FF00'], ['#4B0082', '#008080'], ['#EE82EE', '#800000'], ['#FFD700', '#000080']];
         const digiColors = ["#FF0000", "#0000FF", "#008000", "#FFFF00", "#FFA500", "#800080", "#00FFFF", "#FF00FF"];
-
         function updateTimers() {
             const now = new Date().getTime();
             const gap = targetDate - now;
-
             const d = Math.floor(gap / 86400000).toString().padStart(2, '0');
             const h = Math.floor((gap % 86400000) / 3600000).toString().padStart(2, '0');
             const m = Math.floor((gap % 3600000) / 60000).toString().padStart(2, '0');
             const s = Math.floor((gap % 60000) / 1000).toString().padStart(2, '0');
             const fullStr = d + h + m + s;
-
             // Timer 1: Standard Gold
             document.getElementById('timer1').innerText = `${d} : ${h} : ${m} : ${s}`;
-
             // Timer 3: Rainbow Split
             let rainHTML = "";
             fullStr.split('').forEach((char, i) => {
@@ -236,7 +205,6 @@
             });
             document.getElementById('timer2').innerHTML = digiHTML;
         }
-
         setInterval(updateTimers, 1000);
         updateTimers();
     </script>
