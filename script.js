@@ -1,9 +1,3 @@
-/**
- * PHRINUSOMYIS MASTER LOGIC FILE
- * Version: 1.0 (Year 3001/6001 Precision)
- * Features: Gold Countdown Engine, 360° Asset Management, Security Locks
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- 1. MAY 2026 GOLD COUNTDOWN ENGINE ---
