@@ -1,214 +1,204 @@
-/* PHRINUSOMYIS MASTER STYLE SHEET
-    AESTHETIC: 12K ULTRA-HIGH DEFINITION / PURE GOLD 
+/* PHRINUSOMYIS MASTER STYLESHEET
+   Aesthetic: $12M High-End Cinematic
 */
 
 :root {
-    /* 12K Pure Gold Gradient - Multi-stop for high-end shimmer */
-    --pure-gold: linear-gradient(
-        45deg, 
-        #8A6E2F 0%, 
-        #C5A059 20%, 
-        #FFD700 40%, 
-        #FDFFD9 50%, 
-        #FFD700 60%, 
-        #C5A059 80%, 
-        #8A6E2F 100%
-    );
-    --solid-gold: #D4AF37;
-    --deep-black: #050505;
-    --glass-bg: rgba(0, 0, 0, 0.85);
+    --gold: #D4AF37;
+    --black: #050505;
+    --glass-black: rgba(0, 0, 0, 0.9);
+    --rainbow-top: #FF0000;
+    --rainbow-bottom: #00FFFF;
 }
 
-/* Global Reset & 12K Clarity */
+/* Global Reset */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    background-color: var(--deep-black);
-    color: #FFFFFF;
-    margin: 0;
-    padding: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    letter-spacing: 0.05em;
+    background-color: var(--black);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* 1. STICKY MENU - Neo-Regal Design */
-header.sticky-header {
-    position: sticky;
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-weight: 300;
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+/* 1. Header & Navigation */
+.main-header {
+    position: fixed;
     top: 0;
     width: 100%;
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px); /* Premium glass effect */
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 6%;
-    z-index: 10000;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 0 5%;
+    background: var(--glass-black);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-nav a {
-    color: #FFFFFF;
+.logo {
+    height: 55px;
+}
+
+.nav-menu a {
+    color: #ffffff;
     text-decoration: none;
     margin-left: 30px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: 0.3s ease;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--solid-gold);
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+.nav-menu a:hover {
+    color: var(--gold);
 }
 
-/* Gold Text Logic (Pure Gold Overlay) */
-.gold-overlay-text {
-    background: var(--pure-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-    text-transform: uppercase;
-    display: inline-block;
-}
-
-/* 2. HERO & SECTIONS */
-.content-section {
-    padding: 100px 10%;
+/* 2. Hero & Content Sections */
+section {
+    padding: 120px 10%;
     text-align: center;
 }
 
-.content-section h1 {
-    font-size: clamp(2rem, 5vw, 4rem); /* Fluid sizing for 12K feel */
-    margin-bottom: 30px;
-}
-
-/* VIDEO MASTER SETTINGS */
-.video-box {
+/* Video Showcase Styles */
+.video-container {
     position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 40px auto;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.9);
     overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 video {
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(0.9) contrast(1.1); /* Cinema color grading */
 }
 
-/* Gold Video Overlay Label */
-.video-label {
+.video-overlay-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    font-size: clamp(1rem, 3vw, 2.5rem);
-    z-index: 10;
+    width: 90%;
     pointer-events: none;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
-/* 3. 360° ROTATION ANIMATION */
-.rotate-360 {
-    width: 100%;
-    max-width: 400px;
-    margin: 40px auto;
+/* 3. 360° Rotation Logic */
+.rotating-360 {
+    width: 350px;
+    height: auto;
+    margin: 50px auto;
     display: block;
-    animation: gold-glow-rotation 15s infinite linear;
+    animation: orbit 20s linear infinite;
+    user-select: none;
 }
 
-@keyframes gold-glow-rotation {
-    from { transform: rotateY(0deg); filter: drop-shadow(0 0 5px var(--solid-gold)); }
-    50% { filter: drop-shadow(0 0 25px var(--solid-gold)); }
-    to { transform: rotateY(360deg); filter: drop-shadow(0 0 5px var(--solid-gold)); }
+@keyframes orbit {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
 }
 
-/* 4. COUNTDOWN DISPLAYS */
+/* 4. Countdown Variations */
 .timer-display {
-    font-size: clamp(1.5rem, 6vw, 4rem);
-    font-weight: 800;
-    margin: 30px 0;
-    letter-spacing: 0.2em;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
 }
 
-.rainbow-text {
-    background: linear-gradient(
-        to right, 
-        #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3
-    );
+.time-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-box span {
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* Countdown 1: Gold */
+.gold-timer span {
+    color: var(--gold);
+    font-size: 4rem;
+}
+
+/* Countdown 3: Rainbow Split */
+.rainbow-timer span {
+    font-size: 7rem;
+    background: linear-gradient(to bottom, var(--rainbow-top) 50%, var(--rainbow-bottom) 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
 }
 
-/* 5. CONTACT & SOCIAL */
+/* Countdown 2: Multi-color */
+.multi-color-timer .red { color: #FF0000; }
+.multi-color-timer .blue { color: #0000FF; }
+.multi-color-timer .yellow { color: #FFFF00; }
+.multi-color-timer .cyan { color: #00FFFF; }
+.multi-color-timer span { font-size: 4rem; }
+
+/* 5. Contact & Social Media */
 #contact a {
-    color: var(--solid-gold);
+    font-size: 2rem;
+    color: var(--gold);
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-bottom: 2px solid var(--solid-gold);
-    padding-bottom: 5px;
-    transition: 0.4s;
+    border-bottom: 1px solid var(--gold);
 }
 
-#contact a:hover {
-    color: #fff;
-    border-color: #fff;
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 0;
 }
 
-.social-icons img {
-    width: 45px;
-    filter: grayscale(1) invert(1);
-    transition: 0.3s;
-    cursor: pointer;
+.social-media-icons img {
+    height: 32px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.social-icons img:hover {
-    filter: grayscale(0) invert(0);
-    transform: scale(1.2);
+.social-media-icons img:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 8px var(--gold));
 }
 
-/* 6. MOBILE RESPONSIVENESS (BLUEPRINT COMPLIANT) */
+/* Footer */
+footer {
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666666;
+    letter-spacing: 1px;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    header.sticky-header {
-        padding: 15px 4%;
-        flex-direction: column;
-    }
-    
-    nav {
-        margin-top: 15px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    nav a {
-        margin: 0 10px;
-        font-size: 0.7rem;
-    }
-
-    .content-section {
-        padding: 50px 5%;
-    }
-
-    .video-label {
-        width: 95%;
-    }
-}
-
-/* 7. GLOBAL SECURITY */
-img, video {
-    user-select: none;
-    -webkit-user-drag: none;
+    .nav-menu { display: none; } /* Consider a mobile burger menu here */
+    .rainbow-timer span { font-size: 3.5rem; }
+    .gold-timer span, .multi-color-timer span { font-size: 2.5rem; }
+    .timer-display { gap: 15px; }
+    section { padding: 80px 5%; }
 }
