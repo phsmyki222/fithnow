@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css"
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;900&display=swap" rel="stylesheet">
     <style>
-        <link rel="stylesheet" href="style.css"
         :root {
             --gold: #D4AF37;
             --black: #050505;
@@ -205,6 +204,7 @@
         <h2>Contact PHRINUSOMYIS</h2>
         <a href="mailto:info@PHRINUSOMYIS.com" class="contact-email">info@PHRINUSOMYIS.com</a>
     </section>
+    <script src="script.js"></script>
 
     <div class="social-row">
         <img src="phrinusomyis_youtube.png" alt="YouTube">
@@ -244,9 +244,9 @@
                 if(document.getElementById(`s${i}`)) document.getElementById(`s${i}`).innerText = displayS;
             }
         }
-        setInterval(updateTimers, 1000);
-        updateTimers();
 
+setInterval(updateTimers, 1000);
+        updateTimers();
         // Security: Prevent drag and right click
         document.addEventListener('contextmenu', e => {
             if (['IMG', 'VIDEO'].includes(e.target.tagName)) e.preventDefault();
