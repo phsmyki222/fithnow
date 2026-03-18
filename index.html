@@ -191,16 +191,10 @@
         <h2 class="power-title">Pure Gold Essence</h2>
         <p>Refined for the world's most powerful individuals.</p>
     </section>
-
-    <section id="contact">
+        <section id="contact">
         <h2 class="power-title">Command Center</h2>
         <a href="mailto:info@PHRINUSOMYIS.com" style="color: var(--gold); font-size: 2rem; text-decoration: none;">info@PHRINUSOMYIS.com</a>
     </section>
-    <section id="contact">
-        <h2 class="power-title">Command Center</h2>
-        <a href="mailto:info@PHRINUSOMYIS.com" style="color: var(--gold); font-size: 2rem; text-decoration: none;">info@PHRINUSOMYIS.com</a>
-    </section>
-
     <div class="social-row" style="display: flex; justify-content: center; gap: 25px; padding: 60px 0; background: rgba(0,0,0,0.5);">
         <a href="#"><img src="phrinusomyis_youtube.png" alt="YouTube" style="height: 35px; filter: drop-shadow(0 0 10px var(--gold));"></a>
         <a href="#"><img src="phrinusomyis_tiktok.png" alt="TikTok" style="height: 35px; filter: drop-shadow(0 0 10px var(--gold));"></a>
@@ -209,25 +203,19 @@
         <a href="#"><img src="phrinusomyis_twitter.png" alt="Twitter" style="height: 35px; filter: drop-shadow(0 0 10px var(--gold));"></a>
     </div>
 
-    <footer style="padding: 50px; opacity: 0.4; font-size: 0.7rem; letter-spacing: 5px;">
-        <center>PHRINUSOMYIS © 2026 | THE POWERFUL IN THE WORLD</center>
-    </footer>
-    <footer style="padding: 50px; opacity: 0.4; font-size: 0.7rem; letter-spacing: 5px;">
-        <center>PHRINUSOMYIS © 2026 | THE POWERFUL IN THE WORLD</center>
+    <footer style="padding: 50px; opacity: 0.4; font-size: 0.7rem; letter-spacing: 5px; text-align: center;">
+        PHRINUSOMYIS © 2026 | THE POWERFUL IN THE WORLD
     </footer>
 
     <script>
         const launchDate = new Date("May 29, 2026 00:00:00").getTime();
-
         function sync() {
             const now = new Date().getTime();
             const gap = launchDate - now;
-
             const d = Math.floor(gap / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
             const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
             const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             const s = Math.floor((gap % (1000 * 60)) / 1000).toString().padStart(2, '0');
-
             for (let i = 1; i <= 3; i++) {
                 if(document.getElementById('d'+i)) document.getElementById('d'+i).innerText = d;
                 if(document.getElementById('h'+i)) document.getElementById('h'+i).innerText = h;
