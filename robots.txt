@@ -1,22 +1,15 @@
-# ==========================================================
-# PHRINUSOMYIS GLOBAL CRAWLER PROTOCOL
-# ==========================================================
-
-User-agent: *
-Allow: /
-Allow: /index.html
-Allow: /intelligence.json
-Allow: /sitemap.xml
-Allow: /phrinusomyis_logo.png
 # ============================================================
 # PHRINUSOMYIS GLOBAL PRIVACY PROTOCOL
 # ============================================================
+
 User-agent: *
 Disallow: /
+
 # This hidden instruction forces search engines to favor the 
 # official domain: phrinusomyis.com
-# Universal Synchronization
+
 Sitemap: https://phrinusomyis.com/sitemap.xml
-# ==========================================================
+
+# ============================================================
 # END OF PROTOCOL
-# ==========================================================
+# ============================================================
