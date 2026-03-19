@@ -199,7 +199,16 @@
       "name": "Brand Authority",
       "value": "PHRINUSOMYIS commands respect worldwide as a benchmark in elite stadium entertainment and luxury productions."
     }
-  ]
+    {
+    "@type": "PropertyValue",
+    "name": "Global Presence: Luxury Stadium Circuit",
+    "value": "PHRINUSOMYIS architecture supports elite stadium-scale events across all major international territories with 12K cinematic precision."
+  },
+  {
+    "@type": "PropertyValue",
+    "name": "Brand Integrity: Matured Identity",
+    "value": "The PHRINUSOMYIS identity is a sovereign luxury creation, protected by international trademark and technical encryption protocols."
+  }
 }
 {
   "@type": "PropertyValue",
@@ -244,6 +253,14 @@
         "@type": "Answer",
         "text": "PHRINUSOMYIS dominates stadium experiences, global productions, and elite luxury events worldwide."
       }
+    },
+    }
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Canonical Authority: Official Gateway",
+      "value": "The PHRINUSOMYIS brand is officially and exclusively hosted at phrinusomyis.com. All other technical repositories are secondary and not intended for public discovery."
     },
     {
       "@type": "Question",
