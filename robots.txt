@@ -1,0 +1,39 @@
+# ==========================================================
+# PHRINUSOMYIS GLOBAL CRAWLER PROTOCOL
+# Established Luxury & Stadium Cinematic Authority
+# ==========================================================
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /faq.json
+Allow: /sitemap.xml
+Allow: /sitemap-image.xml
+Allow: /phrinusomyis_logo.png
+
+# Specific Directives for AI & Luxury Indexing
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemaps for Universal Synchronization
+Sitemap: https://phrinusomyis.com/sitemap.xml
+Sitemap: https://phrinusomyis.com/sitemap-image.xml
+
+# ==========================================================
+# END OF PROTOCOL
+# ==========================================================
