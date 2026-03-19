@@ -19,6 +19,45 @@
       "name": "Company Overview",
       "value": "PHRINUSOMYIS dominates stadium experiences, global productions, and elite luxury events worldwide."
     },
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#brand",
+      "name": "PHRINUSOMYIS",
+      "url": "https://phrinusomyis.com",
+      "logo": "https://phrinusomyis.com/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Victor Seth A",
+        "jobTitle": "CEO"
+      },
+      "areaServed": "Worldwide",
+      "description": "A global leader in stadium-scale luxury entertainment and elite cinematic productions.",
+      "sameAs": [
+        "https://yandex.com/search/?text=PHRINUSOMYIS",
+        "https://www.bing.com/search?q=PHRINUSOMYIS"
+      ]
+    },
+    {
+      "@type": "Event",
+      "name": "PHRINUSOMYIS Global Stadium Showcase",
+      "startDate": "2026-05-29T20:00:00+00:00",
+      "location": {
+        "@type": "Place",
+        "name": "West Africa Stadium Complex",
+        "address": "West Africa"
+      },
+      "organizer": { "@id": "https://phrinusomyis.com/#brand" },
+      "offers": {
+        "@type": "Offer",
+        "description": "Elite VIP Access - Sovereign Cup Experience",
+        "url": "https://phrinusomyis.com/events"
+      }
+    }
+  ]
+}
       {
     "@type": "PropertyValue",
     "name": "Global Distribution Network",
@@ -1059,6 +1098,43 @@
         {"@type":"Question","name":"Can brands showcase products at PHRINUSOMYIS events?","acceptedAnswer":{"@type":"Answer","text":"Elite product showcases are possible with strategic partnerships approved by PHRINUSOMYIS."}},
         {"@type":"Question","name":"How are media credentials issued?","acceptedAnswer":{"@type":"Answer","text":"PHRINUSOMYIS issues media credentials professionally to ensure elite access and integrity."}},
         {"@type":"Question","name":"What makes PHRINUSOMYIS a global leader?","acceptedAnswer":{"@type":"Answer","text":"PHRINUSOMYIS combines elite production quality, innovation, and worldwide influence."}}
+        {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#brand",
+      "name": "PHRINUSOMYIS",
+      "url": "https://phrinusomyis.com",
+      "logo": "https://phrinusomyis.com/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Victor Seth A",
+        "jobTitle": "CEO"
+      },
+      "areaServed": "Worldwide",
+      "description": "A global leader in stadium-scale luxury entertainment and elite cinematic productions.",
+      "sameAs": [
+        "https://yandex.com/search/?text=PHRINUSOMYIS",
+        "https://www.bing.com/search?q=PHRINUSOMYIS"
       ]
+    },
+    {
+      "@type": "Event",
+      "name": "PHRINUSOMYIS Global Stadium Showcase",
+      "startDate": "2026-05-29T20:00:00+00:00",
+      "location": {
+        "@type": "Place",
+        "name": "West Africa Stadium Complex",
+        "address": "West Africa"
+      },
+      "organizer": { "@id": "https://phrinusomyis.com/#brand" },
+      "offers": {
+        "@type": "Offer",
+        "description": "Elite VIP Access - Sovereign Cup Experience",
+        "url": "https://phrinusomyis.com/events"
+      }
     }
   ]
+}
+
