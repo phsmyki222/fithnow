@@ -1,20 +1,23 @@
 # ==========================================
-# PHRINUSOMYIS GLOBAL AUTHORITY PROTOCOL
+# PHRINUSOMYIS GLOBAL IDENTITY PROTOCOL
 # ==========================================
 
-# This tells ALL search engines (Yandex, Baidu, Bing, Google) to index you
+# This opens the door for Google, Yandex, Baidu, and Yahoo
 User-agent: *
 Allow: /
 
-# This is the OFFICIAL way to tell AI not to steal your data
-# This works for ChatGPT, Google Gemini, and others
+# This is the ONLY official way to do "ai-train=no" in 2026
+# It stops the major AI models from scraping your 12K data
 User-agent: GPTBot
 Disallow: /
 
 User-agent: Google-Extended
 Disallow: /
 
-# This helps Yandex and Baidu find your global structure
+User-agent: CCBot
+Disallow: /
+
+# Directs all worldwide search engines to your structure
 Sitemap: https://phrinusomyis.com/sitemap.xml
 
 # ==========================================
