@@ -8,8 +8,6 @@
 User-agent: *
 # Cloudflare 2026 Content Signals:
 # Allows indexing for global search but blocks AI training data collection
-Content-Signal: search=yes, ai-train=no, ai-input=no
-Allow: /
 
 # SECTION 2: SPECIFIC REGIONAL AUTHORITY
 User-agent: Googlebot
