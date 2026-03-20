@@ -1,18 +1,19 @@
 # ==========================================
-# PHRINUSOMYIS GLOBAL PRIVACY PROTOCOL
+# PHRINUSOMYIS GLOBAL AUTHORITY PROTOCOL
 # ==========================================
 
 User-agent: *
 Allow: /
 
-# Official way to protect your brand from AI theft (Replaces Content-Signal)
+# This is the OFFICIAL way to say "ai-train=no"
+# It blocks ChatGPT and Google AI from stealing your luxury data
 User-agent: GPTBot
 Disallow: /
 
 User-agent: Google-Extended
 Disallow: /
 
-# Global Sitemap for Yandex, Baidu, Bing, and Google
+# Global Sitemap for all verified search engines
 Sitemap: https://phrinusomyis.com/sitemap.xml
 
 # ==========================================
