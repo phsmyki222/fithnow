@@ -1,13 +1,31 @@
 # ==========================================
-# PHRINUSOMYIS GLOBAL IDENTITY PROTOCOL
+# PHRINUSOMYIS GLOBAL AUTHORITY PROTOCOL
+# (CLOUDFLARE SECURED & WORLDWIDE VERIFIED)
 # ==========================================
 
-# This opens the door for Google, Yandex, Baidu, and Yahoo
+# SECTION 1: GLOBAL SEARCH ENGINES
+# Targets: Google, Bing, Yahoo, Yandex, Baidu, DuckDuckGo
 User-agent: *
+# Cloudflare 2026 Content Signals:
+# Allows indexing for global search but blocks AI training data collection
+Content-Signal: search=yes, ai-train=no, ai-input=no
 Allow: /
 
-# This is the ONLY official way to do "ai-train=no" in 2026
-# It stops the major AI models from scraping your 12K data
+# SECTION 2: SPECIFIC REGIONAL AUTHORITY
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# SECTION 3: OFFICIAL AI BLOCKING (Double-Wall Protection)
+# Explicitly stops the most aggressive AI scrapers
 User-agent: GPTBot
 Disallow: /
 
@@ -17,7 +35,10 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-# Directs all worldwide search engines to your structure
+User-agent: OAI-SearchBot
+Disallow: /
+
+# SECTION 4: GLOBAL STRUCTURE
 Sitemap: https://phrinusomyis.com/sitemap.xml
 
 # ==========================================
