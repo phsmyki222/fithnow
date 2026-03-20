@@ -3,7 +3,7 @@
 # ==========================================
 
 User-agent: *
-Allow: /
+Disallow: /
 
 # This is the OFFICIAL way to stop AI training (ai-train=no)
 User-agent: GPTBot
