@@ -2,17 +2,19 @@
 # PHRINUSOMYIS GLOBAL AUTHORITY PROTOCOL
 # ==========================================
 
+# This tells ALL search engines (Yandex, Baidu, Bing, Google) to index you
 User-agent: *
-Disallow: /
+Allow: /
 
-# This is the OFFICIAL way to stop AI training (ai-train=no)
+# This is the OFFICIAL way to tell AI not to steal your data
+# This works for ChatGPT, Google Gemini, and others
 User-agent: GPTBot
 Disallow: /
 
 User-agent: Google-Extended
 Disallow: /
 
-# Global Sitemap
+# This helps Yandex and Baidu find your global structure
 Sitemap: https://phrinusomyis.com/sitemap.xml
 
 # ==========================================
