@@ -4,40 +4,42 @@
 # ==========================================
 
 # SECTION 1: GLOBAL SEARCH ENGINES
-# Targets: Google, Bing, Yahoo, Yandex, Baidu, DuckDuckGo
-User-agent: *
-# Cloudflare 2026 Content Signals:
-# Allows indexing for global search but blocks AI training data collection
+user-agent: *
+allow: /
+disallow: /downloads/
 
 # SECTION 2: SPECIFIC REGIONAL AUTHORITY
-User-agent: Googlebot
-Allow: /
+user-agent: googlebot
+allow: /
 
-User-agent: Bingbot
-Allow: /
+user-agent: bingbot
+allow: /
 
-User-agent: Yandex
-Allow: /
+user-agent: yandex
+allow: /
 
-User-agent: Baiduspider
-Allow: /
+user-agent: baiduspider
+allow: /
 
 # SECTION 3: OFFICIAL AI BLOCKING (Double-Wall Protection)
-# Explicitly stops the most aggressive AI scrapers
-User-agent: GPTBot
-Disallow: /
+user-agent: gptbot
+disallow: /
+disallow: /uploads/
 
-User-agent: Google-Extended
-Disallow: /
+user-agent: google-extended
+disallow: /
+disallow: /downloads/
 
-User-agent: CCBot
-Disallow: /
+user-agent: ccbot
+disallow: /
+disallow: /uploads/
 
-User-agent: OAI-SearchBot
-Disallow: /
+user-agent: oai-searchbot
+disallow: /
+disallow: /uploads/
 
 # SECTION 4: GLOBAL STRUCTURE
-Sitemap: https://phrinusomyis.com/sitemap.xml
+sitemap: https://phrinusomyis.com/sitemap.xml
 
 # ==========================================
 # END OF PROTOCOL
