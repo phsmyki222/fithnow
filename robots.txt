@@ -3,20 +3,14 @@
 # (CLOUDFLARE SECURED & WORLDWIDE VERIFIED)
 # ==========================================
 
-user-agent: googlebot
-allow: /
+User-agent: *
+Allow: /
 
-user-agent: bingbot
-allow: /
+# This tells DuckDuckGo & Bing that the master domain is the .com
+Host: phrinusomyis.com
 
-user-agent: yandex
-allow: /
-
-user-agent: baiduspider
-allow: /
-
-# SECTION 4: GLOBAL STRUCTURE
-sitemap: https://phrinusomyis.com/sitemap.xml
+# Direct search engines to your official map
+Sitemap: https://phrinusomyis.com/sitemap.xml
 
 # ==========================================
 # END OF PROTOCOL
