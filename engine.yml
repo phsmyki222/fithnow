@@ -34,4 +34,3 @@ jobs:
           git add intelligence.html
           git commit -m "Strategic Sync: June 27 Showcase Prep [$(date)]" || echo "No changes to commit"
           git push
-
