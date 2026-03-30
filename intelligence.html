@@ -1,293 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PHRINUSOMYIS Intelligence</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
-<style>
-    body {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        background: radial-gradient(circle at top, #0B0B0B, #1A1A1A);
-        color: #FFD700;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-        position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHRINUSOMYIS | Intelligence Registry</title>
 
-    /* Particle Canvas Fullscreen */
-    #particleCanvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-    }
+    <!-- Linked JSON/Python registries -->
+    <link rel="alternate" type="application/json" href="phrinusomyis_intelligence.json">
+    <link rel="alternate" type="text/x-python" href="phrinusomyis_intelligence.py">
 
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 50px;
-        background-color: rgba(0,0,0,0.85);
-        border-bottom: 3px solid #FFD700;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
-    header img {
-        height: 90px;
-        transition: transform 0.3s;
-    }
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #050505;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(212, 175, 55, 0.15);
+            --accent-glow: rgba(212, 175, 55, 0.3);
+            --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+        }
 
-    header img:hover {
-        transform: rotate(-5deg) scale(1.05);
-    }
+        body {
+            background-color: var(--black);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
+            user-select: none;
+        }
 
-    header h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.7rem;
-        letter-spacing: 2px;
-        color: #FFD700;
-        margin: 0;
-        text-shadow: 0 0 10px #FFD700;
-    }
+        /* Disable text selection and context menu */
+        body, html {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-    section {
-        padding: 70px 50px;
-        max-width: 1200px;
-        margin: auto;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 1s forwards;
-    }
+        .cinematic-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #151515 0%, #050505 100%);
+            z-index: -1;
+        }
 
-    section:nth-of-type(1){animation-delay: 0.2s;}
-    section:nth-of-type(2){animation-delay: 0.4s;}
-    section:nth-of-type(3){animation-delay: 0.6s;}
-    section:nth-of-type(4){animation-delay: 0.8s;}
-    section:nth-of-type(5){animation-delay: 1s;}
-    section:nth-of-type(6){animation-delay: 1.2s;}
-    section:nth-of-type(7){animation-delay: 1.4s;}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    @keyframes fadeInUp {
-        to {opacity: 1; transform: translateY(0);}
-    }
+        .brand-seal {
+            width: 160px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 30px var(--accent-glow));
+            transition: transform 1s ease;
+        }
 
-    h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #FFD700;
-        border-left: 6px solid #FFD700;
-        padding-left: 20px;
-        text-shadow: 0 0 15px #FFD700;
-    }
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            letter-spacing: 10px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
 
-    p, li {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #FFF8DC;
-    }
+        .registry-status {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: #888;
+            border-top: 1px solid var(--glass-border);
+            display: inline-block;
+            padding-top: 10px;
+            margin-bottom: 60px;
+        }
 
-    ul {
-        list-style-type: disc;
-        margin-left: 20px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
 
-    .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        margin-top: 30px;
-    }
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            backdrop-filter: blur(25px);
+            position: relative;
+            transition: 0.5s ease;
+        }
 
-    .card {
-        background-color: rgba(255, 215, 0, 0.05);
-        border: 1px solid #FFD700;
-        border-radius: 20px;
-        flex: 1 1 300px;
-        padding: 25px;
-        transition: transform 0.4s, box-shadow 0.4s;
-        backdrop-filter: blur(5px);
-    }
+        .card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+        }
 
-    .card:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
-    }
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
 
-    .card h3 {
-        margin-top: 0;
-        font-family: 'Playfair Display', serif;
-        color: #FFD700;
-        text-shadow: 0 0 10px #FFD700;
-    }
+        .data-point {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 8px;
+        }
 
-    footer {
-        text-align: center;
-        padding: 40px;
-        background-color: rgba(0,0,0,0.9);
-        border-top: 3px solid #FFD700;
-        font-size: 0.95rem;
-        color: #FFD700;
-        text-shadow: 0 0 5px #FFD700;
-    }
+        .label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
+        .value { color: #fff; font-weight: 400; font-size: 0.9rem; }
 
-</style>
+        .narrative-content {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: #bbb;
+            text-align: justify;
+        }
+
+        footer {
+            margin-top: 100px;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            color: #444;
+            text-transform: uppercase;
+        }
+
+        /* Perfume Image Styling */
+        .perfume-img {
+            position: absolute;
+            right: 50px;
+            top: 150px;
+            width: 180px;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+        }
+
+        /* Countdown Styling */
+        #countdown {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        /* Contact Email Styling */
+        .contact-email {
+            position: absolute;
+            left: 30px;
+            top: 150px;
+            font-weight: 700;
+            background: var(--rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1rem;
+        }
+
+        /* CEO Glow */
+        .ceo-name {
+            color: var(--gold);
+            text-shadow: 0 0 15px var(--gold);
+            font-weight: 900;
+        }
+    </style>
 </head>
 <body>
 
-<canvas id="particleCanvas"></canvas>
+<div class="cinematic-bg"></div>
 
-<header>
-    <img src="Phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
-    <h1>PHRINUSOMYIS Intelligence</h1>
-</header>
+<div class="container">
+    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Official Logo" class="brand-seal">
 
-<section>
-    <h2>Institutional Profile</h2>
-    <p><strong>Brand:</strong> PHRINUSOMYIS</p>
-    <p><strong>Founder & CEO:</strong> Victor Seth A</p>
-    <p><strong>Positioning:</strong> Top-tier Luxury & Stadium-Scale Entertainment</p>
-    <p><strong>Mission:</strong> Engineering Legacy Moments through unparalleled luxury and world-stage production.</p>
-    <p><strong>Security Status:</strong> Glass Shield Active</p>
-</section>
+    <h1>Intelligence Registry</h1>
+    <p class="registry-status">Sovereign Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
 
-<section>
-    <h2>Visual Identity</h2>
-    <div class="card-container">
+    <!-- Perfume -->
+    <img src="phrinusomyis_perfume_front.png" alt="Sovereign Perfume" class="perfume-img">
+
+    <!-- Contact Email -->
+    <div class="contact-email">contact@phrinusomyis.com</div>
+
+    <div class="grid">
         <div class="card">
-            <h3>Logo Assets</h3>
-            <ul>
-                <li>Phrinusomyis_logo.png</li>
-                <li>phrinusomyis_logo_360.png</li>
-                <li>Phrinusomyis_logo 1.png</li>
-                <li>Phrinusomyis_logo 2.png</li>
-                <li>Phrinusomyis_logo 3.png</li>
-            </ul>
+            <h3>Institutional Authority</h3>
+            <div class="data-point"><span class="label">Legal Identity</span><span class="value">PHRINUSOMYIS</span></div>
+            <div class="data-point"><span class="label">Chief Executive</span><span class="value">Victor Seth A</span></div>
+            <div class="data-point"><span class="label">Headquarters</span><span class="value">Global Operations</span></div>
+            
+            <div class="narrative-content">
+                The PHRINUSOMYIS institution stands as a premier global authority in the creation and execution of stadium-scale entertainment. Founded by Victor Seth A, the brand is architected to dominate the intersection of elite sporting events and high-fidelity musical productions. This registry serves as a sovereign verification of our institutional reach, ensuring that all digital and physical assets are synchronized under a single, commanding vision of luxury and craftsmanship.
+            </div>
         </div>
-        <div class="card">
-            <h3>Visual Standards</h3>
-            <p>12K Premium Cinematic View</p>
-            <p>Color Palette: Monochromatic Gold on Obsidian</p>
-            <p>Icon Logic: Authoritative Lion (Left) + Sovereign King (Right)</p>
-        </div>
-    </div>
-</section>
 
-<section>
-    <h2>Internationalization</h2>
-    <p><strong>Supported Languages:</strong> English, Chinese, Hindi, Spanish, French, Arabic, Bengali, Portuguese, Russian, Japanese, German, Korean, Turkish, Vietnamese, Greek, Yoruba, Igbo</p>
-    <p><strong>Default Language:</strong> English</p>
-    <p><strong>Active Language Nodes:</strong> 200</p>
-</section>
+        <div class="card">
+            <h3>Technical Infrastructure</h3>
+            <div class="data-point"><span class="label">Visual Fidelity</span><span class="value">12K Premium Cinematic</span></div>
+            <div class="data-point"><span class="label">Security Protocol</span><span class="value">Glass Shield v3.1</span></div>
+            <div class="data-point"><span class="label">Data Logic</span><span class="value">JSON / Python Linked</span></div>
 
-<section>
-    <h2>Global Metrics</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Weekly Impressions</h3>
-            <p>Target: 20M</p>
-        </div>
-        <div class="card">
-            <h3>Monthly Impressions</h3>
-            <p>Target: 80M</p>
-        </div>
-        <div class="card">
-            <h3>Active Markets</h3>
-            <ul>
-                <li>Global</li>
-                <li>West Africa</li>
-                <li>Russia</li>
-                <li>China</li>
-            </ul>
+            <div class="narrative-content">
+                PHRINUSOMYIS utilizes a 12K cinematic resolution framework supported by Glass Shield anti-inspection technology. Proprietary code, cinematic loops, and registry data are synchronized across multiple digital nodes, maintaining exclusive brand protection.
+            </div>
         </div>
     </div>
-</section>
 
-<section>
-    <h2>Sovereign Collection</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Sovereign Cup</h3>
-            <p>Units: 50</p>
-            <p>Specs: Dual-finish matte obsidian, 24K gold plate</p>
-        </div>
-        <div class="card">
-            <h3>Exclusive Perfume</h3>
-            <p>Units: 500</p>
-            <p>Specs: Black glass, gold stopper</p>
-        </div>
-    </div>
-</section>
+    <!-- Countdown -->
+    <div id="countdown"></div>
 
-<section>
-    <h2>Upcoming Global Event</h2>
-    <p><strong>Next Major Event:</strong> 2026-06-26</p>
-    <p><strong>Status:</strong> Confirmed / Real Date</p>
-    <p><strong>System Status:</strong> Synchronized</p>
-</section>
+    <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED & SHIELDED.</footer>
+</div>
 
-<footer>
-    &copy; 2026 PHRINUSOMYIS | All Rights Reserved
-</footer>
+<!-- Hidden Multi-Language JSON -->
+<script type="application/json" id="translations">
+{
+    "en": {"tagline": "Engineering Legacy Moments", "status": "Worldwide Company"},
+    "zh": {"tagline": "工程传奇时刻", "status": "全球性公司"},
+    "hi": {"tagline": "इंजीनियरिंग लेगेसी मोमेंट्स", "status": "विश्वव्यापी कंपनी"},
+    "ar": {"tagline": "هندسة لحظات الإرث", "status": "شركة عالمية"},
+    "ru": {"tagline": "Создание легендарных моментов", "status": "Мировая компания"},
+    "ja": {"tagline": "レガシーな瞬間をエンジニアリングする", "status": "世界的な企業"},
+    "ko": {"tagline": "레거시 모먼트 엔지니어링", "status": "글로벌 기업"},
+    "yo": {"tagline": "Ṣiṣẹ Awọn Akoko Arosọ", "status": "Ilé-iṣẹ Agbaye"},
+    "ig": {"tagline": "Ịrụ Oge Ezigbo Akụkọ", "status": "Ụlọ ọrụ Ụwa"}
+}
+</script>
 
 <script>
-    // Particle Animation
-    const canvas = document.getElementById("particleCanvas");
-    const ctx = canvas.getContext("2d");
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    const particles = [];
-    const particleCount = 100;
-
-    class Particle {
-        constructor() {
-            this.reset();
+    // Disable Developer Tools / Shortcut Keys
+    document.addEventListener('keydown', function(e) {
+        if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key==='I' || e.key==='C' || e.key==='J')) || (e.ctrlKey && e.key==='U')) {
+            e.preventDefault();
+            alert('Developer tools disabled');
         }
-        reset() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.size = Math.random() * 2 + 1;
-            this.speedX = (Math.random() - 0.5) * 0.5;
-            this.speedY = (Math.random() - 0.5) * 0.5;
-            this.alpha = Math.random() * 0.5 + 0.3;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if(this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 215, 0, ${this.alpha})`;
-            ctx.fill();
-        }
-    }
-
-    for(let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        particles.forEach(p => {p.update(); p.draw();});
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener("resize", () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
     });
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Countdown
+    const countdownDate = new Date("June 26, 2026 00:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+        const days = Math.floor(distance / (1000*60*60*24));
+        const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+        const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+        const seconds = Math.floor((distance % (1000*60)) / 1000);
+        countdownElement.innerHTML = `International Debut: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        if(distance < 0) countdownElement.innerHTML = "The Debut Has Arrived!";
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Auto Language Detection
+    const translations = JSON.parse(document.getElementById('translations').textContent);
+    const userLang = navigator.language.slice(0,2);
+    if(translations[userLang]) {
+        // Example: replace registry-status tagline dynamically if needed
+        // document.querySelector('.registry-status').textContent = translations[userLang].status;
+    }
 </script>
 
 </body>
