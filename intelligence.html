@@ -9,72 +9,22 @@
     body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
-        background: #0B0B0B;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-    }
-
-    /* INTRO SCREEN */
-    #intro {
-        position: fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background: radial-gradient(circle at center, #0B0B0B, #000000);
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-direction:column;
-        z-index: 9999;
-        opacity:1;
-        transition: opacity 1s ease;
-    }
-
-    #intro img {
-        width: 180px;
-        height: auto;
-        animation: logoPulse 2s infinite alternate;
-    }
-
-    #intro h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        color: #FFD700;
-        margin-top: 20px;
-        text-shadow: 0 0 20px #FFD700;
-        opacity: 0;
-        animation: textFade 3s forwards;
-        animation-delay: 1s;
-    }
-
-    @keyframes logoPulse {
-        from {transform: scale(1);}
-        to {transform: scale(1.1);}
-    }
-
-    @keyframes textFade {
-        to {opacity:1;}
-    }
-
-    /* PARTICLE CANVAS */
-    #particleCanvas {
-        position: fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        pointer-events:none;
-        z-index:0;
-    }
-
-    /* MAIN PAGE STYLES */
-    #mainContent {
-        display:none;
-        position: relative;
-        z-index: 1;
         background: radial-gradient(circle at top, #0B0B0B, #1A1A1A);
         color: #FFD700;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        position: relative;
+    }
+
+    /* Particle Canvas Fullscreen */
+    #particleCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
     }
 
     header {
@@ -89,18 +39,33 @@
         z-index: 10;
     }
 
-    header img {height: 90px; transition: transform 0.3s;}
-    header img:hover {transform: rotate(-5deg) scale(1.05);}
-    header h1 {font-family: 'Playfair Display', serif; font-size:2.7rem; color:#FFD700; margin:0; text-shadow:0 0 10px #FFD700;}
+    header img {
+        height: 90px;
+        transition: transform 0.3s;
+    }
+
+    header img:hover {
+        transform: rotate(-5deg) scale(1.05);
+    }
+
+    header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.7rem;
+        letter-spacing: 2px;
+        color: #FFD700;
+        margin: 0;
+        text-shadow: 0 0 10px #FFD700;
+    }
 
     section {
-        padding:70px 50px;
-        max-width:1200px;
-        margin:auto;
-        opacity:0;
+        padding: 70px 50px;
+        max-width: 1200px;
+        margin: auto;
+        opacity: 0;
         transform: translateY(30px);
         animation: fadeInUp 1s forwards;
     }
+
     section:nth-of-type(1){animation-delay: 0.2s;}
     section:nth-of-type(2){animation-delay: 0.4s;}
     section:nth-of-type(3){animation-delay: 0.6s;}
@@ -108,34 +73,77 @@
     section:nth-of-type(5){animation-delay: 1s;}
     section:nth-of-type(6){animation-delay: 1.2s;}
     section:nth-of-type(7){animation-delay: 1.4s;}
-    @keyframes fadeInUp { to {opacity:1; transform: translateY(0);} }
 
-    h2 {font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:20px; color:#FFD700; border-left:6px solid #FFD700; padding-left:20px; text-shadow:0 0 15px #FFD700;}
-    p, li {font-size:1rem; line-height:1.6; color:#FFF8DC;}
-    ul {list-style-type: disc; margin-left: 20px;}
+    @keyframes fadeInUp {
+        to {opacity: 1; transform: translateY(0);}
+    }
 
-    .card-container {display:flex; flex-wrap:wrap; gap:25px; margin-top:30px;}
-    .card {background-color: rgba(255,215,0,0.05); border:1px solid #FFD700; border-radius:20px; flex:1 1 300px; padding:25px; transition: transform 0.4s, box-shadow 0.4s; backdrop-filter: blur(5px);}
-    .card:hover {transform:translateY(-15px); box-shadow:0 15px 40px rgba(255,215,0,0.6);}
-    .card h3 {margin-top:0; font-family:'Playfair Display', serif; color:#FFD700; text-shadow:0 0 10px #FFD700;}
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #FFD700;
+        border-left: 6px solid #FFD700;
+        padding-left: 20px;
+        text-shadow: 0 0 15px #FFD700;
+    }
 
-    footer {text-align:center; padding:40px; background-color: rgba(0,0,0,0.9); border-top:3px solid #FFD700; font-size:0.95rem; color:#FFD700; text-shadow:0 0 5px #FFD700;}
+    p, li {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #FFF8DC;
+    }
+
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .card {
+        background-color: rgba(255, 215, 0, 0.05);
+        border: 1px solid #FFD700;
+        border-radius: 20px;
+        flex: 1 1 300px;
+        padding: 25px;
+        transition: transform 0.4s, box-shadow 0.4s;
+        backdrop-filter: blur(5px);
+    }
+
+    .card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+    }
+
+    .card h3 {
+        margin-top: 0;
+        font-family: 'Playfair Display', serif;
+        color: #FFD700;
+        text-shadow: 0 0 10px #FFD700;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px;
+        background-color: rgba(0,0,0,0.9);
+        border-top: 3px solid #FFD700;
+        font-size: 0.95rem;
+        color: #FFD700;
+        text-shadow: 0 0 5px #FFD700;
+    }
 
 </style>
 </head>
 <body>
 
-<!-- INTRO CINEMATIC SCREEN -->
-<div id="intro">
-    <img src="Phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
-    <h1>Engineering Legacy Moments</h1>
-</div>
-
-<!-- PARTICLE CANVAS -->
 <canvas id="particleCanvas"></canvas>
 
-<!-- MAIN CONTENT -->
-<div id="mainContent">
 <header>
     <img src="Phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
     <h1>PHRINUSOMYIS Intelligence</h1>
@@ -228,10 +236,9 @@
 <footer>
     &copy; 2026 PHRINUSOMYIS | All Rights Reserved
 </footer>
-</div>
 
 <script>
-    // PARTICLE ANIMATION
+    // Particle Animation
     const canvas = document.getElementById("particleCanvas");
     const ctx = canvas.getContext("2d");
     let width = canvas.width = window.innerWidth;
@@ -239,24 +246,47 @@
 
     const particles = [];
     const particleCount = 100;
-    class Particle {
-        constructor(){this.reset();}
-        reset(){this.x=Math.random()*width; this.y=Math.random()*height; this.size=Math.random()*2+1; this.speedX=(Math.random()-0.5)*0.5; this.speedY=(Math.random()-0.5)*0.5; this.alpha=Math.random()*0.5+0.3;}
-        update(){this.x+=this.speedX; this.y+=this.speedY; if(this.x<0||this.x>width||this.y<0||this.y>height)this.reset();}
-        draw(){ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fillStyle=`rgba(255,215,0,${this.alpha})`; ctx.fill();}
-    }
-    for(let i=0;i<particleCount;i++){particles.push(new Particle());}
-    function animate(){ctx.clearRect(0,0,width,height); particles.forEach(p=>{p.update(); p.draw();}); requestAnimationFrame(animate);}
-    animate();
-    window.addEventListener("resize",()=>{width=canvas.width=window.innerWidth; height=canvas.height=window.innerHeight;});
 
-    // INTRO SCREEN TIMER
-    window.addEventListener('load', ()=>{
-        setTimeout(()=>{
-            const intro = document.getElementById('intro');
-            intro.style.opacity = 0;
-            setTimeout(()=>{intro.style.display='none'; document.getElementById('mainContent').style.display='block';}, 1000);
-        }, 3500); // 3.5 seconds intro
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+        reset() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.size = Math.random() * 2 + 1;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.speedY = (Math.random() - 0.5) * 0.5;
+            this.alpha = Math.random() * 0.5 + 0.3;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if(this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 215, 0, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for(let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {p.update(); p.draw();});
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
     });
 </script>
 
