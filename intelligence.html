@@ -3,155 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelligence Center | PHRINUSOMYIS</title>
+    <title>Sovereign Intelligence | PHRINUSOMYIS</title>
     
     <link rel="alternate" type="application/json" href="phrinusomyis_intelligence.json">
     <link rel="alternate" type="text/x-python" href="phrinusomyis_intelligence.py">
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --gold: #D4AF37;
             --black: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(212, 175, 55, 0.2);
+            --deep-gray: #111;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(212, 175, 55, 0.15);
         }
 
         body {
             background-color: var(--black);
-            color: white;
+            color: #fff;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
+            line-height: 1.6;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        /* 12K Cinematic Background Effect */
-        .bg-overlay {
+        /* Epic Cinematic Background */
+        .epic-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
             z-index: -1;
         }
 
         .container {
-            max-width: 1200px;
-            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .brand-logo {
-            width: 180px;
-            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-            margin-bottom: 30px;
-            transition: transform 0.5s ease;
-        }
-
-        .brand-logo:hover {
-            transform: scale(1.05);
+        .brand-seal {
+            width: 140px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.4));
+            transition: 0.8s ease;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            letter-spacing: 5px;
+            font-size: 2.8rem;
+            letter-spacing: 8px;
             color: var(--gold);
+            text-transform: uppercase;
             margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            color: #888;
+            margin-bottom: 50px;
             text-transform: uppercase;
         }
 
-        .status-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            border: 1px solid var(--gold);
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            margin-bottom: 50px;
-        }
-
-        /* Intelligence Panels */
-        .grid {
+        /* Data Intelligence Grid */
+        .intel-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            width: 100%;
-        }
-
-        .panel {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 40px;
-            backdrop-filter: blur(10px);
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
             text-align: left;
-            transition: 0.3s;
         }
 
-        .panel:hover {
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.05);
+        .intel-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
         }
 
-        .panel h3 {
+        .intel-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 2px; height: 100%;
+            background: var(--gold);
+        }
+
+        .intel-card h3 {
             font-family: 'Cinzel', serif;
             color: var(--gold);
+            font-size: 1.2rem;
             margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--deep-gray);
+            padding-bottom: 10px;
         }
 
-        .data-line {
-            font-size: 0.9rem;
-            margin: 10px 0;
-            color: #aaa;
+        .intel-body {
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+
+        .data-point {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 5px;
         }
 
-        .value { color: #fff; font-weight: 600; }
+        .label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; }
+        .value { color: #fff; font-weight: 400; }
 
-        .footer-note {
-            margin-top: 60px;
+        .narrative {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #999;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        footer {
+            margin-top: 80px;
             font-size: 0.6rem;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: #444;
-            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
-    <div class="bg-overlay"></div>
 
-    <div class="container">
-        <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS" class="brand-logo">
-        
-        <h1>Intelligence Registry</h1>
-        <div class="status-badge">System Status: Sovereign & Active</div>
+<div class="epic-bg"></div>
 
-        <div class="grid">
-            <div class="panel">
-                <h3>Institutional</h3>
-                <div class="data-line">Entity: <span class="value">PHRINUSOMYIS</span></div>
-                <div class="data-line">Founder: <span class="value">Victor Seth A</span></div>
-                <div class="data-line">Authority: <span class="value">Global / West Africa</span></div>
-            </div>
+<div class="container">
+    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Official Seal" class="brand-seal">
+    
+    <h1>Intelligence Registry</h1>
+    <p class="tagline">Global Production Institution | Victor Seth A</p>
 
-            <div class="panel">
-                <h3>Digital Specs</h3>
-                <div class="data-line">Visual: <span class="value">12K Cinematic</span></div>
-                <div class="data-line">Security: <span class="value">Glass Shield Enabled</span></div>
-                <div class="data-line">Files: <span class="value">JSON / PY Linked</span></div>
-            </div>
-
-            <div class="panel">
-                <h3>Major Event</h3>
-                <div class="data-line">Status: <span class="value">Synchronized</span></div>
-                <div class="data-line">Schedule: <span class="value">Adjusted by Founder</span></div>
-                <div class="data-line">Venue: <span class="value">Stadium Scale</span></div>
+    <div class="intel-grid">
+        <div class="intel-card">
+            <h3>Institutional Authority</h3>
+            <div class="intel-body">
+                <div class="data-point"><span class="label">Legal Entity</span><span class="value">PHRINUSOMYIS</span></div>
+                <div class="data-point"><span class="label">Founder & CEO</span><span class="value">Victor Seth A</span></div>
+                <div class="data-point"><span class="label">Core Domain</span><span class="value">Stadium Production</span></div>
+                <p class="narrative">
+                    Established as a sovereign hallmark of global entertainment, PHRINUSOMYIS commands the intersection of elite sports and music. Under the leadership of Victor Seth A, the institution focuses on stadium-scale broadcast strategies and luxury brand architecture.
+                </p>
             </div>
         </div>
 
-        <p class="footer-note">© 2026 PHRINUSOMYIS. All Intellectual Property Shielded.</p>
+        <div class="intel-card">
+            <h3>Technical High-End Specs</h3>
+            <div class="intel-body">
+                <div class="data-point"><span class="label">Visual Standard</span><span class="value">12K Cinematic Loop</span></div>
+                <div class="data-point"><span class="label">Security Level</span><span class="value">Glass Shield v3.0</span></div>
+                <div class="data-point"><span class="label">Architecture</span><span class="value">AI-Proof Indexing</span></div>
+                <p class="narrative">
+                    Our digital infrastructure is optimized for elite entertainment standards, utilizing 12M high-end style design elements and 12K premium cinematic visuals. The registry is backed by structured JSON and Python intelligence protocols to ensure worldwide search engine dominance.
+                </p>
+            </div>
+        </div>
+
+        <div class="intel-card">
+            <h3>Global Event Intelligence</h3>
+            <div class="intel-body">
+                <div class="data-point"><span class="label">Primary Event</span><span class="value">International Showcase</span></div>
+                <div class="data-point"><span class="label">Host Region</span><span class="value">West Africa Stadium</span></div>
+                <div class="data-point"><span class="label">Registry Status</span><span class="value">Synchronized</span></div>
+                <p class="narrative">
+                    PHRINUSOMYIS is currently synchronizing the global showcase event scheduled for 2026. This production integrates high-impact stadium sport and live musical performances, selecting West Africa as the stage for its world-dominating showcase debut.
+                </p>
+            </div>
+        </div>
     </div>
+
+    <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED.</footer>
+</div>
+
 </body>
 </html>
