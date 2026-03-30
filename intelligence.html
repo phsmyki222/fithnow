@@ -1,188 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Intelligence | PHRINUSOMYIS</title>
-    
-    <link rel="alternate" type="application/json" href="phrinusomyis_intelligence.json">
-    <link rel="alternate" type="text/x-python" href="phrinusomyis_intelligence.py">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #050505;
-            --deep-gray: #111;
-            --glass-bg: rgba(255, 255, 255, 0.02);
-            --glass-border: rgba(212, 175, 55, 0.15);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHRINUSOMYIS Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #0B0B0B;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
 
-        body {
-            background-color: var(--black);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    /* INTRO SCREEN */
+    #intro {
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: radial-gradient(circle at center, #0B0B0B, #000000);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        z-index: 9999;
+        opacity:1;
+        transition: opacity 1s ease;
+    }
 
-        /* Epic Cinematic Background */
-        .epic-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
-            z-index: -1;
-        }
+    #intro img {
+        width: 180px;
+        height: auto;
+        animation: logoPulse 2s infinite alternate;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
+    #intro h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: #FFD700;
+        margin-top: 20px;
+        text-shadow: 0 0 20px #FFD700;
+        opacity: 0;
+        animation: textFade 3s forwards;
+        animation-delay: 1s;
+    }
 
-        .brand-seal {
-            width: 140px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.4));
-            transition: 0.8s ease;
-        }
+    @keyframes logoPulse {
+        from {transform: scale(1);}
+        to {transform: scale(1.1);}
+    }
 
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
-            letter-spacing: 8px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
+    @keyframes textFade {
+        to {opacity:1;}
+    }
 
-        .tagline {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            color: #888;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-        }
+    /* PARTICLE CANVAS */
+    #particleCanvas {
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        pointer-events:none;
+        z-index:0;
+    }
 
-        /* Data Intelligence Grid */
-        .intel-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            text-align: left;
-        }
+    /* MAIN PAGE STYLES */
+    #mainContent {
+        display:none;
+        position: relative;
+        z-index: 1;
+        background: radial-gradient(circle at top, #0B0B0B, #1A1A1A);
+        color: #FFD700;
+    }
 
-        .intel-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 40px;
-            backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-        }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 50px;
+        background-color: rgba(0,0,0,0.85);
+        border-bottom: 3px solid #FFD700;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
 
-        .intel-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 2px; height: 100%;
-            background: var(--gold);
-        }
+    header img {height: 90px; transition: transform 0.3s;}
+    header img:hover {transform: rotate(-5deg) scale(1.05);}
+    header h1 {font-family: 'Playfair Display', serif; font-size:2.7rem; color:#FFD700; margin:0; text-shadow:0 0 10px #FFD700;}
 
-        .intel-card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--deep-gray);
-            padding-bottom: 10px;
-        }
+    section {
+        padding:70px 50px;
+        max-width:1200px;
+        margin:auto;
+        opacity:0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s forwards;
+    }
+    section:nth-of-type(1){animation-delay: 0.2s;}
+    section:nth-of-type(2){animation-delay: 0.4s;}
+    section:nth-of-type(3){animation-delay: 0.6s;}
+    section:nth-of-type(4){animation-delay: 0.8s;}
+    section:nth-of-type(5){animation-delay: 1s;}
+    section:nth-of-type(6){animation-delay: 1.2s;}
+    section:nth-of-type(7){animation-delay: 1.4s;}
+    @keyframes fadeInUp { to {opacity:1; transform: translateY(0);} }
 
-        .intel-body {
-            font-size: 0.85rem;
-            color: #ccc;
-        }
+    h2 {font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:20px; color:#FFD700; border-left:6px solid #FFD700; padding-left:20px; text-shadow:0 0 15px #FFD700;}
+    p, li {font-size:1rem; line-height:1.6; color:#FFF8DC;}
+    ul {list-style-type: disc; margin-left: 20px;}
 
-        .data-point {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 5px;
-        }
+    .card-container {display:flex; flex-wrap:wrap; gap:25px; margin-top:30px;}
+    .card {background-color: rgba(255,215,0,0.05); border:1px solid #FFD700; border-radius:20px; flex:1 1 300px; padding:25px; transition: transform 0.4s, box-shadow 0.4s; backdrop-filter: blur(5px);}
+    .card:hover {transform:translateY(-15px); box-shadow:0 15px 40px rgba(255,215,0,0.6);}
+    .card h3 {margin-top:0; font-family:'Playfair Display', serif; color:#FFD700; text-shadow:0 0 10px #FFD700;}
 
-        .label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; }
-        .value { color: #fff; font-weight: 400; }
+    footer {text-align:center; padding:40px; background-color: rgba(0,0,0,0.9); border-top:3px solid #FFD700; font-size:0.95rem; color:#FFD700; text-shadow:0 0 5px #FFD700;}
 
-        .narrative {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: #999;
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        footer {
-            margin-top: 80px;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            color: #444;
-        }
-    </style>
+</style>
 </head>
 <body>
 
-<div class="epic-bg"></div>
+<!-- INTRO CINEMATIC SCREEN -->
+<div id="intro">
+    <img src="Phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
+    <h1>Engineering Legacy Moments</h1>
+</div>
 
-<div class="container">
-    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Official Seal" class="brand-seal">
-    
-    <h1>Intelligence Registry</h1>
-    <p class="tagline">Global Production Institution | Victor Seth A</p>
+<!-- PARTICLE CANVAS -->
+<canvas id="particleCanvas"></canvas>
 
-    <div class="intel-grid">
-        <div class="intel-card">
-            <h3>Institutional Authority</h3>
-            <div class="intel-body">
-                <div class="data-point"><span class="label">Legal Entity</span><span class="value">PHRINUSOMYIS</span></div>
-                <div class="data-point"><span class="label">Founder & CEO</span><span class="value">Victor Seth A</span></div>
-                <div class="data-point"><span class="label">Core Domain</span><span class="value">Stadium Production</span></div>
-                <p class="narrative">
-                    Established as a sovereign hallmark of global entertainment, PHRINUSOMYIS commands the intersection of elite sports and music. Under the leadership of Victor Seth A, the institution focuses on stadium-scale broadcast strategies and luxury brand architecture.
-                </p>
-            </div>
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+<header>
+    <img src="Phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
+    <h1>PHRINUSOMYIS Intelligence</h1>
+</header>
+
+<section>
+    <h2>Institutional Profile</h2>
+    <p><strong>Brand:</strong> PHRINUSOMYIS</p>
+    <p><strong>Founder & CEO:</strong> Victor Seth A</p>
+    <p><strong>Positioning:</strong> Top-tier Luxury & Stadium-Scale Entertainment</p>
+    <p><strong>Mission:</strong> Engineering Legacy Moments through unparalleled luxury and world-stage production.</p>
+    <p><strong>Security Status:</strong> Glass Shield Active</p>
+</section>
+
+<section>
+    <h2>Visual Identity</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Logo Assets</h3>
+            <ul>
+                <li>Phrinusomyis_logo.png</li>
+                <li>phrinusomyis_logo_360.png</li>
+                <li>Phrinusomyis_logo 1.png</li>
+                <li>Phrinusomyis_logo 2.png</li>
+                <li>Phrinusomyis_logo 3.png</li>
+            </ul>
         </div>
-
-        <div class="intel-card">
-            <h3>Technical High-End Specs</h3>
-            <div class="intel-body">
-                <div class="data-point"><span class="label">Visual Standard</span><span class="value">12K Cinematic Loop</span></div>
-                <div class="data-point"><span class="label">Security Level</span><span class="value">Glass Shield v3.0</span></div>
-                <div class="data-point"><span class="label">Architecture</span><span class="value">AI-Proof Indexing</span></div>
-                <p class="narrative">
-                    Our digital infrastructure is optimized for elite entertainment standards, utilizing 12M high-end style design elements and 12K premium cinematic visuals. The registry is backed by structured JSON and Python intelligence protocols to ensure worldwide search engine dominance.
-                </p>
-            </div>
-        </div>
-
-        <div class="intel-card">
-            <h3>Global Event Intelligence</h3>
-            <div class="intel-body">
-                <div class="data-point"><span class="label">Primary Event</span><span class="value">International Showcase</span></div>
-                <div class="data-point"><span class="label">Host Region</span><span class="value">West Africa Stadium</span></div>
-                <div class="data-point"><span class="label">Registry Status</span><span class="value">Synchronized</span></div>
-                <p class="narrative">
-                    PHRINUSOMYIS is currently synchronizing the global showcase event scheduled for 2026. This production integrates high-impact stadium sport and live musical performances, selecting West Africa as the stage for its world-dominating showcase debut.
-                </p>
-            </div>
+        <div class="card">
+            <h3>Visual Standards</h3>
+            <p>12K Premium Cinematic View</p>
+            <p>Color Palette: Monochromatic Gold on Obsidian</p>
+            <p>Icon Logic: Authoritative Lion (Left) + Sovereign King (Right)</p>
         </div>
     </div>
+</section>
 
-    <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED.</footer>
+<section>
+    <h2>Internationalization</h2>
+    <p><strong>Supported Languages:</strong> English, Chinese, Hindi, Spanish, French, Arabic, Bengali, Portuguese, Russian, Japanese, German, Korean, Turkish, Vietnamese, Greek, Yoruba, Igbo</p>
+    <p><strong>Default Language:</strong> English</p>
+    <p><strong>Active Language Nodes:</strong> 200</p>
+</section>
+
+<section>
+    <h2>Global Metrics</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Weekly Impressions</h3>
+            <p>Target: 20M</p>
+        </div>
+        <div class="card">
+            <h3>Monthly Impressions</h3>
+            <p>Target: 80M</p>
+        </div>
+        <div class="card">
+            <h3>Active Markets</h3>
+            <ul>
+                <li>Global</li>
+                <li>West Africa</li>
+                <li>Russia</li>
+                <li>China</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Sovereign Collection</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Sovereign Cup</h3>
+            <p>Units: 50</p>
+            <p>Specs: Dual-finish matte obsidian, 24K gold plate</p>
+        </div>
+        <div class="card">
+            <h3>Exclusive Perfume</h3>
+            <p>Units: 500</p>
+            <p>Specs: Black glass, gold stopper</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Upcoming Global Event</h2>
+    <p><strong>Next Major Event:</strong> 2026-06-26</p>
+    <p><strong>Status:</strong> Confirmed / Real Date</p>
+    <p><strong>System Status:</strong> Synchronized</p>
+</section>
+
+<footer>
+    &copy; 2026 PHRINUSOMYIS | All Rights Reserved
+</footer>
 </div>
+
+<script>
+    // PARTICLE ANIMATION
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const particles = [];
+    const particleCount = 100;
+    class Particle {
+        constructor(){this.reset();}
+        reset(){this.x=Math.random()*width; this.y=Math.random()*height; this.size=Math.random()*2+1; this.speedX=(Math.random()-0.5)*0.5; this.speedY=(Math.random()-0.5)*0.5; this.alpha=Math.random()*0.5+0.3;}
+        update(){this.x+=this.speedX; this.y+=this.speedY; if(this.x<0||this.x>width||this.y<0||this.y>height)this.reset();}
+        draw(){ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fillStyle=`rgba(255,215,0,${this.alpha})`; ctx.fill();}
+    }
+    for(let i=0;i<particleCount;i++){particles.push(new Particle());}
+    function animate(){ctx.clearRect(0,0,width,height); particles.forEach(p=>{p.update(); p.draw();}); requestAnimationFrame(animate);}
+    animate();
+    window.addEventListener("resize",()=>{width=canvas.width=window.innerWidth; height=canvas.height=window.innerHeight;});
+
+    // INTRO SCREEN TIMER
+    window.addEventListener('load', ()=>{
+        setTimeout(()=>{
+            const intro = document.getElementById('intro');
+            intro.style.opacity = 0;
+            setTimeout(()=>{intro.style.display='none'; document.getElementById('mainContent').style.display='block';}, 1000);
+        }, 3500); // 3.5 seconds intro
+    });
+</script>
 
 </body>
 </html>
