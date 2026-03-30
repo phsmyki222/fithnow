@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHRINUSOMYIS | Intelligence Registry</title>
 
-    <!-- Linked JSON/Python registries -->
     <link rel="alternate" type="application/json" href="phrinusomyis_intelligence.json">
-    <link rel="alternate" type="text/x-python" href="phrinusomyis_intelligence.py">
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -17,27 +15,31 @@
             --black: #050505;
             --glass-bg: rgba(255, 255, 255, 0.02);
             --glass-border: rgba(212, 175, 55, 0.15);
-            --accent-glow: rgba(212, 175, 55, 0.3);
-            --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
         }
 
         body {
             background-color: var(--black);
-            color: #ffffff;
+            color: #fff;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             line-height: 1.8;
             overflow-x: hidden;
-            user-select: none;
         }
 
-        /* Disable text selection and context menu */
-        body, html {
+        /* Disable developer keys */
+        body {
+            -webkit-touch-callout: none;
             -webkit-user-select: none;
+            -khtml-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) return false; // F12
+            if(e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) return false;
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+        };
 
         .cinematic-bg {
             position: fixed;
@@ -51,13 +53,12 @@
             margin: 0 auto;
             padding: 80px 20px;
             text-align: center;
-            position: relative;
         }
 
         .brand-seal {
             width: 160px;
             margin-bottom: 30px;
-            filter: drop-shadow(0 0 30px var(--accent-glow));
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.3));
             transition: transform 1s ease;
         }
 
@@ -68,6 +69,14 @@
             color: var(--gold);
             text-transform: uppercase;
             margin-bottom: 5px;
+        }
+
+        .ceo-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-shadow: 0 0 15px var(--gold);
+            margin-bottom: 40px;
         }
 
         .registry-status {
@@ -128,48 +137,33 @@
             text-align: justify;
         }
 
+        .perfume {
+            width: 120px;
+            float: right;
+            margin-top: -200px;
+            margin-right: 40px;
+        }
+
+        /* 3D Rainbow Countdown */
+        .countdown {
+            position: fixed;
+            top: 20%;
+            left: 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 2px 2px 10px red, 4px 4px 10px orange, 6px 6px 10px yellow, 8px 8px 10px green, 10px 10px 10px blue, 12px 12px 10px indigo, 14px 14px 10px violet;
+            transform: rotateX(15deg) rotateY(-15deg);
+        }
+
         footer {
             margin-top: 100px;
             font-size: 0.6rem;
             letter-spacing: 3px;
             color: #444;
             text-transform: uppercase;
-        }
-
-        /* Perfume Image Styling */
-        .perfume-img {
-            position: absolute;
-            right: 50px;
-            top: 150px;
-            width: 180px;
-            filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
-        }
-
-        /* Countdown Styling */
-        #countdown {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-top: 20px;
-            color: #fff;
-        }
-
-        /* Contact Email Styling */
-        .contact-email {
-            position: absolute;
-            left: 30px;
-            top: 150px;
-            font-weight: 700;
-            background: var(--rainbow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1rem;
-        }
-
-        /* CEO Glow */
-        .ceo-name {
-            color: var(--gold);
-            text-shadow: 0 0 15px var(--gold);
-            font-weight: 900;
+            clear: both;
         }
     </style>
 </head>
@@ -179,15 +173,12 @@
 
 <div class="container">
     <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Official Logo" class="brand-seal">
-
+    
     <h1>Intelligence Registry</h1>
-    <p class="registry-status">Sovereign Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
+    <p class="ceo-name">Founder & CEO: Victor Seth A</p>
+    <p class="registry-status">Sovereign Data Center | International Debut: West Africa 26th June 2026</p>
 
-    <!-- Perfume -->
-    <img src="phrinusomyis_perfume_front.png" alt="Sovereign Perfume" class="perfume-img">
-
-    <!-- Contact Email -->
-    <div class="contact-email">contact@phrinusomyis.com</div>
+    <img src="phrinusomyis_perfume_front.png" alt="PHRINUSOMYIS Exclusive Perfume" class="perfume">
 
     <div class="grid">
         <div class="card">
@@ -197,7 +188,7 @@
             <div class="data-point"><span class="label">Headquarters</span><span class="value">Global Operations</span></div>
             
             <div class="narrative-content">
-                The PHRINUSOMYIS institution stands as a premier global authority in the creation and execution of stadium-scale entertainment. Founded by Victor Seth A, the brand is architected to dominate the intersection of elite sporting events and high-fidelity musical productions. This registry serves as a sovereign verification of our institutional reach, ensuring that all digital and physical assets are synchronized under a single, commanding vision of luxury and craftsmanship.
+                The PHRINUSOMYIS institution stands as a premier global authority in the creation and execution of stadium-scale entertainment. Founded by Victor Seth A, the brand dominates the intersection of elite sporting events and high-fidelity musical productions. This registry serves as a sovereign verification of our institutional reach, ensuring all digital and physical assets are synchronized under a single commanding vision of luxury and craftsmanship.
             </div>
         </div>
 
@@ -205,70 +196,42 @@
             <h3>Technical Infrastructure</h3>
             <div class="data-point"><span class="label">Visual Fidelity</span><span class="value">12K Premium Cinematic</span></div>
             <div class="data-point"><span class="label">Security Protocol</span><span class="value">Glass Shield v3.1</span></div>
-            <div class="data-point"><span class="label">Data Logic</span><span class="value">JSON / Python Linked</span></div>
 
             <div class="narrative-content">
-                PHRINUSOMYIS utilizes a 12K cinematic resolution framework supported by Glass Shield anti-inspection technology. Proprietary code, cinematic loops, and registry data are synchronized across multiple digital nodes, maintaining exclusive brand protection.
+                To maintain a world-class digital presence, PHRINUSOMYIS utilizes a 12K cinematic framework with high-end visual loops. The backend is fortified with Glass Shield technology, ensuring proprietary code and cinematic assets remain exclusive to the brand.
             </div>
         </div>
     </div>
 
-    <!-- Countdown -->
-    <div id="countdown"></div>
-
     <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED & SHIELDED.</footer>
 </div>
 
-<!-- Hidden Multi-Language JSON -->
-<script type="application/json" id="translations">
-{
-    "en": {"tagline": "Engineering Legacy Moments", "status": "Worldwide Company"},
-    "zh": {"tagline": "工程传奇时刻", "status": "全球性公司"},
-    "hi": {"tagline": "इंजीनियरिंग लेगेसी मोमेंट्स", "status": "विश्वव्यापी कंपनी"},
-    "ar": {"tagline": "هندسة لحظات الإرث", "status": "شركة عالمية"},
-    "ru": {"tagline": "Создание легендарных моментов", "status": "Мировая компания"},
-    "ja": {"tagline": "レガシーな瞬間をエンジニアリングする", "status": "世界的な企業"},
-    "ko": {"tagline": "레거시 모먼트 엔지니어링", "status": "글로벌 기업"},
-    "yo": {"tagline": "Ṣiṣẹ Awọn Akoko Arosọ", "status": "Ilé-iṣẹ Agbaye"},
-    "ig": {"tagline": "Ịrụ Oge Ezigbo Akụkọ", "status": "Ụlọ ọrụ Ụwa"}
-}
-</script>
+<div class="countdown" id="countdown"></div>
 
 <script>
-    // Disable Developer Tools / Shortcut Keys
-    document.addEventListener('keydown', function(e) {
-        if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key==='I' || e.key==='C' || e.key==='J')) || (e.ctrlKey && e.key==='U')) {
-            e.preventDefault();
-            alert('Developer tools disabled');
-        }
-    });
-    document.addEventListener('contextmenu', e => e.preventDefault());
-
-    // Countdown
-    const countdownDate = new Date("June 26, 2026 00:00:00").getTime();
-    const countdownElement = document.getElementById("countdown");
+    // Countdown Timer
+    const countdownElement = document.getElementById('countdown');
+    const eventDate = new Date("June 26, 2026 00:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
-        const distance = countdownDate - now;
-        const days = Math.floor(distance / (1000*60*60*24));
-        const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-        const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-        const seconds = Math.floor((distance % (1000*60)) / 1000);
-        countdownElement.innerHTML = `International Debut: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-        if(distance < 0) countdownElement.innerHTML = "The Debut Has Arrived!";
+        const distance = eventDate - now;
+
+        if(distance < 0) {
+            countdownElement.innerHTML = "Event Live!";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
-
-    // Auto Language Detection
-    const translations = JSON.parse(document.getElementById('translations').textContent);
-    const userLang = navigator.language.slice(0,2);
-    if(translations[userLang]) {
-        // Example: replace registry-status tagline dynamically if needed
-        // document.querySelector('.registry-status').textContent = translations[userLang].status;
-    }
 </script>
 
 </body>
