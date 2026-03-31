@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+Block admin or private areas if you create them later
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+Allow important pages
+
+Allow: /
+Allow: /intelligence.html
+Allow: /events.html
+
+Preferred domain (Bing uses this)
+
+Host: https://phrinusomyis.com/
+
+Sitemap
+
+Sitemap: https://phrinusomyis.com/sitemap.xml
