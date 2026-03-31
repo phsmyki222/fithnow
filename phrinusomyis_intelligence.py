@@ -27,7 +27,7 @@ phrinusomyis_registry = {
 ],
 "visual_standard": "12K Premium Cinematic View",
 "color_palette": "Monochromatic Gold on Obsidian",
-"icon_logic": "Authoritative Lion (Left) + Sovereign King (Right)"
+"icon_logic": "Authoritative Lion (Left) + King (Right)"
 },
 "internationalization": {
 "supported_languages": {
@@ -68,9 +68,9 @@ phrinusomyis_registry = {
 "monthly_impressions": "Target: 80M",
 "active_markets": ["Global", "West Africa", "Russia", "China"]
 },
-"sovereign_collection_registry": {
-"sovereign_cup": {"units": 50, "specs": "Dual-finish matte obsidian, 24K gold plate"},
-"exclusive_perfume": {"units": 500, "specs": "Black glass, gold stopper"}
+"PHRINUSOMYIS_collection_registry": {
+"PHRINUSOMYIS_cup": {"units": 50, "specs": "Dual-finish matte obsidian, 24K gold plate"},
+"PHRINUSOMYIS exclusive_perfume": {"units": 500, "specs": "Black glass, gold stopper"}
 },
 "event_registry": {
 "next_major_event": "2026-06-26",
