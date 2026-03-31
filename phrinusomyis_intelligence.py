@@ -84,4 +84,3 @@ Verification Output
 print(f"Registry Synchronized for {phrinusomyis_registry['institutional_profile']['brand_name']}")
 print(f"Next Global Event: {phrinusomyis_registry['event_registry']['next_major_event']}")
 
-Now tell me is there error in this coding
