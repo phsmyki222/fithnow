@@ -83,4 +83,14 @@ Verification Output
 
 print(f"Registry Synchronized for {phrinusomyis_registry['institutional_profile']['brand_name']}")
 print(f"Next Global Event: {phrinusomyis_registry['event_registry']['next_major_event']}")
+# Quick Validation Check
+brand = phrinusomyis_registry['institutional_profile']['brand_name']
+event_date = phrinusomyis_registry['event_registry']['next_major_event']
+languages_count = len(phrinusomyis_registry['internationalization']['supported_languages'])
+
+print(f"--- {brand} SYSTEM CHECK ---")
+print(f"Status: {phrinusomyis_registry['institutional_profile']['security_status']}")
+print(f"Global Reach: {languages_count} Languages Synchronized.")
+print(f"Targeting: {', '.join(phrinusomyis_registry['global_metrics']['active_markets'])}")
+print(f"Countdown to Event: {event_date}")
 
