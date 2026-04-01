@@ -1,11 +1,12 @@
 {
   "updates": [
     {
-      "title": "PHRINUSOMYIS Announces Tatiana Manaois",
+      "title": "PHRINUSOMYIS International Debut",
       "link": "https://www.phrinusomyis.com/news/tatiana-manaois",
-      "description": "PHRINUSOMYIS proudly announces the international debut of Tatiana Manaois in West Africa on June 26, 2026.",
-      "pubDate": "Wed, 01 Apr 2026 12:00:00 +0000",
-      "guid": "tatiana-manaois-2026"
+      "description": "PHRINUSOMYIS proudly announces the international debut of Tatiana Manaois at our West Africa stage.",
+      "pubDate": "Mon, 26 Jun 2026 12:00:00 +0000",
+      "guid": "https://www.phrinusomyis.com/news/tatiana-manaois"
     }
+    // add more updates here
   ]
 }
