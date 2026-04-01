@@ -1,17 +1,20 @@
 # ==========================================
 # PHRINUSOMYIS GLOBAL AUTHORITY PROTOCOL
-# (CLOUDFLARE SECURED & WORLDWIDE VERIFIED)
 # ==========================================
 
 User-agent: *
 Allow: /
 
-# This tells DuckDuckGo & Bing that the master domain is the .com
-Host: phrinusomyis.com
+# Primary Domain
+Host: https://phrinusomyis.com
 
-# Direct search engines to your official map
+# Sitemaps
 Sitemap: https://phrinusomyis.com/sitemap.xml
+Sitemap: https://phrinusomyis.com/rss.xml
+
+# Crawl Delay (optional, prevents server overload)
+Crawl-delay: 10
 
 # ==========================================
-# END OF PROTOCOL
+# END
 # ==========================================
