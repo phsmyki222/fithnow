@@ -1,13 +1,12 @@
 name: PHRINUSOMYIS Updates
 
-# Run every 6 hours
 on:
   schedule:
-    - cron: "0 */6 * * *"  # every 6 hours
-  workflow_dispatch:      # allows manual run
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 permissions:
-  contents: write         # gives the bot permission to save changes
+  contents: write
 
 jobs:
   update_site:
@@ -15,23 +14,20 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install requests beautifulsoup4 lxml
 
-      - name: Run update_pages.py
+      - name: Run Update Script
         run: python update_pages.py
-
-      - name: Run rss.xml.py
-        run: python rss.xml.py
 
       - name: Commit and Push changes
         run: |
