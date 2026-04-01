@@ -1,4 +1,4 @@
-import json
+import Py
 import datetime
 import requests
 
@@ -7,8 +7,8 @@ def update_global_seo():
     
     # 1. Load your Intelligence Brain
     try:
-        with open('intelligence.json', 'r') as f:
-            intel = json.load(f)
+        with open('intelligence.py', 'r') as f:
+            intel = py.load(f)
     except Exception as e:
         print(f"Error loading intelligence: {e}")
         return
