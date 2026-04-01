@@ -1,28 +1,9 @@
 {
   "updates": [
     {
-      "title": "New Artist Signed",
-      "content": "PHRINUSOMYIS welcomes...",
-      "date": "2026-04-01"
-    },
-    {
-      "title": "International Debut in West Africa",
-      "content": "Join us June 26, 2026...",
-      "date": "2026-06-26"
-    },
-    {
       "title": "PHRINUSOMYIS Announces Tatiana Manaois",
       "link": "https://www.phrinusomyis.com/news/tatiana-manaois",
-      "description": "PHRINUSOMYIS proudly announces the international debut of Tatiana Manaois, a world-class singer and performer, at our West Africa stage. Join us for an unforgettable experience with her powerful performance. International Debut: June 26, 2026 (West Africa). Stay tuned for exclusive content, tickets, and behind-the-scenes access.",
-      "image": "images/tatiana-manaois.jpg",
-      "pubDate": "Wed, 01 Apr 2026 12:00:00 +0000",
-      "guid": "tatiana-manaois-2026"
-    },
-    {
-      "title": "PHRINUSOMYIS Announces Tatiana Manaois Live in West Africa",
-      "link": "https://www.phrinusomyis.com/news/tatiana-manaois",
-      "description": "PHRINUSOMYIS proudly announces the international performance of Tatiana Manaois, the globally recognized singer and songwriter, performing live in West Africa. International Debut: June 26, 2026. Visit the official website for tickets, updates, and exclusive content.",
-      "image": "https://www.phrinusomyis.com/images/tatiana-manaois.jpg",
+      "description": "PHRINUSOMYIS proudly announces the international debut of Tatiana Manaois in West Africa on June 26, 2026.",
       "pubDate": "Wed, 01 Apr 2026 12:00:00 +0000",
       "guid": "tatiana-manaois-2026"
     }
