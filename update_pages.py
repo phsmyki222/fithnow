@@ -1,4 +1,4 @@
-import json
+import py
 from datetime import datetime
 import xml.etree.ElementTree as ET
 import os
@@ -28,10 +28,10 @@ html_pages = [
 # Load Data
 # --------------------------
 with open(updates_file, "r", encoding="utf-8") as f:
-    updates = json.load(f).get("updates", [])
+    updates = py.load(f).get("updates", [])
 
 with open(intelligence_file, "r", encoding="utf-8") as f:
-    intelligence_data = json.load(f)
+    intelligence_data = py.load(f)
 seo_keywords = intelligence_data.get("seo_keywords", [])
 
 # --------------------------
