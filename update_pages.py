@@ -1,4 +1,4 @@
-import Py
+import json as py
 from datetime import datetime
 import xml.etree.ElementTree as ET
 import os
@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 updates_file = "phrinusomyis_update.py"
 intelligence_file = "phrinusomyis_intelligence.py"
 rss_file = "rss.xml"
+keywords_file = "phrinusomyis_keywords.json"
 
 html_pages = [
     "index.html",
@@ -25,14 +26,28 @@ html_pages = [
 ]
 
 # --------------------------
-# Load Data
+# Load Data Safely
 # --------------------------
+if not os.path.exists(updates_file):
+    print(f"{updates_file} not found, exiting.")
+    exit()
+
+if not os.path.exists(intelligence_file):
+    print(f"{intelligence_file} not found, exiting.")
+    exit()
+
+if not os.path.exists(keywords_file):
+    print(f"{keywords_file} not found, exiting.")
+    exit()
+
 with open(updates_file, "r", encoding="utf-8") as f:
     updates = py.load(f).get("updates", [])
 
 with open(intelligence_file, "r", encoding="utf-8") as f:
     intelligence_data = py.load(f)
-seo_keywords = intelligence_data.get("seo_keywords", [])
+
+with open(keywords_file, "r", encoding="utf-8") as f:
+    seo_keywords = py.load(f).get("keywords", [])
 
 # --------------------------
 # Generate RSS Feed
@@ -52,7 +67,6 @@ for update in updates:
     ET.SubElement(item, "link").text = update.get("link", "https://www.phrinusomyis.com")
 
     description = update.get("description", "")
-    # Only append International Debut if not already present
     if "International Debut" not in description and "event" in update.get("title", "").lower():
         description += " International Debut: June 26, 2026 (West Africa)"
     ET.SubElement(item, "description").text = description
@@ -65,10 +79,9 @@ ET.ElementTree(rss).write(rss_file, encoding="utf-8", xml_declaration=True)
 print(f"RSS feed generated: {rss_file}")
 
 # --------------------------
-# Update HTML Pages with huge SEO list
+# Update HTML Pages with SEO
 # --------------------------
-# Combine SEO keywords into a single string (even if huge)
-seo_content = ", ".join(seo_keywords)  # supports 20 million+ items, may be very long
+chunk_size = 10000  # Safe chunking for 20M+ keywords
 
 for page in html_pages:
     if not os.path.exists(page):
@@ -78,7 +91,7 @@ for page in html_pages:
     with open(page, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Inject updates into <!--UPDATES-HERE--> placeholder
+    # Inject updates
     updates_html = ""
     for update in updates:
         updates_html += f"<div class='update-item'><h3>{update.get('title')}</h3>"
@@ -86,20 +99,32 @@ for page in html_pages:
         updates_html += f"<span>{update.get('pubDate', '')}</span></div>\n"
     content = content.replace("<!--UPDATES-HERE-->", updates_html)
 
-    # Inject SEO keywords safely using BeautifulSoup
+    # Inject SEO keywords using BeautifulSoup safely
     soup = BeautifulSoup(content, "html.parser")
-    if soup.head:
-        # Remove any existing meta keywords
-        for tag in soup.head.find_all("meta", attrs={"name": "keywords"}):
+    if not soup.head:
+        head_tag = soup.new_tag("head")
+        if soup.html:
+            soup.html.insert(0, head_tag)
+        else:
+            soup.insert(0, head_tag)
+    else:
+        head_tag = soup.head
+
+    # Remove existing meta keywords
+    for tag in head_tag.find_all("meta", attrs={"name": True}):
+        if tag["name"].startswith("keywords"):
             tag.decompose()
-        meta_tag = soup.new_tag("meta", name="keywords", content=seo_content)
-        soup.head.append(meta_tag)
-    content = str(soup)
+
+    # Add SEO keywords in chunks to avoid browser/memory crash
+    for i in range(0, len(seo_keywords), chunk_size):
+        chunk = ", ".join(seo_keywords[i:i+chunk_size])
+        meta_tag = soup.new_tag("meta", name=f"keywords-{i//chunk_size+1}", content=chunk)
+        head_tag.append(meta_tag)
 
     with open(page, "w", encoding="utf-8") as f:
-        f.write(content)
+        f.write(str(soup))
 
-    print(f"{page} updated with latest news and SEO keywords (huge list).")
+    print(f"{page} updated with latest news and SEO keywords.")
 
 # --------------------------
 # Ping Search Engines
