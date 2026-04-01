@@ -1,0 +1,80 @@
+import json
+from datetime import datetime
+from xml.etree.ElementTree import Element, SubElement, tostring, ElementTree
+
+# --- File names ---
+update_file = 'phrinusomyis_update.json'
+html_pages = [
+    'index.html',
+    'article.html', 'articlefull.html',
+    'event.html', 'eventfull.html',
+    'news.html', 'newsfull.html',
+    'intelligence.html',
+    'press.html'
+]
+rss_file = 'rss.xml'
+
+# --- Read update JSON ---
+with open(update_file, 'r', encoding='utf-8') as f:
+    updates = json.load(f)
+
+# --- Example structure of phrinusomyis_update.json ---
+# {
+#   "news": [{"title": "...", "content": "...", "date": "2026-04-01"}],
+#   "events": [{"title": "...", "content": "...", "date": "2026-06-26"}]
+# }
+
+# --- Update HTML pages ---
+for page in html_pages:
+    try:
+        with open(page, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Example: inject latest news and events into placeholder <!-- UPDATES -->
+        updates_html = ""
+        if "news" in updates:
+            for news_item in updates['news']:
+                updates_html += f"<div class='update-news'><h3>{news_item['title']}</h3><p>{news_item['content']}</p></div>\n"
+
+        if "events" in updates:
+            for event_item in updates['events']:
+                updates_html += f"<div class='update-event'><h3>{event_item['title']}</h3><p>{event_item['content']}</p></div>\n"
+
+        content = content.replace("<!-- UPDATES -->", updates_html)
+
+        with open(page, 'w', encoding='utf-8') as f:
+            f.write(content)
+
+        print(f"[✔] Updated {page}")
+    except Exception as e:
+        print(f"[✖] Error updating {page}: {e}")
+
+# --- Generate RSS ---
+rss = Element('rss', version="2.0")
+channel = SubElement(rss, 'channel')
+title = SubElement(channel, 'title')
+title.text = "PHRINUSOMYIS Updates"
+link = SubElement(channel, 'link')
+link.text = "https://phrinusomyis.com"
+description = SubElement(channel, 'description')
+description.text = "Latest news and events from PHRINUSOMYIS."
+
+# Add news and events to RSS
+for item_list in ['news', 'events']:
+    if item_list in updates:
+        for item in updates[item_list]:
+            rss_item = SubElement(channel, 'item')
+            rss_title = SubElement(rss_item, 'title')
+            rss_title.text = item['title']
+            rss_description = SubElement(rss_item, 'description')
+            rss_description.text = item['content']
+            rss_pubDate = SubElement(rss_item, 'pubDate')
+            rss_pubDate.text = datetime.strptime(item['date'], '%Y-%m-%d').strftime('%a, %d %b %Y 00:00:00 +0000')
+
+# Save RSS
+tree = ElementTree(rss)
+tree.write(rss_file, encoding='utf-8', xml_declaration=True)
+print(f"[✔] RSS updated: {rss_file}")
+
+# --- Done ---
+print("[✔] All updates complete!")
