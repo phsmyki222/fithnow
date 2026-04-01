@@ -40,25 +40,14 @@
       "ig": { "639-1": "ig", "639-2": "ibo", "name": "Igbo" }
     },
     "active_language_nodes": 200,
-    "default_language": "en",
-    "translations": {
-      "en": { "tagline": "Engineering Legacy Moments", "status": "Worldwide Company" },
-      "zh": { "tagline": "工程传奇时刻", "status": "全球性公司" },
-      "hi": { "tagline": "इंजीनियरिंग लेगेसी मोमेंट्स", "status": "विश्वव्यापी कंपनी" },
-      "ar": { "tagline": "هندسة لحظات الإرث", "status": "شركة عالمية" },
-      "ru": { "tagline": "Создание легендарных моментов", "status": "Мировая компания" },
-      "ja": { "tagline": "レガシーな瞬間をエンジニアリングする", "status": "世界的な企業" },
-      "ko": { "tagline": "레거시 모먼트 엔지니어링", "status": "글로벌 기업" },
-      "yo": { "tagline": "Ṣiṣẹ Awọn Akoko Arosọ", "status": "Ilé-iṣẹ Agbaye" },
-      "ig": { "tagline": "Ịrụ Oge Ezigbo Akụkọ", "status": "Ụlọ ọrụ Ụwa" }
-    }
+    "default_language": "en"
   },
   "global_metrics": {
     "weekly_impressions": "Target: 20M",
     "monthly_impressions": "Target: 80M",
     "active_markets": ["Global", "West Africa", "Russia", "China"]
   },
-  " PHRINUSOMYIS_collection_registry": {
+  "PHRINUSOMYIS_collection_registry": {
     "PHRINUSOMYIS_cup": { "units": 50, "specs": "Dual-finish matte obsidian, 24K gold plate" },
     "exclusive_perfume": { "units": 500, "specs": "Black glass, gold stopper" }
   },
@@ -66,6 +55,14 @@
     "next_major_event": "2026-06-26",
     "status": "Confirmed / Real Date",
     "system_status": "Synchronized"
-  }
+  },
+  "seo_keywords": [
+    "PHRINUSOMYIS",
+    "Luxury Entertainment",
+    "Stadium-Scale Events",
+    "West Africa Events 2026",
+    "12K Cinematic Visuals",
+    "Global Luxury Brand",
+    "Victor Seth A"
+  ]
 }
-
