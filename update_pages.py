@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 # --------------------------
 # File Paths
 # --------------------------
-updates_file = "phrinusomyis_update.json"
+updates_file = "phrinusomyis_update.py"
 intelligence_file = "phrinusomyis_intelligence.py"
 rss_file = "rss.xml"
 
