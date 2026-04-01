@@ -199,30 +199,31 @@
 "active_markets": ["Global", "West Africa", "Russia", "China"]
 },
 "PHRINUSOMYIS_collection_registry": {
-"PHRINUSOMYIS_cup": {"units": 50, "specs": "Dual-finish matte obsidian, 24K gold plate"},
-"PHRINUSOMYIS_exclusive_perfume": {"units": 500, "specs": "Black glass, gold stopper"}
-},
-"event_registry": {
-"next_major_event": "2026-06-26",
-"status": "Confirmed / Real Date",
-"system_status": "Synchronized"
-},
-"seo_registry": {
-"meta_title": "PHRINUSOMYIS - Engineering Legacy Moments Worldwide",
-"meta_description": "Experience luxury stadium-scale events with PHRINUSOMYIS. Join us for the next global event on 2026-06-26.",
-"keywords": ["PHRINUSOMYIS", "Luxury Entertainment", "Global Events", "Stadium Show", "Legacy Moments"],
-"open_graph": {
-"og_title": "PHRINUSOMYIS Global Events",
-"og_description": "Top-tier luxury and world-stage productions engineered to perfection.",
-"og_image": "https://example.com/assets/Phrinusomyis_logo.png"
-},
-"twitter_card": {
-"card_type": "summary_large_image",
-"title": "PHRINUSOMYIS - Engineering Legacy Moments",
-"description": "Luxury and world-stage entertainment like never before.",
-"image": "https://example.com/assets/Phrinusomyis_logo_360.png"
-},
-"sitemap_priority": 1.0,
-"sitemap_changefreq": "weekly"
-}
+      "PHRINUSOMYIS_cup": {"units": 50, "specs": "Dual-finish matte obsidian, 24K gold plate"},
+      "PHRINUSOMYIS_exclusive_perfume": {"units": 500, "specs": "Black glass, gold stopper"}
+    },
+    "event_registry": {
+      "next_major_event": "2026-06-26",
+      "status": "Confirmed / Real Date",
+      "system_status": "Synchronized"
+    },
+    "seo_registry": {
+      "meta_title": "PHRINUSOMYIS - Engineering Legacy Moments Worldwide",
+      "meta_description": "Experience luxury stadium-scale events with PHRINUSOMYIS. Join us for the next global event on 2026-06-26.",
+      "keywords": ["PHRINUSOMYIS", "Luxury Entertainment", "Global Events", "Stadium Show", "Legacy Moments"],
+      "open_graph": {
+        "og_title": "PHRINUSOMYIS Global Events",
+        "og_description": "Top-tier luxury and world-stage productions engineered to perfection.",
+        "og_image": "https://www.phrinusomyis.com/assets/Phrinusomyis_logo.png"
+      },
+      "twitter_card": {
+        "card_type": "summary_large_image",
+        "title": "PHRINUSOMYIS - Engineering Legacy Moments",
+        "description": "Luxury and world-stage entertainment like never before.",
+        "image": "https://www.phrinusomyis.com/assets/phrinusomyis_logo_360.png"
+      },
+      "sitemap_priority": 1.0,
+      "sitemap_changefreq": "weekly"
+    }
   }
+}
