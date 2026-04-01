@@ -1,14 +1,14 @@
-import json
+import py
 from datetime import datetime
 import xml.etree.ElementTree as ET
 
 # File paths
-updates_file = "phrinusomyis_update.json"
+updates_file = "phrinusomyis_update.py"
 rss_file = "rss.xml"
 
 # Load updates
 with open(updates_file, "r", encoding="utf-8") as f:
-    updates = json.load(f)
+    updates = py.load(f)
 
 # Create root RSS element
 rss = ET.Element("rss", version="2.0")
@@ -34,7 +34,7 @@ for update in updates.get("updates", []):
     
     ET.SubElement(item, "description").text = description
     
-    # Use the date provided in JSON, otherwise default to now
+    # Use the date provided in PY, otherwise default to now
     pub_date = update.get("pubDate")
     if not pub_date:
         pub_date = datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
