@@ -1,20 +1,23 @@
-<!DOCTYPE html><html lang="en">  <head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>PHRINUSOMYIS | News & Registry</title><!-- Fonts --><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet"><style>  
-:root {  
-  --gold: #D4AF37;  
-  --black: #050505;  
-  --glass-bg: rgba(255,255,255,0.02);  
-  --glass-border: rgba(212,175,55,0.15);  
-  --accent-glow: rgba(212,175,55,0.3);  
-  --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);  
-}  
-* {box-sizing:border-box;margin:0;padding:0;}  
-body {background-color: var(--black);color:#fff;font-family:'Montserrat',sans-serif;line-height:1.8;overflow-x:hidden;user-select:none;}  
-a {color:inherit;text-decoration:none;cursor:pointer;}  
-.cinematic-bg {position:fixed;top:0;left:0;width:100%;height:100%;background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);z-index:-1;}  
-.container {max-width:1200px;margin:0 auto;padding:60px 20px;text-align:center;position:relative;}  /* Menu */
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHRINUSOMYIS | News & Registry</title><!-- Fonts --><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet"><style>
+:root {
+  --gold: #D4AF37;
+  --black: #050505;
+  --glass-bg: rgba(255,255,255,0.02);
+  --glass-border: rgba(212,175,55,0.15);
+  --accent-glow: rgba(212,175,55,0.3);
+  --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
+* {box-sizing:border-box;margin:0;padding:0;}
+body {background-color: var(--black);color:#fff;font-family:'Montserrat',sans-serif;line-height:1.8;overflow-x:hidden;user-select:none;}
+a {color:inherit;text-decoration:none;cursor:pointer;}
+.cinematic-bg {position:fixed;top:0;left:0;width:100%;height:100%;background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);z-index:-1;}
+.container {max-width:1200px;margin:0 auto;padding:60px 20px;text-align:center;position:relative;}
+
+/* Menu */
 nav {display:flex;justify-content:center;gap:30px;margin-bottom:50px;flex-wrap:wrap;}
 nav a {color:var(--gold);font-family:'Cinzel',serif;font-weight:700;padding:10px 20px;border-radius:8px;border:1px solid var(--glass-border);transition:0.3s;}
 nav a:hover {background:var(--gold);color:var(--black);}
@@ -52,48 +55,49 @@ footer {margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);t
 /* Responsive */
 @media(max-width:768px){nav a{padding:8px 15px;font-size:0.85rem;}}
 </style></head>
+<body><div class="cinematic-bg"></div>
+<div class="container"><nav>
+<a onclick="scrollToSection('home')">Home</a>
+<a onclick="scrollToSection('press')">Press/Media</a>
+<a onclick="scrollToSection('events')">Events</a>
+<a onclick="scrollToSection('sponsor')">Sponsor/Partnership</a>
+</nav><img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
+<h1>News & Registry</h1>
+<p class="registry-status">Phrinusomyis Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
+<p class="tagline"></p>
+<div class="contact-email">contact@phrinusomyis.com</div><div class="live-clock">
+<div class="time-box"><div class="number" id="month"></div><div class="label">Month</div></div>
+<div class="time-box"><div class="number" id="day"></div><div class="label">Day</div></div>
+<div class="time-box"><div class="number" id="year"></div><div class="label">Year</div></div>
+<div class="time-box"><div class="number" id="hours"></div><div class="label">Hours</div></div>
+<div class="time-box"><div class="number" id="minutes"></div><div class="label">Minutes</div></div>
+<div class="time-box"><div class="number" id="seconds"></div><div class="label">Seconds</div></div>
+</div><div id="countdown-3d"></div><div class="news-grid" id="home">
+<div class="news-card"><h3>Global Expansion</h3><p>PHRINUSOMYIS is expanding its presence in West Africa, bringing next-level stadium-scale productions and unmatched luxury experiences. Stay tuned for our upcoming international debut.</p></div>
+<div class="news-card"><h3>Innovative Technology</h3><p>We leverage 12K cinematic quality, Glass Shield security protocols, and synchronized multi-language intelligence to deliver world-class immersive experiences to audiences globally.</p></div>
+<div class="news-card" id="press"><h3>Partner Announcements</h3><p>Elite sponsors and partners collaborate with PHRINUSOMYIS to ensure every event is executed with precision, style, and luxury, enhancing the audience experience and brand prestige.</p></div>
+<div class="news-card" id="events"><h3>Upcoming Highlights</h3><p>Major international events, news updates, and press releases will be posted here. Subscribers will get early access to insights and exclusive behind-the-scenes coverage.</p></div>
+<div class="news-card" id="sponsor"><h3>Latest News</h3><p>The institution continues to set unprecedented standards in luxury and cinematic events. Audiences can expect immersive, world-class productions as PHRINUSOMYIS announces its June 26 International Debut in West Africa.</p></div>
+<div class="registry-card"><h3>Press Highlights</h3><p>Our press releases and news registry are curated for global audiences. Journalists and media professionals can explore verified data, ensuring authenticity and integrity for reporting.</p></div>
+</div><footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED & SHIELDED.</footer>
+</div><script type="application/json" id="translations" style="display:none">
+{
+"en":{"tagline":"Engineering Legacy Moments","status":"Worldwide Company"},
+"ru":{"tagline":"Создание легендарных моментов","status":"Мировая компания"},
+"zh":{"tagline":"工程传奇时刻","status":"全球性公司"},
+"hi":{"tagline":"इंजीनियरिंग लेगेसी मोमेंट्स","status":"विश्वव्यापी कंपनी"},
+"ar":{"tagline":"هندسة لحظات الإرث","status":"شركة عالمية"},
+"ja":{"tagline":"レガシーな瞬間をエンジニアリングする","status":"世界的な企業"},
+"ko":{"tagline":"레거시 모먼트 엔지니어링","status":"글로벌 기업"},
+"yo":{"tagline":"Ṣiṣẹ Awọn Akoko Arosọ","status":"Ilé-iṣẹ Agbaye"},
+"ig":{"tagline":"Ịrụ Oge Ezigbo Akụkọ","status":"Ụlọ ọrụ Ụwa"}
+}
+</script><script>
+// Disable Dev Tools & Right-click
+document.addEventListener('keydown', e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='C'||e.key==='J'))||(e.ctrlKey&&e.key==='U')){e.preventDefault();alert('Developer tools disabled');}});
+document.addEventListener('contextmenu', e=>e.preventDefault());
 
-<body><div class="cinematic-bg"></div>  
-<div class="container"><nav>  
-<a onclick="scrollToSection('home')">Home</a>  
-<a onclick="scrollToSection('press')">Press/Media</a>  
-<a onclick="scrollToSection('events')">Events</a>  
-<a onclick="scrollToSection('sponsor')">Sponsor/Partnership</a>  
-</nav><img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">  
-<h1>News & Registry</h1>  
-<p class="registry-status">Phrinusomyis Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>  
-<p class="tagline"></p>  
-<div class="contact-email">contact@phrinusomyis.com</div><div class="live-clock">  
-<div class="time-box"><div class="number" id="month"></div><div class="label">Month</div></div>  
-<div class="time-box"><div class="number" id="day"></div><div class="label">Day</div></div>  
-<div class="time-box"><div class="number" id="year"></div><div class="label">Year</div></div>  
-<div class="time-box"><div class="number" id="hours"></div><div class="label">Hours</div></div>  
-<div class="time-box"><div class="number" id="minutes"></div><div class="label">Minutes</div></div>  
-<div class="time-box"><div class="number" id="seconds"></div><div class="label">Seconds</div></div>  
-</div><div id="countdown-3d"></div><div class="news-grid" id="home">  
-<div class="news-card"><h3>Global Expansion</h3><p>PHRINUSOMYIS is expanding its presence in West Africa, bringing next-level stadium-scale productions and unmatched luxury experiences. Stay tuned for our upcoming international debut.</p></div>  
-<div class="news-card"><h3>Innovative Technology</h3><p>We leverage 12K cinematic quality, Glass Shield security protocols, and synchronized multi-language intelligence to deliver world-class immersive experiences to audiences globally.</p></div>  
-<div class="news-card" id="press"><h3>Partner Announcements</h3><p>Elite sponsors and partners collaborate with PHRINUSOMYIS to ensure every event is executed with precision, style, and luxury, enhancing the audience experience and brand prestige.</p></div>  
-<div class="news-card" id="events"><h3>Upcoming Highlights</h3><p>Major international events, news updates, and press releases will be posted here. Subscribers will get early access to insights and exclusive behind-the-scenes coverage.</p></div>  
-<div class="news-card" id="sponsor"><h3>Latest News</h3><p>The institution continues to set unprecedented standards in luxury and cinematic events. Audiences can expect immersive, world-class productions as PHRINUSOMYIS announces its June 26 International Debut in West Africa.</p></div>  
-<div class="registry-card"><h3>Press Highlights</h3><p>Our press releases and news registry are curated for global audiences. Journalists and media professionals can explore verified data, ensuring authenticity and integrity for reporting.</p></div>  
-</div><footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED & SHIELDED.</footer>  
-</div><script type="application/json" id="translations" style="display:none">  
-{  
-"en":{"tagline":"Engineering Legacy Moments","status":"Worldwide Company"},  
-"ru":{"tagline":"Создание легендарных моментов","status":"Мировая компания"},  
-"zh":{"tagline":"工程传奇时刻","status":"全球性公司"},  
-"hi":{"tagline":"इंजीनियरिंग लेगेसी मोमेंट्स","status":"विश्वव्यापी कंपनी"},  
-"ar":{"tagline":"هندسة لحظات الإرث","status":"شركة عالمية"},  
-"ja":{"tagline":"レガシーな瞬間をエンジニアリングする","status":"世界的な企業"},  
-"ko":{"tagline":"레거시 모먼트 엔지니어링","status":"글로벌 기업"},  
-"yo":{"tagline":"Ṣiṣẹ Awọn Akoko Arosọ","status":"Ilé-iṣẹ Agbaye"},  
-"ig":{"tagline":"Ịrụ Oge Ezigbo Akụkọ","status":"Ụlọ ọrụ Ụwa"}  
-}  
-</script><script>  
-// Disable Dev Tools & Right-click  
-document.addEventListener('keydown', e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='C'||e.key==='J'))||(e.ctrlKey&&e.key==='U')){e.preventDefault();alert('Developer tools disabled');}});  
-document.addEventListener('contextmenu', e=>e.preventDefault());  // Smooth scroll
+// Smooth scroll
 function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}
 
 // Live clock
@@ -101,7 +105,7 @@ function updateClock(){const now=new Date();const months=["Jan","Feb","Mar","Apr
 setInterval(updateClock,1000);updateClock();
 
 // Countdown
-const countdownDate=new Date("June 26, 2026 00:00:00").getTime();const countdownEl=document.getElementById("countdown-3d");function updateCountdown(){const now=new Date().getTime();const dist=countdownDate-now;if(dist>0){const d=Math.floor(dist/(1000606024));const h=Math.floor((dist%(1000606024))/(10006060));const m=Math.floor((dist%(10006060))/(100060));const s=Math.floor((dist%(100060))/1000);countdownEl.innerText=International Debut: ${d}d ${h}h ${m}m ${s}s; } else {countdownEl.innerText="The Debut Has Arrived!";}}
+const countdownDate=new Date("June 26, 2026 00:00:00").getTime();const countdownEl=document.getElementById("countdown-3d");function updateCountdown(){const now=new Date().getTime();const dist=countdownDate-now;if(dist>0){const d=Math.floor(dist/(1000*60*60*24));const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));const m=Math.floor((dist%(1000*60*60))/(1000*60));const s=Math.floor((dist%(1000*60))/1000);countdownEl.innerText=`International Debut: ${d}d ${h}h ${m}m ${s}s`; } else {countdownEl.innerText="The Debut Has Arrived!";}}
 setInterval(updateCountdown,1000);updateCountdown();
 
 // Multilingual
@@ -114,10 +118,8 @@ document.querySelector(".registry-status").innerText+=" | "+langData.status;
 // Animate cards on scroll
 const cards = document.querySelectorAll('.news-card, .registry-card');
 const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}});
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}});
 },{threshold:0.2});
 cards.forEach(card=>observer.observe(card));
 </script></body>
-
-</html>  Yes that is a full HtMI so make the adjustment and let do this once and for all
-Am ready ok
+</html>
