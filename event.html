@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | Event</title>
+    <title>PHRINUSOMYIS | News & Registry</title>
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
@@ -42,8 +43,27 @@
             position: relative;
         }
 
+        /* Menu */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: var(--gold);
+        }
+
         .brand-seal {
-            width: 150px;
+            width: 160px;
             margin-bottom: 20px;
             filter: drop-shadow(0 0 30px var(--accent-glow));
         }
@@ -54,200 +74,287 @@
             letter-spacing: 8px;
             color: var(--gold);
             text-transform: uppercase;
-            margin-bottom: 10px;
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PHRINUSOMYIS | Luxury Time & Menu</title>
+            margin-bottom: 5px;
+        }
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+        .registry-status, .tagline {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: #888;
+            border-top: 1px solid var(--glass-border);
+            display: inline-block;
+            padding-top: 10px;
+            margin-bottom: 50px;
+        }
 
-<style>
-:root {
-    --gold: #D4AF37;
-    --black: #050505;
-    --glass-bg: rgba(0,0,0,0.3);
-    --glass-border: rgba(212, 175, 55, 0.2);
-    --accent-glow: rgba(212,175,55,0.3);
-}
+        .contact-email {
+            position: absolute;
+            left: 30px;
+            top: 130px;
+            font-weight: 700;
+            background: var(--rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1rem;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--black);
-    color: #fff;
-    overflow-x: hidden;
-}
+        .ceo-name {
+            color: var(--gold);
+            text-shadow: 0 0 15px var(--gold);
+            font-weight: 900;
+        }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    flex-wrap: wrap;
-}
+        /* 3D Countdown Box */
+        #countdown-3d {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin: 40px auto;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow:
+                1px 1px 2 #000,
+                2px 2px 5 #111,
+                3px 3px 10 #222;
+            display: inline-block;
+            padding: 20px 40px;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            perspective: 1000px;
+            animation: rainbowSpin 5s linear infinite;
+        }
 
-.logo {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    color: var(--gold);
-    font-weight: 900;
-    text-transform: uppercase;
-}
+        @keyframes rainbowSpin {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            25% { transform: rotateX(15deg) rotateY(15deg); }
+            50% { transform: rotateX(0deg) rotateY(30deg); }
+            75% { transform: rotateX(-15deg) rotateY(15deg); }
+            100% { transform: rotateX(0deg) rotateY(0deg); }
+        }
 
-nav {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+        /* Modular live clock */
+        .live-clock {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .time-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(25px);
+            padding: 25px 20px;
+            border-radius: 12px;
+            min-width: 80px;
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            text-align: center;
+        }
+        .time-box .number {
+            font-size: 1.6rem;
+            font-weight: 900;
+        }
+        .time-box .label {
+            font-size: 0.7rem;
+            color: #ccc;
+            margin-top: 5px;
+        }
 
-nav a {
-    text-decoration: none;
-    font-weight: 700;
-    color: #fff;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    position: relative;
-    transition: 0.3s ease;
-}
+        /* News grid */
+        .news-grid, .registry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            text-align: left;
+        }
 
-nav a:hover {
-    color: var(--gold);
-}
+        .news-card, .registry-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 35px;
+            backdrop-filter: blur(20px);
+            transition: 0.5s ease;
+        }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--gold);
-    transition: 0.3s ease;
-}
+        .news-card:hover, .registry-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+        }
 
-nav a:hover::after {
-    width: 100%;
-}
+        .news-card h3, .registry-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+        }
 
-.clock-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 50px 0;
-}
+        .news-card p, .registry-card p {
+            color: #ccc;
+            font-size: 0.85rem;
+            text-align: justify;
+        }
 
-.clock-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(15px);
-    border-radius: 12px;
-    padding: 20px 25px;
-    min-width: 80px;
-    text-align: center;
-    transition: 0.3s ease;
-}
+        .data-point {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 8px;
+        }
 
-.clock-card:hover {
-    box-shadow: 0 0 20px var(--accent-glow);
-    border-color: var(--gold);
-}
+        .label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
+        .value { color: #fff; font-weight: 400; font-size: 0.9rem; }
 
-.clock-card .number {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--gold);
-}
+        footer {
+            margin-top: 100px;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            color: #444;
+            text-transform: uppercase;
+        }
 
-.clock-card .label {
-    font-size: 0.7rem;
-    color: #ccc;
-    margin-top: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-@media (max-width: 768px) {
-    header {
-        justify-content: center;
-        gap: 20px;
-    }
-    .clock-container {
-        gap: 10px;
-        margin: 30px 0;
-    }
-}
-</style>
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">PHRINUSOMYIS</div>
+<div class="cinematic-bg"></div>
+
+<div class="container">
+
+    <!-- Menu -->
     <nav>
         <a href="https://phrinusomyis.com" target="_blank">Home</a>
         <a href="https://phrinusomyis.com/press" target="_blank">Press/Media</a>
         <a href="https://phrinusomyis.com/events" target="_blank">Events</a>
-        <a href="https://phrinusomyis.com/partnership" target="_blank">Sponsor/Partnership</a>
+        <a href="https://phrinusomyis.com/sponsor" target="_blank">Sponsor/Partnership</a>
     </nav>
-</header>
 
-<div class="clock-container">
-    <div class="clock-card">
-        <div class="number" id="month">May</div>
-        <div class="label">Month</div>
+    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
+
+    <h1>News & Registry</h1>
+    <p class="registry-status">Phrinusomyis Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
+    <p class="tagline"></p>
+    <div class="contact-email">contact@phrinusomyis.com</div>
+
+    <!-- Modular live clock -->
+    <div class="live-clock">
+        <div class="time-box"><div class="number" id="month"></div><div class="label">Month</div></div>
+        <div class="time-box"><div class="number" id="day"></div><div class="label">Day</div></div>
+        <div class="time-box"><div class="number" id="year"></div><div class="label">Year</div></div>
+        <div class="time-box"><div class="number" id="hours"></div><div class="label">Hours</div></div>
+        <div class="time-box"><div class="number" id="minutes"></div><div class="label">Minutes</div></div>
+        <div class="time-box"><div class="number" id="seconds"></div><div class="label">Seconds</div></div>
     </div>
-    <div class="clock-card">
-        <div class="number" id="day">23</div>
-        <div class="label">Day</div>
+
+    <!-- 3D Countdown -->
+    <div id="countdown-3d"></div>
+
+    <!-- News Section -->
+    <div class="news-grid">
+        <div class="news-card">
+            <h3>Global Expansion</h3>
+            <p>PHRINUSOMYIS is expanding its presence in West Africa, bringing next-level stadium-scale productions and unmatched luxury experiences. Stay tuned for our upcoming international debut.</p>
+        </div>
+        <div class="news-card">
+            <h3>Innovative Technology</h3>
+            <p>We leverage 12K cinematic quality, Glass Shield security protocols, and synchronized multi-language intelligence to deliver world-class immersive experiences to audiences globally.</p>
+        </div>
+        <div class="news-card">
+            <h3>Partner Announcements</h3>
+            <p>Elite sponsors and partners collaborate with PHRINUSOMYIS to ensure every event is executed with precision, style, and luxury, enhancing the audience experience and brand prestige.</p>
+        </div>
+        <div class="news-card">
+            <h3>Upcoming Highlights</h3>
+            <p>Major international events, news updates, and press releases will be posted here. Subscribers will get early access to insights and exclusive behind-the-scenes coverage.</p>
+        </div>
     </div>
-    <div class="clock-card">
-        <div class="number" id="year">2026</div>
-        <div class="label">Year</div>
+
+    <!-- Registry Section -->
+    <div class="registry-grid">
+        <div class="registry-card">
+            <h3>Latest News</h3>
+            <div class="data-point"><span class="label">Date</span><span class="value">April 1, 2026</span></div>
+            <div class="data-point"><span class="label">Headline</span><span class="value">PHRINUSOMYIS Prepares for West Africa International Debut</span></div>
+            <p>The institution continues to set unprecedented standards in luxury and cinematic events. Audiences can expect immersive, world-class productions as PHRINUSOMYIS announces its June 26 International Debut in West Africa. Proprietary infrastructure ensures excellence and security across all platforms, delivering elite experiences globally.</p>
+        </div>
+        <div class="registry-card">
+            <h3>Press Highlights</h3>
+            <div class="data-point"><span class="label">Media Coverage</span><span class="value">Top Global Channels</span></div>
+            <div class="data-point"><span class="label">Interviews</span><span class="value">Exclusive Founder Insights</span></div>
+            <p>Our press releases and news registry are curated for global audiences. Journalists and media professionals can explore verified data, ensuring authenticity and integrity for reporting. PHRINUSOMYIS maintains an extensive network for immediate updates and official communications.</p>
+        </div>
     </div>
-    <div class="clock-card">
-        <div class="number" id="hours">22</div>
-        <div class="label">Hours</div>
-    </div>
-    <div class="clock-card">
-        <div class="number" id="minutes">04</div>
-        <div class="label">Minutes</div>
-    </div>
-    <div class="clock-card">
-        <div class="number" id="seconds">15</div>
-        <div class="label">Seconds</div>
-    </div>
+
+    <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED & SHIELDED.</footer>
 </div>
 
-<script>
-// Live Time Update
-function updateClock() {
-    const now = new Date();
-    const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-    document.getElementById('month').textContent = monthNames[now.getMonth()];
-    document.getElementById('day').textContent = now.getDate();
-    document.getElementById('year').textContent = now.getFullYear();
-    
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
-
-    // Add leading zeros
-    hours = hours < 10 ? '0'+hours : hours;
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    seconds = seconds < 10 ? '0'+seconds : seconds;
-
-    document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes;
-    document.getElementById('seconds').textContent = seconds;
+<!-- Multi-Language JSON -->
+<script type="application/json" id="translations" style="display:none">
+{
+    "en": {"tagline": "Engineering Legacy Moments", "status": "Worldwide Company"},
+    "ru": {"tagline": "Создание легендарных моментов", "status": "Мировая компания"},
+    "zh": {"tagline": "工程传奇时刻", "status": "全球性公司"},
+    "hi": {"tagline": "इंजीनियरिंग लेगेसी मोमेंट्स", "status": "विश्वव्यापी कंपनी"},
+    "ar": {"tagline": "هندسة لحظات الإرث", "status": "شركة عالمية"},
+    "ja": {"tagline": "レガシーな瞬間をエンジニアリングする", "status": "世界的な企業"},
+    "ko": {"tagline": "레거시 모먼트 엔지니어링", "status": "글로벌 기업"},
+    "yo": {"tagline": "Ṣiṣẹ Awọn Akoko Arosọ", "status": "Ilé-iṣẹ Agbaye"},
+    "ig": {"tagline": "Ịrụ Oge Ezigbo Akụkọ", "status": "Ụlọ ọrụ Ụwa"}
 }
+</script>
 
-setInterval(updateClock, 1000);
-updateClock();
+<script>
+    // Disable Dev Tools / Right-click
+    document.addEventListener('keydown', function(e) {
+        if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key==='I' || e.key==='C' || e.key==='J')) || (e.ctrlKey && e.key==='U')) {
+            e.preventDefault(); alert('Developer tools disabled');
+        }
+    });
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Live Modular Clock
+    function updateClock(){
+        const now = new Date();
+        const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        document.getElementById("month").innerText = months[now.getMonth()];
+        document.getElementById("day").innerText = now.getDate();
+        document.getElementById("year").innerText = now.getFullYear();
+        document.getElementById("hours").innerText = String(now.getHours()).padStart(2,"0");
+        document.getElementById("minutes").innerText = String(now.getMinutes()).padStart(2,"0");
+        document.getElementById("seconds").innerText = String(now.getSeconds()).padStart(2,"0");
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 3D Countdown
+    const countdownDate = new Date("June 26, 2026 00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown-3d");
+    function updateCountdown(){
+        const now = new Date().getTime();
+        const dist = countdownDate - now;
+        if(dist > 0){
+            const d=Math.floor(dist/(1000*60*60*24));
+            const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));
+            const m=Math.floor((dist%(1000*60*60))/(1000*60));
+            const s=Math.floor((dist%(1000*60))/1000);
+            countdownEl.innerText=`International Debut: ${d}d ${h}h ${m}m ${s}s`;
+        } else { countdownEl.innerText="The Debut Has Arrived!"; }
+    }
+    setInterval(updateCountdown,1000);
+    updateCountdown();
+
+    // Multilingual Dynamic Display
+    const translations = JSON.parse(document.getElementById("translations").textContent);
+    const userLang = navigator.language.slice(0,2); // get first 2 chars
+    const langData = translations[userLang] || translations['en'];
+    document.querySelector(".tagline").innerText = langData.tagline;
+    document.querySelector(".registry-status").innerText += " | " + langData.status;
+
 </script>
 
 </body>
