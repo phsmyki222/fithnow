@@ -1,237 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | News & Registry</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHRINUSOMYIS | News & Registry</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #050505;
-            --glass-bg: rgba(255, 255, 255, 0.02);
-            --glass-border: rgba(212, 175, 55, 0.15);
-            --accent-glow: rgba(212, 175, 55, 0.3);
-            --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-        }
+<style>
+:root {
+    --gold: #D4AF37;
+    --black: #050505;
+    --glass-bg: rgba(255,255,255,0.02);
+    --glass-border: rgba(212,175,55,0.15);
+    --accent-glow: rgba(212,175,55,0.3);
+    --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
 
-        body {
-            background-color: var(--black);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            line-height: 1.8;
-            overflow-x: hidden;
-            user-select: none;
-        }
+body {
+    margin:0;
+    background-color: var(--black);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    user-select: none;
+}
 
-        .cinematic-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
-            z-index: -1;
-        }
+.cinematic-bg {
+    position: fixed;
+    top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
+    z-index:-1;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-        }
+/* Container */
+.container {
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
 
-        /* Menu */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 50px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+/* Menu */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+nav a {
+    text-decoration: none;
+    color:#fff;
+    transition:0.3s;
+}
+nav a:hover { color: var(--gold); }
 
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: var(--gold);
-        }
+/* Brand Seal */
+.brand-seal {
+    width:160px;
+    margin-bottom:20px;
+    filter: drop-shadow(0 0 30px var(--accent-glow));
+}
 
-        .brand-seal {
-            width: 160px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 30px var(--accent-glow));
-        }
+/* Titles */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    letter-spacing:8px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.registry-status, .tagline {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #888;
+    border-top: 1px solid var(--glass-border);
+    display: inline-block;
+    padding-top: 10px;
+    margin-bottom: 50px;
+}
+.contact-email {
+    position:absolute;
+    left:30px;
+    top:130px;
+    font-weight:700;
+    background: var(--rainbow);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-size:1rem;
+}
+.ceo-name {
+    color: var(--gold);
+    text-shadow: 0 0 15px var(--gold);
+    font-weight:900;
+}
 
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            letter-spacing: 8px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
+/* 3D Countdown */
+#countdown-3d {
+    font-family:'Cinzel', serif;
+    font-size:2.5rem;
+    font-weight:900;
+    text-align:center;
+    margin:40px auto;
+    background: var(--rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        1px 1px 2 #000,
+        2px 2px 5 #111,
+        3px 3px 10 #222;
+    display:inline-block;
+    padding:20px 40px;
+    border:2px solid var(--gold);
+    border-radius:15px;
+    perspective:1000px;
+    animation: rainbowSpin 5s linear infinite;
+}
+@keyframes rainbowSpin {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    25% { transform: rotateX(15deg) rotateY(15deg); }
+    50% { transform: rotateX(0deg) rotateY(30deg); }
+    75% { transform: rotateX(-15deg) rotateY(15deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg); }
+}
 
-        .registry-status, .tagline {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            color: #888;
-            border-top: 1px solid var(--glass-border);
-            display: inline-block;
-            padding-top: 10px;
-            margin-bottom: 50px;
-        }
+/* Modular Live Clock */
+.live-clock {
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:30px 0;
+}
+.time-box {
+    background: var(--glass-bg);
+    border:1px solid var(--glass-border);
+    backdrop-filter: blur(25px);
+    padding:25px 20px;
+    border-radius:12px;
+    min-width:80px;
+    font-family:'Cinzel', serif;
+    color: var(--gold);
+    text-align:center;
+}
+.time-box .number { font-size:1.6rem; font-weight:900; }
+.time-box .label { font-size:0.7rem; color:#ccc; margin-top:5px; }
 
-        .contact-email {
-            position: absolute;
-            left: 30px;
-            top: 130px;
-            font-weight: 700;
-            background: var(--rainbow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1rem;
-        }
+/* News Grid Single Column on Mobile */
+.news-grid, .registry-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+    margin-top:60px;
+    text-align:left;
+}
+.news-card, .registry-card {
+    background: var(--glass-bg);
+    border:1px solid var(--glass-border);
+    padding:35px;
+    backdrop-filter: blur(20px);
+    transition:0.5s ease;
+}
+.news-card:hover, .registry-card:hover {
+    border-color: var(--gold);
+    box-shadow:0 0 40px rgba(212,175,55,0.1);
+}
+.news-card h3, .registry-card h3 {
+    font-family:'Cinzel', serif;
+    color: var(--gold);
+    font-size:1.3rem;
+    margin-top:0;
+    margin-bottom:15px;
+    letter-spacing:1.5px;
+}
+.news-card p, .registry-card p { color:#ccc; font-size:0.85rem; text-align:justify; }
+.data-point { display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:8px; }
+.label { color: var(--gold); font-weight:700; text-transform:uppercase; font-size:0.7rem; letter-spacing:1px; }
+.value { color:#fff; font-weight:400; font-size:0.9rem; }
 
-        .ceo-name {
-            color: var(--gold);
-            text-shadow: 0 0 15px var(--gold);
-            font-weight: 900;
-        }
+/* Footer */
+footer {
+    margin-top:100px;
+    font-size:0.7rem;
+    letter-spacing:3px;
+    color:#888;
+    text-transform:uppercase;
+    text-align:center;
+}
 
-        /* 3D Countdown Box */
-        #countdown-3d {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            text-align: center;
-            margin: 40px auto;
-            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow:
-                1px 1px 2 #000,
-                2px 2px 5 #111,
-                3px 3px 10 #222;
-            display: inline-block;
-            padding: 20px 40px;
-            border: 2px solid var(--gold);
-            border-radius: 15px;
-            perspective: 1000px;
-            animation: rainbowSpin 5s linear infinite;
-        }
-
-        @keyframes rainbowSpin {
-            0% { transform: rotateX(0deg) rotateY(0deg); }
-            25% { transform: rotateX(15deg) rotateY(15deg); }
-            50% { transform: rotateX(0deg) rotateY(30deg); }
-            75% { transform: rotateX(-15deg) rotateY(15deg); }
-            100% { transform: rotateX(0deg) rotateY(0deg); }
-        }
-
-        /* Modular live clock */
-        .live-clock {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-        }
-        .time-box {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(25px);
-            padding: 25px 20px;
-            border-radius: 12px;
-            min-width: 80px;
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            text-align: center;
-        }
-        .time-box .number {
-            font-size: 1.6rem;
-            font-weight: 900;
-        }
-        .time-box .label {
-            font-size: 0.7rem;
-            color: #ccc;
-            margin-top: 5px;
-        }
-
-        /* News grid */
-        .news-grid, .registry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-            text-align: left;
-        }
-
-        .news-card, .registry-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 35px;
-            backdrop-filter: blur(20px);
-            transition: 0.5s ease;
-        }
-
-        .news-card:hover, .registry-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
-        }
-
-        .news-card h3, .registry-card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            letter-spacing: 1.5px;
-        }
-
-        .news-card p, .registry-card p {
-            color: #ccc;
-            font-size: 0.85rem;
-            text-align: justify;
-        }
-
-        .data-point {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 8px;
-        }
-
-        .label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
-        .value { color: #fff; font-weight: 400; font-size: 0.9rem; }
-
-        footer {
-            margin-top: 100px;
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            color: #444;
-            text-transform: uppercase;
-        }
-
-    </style>
+/* Mobile */
+@media(max-width:768px){
+    .live-clock { flex-direction:row; flex-wrap:wrap; justify-content:center; }
+    nav { flex-direction: column; gap:20px; }
+}
+</style>
 </head>
+
 <body>
-
 <div class="cinematic-bg"></div>
-
 <div class="container">
 
     <!-- Menu -->
     <nav>
-        <a href="https://phrinusomyis.com" target="_blank">Home</a>
-        <a href="https://phrinusomyis.com/press" target="_blank">Press/Media</a>
-        <a href="https://phrinusomyis.com/events" target="_blank">Events</a>
-        <a href="https://phrinusomyis.com/sponsor" target="_blank">Sponsor/Partnership</a>
+        <a href="#home-section">Home</a>
+        <a href="#press-section">Press/Media</a>
+        <a href="#events-section">Events</a>
+        <a href="#sponsor-section">Sponsor/Partnership</a>
     </nav>
 
     <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
@@ -241,7 +221,7 @@
     <p class="tagline"></p>
     <div class="contact-email">contact@phrinusomyis.com</div>
 
-    <!-- Modular live clock -->
+    <!-- Modular Live Clock -->
     <div class="live-clock">
         <div class="time-box"><div class="number" id="month"></div><div class="label">Month</div></div>
         <div class="time-box"><div class="number" id="day"></div><div class="label">Day</div></div>
@@ -255,7 +235,7 @@
     <div id="countdown-3d"></div>
 
     <!-- News Section -->
-    <div class="news-grid">
+    <div class="news-grid" id="home-section">
         <div class="news-card">
             <h3>Global Expansion</h3>
             <p>PHRINUSOMYIS is expanding its presence in West Africa, bringing next-level stadium-scale productions and unmatched luxury experiences. Stay tuned for our upcoming international debut.</p>
@@ -272,10 +252,18 @@
             <h3>Upcoming Highlights</h3>
             <p>Major international events, news updates, and press releases will be posted here. Subscribers will get early access to insights and exclusive behind-the-scenes coverage.</p>
         </div>
+        <div class="news-card">
+            <h3>Industry Recognition</h3>
+            <p>PHRINUSOMYIS receives awards and accolades for cinematic excellence, showcasing the power of luxury production and global influence in entertainment and events.</p>
+        </div>
+        <div class="news-card">
+            <h3>Community Engagement</h3>
+            <p>Through global initiatives, we engage with communities, providing education, culture, and development programs as part of our mission to create lasting impact.</p>
+        </div>
     </div>
 
     <!-- Registry Section -->
-    <div class="registry-grid">
+    <div class="registry-grid" id="press-section">
         <div class="registry-card">
             <h3>Latest News</h3>
             <div class="data-point"><span class="label">Date</span><span class="value">April 1, 2026</span></div>
@@ -291,71 +279,77 @@
     </div>
 
     <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED & SHIELDED.</footer>
+
 </div>
 
 <!-- Multi-Language JSON -->
 <script type="application/json" id="translations" style="display:none">
 {
-    "en": {"tagline": "Engineering Legacy Moments", "status": "Worldwide Company"},
-    "ru": {"tagline": "Создание легендарных моментов", "status": "Мировая компания"},
-    "zh": {"tagline": "工程传奇时刻", "status": "全球性公司"},
-    "hi": {"tagline": "इंजीनियरिंग लेगेसी मोमेंट्स", "status": "विश्वव्यापी कंपनी"},
-    "ar": {"tagline": "هندسة لحظات الإرث", "status": "شركة عالمية"},
-    "ja": {"tagline": "レガシーな瞬間をエンジニアリングする", "status": "世界的な企業"},
-    "ko": {"tagline": "레거시 모먼트 엔지니어링", "status": "글로벌 기업"},
-    "yo": {"tagline": "Ṣiṣẹ Awọn Akoko Arosọ", "status": "Ilé-iṣẹ Agbaye"},
-    "ig": {"tagline": "Ịrụ Oge Ezigbo Akụkọ", "status": "Ụlọ ọrụ Ụwa"}
+    "en":{"tagline":"Engineering Legacy Moments","status":"Worldwide Company"},
+    "ru":{"tagline":"Создание легендарных моментов","status":"Мировая компания"},
+    "zh":{"tagline":"工程传奇时刻","status":"全球性公司"},
+    "hi":{"tagline":"इंजीनियरिंग लेगेसी मोमेंट्स","status":"विश्वव्यापी कंपनी"},
+    "ar":{"tagline":"هندسة لحظات الإرث","status":"شركة عالمية"},
+    "ja":{"tagline":"レガシーな瞬間をエンジニアリングする","status":"世界的な企業"},
+    "ko":{"tagline":"레거시 모먼트 엔지니어링","status":"글로벌 기업"},
+    "yo":{"tagline":"Ṣiṣẹ Awọn Akoko Arosọ","status":"Ilé-iṣẹ Agbaye"},
+    "ig":{"tagline":"Ịrụ Oge Ezigbo Akụkọ","status":"Ụlọ ọrụ Ụwa"}
 }
 </script>
 
 <script>
-    // Disable Dev Tools / Right-click
-    document.addEventListener('keydown', function(e) {
-        if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key==='I' || e.key==='C' || e.key==='J')) || (e.ctrlKey && e.key==='U')) {
-            e.preventDefault(); alert('Developer tools disabled');
-        }
+// Disable Dev Tools / Right-click
+document.addEventListener('keydown', function(e){
+    if(e.key==='F12' || (e.ctrlKey && e.shiftKey && ['I','C','J'].includes(e.key)) || (e.ctrlKey && e.key==='U')){ e.preventDefault(); alert('Developer tools disabled'); }
+});
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Modular Clock
+function updateClock(){
+    const now = new Date();
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    document.getElementById("month").innerText = months[now.getMonth()];
+    document.getElementById("day").innerText = now.getDate();
+    document.getElementById("year").innerText = now.getFullYear();
+    document.getElementById("hours").innerText = String(now.getHours()).padStart(2,'0');
+    document.getElementById("minutes").innerText = String(now.getMinutes()).padStart(2,'0');
+    document.getElementById("seconds").innerText = String(now.getSeconds()).padStart(2,'0');
+}
+setInterval(updateClock,1000);
+updateClock();
+
+// 3D Countdown
+const countdownDate = new Date("June 26, 2026 00:00:00").getTime();
+const countdownEl = document.getElementById("countdown-3d");
+function updateCountdown(){
+    const now = new Date().getTime();
+    const dist = countdownDate - now;
+    if(dist>0){
+        const d=Math.floor(dist/(1000*60*60*24));
+        const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));
+        const m=Math.floor((dist%(1000*60*60))/(1000*60));
+        const s=Math.floor((dist%(1000*60))/1000);
+        countdownEl.innerText=`International Debut: ${d}d ${h}h ${m}m ${s}s`;
+    } else { countdownEl.innerText="The Debut Has Arrived!"; }
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+// Multilingual
+const translations = JSON.parse(document.getElementById("translations").textContent);
+const userLang = navigator.language.slice(0,2);
+const langData = translations[userLang] || translations['en'];
+document.querySelector(".tagline").innerText = langData.tagline;
+document.querySelector(".registry-status").innerText += " | " + langData.status;
+
+// Smooth internal menu navigation
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e=>{
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth'});
     });
-    document.addEventListener('contextmenu', e => e.preventDefault());
-
-    // Live Modular Clock
-    function updateClock(){
-        const now = new Date();
-        const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-        document.getElementById("month").innerText = months[now.getMonth()];
-        document.getElementById("day").innerText = now.getDate();
-        document.getElementById("year").innerText = now.getFullYear();
-        document.getElementById("hours").innerText = String(now.getHours()).padStart(2,"0");
-        document.getElementById("minutes").innerText = String(now.getMinutes()).padStart(2,"0");
-        document.getElementById("seconds").innerText = String(now.getSeconds()).padStart(2,"0");
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
-    // 3D Countdown
-    const countdownDate = new Date("June 26, 2026 00:00:00").getTime();
-    const countdownEl = document.getElementById("countdown-3d");
-    function updateCountdown(){
-        const now = new Date().getTime();
-        const dist = countdownDate - now;
-        if(dist > 0){
-            const d=Math.floor(dist/(1000*60*60*24));
-            const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));
-            const m=Math.floor((dist%(1000*60*60))/(1000*60));
-            const s=Math.floor((dist%(1000*60))/1000);
-            countdownEl.innerText=`International Debut: ${d}d ${h}h ${m}m ${s}s`;
-        } else { countdownEl.innerText="The Debut Has Arrived!"; }
-    }
-    setInterval(updateCountdown,1000);
-    updateCountdown();
-
-    // Multilingual Dynamic Display
-    const translations = JSON.parse(document.getElementById("translations").textContent);
-    const userLang = navigator.language.slice(0,2); // get first 2 chars
-    const langData = translations[userLang] || translations['en'];
-    document.querySelector(".tagline").innerText = langData.tagline;
-    document.querySelector(".registry-status").innerText += " | " + langData.status;
-
+});
 </script>
-
 </body>
 </html>
