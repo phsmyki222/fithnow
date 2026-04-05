@@ -1,151 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | Press Release</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHRINUSOMYIS | Press Release</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #050505;
-            --glass-bg: rgba(255, 255, 255, 0.02);
-            --glass-border: rgba(212, 175, 55, 0.15);
-            --accent-glow: rgba(212, 175, 55, 0.3);
-            --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-        }
+<style>
+:root {
+    --gold: #D4AF37;
+    --black: #050505;
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(212, 175, 55, 0.15);
+    --accent-glow: rgba(212, 175, 55, 0.3);
+    --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
 
-        body {
-            background-color: var(--black);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            line-height: 1.8;
-            overflow-x: hidden;
-            user-select: none;
-        }
+/* General Styles */
+body {
+    background-color: var(--black);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    line-height: 1.8;
+    overflow-x: hidden;
+    user-select: none;
+}
+.cinematic-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
+    z-index: -1;
+}
+.container {
+    max-width: 1100px; margin: 0 auto; padding: 60px 20px; text-align: center; position: relative;
+}
+.brand-seal {
+    width: 150px; margin-bottom: 20px;
+    filter: drop-shadow(0 0 30px var(--accent-glow));
+}
 
-        .cinematic-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
-            z-index: -1;
-        }
+/* Menu */
+.menu {
+    margin: 20px 0;
+}
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 600;
+    position: relative;
+}
+.menu a:hover { color: var(--gold); }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-        }
+/* Header */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    letter-spacing: 8px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.registry-status {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #888;
+    border-top: 1px solid var(--glass-border);
+    display: inline-block;
+    padding-top: 10px;
+    margin-bottom: 50px;
+}
+.contact-email {
+    position: absolute;
+    left: 30px; top: 130px;
+    font-weight: 700;
+    background: var(--rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
+}
 
-        .brand-seal {
-            width: 150px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 30px var(--accent-glow));
-        }
+/* Press Cards */
+.press-section { margin-top: 60px; text-align: left; }
+.press-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(20px);
+    transition: 0.5s ease;
+}
+.press-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+}
+.press-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+}
+.press-card p {
+    color: #ccc;
+    font-size: 0.85rem;
+    text-align: justify;
+}
 
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            letter-spacing: 8px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
+/* Lifetime Modular Timer */
+.lifetime-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+.time-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(15px);
+    width: 90px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+}
+.time-card span.label {
+    font-size: 0.7rem;
+    color: #ccc;
+    margin-top: 8px;
+}
 
-        .registry-status {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            color: #888;
-            border-top: 1px solid var(--glass-border);
-            display: inline-block;
-            padding-top: 10px;
-            margin-bottom: 50px;
-        }
+/* Footer */
+footer {
+    margin-top: 100px;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: #444;
+    text-transform: uppercase;
+}
 
-        .contact-email {
-            position: absolute;
-            left: 30px;
-            top: 130px;
-            font-weight: 700;
-            background: var(--rainbow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1rem;
-        }
-
-        /* 3D Countdown */
-        #countdown-3d {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            font-weight: 900;
-            text-align: center;
-            margin-top: 30px;
-            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 1px 1px 2px #000, 2px 2px 5px #111, 3px 3px 10px #222;
-            perspective: 1000px;
-            display: inline-block;
-            padding: 20px 0;
-            animation: rainbowSpin 5s linear infinite;
-        }
-
-        @keyframes rainbowSpin {
-            0% { transform: rotateX(0deg) rotateY(0deg); }
-            25% { transform: rotateX(15deg) rotateY(15deg); }
-            50% { transform: rotateX(0deg) rotateY(30deg); }
-            75% { transform: rotateX(-15deg) rotateY(15deg); }
-            100% { transform: rotateX(0deg) rotateY(0deg); }
-        }
-
-        .press-section {
-            margin-top: 60px;
-            text-align: left;
-        }
-
-        .press-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 40px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(20px);
-            transition: 0.5s ease;
-        }
-
-        .press-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
-        }
-
-        .press-card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            letter-spacing: 1.5px;
-        }
-
-        .press-card p {
-            color: #ccc;
-            font-size: 0.85rem;
-            text-align: justify;
-        }
-
-        footer {
-            margin-top: 100px;
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            color: #444;
-            text-transform: uppercase;
-        }
-
-    </style>
+/* Disable Dev Tools / Shortcuts */
+</style>
 </head>
 <body>
 
@@ -154,84 +158,123 @@
 <div class="container">
     <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
 
-    <h1>Press Release</h1>
-    <p class="registry-status">Phrinusomyis Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
+    <!-- Menu -->
+    <nav class="menu">
+        <a href="https://phrinusomyis.com" target="_self">Home</a>
+        <a href="https://phrinusomyis.com/news" target="_self">News</a>
+        <a href="https://phrinusomyis.com/article" target="_self">Article</a>
+        <a href="https://phrinusomyis.com/events" target="_self">Events</a>
+        <a href="https://phrinusomyis.com/sponsor/partner" target="_self">Sponsors/Partners</a>
+    </nav>
+
+    <h1 data-key="press_title">Press Release</h1>
+    <p class="registry-status"><span data-key="company_name">Phrinusomyis Data Center</span> | Founder: <span class="ceo-name">Victor Seth A</span></p>
 
     <div class="contact-email">contact@phrinusomyis.com</div>
 
-    <!-- 3D Countdown -->
-    <div id="countdown-3d"></div>
+    <!-- Lifetime Timer -->
+    <div class="lifetime-timer">
+        <div class="time-card"><span class="value" id="years">0</span><span class="label">Years</span></div>
+        <div class="time-card"><span class="value" id="months">0</span><span class="label">Months</span></div>
+        <div class="time-card"><span class="value" id="days">0</span><span class="label">Days</span></div>
+        <div class="time-card"><span class="value" id="hours">0</span><span class="label">Hours</span></div>
+        <div class="time-card"><span class="value" id="minutes">0</span><span class="label">Minutes</span></div>
+        <div class="time-card"><span class="value" id="seconds">0</span><span class="label">Seconds</span></div>
+    </div>
 
-    <!-- Press Release Section -->
+    <!-- Press Cards -->
     <div class="press-section">
         <div class="press-card">
-            <h3>International Debut in West Africa</h3>
-            <p>PHRINUSOMYIS is proud to announce its international debut in West Africa on June 26, 2026. The institution will deliver stadium-scale entertainment experiences combining luxury, technology, and global artistry.</p>
+            <h3 data-key="mission_title">Our Mission</h3>
+            <p data-key="mission_text">PHRINUSOMYIS delivers luxury, technological, and globally immersive experiences, ensuring the highest quality in entertainment worldwide.</p>
         </div>
         <div class="press-card">
-            <h3>Strategic Partnerships</h3>
-            <p>Our elite sponsors and collaborators ensure that every event is executed to perfection. These alliances reinforce PHRINUSOMYIS’ commitment to delivering unmatched quality in every production.</p>
+            <h3 data-key="vision_title">Our Vision</h3>
+            <p data-key="vision_text">To be the global standard for immersive entertainment, connecting audiences from all countries with accessible, high-quality content.</p>
         </div>
         <div class="press-card">
-            <h3>Technological Leadership</h3>
-            <p>With 12K cinematic visuals and the Glass Shield v3.1 security framework, PHRINUSOMYIS sets a new standard for immersive entertainment, keeping all digital assets synchronized and secure worldwide.</p>
-        </div>
-        <div class="press-card">
-            <h3>Global Outreach</h3>
-            <p>Our hidden multi-language integration ensures that audiences from over 1,000 countries experience content automatically in their preferred language, making PHRINUSOMYIS a truly worldwide institution.</p>
+            <h3 data-key="values_title">Our Values</h3>
+            <p data-key="values_text">Innovation, security, excellence, and a commitment to creating unforgettable legacy moments.</p>
         </div>
     </div>
 
     <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL RIGHTS RESERVED.</footer>
 </div>
 
-<!-- Hidden Multi-Language JSON -->
+<!-- Multi-Language JSON -->
 <script type="application/json" id="translations" style="display:none">
 {
-    "en": {"tagline": "Engineering Legacy Moments", "status": "Worldwide Company"},
-    "zh": {"tagline": "工程传奇时刻", "status": "全球性公司"},
-    "hi": {"tagline": "इंजीनियरिंग लेगेसी मोमेंट्स", "status": "विश्वव्यापी कंपनी"},
-    "ar": {"tagline": "هندسة لحظات الإرث", "status": "شركة عالمية"},
-    "ru": {"tagline": "Создание легендарных моментов", "status": "Мировая компания"},
-    "ja": {"tagline": "レガシーな瞬間をエンジニアリングする", "status": "世界的な企業"},
-    "ko": {"tagline": "레거시 모먼트 엔지니어링", "status": "글로벌 기업"},
-    "yo": {"tagline": "Ṣiṣẹ Awọn Akoko Arosọ", "status": "Ilé-iṣẹ Agbaye"},
-    "ig": {"tagline": "Ịrụ Oge Ezigbo Akụkọ", "status": "Ụlọ ọrụ Ụwa"}
-    /* plus 1,000+ languages can be added */
+    "en": {
+        "press_title": "Press Release",
+        "company_name": "Phrinusomyis Data Center",
+        "mission_title": "Our Mission",
+        "mission_text": "PHRINUSOMYIS delivers luxury, technological, and globally immersive experiences, ensuring the highest quality in entertainment worldwide.",
+        "vision_title": "Our Vision",
+        "vision_text": "To be the global standard for immersive entertainment, connecting audiences from all countries with accessible, high-quality content.",
+        "values_title": "Our Values",
+        "values_text": "Innovation, security, excellence, and a commitment to creating unforgettable legacy moments."
+    },
+    "zh": {
+        "press_title": "新闻稿",
+        "company_name": "Phrinusomyis 数据中心",
+        "mission_title": "我们的使命",
+        "mission_text": "PHRINUSOMYIS 提供豪华、技术和全球沉浸式体验，确保全球娱乐的最高质量。",
+        "vision_title": "我们的愿景",
+        "vision_text": "成为沉浸式娱乐的全球标准，将来自所有国家的观众与高质量内容连接。",
+        "values_title": "我们的价值观",
+        "values_text": "创新、安全、卓越，并致力于创造难忘的传承时刻。"
+    }
+    /* Add more languages as needed */
 }
 </script>
 
 <script>
-    // Disable Developer Tools / Shortcuts
-    document.addEventListener('keydown', function(e) {
-        if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key==='I' || e.key==='C' || e.key==='J')) || (e.ctrlKey && e.key==='U')) {
-            e.preventDefault();
-            alert('Developer tools disabled');
+// Disable Dev Tools
+document.addEventListener('keydown', function(e){
+    if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (['I','C','J'].includes(e.key))) || (e.ctrlKey && e.key==='U')) {
+        e.preventDefault(); alert('Developer tools disabled');
+    }
+});
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Lifetime Timer
+const birthDate = new Date("June 26, 2026 00:00:00"); // Replace with your starting point
+function updateLifetimeTimer(){
+    const now = new Date();
+    let delta = Math.abs(now - birthDate) / 1000;
+
+    const years = Math.floor(delta / (3600*24*365));
+    delta -= years * 3600*24*365;
+    const months = Math.floor(delta / (3600*24*30));
+    delta -= months * 3600*24*30;
+    const days = Math.floor(delta / (3600*24));
+    delta -= days * 3600*24;
+    const hours = Math.floor(delta / 3600);
+    delta -= hours * 3600;
+    const minutes = Math.floor(delta / 60);
+    const seconds = Math.floor(delta % 60);
+
+    document.getElementById("years").innerText = years;
+    document.getElementById("months").innerText = months;
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+}
+setInterval(updateLifetimeTimer, 1000);
+updateLifetimeTimer();
+
+// Multi-language switcher
+const translations = JSON.parse(document.getElementById('translations').innerText);
+function setLanguage(lang){
+    document.querySelectorAll('[data-key]').forEach(el=>{
+        const key = el.getAttribute('data-key');
+        if(translations[lang] && translations[lang][key]){
+            el.innerText = translations[lang][key];
         }
     });
-    document.addEventListener('contextmenu', e => e.preventDefault());
-
-    // 3D Countdown JS
-    const countdown3DDate = new Date("June 26, 2026 00:00:00").getTime();
-    const countdown3DElement = document.getElementById("countdown-3d");
-
-    function updateCountdown3D() {
-        const now = new Date().getTime();
-        const distance = countdown3DDate - now;
-
-        if(distance > 0){
-            const days = Math.floor(distance / (1000*60*60*24));
-            const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-            const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-            const seconds = Math.floor((distance % (1000*60)) / 1000);
-            countdown3DElement.innerHTML = `International Debut in West Africa: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-        } else {
-            countdown3DElement.innerHTML = "The Debut Has Arrived!";
-        }
-    }
-
-    setInterval(updateCountdown3D, 1000);
-    updateCountdown3D();
+}
+// Example: setLanguage('zh'); // switch to Chinese
 </script>
 
 </body>
