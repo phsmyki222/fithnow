@@ -25,6 +25,14 @@
       <image:loc>https://phrinusomyis.com/phrinusomyis_perfume_front.png</image:loc>
       <image:caption>PHRINUSOMYIS Exclusive Perfume Front View</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://phrinusomyis.com/phrinusomyis_logo_360.png</image:loc>
+      <image:caption>PHRINUSOMYIS Official Branding Logo 360</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://phrinusomyis.com/phrinusomyis_logo.png</image:loc>
+      <image:caption>PHRINUSOMYIS Official Branding Logo </image:caption>
+    </image:image>
   </url>
 
   <url>
