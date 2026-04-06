@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://phrinusomyis.com/</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://phrinusomyis.com/phrinusomyis_logo.png</image:loc>
+      <image:caption>PHRINUSOMYIS Logo</image:caption>
+    </image:image>
   </url>
 
+  <!-- Article Page -->
   <url>
     <loc>https://phrinusomyis.com/article.html</loc>
     <lastmod>2026-04-06</lastmod>
@@ -14,20 +22,23 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Events Page -->
   <url>
     <loc>https://phrinusomyis.com/events.html</loc>
     <lastmod>2026-04-06</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- News Page -->
   <url>
     <loc>https://phrinusomyis.com/news.html</loc>
     <lastmod>2026-04-06</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Press Page -->
   <url>
     <loc>https://phrinusomyis.com/press.html</loc>
     <lastmod>2026-04-06</lastmod>
@@ -35,45 +46,20 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- RSS Feed -->
   <url>
-    <loc>https://phrinusomyis.com/#luxury</loc>
+    <loc>https://phrinusomyis.com/rss.xml</loc>
     <lastmod>2026-04-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
   </url>
 
+  <!-- Contact Page -->
   <url>
-    <loc>https://phrinusomyis.com/#video1</loc>
+    <loc>https://phrinusomyis.com/contact.html</loc>
     <lastmod>2026-04-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://phrinusomyis.com/#countdown1</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <url>
-  <loc>https://phrinusomyis.com/rss.xml</loc>
-  <lastmod>2026-04-06</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>1.0</priority>
-</url>
-  
-  <url>
-    <loc>https://phrinusomyis.com/#contact</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://phrinusomyis.com/phrinusomyis_logo.png</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
 </urlset>
