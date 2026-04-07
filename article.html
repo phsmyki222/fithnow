@@ -71,14 +71,18 @@ h1 {
 }
 
 .contact-email {
-    position: absolute;
-    left: 30px;
-    top: 150px;
+    position: fixed;       /* stays on screen even when scrolling */
+    left: 50%;             /* horizontally center */
+    bottom: 60px;          /* distance above the footer */
+    transform: translateX(-50%); /* center exactly */
+    
     font-weight: 700;
     background: var(--rainbow);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1rem;
+    z-index: 1000;         /* make sure it stays on top of other content */
+}
 }
 
 .ceo-name {
