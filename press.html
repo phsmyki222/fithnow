@@ -1,337 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | Press Release</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHRINUSOMYIS | Press Center</title>
+<meta name="description" content="PHRINUSOMYIS Press Center | Africa-focused luxury events, news, and announcements. Stay updated on our worldwide productions.">
+<meta name="keywords" content="PHRINUSOMYIS, Africa news, luxury events, global press, cinematic productions">
+<meta name="robots" content="index, follow">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #050505;
-            --glass-bg: rgba(255, 255, 255, 0.02);
-            --glass-border: rgba(212, 175, 55, 0.15);
-            --accent-glow: rgba(212, 175, 55, 0.3);
-            --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-        }
-
-        body {
-            background-color: var(--black);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            line-height: 1.8;
-            overflow-x: hidden;
-            user-select: none;
-        }
-
-        .cinematic-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 100px 20px 60px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .brand-seal {
-            width: 150px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 30px var(--accent-glow));
-        }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            letter-spacing: 8px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .registry-status {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            color: #888;
-            border-top: 1px solid var(--glass-border);
-            display: inline-block;
-            padding-top: 10px;
-            margin-bottom: 50px;
-        }
-
-        /* Menu */
-        .menu {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-        .menu a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .menu a:hover {
-            background: rgba(212,175,55,0.1);
-            box-shadow: 0 0 10px var(--gold);
-        }
-
-        /* Language Selector */
-        .language-selector select {
-            padding:5px 10px;
-            border-radius:5px;
-            background: rgba(0,0,0,0.5);
-            color:#fff;
-            border:1px solid var(--gold);
-            font-weight:bold;
-            cursor: pointer;
-        }
-
-        /* Lifetime Clock */
-        .lifetime-clock {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
-        }
-        .clock-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(20px);
-            padding: 30px 20px;
-            border-radius: 10px;
-            width: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 0 20px rgba(212,175,55,0.05);
-        }
-        .clock-card h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            margin: 0;
-            letter-spacing: 2px;
-        }
-        .clock-card span {
-            margin-top: 10px;
-            font-size: 0.8rem;
-            color: #ccc;
-        }
-
-        /* Press Section */
-        .press-section {
-            text-align: left;
-        }
-        .press-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 40px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(20px);
-            transition: 0.5s ease;
-        }
-        .press-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
-        }
-        .press-card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            letter-spacing: 1.5px;
-        }
-        .press-card p {
-            color: #ccc;
-            font-size: 0.85rem;
-            text-align: justify;
-        }
-
-        footer {
-            margin-top: 80px;
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            color: #444;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-    </style>
+<style>
+:root {--gold:#D4AF37;--black:#050505;--glass-bg:rgba(255,255,255,0.02);--glass-border:rgba(212,175,55,0.15);--accent-glow:rgba(212,175,55,0.3);--rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background-color:var(--black);color:#fff;font-family:'Montserrat',sans-serif;line-height:1.8;overflow-x:hidden;user-select:none;}
+a{color:inherit;text-decoration:none;cursor:pointer;}
+.cinematic-bg{position:fixed;top:0;left:0;width:100%;height:100%;background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);z-index:-1;}
+.container{max-width:1200px;margin:0 auto;padding:60px 20px;text-align:center;position:relative;}
+nav{display:flex;justify-content:center;gap:30px;margin-bottom:50px;flex-wrap:wrap;}
+nav a{color:var(--gold);font-family:'Cinzel',serif;font-weight:700;padding:10px 20px;border-radius:8px;border:1px solid var(--glass-border);transition:0.3s;}
+nav a:hover{background:var(--gold);color:var(--black);}
+.brand-seal{width:160px;margin-bottom:20px;filter:drop-shadow(0 0 30px var(--accent-glow));}
+h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
+.registry-status,.tagline{font-size:0.7rem;letter-spacing:4px;color:#888;border-top:1px solid var(--glass-border);display:inline-block;padding-top:10px;margin-bottom:30px;}
+.ceo-name{color:var(--gold);text-shadow:0 0 15px var(--gold);font-weight:900;}
+.contact-email{position:absolute;left:30px;top:130px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
+.live-clock{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
+.time-box{background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:blur(20px);padding:20px 15px;border-radius:12px;min-width:80px;font-family:'Cinzel',serif;color:var(--gold);text-align:center;}
+.time-box .number{font-size:1.5rem;font-weight:900;}
+.time-box .label{font-size:0.7rem;color:#ccc;margin-top:5px;text-transform:uppercase;}
+.press-grid{display:flex;flex-direction:column;gap:30px;margin-top:40px;text-align:left;}
+.press-card{background:var(--glass-bg);border:1px solid var(--glass-border);padding:30px;backdrop-filter:blur(20px);transition:0.8s ease, transform 0.8s ease;opacity:0;transform:translateY(40px);}
+.press-card:hover{border-color:var(--gold);box-shadow:0 0 40px rgba(212,175,55,0.15);transform:translateY(-5px);}
+.press-card h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;margin-bottom:10px;}
+.press-card p{color:#ccc;font-size:0.85rem;text-align:justify;}
+.last-updated{color:#ccc;font-size:0.75rem;text-align:right;margin-top:-30px;}
+footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-shadow:0 0 5px #000;text-align:center;}
+@media(max-width:768px){nav a{padding:8px 15px;font-size:0.85rem;}}
+</style>
 </head>
 <body>
-
 <div class="cinematic-bg"></div>
-
 <div class="container">
-    <!-- Language Selector -->
-    <div class="language-selector" style="position:absolute; top:30px; right:30px;">
-        <select id="languageSelect" onchange="setLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-            <option value="hi">हिंदी</option>
-            <option value="ar">العربية</option>
-            <option value="ru">Русский</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="yo">Yorùbá</option>
-            <option value="ig">Igbo</option>
-        </select>
-    </div>
+<nav>
+<li><a href="https://phrinusomyis.com">Homepage</a>
+<li><a href="https://phrinusomyis.com/events">Events</a>
+<li><a href="https://phrinusomyis.com/press" class="active">Press</a>
+<li><a href="https://phrinusomyis.com/article">Article</a>
+</nav>
 
-    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
+<img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
+<h1>Press Center</h1>
+<p class="registry-status">PHRINUSOMYIS Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
+<p class="tagline">Engineering Legacy Moments</p>
+<div class="contact-email">contact@phrinusomyis.com</div>
 
-    <h1 data-key="press_title">Press Release</h1>
-    <p class="registry-status" data-key="company_name">Phrinusomyis Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
-
-    <!-- Menu -->
-    <nav class="menu">
-        <a href="https://phrinusomyis.com" target="_self">Home</a>
-        <a href="https://phrinusomyis.com/news" target="_self">News</a>
-        <a href="https://phrinusomyis.com/article" target="_self">Article</a>
-        <a href="https://phrinusomyis.com/events" target="_self">Events</a>
-    </nav>
-
-    <!-- Lifetime Clock -->
-    <div class="lifetime-clock">
-        <div class="clock-card">
-            <h2 id="years">0</h2>
-            <span>Years</span>
-        </div>
-        <div class="clock-card">
-            <h2 id="months">0</h2>
-            <span>Months</span>
-        </div>
-        <div class="clock-card">
-            <h2 id="days">0</h2>
-            <span>Days</span>
-        </div>
-    </div>
-
-    <!-- Press Section -->
-    <div class="press-section">
-        <div class="press-card">
-            <h3 data-key="mission_title">Our Mission</h3>
-            <p data-key="mission_text">PHRINUSOMYIS delivers luxury, technological, and globally immersive experiences, ensuring the highest quality in entertainment worldwide.</p>
-        </div>
-        <div class="press-card">
-            <h3 data-key="vision_title">Our Vision</h3>
-            <p data-key="vision_text">To be the global standard for immersive entertainment, connecting audiences from all countries with accessible, high-quality content.</p>
-        </div>
-        <div class="press-card">
-            <h3 data-key="values_title">Our Values</h3>
-            <p data-key="values_text">Innovation, security, excellence, and a commitment to creating unforgettable legacy moments.</p>
-        </div>
-    </div>
-
-    <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL RIGHTS RESERVED.</footer>
+<div class="live-clock">
+  <div class="time-box"><div class="number" id="month"></div><div class="label">Month</div></div>
+  <div class="time-box"><div class="number" id="day"></div><div class="label">Day</div></div>
+  <div class="time-box"><div class="number" id="year"></div><div class="label">Year</div></div>
+  <div class="time-box"><div class="number" id="hours"></div><div class="label">Hours</div></div>
+  <div class="time-box"><div class="number" id="minutes"></div><div class="label">Minutes</div></div>
+  <div class="time-box"><div class="number" id="seconds"></div><div class="label">Seconds</div></div>
 </div>
 
-<!-- Multi-Language JSON -->
-<script type="application/json" id="translations" style="display:none">
-{
-    "en": {
-        "press_title": "Press Release",
-        "company_name": "Phrinusomyis Data Center",
-        "mission_title": "Our Mission",
-        "mission_text": "PHRINUSOMYIS delivers luxury, technological, and globally immersive experiences, ensuring the highest quality in entertainment worldwide.",
-        "vision_title": "Our Vision",
-        "vision_text": "To be the global standard for immersive entertainment, connecting audiences from all countries with accessible, high-quality content.",
-        "values_title": "Our Values",
-        "values_text": "Innovation, security, excellence, and a commitment to creating unforgettable legacy moments.",
-        "menu_home": "Home",
-        "menu_news": "News",
-        "menu_article": "Article",
-        "menu_events": "Events",
-        "menu_sponsors": "Sponsors/Partners"
-    },
-    "zh": {
-        "press_title": "新闻稿",
-        "company_name": "Phrinusomyis 数据中心",
-        "mission_title": "我们的使命",
-        "mission_text": "PHRINUSOMYIS 提供豪华、技术和全球沉浸式体验，确保全球娱乐的最高质量。",
-        "vision_title": "我们的愿景",
-        "vision_text": "成为沉浸式娱乐的全球标准，将来自所有国家的观众与高质量内容连接。",
-        "values_title": "我们的价值观",
-        "values_text": "创新、安全、卓越，并致力于创造难忘的传承时刻。",
-        "menu_home": "首页",
-        "menu_news": "新闻",
-        "menu_article": "文章",
-        "menu_events": "活动",
-        "menu_sponsors": "赞助商/合作伙伴"
-    }
-}
-</script>
+<p class="last-updated" id="last-updated">Last updated: </p>
+<div class="press-grid" id="press-news"></div>
+
+<footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. ALL INTELLECTUAL ASSETS REGISTERED & SHIELDED.</footer>
+</div>
 
 <script>
-    const translations = JSON.parse(document.getElementById('translations').innerText);
+// Africa-focused Press News Array
+let pressNews = [
+  {title:"PHRINUSOMYIS Announces African Debut", description:"PHRINUSOMYIS is bringing stadium-scale luxury productions to Africa with unmatched audience experiences and worldwide press coverage.", date:"2026-04-08T08:00:00+00:00"},
+  {title:"Elite African Partners Join", description:"Our African sponsors and partners ensure that every event is executed with precision, style, and global recognition.", date:"2026-04-08T08:30:00+00:00"}
+];
 
-    function setLanguage(lang){
-        document.querySelectorAll('[data-key]').forEach(el=>{
-            const key = el.getAttribute('data-key');
-            if(translations[lang] && translations[lang][key]){
-                el.innerText = translations[lang][key];
-            }
-        });
-        const menuMap = {
-            "menu_home": 0,
-            "menu_news": 1,
-            "menu_article": 2,
-            "menu_events": 3,
-            "menu_sponsors": 4
-        };
-        Object.keys(menuMap).forEach(key=>{
-            const index = menuMap[key];
-            const menuLinks = document.querySelectorAll('.menu a');
-            if(translations[lang] && translations[lang][key]){
-                menuLinks[index].innerText = translations[lang][key];
-            }
-        });
-    }
+// Generate press cards dynamically
+function generatePressCards() {
+  const pressGrid = document.getElementById("press-news");
+  pressGrid.innerHTML = "";
+  pressNews.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "press-card";
+    card.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+    pressGrid.appendChild(card);
+  });
+}
 
-    // Lifetime Clock (years/months/days since birthdate)
-    const birthDate = new Date("1990-01-01"); // Change this to your birthdate
-    const yearsEl = document.getElementById("years");
-    const monthsEl = document.getElementById("months");
-    const daysEl = document.getElementById("days");
+// Generate JSON-LD dynamically for SEO
+function generateStructuredData() {
+  const structuredData = {
+    "@context":"https://schema.org",
+    "@graph": pressNews.map(item => ({
+      "@type":"NewsArticle",
+      "headline": item.title,
+      "description": item.description,
+      "datePublished": item.date,
+      "dateModified": item.date,
+      "author": {"@type":"Organization","name":"PHRINUSOMYIS Global"},
+      "publisher":{"@type":"Organization","name":"PHRINUSOMYIS Global","logo":{"@type":"ImageObject","url":"https://phrinusomyis.com/phrinusomyis_logo.png"}},
+      "inLanguage":"en",
+      "mainEntityOfPage":"https://phrinusomyis.com/press"
+    }))
+  };
+  const script = document.createElement("script");
+  script.type="application/ld+json";
+  script.textContent=JSON.stringify(structuredData);
+  document.head.appendChild(script);
+}
 
-    function updateLifetimeClock(){
-        const now = new Date();
-        let years = now.getFullYear() - birthDate.getFullYear();
-        let months = now.getMonth() - birthDate.getMonth();
-        let days = now.getDate() - birthDate.getDate();
+// Notify search engines
+function notifySearchEngines() {
+  const sitemapURL = "https://phrinusomyis.com/sitemap.xml";
+  const engines = [
+    `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapURL)}`,
+    `https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapURL)}`,
+    `https://webmaster.yandex.com/ping?sitemap=${encodeURIComponent(sitemapURL)}`
+  ];
+  engines.forEach(url => {
+    fetch(url).then(r=>console.log(`Pinged: ${url} | Status: ${r.status}`))
+      .catch(e=>console.error(`Error pinging ${url}:`, e));
+  });
+}
 
-        if(days < 0){
-            months -= 1;
-            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-            days += lastMonth.getDate();
-        }
-        if(months < 0){
-            years -= 1;
-            months += 12;
-        }
+// Live Clock & Last Updated
+function updateClock(){
+  const now=new Date();
+  const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  document.getElementById("month").innerText=months[now.getMonth()];
+  document.getElementById("day").innerText=now.getDate();
+  document.getElementById("year").innerText=now.getFullYear();
+  document.getElementById("hours").innerText=String(now.getHours()).padStart(2,'0');
+  document.getElementById("minutes").innerText=String(now.getMinutes()).padStart(2,'0');
+  document.getElementById("seconds").innerText=String(now.getSeconds()).padStart(2,'0');
+  document.getElementById("last-updated").innerText = "Last updated: " + now.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
+}
 
-        yearsEl.innerText = years;
-        monthsEl.innerText = months;
-        daysEl.innerText = days;
-    }
+// Animate press cards
+function animateCards() {
+  const cards=document.querySelectorAll('.press-card');
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}});
+  },{threshold:0.2});
+  cards.forEach(card=>observer.observe(card));
+}
 
-    setInterval(updateLifetimeClock, 1000);
-    updateLifetimeClock();
+// Initialize all
+function initPressPage() {
+  generatePressCards();
+  generateStructuredData();
+  notifySearchEngines();
+  animateCards();
+  updateClock();
+}
+
+// Run immediately
+initPressPage();
+
+// Refresh page every 24 hours automatically
+setInterval(() => {
+  console.log("24h Refresh triggered");
+  initPressPage();
+}, 24*60*60*1000); // 24 hours in ms
+
+// Live clock updates every second
+setInterval(updateClock,1000);
 </script>
-
 </body>
 </html>
