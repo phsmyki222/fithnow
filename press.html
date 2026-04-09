@@ -19,25 +19,66 @@
   --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background-color:var(--black);color:#fff;font-family:'Montserrat',sans-serif;line-height:1.8;overflow-x:hidden;user-select:none;}
+body{
+  background-color:var(--black);
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  line-height:1.8;
+  overflow-x:hidden;
+  user-select:none;
+}
 a{color:inherit;text-decoration:none;cursor:pointer;}
-.cinematic-bg{position:fixed;top:0;left:0;width:100%;height:100%;background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);z-index:-1;}
+.cinematic-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
+  z-index:-1;
+}
 .container{max-width:1200px;margin:0 auto;padding:60px 20px;text-align:center;position:relative;}
-nav ul{list-style:none;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;padding:0;margin:0;}
-nav a{color:var(--gold);font-family:'Cinzel',serif;font-weight:700;padding:10px 20px;border-radius:8px;border:1px solid var(--glass-border);transition:0.3s;}
+nav{display:flex;justify-content:center;gap:30px;margin-bottom:50px;flex-wrap:wrap;}
+nav a{
+  color:var(--gold);
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  padding:10px 20px;
+  border-radius:8px;
+  border:1px solid var(--glass-border);
+  transition:0.3s;
+}
 nav a:hover{background:var(--gold);color:var(--black);}
 .brand-seal{width:160px;margin-bottom:20px;filter:drop-shadow(0 0 30px var(--accent-glow));}
 h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
 .registry-status,.tagline{font-size:0.7rem;letter-spacing:4px;color:#888;border-top:1px solid var(--glass-border);display:inline-block;padding-top:10px;margin-bottom:30px;}
 .ceo-name{color:var(--gold);text-shadow:0 0 15px var(--gold);font-weight:900;}
-.contact-email{position:absolute;left:30px;down:130px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
+.contact-email{position:absolute;left:30px;top:130px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
 .live-clock{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
-.time-box{background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:blur(20px);padding:20px 15px;border-radius:12px;min-width:80px;font-family:'Cinzel',serif;color:var(--gold);text-align:center;}
+.time-box{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(20px);
+  padding:20px 15px;
+  border-radius:12px;
+  min-width:80px;
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  text-align:center;
+}
 .time-box .number{font-size:1.5rem;font-weight:900;}
 .time-box .label{font-size:0.7rem;color:#ccc;margin-top:5px;text-transform:uppercase;}
 .press-grid{display:flex;flex-direction:column;gap:30px;margin-top:40px;text-align:left;}
-.press-card{background:var(--glass-bg);border:1px solid var(--glass-border);padding:30px;backdrop-filter:blur(20px);transition:0.8s ease, transform 0.8s ease;opacity:0;transform:translateY(40px);}
-.press-card:hover{border-color:var(--gold);box-shadow:0 0 40px rgba(212,175,55,0.15);transform:translateY(-5px);}
+.press-card{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  padding:30px;
+  backdrop-filter:blur(20px);
+  transition:opacity 0.8s ease, transform 0.8s ease;
+  opacity:0;
+  transform:translateY(40px);
+}
+.press-card.visible{opacity:1;transform:translateY(0);}
 .press-card h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;margin-bottom:10px;}
 .press-card p{color:#ccc;font-size:0.85rem;text-align:justify;}
 .last-updated{color:#ccc;font-size:0.75rem;text-align:right;margin-top:-30px;}
@@ -48,14 +89,11 @@ footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);te
 <body>
 <div class="cinematic-bg"></div>
 <div class="container">
-
 <nav>
-  <ul>
-    <li><a href="https://phrinusomyis.com">Homepage</a></li>
-    <li><a href="https://phrinusomyis.com/events">Events</a></li>
-    <li><a href="https://phrinusomyis.com/news" class="active">News</a></li>
-    <li><a href="https://phrinusomyis.com/article">Article</a></li>
-  </ul>
+<a href="https://phrinusomyis.com">Homepage</a>
+<a href="https://phrinusomyis.com/events">Events</a>
+<a href="https://phrinusomyis.com/news">News</a>
+<a href="https://phrinusomyis.com/article">Article</a>
 </nav>
 
 <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
@@ -80,109 +118,88 @@ footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);te
 </div>
 
 <script>
-// Africa-focused Press News Array
-let pressNews = [
+// Press News Data
+const pressNews = [
   {title:"PHRINUSOMYIS Announces African Debut", description:"PHRINUSOMYIS is bringing stadium-scale luxury productions to Africa with unmatched audience experiences and worldwide press coverage.", date:"2026-04-08T08:00:00+00:00"},
-  {title:"PHRINUSOMYIS Unveils New Global Event Strategy on April 13, 2026", description:"PHRINUSOMYIS today announced the launch of a new global event strategy designed to enhance international audience engagement. Include details and a quote from leadership.", date:"2026-04-08T08:30:00+00:00"},
+  {title:"PHRINUSOMYIS Unveils New Global Event Strategy on April 13, 2026", description:"PHRINUSOMYIS today announced the launch of a new global event strategy designed to enhance international audience engagement… Include details and a quote from leadership.", date:"2026-04-08T08:30:00+00:00"},
   {title:"PHRINUSOMYIS Partners with Local Governments for West Africa Showcase April 10, 2026", description:"PHRINUSOMYIS is bringing stadium-scale luxury productions to Africa with unmatched audience experiences and worldwide press coverage.", date:"2026-04-08T08:00:00+00:00"},
-  {title:"PHRINUSOMYIS Releases Official Event Schedule for 2026 by April 20, 2026", description:"PHRINUSOMYIS today published the official schedule of events planned for 2026. The calendar includes international showcases, regional productions, and audience engagement experiences across multiple continents. The schedule provides dates and locations for each planned activity and details on how interested attendees can access more information. PHRINUSOMYIS continues to expand its global footprint while maintaining a focus on quality and organizational precision.", date:"2026-04-08T08:30:00+00:00"},
-  {title:"PHRINUSOMYIS Participates in Global Entertainment Conference April 9, 2026", description:"PHRINUSOMYIS attended the 2026 Global Entertainment & Media Conference, participating in panels, networking sessions, and industry discussions. The company shared insights on large-scale event production, international expansion, and audience engagement strategies. The participation highlights PHRINUSOMYIS’s commitment to staying connected with global industry trends and fostering relationships with international partners.", date:"2026-04-08T08:00:00+00:00"},
-  {title:"PHRINUSOMYIS Updates Leadership Team April 9, 2026", description:"PHRINUSOMYIS announces updates to its leadership team, including key executive appointments and promotions. These changes aim to strengthen global operations and support the company’s growth strategy in international markets. The updated leadership structure reinforces PHRINUSOMYIS’s commitment to operational excellence and strategic innovation across its global entertainment initiatives.", date:"2026-04-08T08:30:00+00:00"}
+  {title:"PHRINUSOMYIS Releases Official Event Schedule for 2026 by April 20, 2026", description:"PHRINUSOMYIS today published the official schedule of events planned for 2026. The calendar includes international showcases, regional productions, and audience engagement experiences across multiple continents.", date:"2026-04-08T08:30:00+00:00"},
+  {title:"PHRINUSOMYIS Participates in Global Entertainment Conference April 9, 2026", description:"PHRINUSOMYIS attended the 2026 Global Entertainment & Media Conference, participating in panels, networking sessions, and industry discussions. The company shared insights on large-scale event production, international expansion, and audience engagement strategies.", date:"2026-04-08T08:00:00+00:00"},
+  {title:"PHRINUSOMYIS Updates Leadership Team April 9, 2026", description:"PHRINUSOMYIS announces updates to its leadership team, including key executive appointments and promotions.", date:"2026-04-08T08:30:00+00:00"}
 ];
 
-// Generate press cards dynamically
+// Generate Press Cards
 function generatePressCards() {
-  const pressGrid = document.getElementById("press-news");
-  pressGrid.innerHTML = "";
+  const grid = document.getElementById("press-news");
+  grid.innerHTML="";
   pressNews.forEach(item => {
     const card = document.createElement("div");
-    card.className = "press-card";
-    card.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
-    pressGrid.appendChild(card);
+    card.className="press-card";
+    card.innerHTML=`<h3>${item.title}</h3><p>${item.description}</p>`;
+    grid.appendChild(card);
   });
 }
 
-// Generate JSON-LD dynamically for SEO
-function generateStructuredData() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": pressNews.map((item, index) => ({
-      "@type": "NewsArticle",
-      "@id": `https://phrinusomyis.com/press#news${index+1}`,
+// Animate Press Cards
+function animatePressCards() {
+  const cards = document.querySelectorAll(".press-card");
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.2});
+  cards.forEach(card=>observer.observe(card));
+}
+
+// Live Clock
+function updateClock(){
+  const now=new Date();
+  const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  document.getElementById("month").innerText=months[now.getMonth()];
+  document.getElementById("day").innerText=now.getDate();
+  document.getElementById("year").innerText=now.getFullYear();
+  document.getElementById("hours").innerText=String(now.getHours()).padStart(2,'0');
+  document.getElementById("minutes").innerText=String(now.getMinutes()).padStart(2,'0');
+  document.getElementById("seconds").innerText=String(now.getSeconds()).padStart(2,'0');
+  document.getElementById("last-updated").innerText = "Last updated: " + now.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
+}
+
+// JSON-LD for SEO
+function generateStructuredData(){
+  const data={
+    "@context":"https://schema.org",
+    "@graph": pressNews.map(item=>({
+      "@type":"NewsArticle",
       "headline": item.title,
       "description": item.description,
       "datePublished": item.date,
       "dateModified": item.date,
-      "author": {"@type":"Organization","name":"PHRINUSOMYIS Global"},
-      "publisher": {"@type":"Organization","name":"PHRINUSOMYIS Global","logo":{"@type":"ImageObject","url":"https://phrinusomyis.com/phrinusomyis_logo.png"}},
+      "author":{"@type":"Organization","name":"PHRINUSOMYIS Global"},
+      "publisher":{"@type":"Organization","name":"PHRINUSOMYIS Global","logo":{"@type":"ImageObject","url":"https://phrinusomyis.com/assets/Phrinusomyis_logo.png"}},
       "inLanguage":"en",
       "mainEntityOfPage":"https://phrinusomyis.com/press"
     }))
   };
-  const script = document.createElement("script");
+  const script=document.createElement("script");
   script.type="application/ld+json";
-  script.textContent = JSON.stringify(structuredData);
+  script.textContent=JSON.stringify(data);
   document.head.appendChild(script);
 }
 
-// Notify search engines
-function notifySearchEngines() {
-  const sitemapURL = "https://phrinusomyis.com/sitemap.xml";
-  const engines = [
-    `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapURL)}`,
-    `https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapURL)}`,
-    `https://webmaster.yandex.com/ping?sitemap=${encodeURIComponent(sitemapURL)}`
-  ];
-  engines.forEach(url => {
-    fetch(url).then(r => console.log(`Pinged: ${url} | Status: ${r.status}`))
-      .catch(e => console.error(`Error pinging ${url}:`, e));
-  });
-}
-
-// Live Clock & Last Updated
-function updateClock() {
-  const now = new Date();
-  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  document.getElementById("month").innerText = months[now.getMonth()];
-  document.getElementById("day").innerText = now.getDate();
-  document.getElementById("year").innerText = now.getFullYear();
-  document.getElementById("hours").innerText = String(now.getHours()).padStart(2,'0');
-  document.getElementById("minutes").innerText = String(now.getMinutes()).padStart(2,'0');
-  document.getElementById("seconds").innerText = String(now.getSeconds()).padStart(2,'0');
-  document.getElementById("last-updated").innerText = "Last updated: " + now.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
-}
-
-// Animate press cards
-function animateCards() {
-  const cards = document.querySelectorAll('.press-card');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, {threshold: 0.2});
-  cards.forEach(card => observer.observe(card));
-}
-
-// Initialize all
-function initPressPage() {
+// Initialize Page
+function initPressPage(){
   generatePressCards();
-  generateStructuredData();
-  notifySearchEngines();
-  animateCards();
+  animatePressCards();
   updateClock();
+  generateStructuredData();
 }
 
-// Run immediately
+// Run
 initPressPage();
-
-// Refresh page every 24 hours automatically
-setInterval(() => { initPressPage(); }, 24*60*60*1000);
-
-// Live clock updates every second
-setInterval(updateClock, 1000);
+setInterval(updateClock,1000);
 </script>
 </body>
 </html>
