@@ -398,22 +398,22 @@
     <div class="timer-grid">
 
         <div class="time-box">
-            <span class="final-text" id="d2">00</span>
+            <span class="ultra-text" id="d2">00</span>
             <label>Days</label>
         </div>
 
         <div class="time-box">
-            <span class="final-text" id="h2">00</span>
+            <span class="ultra-text" id="h2">00</span>
             <label>Hours</label>
         </div>
 
         <div class="time-box">
-            <span class="final-text" id="m2">00</span>
+            <span class="ultra-text" id="m2">00</span>
             <label>Minutes</label>
         </div>
 
         <div class="time-box">
-            <span class="final-text" id="s2">00</span>
+            <span class="ultra-text" id="s2">00</span>
             <label>Seconds</label>
         </div>
 
@@ -421,10 +421,9 @@
 </section>
 
 <style>
-.final-text {
+.ultra-text {
     font-weight: 900;
-    font-size: 2.5rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
     background: linear-gradient(
         270deg,
@@ -435,75 +434,66 @@
         #00ffff,
         #0000ff,
         #8b00ff,
-        #ff1493,
-        #ffd700,
-        #ffffff,
         #ff0000
     );
 
-    background-size: 600% 600%;
+    background-size: 500% 500%;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation:
-        rainbowMove 8s linear infinite,
-        pulse 2.5s ease-in-out infinite,
-        flicker 3s infinite;
+    animation: 
+        rainbowMove 6s linear infinite,
+        pulseGlow 2s ease-in-out infinite,
+        shimmer 3s infinite;
 
     position: relative;
 }
 
-/* 🌈 Rainbow motion */
+/* 🌈 Rainbow movement */
 @keyframes rainbowMove {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
 
-/* 💥 Pulse scaling */
-@keyframes pulse {
-    0%,100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+/* 💥 Pulse breathing effect */
+@keyframes pulseGlow {
+    0%, 100% {
+        text-shadow:
+            0 0 5px rgba(255,255,255,0.3),
+            0 0 15px rgba(255,0,255,0.6),
+            0 0 30px rgba(0,255,255,0.6);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow:
+            0 0 10px rgba(255,255,255,0.6),
+            0 0 25px rgba(255,0,255,1),
+            0 0 50px rgba(0,255,255,1);
+        transform: scale(1.08);
+    }
 }
 
-/* ⚡ LED flicker (cinematic feel) */
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    48% { opacity: 0.85; }
-    50% { opacity: 0.6; }
-    52% { opacity: 0.9; }
-}
-
-/* 💡 Strong neon glow */
-.final-text {
-    text-shadow:
-        0 0 5px #fff,
-        0 0 10px #ff00ff,
-        0 0 20px #00ffff,
-        0 0 40px #ff00ff,
-        0 0 80px #00ffff;
-}
-
-/* ✨ Shimmer sweep */
-.final-text::after {
+/* ✨ Shimmer light sweep */
+.ultra-text::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -120%;
-    width: 240%;
+    left: -100%;
+    width: 200%;
     height: 100%;
     background: linear-gradient(
         120deg,
         transparent,
-        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.4),
         transparent
     );
-    animation: shine 4s infinite;
+    animation: shimmerMove 3s infinite;
 }
 
-@keyframes shine {
-    0% { left: -120%; }
-    100% { left: 120%; }
+@keyframes shimmerMove {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 </style>
 
