@@ -228,7 +228,7 @@ function updateClock(){const now=new Date();const months=["Jan","Feb","Mar","Apr
 setInterval(updateClock,1000);updateClock();
 
 // Countdown
-const countdownDate=new Date("June 26, 2026 00:00:00").getTime();const countdownEl=document.getElementById("countdown-3d");function updateCountdown(){const now=new Date().getTime();const dist=countdownDate-now;if(dist>0){const d=Math.floor(dist/(1000*60*60*24));const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));const m=Math.floor((dist%(1000*60*60))/(1000*60));const s=Math.floor((dist%(1000*60))/1000);countdownEl.innerText=`International Debut: ${d}d ${h}h ${m}m ${s}s`; } else {countdownEl.innerText="The Debut Has Arrived!";}}
+const countdownDate=new Date("July 24, 2026 00:00:00").getTime();const countdownEl=document.getElementById("countdown-3d");function updateCountdown(){const now=new Date().getTime();const dist=countdownDate-now;if(dist>0){const d=Math.floor(dist/(1000*60*60*24));const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));const m=Math.floor((dist%(1000*60*60))/(1000*60));const s=Math.floor((dist%(1000*60))/1000);countdownEl.innerText=`International Debut: ${d}d ${h}h ${m}m ${s}s`; } else {countdownEl.innerText="The Debut Has Arrived!";}}
 setInterval(updateCountdown,1000);updateCountdown();
 
 // Multilingual
