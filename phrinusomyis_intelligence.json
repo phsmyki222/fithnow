@@ -24,7 +24,7 @@
   "event": {
     "@type": "Event",
     "name": "Next Global Event",
-    "startDate": "2026-06-26",
+    "startDate": "2026-07-24",
     "location": {
       "@type": "Place",
       "name": "Worldwide / Global"
