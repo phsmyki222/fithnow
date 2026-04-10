@@ -390,33 +390,122 @@
         </p>
     </section>
 
- <section id="countdown2">
-    <h2 style="font-size: 1.5rem; margin-bottom: 20px;">Countdown to the Global Production Reveal</h2>
+<section id="countdown2">
+    <h2 style="font-size: 1.5rem; margin-bottom: 20px;">
+        Countdown to the Global Production Reveal
+    </h2>
 
     <div class="timer-grid">
 
         <div class="time-box">
-            <span style="background: linear-gradient(to bottom, #FFA500, #FF0000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="d2">00</span>
+            <span class="final-text" id="d2">00</span>
             <label>Days</label>
         </div>
 
         <div class="time-box">
-            <span style="background: linear-gradient(to bottom, #0000FF, #800080); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="h2">00</span>
+            <span class="final-text" id="h2">00</span>
             <label>Hours</label>
         </div>
 
         <div class="time-box">
-            <span style="background: linear-gradient(to bottom, #00FF00, #00FFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="m2">00</span>
+            <span class="final-text" id="m2">00</span>
             <label>Minutes</label>
         </div>
 
         <div class="time-box">
-            <span style="background: linear-gradient(to bottom, #FFFF00, #FF69B4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="s2">00</span>
+            <span class="final-text" id="s2">00</span>
             <label>Seconds</label>
         </div>
 
     </div>
 </section>
+
+<style>
+.final-text {
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+
+    background: linear-gradient(
+        270deg,
+        #ff0000,
+        #ff7f00,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #8b00ff,
+        #ff1493,
+        #ffd700,
+        #ffffff,
+        #ff0000
+    );
+
+    background-size: 600% 600%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        rainbowMove 8s linear infinite,
+        pulse 2.5s ease-in-out infinite,
+        flicker 3s infinite;
+
+    position: relative;
+}
+
+/* 🌈 Rainbow motion */
+@keyframes rainbowMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* 💥 Pulse scaling */
+@keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ⚡ LED flicker (cinematic feel) */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    48% { opacity: 0.85; }
+    50% { opacity: 0.6; }
+    52% { opacity: 0.9; }
+}
+
+/* 💡 Strong neon glow */
+.final-text {
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff00ff,
+        0 0 20px #00ffff,
+        0 0 40px #ff00ff,
+        0 0 80px #00ffff;
+}
+
+/* ✨ Shimmer sweep */
+.final-text::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 240%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    animation: shine 4s infinite;
+}
+
+@keyframes shine {
+    0% { left: -120%; }
+    100% { left: 120%; }
+}
+</style>
 
     <section id="phrinusomyis" style="text-align: center; background: rgba(10,10,10,0.5);">
         <p style="max-width: 900px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #eee; font-style: italic;">
