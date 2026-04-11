@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta property="og:title" content="PHRINUSOMYIS Press Global Media">
+<meta property="og:description" content="Official corporate press releases, global expansion, and international event announcements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://phrinusomyis.com/press">
+<meta property="og:image" content="https://phrinusomyis.com/assets/Phrinusomyis_logo.png">
+<meta name="description" content="PHRINUSOMYIS Official Press Center. Global announcements, market expansion, international stadium events, and corporate developments across Africa, Europe, and Asia.">
+<link rel="alternate" hreflang="en" href="https://phrinusomyis.com/press">
+<link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr/press">
+<link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es/press">
+<link rel="alternate" hreflang="zh" href="https://phrinusomyis.com/zh/press">
+<link rel="alternate" hreflang="x-default" href="https://phrinusomyis.com/press">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PHRINUSOMYIS Media & Press — Stadium Events, Global Projects & Coverage</title>
 <meta name="description" content="PHRINUSOMYIS Press Center | Africa-focused luxury events, news, and announcements. Stay updated on our worldwide productions.">
@@ -17,11 +28,6 @@
   --glass-border:rgba(212,175,55,0.15);
   --accent-glow:rgba(212,175,55,0.3);
   --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-  <link rel="alternate" hreflang="en" href="https://phrinusomyis.com/press">
-<link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr/press">
-<link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es/press">
-<link rel="alternate" hreflang="zh" href="https://phrinusomyis.com/zh/press">
-<link rel="alternate" hreflang="x-default" href="https://phrinusomyis.com/press">
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{
@@ -32,7 +38,6 @@ body{
   overflow-x:hidden;
   user-select:none;
 }
-  <meta name="description" content="PHRINUSOMYIS Official Press Center. Global announcements, market expansion, international stadium events, and corporate developments across Africa, Europe, and Asia.">
 a{color:inherit;text-decoration:none;cursor:pointer;}
 .cinematic-bg{
   position:fixed;
@@ -84,11 +89,6 @@ h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold
   opacity:0;
   transform:translateY(40px);
 }
-  <meta property="og:title" content="PHRINUSOMYIS Press Global Media">
-<meta property="og:description" content="Official corporate press releases, global expansion, and international event announcements.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://phrinusomyis.com/press">
-<meta property="og:image" content="https://phrinusomyis.com/assets/Phrinusomyis_logo.png">
 .press-card.visible{opacity:1;transform:translateY(0);}
 .press-card h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;margin-bottom:10px;}
 .press-card p{color:#ccc;font-size:0.85rem;text-align:justify;}
@@ -145,36 +145,6 @@ const pressNews = [
 {title:"PHRINUSOMYIS Expands Operational Presence into West African Markets", description:"", date:"2026-02-18T08:00:00+00:00"},
 {title:"PHRINUSOMYIS Confirms International Debut in West Africa Scheduled for July 24, 2026", description:"", date:"2026-02-14T08:00:00+00:00"}
 ];
-  function generateStructuredData(){
-  const data = {
-    "@context": "https://schema.org",
-    "@graph": pressNews.map(item => ({
-      "@type": "NewsArticle",
-      "headline": item.title,
-      "datePublished": item.date,
-      "dateModified": item.date,
-      "author": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
-        }
-      }
-    }))
-  };
-
-  const script = document.createElement("script");
-  script.type = "application/ld+json";
-  script.textContent = JSON.stringify(data);
-  document.head.appendChild(script);
-}
-
-generateStructuredData();
 
 // ===== GENERATE CARDS =====
 function generatePressCards() {
@@ -235,7 +205,36 @@ function updateClock(){
   document.getElementById("last-updated").innerText =
     "Last updated: " + now.toLocaleDateString();
 }
+function generateStructuredData(){
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": pressNews.map(item => ({
+      "@type": "NewsArticle",
+      "headline": item.title,
+      "datePublished": item.date,
+      "dateModified": item.date,
+      "author": {
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
+        }
+      }
+    }))
+  };
 
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.textContent = JSON.stringify(data);
+  document.head.appendChild(script);
+}
+
+generateStructuredData();
 // ===== INIT =====
 generatePressCards();
 updateClock();
