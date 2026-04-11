@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://phrinusomyis.com/press/#page",
+      "name": "PHRINUSOMYIS Press Center",
+      "url": "https://phrinusomyis.com/press",
+      "about": {
+        "@id": "https://phrinusomyis.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://phrinusomyis.com/press/#collection"
+      }
+    },
+
+    {
+      "@type": "CollectionPage",
+      "@id": "https://phrinusomyis.com/press/#collection",
+      "name": "PHRINUSOMYIS Corporate Updates",
+      "isPartOf": {
+        "@id": "https://phrinusomyis.com/#organization"
+      },
+      "hasPart": [
+        {
+          "@type": "Article",
+          "@id": "https://phrinusomyis.com/press/global-operational-readiness",
+          "headline": "PHRINUSOMYIS Strengthens Global Operational Readiness for Large-Scale Event Execution",
+          "url": "https://phrinusomyis.com/press/global-operational-readiness",
+          "datePublished": "2026-04-20T00:00:00Z",
+          "description": "Official corporate announcement from PHRINUSOMYIS."
+        },
+        {
+          "@type": "Article",
+          "@id": "https://phrinusomyis.com/press/west-africa-expansion",
+          "headline": "PHRINUSOMYIS Confirms Strategic Expansion into West African Markets",
+          "url": "https://phrinusomyis.com/press/west-africa-expansion",
+          "datePublished": "2026-04-08T00:00:00Z",
+          "description": "Official corporate expansion update."
+        },
+        {
+          "@type": "Article",
+          "@id": "https://phrinusomyis.com/press/china-market-entry",
+          "headline": "PHRINUSOMYIS Initiates Strategic Engagement Framework for China Market Entry",
+          "url": "https://phrinusomyis.com/press/china-market-entry",
+          "datePublished": "2026-03-30T00:00:00Z",
+          "description": "Official corporate strategic market entry update."
+        }
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://phrinusomyis.com/press/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the PHRINUSOMYIS Press Center?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Press Center contains official corporate announcements and strategic updates from PHRINUSOMYIS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this official information?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all press updates are official communications from PHRINUSOMYIS."
+          }
+        }
+      ]
+    }
+  ]
+}
