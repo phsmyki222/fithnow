@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PHRINUSOMYIS Articles — Luxury Lifestyle & Global Entertainment Insights </title>
+
+<title>PHRINUSOMYIS Articles — Luxury Lifestyle & Global Entertainment Insights</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --diamond: #E5E5E5; /* Diamond white color for countdown */
+    --diamond: #E5E5E5;
     --gold: #D4AF37;
     --black: #050505;
     --glass-bg: rgba(255, 255, 255, 0.02);
@@ -17,59 +18,7 @@
     --accent-glow: rgba(212, 175, 55, 0.3);
     --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
 }
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "PHRINUSOMYIS Article Page",
-  "url": "https://phrinusomyis.com/article",
-  "description": "Insights, features, and luxury entertainment articles published by PHRINUSOMYIS, highlighting global productions, premium experiences, and high-value assets.",
-  "mainEntity": [
-    {
-      "@type": "Article",
-      "headline": "The Rise of PHRINUSOMYIS: Redefining Global Luxury Entertainment",
-      "datePublished": "2026-04-08T10:00:00",
-      "dateModified": "2026-04-08T10:00:00",
-      "author": {
-        "@type": "Person",
-        "name": "Victor Seth A",
-        "jobTitle": "Founder and CEO"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
-        }
-      },
-      "mainEntityOfPage": "https://phrinusomyis.com/article",
-      "articleBody": "PHRINUSOMYIS has emerged as a leading global luxury entertainment company, known for stadium-scale productions, elite audience experiences, and high-value luxury assets. This article explores its mission, vision, and global expansion strategy, highlighting how the company sets new standards in luxury entertainment."
-    },
-    {
-      "@type": "Article",
-      "headline": "Inside PHRINUSOMYIS: Crafting Exclusive Luxury Experiences",
-      "datePublished": "2026-04-10T09:00:00",
-      "dateModified": "2026-04-10T09:00:00",
-      "author": {
-        "@type": "Person",
-        "name": "Victor Seth A",
-        "jobTitle": "Founder and CEO"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
-        }
-      },
-      "mainEntityOfPage": "https://phrinusomyis.com/article",
-      "articleBody": "This feature article dives into the premium products, event productions, and media strategies of PHRINUSOMYIS. The company’s approach to controlled distribution, high-value collectibles, and international audience engagement exemplifies luxury entertainment at its highest level."
-    }
-  ]
-}
+
 /* Global Styles */
 body {
     background-color: var(--black);
@@ -83,7 +32,10 @@ body {
 
 .cinematic-bg {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: radial-gradient(circle at 50% 50%, #151515 0%, #050505 100%);
     z-index: -1;
 }
@@ -100,7 +52,6 @@ body {
     width: 160px;
     margin-bottom: 30px;
     filter: drop-shadow(0 0 30px var(--accent-glow));
-    transition: transform 1s ease;
 }
 
 h1 {
@@ -110,6 +61,7 @@ h1 {
     color: var(--gold);
     text-transform: uppercase;
     margin-bottom: 5px;
+    text-shadow: 0 0 20px rgba(212,175,55,0.4);
 }
 
 .registry-status {
@@ -121,9 +73,16 @@ h1 {
     padding-top: 10px;
     margin-bottom: 60px;
 }
-.contact-email {position:absolute;left:30px; down:130px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
 
-}
+.contact-email {
+    position: absolute;
+    left: 30px;
+    top: 130px;
+    font-weight: 700;
+    background: var(--rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
 }
 
 .ceo-name {
@@ -132,7 +91,7 @@ h1 {
     font-weight: 900;
 }
 
-/* Top Menu */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -144,7 +103,6 @@ h1 {
     justify-content: center;
     z-index: 999;
     padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .navbar ul {
@@ -152,113 +110,66 @@ h1 {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
     gap: 30px;
 }
 
 .navbar li {
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
 }
 
 .navbar a {
     text-decoration: none;
     color: var(--diamond);
     font-weight: 700;
-    position: relative;
-    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
     color: var(--gold);
-    text-shadow: 0 0 15px var(--gold);
 }
 
 .navbar a.active {
     color: var(--gold);
 }
 
-/* Hamburger Menu */
+/* Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    margin-left: 20px;
 }
 
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background: var(--diamond);
-}
-
-/* Responsive Menu */
-@media screen and (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        position: fixed;
-        top: 60px;
-        right: -100%;
-        width: 200px;
-        background: rgba(0,0,0,0.9);
-        padding: 20px;
-        gap: 20px;
-        transition: right 0.3s ease;
-        border-left: 2px solid var(--gold);
-    }
-    .navbar ul.show {
-        right: 0;
-    }
-    .hamburger {
-        display: flex;
-    }
-}
-
-/* Countdown / Live Time */
+/* Countdown */
 .countdown-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 40px;
 }
 
 .countdown-card {
     background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--gold); /* Gold edge */
+    border: 1px solid var(--gold);
     border-radius: 15px;
     padding: 30px 20px 15px 20px;
     width: 100px;
     text-align: center;
-    transition: 0.5s ease;
 }
 
 .countdown-card h2 {
-    color: #B2EBF2; /* Time only */
-    text-shadow: 0 0 10px #B2EBF2;
+    color: #B2EBF2;
     font-family: 'Cinzel', serif;
     font-size: 2rem;
-    margin: 0;
-    animation: pulse 2s infinite;
 }
 
-.countdown-card span {
-    display: block;
-    margin-top: 5px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--gold);
-}
-
-/* Cards Grid */
+/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    text-align: left;
     margin-top: 60px;
+    text-align: left;
 }
 
 .card {
@@ -266,22 +177,11 @@ h1 {
     border: 1px solid var(--glass-border);
     padding: 50px;
     backdrop-filter: blur(25px);
-    position: relative;
-    transition: 0.5s ease;
-}
-
-.card:hover {
-    border-color: var(--gold);
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
 }
 
 .card h3 {
     font-family: 'Cinzel', serif;
     color: var(--gold);
-    font-size: 1.3rem;
-    margin-top: 0;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
 }
 
 .data-point {
@@ -292,14 +192,20 @@ h1 {
     padding-bottom: 8px;
 }
 
-.label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; }
-.value { color: #fff; font-weight: 400; font-size: 0.9rem; }
+.label {
+    color: var(--gold);
+    font-size: 0.7rem;
+}
+
+.value {
+    color: #fff;
+    font-size: 0.9rem;
+}
 
 .narrative-content {
     margin-top: 25px;
     font-size: 0.85rem;
     color: #bbb;
-    text-align: justify;
 }
 
 /* Footer */
@@ -308,44 +214,69 @@ footer {
     font-size: 0.6rem;
     letter-spacing: 3px;
     color: #444;
-    text-transform: uppercase;
 }
 
-/* Animations */
-@keyframes pulse {
-    0% { text-shadow: 0 0 15px #B2EBF2; }
-    50% { text-shadow: 0 0 25px #B2EBF2; }
-    100% { text-shadow: 0 0 15px #B2EBF2; }
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
 }
 </style>
+
 </head>
+
 <body>
 
-<!-- Cinematic Background -->
 <div class="cinematic-bg"></div>
 
-<!-- Navigation Menu -->
+<!-- FIXED JSON-LD (NOW VALID LOCATION) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "PHRINUSOMYIS Article Page",
+  "url": "https://phrinusomyis.com/article",
+  "description": "Insights and luxury entertainment articles by PHRINUSOMYIS",
+  "mainEntity": [
+    {
+      "@type": "Article",
+      "headline": "The Rise of PHRINUSOMYIS",
+      "datePublished": "2026-04-08",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Seth A"
+      }
+    }
+  ]
+}
+</script>
+
 <nav class="navbar">
     <div class="hamburger" onclick="toggleMenu()">
         <div></div><div></div><div></div>
     </div>
     <ul id="nav-links">
-        <li><a href="/" target="_self" class="active">Homepage</a></li>
-        <li><a href="news" target="_self">News</a></li>
-        <li><a href="events" target="_self">Events</a></li>
-        <li><a href="press" target="_self">Press/Media</a></li>
+        <li><a href="/" class="active">Homepage</a></li>
+        <li><a href="news">News</a></li>
+        <li><a href="events">Events</a></li>
+        <li><a href="press">Press/Media</a></li>
     </ul>
 </nav>
 
 <div class="container">
-    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
+
+    <img src="phrinusomyis_logo.png" class="brand-seal">
 
     <h1>PHRINUSOMYIS Article Luxury</h1>
-    <p class="registry-status">Phrinusomyis Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
+
+    <p class="registry-status">
+        Phrinusomyis Data Center | Founder:
+        <span class="ceo-name">Victor Seth A</span>
+    </p>
 
     <div class="contact-email">contact@phrinusomyis.com</div>
 
-    <!-- Modular Diamond-Style Live Time -->
     <div class="countdown-container">
         <div class="countdown-card"><h2 id="month">00</h2><span>Month</span></div>
         <div class="countdown-card"><h2 id="year">0000</h2><span>Year</span></div>
@@ -355,80 +286,70 @@ footer {
         <div class="countdown-card"><h2 id="seconds">00</h2><span>Seconds</span></div>
     </div>
 
-    <!-- Article and Sponsors Grid -->
     <div class="grid">
+
         <div class="card">
             <h3>Featured Article</h3>
-            <div class="data-point"><span class="label">Title</span><span class="value">Engineering Legacy Moments</span></div>
-            <div class="data-point"><span class="label">Author</span><span class="value">Victor Seth A</span></div>
-            <div class="data-point"><span class="label">Region</span><span class="value">West Africa</span></div>
+
+            <div class="data-point">
+                <span class="label">Title</span>
+                <span class="value">Engineering Legacy Moments</span>
+            </div>
+
+            <div class="data-point">
+                <span class="label">Author</span>
+                <span class="value">Victor Seth A</span>
+            </div>
+
+            <div class="data-point">
+                <span class="label">Region</span>
+                <span class="value">West Africa</span>
+            </div>
+
             <div class="narrative-content">
-                This featured article highlights the vision of PHRINUSOMYIS in creating unmatched entertainment experiences across West Africa. With world-class design, innovation, and cinematic technology, PHRINUSOMYIS continues to redefine the art of luxury on a global stage.
+                PHRINUSOMYIS continues to redefine luxury entertainment through cinematic-scale production and global storytelling systems.
             </div>
         </div>
 
         <div class="card">
             <h3>Sponsors</h3>
             <div class="narrative-content">
-                PHRINUSOMYIS collaborates with elite sponsors and partners worldwide to ensure the highest quality production and experience. Every sponsor is verified and synchronized with our global registry for seamless operations.
+                Elite global partnerships supporting premium production infrastructure.
             </div>
         </div>
 
         <div class="card">
             <h3>Latest Insights</h3>
             <div class="narrative-content">
-                PHRINUSOMYIS continues to redefine the art of global entertainment and luxury experiences. Our latest articles explore innovative strategies, industry intelligence, and exclusive interviews with top visionaries shaping stadium-scale productions worldwide.
+                Strategic updates and global entertainment intelligence from PHRINUSOMYIS.
             </div>
         </div>
+
     </div>
 
-    <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. LUXURY BRAND.</footer>
+    <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION</footer>
+
 </div>
 
-<!-- Hidden Multi-Language JSON -->
-<script type="application/json" id="translations" style="display:none">
-{
-    "en": {"tagline": "Engineering Legacy Moments", "status": "Worldwide Company"},
-    "zh": {"tagline": "工程传奇时刻", "status": "全球性公司"},
-    "hi": {"tagline": "इंजीनियरिंग लेगेसी मोमेंट्स", "status": "विश्वव्यापी कंपनी"},
-    "ar": {"tagline": "هندسة لحظات الإرث", "status": "شركة عالمية"},
-    "ru": {"tagline": "Создание легендарных моментов", "status": "Мировая компания"},
-    "ja": {"tagline": "レガシーな瞬間をエンジニアリングする", "status": "世界的な企業"},
-    "ko": {"tagline": "레거시 모먼트 엔지니어링", "status": "글로벌 기업"},
-    "yo": {"tagline": "Ṣiṣẹ Awọn Akoko Arosọ", "status": "Ilé-iṣẹ Agbaye"},
-    "ig": {"tagline": "Ịrụ Oge Ezigbo Akụkọ", "status": "Ụlọ ọrụ Ụwa"}
-}
-</script>
-
 <script>
-/* Hamburger Toggle */
 function toggleMenu(){
     document.getElementById('nav-links').classList.toggle('show');
 }
 
-/* Live Time Display */
 function updateTime(){
     const now = new Date();
 
-    const month = ("0" + (now.getMonth() + 1)).slice(-2); // 01-12
-    const year = now.getFullYear();
-    const days = ("0" + now.getDate()).slice(-2); // 01-31
-    const hours = ("0" + now.getHours()).slice(-2); // 00-23
-    const minutes = ("0" + now.getMinutes()).slice(-2); // 00-59
-    const seconds = ("0" + now.getSeconds()).slice(-2); // 00-59
-
-    document.getElementById("month").innerText = month;
-    document.getElementById("year").innerText = year;
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
+    document.getElementById("month").innerText = ("0"+(now.getMonth()+1)).slice(-2);
+    document.getElementById("year").innerText = now.getFullYear();
+    document.getElementById("days").innerText = ("0"+now.getDate()).slice(-2);
+    document.getElementById("hours").innerText = ("0"+now.getHours()).slice(-2);
+    document.getElementById("minutes").innerText = ("0"+now.getMinutes()).slice(-2);
+    document.getElementById("seconds").innerText = ("0"+now.getSeconds()).slice(-2);
 }
 
-// Update every second
 setInterval(updateTime, 1000);
 updateTime();
 </script>
 
 </body>
-    </html>
+</html>
