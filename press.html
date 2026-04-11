@@ -53,7 +53,7 @@ nav a:hover{background:var(--gold);color:var(--black);}
 h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
 .registry-status,.tagline{font-size:0.7rem;letter-spacing:4px;color:#888;border-top:1px solid var(--glass-border);display:inline-block;padding-top:10px;margin-bottom:30px;}
 .ceo-name{color:var(--gold);text-shadow:0 0 15px var(--gold);font-weight:900;}
-.contact-email{position:absolute;left:30px;down:100px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
+.contact-email{position:absolute;left:30px;bottom:100px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
 .live-clock{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
 .time-box{
   background:var(--glass-bg);
@@ -82,13 +82,15 @@ h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold
 .press-card h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;margin-bottom:10px;}
 .press-card p{color:#ccc;font-size:0.85rem;text-align:justify;}
 .last-updated{color:#ccc;font-size:0.75rem;text-align:right;margin-top:-30px;}
-footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-shadow:0 0 5px #000;text-align:center;}
-@media(max-width:768px){nav a{padding:8px 15px;font-size:0.85rem;}}
+footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:center;}
 </style>
 </head>
+
 <body>
 <div class="cinematic-bg"></div>
+
 <div class="container">
+
 <nav>
 <a href="/">Homepage</a>
 <a href="events">Events</a>
@@ -96,7 +98,7 @@ footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);te
 <a href="article">Article</a>
 </nav>
 
-<img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
+<img src="phrinusomyis_logo.png" class="brand-seal">
 <h1>PHRINUSOMYIS Press Global Media</h1>
 <p class="registry-status">PHRINUSOMYIS Data Center | Founder: <span class="ceo-name">Victor Seth A</span></p>
 <p class="tagline">Engineering Legacy Moments</p>
@@ -111,50 +113,75 @@ footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);te
 </div>
 
 <div class="contact-email">contact@phrinusomyis.com</div>
-<p class="last-updated" id="last-updated">Last updated: </p>
+<p class="last-updated" id="last-updated"></p>
+
+<div id="breaking-bar" style="background:linear-gradient(90deg,#D4AF37,transparent);padding:10px;margin:20px 0;"></div>
+
 <div class="press-grid" id="press-news"></div>
 
 <footer>© 2026 PHRINUSOMYIS GLOBAL PRODUCTION. PHRINUSOMYIS PRESS RELEASE.</footer>
+
 </div>
 
 <script>
-// Press News Data
+
+// ===== YOUR PRESS DATA =====
 const pressNews = [
-  {title:"PHRINUSOMYIS Announces African Debut", description:"PHRINUSOMYIS is bringing stadium-scale luxury productions to Africa with unmatched audience experiences and worldwide press coverage.", date:"2026-04-08T08:00:00+00:00"},
-  {title:"PHRINUSOMYIS Unveils New Global Event Strategy on April 13, 2026", description:"PHRINUSOMYIS today announced the launch of a new global event strategy designed to enhance international audience engagement… Include details and a quote from leadership.", date:"2026-04-08T08:30:00+00:00"},
-  {title:"PHRINUSOMYIS Partners with Local Governments for West Africa Showcase April 10, 2026", description:"PHRINUSOMYIS is bringing stadium-scale luxury productions to Africa with unmatched audience experiences and worldwide press coverage.", date:"2026-04-08T08:00:00+00:00"},
-  {title:"PHRINUSOMYIS Releases Official Event Schedule for 2026 by April 20, 2026", description:"PHRINUSOMYIS today published the official schedule of events planned for 2026. The calendar includes international showcases, regional productions, and audience engagement experiences across multiple continents.", date:"2026-04-08T08:30:00+00:00"},
-  {title:"PHRINUSOMYIS Participates in Global Entertainment Conference April 9, 2026", description:"PHRINUSOMYIS attended the 2026 Global Entertainment & Media Conference, participating in panels, networking sessions, and industry discussions. The company shared insights on large-scale event production, international expansion, and audience engagement strategies.", date:"2026-04-08T08:00:00+00:00"},
-  {title:"PHRINUSOMYIS Updates Leadership Team April 9, 2026", description:"PHRINUSOMYIS announces updates to its leadership team, including key executive appointments and promotions.", date:"2026-04-08T08:30:00+00:00"}
+{title:"PHRINUSOMYIS Prepares for International Debut Showcase in West Africa — July 24, 2026", description:"", date:"2026-07-24T08:00:00+00:00"},
+{title:"PHRINUSOMYIS Confirms Strategic Expansion into West African Markets", description:"", date:"2026-04-08T08:00:00+00:00"},
+{title:"PHRINUSOMYIS Initiates Strategic Engagement Framework for China Market Entry", description:"", date:"2026-03-30T08:00:00+00:00"},
+{title:"PHRINUSOMYIS Establishes Strategic Market Positioning for United Kingdom Expansion", description:"", date:"2026-03-22T08:00:00+00:00"},
+{title:"PHRINUSOMYIS Expands Operational Presence into West African Markets", description:"", date:"2026-02-18T08:00:00+00:00"},
+{title:"PHRINUSOMYIS Confirms International Debut in West Africa Scheduled for July 24, 2026", description:"", date:"2026-02-14T08:00:00+00:00"}
 ];
 
-// Generate Press Cards
+// ===== GENERATE CARDS =====
 function generatePressCards() {
   const grid = document.getElementById("press-news");
   grid.innerHTML="";
-  pressNews.forEach(item => {
-    const card = document.createElement("div");
+
+  pressNews.sort((a,b)=> new Date(b.date)-new Date(a.date));
+
+  document.getElementById("breaking-bar").innerText =
+    "Latest Update: " + pressNews[0].title;
+
+  pressNews.forEach((item,index)=>{
+    const card=document.createElement("div");
     card.className="press-card";
-    card.innerHTML=`<h3>${item.title}</h3><p>${item.description}</p>`;
+
+    const badge=index<3?"<span style='color:gold;font-size:0.7rem;'>NEW</span><br>":"";
+
+    const formattedDate = new Date(item.date).toLocaleDateString('en-GB',{
+      day:'2-digit',month:'short',year:'numeric'
+    });
+
+    card.innerHTML=`
+      ${badge}
+      <h3>${item.title}</h3>
+      <p style="color:#888;font-size:0.75rem;margin-bottom:8px;">${formattedDate}</p>
+      <p>${item.description || "Official corporate update from PHRINUSOMYIS."}</p>
+    `;
+
     grid.appendChild(card);
   });
+
+  animatePressCards();
 }
 
-// Animate Press Cards
-function animatePressCards() {
-  const cards = document.querySelectorAll(".press-card");
-  const observer = new IntersectionObserver(entries=>{
+// ===== ANIMATION =====
+function animatePressCards(){
+  const cards=document.querySelectorAll(".press-card");
+  const observer=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
       }
     });
-  },{threshold:0.2});
+  });
   cards.forEach(card=>observer.observe(card));
 }
 
-// Live Clock
+// ===== CLOCK =====
 function updateClock(){
   const now=new Date();
   const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -164,42 +191,15 @@ function updateClock(){
   document.getElementById("hours").innerText=String(now.getHours()).padStart(2,'0');
   document.getElementById("minutes").innerText=String(now.getMinutes()).padStart(2,'0');
   document.getElementById("seconds").innerText=String(now.getSeconds()).padStart(2,'0');
-  document.getElementById("last-updated").innerText = "Last updated: " + now.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
+  document.getElementById("last-updated").innerText =
+    "Last updated: " + now.toLocaleDateString();
 }
 
-// JSON-LD for SEO
-function generateStructuredData(){
-  const data={
-    "@context":"https://schema.org",
-    "@graph": pressNews.map(item=>({
-      "@type":"NewsArticle",
-      "headline": item.title,
-      "description": item.description,
-      "datePublished": item.date,
-      "dateModified": item.date,
-      "author":{"@type":"Organization","name":"PHRINUSOMYIS Global"},
-      "publisher":{"@type":"Organization","name":"PHRINUSOMYIS Global","logo":{"@type":"ImageObject","url":"https://phrinusomyis.com/assets/Phrinusomyis_logo.png"}},
-      "inLanguage":"en",
-      "mainEntityOfPage":"https://phrinusomyis.com/press"
-    }))
-  };
-  const script=document.createElement("script");
-  script.type="application/ld+json";
-  script.textContent=JSON.stringify(data);
-  document.head.appendChild(script);
-}
-
-// Initialize Page
-function initPressPage(){
-  generatePressCards();
-  animatePressCards();
-  updateClock();
-  generateStructuredData();
-}
-
-// Run
-initPressPage();
+// ===== INIT =====
+generatePressCards();
+updateClock();
 setInterval(updateClock,1000);
+
 </script>
 </body>
 </html>
