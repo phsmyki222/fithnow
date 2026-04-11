@@ -69,7 +69,7 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   </url>
 
   <url>
-    <loc>https://phrinusomyis.com/press/rss.xml</loc>
+    <loc>https://phrinusomyis.com/rss.xml</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
