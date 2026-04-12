@@ -257,28 +257,113 @@ function updateClock(){
   document.getElementById("last-updated").innerText =
     "Last updated: " + now.toLocaleDateString();
 }
-function generateStructuredData(){
-  const data = {
-    "@context": "https://schema.org",
-    "@graph": pressNews.map(item => ({
-      "@type": "NewsArticle",
-      "headline": item.title,
-      "datePublished": item.date,
-      "dateModified": item.date,
-      "author": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
-        }
-      }
+function generateStructuredData() {
+  const base = "https://phrinusomyis.com/news/";
+
+  const articles = [
+    ["2025-09-05","strategic-direction-global-operations","PHRINUSOMYIS Establishes Strategic Direction for Global Operations"],
+    ["2025-09-10","brand-architecture-framework","PHRINUSOMYIS Initiates Brand Architecture Development Framework"],
+    ["2025-09-15","luxury-entertainment-concept","PHRINUSOMYIS Begins Luxury Entertainment Concept Development"],
+    ["2025-09-20","global-expansion-blueprint","PHRINUSOMYIS Defines Global Expansion Blueprint Strategy"],
+    ["2025-09-24","creative-production-system","PHRINUSOMYIS Initiates Creative Production Planning System"],
+    ["2025-09-28","luxury-production-framework","PHRINUSOMYIS Develops Early-Stage Luxury Production Framework"],
+    ["2025-10-03","digital-infrastructure-planning","PHRINUSOMYIS Begins Digital Infrastructure Planning System"],
+    ["2025-10-07","media-production-architecture","PHRINUSOMYIS Expands Media Production Architecture Development"],
+    ["2025-10-12","internal-operational-framework","PHRINUSOMYIS Launches Internal Operational Framework System"],
+    ["2025-10-16","event-technology-integration","PHRINUSOMYIS Develops Event Technology Integration Strategy"],
+    ["2025-10-20","global-entertainment-structure","PHRINUSOMYIS Strengthens Global Entertainment Structure Planning"],
+    ["2025-10-25","luxury-experience-design","PHRINUSOMYIS Advances Luxury Experience Design Systems"],
+    ["2025-10-30","media-event-coordination","PHRINUSOMYIS Integrates Media and Event Coordination Framework"],
+    ["2025-11-03","international-market-strategy","PHRINUSOMYIS Initiates International Market Strategy Framework"],
+    ["2025-11-07","stadium-production-design","PHRINUSOMYIS Expands Stadium-Scale Production Concept Design"],
+    ["2025-11-12","global-partnership-system","PHRINUSOMYIS Develops Global Partnership Exploration System"],
+    ["2025-11-16","multi-region-expansion","PHRINUSOMYIS Strengthens Multi-Region Expansion Architecture"],
+    ["2025-11-20","media-positioning-strategy","PHRINUSOMYIS Initiates International Media Positioning Strategy"],
+    ["2025-11-24","global-execution-planning","PHRINUSOMYIS Advances Global Execution Planning System"],
+
+    ["2025-12-02","international-engagement-framework","PHRINUSOMYIS Initiates International Engagement Framework"],
+    ["2025-12-06","global-media-collaboration","PHRINUSOMYIS Expands Global Media Collaboration Strategy"],
+    ["2025-12-10","external-partnership-exploration","PHRINUSOMYIS Strengthens External Partnership Exploration System"],
+    ["2025-12-14","luxury-event-expansion-blueprint","PHRINUSOMYIS Develops Luxury Event Expansion Blueprint"],
+    ["2025-12-18","stakeholder-engagement-strategy","PHRINUSOMYIS Advances Global Stakeholder Engagement Strategy"],
+    ["2025-12-22","international-visibility-framework","PHRINUSOMYIS Strengthens International Visibility Framework"],
+
+    ["2026-01-01","new-year-innovation","PHRINUSOMYIS Welcomes New Year 2026 with Global Innovation Strategy"],
+    ["2026-01-02","global-execution-framework","PHRINUSOMYIS Activates Global Execution Framework System"],
+    ["2026-01-06","strategy-development-unit","PHRINUSOMYIS Expands International Strategy Development Unit"],
+    ["2026-01-10","media-infrastructure-planning","PHRINUSOMYIS Strengthens Global Media Infrastructure Planning"],
+    ["2026-01-14","partnership-strategy-system","PHRINUSOMYIS Develops High-Level Partnership Strategy System"],
+    ["2026-01-18","event-technology-framework","PHRINUSOMYIS Advances Luxury Event Technology Framework"],
+    ["2026-01-20","media-data-infrastructure","PHRINUSOMYIS Activates Media and Data Infrastructure Systems"],
+    ["2026-01-23","dubai-market-entry","PHRINUSOMYIS Initiates Dubai Market Entry Strategy Framework"],
+    ["2026-01-26","engagement-discussions","PHRINUSOMYIS Strengthens International Engagement Discussions"],
+    ["2026-01-30","media-coordination","PHRINUSOMYIS Conducts Global Media Coordination Sessions"],
+
+    ["2026-02-03","collaboration-systems","PHRINUSOMYIS Strengthens International Collaboration Systems"],
+    ["2026-02-06","event-production-network","PHRINUSOMYIS Expands Global Event Production Planning Network"],
+    ["2026-02-08","west-africa-debut-confirmation","PHRINUSOMYIS Confirms International Debut in West Africa (July 24, 2026)"],
+    ["2026-02-10","partner-ecosystem","PHRINUSOMYIS Expands Global Partner Ecosystem Strategy"],
+    ["2026-02-12","cross-border-media","PHRINUSOMYIS Strengthens Cross-Border Media Engagement System"],
+    ["2026-02-16","west-africa-planning","PHRINUSOMYIS Initiates West Africa Event Execution Planning Framework"],
+    ["2026-02-18","operational-readiness","PHRINUSOMYIS Expands Regional Operational Readiness Structure"],
+    ["2026-02-22","event-execution-systems","PHRINUSOMYIS Advances Global Event Execution Systems"],
+    ["2026-02-25","partnership-framework","PHRINUSOMYIS Refines International Partnership Framework"],
+
+    ["2026-03-01","multi-region-coordination","PHRINUSOMYIS Activates Multi-Region Expansion Coordination Framework"],
+    ["2026-03-05","media-strategy-execution","PHRINUSOMYIS Strengthens Global Media Strategy Execution System"],
+    ["2026-03-10","uk-market-entry","PHRINUSOMYIS Develops United Kingdom Market Entry Strategy System"],
+    ["2026-03-12","european-collaboration","PHRINUSOMYIS Expands European Collaboration Engagement Framework"],
+    ["2026-03-15","france-expansion","PHRINUSOMYIS Initiates France Market Expansion Planning System"],
+    ["2026-03-18","production-tech-infrastructure","PHRINUSOMYIS Strengthens Global Event Production Technology Infrastructure"],
+    ["2026-03-20","spain-market-entry","PHRINUSOMYIS Advances Spain Market Entry Strategy Framework"],
+    ["2026-03-23","production-coordination","PHRINUSOMYIS Enhances International Production Coordination Systems"],
+    ["2026-03-25","china-market-entry","PHRINUSOMYIS Initiates China Market Entry Strategy Framework"],
+
+    ["2026-04-08","west-africa-hub","PHRINUSOMYIS Formalizes West African Market Expansion Hub"],
+    ["2026-04-09","operational-readiness-review","PHRINUSOMYIS Advances Global Operational Readiness Review"],
+    ["2026-04-10","production-coordination-strengthening","PHRINUSOMYIS Strengthens Global Production Coordination Systems"],
+    ["2026-04-20","global-readiness","PHRINUSOMYIS Declares Full Readiness for Global Event Execution"],
+    ["2026-07-24","west-africa-debut","PHRINUSOMYIS International Debut Showcase in West Africa"]
+  ];
+
+  const graph = [];
+
+  // Organization
+  graph.push({
+    "@type": "Organization",
+    "@id": "https://phrinusomyis.com/#organization",
+    "name": "PHRINUSOMYIS",
+    "url": "https://phrinusomyis.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
+    }
+  });
+
+  // ItemList
+  graph.push({
+    "@type": "ItemList",
+    "itemListElement": articles.map((a, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": { "@id": base + a[1] + "#article" }
     }))
-  };
+  });
+
+  // Articles
+  articles.forEach(a => {
+    graph.push({
+      "@type": "NewsArticle",
+      "@id": base + a[1] + "#article",
+      "headline": a[2],
+      "datePublished": a[0],
+      "dateModified": a[0],
+      "mainEntityOfPage": base + a[1],
+      "publisher": { "@id": "https://phrinusomyis.com/#organization" }
+    });
+  });
+
+  const data = { "@context": "https://schema.org", "@graph": graph };
 
   const script = document.createElement("script");
   script.type = "application/ld+json";
