@@ -1,54 +1,166 @@
-{
+l{
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "@id": "https://phrinusomyis.com/press/#page",
-      "name": "PHRINUSOMYIS Press Center",
-      "url": "https://phrinusomyis.com/press",
-      "about": {
-        "@id": "https://phrinusomyis.com/#organization"
-      },
-      "mainEntity": {
-        "@id": "https://phrinusomyis.com/press/#collection"
-      }
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#organization",
+      "name": "PHRINUSOMYIS",
+      "url": "https://phrinusomyis.com",
+      "description": "Global luxury entertainment and strategic innovation organization focused on international market expansion and large-scale event production."
     },
-
     {
-      "@type": "CollectionPage",
-      "@id": "https://phrinusomyis.com/press/#collection",
-      "name": "PHRINUSOMYIS Corporate Updates",
-      "isPartOf": {
-        "@id": "https://phrinusomyis.com/#organization"
-      },
-      "hasPart": [
+      "@type": "ItemList",
+      "@id": "https://phrinusomyis.com/press#timeline",
+      "name": "PHRINUSOMYIS Official Press Timeline",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 16,
+      "itemListElement": [
         {
-          "@type": "Article",
-          "@id": "https://phrinusomyis.com/press/global-operational-readiness",
-          "headline": "PHRINUSOMYIS Strengthens Global Operational Readiness for Large-Scale Event Execution",
-          "url": "https://phrinusomyis.com/press/global-operational-readiness",
-          "datePublished": "2026-04-20T00:00:00Z",
-          "description": "Official corporate announcement from PHRINUSOMYIS."
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2025-09-05",
+            "headline": "PHRINUSOMYIS Establishes Strategic Direction for Global Operations"
+          }
         },
         {
-          "@type": "Article",
-          "@id": "https://phrinusomyis.com/press/west-africa-expansion",
-          "headline": "PHRINUSOMYIS Confirms Strategic Expansion into West African Markets",
-          "url": "https://phrinusomyis.com/press/west-africa-expansion",
-          "datePublished": "2026-04-08T00:00:00Z",
-          "description": "Official corporate expansion update."
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2025-09-15",
+            "headline": "PHRINUSOMYIS Unveils New Luxury Entertainment Development Concept"
+          }
         },
         {
-          "@type": "Article",
-          "@id": "https://phrinusomyis.com/press/china-market-entry",
-          "headline": "PHRINUSOMYIS Initiates Strategic Engagement Framework for China Market Entry",
-          "url": "https://phrinusomyis.com/press/china-market-entry",
-          "datePublished": "2026-03-30T00:00:00Z",
-          "description": "Official corporate strategic market entry update."
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2025-10-12",
+            "headline": "PHRINUSOMYIS Launches Proprietary Internal Operational Framework"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2025-11-07",
+            "headline": "PHRINUSOMYIS Unveils Stadium-Scale Production Concept Designs"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2025-11-20",
+            "headline": "PHRINUSOMYIS Announces New International Media Positioning Strategy"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-01-01",
+            "headline": "PHRINUSOMYIS Debuts 2026 Global Innovation Strategy"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-01-23",
+            "headline": "PHRINUSOMYIS Announces Strategic Entry into Dubai Market"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-02-08",
+            "headline": "OFFICIAL: PHRINUSOMYIS Confirms International Debut in West Africa for July 24, 2026"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-02-10",
+            "headline": "PHRINUSOMYIS Expands Global Partner Ecosystem and Strategic Alliances"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-03-10",
+            "headline": "PHRINUSOMYIS Announces United Kingdom Market Entry Strategy"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-03-15",
+            "headline": "PHRINUSOMYIS Expands European Presence with France Market Entry"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-03-20",
+            "headline": "PHRINUSOMYIS Sets Strategic Framework for Spain Market Expansion"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-03-25",
+            "headline": "PHRINUSOMYIS Announces Major Entry into China Market"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-04-08",
+            "headline": "PHRINUSOMYIS Formalizes West African Market Expansion Hub"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-04-20",
+            "headline": "PHRINUSOMYIS Declares Full Operational Readiness for Global Event Execution"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "NewsArticle",
+            "datePublished": "2026-07-24",
+            "headline": "LIVE: PHRINUSOMYIS Hosts International Debut Showcase in West Africa"
+          }
         }
       ]
     },
-
     {
       "@type": "FAQPage",
       "@id": "https://phrinusomyis.com/press/#faq",
