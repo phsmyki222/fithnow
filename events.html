@@ -381,42 +381,7 @@ updateCountdown();
         }
     }
 </style>
-
-<nav>
-    <div class="logo"><strong>MyWebsite</strong></div>
     
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    
-    <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toggleBtn = document.querySelector('.menu-toggle');
-        const navList = document.querySelector('.nav-links');
-
-        toggleBtn.addEventListener('click', () => {
-            // Toggles the visibility of the menu
-            navList.classList.toggle('active');
-            
-            // Subtle UI touch: Change icon from hamburger to X
-            toggleBtn.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Optional: Close menu if a user clicks a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
-                toggleBtn.innerHTML = '☰';
-            });
-        });
-    });
-</script>
 </body>
 </html>
 
