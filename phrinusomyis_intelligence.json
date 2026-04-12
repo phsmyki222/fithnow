@@ -1,4 +1,4 @@
-{{
+{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "PHRINUSOMYIS",
@@ -15,12 +15,6 @@
     "addressLocality": "Global",
     "addressCountry": "Worldwide"
   },
-  "sameAs": [
-    "https://www.facebook.com/phrinusomyis",
-    "https://www.twitter.com/phrinusomyis",
-    "https://www.instagram.com/phrinusomyis",
-    "https://www.linkedin.com/company/phrinusomyis"
-  ],
   "event": {
     "@type": "Event",
     "name": "Next Global Event",
@@ -38,7 +32,7 @@
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "USD"
+        "priceCurrency": "7000"
       }
     },
     {
@@ -194,8 +188,6 @@
 "default_language": "en"
 },
 "global_metrics": {
-"weekly_impressions": "Target: 20M",
-"monthly_impressions": "Target: 80M",
 "active_markets": ["Global", "West Africa", "Russia", "China"]
 },
 "PHRINUSOMYIS_collection_registry": {
@@ -203,13 +195,13 @@
       "PHRINUSOMYIS_exclusive_perfume": {"units": 500, "specs": "Black glass, gold stopper"}
     },
     "event_registry": {
-      "next_major_event": "2026-06-26",
+      "next_major_event": "2026-07-24",
       "status": "Confirmed / Real Date",
       "system_status": "Synchronized"
     },
     "seo_registry": {
       "meta_title": "PHRINUSOMYIS - Engineering Legacy Moments Worldwide",
-      "meta_description": "Experience luxury stadium-scale events with PHRINUSOMYIS. Join us for the next global event on 2026-06-26.",
+      "meta_description": "Experience luxury stadium-scale events with PHRINUSOMYIS. Join us for the next global event on 2026-07-24.",
       "keywords": ["PHRINUSOMYIS", "Luxury Entertainment", "Global Events", "Stadium Show", "Legacy Moments"],
       "open_graph": {
         "og_title": "PHRINUSOMYIS Global Events",
