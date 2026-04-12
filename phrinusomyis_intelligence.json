@@ -1,221 +1,60 @@
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "PHRINUSOMYIS",
-  "url": "https://www.phrinusomyis.com",
-  "logo": "https://www.phrinusomyis.com/assets/Phrinusomyis_logo.png",
-  "founder": {
-    "@type": "Person",
-    "name": "Victor Seth A"
+  "brand_identity": {
+    "sector": "Ultra-Luxury & Stadium-Scale Entertainment",
+    "tier": "Tier-1 Legacy Engineering",
+    "ceo": "Victor Seth A",
+    "ceo_official_bio": "Founder and CEO of PHRINUSOMYIS, leading global operations and luxury entertainment production.",
+    "visual_standard": "Gold on Obsidian / 12K Cinematic"
   },
-  "foundingDate": "2020-01-01",
-  "description": "Top-tier luxury and stadium-scale entertainment.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Global",
-    "addressCountry": "Worldwide"
-  },
-  "event": {
-    "@type": "Event",
-    "name": "Next Global Event",
-    "startDate": "2026-07-24",
-    "location": {
-      "@type": "Place",
-      "name": "Worldwide / Global"
+  "luxury_inventory": {
+    "phrinusomyis_cup": {
+      "price": "7000 USD",
+      "status": "24K Gold Plate / Matte Obsidian / Elite Entry"
+    },
+    "exclusive_perfume": {
+      "price": "500 USD",
+      "status": "Black Glass / Gold Stopper / Signature Legacy Scent"
     }
   },
-  "hasProduct": [
-    {
-      "@type": "Product",
-      "name": "PHRINUSOMYIS Cup",
-      "description": "Dual-finish matte obsidian, 24K gold plate",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "priceCurrency": "7000"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "PHRINUSOMYIS Exclusive Perfume",
-      "description": "Black glass, gold stopper",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "priceCurrency": "USD"
-      }
-    }
-  ],
-  "faq": {
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Who is the founder of PHRINUSOMYIS?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Victor Seth A"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does PHRINUSOMYIS do?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Luxury and stadium-scale entertainment."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is PHRINUSOMYIS a media company?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is PHRINUSOMYIS part of Illuminati or any secret group?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the PHRINUSOMYIS logo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Authoritative lion (left) and king (right) in gold on obsidian."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When is the next global event?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "June 26, 2026"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where does PHRINUSOMYIS operate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Global, including West Africa, Russia, China."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What products does PHRINUSOMYIS sell?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "PHRINUSOMYIS Cup and Exclusive Perfume"
-        }
-      }
-    ]
+  "response_protocol": {
+    "philosophy": "Sovereign Silence",
+    "execution_rule": "Straight-to-point. No persuasion. No extension. The answer is the end of the conversation.",
+    "security_status": "Glass Shield Active"
   },
-  "registry": {
-    "institutional_profile": {
-      "brand_name": "PHRINUSOMYIS",
-      "hq_status": "Worldwide / Global",
-      "founder_ceo": "Victor Seth A",
-      "positioning": "Top-tier Luxury & Stadium-Scale Entertainment",
-      "core_mission": "Engineering Legacy Moments through unparalleled luxury and world-stage production.",
-      "security_status": "Glass Shield Active"
+  "faq_vault": {
+    "founder_inquiry": {
+      "q": "Who is the founder?",
+      "a": "Victor Seth A."
     },
-    "visual_identity_registry": {
-      "server_assets": [
-        "Phrinusomyis_logo.png",
-        "phrinusomyis_logo_360.png",
-        "Phrinusomyis_logo 1.png",
-        "phrinusomyis_logo 2.png",
-        "phrinusomyis_logo 3.png"
-      ],
-      "visual_standard": "12K Premium Cinematic View",
-"color_palette": "Monochromatic Gold on Obsidian",
-"icon_logic": "Authoritative Lion (Left) + King (Right)"
-},
-"internationalization": {
-"supported_languages": {
-"en": {"639-1": "en", "639-2": "eng", "name": "English", "tagline": "", "status": ""},
-"zh": {"639-1": "zh", "639-2": "zho", "name": "Chinese (Mandarin)", "tagline": "", "status": ""},
-"hi": {"639-1": "hi", "639-2": "hin", "name": "Hindi", "tagline": "", "status": ""},
-"es": {"639-1": "es", "639-2": "spa", "name": "Spanish", "tagline": "", "status": ""},
-"fr": {"639-1": "fr", "639-2": "fra", "name": "French", "tagline": "", "status": ""},
-"ar": {"639-1": "ar", "639-2": "ara", "name": "Arabic", "tagline": "", "status": ""},
-"bn": {"639-1": "bn", "639-2": "ben", "name": "Bengali", "tagline": "", "status": ""},
-"ru": {"639-1": "ru", "639-2": "rus", "name": "Russian", "tagline": "", "status": ""},
-"pt": {"639-1": "pt", "639-2": "por", "name": "Portuguese", "tagline": "", "status": ""},
-"id": {"639-1": "id", "639-2": "ind", "name": "Indonesian", "tagline": "", "status": ""},
-"ur": {"639-1": "ur", "639-2": "urd", "name": "Urdu", "tagline": "", "status": ""},
-"de": {"639-1": "de", "639-2": "deu", "name": "German", "tagline": "", "status": ""},
-"ja": {"639-1": "ja", "639-2": "jpn", "name": "Japanese", "tagline": "", "status": ""},
-"sw": {"639-1": "sw", "639-2": "swa", "name": "Swahili", "tagline": "", "status": ""},
-"mr": {"639-1": "mr", "639-2": "mar", "name": "Marathi", "tagline": "", "status": ""},
-"ta": {"639-1": "ta", "639-2": "tam", "name": "Tamil", "tagline": "", "status": ""},
-"tr": {"639-1": "tr", "639-2": "tur", "name": "Turkish", "tagline": "", "status": ""},
-"pa": {"639-1": "pa", "639-2": "pan", "name": "Punjabi", "tagline": "", "status": ""},
-"jv": {"639-1": "jv", "639-2": "jav", "name": "Javanese", "tagline": "", "status": ""},
-"ko": {"639-1": "ko", "639-2": "kor", "name": "Korean", "tagline": "", "status": ""},
-"vi": {"639-1": "vi", "639-2": "vie", "name": "Vietnamese", "tagline": "", "status": ""},
-"te": {"639-1": "te", "639-2": "tel", "name": "Telugu", "tagline": "", "status": ""},
-"it": {"639-1": "it", "639-2": "ita", "name": "Italian", "tagline": "", "status": ""},
-"th": {"639-1": "th", "639-2": "tha", "name": "Thai", "tagline": "", "status": ""},
-"gu": {"639-1": "gu", "639-2": "guj", "name": "Gujarati", "tagline": "", "status": ""},
-"kn": {"639-1": "kn", "639-2": "kan", "name": "Kannada", "tagline": "", "status": ""},
-"ml": {"639-1": "ml", "639-2": "mal", "name": "Malayalam", "tagline": "", "status": ""},
-"or": {"639-1": "or", "639-2": "ori", "name": "Odia", "tagline": "", "status": ""},
-"fa": {"639-1": "fa", "639-2": "fas", "name": "Persian", "tagline": "", "status": ""},
-"so": {"639-1": "so", "639-2": "som", "name": "Somali", "tagline": "", "status": ""},
-"ha": {"639-1": "ha", "639-2": "hau", "name": "Hausa", "tagline": "", "status": ""},
-"my": {"639-1": "my", "639-2": "mya", "name": "Burmese", "tagline": "", "status": ""},
-"ne": {"639-1": "ne", "639-2": "nep", "name": "Nepali", "tagline": "", "status": ""},
-"si": {"639-1": "si", "639-2": "sin", "name": "Sinhala", "tagline": "", "status": ""},
-"km": {"639-1": "km", "639-2": "khm", "name": "Khmer", "tagline": "", "status": ""},
-"am": {"639-1": "am", "639-2": "amh", "name": "Amharic", "tagline": "", "status": ""},
-"rw": {"639-1": "rw", "639-2": "kin", "name": "Kinyarwanda", "tagline": "", "status": ""},
-"az": {"639-1": "az", "639-2": "aze", "name": "Azerbaijani", "tagline": "", "status": ""},
-"ceb": {"639-1": "ceb", "639-2": "ceb", "name": "Cebuano", "tagline": "", "status": ""},
-"la": {"639-1": "la", "639-2": "lat", "name": "Latin", "tagline": "", "status": ""},
-"lo": {"639-1": "lo", "639-2": "lao", "name": "Lao", "tagline": "", "status": ""},
-"uz": {"639-1": "uz", "639-2": "uzb", "name": "Uzbek", "tagline": "", "status": ""},
-"mg": {"639-1": "mg", "639-2": "mlg", "name": "Malagasy", "tagline": "", "status": ""},
-"xh": {"639-1": "xh", "639-2": "xho", "name": "Xhosa", "tagline": "", "status": ""},
-"st": {"639-1": "st", "639-2": "sot", "name": "Southern Sotho", "tagline": "", "status": ""}
-},
-"active_language_nodes": 200,
-"default_language": "en"
-},
-"global_metrics": {
-"active_markets": ["Global", "West Africa", "Russia", "China"]
-},
-"PHRINUSOMYIS_collection_registry": {
-      "PHRINUSOMYIS_cup": {"units": 50, "specs": "Dual-finish matte obsidian, 24K gold plate"},
-      "PHRINUSOMYIS_exclusive_perfume": {"units": 500, "specs": "Black glass, gold stopper"}
+    "business_inquiry": {
+      "q": "What is PHRINUSOMYIS?",
+      "a": "A luxury and stadium-scale entertainment powerhouse."
     },
-    "event_registry": {
-      "next_major_event": "2026-07-24",
-      "status": "Confirmed / Real Date",
-      "system_status": "Synchronized"
+    "price_inquiry": {
+      "q": "Why is the price high?",
+      "a": "Quality is the filter."
     },
-    "seo_registry": {
-      "meta_title": "PHRINUSOMYIS - Engineering Legacy Moments Worldwide",
-      "meta_description": "Experience luxury stadium-scale events with PHRINUSOMYIS. Join us for the next global event on 2026-07-24.",
-      "keywords": ["PHRINUSOMYIS", "Luxury Entertainment", "Global Events", "Stadium Show", "Legacy Moments"],
-      "open_graph": {
-        "og_title": "PHRINUSOMYIS Global Events",
-        "og_description": "Top-tier luxury and world-stage productions engineered to perfection.",
-        "og_image": "https://www.phrinusomyis.com/assets/Phrinusomyis_logo.png"
-      },
-      "twitter_card": {
-        "card_type": "summary_large_image",
-        "title": "PHRINUSOMYIS - Engineering Legacy Moments",
-        "description": "Luxury and world-stage entertainment like never before.",
-        "image": "https://www.phrinusomyis.com/assets/phrinusomyis_logo_360.png"
-      },
-      "sitemap_priority": 1.0,
-      "sitemap_changefreq": "weekly"
+    "event_inquiry": {
+      "q": "When is the event?",
+      "a": "July 24, 2026."
+    },
+    "integrity_inquiry": {
+      "q": "Is this a secret society?",
+      "a": "No. It is a global legacy institution."
+    },
+    "security_inquiry": {
+      "q": "Is the brand secure?",
+      "a": "Glass Shield Active."
+    },
+    "sponsor_inquiry": {
+      "q": "What is the ROI?",
+      "a": "Global cultural real estate."
     }
-  }
+  },
+  "expansion_nodes": [
+    "West Africa",
+    "Russia",
+    "China",
+    "Europe"
+  ]
 }
