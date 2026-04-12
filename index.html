@@ -559,6 +559,142 @@
         setInterval(updateAllTimers, 1000);
         updateAllTimers();
 
+        /* ================================
+   PHRINUSOMYIS SEO ENGINE v1.0
+   Google Index Optimization System
+================================== */
+
+const SEO_ENGINE = (() => {
+
+    /* 1. SET MAIN SEO TAGS */
+    function setSEO({ title, description, canonical }) {
+
+        // Title
+        document.title = title;
+
+        // Meta Description
+        let desc = document.querySelector('meta[name="description"]');
+        if (!desc) {
+            desc = document.createElement("meta");
+            desc.name = "description";
+            document.head.appendChild(desc);
+        }
+        desc.content = description;
+
+        // Canonical
+        let link = document.querySelector('link[rel="canonical"]');
+        if (!link) {
+            link = document.createElement("link");
+            link.rel = "canonical";
+            document.head.appendChild(link);
+        }
+        link.href = canonical;
+
+        console.log("SEO updated:", title);
+    }
+
+    /* 2. ADD STRUCTURED DATA (SCHEMA.ORG) */
+    function addSchema(data) {
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.text = JSON.stringify(data);
+        document.head.appendChild(script);
+    }
+
+    /* 3. GOOGLE INDEX PING (DISCOVERY SIGNAL) */
+    function pingGoogleSitemap(sitemapUrl) {
+        const url = `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`;
+
+        fetch(url)
+            .then(() => console.log("Google sitemap ping sent"))
+            .catch(err => console.log("Ping error:", err));
+    }
+
+    /* 4. ADD SITEMAP LINK */
+    function addSitemap(url) {
+        const link = document.createElement("link");
+        link.rel = "sitemap";
+        link.type = "application/xml";
+        link.href = url;
+        document.head.appendChild(link);
+    }
+
+    /* 5. IMAGE SEO OPTIMIZATION */
+    function optimizeImages() {
+        const images = document.querySelectorAll("img");
+
+        images.forEach(img => {
+            img.loading = "lazy";
+            img.decoding = "async";
+
+            // ensure alt exists (SEO boost)
+            if (!img.alt || img.alt.trim() === "") {
+                img.alt = "PHRINUSOMYIS official media content";
+            }
+        });
+
+        console.log("Images optimized for SEO");
+    }
+
+    /* 6. AUTO PAGE UPDATE SEO REFRESH */
+    function refreshSEOOnNavigation() {
+        window.addEventListener("popstate", () => {
+            console.log("Page changed - SEO refresh triggered");
+        });
+    }
+
+    /* 7. INIT FULL SEO SYSTEM */
+    function init(config) {
+
+        if (config.seo) setSEO(config.seo);
+        if (config.schema) addSchema(config.schema);
+        if (config.sitemap) addSitemap(config.sitemap);
+        if (config.sitemapPing) pingGoogleSitemap(config.sitemapPing);
+
+        optimizeImages();
+        refreshSEOOnNavigation();
+
+        console.log("SEO ENGINE FULLY ACTIVATED");
+    }
+
+    return {
+        init,
+        setSEO,
+        addSchema,
+        addSitemap,
+        pingGoogleSitemap,
+        optimizeImages
+    };
+
+})();
+
+
+/* ================================
+   AUTO START CONFIG (EDIT THIS)
+================================== */
+
+SEO_ENGINE.init({
+    seo: {
+        title: "PHRINUSOMYIS | Commanding the World Stage",
+        description: "Global stadium entertainment and luxury experiential brand.",
+        canonical: "https://phrinusomyis.com/"
+    },
+
+    schema: {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS",
+        "url": "https://phrinusomyis.com",
+        "founder": {
+            "@type": "Person",
+            "name": "Victor Seth A"
+        },
+        "description": "Global entertainment and luxury production organization."
+    },
+
+    sitemap: "https://phrinusomyis.com/sitemap.xml",
+    sitemapPing: "https://phrinusomyis.com/sitemap.xml"
+});
         // Right-click protection on images & 360 items
         document.querySelectorAll('img').forEach(el => {
             el.oncontextmenu = () => false;
