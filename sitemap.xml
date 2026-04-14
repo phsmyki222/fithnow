@@ -74,5 +74,10 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
-
+  
+  url>
+  <loc>https://phrinusomyis.com/vsa-99-x7q.html</loc>
+  <lastmod>2026-04-14</lastmod>
+</url>
+  
 </urlset>
