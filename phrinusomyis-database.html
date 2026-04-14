@@ -1,213 +1,304 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PHRINUSOMYIS | Master Company Database</title><meta name="description" content="PHRINUSOMYIS global luxury entertainment company master database record."><!-- ===================== SEO SCHEMA ===================== --><script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHRINUSOMYIS | Master Company Database</title>
+    <meta name="description" content="PHRINUSOMYIS global luxury entertainment company master database record.">
+    
+    <script type="application/ld+json">
     {
-      "@type": "Organization",
-      "@id": "https://phrinusomyis.com/#organization",
-      "name": "PHRINUSOMYIS",
-      "url": "https://phrinusomyis.com/",
-      "logo": "https://phrinusomyis.com/phrinusomyis_logo.png",
-      "foundingDate": "2020",
-      "description": "Global luxury entertainment company operating stadium-scale productions and structured international systems.",
-      "founder": {
-        "@type": "Person",
-        "name": "Victor Seth A"
-      },
-      "areaServed": "Worldwide"
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://phrinusomyis.com/#organization",
+          "name": "PHRINUSOMYIS",
+          "url": "https://phrinusomyis.com/",
+          "logo": "https://phrinusomyis.com/phrinusomyis_logo.png",
+          "foundingDate": "2020",
+          "description": "Global luxury entertainment company operating stadium-scale productions and structured international systems.",
+          "founder": {
+            "@type": "Person",
+            "name": "Victor Seth A"
+          },
+          "areaServed": "Worldwide"
+        }
+      ]
     }
-  ]
-}
-</script><style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Arial;
-  background: #000;
-  color: #fff;
-}
+    </script>
 
-/* NAV */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 40px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  z-index: 999;
-}
+    <style>
+        :root {
+            --accent: #FFD700; /* Gold */
+            --bg: #000000;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: rgba(255, 255, 255, 0.85);
+            --text-dim: rgba(255, 255, 255, 0.5);
+        }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-.logo img {
-  height: 32px;
-  width: auto;
-  border-radius: 6px;
-}
+        /* NAVIGATION - Mobile Friendly */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            box-sizing: border-box;
+        }
 
-.nav a {
-  margin-left: 15px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-}
+        .logo-text {
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            color: #fff;
+        }
 
-.nav a:hover {
-  color: gold;
-}
+        .nav {
+            display: flex;
+            gap: 12px;
+        }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 60px;
-}
+        .nav a {
+            font-size: 11px;
+            color: var(--text-dim);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-.hero img {
-  width: 90px;
-  margin-bottom: 20px;
-}
+        .nav a:hover {
+            color: var(--accent);
+        }
 
-.hero h1 {
-  font-size: 54px;
-  color: gold;
-  margin: 0;
-}
+        /* HERO SECTION */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
 
-.hero p {
-  opacity: 0.6;
-}
+        .company-logo-img {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 30px;
+        }
 
-/* SECTIONS */
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 100px 20px;
-}
+        .hero h1 {
+            font-size: clamp(32px, 8vw, 64px);
+            color: var(--accent);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
 
-h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: gold;
-}
+        .hero p {
+            font-size: clamp(14px, 4vw, 18px);
+            color: var(--text-dim);
+            margin-top: 10px;
+        }
 
-p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.75);
-}
+        /* CONTENT SECTIONS */
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 60px 25px;
+        }
 
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 12px;
-}
+        h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            color: var(--accent);
+            border-left: 2px solid var(--accent);
+            padding-left: 15px;
+        }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 50px;
-  font-size: 12px;
-  opacity: 0.4;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
+        p {
+            font-size: 16px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
 
-</style></head><body><!-- NAV --><div class="navbar">
-  <div class="logo">
-    <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
-    PHRINUSOMYIS
-  </div>
-  <div class="nav">
-    <a href="/">Home</a>
-    <a href="/press">Press</a>
-    <a href="/article">Articles</a>
-    <a href="/events">Events</a>
-    <a href="/contact">Contact</a>
-  </div>
-</div><!-- HERO --><div class="hero">
-  <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
-  <h1>MASTER DATABASE</h1>
-  <p>Global Luxury Entertainment Organization Record</p>
-</div><!-- CORE IDENTITY --><section>
-  <h2>Primary Entity</h2>
-  <div class="card">
-    <p><strong>Name:</strong> PHRINUSOMYIS</p>
-    <p><strong>Classification:</strong> Global Luxury Entertainment Company</p>
-    <p><strong>Status:</strong> Active Worldwide Expansion</p>
-    <p><strong>Founded:</strong> 2020</p>
-  </div>
-</section><!-- ABOUT --><section>
-  <h2>About PHRINUSOMYIS</h2>
-  <p>
-    PHRINUSOMYIS is a global luxury entertainment house dedicated to the creation of large-scale live experiences where culture, creativity, and international audiences converge.
-  </p>
-  <p>
-    The company specializes in producing premium entertainment environments that operate across borders, platforms, and cultures, delivering events designed to leave lasting cultural impact.
-  </p>
-  <p>
-    Built on structured execution and global vision, PHRINUSOMYIS functions as an international brand system focused on high-level entertainment delivery at worldwide scale.
-  </p>
-</section><!-- MISSION --><section>
-  <h2>Mission</h2>
-  <p>
-    To redefine the global entertainment landscape through powerful live experiences and cultural moments that connect audiences across borders.
-  </p>
-</section><!-- VISION --><section>
-  <h2>Vision</h2>
-  <p>
-    To become a globally recognized entertainment house known for shaping cultural experiences that unite people through creativity, scale, and innovation.
-  </p>
-</section><!-- LEADERSHIP --><section>
-  <h2>Leadership</h2>
-  <p>Founder & CEO: Victor Seth A</p>
-</section><!-- OPERATIONS --><section>
-  <h2>Operational Model</h2>
-  <p>
-    Global event production, luxury asset development, media systems, and structured international expansion.
-  </p>
-</section><!-- EVENTS --><section>
-  <h2>Global Event Structure</h2>
-  <div class="card">
-    <p><strong>Event:</strong> International Showcase</p>
-    <p><strong>Date:</strong> 2026-06-26</p>
-    <p><strong>Region:</strong> West Africa</p>
-  </div>
-</section><!-- PRESS --><section>
-  <h2>Press & News</h2>
-  <div class="card">
-    <p>Global expansion announcement (2026)</p>
-    <p>Luxury product system introduction (2026)</p>
-    <p>International debut event confirmed (2026)</p>
-  </div>
-</section><!-- AWARDS --><section>
-  <h2>Awards & Recognition</h2>
-  <div class="card">
-    <p><strong>2025:</strong> Foundational Recognition Phase</p>
-    <p><strong>2026:</strong> Global Expansion Recognition Phase</p>
-  </div>
-</section><!-- STATUS --><section>
-  <h2>Global Status</h2>
-  <p>Active — Worldwide operational expansion in progress.</p>
-</section><!-- FOOTER --><footer>
-  © 2026 PHRINUSOMYIS — All Rights Reserved
-</footer></body>
+        /* CARD COMPONENT */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+        }
+
+        /* MOBILE ADJUSTMENTS */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 12px 15px;
+            }
+            .logo-text {
+                font-size: 0.9rem;
+            }
+            .nav a {
+                font-size: 9px;
+            }
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo-text">PHRINUSOMYIS</div>
+        <div class="nav">
+            <a href="/">Home</a>
+            <a href="/press">Press</a>
+            <a href="/events">Events</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="company-logo-img">
+        <h1>MASTER DATABASE</h1>
+        <p>Global Luxury Entertainment Organization Record</p>
+    </div>
+
+    <section>
+        <h2>Primary Entity</h2>
+        <div class="card">
+            <p><strong>Name:</strong> PHRINUSOMYIS</p>
+            <p><strong>Classification:</strong> Global Luxury Entertainment Company</p>
+            <p><strong>Status:</strong> Active Worldwide Expansion</p>
+            <p><strong>Founded:</strong> 2020</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>About PHRINUSOMYIS</h2>
+        <p>
+            PHRINUSOMYIS is a global luxury entertainment house dedicated to the creation of large-scale live experiences where culture, creativity, and international audiences converge.
+        </p>
+        <p>
+            The company specializes in producing premium entertainment environments that operate across borders, platforms, and cultures, delivering events designed to leave lasting cultural impact.
+        </p>
+        <p>
+            Built on structured execution and global vision, PHRINUSOMYIS functions as an international brand system focused on high-level entertainment delivery at worldwide scale.
+        </p>
+    </section>
+
+    <section>
+        <h2>Mission</h2>
+        <p>
+            To redefine the global entertainment landscape through powerful live experiences and cultural moments that connect audiences across borders.
+        </p>
+    </section>
+
+    <section>
+        <h2>Vision</h2>
+        <p>
+            To become a globally recognized entertainment house known for shaping cultural experiences that unite people through creativity, scale, and innovation.
+        </p>
+    </section>
+
+    <section>
+        <h2>Leadership</h2>
+        <div class="card">
+            <p><strong>Founder & CEO:</strong> Victor Seth A</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Operational Model</h2>
+        <p>
+            Global event production, luxury asset development, media systems, and structured international expansion.
+        </p>
+    </section>
+
+    <section>
+        <h2>Global Event Structure</h2>
+        <div class="card">
+            <p><strong>Event:</strong> International Showcase</p>
+            <p><strong>Date:</strong> 2026-06-26</p>
+            <p><strong>Region:</strong> West Africa</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press & News</h2>
+        <div class="card">
+            <p>Global expansion announcement (2026)</p>
+            <p>Luxury product system introduction (2026)</p>
+            <p>International debut event confirmed (2026)</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Awards & Recognition</h2>
+        <div class="card">
+            <p><strong>2025:</strong> Foundational Recognition Phase</p>
+            <p><strong>2026:</strong> Global Expansion Recognition Phase</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Global Status</h2>
+        <div class="card">
+            <p>Active — Worldwide operational expansion in progress.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 PHRINUSOMYIS — All Rights Reserved
+    </footer>
+
+</body>
 </html>
