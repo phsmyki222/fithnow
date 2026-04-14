@@ -8,7 +8,7 @@
 
 <meta name="description" content="PHRINUSOMYIS global luxury entertainment company master database record.">
 
-<!-- ===================== SEO SCHEMA ===================== -->
+<!-- ================= SEO SCHEMA (UNCHANGED) ================= -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,24 +33,78 @@
 
 <style>
 
+/* ================= CINEMATIC INTRO ================= */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: introFadeOut 1.8s ease 5s forwards;
+}
+
+#intro img {
+  width: 130px;
+  opacity: 0;
+  transform: scale(0.7);
+  animation: logoReveal 2.2s ease forwards;
+  filter: drop-shadow(0 0 30px gold);
+}
+
+#intro h1 {
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: gold;
+  opacity: 0;
+  animation: textReveal 2s ease 0.8s forwards;
+}
+
+#intro p {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0;
+  color: rgba(255,255,255,0.6);
+  animation: textReveal 2s ease 1.4s forwards;
+}
+
+@keyframes logoReveal {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes textReveal {
+  to { opacity: 1; }
+}
+
+@keyframes introFadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ================= MAIN DESIGN UPGRADE ================= */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Arial;
-  background: #000;
+  background: radial-gradient(circle at top, #111 0%, #000 60%);
   color: #fff;
 }
 
-/* NAV */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 14px 40px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(20px);
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(25px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  z-index: 1000;
 }
 
 .nav a {
@@ -64,6 +118,12 @@ body {
   color: gold;
 }
 
+/* LOGO */
+.logo img {
+  height: 42px;
+  filter: drop-shadow(0 0 12px gold);
+}
+
 /* HERO */
 .hero {
   height: 100vh;
@@ -74,8 +134,14 @@ body {
   text-align: center;
 }
 
+.hero img {
+  height: 100px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 30px gold);
+}
+
 .hero h1 {
-  font-size: 54px;
+  font-size: 64px;
   color: gold;
   margin: 0;
 }
@@ -97,18 +163,13 @@ h2 {
   color: gold;
 }
 
-p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.75);
-}
-
 /* CARD */
 .card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
   padding: 20px;
   border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
 }
 
 /* FOOTER */
@@ -125,9 +186,19 @@ footer {
 
 <body>
 
+<!-- ================= CINEMATIC INTRO ================= -->
+<div id="intro">
+  <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
+  <h1>PHRINUSOMYIS</h1>
+  <p>Global Luxury Entertainment Organization Record</p>
+</div>
+
 <!-- NAV -->
 <div class="navbar">
-  <div class="logo">PHRINUSOMYIS</div>
+  <div class="logo">
+    <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="Logo">
+  </div>
+
   <div class="nav">
     <a href="/">Home</a>
     <a href="/press">Press</a>
@@ -139,11 +210,13 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
+  <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="Logo">
   <h1>MASTER DATABASE</h1>
   <p>Global Luxury Entertainment Organization Record</p>
 </div>
 
-<!-- CORE IDENTITY -->
+<!-- ================= FULL ORIGINAL CONTENT (UNCHANGED) ================= -->
+
 <section>
   <h2>Primary Entity</h2>
   <div class="card">
@@ -154,7 +227,6 @@ footer {
   </div>
 </section>
 
-<!-- ABOUT -->
 <section>
   <h2>About PHRINUSOMYIS</h2>
   <p>
@@ -168,7 +240,6 @@ footer {
   </p>
 </section>
 
-<!-- MISSION -->
 <section>
   <h2>Mission</h2>
   <p>
@@ -176,7 +247,6 @@ footer {
   </p>
 </section>
 
-<!-- VISION -->
 <section>
   <h2>Vision</h2>
   <p>
@@ -184,13 +254,11 @@ footer {
   </p>
 </section>
 
-<!-- LEADERSHIP -->
 <section>
   <h2>Leadership</h2>
   <p>Founder & CEO: Victor Seth A</p>
 </section>
 
-<!-- OPERATIONS -->
 <section>
   <h2>Operational Model</h2>
   <p>
@@ -198,7 +266,6 @@ footer {
   </p>
 </section>
 
-<!-- EVENTS -->
 <section>
   <h2>Global Event Structure</h2>
   <div class="card">
@@ -208,7 +275,6 @@ footer {
   </div>
 </section>
 
-<!-- PRESS -->
 <section>
   <h2>Press & News</h2>
   <div class="card">
@@ -218,7 +284,6 @@ footer {
   </div>
 </section>
 
-<!-- AWARDS -->
 <section>
   <h2>Awards & Recognition</h2>
   <div class="card">
@@ -227,16 +292,22 @@ footer {
   </div>
 </section>
 
-<!-- STATUS -->
 <section>
   <h2>Global Status</h2>
   <p>Active — Worldwide operational expansion in progress.</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
   © 2026 PHRINUSOMYIS — All Rights Reserved
 </footer>
+
+<!-- AUTO INTRO CLEANUP -->
+<script>
+setTimeout(() => {
+  const intro = document.getElementById("intro");
+  if (intro) intro.style.display = "none";
+}, 5200);
+</script>
 
 </body>
 </html>
