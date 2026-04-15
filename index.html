@@ -797,26 +797,38 @@ SEO_ENGINE.init({
             el.oncontextmenu = () => false;
         });
     </script> 
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const selector = document.getElementById('languageSwitcher');
-
-    if (!selector) return;
-
-    selector.addEventListener('change', function () {
-        const selectedLang = this.value;
-        const url = new URL(window.location.href);
-
-        // Remove old lang if exists
-        url.searchParams.delete("lang");
-
-        // Add new lang if not English
-        if (selectedLang !== "en") {
-            url.searchParams.set("lang", selectedLang);
+<script>
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
         }
-
-        window.location.href = url.toString();
     });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const selector = document.getElementById("languageSwitcher");
+
+    selector.addEventListener("change", function () {
+        const lang = this.value;
+
+        // Save language
+        localStorage.setItem("lang", lang);
+
+        // Apply instantly
+        applyLanguage(lang);
+
+        // Update URL (optional SEO)
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", lang);
+        window.history.replaceState({}, "", url);
+    });
+
+    // Load saved language
+    const savedLang = localStorage.getItem("lang") || "en";
+    selector.value = savedLang;
+    applyLanguage(savedLang);
 });
 </script>
 </body>
