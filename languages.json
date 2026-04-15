@@ -1,11 +1,11 @@
 {
   "en": {
-    "HOME": "HOME",
-    "PRESS": "PRESS",
-    "MEDIA": "MEDIA",
-    "ARTICLE": "ARTICLE",
-    "NEWS": "NEWS",
-    "EVENT": "EVENT",
+    "/": "HOME",
+    "press": "PRESS",
+    "media": "MEDIA",
+    "articles": "ARTICLE",
+    "news": "NEWS",
+    "events": "EVENT",
     "CONTACT": "CONTACT",
     "slogan": "COMMANDING THE WORLD STAGE"
   },
