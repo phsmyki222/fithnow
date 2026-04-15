@@ -1,0 +1,212 @@
+{
+  "en": {
+    "HOME": "HOME",
+    "PRESS": "PRESS",
+    "MEDIA": "MEDIA",
+    "ARTICLE": "ARTICLE",
+    "NEWS": "NEWS",
+    "EVENT": "EVENT",
+    "CONTACT": "CONTACT",
+    "slogan": "COMMANDING THE WORLD STAGE"
+  },
+  "fr": {
+    "HOME": "ACCUEIL",
+    "PRESS": "PRESSE",
+    "MEDIA": "MÉDIA",
+    "ARTICLE": "ARTICLE",
+    "NEWS": "NOUVELLES",
+    "EVENT": "ÉVÉNEMENT",
+    "CONTACT": "CONTACT",
+    "slogan": "COMMANDER LA SCÈNE MONDIALE"
+  },
+  "es": {
+    "HOME": "INICIO",
+    "PRESS": "PRENSA",
+    "MEDIA": "MEDIOS",
+    "ARTICLE": "ARTÍCULO",
+    "NEWS": "NOTICIAS",
+    "EVENT": "EVENTO",
+    "CONTACT": "CONTACTO",
+    "slogan": "DOMINANDO EL ESCENARIO MUNDIAL"
+  },
+  "de": {
+    "HOME": "STARTSEITE",
+    "PRESS": "PRESSE",
+    "MEDIA": "MEDIEN",
+    "ARTICLE": "ARTIKEL",
+    "NEWS": "NACHRICHTEN",
+    "EVENT": "EREIGNIS",
+    "CONTACT": "KONTAKT",
+    "slogan": "BEHERRSCHUNG DER WELTBÜHNE"
+  },
+  "ar": {
+    "HOME": "الرئيسية",
+    "PRESS": "صحافة",
+    "MEDIA": "وسائل الإعلام",
+    "ARTICLE": "مقال",
+    "NEWS": "أخبار",
+    "EVENT": "حدث",
+    "CONTACT": "اتصال",
+    "slogan": "قيادة المسرح العالمي"
+  },
+  "zh": {
+    "HOME": "首页",
+    "PRESS": "新闻发布",
+    "MEDIA": "媒体",
+    "ARTICLE": "文章",
+    "NEWS": "新闻",
+    "EVENT": "活动",
+    "CONTACT": "联系",
+    "slogan": "主宰全球舞台"
+  },
+  "ru": {
+    "HOME": "ГЛАВНАЯ",
+    "PRESS": "ПРЕССА",
+    "MEDIA": "МЕДИА",
+    "ARTICLE": "СТАТЬЯ",
+    "NEWS": "НОВОСТИ",
+    "EVENT": "СОБЫТИЕ",
+    "CONTACT": "КОНТАКТ",
+    "slogan": "УПРАВЛЯЯ МИРОВОЙ СЦЕНОЙ"
+  },
+  "pt": {
+    "HOME": "INÍCIO",
+    "PRESS": "IMPRENSA",
+    "MEDIA": "MÍDIA",
+    "ARTICLE": "ARTIGO",
+    "NEWS": "NOTÍCIAS",
+    "EVENT": "EVENTO",
+    "CONTACT": "CONTATO",
+    "slogan": "DOMINANDO O PALCO MUNDIAL"
+  },
+  "ja": {
+    "HOME": "ホーム",
+    "PRESS": "プレス",
+    "MEDIA": "メディア",
+    "ARTICLE": "記事",
+    "NEWS": "ニュース",
+    "EVENT": "イベント",
+    "CONTACT": "連絡先",
+    "slogan": "世界の舞台を支配する"
+  },
+  "ko": {
+    "HOME": "홈",
+    "PRESS": "보도",
+    "MEDIA": "미디어",
+    "ARTICLE": "기사",
+    "NEWS": "뉴스",
+    "EVENT": "이벤트",
+    "CONTACT": "연락처",
+    "slogan": "세계 무대를 지배하다"
+  },
+  "it": {
+    "HOME": "HOME",
+    "PRESS": "STAMPA",
+    "MEDIA": "MEDIA",
+    "ARTICLE": "ARTICOLO",
+    "NEWS": "NOTIZIE",
+    "EVENT": "EVENTO",
+    "CONTACT": "CONTATTO",
+    "slogan": "DOMINARE IL PALCOSCENICO MONDIALE"
+  },
+  "nl": {
+    "HOME": "HOME",
+    "PRESS": "PERS",
+    "MEDIA": "MEDIA",
+    "ARTICLE": "ARTIKEL",
+    "NEWS": "NIEUWS",
+    "EVENT": "EVENEMENT",
+    "CONTACT": "CONTACT",
+    "slogan": "DE WERELDTONEEL BEHEERSEN"
+  },
+  "tr": {
+    "HOME": "ANA SAYFA",
+    "PRESS": "BASIN",
+    "MEDIA": "MEDYA",
+    "ARTICLE": "MAKALE",
+    "NEWS": "HABERLER",
+    "EVENT": "ETKİNLİK",
+    "CONTACT": "İLETİŞİM",
+    "slogan": "DÜNYA SAHNESİNE HÂKİM OLMAK"
+  },
+  "hi": {
+    "HOME": "होम",
+    "PRESS": "प्रेस",
+    "MEDIA": "मीडिया",
+    "ARTICLE": "लेख",
+    "NEWS": "समाचार",
+    "EVENT": "कार्यक्रम",
+    "CONTACT": "संपर्क",
+    "slogan": "विश्व मंच पर प्रभुत्व"
+  },
+  "id": {
+    "HOME": "BERANDA",
+    "PRESS": "PERS",
+    "MEDIA": "MEDIA",
+    "ARTICLE": "ARTIKEL",
+    "NEWS": "BERITA",
+    "EVENT": "ACARA",
+    "CONTACT": "KONTAK",
+    "slogan": "MENDOMINASI PANGGUNG DUNIA"
+  },
+  "vi": {
+    "HOME": "TRANG CHỦ",
+    "PRESS": "BÁO CHÍ",
+    "MEDIA": "TRUYỀN THÔNG",
+    "ARTICLE": "BÀI VIẾT",
+    "NEWS": "TIN TỨC",
+    "EVENT": "SỰ KIỆN",
+    "CONTACT": "LIÊN HỆ",
+    "slogan": "THỐNG LĨNH SÂN KHẤU THẾ GIỚI"
+  },
+  "th": {
+    "HOME": "หน้าแรก",
+    "PRESS": "ข่าวประชาสัมพันธ์",
+    "MEDIA": "สื่อ",
+    "ARTICLE": "บทความ",
+    "NEWS": "ข่าว",
+    "EVENT": "กิจกรรม",
+    "CONTACT": "ติดต่อ",
+    "slogan": "ครองเวทีโลก"
+  },
+  "pl": {
+    "HOME": "STRONA GŁÓWNA",
+    "PRESS": "PRASA",
+    "MEDIA": "MEDIA",
+    "ARTICLE": "ARTYKUŁ",
+    "NEWS": "AKTUALNOŚCI",
+    "EVENT": "WYDARZENIE",
+    "CONTACT": "KONTAKT",
+    "slogan": "DOMINACJA NA ŚWIATOWEJ SCENIE"
+  },
+  "sv": {
+    "HOME": "HEM",
+    "PRESS": "PRESS",
+    "MEDIA": "MEDIA",
+    "ARTICLE": "ARTIKEL",
+    "NEWS": "NYHETER",
+    "EVENT": "EVENEMANG",
+    "CONTACT": "KONTAKT",
+    "slogan": "DOMINERAR VÄRLDSSCENEN"
+  },
+  "fi": {
+    "HOME": "KOTI",
+    "PRESS": "LEHDISTÖ",
+    "MEDIA": "MEDIA",
+    "ARTICLE": "ARTIKKELI",
+    "NEWS": "UUTISET",
+    "EVENT": "TAPAHTUMA",
+    "CONTACT": "YHTEYSTIEDOT",
+    "slogan": "MAAILMAN NÄYTTÄMÖN HALLINTA"
+  },
+  "da": {
+    "HOME": "HJEM",
+    "PRESS": "PRESSE",
+    "MEDIA": "MEDIER",
+    "ARTICLE": "ARTIKEL",
+    "NEWS": "NYHEDER",
+    "EVENT": "BEGIVENHED",
+    "CONTACT": "KONTAKT",
+    "slogan": "DOMINERER VERDENS SCENE"
+  }
+}
