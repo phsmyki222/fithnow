@@ -357,30 +357,39 @@ body {
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
             width: 90%; pointer-events: none;
         }
+        /* Completely hide the Google Translate Top Bar */
+.goog-te-banner-frame, 
+.goog-te-banner, 
+.goog-te-menu-frame, 
+.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
 
+/* Prevent the white space at the top of the screen */
+body {
+    top: 0 !important;
+}
+
+html {
+    margin-top: 0px !important;
+}
+
+/* Hide the "Show Original" tooltip when hovering */
+#goog-gt-tt, .goog-te-balloon-frame {
+    display: none !important;
+}
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
         /* Countdown Grid */
         .timer-grid { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
         .time-box { 
             background: rgba(15,15,15,0.9); padding: 20px; border-radius: 5px;
             border: 1px solid rgba(212,175, 55, 0.3); min-width: 100px; text-align: center;
         }
-        </style>
-
-<div id="google_translate_element" style="display:none;"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-        autoDisplay: false
-    }, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<body oncontextmenu="return false
-    ;">
+        
         .time-box span { font-size: 3rem; font-weight: 900; display: block; }
         .time-box label { font-size: 0.6rem; text-transform: uppercase; color: #888; letter-spacing: 1px; }
 
