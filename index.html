@@ -800,13 +800,9 @@ SEO_ENGINE.init({
 let translations = {};
 
 async function loadTranslations() {
-    try {
-        const res = await fetch("./languages.json");
-        translations = await res.json();
-        console.log("JSON loaded successfully");
-    } catch (error) {
-        console.error("ERROR loading JSON:", error);
-    }
+    const res = await fetch("./languages.json");
+    translations = await res.json();
+    console.log("JSON LOADED:", translations);
 }
 
 function applyLanguage(lang) {
@@ -820,35 +816,36 @@ function applyLanguage(lang) {
     };
 
     document.querySelectorAll(".nav-menu a").forEach(el => {
-        const text = el.textContent.trim();
+        const rawText = el.textContent;
+        const text = rawText.trim();
+
+        console.log("FOUND MENU ITEM:", text);
+
         const key = map[text];
 
         if (!key) {
-            console.warn("No mapping for:", text);
+            console.warn("NO MATCH FOR:", text);
             return;
         }
 
         const translated = translations?.[lang]?.[key];
 
-        if (translated) {
-            el.textContent = translated;
-        } else {
-            console.warn("Missing translation:", lang, key);
+        if (!translated) {
+            console.warn("NO TRANSLATION:", lang, key);
+            return;
         }
+
+        el.textContent = translated;
     });
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async function () {
     await loadTranslations();
 
     const switcher = document.getElementById("languageSwitcher");
 
-    if (!switcher) {
-        console.error("Language switcher NOT found");
-        return;
-    }
-
     switcher.addEventListener("change", function () {
+        console.log("LANGUAGE SELECTED:", this.value);
         applyLanguage(this.value);
     });
 
