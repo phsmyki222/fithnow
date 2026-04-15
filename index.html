@@ -796,6 +796,19 @@ SEO_ENGINE.init({
         document.querySelectorAll('img').forEach(el => {
             el.oncontextmenu = () => false;
         });
-    </script>
+    </script> 
+    <script>
+  document.getElementById('languageSwitcher').addEventListener('change', function() {
+    const selectedLang = this.value;
+    const baseUrl = "https://phrinusomyis.com/";
+    
+    if (selectedLang === 'en') {
+      window.location.href = baseUrl;
+    } else {
+      window.location.href = baseUrl + "?lang=" + selectedLang;
+    }
+  });
+</script>
+
 </body>
 </html>
