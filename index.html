@@ -797,30 +797,43 @@ SEO_ENGINE.init({
         });
     </script> 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+let translations = {};
 
-    const selector = document.getElementById("languageSwitcher");
+async function loadTranslations() {
+    const res = await fetch("languages.json");
+    translations = await res.json();
+}
 
-    selector.addEventListener("change", function () {
+function applyLanguage(lang) {
 
-        const lang = this.value;
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
 
-        const frame = document.querySelector("iframe.goog-te-menu-frame");
-
-        if (!frame) {
-            alert("Translator still loading...");
-            return;
+        if (translations[lang] && translations[lang][key]) {
+            el.innerText = translations[lang][key];
         }
-
-        const combo = frame.contentWindow.document.querySelector(".goog-te-combo");
-
-        if (combo) {
-            combo.value = lang;
-            combo.dispatchEvent(new Event("change"));
-        }
-
     });
 
+}
+
+// dropdown change
+document.getElementById("languageSwitcher").addEventListener("change", function () {
+    const lang = this.value;
+
+    localStorage.setItem("lang", lang);
+    applyLanguage(lang);
+});
+
+// auto run on page load
+document.addEventListener("DOMContentLoaded", async function () {
+
+    await loadTranslations();
+
+    const savedLang = localStorage.getItem("lang") || "en";
+
+    document.getElementById("languageSwitcher").value = savedLang;
+
+    applyLanguage(savedLang);
 });
 </script>
 </body>
