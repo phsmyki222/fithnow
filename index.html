@@ -805,35 +805,37 @@ async function loadTranslations() {
 }
 
 function applyLanguage(lang) {
+    const map = {
+        "Home": "home",
+        "News": "news",
+        "ARTICLES": "articles",
+        "EVENTS": "events",
+        "PRESS & MEDIA": "press",
+        "CONTACT": "contact"
+    };
 
-    document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
+    document.querySelectorAll(".nav-menu a").forEach(el => {
+        const text = el.textContent.trim();
+        const key = map[text];
 
-        if (translations[lang] && translations[lang][key]) {
-            el.innerText = translations[lang][key];
+        if (key && translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
         }
     });
-
 }
 
-// dropdown change
-document.getElementById("languageSwitcher").addEventListener("change", function () {
-    const lang = this.value;
-
-    localStorage.setItem("lang", lang);
-    applyLanguage(lang);
-});
-
-// auto run on page load
 document.addEventListener("DOMContentLoaded", async function () {
-
     await loadTranslations();
 
-    const savedLang = localStorage.getItem("lang") || "en";
+    const switcher = document.getElementById("languageSwitcher");
 
-    document.getElementById("languageSwitcher").value = savedLang;
+    if (switcher) {
+        switcher.addEventListener("change", function () {
+            applyLanguage(this.value);
+        });
+    }
 
-    applyLanguage(savedLang);
+    applyLanguage("en");
 });
 </script>
 </body>
