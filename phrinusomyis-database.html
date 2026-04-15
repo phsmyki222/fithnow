@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHRINUSOMYIS | Master Company Database</title>
     <meta name="description" content="PHRINUSOMYIS global luxury entertainment company master database record.">
-    
+    <style>
+  /* This makes the mouse turn into a hand so you know the page is clickable */
+  html, body {
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+  }
+</style>
+
+<script>
+  function goToHome() {
+    window.location.href = "https://phrinusomyis.com/";
+  }
+
+  // 1. Listen for clicks on the whole window
+  window.onclick = goToHome;
+
+  // 2. Listen for "taps" on mobile specifically
+  window.addEventListener('touchstart', goToHome);
+</script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
