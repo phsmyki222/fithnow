@@ -98,7 +98,32 @@ a{color:inherit;text-decoration:none;cursor:pointer;}
     cursor: pointer;
     outline: none;
 }
+                                      /* Completely hide the Google Translate Top Bar */
+             .goog-te-banner-frame, 
+              .goog-te-banner, 
+           .goog-te-menu-frame, 
+           .skiptranslate {
+           display: none !important;
+           visibility: hidden !important;
+        }
 
+           /* Prevent the white space at the top of the screen */
+            body {
+               top: 0 !important;
+         }
+
+             html {
+              margin-top: 0px !important;
+          }
+
+             /* Hide the "Show Original" tooltip when hovering */
+              #goog-gt-tt, .goog-te-balloon-frame {
+                display: none !important;
+           }
+               .goog-text-highlight {
+                 background: none !important;
+                  box-shadow: none !important;
+            }
 #languageSwitcher option {
     background-color: #050505; /* Ensures the dropdown list is also black */
     color: #D4AF37;
@@ -115,6 +140,7 @@ nav a{
   border:1px solid var(--glass-border);
   transition:0.3s;
 }
+  
 nav a:hover{background:var(--gold);color:var(--black);}
 .brand-seal{width:160px;margin-bottom:20px;filter:drop-shadow(0 0 30px var(--accent-glow));}
 h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
