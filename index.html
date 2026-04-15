@@ -797,17 +797,27 @@ SEO_ENGINE.init({
             el.oncontextmenu = () => false;
         });
     </script> 
-    <script>
-  document.getElementById('languageSwitcher').addEventListener('change', function() {
-    const selectedLang = this.value;
-    const baseUrl = "https://phrinusomyis.com/";
-    
-    if (selectedLang === 'en') {
-      window.location.href = baseUrl;
-    } else {
-      window.location.href = baseUrl + "?lang=" + selectedLang;
-    }
-  });
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const selector = document.getElementById('languageSwitcher');
+
+    if (!selector) return;
+
+    selector.addEventListener('change', function () {
+        const selectedLang = this.value;
+        const url = new URL(window.location.href);
+
+        // Remove old lang if exists
+        url.searchParams.delete("lang");
+
+        // Add new lang if not English
+        if (selectedLang !== "en") {
+            url.searchParams.set("lang", selectedLang);
+        }
+
+        window.location.href = url.toString();
+    });
+});
 </script>
 
 </body>
