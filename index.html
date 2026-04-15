@@ -800,8 +800,13 @@ SEO_ENGINE.init({
 let translations = {};
 
 async function loadTranslations() {
-    const res = await fetch("languages.json");
-    translations = await res.json();
+    try {
+        const res = await fetch("./languages.json");
+        translations = await res.json();
+        console.log("JSON loaded successfully");
+    } catch (error) {
+        console.error("ERROR loading JSON:", error);
+    }
 }
 
 function applyLanguage(lang) {
@@ -818,22 +823,34 @@ function applyLanguage(lang) {
         const text = el.textContent.trim();
         const key = map[text];
 
-        if (key && translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
+        if (!key) {
+            console.warn("No mapping for:", text);
+            return;
+        }
+
+        const translated = translations?.[lang]?.[key];
+
+        if (translated) {
+            el.textContent = translated;
+        } else {
+            console.warn("Missing translation:", lang, key);
         }
     });
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", async () => {
     await loadTranslations();
 
     const switcher = document.getElementById("languageSwitcher");
 
-    if (switcher) {
-        switcher.addEventListener("change", function () {
-            applyLanguage(this.value);
-        });
+    if (!switcher) {
+        console.error("Language switcher NOT found");
+        return;
     }
+
+    switcher.addEventListener("change", function () {
+        applyLanguage(this.value);
+    });
 
     applyLanguage("en");
 });
