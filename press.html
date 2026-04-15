@@ -331,5 +331,59 @@ updateClock();
 setInterval(updateClock,1000);
 
 </script>
+  <script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+
+    setTimeout(applySavedLanguage, 1200);
+}
+
+// SAVE LANGUAGE
+function changeLanguage(lang) {
+    const select = document.querySelector(".goog-te-combo");
+
+    if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+
+        localStorage.setItem("site_lang", lang);
+    }
+}
+
+// RESTORE LANGUAGE AFTER RELOAD
+function applySavedLanguage() {
+    const savedLang = localStorage.getItem("site_lang");
+
+    if (!savedLang) return;
+
+    const interval = setInterval(() => {
+        const select = document.querySelector(".goog-te-combo");
+
+        if (select) {
+            select.value = savedLang;
+            select.dispatchEvent(new Event("change"));
+            clearInterval(interval);
+        }
+    }, 300);
+}
+
+// DROPDOWN HANDLER
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("languageSwitcher").addEventListener("change", function () {
+        changeLanguage(this.value);
+    });
+});
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  
+</script>
 </body>
 </html>
