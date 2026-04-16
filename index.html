@@ -411,39 +411,39 @@ body {
         /* ================= FINAL MOBILE FIX ================= */
 @media (max-width: 768px) {
 
-    h1, .power-title {
-        font-size: 1.6rem !important;
-        line-height: 1.3;
-        padding: 0 10px;
-        text-align: center;
-        word-break: break-word;
-    }
+/* HEADER TITLE FIX */
+h1, .power-title {
+font-size: 1.6rem !important;
+line-height: 1.3;
+padding: 0 10px;
+text-align: center;
+word-break: break-word;
+}
 
-    /* MENU AS CONTROLLED OVERLAY */
-    .nav-menu {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 10px;
-        width: 200px;
-        background: rgba(0,0,0,0.95);
-        padding: 10px;
-        border: 1px solid #222;
-        z-index: 9999;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
+/* MENU FIX */
+.nav-menu {
+display: flex !important;
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 10px;
+background: black;
+padding: 10px;
+border: 1px solid #222;
+z-index: 9999;
+}
 
-    .nav-menu a {
-        padding: 10px;
-        border-bottom: 1px solid #222;
-        display: block;
-        color: white;
-    }
+.nav-menu a {
+padding: 10px;
+border-bottom: 1px solid #222;
+display: block;
+}
 
-    section {
-        padding-top: 100px;
-    }
+/* SAFETY SPACE */
+section {
+padding-top: 80px;
+}
+
 }
     </style>
 </head>
