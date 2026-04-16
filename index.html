@@ -423,48 +423,42 @@ h1, .power-title {
     z-index: 2;
 }  
 
-/* MENU FIX - THE 150px HARD BOX */  
+/* MENU FIX - THE 150px GLASS BOX */  
 .nav-menu {  
     display: flex !important;  
     flex-direction: column;  
     position: absolute;  
     top: 60px;  
-    right: 0px;            /* Locked to the right edge */
-    background: transparent;  
-    padding: 10px;  
-    border: 1px solid #222;  
-    z-index: 1;            /* Stays behind the main site text */
+    right: 0px;  
+    z-index: 1;
 
-    /* STRICT SIZE LIMITS */
+    /* THE GLASS LOOK */
+    background: rgba(0, 0, 0, 0.2) !important; /* Faint see-through black */
+    backdrop-filter: blur(15px) !important;    /* This creates the "Glass" blur */
+    -webkit-backdrop-filter: blur(15px);        /* For iPhone/Safari support */
+    
+    /* THE STRICTOR BOX */
     width: 150px;          
     max-width: 150px;      
+    padding: 10px;  
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle glass border */
     box-sizing: border-box; 
-    overflow: hidden;      /* Anything outside 150px is invisible */
-    
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;      
 }  
 
 .nav-menu a {  
     padding: 12px 5px;  
-    border-bottom: 1px solid #222;  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     display: block;  
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8); /* Made text slightly clearer */
     
     /* THE CUT-OFF LOGIC */
-    white-space: nowrap;    /* Forces text to stay on ONE line */
-    overflow: hidden;       /* Cuts off the text */
-    text-overflow: ellipsis; /* Adds "..." if the word is too long */
-}  
-
-/* SAFETY SPACE */  
-section {  
-    padding-top: 80px;
-    position: relative;
-    z-index: 5;
+    white-space: nowrap;    
+    overflow: hidden;       
+    text-overflow: ellipsis; 
+    font-size: 14px;
 }
 
-}
     </style>
 </head>
 <body oncontextmenu="return false;">
