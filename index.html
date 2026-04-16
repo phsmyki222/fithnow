@@ -421,23 +421,25 @@ body {
         word-break: break-word;
     }
 
-    /* MENU FIX */
+    /* MENU FIX (UPDATED - NO OVERLAP) */
     .nav-menu {
         display: flex !important;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 10px;
+        position: relative;   /* CHANGED FROM absolute */
+        top: auto;
+        right: auto;
         background: black;
         padding: 10px;
         border: 1px solid #222;
         z-index: 9999;
+        width: 100%;
     }
 
     .nav-menu a {
         padding: 10px;
         border-bottom: 1px solid #222;
         display: block;
+        color: white;
     }
 
     /* SAFETY SPACE */
