@@ -424,29 +424,24 @@ h1, .power-title {
     z-index: 2;
 }  
 
-/* MENU FIX - NOW REPOSITIONED TO THE BACK + 150px LOCKED */  
+/* MENU FIX - NOW REPOSITIONED TO THE BACK */  
 .nav-menu {  
     display: flex !important;  
     flex-direction: column;  
     position: absolute;  
     top: 60px;  
     right: 10px;  
-    
-    /* GLASS EFFECT */
-    background: rgba(0, 0, 0, 0.3) !important; /* Tinted transparent */
-    backdrop-filter: blur(12px) !important;    /* The glass blur */
-    -webkit-backdrop-filter: blur(12px);
-    
+    background: transparent; /* Changed from black to transparent to see through it */
     padding: 10px;  
     border: 1px solid #222;  
     /* Changed z-index to a low number so it stays behind main content */
     z-index: 1;  
 
-    /* STABILIZER */
-    width: 150px !important;    /* Forced 150px width */
+    /* LOCKED WIDTH FIX */
+    width: 150px !important;
     max-width: 150px !important;
     box-sizing: border-box;
-    overflow: hidden;           /* Keeps everything inside the box */
+    overflow: hidden;
 }  
 
 .nav-menu a {  
@@ -455,10 +450,10 @@ h1, .power-title {
     display: block;  
     color: rgba(255, 255, 255, 0.5); /* Dimmed the text so it looks like a background element */
 
-    /* TEXT CUT-OFF LOGIC */
-    white-space: nowrap !important;   /* No wrapping to second line */
-    overflow: hidden !important;      /* Hide the extra text */
-    text-overflow: ellipsis !important; /* Adds "..." if it's too long */
+    /* PREVENT SIZE CHANGE */
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }  
 
 /* SAFETY SPACE */  
