@@ -335,6 +335,7 @@ function updateClock(){
   document.getElementById("year").innerText=now.getFullYear();
   document.getElementById("hours").innerText=String(now.getHours()).padStart(2,'0');
   document.getElementById("minutes").innerText=String(now.getMinutes()).padStart(2,'0');
+  document.getElementById("minutes").innerText=String(now.getsecond()).padStart(2,'0')
   document.getElementById("last-updated").innerText =
     "Last updated: " + now.toLocaleDateString();
 }
