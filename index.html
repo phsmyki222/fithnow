@@ -409,7 +409,6 @@ body {
             .time-box span { font-size: 1.8rem; }
         }
         /* ================= FINAL MOBILE FIX ================= */
-
 @media (max-width: 768px) {
 
     h1, .power-title {
@@ -420,35 +419,30 @@ body {
         word-break: break-word;
     }
 
-    /* SIDE MENU */
+    /* MENU AS CONTROLLED OVERLAY */
     .nav-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 220px;
-
         display: flex !important;
         flex-direction: column;
-
-        background: rgba(0,0,0,0.97);
-        padding: 20px;
-        border-right: 1px solid #222;
-
-        z-index: 99999;
-        box-shadow: 10px 0 30px rgba(0,0,0,0.7);
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        width: 200px;
+        background: rgba(0,0,0,0.95);
+        padding: 10px;
+        border: 1px solid #222;
+        z-index: 9999;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 
     .nav-menu a {
-        padding: 15px 10px;
+        padding: 10px;
         border-bottom: 1px solid #222;
+        display: block;
         color: white;
-        text-decoration: none;
     }
 
     section {
-        margin-left: 220px;
-        padding-top: 80px;
+        padding-top: 100px;
     }
 }
     </style>
