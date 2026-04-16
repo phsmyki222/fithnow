@@ -4,90 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centre de Presse | PHRINUSOMYIS</title>
-    
-    <link rel="stylesheet" href="/style.css">
-
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #000; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
     <script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-        }, 'google_translate_element');
-    }
+        // 1. Force the language choice in memory
+        localStorage.setItem("site_lang", "fr");
+
+        // 2. Optimization: If someone tries to open the frame directly, 
+        // this ensures the parent window stays clean.
+        if (window.self !== window.top) {
+            window.top.location.href = window.location.href;
+        }
     </script>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <select id="languageSwitcher">
-                <option value="en">English (EN)</option>
-                <option value="fr" selected>Français (FR)</option>
-                <option value="es">Español (ES)</option>
-                <option value="de">Deutsch (DE)</option>
-                <option value="ar">العربية (AR)</option>
-                <option value="zh">中文 (ZH)</option>
-                <option value="ru">Русский (RU)</option>
-                <option value="pt">Português (PT)</option>
-                <option value="ja">日本語 (JA)</option>
-                <option value="ko">한국어 (KO)</option>
-                <option value="it">Italiano (IT)</option>
-                <option value="nl">Nederlands (NL)</option>
-                <option value="tr">Türkçe (TR)</option>
-                <option value="hi">हिन्दी (HI)</option>
-                <option value="id">Bahasa Indonesia (ID)</option>
-                <option value="vi">Tiếng Việt (VI)</option>
-                <option value="th">ไทย (TH)</option>
-                <option value="pl">Polski (PL)</option>
-                <option value="sv">Svenska (SV)</option>
-                <option value="fi">Suomi (FI)</option>
-                <option value="da">Dansk (DA)</option>
-            </select>
-        </nav>
-    </header>
-
-    <div id="google_translate_element" style="display:none;"></div>
-
-    <main id="press-content">
-        <h1>Centre de Presse</h1>
-        <p>Bienvenue sur la page de presse officielle de PHRINUSOMYIS.</p>
-    </main>
-
-    <script>
-    function fastSync(lang) {
-        const select = document.querySelector(".goog-te-combo");
-        if (select) {
-            select.value = lang;
-            select.dispatchEvent(new Event("change"));
-            document.getElementById("languageSwitcher").value = lang;
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const path = window.location.pathname;
-        const codes = ['fr','es','de','ar','zh','ru','pt','ja','ko','it','nl','tr','hi','id','vi','th','pl','sv','fi','da'];
-        let target = 'fr'; // Manually locked to French for this folder
-
-        const quickLoad = setInterval(() => {
-            const s = document.querySelector(".goog-te-combo");
-            if (s) {
-                fastSync(target);
-                clearInterval(quickLoad);
-            }
-        }, 100);
-
-        document.getElementById("languageSwitcher").addEventListener("change", function () {
-            const l = this.value;
-            const url = (l === 'en') ? "/press" : `/${l}/press`;
-            window.top.location.href = "https://phrinusomyis.com" + url;
-        });
-    });
-    </script>
-
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body
-    >
+    <iframe src="https://phrinusomyis.com/press" title="PHRINUSOMYIS Press Center"></iframe>
+</body>
 </html>
