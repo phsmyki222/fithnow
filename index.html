@@ -408,7 +408,7 @@ body {
             .time-box { min-width: 70px; padding: 10px; }
             .time-box span { font-size: 1.8rem; }
         }
-      /* ================= FINAL MOBILE FIX ================= */
+     /* ================= FINAL MOBILE FIX ================= */
 
 @media (max-width: 768px) {
 
@@ -418,42 +418,53 @@ h1, .power-title {
     line-height: 1.3;  
     padding: 0 10px;  
     text-align: center;  
-    word-break: break-word; 
-    /* Added relative positioning to ensure it stays above the menu */
+    word-break: break-word;  
     position: relative;
     z-index: 2;
 }  
 
-/* MENU FIX - NOW REPOSITIONED TO THE BACK */  
+/* MENU FIX - THE 150px HARD BOX */  
 .nav-menu {  
     display: flex !important;  
     flex-direction: column;  
     position: absolute;  
     top: 60px;  
-    right: 10px;  
-    background: transparent; /* Changed from black to transparent to see through it */
+    right: 0px;            /* Locked to the right edge */
+    background: transparent;  
     padding: 10px;  
     border: 1px solid #222;  
-    /* Changed z-index to a low number so it stays behind main content */
-    z-index: 1;  
+    z-index: 1;            /* Stays behind the main site text */
+
+    /* STRICT SIZE LIMITS */
+    width: 150px;          
+    max-width: 150px;      
+    box-sizing: border-box; 
+    overflow: hidden;      /* Anything outside 150px is invisible */
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }  
 
 .nav-menu a {  
-    padding: 10px;  
+    padding: 12px 5px;  
     border-bottom: 1px solid #222;  
     display: block;  
-    color: rgba(255, 255, 255, 0.5); /* Dimmed the text so it looks like a background element */
+    color: rgba(255, 255, 255, 0.6);
+    
+    /* THE CUT-OFF LOGIC */
+    white-space: nowrap;    /* Forces text to stay on ONE line */
+    overflow: hidden;       /* Cuts off the text */
+    text-overflow: ellipsis; /* Adds "..." if the word is too long */
 }  
 
 /* SAFETY SPACE */  
 section {  
-    padding-top: 80px;  
+    padding-top: 80px;
     position: relative;
-    z-index: 5; /* Keeps the section content in front of the menu */
+    z-index: 5;
 }
 
 }
-
     </style>
 </head>
 <body oncontextmenu="return false;">
