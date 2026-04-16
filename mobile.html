@@ -3,96 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PHRINUSOMYIS | Mobile Executive Platform</title>
+    <title>PHRINUSOMYIS Mobile</title>
     <style>
         :root {
-            --brand-gold: #D4AF37;
-            --deep-black: #050505;
-            --drawer-bg: #111111;
-            --text-gray: #a0a0a0;
+            --gold: #D4AF37;
+            --bg: #000;
         }
 
         body, html {
             margin: 0;
             padding: 0;
-            background-color: var(--deep-black);
-            color: white;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            overflow-x: hidden;
+            height: 100%;
+            overflow: hidden; /* Prevents double scrollbars */
+            background: var(--bg);
+            font-family: sans-serif;
         }
 
-        /* TOP HEADER: Translator & Branding */
-        .mobile-header {
+        /* 1. THE TOP BAR (Translator) */
+        .app-header {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 60px;
+            height: 50px;
+            background: rgba(0,0,0,0.9);
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            padding: 0 20px;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1001;
-            box-sizing: border-box;
+            padding: 0 15px;
+            z-index: 3000;
             border-bottom: 1px solid #222;
         }
 
-        .brand-logo {
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
-            color: var(--brand-gold);
-        }
-
-        .translator-box select {
-            background: transparent;
-            color: white;
-            border: 1px solid var(--brand-gold);
-            padding: 5px;
-            font-size: 0.8rem;
-            border-radius: 4px;
-        }
-
-        /* MAIN CONTENT MIRROR */
-        .content-mirror {
-            padding: 80px 20px 120px 20px;
-            text-align: center;
-        }
-
-        .cinematic-placeholder {
+        /* 2. THE MIRROR (Loads your existing site) */
+        .site-mirror {
+            position: absolute;
+            top: 50px; /* Below header */
+            bottom: 60px; /* Above drawer handle */
             width: 100%;
-            aspect-ratio: 16/9;
-            background: #222;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #333;
+            border: none;
         }
 
-        /* PULL-OUT DRAWER SYSTEM */
-        .drawer {
+        /* 3. THE PULL-OUT DRAWER (The App Feature) */
+        .mobile-drawer {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 70vh; /* How far it opens */
-            background: var(--drawer-bg);
-            border-top: 2px solid var(--brand-gold);
-            border-radius: 20px 20px 0 0;
-            transform: translateY(calc(70vh - 70px)); /* Shows only the handle */
-            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-            z-index: 2000;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+            height: 80vh; /* Opens to 80% of screen */
+            background: #111;
+            border-top: 2px solid var(--gold);
+            border-radius: 25px 25px 0 0;
+            transform: translateY(calc(80vh - 65px)); /* Hide except handle */
+            transition: transform 0.4s ease-out;
+            z-index: 4000;
         }
 
-        .drawer.open {
+        .mobile-drawer.active {
             transform: translateY(0);
         }
 
-        .drawer-handle {
-            height: 70px;
+        .handle {
+            height: 65px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -100,129 +71,66 @@
             cursor: pointer;
         }
 
-        .handle-bar {
-            width: 50px;
-            height: 5px;
-            background: #444;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
+        .bar { width: 40px; height: 4px; background: #444; border-radius: 2px; margin-bottom: 8px; }
 
-        .handle-text {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            color: var(--brand-gold);
-            font-weight: bold;
-        }
-
-        /* THE HOUSES GRID */
-        .house-grid {
+        /* HOUSE GRID */
+        .house-menu {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             padding: 20px;
-            list-style: none;
         }
 
-        .house-item {
+        .house-btn {
             background: #1a1a1a;
             border: 1px solid #333;
-            padding: 25px 10px;
-            text-align: center;
-            border-radius: 12px;
-            text-decoration: none;
             color: white;
-            transition: 0.3s;
-        }
-
-        .house-item:active {
-            background: var(--brand-gold);
-            color: black;
-        }
-
-        .house-name {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
             text-transform: uppercase;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <header class="mobile-header">
-        <div class="brand-logo">PHRINUSOMYIS</div>
-        <div class="translator-box">
-            <select>
-                <option>EN</option>
-                <option>FR</option>
-                <option>ES</option>
-                <option>ZH</option>
-            </select>
-        </div>
-    </header>
+    <div class="app-header">
+        <div id="google_translate_element"></div> 
+    </div>
 
-    <main class="content-mirror">
-        <div class="cinematic-placeholder">
-            <span>[12K CINEMATIC VISUAL]</span>
-        </div>
-        <h2>Organizational Excellence</h2>
-        <p style="color: var(--text-gray);">Experience stadium-scale production and luxury assets through our mobile-optimized platform.</p>
-    </main>
+    <iframe src="https://phrinusomyis.com" class="site-mirror" id="contentFrame"></iframe>
 
-    <div id="mobileDrawer" class="drawer">
-        <div class="drawer-handle" id="pullHandle">
-            <div class="handle-bar"></div>
-            <div class="handle-text">EXPLORE HOUSES</div>
+    <div class="mobile-drawer" id="appDrawer">
+        <div class="handle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <span style="color:var(--gold); font-size: 12px; letter-spacing: 2px;">PHRINUSOMYIS MENU</span>
         </div>
-        
-        <nav>
-            <div class="house-grid">
-                <a href="https://phrinusomyis.com" class="house-item">
-                    <span class="house-name">Home House</span>
-                </a>
-                <a href="https://phrinusomyis.com/news" class="house-item">
-                    <span class="house-name">News House</span>
-                </a>
-                <a href="https://phrinusomyis.com/events" class="house-item">
-                    <span class="house-name">Event House</span>
-                </a>
-                <a href="https://phrinusomyis.com/press" class="house-item">
-                    <span class="house-name">Press House</span>
-                </a>
-                <a href="https://phrinusomyis.com/articles" class="house-item" style="grid-column: span 2;">
-                    <span class="house-name">Article House</span>
-                </a>
-            </div>
-        </nav>
+
+        <div class="house-menu">
+            <a href="#" onclick="loadPage('https://phrinusomyis.com')" class="house-btn">Home House</a>
+            <a href="#" onclick="loadPage('https://phrinusomyis.com/news')" class="house-btn">News House</a>
+            <a href="#" onclick="loadPage('https://phrinusomyis.com/events')" class="house-btn">Event House</a>
+            <a href="#" onclick="loadPage('https://phrinusomyis.com/press')" class="house-btn">Press House</a>
+            <a href="#" onclick="loadPage('https://phrinusomyis.com/articles')" class="house-btn">Article House</a>
+        </div>
     </div>
 
     <script>
-        const drawer = document.getElementById('mobileDrawer');
-        const handle = document.getElementById('pullHandle');
+        // Toggle Function
+        function toggleMenu() {
+            document.getElementById('appDrawer').classList.toggle('active');
+        }
 
-        // Toggle the drawer open and closed
-        handle.addEventListener('click', () => {
-            drawer.classList.toggle('open');
-            if(drawer.classList.contains('open')) {
-                handle.querySelector('.handle-text').innerText = "CLOSE MENU";
-            } else {
-                handle.querySelector('.handle-text').innerText = "EXPLORE HOUSES";
-            }
-        });
-
-        // Allow swiping up to open
-        let touchStart = 0;
-        handle.addEventListener('touchstart', (e) => {
-            touchStart = e.changedTouches[0].screenY;
-        });
-
-        handle.addEventListener('touchend', (e) => {
-            let touchEnd = e.changedTouches[0].screenY;
-            if (touchStart > touchEnd + 50) { // Swipe Up
-                drawer.classList.add('open');
-            }
-        });
+        // Logic to "Mirror" the specific page requested
+        function loadPage(url) {
+            document.getElementById('contentFrame').src = url;
+            toggleMenu(); // Close menu after selection
+        }
     </script>
+
+
 </body>
 </html>
