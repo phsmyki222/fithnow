@@ -289,6 +289,16 @@ h1{
   font-family:'Cinzel',serif;
   color:var(--gold);
   text-align:center;
+}.     
+      /* Hide any floating translate elements */
+[class*="goog-te"],
+[id*="goog-te"] {
+    display: none !important;
+}
+
+/* Extra: hide injected iframes */
+iframe[src*="translate"] {
+    display: none !important;
 }
 
 .time-box .number{
