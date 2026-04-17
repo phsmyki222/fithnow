@@ -46,7 +46,32 @@
   --accent-glow:rgba(212,175,55,0.3);
   --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
 }
+    /* 1. PERFORMANCE: Only lazy-render non-critical images */
+img:not(.above-the-fold) { 
+    content-visibility: auto; 
+}
 
+/* 2. ACCESSIBILITY: Better mobile tap targets */
+nav a {
+    min-height: 48px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px; /* prevents text from sticking to edges */
+}
+
+/* 3. CONTRAST: Balanced premium gold */
+:root {
+  --gold: #FFC72C; 
+}
+
+/* 4. STABILITY: Proper CLS fix */
+.brand-seal {
+    aspect-ratio: 1 / 1; 
+    width: 60px; /* important: prevents layout jump */
+    height: auto;
+    background: rgba(255, 255, 255, 0.05); 
+}
 *{box-sizing:border-box;margin:0;padding:0;}
 
 body{
@@ -388,7 +413,7 @@ footer{
             </nav>
     </header> 
 
-<img src="phrinusomyis_logo.png" class="brand-seal">
+<img src="phrinusomyis_logo.png" class="brand-seal above-the-fold" alt="PHRINUSOMYIS logo">
 <h1>PHRINUSOMYIS MEDIA PRESS </h1> 
   
 <div class="live-clock">
