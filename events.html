@@ -112,32 +112,42 @@ nav.menu a:hover {
 }
 
              
-                                      /* Completely hide the Google Translate Top Bar */
-             .goog-te-banner-frame, 
-              .goog-te-banner, 
-           .goog-te-menu-frame, 
-           .skiptranslate {
-           display: none !important;
-           visibility: hidden !important;
-        }
+                                      /* Completely/* --- THE "SILENT" TRANSLATE ENGINE CORE --- */
 
-           /* Prevent the white space at the top of the screen */
-            body {
-               top: 0 !important;
-         }
+/* 1. Hides the top banner/bar that appears after translation */
+.goog-te-banner-frame, 
+.goog-te-banner, 
+.goog-te-menu-frame, 
+.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
 
-             html {
-              margin-top: 0px !important;
-          }
+/* 2. Fixes the white gap Google leaves at the top of the page */
+body {
+    top: 0 !important;
+}
 
-             /* Hide the "Show Original" tooltip when hovering */
-              #goog-gt-tt, .goog-te-balloon-frame {
-                display: none !important;
-           }
-               .goog-text-highlight {
-                 background: none !important;
-                  box-shadow: none !important;
-            }
+html {
+    margin-top: 0px !important;
+}
+
+/* 3. Hides the "Show Original" tooltip and highlights when hovering over text */
+#goog-gt-tt, 
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* 4. Hides the actual gadget/button if you are using a custom switcher */
+.goog-te-gadget, 
+#google_translate_element {
+    display: none !important;
+}
       
 .brand-seal {
     width: 160px;
