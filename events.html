@@ -113,8 +113,7 @@ nav.menu a:hover {
 
              
                                       /* Completely/* --- THE "SILENT" TRANSLATE ENGINE CORE --- */
-
-/* 1. Hides the top banner/bar that appears after translation */
+  /* 1. Hides the top banner/bar that appears after translation */
 .goog-te-banner-frame, 
 .goog-te-banner, 
 .goog-te-menu-frame, 
@@ -123,36 +122,36 @@ nav.menu a:hover {
     visibility: hidden !important;
 }
 
-/* 2. Fixes the white gap Google leaves at the top of the page */
-body {
+  /* 2. Fixes the white gap Google leaves at the top of the page */
+  body {
     top: 0 !important;
 }
 
-html {
-    margin-top: 0px !important;
+ html {
+     margin-top: 0px !important;
 }
 
-/* 3. Hides the "Show Original" tooltip and highlights when hovering over text */
-#goog-gt-tt, 
-.goog-te-balloon-frame {
+       /* 3. Hides the "Show Original" tooltip and highlights when hovering over text */
+  #goog-gt-tt, 
+   .goog-te-balloon-frame {
     display: none !important;
 }
 
-.goog-text-highlight {
+   .goog-text-highlight {
     background: none !important;
     box-shadow: none !important;
 }
 
-/* 4. Hides the actual gadget/button if you are using a custom switcher */
-.goog-te-gadget, 
-#google_translate_element {
-    display: none !important;
+    /* 4. Hides the actual gadget/button if you are using a custom switcher */
+  .goog-te-gadget, 
+    #google_translate_element {
+      display: none !important;
 }
       
-.brand-seal {
-    width: 160px;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 30px var(--accent-glow));
+   .brand-seal {
+      width: 160px;
+      margin-bottom: 20px;
+        filter: drop-shadow(0 0 30px var(--accent-glow));
 }
 
 h1 {
