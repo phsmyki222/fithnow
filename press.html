@@ -172,85 +172,252 @@ h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold
 .press-card p{color:#ccc;font-size:0.85rem;text-align:justify;}
 .last-updated{color:#ccc;font-size:0.75rem;text-align:right;margin-top:-30px;}
 footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:center;}
-  /* ================= FINAL MOBILE FIX ================= */
+  <style>
+:root {
+  --gold:#D4AF37;
+  --black:#050505;
+  --glass-bg:rgba(255,255,255,0.02);
+  --glass-border:rgba(212,175,55,0.15);
+  --accent-glow:rgba(212,175,55,0.3);
+  --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  background-color:var(--black);
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  line-height:1.8;
+  overflow-x:hidden;
+  user-select:none;
+  top: 0 !important; /* Force body to top against Google Translate */
+}
+
+/* HIDE GOOGLE TRANSLATE UI COMPLETELY */
+.goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-announcement {
+    display: none !important;
+    visibility: hidden !important;
+}
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+
+a{color:inherit;text-decoration:none;cursor:pointer;}
+
+.cinematic-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
+  z-index:-1;
+}
+
+.container{max-width:1200px;margin:0 auto;padding:60px 20px;text-align:center;position:relative;}
+
+/* DESKTOP NAV */
+nav{display:flex;justify-content:center;gap:30px;margin-bottom:50px;flex-wrap:wrap;}
+nav a{
+  color:var(--gold);
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  padding:10px 20px;
+  border-radius:8px;
+  border:1px solid var(--glass-border);
+  transition:0.3s;
+}
+
+#languageSwitcher {
+    background-color: #050505;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.brand-seal{width:160px;margin-bottom:20px;filter:drop-shadow(0 0 30px var(--accent-glow));}
+h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
+
+.live-clock{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
+.time-box{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(20px);
+  padding:20px 15px;
+  border-radius:12px;
+  min-width:80px;
+  color:var(--gold);
+}
+
+.press-grid{display:flex;flex-direction:column;gap:30px;margin-top:40px;text-align:left;}
+.press-card{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  padding:30px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+.press-card.visible{opacity:1;transform:translateY(0);}
+
+<style>
+:root {
+  --gold:#D4AF37;
+  --black:#050505;
+  --glass-bg:rgba(255,255,255,0.02);
+  --glass-border:rgba(212,175,55,0.15);
+  --accent-glow:rgba(212,175,55,0.3);
+  --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  background-color:var(--black);
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  line-height:1.8;
+  overflow-x:hidden;
+  user-select:none;
+  top: 0 !important; /* Force body to top against Google Translate */
+}
+
+/* HIDE GOOGLE TRANSLATE UI COMPLETELY */
+.goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-announcement {
+    display: none !important;
+    visibility: hidden !important;
+}
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+
+a{color:inherit;text-decoration:none;cursor:pointer;}
+
+.cinematic-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
+  z-index:-1;
+}
+
+.container{max-width:1200px;margin:0 auto;padding:60px 20px;text-align:center;position:relative;}
+
+/* DESKTOP NAV */
+nav{display:flex;justify-content:center;gap:30px;margin-bottom:50px;flex-wrap:wrap;}
+nav a{
+  color:var(--gold);
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  padding:10px 20px;
+  border-radius:8px;
+  border:1px solid var(--glass-border);
+  transition:0.3s;
+}
+
+#languageSwitcher {
+    background-color: #050505;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.brand-seal{width:160px;margin-bottom:20px;filter:drop-shadow(0 0 30px var(--accent-glow));}
+h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
+
+.live-clock{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
+.time-box{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(20px);
+  padding:20px 15px;
+  border-radius:12px;
+  min-width:80px;
+  color:var(--gold);
+}
+
+.press-grid{display:flex;flex-direction:column;gap:30px;margin-top:40px;text-align:left;}
+.press-card{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  padding:30px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+.press-card.visible{opacity:1;transform:translateY(0);}
+
+/* ================= FINAL MOBILE FIX ================= */
 
 @media (max-width: 768px) {
 
-/* 1. HIDE GOOGLE TRANSLATE NOTIFICATIONS/BAR */
-.goog-te-banner-frame, 
-.goog-te-balloon-frame, 
-#goog-gt-tt, 
-.goog-te-announcement {
-    display: none !important;
-}
-body {
-    top: 0 !important; /* Prevents Google from pushing the site down */
-}
-
-/* PRESS PAGE BUTTONS - MOBILE FRIENDLY */
-/* Assuming your buttons have a container or specific class */
-.press-container, .button-wrapper { 
+/* 1. FIX THE NAV BUTTONS INTO A GRID */
+nav {
     display: grid !important;
-    grid-template-columns: 1fr 1fr; /* Puts buttons in 2 clean columns */
-    gap: 15px;
-    padding: 20px;
-    justify-items: center;
+    grid-template-columns: 1fr 1fr; /* 2 Columns */
+    gap: 10px !important;
+    padding: 10px;
 }
 
-/* Style for the Gold Buttons on Mobile */
-.press-button, .button-wrapper a {
-    width: 140px !important; /* Fixed width for symmetry */
-    font-size: 0.9rem !important;
-    padding: 12px 5px !important;
+nav a {
+    width: 100% !important;
     text-align: center;
-    border: 1px solid #443305; /* Keeps the gold border look */
+    padding: 12px 5px !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* 3. HEADER TITLE FIX */  
-h1, .power-title {  
+/* Make Language Switcher take full width below buttons */
+#languageSwitcher {
+    grid-column: span 2;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 2. HEADER TITLE FIX */  
+h1 {  
     font-size: 1.6rem !important;  
     line-height: 1.3;  
-    padding: 0 10px;  
-    text-align: center;  
-    word-break: break-word; 
-    position: relative;
-    z-index: 2;
+    letter-spacing: 4px !important;
 }  
 
-/* 4. MENU FIX - LOCKED 150px (Behind Content) */  
+/* 3. CLOCK FIX FOR MOBILE */
+.time-box {
+    min-width: 60px !important;
+    padding: 10px 5px !important;
+}
+
+/* 4. LOCK THE MENU (If you use the .nav-menu class elsewhere) */  
 .nav-menu {  
     display: flex !important;  
     flex-direction: column;  
     position: absolute;  
     top: 60px;  
     right: 10px;  
-    background: transparent; 
-    padding: 10px;  
+    background: transparent !important; 
     border: 1px solid #222;  
     z-index: 1;  
-
     width: 150px !important;
     max-width: 150px !important;
-    box-sizing: border-box;
     overflow: hidden;
 }  
 
 .nav-menu a {  
-    padding: 10px;  
-    border-bottom: 1px solid #222;  
-    display: block;  
     color: rgba(255, 255, 255, 0.5); 
     white-space: nowrap !important;
-    overflow: hidden !important;
     text-overflow: ellipsis !important;
 }  
-
-/* 5. SAFETY SPACE */  
-section {  
-    padding-top: 80px;  
-    position: relative;
-    z-index: 5; 
-}
 
 }
 </style>
