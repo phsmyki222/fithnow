@@ -125,7 +125,7 @@ h1 {
           
 }
       
-/* Top Menu */
+/* Top Menu - Desktop Left-Aligned */
 .navbar {
     position: fixed;
     top: 0;
@@ -134,10 +134,15 @@ h1 {
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(15px);
     display: flex;
-    justify-content: center;
+    /* Changed from center to flex-start to move text left */
+    justify-content: flex-start; 
     z-index: 999;
-    padding: 10px 0;
+    /* Added 5% horizontal padding to keep it off the screen edge */
+    padding: 10px 5%; 
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    /* Ensures padding doesn't increase the width beyond 100% */
+    box-sizing: border-box; 
+    
 }
 
 .navbar ul {
