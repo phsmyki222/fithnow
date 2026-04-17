@@ -55,7 +55,16 @@ body {
 
 #google_translate_element {
     display: none !important;
-}
+} 
+      .translate-cover {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    z-index: 999999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
       
 /* ROOT VARIABLES */
 :root {
@@ -440,6 +449,7 @@ footer{
 
 <div class="container">
 
+  <div id="translateCover" class="translate-cover"></div>
 <nav>
 <a href="/">HOME</a>
 <a href="events">EVENTS</a>
