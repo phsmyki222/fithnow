@@ -38,6 +38,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet"> 
   
   <style>  
+      /* KILL GOOGLE FLICKER IMMEDIATELY */
+  body { top: 0 !important; position: static !important; }
+  .goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate, .goog-te-spinner-pos, .goog-te-announcement { 
+      display: none !important; 
+      visibility: hidden !important; 
+      opacity: 0 !important;
+  }
     :root {
   --gold:#D4AF37;
   --black:#050505;
