@@ -38,14 +38,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet"> 
   
   <style>  
-      /* GOOGLE TRANSLATE CLEANUP (SAFE) */
-.goog-te-banner-frame,
-.goog-te-balloon-frame,
-#goog-gt-tt,
-.skiptranslate,
-.goog-te-spinner-pos { 
+    /* 1. STOPS THE PUMP IMMEDIATELY */
+body { top: 0 !important; position: static !important; }
+
+/* 2. HIDES THE POP-OUT ICON AND BAR */
+.goog-te-banner-frame, 
+.goog-te-balloon-frame, 
+#goog-gt-tt, 
+.skiptranslate, 
+.goog-te-spinner-pos, 
+.goog-te-announcement { 
     display: none !important; 
     visibility: hidden !important; 
+    opacity: 0 !important;
 }
 
 /* Prevent layout jump without breaking layout */
