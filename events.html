@@ -111,6 +111,34 @@ nav.menu a:hover {
     color: var(--blue);
 }
 
+             
+                                      /* Completely hide the Google Translate Top Bar */
+             .goog-te-banner-frame, 
+              .goog-te-banner, 
+           .goog-te-menu-frame, 
+           .skiptranslate {
+           display: none !important;
+           visibility: hidden !important;
+        }
+
+           /* Prevent the white space at the top of the screen */
+            body {
+               top: 0 !important;
+         }
+
+             html {
+              margin-top: 0px !important;
+          }
+
+             /* Hide the "Show Original" tooltip when hovering */
+              #goog-gt-tt, .goog-te-balloon-frame {
+                display: none !important;
+           }
+               .goog-text-highlight {
+                 background: none !important;
+                  box-shadow: none !important;
+            }
+      
 .brand-seal {
     width: 160px;
     margin-bottom: 20px;
