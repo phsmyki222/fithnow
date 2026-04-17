@@ -70,10 +70,35 @@ body{
     display: none !important;
     visibility: hidden !important;
 }
+/* PERFORMANCE: Lazy render non-critical images */
+img:not(.above-the-fold) {
+    content-visibility: auto;
+}
 
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
+/* ACCESSIBILITY: Better tap targets */
+nav a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+/* BRAND COLOR: Premium gold */
+:root {
+  --gold: #FFC72C;
+}
+
+/* CLS FIX: Stable logo/container */
+.brand-seal {
+    aspect-ratio: 1 / 1;
+    width: 60px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.05);
+    }
+      .goog-text-highlight {
+       background: none !important;
+     box-shadow: none !important;
 }
 
 html {
