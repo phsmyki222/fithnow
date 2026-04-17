@@ -56,15 +56,6 @@ body {
 #google_translate_element {
     display: none !important;
 } 
-      .translate-cover {
-    position: fixed;
-    inset: 0;
-    background: #050505;
-    z-index: 999999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-  }
       
 /* ROOT VARIABLES */
 :root {
@@ -299,16 +290,6 @@ h1{
   color:var(--gold);
   text-align:center;
 }.     
-      /* Hide any floating translate elements */
-[class*="goog-te"],
-[id*="goog-te"] {
-    display: none !important;
-}
-
-/* Extra: hide injected iframes */
-iframe[src*="translate"] {
-    display: none !important;
-}
 
 .time-box .number{
   font-size:1.5rem;
@@ -449,7 +430,6 @@ footer{
 
 <div class="container">
 
-  <div id="translateCover" class="translate-cover"></div>
 <nav>
 <a href="/">HOME</a>
 <a href="events">EVENTS</a>
