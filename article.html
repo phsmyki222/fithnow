@@ -67,26 +67,24 @@ h1 {
     margin-bottom: 60px;
 }
           
-* Top Menu - Desktop Left-Aligned
-.*/.navbar {
+/* Top Menu - Desktop Left-Aligned */
+.navbar {
     position: fixed;
-    /* This brings the menu down 20px from the very top edge */
-    top: 20px; 
+    top: 20px;
     left: 0;
     width: 100%;
-    /* Dark background to make the gold pop */
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.7);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
+
     display: flex;
-    /* Aligns items to the left */
-    justify-content: flex-start; 
+    justify-content: flex-start;
+
     z-index: 999;
-    /* Professional spacing from the left edge */
-    padding: 15px 5%; 
+    padding: 15px 5%;
     box-sizing: border-box;
-    /* Gold border at the bottom for a premium finish */
-    border-bottom: 2px solid #D4AF37; 
+
+    border-bottom: 2px solid #D4AF37;
 }
 
 /* Gold Text Styling for the Menu Links */
@@ -152,21 +150,27 @@ h1 {
 
 /* Responsive Menu */
 @media screen and (max-width: 768px) {
+
     .navbar ul {
         flex-direction: column;
         position: fixed;
         top: 60px;
         right: -100%;
         width: 200px;
+
         background: rgba(0,0,0,0.9);
         padding: 20px;
         gap: 20px;
+
         transition: right 0.3s ease;
+
         border-left: 2px solid var(--gold);
     }
+
     .navbar ul.show {
         right: 0;
     }
+
     .hamburger {
         display: flex;
     }
