@@ -21,8 +21,8 @@
 <meta name="robots" content="index, follow">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
+  <style>  
+    :root {
   --gold:#D4AF37;
   --black:#050505;
   --glass-bg:rgba(255,255,255,0.02);
@@ -30,7 +30,34 @@
   --accent-glow:rgba(212,175,55,0.3);
   --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
 }
+    /* 1. PERFORMANCE: Only lazy-render non-critical images */
+img:not(.above-the-fold) { 
+    content-visibility: auto; 
+}
+
+/* 2. ACCESSIBILITY: Better mobile tap targets */
+nav a {
+    min-height: 48px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px; /* prevents text from sticking to edges */
+}
+
+/* 3. CONTRAST: Balanced premium gold */
+:root {
+  --gold: #FFC72C; 
+}
+
+/* 4. STABILITY: Proper CLS fix */
+.brand-seal {
+    aspect-ratio: 1 / 1; 
+    width: 60px; /* important: prevents layout jump */
+    height: auto;
+    background: rgba(255, 255, 255, 0.05); 
+}
 *{box-sizing:border-box;margin:0;padding:0;}
+
 body{
   background-color:var(--black);
   color:#fff;
@@ -38,8 +65,57 @@ body{
   line-height:1.8;
   overflow-x:hidden;
   user-select:none;
+  top: 0 !important;
 }
+
+/* Google Translate Hide */
+.goog-te-banner-frame, 
+.goog-te-banner, 
+.goog-te-menu-frame, 
+.skiptranslate,
+#goog-gt-tt, 
+.goog-te-balloon-frame, 
+.goog-te-announcement {
+    display: none !important;
+    visibility: hidden !important;
+}
+/* PERFORMANCE: Lazy render non-critical images */
+img:not(.above-the-fold) {
+    content-visibility: auto;
+}
+
+/* ACCESSIBILITY: Better tap targets */
+nav a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+/* BRAND COLOR: Premium gold */
+:root {
+  --gold: #FFC72C;
+}
+
+/* CLS FIX: Stable logo/container */
+.brand-seal {
+    aspect-ratio: 1 / 1;
+    width: 60px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.05);
+    }
+      .goog-text-highlight {
+       background: none !important;
+     box-shadow: none !important;
+}
+
+html {
+  margin-top: 0px !important;
+}
+
 a{color:inherit;text-decoration:none;cursor:pointer;}
+
 .cinematic-bg{
   position:fixed;
   top:0;
@@ -49,8 +125,23 @@ a{color:inherit;text-decoration:none;cursor:pointer;}
   background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
   z-index:-1;
 }
-.container{max-width:1200px;margin:0 auto;padding:60px 20px;text-align:center;position:relative;}
-nav{display:flex;justify-content:center;gap:30px;margin-bottom:50px;flex-wrap:wrap;}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 20px;
+  text-align:center;
+  position:relative;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-bottom:50px;
+  flex-wrap:wrap;
+}
+
 nav a{
   color:var(--gold);
   font-family:'Cinzel',serif;
@@ -60,39 +151,70 @@ nav a{
   border:1px solid var(--glass-border);
   transition:0.3s;
 }
-           /* Completely hide the Google Translate Top Bar */
-             .goog-te-banner-frame, 
-              .goog-te-banner, 
-           .goog-te-menu-frame, 
-           .skiptranslate {
-           display: none !important;
-           visibility: hidden !important;
-        }
 
-           /* Prevent the white space at the top of the screen */
-            body {
-               top: 0 !important;
-         }
+nav a:hover{
+  background:var(--gold);
+  color:var(--black);
+}
 
-             html {
-              margin-top: 0px !important;
-          }
+#languageSwitcher {
+  background-color: #050505;
+  color: #D4AF37;
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
 
-             /* Hide the "Show Original" tooltip when hovering */
-              #goog-gt-tt, .goog-te-balloon-frame {
-                display: none !important;
-           }
-               .goog-text-highlight {
-                 background: none !important;
-                  box-shadow: none !important;
-  }
-nav a:hover{background:var(--gold);color:var(--black);}
-.brand-seal{width:160px;margin-bottom:20px;filter:drop-shadow(0 0 30px var(--accent-glow));}
-h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
-.registry-status,.tagline{font-size:0.7rem;letter-spacing:4px;color:#888;border-top:1px solid var(--glass-border);display:inline-block;padding-top:10px;margin-bottom:30px;}
-.ceo-name{color:var(--gold);text-shadow:0 0 15px var(--gold);font-weight:900;}
-.contact-email{position:absolute;left:30px;bottom:100px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
-.live-clock{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
+.brand-seal{
+  width:160px;
+  margin-bottom:20px;
+  filter:drop-shadow(0 0 30px var(--accent-glow));
+}
+
+h1{
+  font-family:'Cinzel',serif;
+  font-size:3rem;
+  letter-spacing:8px;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+
+.registry-status,
+.tagline{
+  font-size:0.7rem;
+  letter-spacing:4px;
+  color:#888;
+  border-top:1px solid var(--glass-border);
+  display:inline-block;
+  padding-top:10px;
+  margin-bottom:30px;
+}
+
+.contact-email{
+  position:absolute;
+  left:30px;
+  bottom:100px;
+  font-weight:700;
+  background:var(--rainbow);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-size:1rem;
+}
+
+.live-clock{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:30px 0;
+  flex-wrap:wrap;
+}
+
 .time-box{
   background:var(--glass-bg);
   border:1px solid var(--glass-border);
@@ -104,9 +226,27 @@ h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold
   color:var(--gold);
   text-align:center;
 }
-.time-box .number{font-size:1.5rem;font-weight:900;}
-.time-box .label{font-size:0.7rem;color:#ccc;margin-top:5px;text-transform:uppercase;}
-.press-grid{display:flex;flex-direction:column;gap:30px;margin-top:40px;text-align:left;}
+
+.time-box .number{
+  font-size:1.5rem;
+  font-weight:900;
+}
+
+.time-box .label{
+  font-size:0.7rem;
+  color:#ccc;
+  margin-top:5px;
+  text-transform:uppercase;
+}
+
+.press-grid{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  margin-top:40px;
+  text-align:left;
+}
+
 .press-card{
   background:var(--glass-bg);
   border:1px solid var(--glass-border);
@@ -116,11 +256,108 @@ h1{font-family:'Cinzel',serif;font-size:3rem;letter-spacing:8px;color:var(--gold
   opacity:0;
   transform:translateY(40px);
 }
-.press-card.visible{opacity:1;transform:translateY(0);}
-.press-card h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;margin-bottom:10px;}
-.press-card p{color:#ccc;font-size:0.85rem;text-align:justify;}
-.last-updated{color:#ccc;font-size:0.75rem;text-align:right;margin-top:-30px;}
-footer{margin-top:80px;font-size:0.65rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:center;}
+
+.press-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.press-card h3{
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  font-size:1.3rem;
+  margin-bottom:10px;
+}
+
+.press-card p{
+  color:#ccc;
+  font-size:0.85rem;
+  text-align:justify;
+}
+
+.last-updated{
+  color:#ccc;
+  font-size:0.75rem;
+  text-align:right;
+  margin-top:-30px;
+}
+
+footer{
+  margin-top:80px;
+  font-size:0.65rem;
+  letter-spacing:2px;
+  color:var(--gold);
+  text-transform:uppercase;
+  text-align:center;
+}
+
+/* ================= FINAL MOBILE FIX ================= */
+@media (max-width: 768px) {
+  /* 1. HIDE GOOGLE UI (Stops Layout Shift - Big Performance Gain) */
+  .goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
+  }
+  body { top: 0 !important; }
+
+  /* 2. BUTTON GRID - Uses 'fr' for faster rendering */
+  nav {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+      margin-bottom: 30px !important;
+  }
+
+  nav a {
+      width: 100% !important;
+      padding: 12px 0 !important;
+      font-size: 13px !important;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* Removes heavy transitions for mobile performance */
+      transition: none !important; 
+  }
+
+  #languageSwitcher {
+      grid-column: span 2;
+      height: 40px;
+      font-size: 14px !important;
+  }
+
+  /* 3. CLOCK - Fixed height to prevent "Jumping" during load */
+  .live-clock {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      min-height: 150px; 
+  }
+
+  .time-box {
+      min-width: 0 !important;
+      padding: 10px !important;
+  }
+
+  /* 4. TITLE - Optimized for mobile painting */
+  h1 {  
+      font-size: 1.5rem !important;  
+      letter-spacing: 3px !important;
+      margin-top: 20px;
+  }  
+
+  /* 5. MENU - 150px Static Behind content */
+  .nav-menu {  
+      display: flex !important;
+      position: absolute;  
+      top: 60px;  
+      right: 10px;  
+      width: 150px !important;
+      z-index: 1;  
+      background: transparent !important;
+      overflow: hidden;
+  }
+}
 </style>
 </head>
 
