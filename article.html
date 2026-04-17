@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PHRINUSOMYIS Articles — Luxury Lifestyle & Global Entertainment Insights </title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-
 <style>
 :root {
     --diamond: #E5E5E5; /* Diamond white color for countdown */
@@ -16,60 +14,8 @@
     --glass-border: rgba(212, 175, 55, 0.15);
     --accent-glow: rgba(212, 175, 55, 0.3);
     --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-}
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "PHRINUSOMYIS HUB",
-  "url": "https://phrinusomyis.com/article",
-  "description": "Insights, features, and luxury entertainment articles published by PHRINUSOMYIS, highlighting global productions, premium experiences, and high-value assets.",
-  "mainEntity": [
-    {
-      "@type": "Phrinusomyis Hub",
-      "headline": "PHRINUSOMYIS:A Multimillion-dollar Redefining Global Luxury Entertainment",
-      "datePublished": "2026-04-08T10:00:00",
-      "dateModified": "2026-04-08T10:00:00",
-      "author": {
-        "@type": "Person",
-        "name": "Victor Seth A",
-        "jobTitle": "Founder and CEO"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
-        }
-      },
-      "mainEntityOfPage": "https://phrinusomyis.com/article",
-      "articleBody": "PHRINUSOMYIS has emerged as a leading global luxury entertainment company, known for stadium-scale productions, elite audience experiences, and high-value luxury assets. This article explores its mission, vision, and global expansion strategy, highlighting how the company sets new standards in luxury entertainment."
-    },
-    {
-      "@type": "Phrinusomyis",
-      "headline": "Inside PHRINUSOMYIS: Crafting Exclusive Luxury Experiences",
-      "datePublished": "2026-04-10T09:00:00",
-      "dateModified": "2026-04-10T09:00:00",
-      "author": {
-        "@type": "Person",
-        "name": "Victor Seth A",
-        "jobTitle": "Founder and CEO"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
-        }
-      },
-      "mainEntityOfPage": "https://phrinusomyis.com/article",
-      "articleBody": "This feature article dives into the premium products, event productions, and media strategies of PHRINUSOMYIS. The company’s approach to controlled distribution, high-value collectibles, and international audience engagement exemplifies luxury entertainment at its highest level."
-    }
-  ]
-/* ================= GLOBAL STYLES ================= */
+
+/* Global Styles */
 body {
     background-color: var(--black);
     color: #ffffff;
@@ -120,36 +66,42 @@ h1 {
     padding-top: 10px;
     margin-bottom: 60px;
 }
-
-/* ✅ FIXED ERROR HERE */
-.contact-email {
-    position: absolute;
-    left: 30px;
-    bottom: 130px;
-    font-weight: 700;
-    background: var(--rainbow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1rem;
-}
-
-/* ================= NAVBAR ================= */
-
-.navbar {
+          
+* Top Menu - Desktop Left-Aligned
+.*/.navbar {
     position: fixed;
-    top: 25px; /* slightly lowered */
+    /* This brings the menu down 20px from the very top edge */
+    top: 20px; 
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    /* Dark background to make the gold pop */
+    background: rgba(0, 0, 0, 0.7); 
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    /* Aligns items to the left */
+    justify-content: flex-start; 
     z-index: 999;
-    padding: 18px 6%;
+    /* Professional spacing from the left edge */
+    padding: 15px 5%; 
     box-sizing: border-box;
-    border-bottom: 2px solid #D4AF37;
+    /* Gold border at the bottom for a premium finish */
+    border-bottom: 2px solid #D4AF37; 
+}
+
+/* Gold Text Styling for the Menu Links */
+.navbar a {
+    color: #D4AF37; /* Classic Metallic Gold */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-right: 30px; /* Spacing between menu items */
+}
+
+/* Hover effect to brighten the gold */
+.navbar a:hover {
+    color: #FFD700; 
 }
 
 .navbar ul {
@@ -157,82 +109,70 @@ h1 {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 35px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .navbar li {
     font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-/* ✅ CLEAN GOLD (NO CONFLICT NOW) */
 .navbar a {
-    color: #D4AF37;
     text-decoration: none;
+    color: var(--diamond);
     font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    position: relative;
     transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #FFD700;
-    text-shadow: 0 0 10px #FFD700;
+    color: var(--gold);
+    text-shadow: 0 0 15px var(--gold);
 }
 
 .navbar a.active {
-    color: #FFD700;
+    color: var(--gold);
 }
 
-/* ================= HAMBURGER ================= */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    margin-left: auto;
+    margin-left: 20px;
 }
 
 .hamburger div {
     width: 25px;
     height: 3px;
-    background: #D4AF37;
+    background: var(--diamond);
 }
 
-/* ================= MOBILE ================= */
+/* Responsive Menu */
 @media screen and (max-width: 768px) {
-
-    .navbar {
-        padding: 15px 6%;
-    }
-
     .navbar ul {
         flex-direction: column;
         position: fixed;
-        top: 80px;
+        top: 60px;
         right: -100%;
-        width: 220px;
-        background: rgba(0,0,0,0.95);
-        padding: 25px;
-        gap: 25px;
+        width: 200px;
+        background: rgba(0,0,0,0.9);
+        padding: 20px;
+        gap: 20px;
         transition: right 0.3s ease;
-        border-left: 2px solid #D4AF37;
+        border-left: 2px solid var(--gold);
     }
-
     .navbar ul.show {
         right: 0;
     }
-
-    .navbar li {
-        font-size: 1.1rem;
-    }
-
     .hamburger {
         display: flex;
     }
 }
 
-/* ================= COUNTDOWN ================= */
+/* Countdown / Live Time */
 .countdown-container {
     display: flex;
     flex-wrap: wrap;
@@ -244,7 +184,7 @@ h1 {
 .countdown-card {
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(20px);
-    border: 1px solid var(--gold);
+    border: 1px solid var(--gold); /* Gold edge */
     border-radius: 15px;
     padding: 30px 20px 15px 20px;
     width: 100px;
@@ -253,7 +193,7 @@ h1 {
 }
 
 .countdown-card h2 {
-    color: #B2EBF2;
+    color: #B2EBF2; /* Time only */
     text-shadow: 0 0 10px #B2EBF2;
     font-family: 'Cinzel', serif;
     font-size: 2rem;
@@ -269,7 +209,7 @@ h1 {
     color: var(--gold);
 }
 
-/* ================= GRID ================= */
+/* Cards Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -309,8 +249,8 @@ h1 {
     padding-bottom: 8px;
 }
 
-.label { color: var(--gold); font-weight: 700; font-size: 0.7rem; }
-.value { color: #fff; font-size: 0.9rem; }
+.label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; }
+.value { color: #fff; font-weight: 400; font-size: 0.9rem; }
 
 .narrative-content {
     margin-top: 25px;
@@ -319,7 +259,7 @@ h1 {
     text-align: justify;
 }
 
-/* ================= FOOTER ================= */
+/* Footer */
 footer {
     margin-top: 100px;
     font-size: 0.6rem;
@@ -328,7 +268,7 @@ footer {
     text-transform: uppercase;
 }
 
-/* ================= ANIMATION ================= */
+/* Animations */
 @keyframes pulse {
     0% { text-shadow: 0 0 15px #B2EBF2; }
     50% { text-shadow: 0 0 25px #B2EBF2; }
