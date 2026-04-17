@@ -123,26 +123,42 @@ h1 {
 }
 .contact-email {position:absolute;left:30px; down:130px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
           
-}
-      
-/* Top Menu - Desktop Left-Aligned */
-.navbar {
+}     
+* Top Menu - Desktop Left-Aligned
+.*/.navbar {
     position: fixed;
-    top: 0;
+    /* This brings the menu down 20px from the very top edge */
+    top: 20px; 
     left: 0;
     width: 100%;
-    background: rgba(0,0,0,0.5);
+    /* Dark background to make the gold pop */
+    background: rgba(0, 0, 0, 0.7); 
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     display: flex;
-    /* Changed from center to flex-start to move text left */
+    /* Aligns items to the left */
     justify-content: flex-start; 
     z-index: 999;
-    /* Added 5% horizontal padding to keep it off the screen edge */
-    padding: 10px 5%; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    /* Ensures padding doesn't increase the width beyond 100% */
-    box-sizing: border-box; 
-    
+    /* Professional spacing from the left edge */
+    padding: 15px 5%; 
+    box-sizing: border-box;
+    /* Gold border at the bottom for a premium finish */
+    border-bottom: 2px solid #D4AF37; 
+}
+
+/* Gold Text Styling for the Menu Links */
+.navbar a {
+    color: #D4AF37; /* Classic Metallic Gold */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-right: 30px; /* Spacing between menu items */
+}
+
+/* Hover effect to brighten the gold */
+.navbar a:hover {
+    color: #FFD700; 
 }
 
 .navbar ul {
