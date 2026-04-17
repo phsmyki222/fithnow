@@ -69,8 +69,7 @@
       "articleBody": "This feature article dives into the premium products, event productions, and media strategies of PHRINUSOMYIS. The company’s approach to controlled distribution, high-value collectibles, and international audience engagement exemplifies luxury entertainment at its highest level."
     }
   ]
-}
-/* Global Styles */
+/* ================= GLOBAL STYLES ================= */
 body {
     background-color: var(--black);
     color: #ffffff;
@@ -121,44 +120,36 @@ h1 {
     padding-top: 10px;
     margin-bottom: 60px;
 }
-.contact-email {position:absolute;left:30px; down:130px;font-weight:700;background:var(--rainbow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1rem;}
-          
-}     
-* Top Menu - Desktop Left-Aligned
-.*/.navbar {
+
+/* ✅ FIXED ERROR HERE */
+.contact-email {
+    position: absolute;
+    left: 30px;
+    bottom: 130px;
+    font-weight: 700;
+    background: var(--rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
     position: fixed;
-    /* This brings the menu down 20px from the very top edge */
-    top: 20px; 
+    top: 25px; /* slightly lowered */
     left: 0;
     width: 100%;
-    /* Dark background to make the gold pop */
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.75);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     display: flex;
-    /* Aligns items to the left */
-    justify-content: flex-start; 
+    justify-content: flex-start;
+    align-items: center;
     z-index: 999;
-    /* Professional spacing from the left edge */
-    padding: 15px 5%; 
+    padding: 18px 6%;
     box-sizing: border-box;
-    /* Gold border at the bottom for a premium finish */
-    border-bottom: 2px solid #D4AF37; 
-}
-
-/* Gold Text Styling for the Menu Links */
-.navbar a {
-    color: #D4AF37; /* Classic Metallic Gold */
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-right: 30px; /* Spacing between menu items */
-}
-
-/* Hover effect to brighten the gold */
-.navbar a:hover {
-    color: #FFD700; 
+    border-bottom: 2px solid #D4AF37;
 }
 
 .navbar ul {
@@ -166,70 +157,82 @@ h1 {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    gap: 35px;
 }
 
 .navbar li {
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
+/* ✅ CLEAN GOLD (NO CONFLICT NOW) */
 .navbar a {
+    color: #D4AF37;
     text-decoration: none;
-    color: var(--diamond);
     font-weight: 700;
-    position: relative;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    color: var(--gold);
-    text-shadow: 0 0 15px var(--gold);
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
 }
 
 .navbar a.active {
-    color: var(--gold);
+    color: #FFD700;
 }
 
-/* Hamburger Menu */
+/* ================= HAMBURGER ================= */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    margin-left: 20px;
+    margin-left: auto;
 }
 
 .hamburger div {
     width: 25px;
     height: 3px;
-    background: var(--diamond);
+    background: #D4AF37;
 }
 
-/* Responsive Menu */
+/* ================= MOBILE ================= */
 @media screen and (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 6%;
+    }
+
     .navbar ul {
         flex-direction: column;
         position: fixed;
-        top: 60px;
+        top: 80px;
         right: -100%;
-        width: 200px;
-        background: rgba(0,0,0,0.9);
-        padding: 20px;
-        gap: 20px;
+        width: 220px;
+        background: rgba(0,0,0,0.95);
+        padding: 25px;
+        gap: 25px;
         transition: right 0.3s ease;
-        border-left: 2px solid var(--gold);
+        border-left: 2px solid #D4AF37;
     }
+
     .navbar ul.show {
         right: 0;
     }
+
+    .navbar li {
+        font-size: 1.1rem;
+    }
+
     .hamburger {
         display: flex;
     }
 }
 
-/* Countdown / Live Time */
+/* ================= COUNTDOWN ================= */
 .countdown-container {
     display: flex;
     flex-wrap: wrap;
@@ -241,7 +244,7 @@ h1 {
 .countdown-card {
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(20px);
-    border: 1px solid var(--gold); /* Gold edge */
+    border: 1px solid var(--gold);
     border-radius: 15px;
     padding: 30px 20px 15px 20px;
     width: 100px;
@@ -250,7 +253,7 @@ h1 {
 }
 
 .countdown-card h2 {
-    color: #B2EBF2; /* Time only */
+    color: #B2EBF2;
     text-shadow: 0 0 10px #B2EBF2;
     font-family: 'Cinzel', serif;
     font-size: 2rem;
@@ -266,7 +269,7 @@ h1 {
     color: var(--gold);
 }
 
-/* Cards Grid */
+/* ================= GRID ================= */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -306,8 +309,8 @@ h1 {
     padding-bottom: 8px;
 }
 
-.label { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; }
-.value { color: #fff; font-weight: 400; font-size: 0.9rem; }
+.label { color: var(--gold); font-weight: 700; font-size: 0.7rem; }
+.value { color: #fff; font-size: 0.9rem; }
 
 .narrative-content {
     margin-top: 25px;
@@ -316,7 +319,7 @@ h1 {
     text-align: justify;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
     margin-top: 100px;
     font-size: 0.6rem;
@@ -325,7 +328,7 @@ footer {
     text-transform: uppercase;
 }
 
-/* Animations */
+/* ================= ANIMATION ================= */
 @keyframes pulse {
     0% { text-shadow: 0 0 15px #B2EBF2; }
     50% { text-shadow: 0 0 25px #B2EBF2; }
