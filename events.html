@@ -110,42 +110,48 @@ nav.menu a {
 nav.menu a:hover {
     color: var(--blue);
 }
+                                      /* --- SILENT GOOGLE TRANSLATE ENGINE --- */
 
-             
-                                      /* Completely/* --- THE "SILENT" TRANSLATE ENGINE CORE --- */
-  /* 1. Hides the top banner/bar that appears after translation */
-.goog-te-banner-frame, 
-.goog-te-banner, 
-.goog-te-menu-frame, 
-.skiptranslate {
+/* Hide all Google UI elements */
+.goog-te-banner-frame,
+.goog-te-banner,
+.goog-te-menu-frame,
+.skiptranslate,
+.goog-te-gadget,
+#google_translate_element,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-te-spinner-pos,
+.goog-tooltip {
     display: none !important;
     visibility: hidden !important;
 }
 
-  /* 2. Fixes the white gap Google leaves at the top of the page */
-  body {
-    top: 0 !important;
-}
-
- html {
-     margin-top: 0px !important;
-}
-
-       /* 3. Hides the "Show Original" tooltip and highlights when hovering over text */
-  #goog-gt-tt, 
-   .goog-te-balloon-frame {
-    display: none !important;
-}
-
-   .goog-text-highlight {
+/* Remove highlight effects */
+.goog-text-highlight {
     background: none !important;
     box-shadow: none !important;
 }
 
-    /* 4. Hides the actual gadget/button if you are using a custom switcher */
-  .goog-te-gadget, 
-    #google_translate_element {
-      display: none !important;
+/* Fix layout shifts */
+body {
+    top: 0 !important;
+    position: static !important;
+}
+
+html {
+    margin-top: 0 !important;
+}
+
+/* Prevent translation classes from shifting layout */
+body.translated-ltr,
+body.translated-rtl {
+    top: 0 !important;
+}
+
+/* Kill iframe banner */
+iframe.goog-te-banner-frame {
+    display: none !important;
 }
       
    .brand-seal {
