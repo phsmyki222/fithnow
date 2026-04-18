@@ -10,6 +10,10 @@ Host: https://phrinusomyis.com
 
 # Sitemaps
 Sitemap: https://phrinusomyis.com/sitemap.xml
+Sitemap: https://phrinusomyis.com/home.xml
+Sitemap: https://phrinusomyis.com/news.xml
+Sitemap: https://phrinusomyis.com/events.xml
+Sitemap: https://phrinusomyis.com/press.xml
 Sitemap: https://phrinusomyis.com/rss.xml
 
 # Crawl Delay (optional, prevents server overload)
