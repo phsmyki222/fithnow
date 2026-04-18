@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- 📰 MAIN NEWS HUB -->
-
-       <loc>https://phrinusomyis.com/news</loc>
+    <url>
+        <loc>https://phrinusomyis.com/en/news</loc>
         <priority>1.0</priority>
         <changefreq>daily</changefreq>
     </url>
