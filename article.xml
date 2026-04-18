@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://phrinusomyis.com/articles</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <!-- 🌐 ARTICLE MULTILINGUAL PAGES -->
+
+    <url><loc>https://phrinusomyis.com/fr/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/es/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/de/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ar/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/zh/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ru/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/pt/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ja/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ko/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/it/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/nl/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/tr/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/hi/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/id/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/vi/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/th/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/pl/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/sv/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/fi/articles</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/da/articles</loc><priority>0.9</priority></url>
+
+</urlset>
