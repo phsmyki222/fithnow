@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://phrinusomyis.com/en</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <!-- 🌐 MULTILINGUAL HOME PAGES -->
+
+    <url><loc>https://phrinusomyis.com/fr</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/es</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/de</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ar</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/zh</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ru</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/pt</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ja</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ko</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/it</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/nl</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/tr</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/hi</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/id</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/vi</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/th</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/pl</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/sv</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/fi</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/da</loc><priority>0.9</priority></url>
+
+</urlset>
