@@ -3,7 +3,7 @@
 
     <!-- 📰 MAIN NEWS HUB -->
     <url>
-        <loc>https://phrinusomyis.com/en/news</loc>
+        <loc>https://phrinusomyis.com/news</loc>
         <priority>1.0</priority>
         <changefreq>daily</changefreq>
     </url>
