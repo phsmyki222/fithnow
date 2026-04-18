@@ -21,14 +21,44 @@
 <meta name="robots" content="index, follow">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <style>  
-    :root {
-  --gold:#D4AF37;
-  --black:#050505;
+    <style>
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.goog-te-gadget {
+    display: none !important;
+}
+
+#google_translate_element {
+    display: none !important;
+} 
+      
+/* ROOT VARIABLES */
+:root {
+  --gold: #FFC72C;
+  --black: #050505;
+  --glass-border: rgba(212, 175, 55, 0.15);
   --glass-bg:rgba(255,255,255,0.02);
-  --glass-border:rgba(212,175,55,0.15);
-  --accent-glow:rgba(212,175,55,0.3);
   --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+} 
+    /* FORCE LAYOUT STABILITY */
+body { top: 0 !important; position: static !important; }
+.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate { 
+    display: none !important; 
+    visibility: hidden !important; 
+}
+
+/* ACCESSIBILITY FIX (For the 85 Score) */
+nav a {
+    min-height: 48px; /* Correct touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
     /* 1. PERFORMANCE: Only lazy-render non-critical images */
 img:not(.above-the-fold) { 
@@ -67,17 +97,32 @@ body{
   user-select:none;
   top: 0 !important;
 }
+      /* Completely hide the Google Translate Top Bar */
+             .goog-te-banner-frame, 
+              .goog-te-banner, 
+           .goog-te-menu-frame, 
+           .skiptranslate {
+           display: none !important;
+           visibility: hidden !important;
+        }
 
-/* Google Translate Hide */
-.goog-te-banner-frame, 
-.goog-te-banner, 
-.goog-te-menu-frame, 
-.skiptranslate,
-#goog-gt-tt, 
-.goog-te-balloon-frame, 
-.goog-te-announcement {
-    display: none !important;
-    visibility: hidden !important;
+           /* Prevent the white space at the top of the screen */
+            body {
+               top: 0 !important;
+         }
+
+             html {
+              margin-top: 0px !important;
+          }
+
+             /* Hide the "Show Original" tooltip when hovering */
+              #goog-gt-tt, .goog-te-balloon-frame {
+                display: none !important;
+           }
+               .goog-text-highlight {
+                 background: none !important;
+                  box-shadow: none !important;
+            }
 }
 /* PERFORMANCE: Lazy render non-critical images */
 img:not(.above-the-fold) {
@@ -225,7 +270,7 @@ h1{
   font-family:'Cinzel',serif;
   color:var(--gold);
   text-align:center;
-}
+}.     
 
 .time-box .number{
   font-size:1.5rem;
@@ -322,8 +367,8 @@ footer{
 
   #languageSwitcher {
       grid-column: span 2;
-      height: 40px;
-      font-size: 14px !important;
+      height: 30px;
+      font-size: 10px !important;
   }
 
   /* 3. CLOCK - Fixed height to prevent "Jumping" during load */
