@@ -1,85 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <url>
-    <loc>https://phrinusomyis.com/</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+<url>
+  <loc>https://phrinusomyis.com/</loc>
+  <lastmod>2026-04-08</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
 
-    <image:image>
-      <image:loc>https://phrinusomyis.com/phrinusomyis_logo1.png</image:loc>
-      <image:caption>PHRINUSOMYIS Official Branding Logo 1</image:caption>
-    </image:image>
+  <!-- Hreflang -->
+  <xhtml:link rel="alternate" hreflang="en" href="https://phrinusomyis.com/" />
+  <xhtml:link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es" />
+  <xhtml:link rel="alternate" hreflang="de" href="https://phrinusomyis.com/de" />
+  <xhtml:link rel="alternate" hreflang="ar" href="https://phrinusomyis.com/ar" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://phrinusomyis.com/zh" />
+  <xhtml:link rel="alternate" hreflang="ru" href="https://phrinusomyis.com/ru" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://phrinusomyis.com/pt" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://phrinusomyis.com/ja" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://phrinusomyis.com/ko" />
+  <xhtml:link rel="alternate" hreflang="it" href="https://phrinusomyis.com/it" />
+  <xhtml:link rel="alternate" hreflang="nl" href="https://phrinusomyis.com/nl" />
+  <xhtml:link rel="alternate" hreflang="tr" href="https://phrinusomyis.com/tr" />
+  <xhtml:link rel="alternate" hreflang="hi" href="https://phrinusomyis.com/hi" />
+  <xhtml:link rel="alternate" hreflang="id" href="https://phrinusomyis.com/id" />
+  <xhtml:link rel="alternate" hreflang="vi" href="https://phrinusomyis.com/vi" />
+  <xhtml:link rel="alternate" hreflang="th" href="https://phrinusomyis.com/th" />
+  <xhtml:link rel="alternate" hreflang="pl" href="https://phrinusomyis.com/pl" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://phrinusomyis.com/sv" />
+  <xhtml:link rel="alternate" hreflang="fi" href="https://phrinusomyis.com/fi" />
+  <xhtml:link rel="alternate" hreflang="da" href="https://phrinusomyis.com/da" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://phrinusomyis.com/" />
 
-    <image:image>
-      <image:loc>https://phrinusomyis.com/phrinusomyis_logo2.png</image:loc>
-      <image:caption>PHRINUSOMYIS Official Branding Logo 2</image:caption>
-    </image:image>
+  <!-- Images -->
+  <image:image>
+    <image:loc>https://phrinusomyis.com/phrinusomyis_logo1.png</image:loc>
+    <image:caption>PHRINUSOMYIS Official Branding Logo 1</image:caption>
+  </image:image>
 
-    <image:image>
-      <image:loc>https://phrinusomyis.com/phrinusomyis_logo3.png</image:loc>
-      <image:caption>PHRINUSOMYIS Official Branding Logo 3</image:caption>
-    </image:image>
+  <image:image>
+    <image:loc>https://phrinusomyis.com/phrinusomyis_logo2.png</image:loc>
+    <image:caption>PHRINUSOMYIS Official Branding Logo 2</image:caption>
+  </image:image>
 
-    <image:image>
-      <image:loc>https://phrinusomyis.com/phrinusomyis_perfume_front.png</image:loc>
-      <image:caption>PHRINUSOMYIS Exclusive Perfume Front View</image:caption>
-    </image:image>
+  <image:image>
+    <image:loc>https://phrinusomyis.com/phrinusomyis_logo3.png</image:loc>
+    <image:caption>PHRINUSOMYIS Official Branding Logo 3</image:caption>
+  </image:image>
 
-    <image:image>
-      <image:loc>https://phrinusomyis.com/phrinusomyis_logo_360.png</image:loc>
-      <image:caption>PHRINUSOMYIS Official Branding Logo 360</image:caption>
-    </image:image>
+  <image:image>
+    <image:loc>https://phrinusomyis.com/phrinusomyis_perfume_front.png</image:loc>
+    <image:caption>PHRINUSOMYIS Exclusive Perfume Front View</image:caption>
+  </image:image>
 
-    <image:image>
-      <image:loc>https://phrinusomyis.com/phrinusomyis_logo.png</image:loc>
-      <image:caption>PHRINUSOMYIS Official Branding Logo</image:caption>
-    </image:image>
-  </url>
+  <image:image>
+    <image:loc>https://phrinusomyis.com/phrinusomyis_logo_360.png</image:loc>
+    <image:caption>PHRINUSOMYIS Official Branding Logo 360</image:caption>
+  </image:image>
 
-  <url>
-    <loc>https://phrinusomyis.com/vsa-99-x7q.html</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <image:image>
+    <image:loc>https://phrinusomyis.com/phrinusomyis_logo.png</image:loc>
+    <image:caption>PHRINUSOMYIS Official Branding Logo</image:caption>
+  </image:image>
 
-  <url>
-    <loc>https://phrinusomyis.com/new</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
+</url>
 
-  <url>
-    <loc>https://phrinusomyis.com/events</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
+<!-- other pages -->
+<url>
+  <loc>https://phrinusomyis.com/new</loc>
+  <lastmod>2026-04-08</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
 
-  <url>
-    <loc>https://phrinusomyis.com/article</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url>
+  <loc>https://phrinusomyis.com/events</loc>
+  <lastmod>2026-04-08</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
 
-  <url>
-    <loc>https://phrinusomyis.com/press</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<url>
+  <loc>https://phrinusomyis.com/article</loc>
+  <lastmod>2026-04-08</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
 
-  <url>
-    <loc>https://phrinusomyis.com/rss.xml</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>1.0</priority>
-  </url
-    >
+<url>
+  <loc>https://phrinusomyis.com/press</loc>
+  <lastmod>2026-04-08</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://phrinusomyis.com/rss.xml</loc>
+  <lastmod>2026-04-08</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>1.0</priority>
+</url>
 
 </urlset>
