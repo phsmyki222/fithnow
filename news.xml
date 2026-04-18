@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- 📰 MAIN NEWS HUB -->
+
+    <!-- 🌐 NEWS MULTILINGUAL PAGES -->
+
+    <url><loc>https://phrinusomyis.com/fr/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/es/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/de/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ar/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/zh/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ru/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/pt/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ja/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/ko/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/it/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/nl/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/tr/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/hi/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/id/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/vi/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/th/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/pl/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/sv/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/fi/news</loc><priority>0.9</priority></url>
+    <url><loc>https://phrinusomyis.com/da/news</loc><priority>0.9</priority></url>
+
+</urlset>
