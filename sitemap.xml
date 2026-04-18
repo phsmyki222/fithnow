@@ -10,30 +10,6 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 
-  <!-- Hreflang -->
-  <xhtml:link rel="alternate" hreflang="en" href="https://phrinusomyis.com/" />
-  <xhtml:link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr" />
-  <xhtml:link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es" />
-  <xhtml:link rel="alternate" hreflang="de" href="https://phrinusomyis.com/de" />
-  <xhtml:link rel="alternate" hreflang="ar" href="https://phrinusomyis.com/ar" />
-  <xhtml:link rel="alternate" hreflang="zh" href="https://phrinusomyis.com/zh" />
-  <xhtml:link rel="alternate" hreflang="ru" href="https://phrinusomyis.com/ru" />
-  <xhtml:link rel="alternate" hreflang="pt" href="https://phrinusomyis.com/pt" />
-  <xhtml:link rel="alternate" hreflang="ja" href="https://phrinusomyis.com/ja" />
-  <xhtml:link rel="alternate" hreflang="ko" href="https://phrinusomyis.com/ko" />
-  <xhtml:link rel="alternate" hreflang="it" href="https://phrinusomyis.com/it" />
-  <xhtml:link rel="alternate" hreflang="nl" href="https://phrinusomyis.com/nl" />
-  <xhtml:link rel="alternate" hreflang="tr" href="https://phrinusomyis.com/tr" />
-  <xhtml:link rel="alternate" hreflang="hi" href="https://phrinusomyis.com/hi" />
-  <xhtml:link rel="alternate" hreflang="id" href="https://phrinusomyis.com/id" />
-  <xhtml:link rel="alternate" hreflang="vi" href="https://phrinusomyis.com/vi" />
-  <xhtml:link rel="alternate" hreflang="th" href="https://phrinusomyis.com/th" />
-  <xhtml:link rel="alternate" hreflang="pl" href="https://phrinusomyis.com/pl" />
-  <xhtml:link rel="alternate" hreflang="sv" href="https://phrinusomyis.com/sv" />
-  <xhtml:link rel="alternate" hreflang="fi" href="https://phrinusomyis.com/fi" />
-  <xhtml:link rel="alternate" hreflang="da" href="https://phrinusomyis.com/da" />
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://phrinusomyis.com/" />
-
   <!-- Images -->
   <image:image>
     <image:loc>https://phrinusomyis.com/phrinusomyis_logo1.png</image:loc>
