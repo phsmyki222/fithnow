@@ -3,7 +3,7 @@
 
     <!-- 🌍 MAIN EVENTS 12k -->
     <url>
-        <loc>https://phrinusomyis.com/en/events</loc>
+        <loc>https://phrinusomyis.com/events</loc>
         <priority>1.0</priority>
         <changefreq>weekly</changefreq>
     </url>
