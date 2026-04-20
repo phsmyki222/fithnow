@@ -117,41 +117,7 @@ nav a {
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 
-body{
-  background-color:var(--black);
-  color:#fff;
-  font-family:'Montserrat',sans-serif;
-  line-height:1.8;
-  overflow-x:hidden;
-  user-select:none;
-  top: 0 !important;
-}
-      /* Completely hide the Google Translate Top Bar */
-             .goog-te-banner-frame, 
-              .goog-te-banner, 
-           .goog-te-menu-frame, 
-           .skiptranslate {
-           display: none !important;
-           visibility: hidden !important;
-        }
 
-           /* Prevent the white space at the top of the screen */
-            body {
-               top: 0 !important;
-         }
-
-             html {
-              margin-top: 0px !important;
-          }
-
-             /* Hide the "Show Original" tooltip when hovering */
-              #goog-gt-tt, .goog-te-balloon-frame {
-                display: none !important;
-           }
-               .goog-text-highlight {
-                 background: none !important;
-                  box-shadow: none !important;
-            }
 }
 /* PERFORMANCE: Lazy render non-critical images */
 img:not(.above-the-fold) {
@@ -361,34 +327,12 @@ h1 {
 
 .navbar a.active {
     color: var(--gold);
-}
-
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    margin-left: 20px;
 } 
 
 .hamburger div {
     width: 25px;
     height: 3px;
-    background: var(--diamond);
-} 
-    
-#languageSwitcher {
-  background-color: #050505;
-  color: #D4AF37;
-  border: 1px solid #D4AF37;
-  border-radius: 4px;
-  padding: 5px 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  cursor: pointer;
-  outline: none;
+    background: var(--diamond):
 }
 
 /* Responsive Menu */
