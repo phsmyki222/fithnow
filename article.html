@@ -50,19 +50,7 @@ body {
     user-select: none;
 }
 
-.cinematic-bg {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 50% 50%, #151515 0%, #050505 100%);
-    z-index: -1;
-}
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:60px 20px;
-  text-align:center;
-  position:relative;
-}
+    <style>
 .goog-te-banner-frame {
     display: none !important;
 }
@@ -77,13 +65,189 @@ body {
 
 #google_translate_element {
     display: none !important;
- }
-    
+} 
+      
+/* ROOT VARIABLES */
+:root {
+  --gold: #FFC72C;
+  --black: #050505;
+  --glass-border: rgba(212, 175, 55, 0.15);
+  --glass-bg:rgba(255,255,255,0.02);
+  --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+} 
+    /* FORCE LAYOUT STABILITY */
+body { top: 0 !important; position: static !important; }
+.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate { 
+    display: none !important; 
+    visibility: hidden !important; 
+}
+
+/* ACCESSIBILITY FIX (For the 85 Score) */
+nav a {
+    min-height: 48px; /* Correct touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    /* 1. PERFORMANCE: Only lazy-render non-critical images */
+img:not(.above-the-fold) { 
+    content-visibility: auto; 
+}
+
+/* 2. ACCESSIBILITY: Better mobile tap targets */
+nav a {
+    min-height: 48px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px; /* prevents text from sticking to edges */
+}
+
+/* 3. CONTRAST: Balanced premium gold */
+:root {
+  --gold: #FFC72C; 
+}
+
+/* 4. STABILITY: Proper CLS fix */
 .brand-seal {
-    width: 160px;
-    margin-bottom: 30px;
-    filter: drop-shadow(0 0 30px var(--accent-glow));
-    transition: transform 1s ease;
+    aspect-ratio: 1 / 1; 
+    width: 60px; /* important: prevents layout jump */
+    height: auto;
+    background: rgba(255, 255, 255, 0.05); 
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  background-color:var(--black);
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  line-height:1.8;
+  overflow-x:hidden;
+  user-select:none;
+  top: 0 !important;
+}
+      /* Completely hide the Google Translate Top Bar */
+             .goog-te-banner-frame, 
+              .goog-te-banner, 
+           .goog-te-menu-frame, 
+           .skiptranslate {
+           display: none !important;
+           visibility: hidden !important;
+        }
+
+           /* Prevent the white space at the top of the screen */
+            body {
+               top: 0 !important;
+         }
+
+             html {
+              margin-top: 0px !important;
+          }
+
+             /* Hide the "Show Original" tooltip when hovering */
+              #goog-gt-tt, .goog-te-balloon-frame {
+                display: none !important;
+           }
+               .goog-text-highlight {
+                 background: none !important;
+                  box-shadow: none !important;
+            }
+}
+/* PERFORMANCE: Lazy render non-critical images */
+img:not(.above-the-fold) {
+    content-visibility: auto;
+}
+
+/* ACCESSIBILITY: Better tap targets */
+nav a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+/* BRAND COLOR: Premium gold */
+:root {
+  --gold: #FFC72C;
+}
+
+/* CLS FIX: Stable logo/container */
+.brand-seal {
+    aspect-ratio: 1 / 1;
+    width: 60px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.05);
+    }
+      .goog-text-highlight {
+       background: none !important;
+     box-shadow: none !important;
+}
+
+html {
+  margin-top: 0px !important;
+}
+
+a{color:inherit;text-decoration:none;cursor:pointer;}
+
+.cinematic-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
+  z-index:-1;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 20px;
+  text-align:center;
+  position:relative;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-bottom:50px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:var(--gold);
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  padding:10px 20px;
+  border-radius:8px;
+  border:1px solid var(--glass-border);
+  transition:0.3s;
+}
+
+nav a:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+#languageSwitcher {
+  background-color: #050505;
+  color: #D4AF37;
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+.brand-seal{
+  width:160px;
+  margin-bottom:20px;
+  filter:drop-shadow(0 0 30px var(--accent-glow));
 }
 
 h1 {
