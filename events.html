@@ -202,12 +202,12 @@ h1 {
       /* --- 6. HIDE GOOGLE TOOLS --- */
 .goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate, .goog-te-gadget { 
     display: none !important; 
-}
-      
 #languageSwitcher {
   background-color: #050505;
-  color: #D4AF37;
-  border: 1px solid #D4AF37;
+  /* Diamond White with high brilliance */
+  color: #FDFDFF; 
+  /* Subtle Platinum/Diamond border */
+  border: 1px solid #E5E4E2; 
   border-radius: 4px;
   padding: 5px 10px;
   font-family: 'Montserrat', sans-serif;
@@ -215,6 +215,16 @@ h1 {
   text-transform: uppercase;
   cursor: pointer;
   outline: none;
+  /* Subtle glow to simulate light refraction */
+  box-shadow: 0 0 8px rgba(229, 228, 226, 0.2);
+  transition: all 0.3s ease;
+}
+
+#languageSwitcher:hover {
+  /* Brighter white on hover for a 'sparkle' effect */
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
 .registry-status {
