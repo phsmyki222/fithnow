@@ -255,21 +255,34 @@ h1 {
     box-shadow: none !important;
 }
 
-/* --- 8. MOBILE RESPONSIVENESS --- */
+/* Responsive Menu */
 @media screen and (max-width: 768px) {
+
     .navbar ul {
-        gap: 15px;
-        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 200px;
+
+        background: rgba(0,0,0,0.9);
+        padding: 20px;
+        gap: 20px;
+
+        transition: right 0.3s ease;
+
+        border-left: 2px solid var(--gold);
     }
-    .countdown-card {
-        width: 85px;
-        padding: 15px 5px;
+
+    .navbar ul.show {
+        right: 0;
     }
-    .countdown-card h2 {
-        font-size: 1.4rem;
+
+    .hamburger {
+        display: flex;
     }
 }
-
+    
 /* --- 9. ANIMATIONS --- */
 @keyframes pulse {
     0% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
