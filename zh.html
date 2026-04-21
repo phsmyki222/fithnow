@@ -3,40 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | 官方网站</title>
-
+    <title>PHRINUSOMYIS</title>
+    
     <style>
-        /* Maintain the Gold on Obsidian aesthetic during load */
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            width: 100%; 
-            overflow: hidden; 
-            background: #000; /* Pure Obsidian */
-        }
-        
-        iframe { 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-            background: #000;
-        }
+        body, html { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+        #main-stage { width: 100%; height: 100%; border: none; }
     </style>
 
     <script>
-        // 1. LOCK LANGUAGE: Ensures the "zh" preference persists
-        localStorage.setItem("site_lang", "zh");
+        // 1. Check the URL for the language trigger
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang');
 
-        // 2. SECURITY: Prevents unauthorized framing of the brand
+        // 2. If it's zh, set the memory and update the title
+        if (lang === 'zh' || localStorage.getItem("site_lang") === 'zh') {
+            localStorage.setItem("site_lang", "zh");
+            document.title = "PHRINUSOMYIS | 官方网站";
+        }
+
+        // 3. Frame-Busting Security
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
     </script>
 </head>
-
 <body>
-    <iframe src="https://phrinusomyis.com" title="PHRINUSOMYIS 首页"></iframe>
+    <iframe id="main-stage" src="https://phrinusomyis.com"></iframe>
 </body>
-</ht
-    ml>
+</html>
