@@ -6,28 +6,28 @@
     <title>PHRINUSOMYIS</title>
     
     <style>
+        /* Obsidian Visual Standard */
         body, html { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
         #main-stage { width: 100%; height: 100%; border: none; }
     </style>
 
     <script>
-        // 1. Check the URL for the language trigger
-        const urlParams = new URLSearchParams(window.location.search);
-        const lang = urlParams.get('lang');
+        // 1. Check if the user has ALREADY been set to Chinese
+        // Or if they are coming from a specific link
+        let currentLang = localStorage.getItem("site_lang");
 
-        // 2. If it's zh, set the memory and update the title
-        if (lang === 'zh' || localStorage.getItem("site_lang") === 'zh') {
-            localStorage.setItem("site_lang", "zh");
+        if (currentLang === 'zh') {
             document.title = "PHRINUSOMYIS | 官方网站";
+            // The 'Home' is / so we stay right here.
         }
 
-        // 3. Frame-Busting Security
+        // 2. Security: No unauthorized framing
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
     </script>
 </head>
 <body>
-    <iframe id="main-stage" src="https://phrinusomyis.com"></iframe>
+    <iframe id="main-stage" src="/main.html"></iframe>
 </body>
 </html>
