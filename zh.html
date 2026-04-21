@@ -6,14 +6,29 @@
     <title>PHRINUSOMYIS | 官方网站</title>
 
     <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
+        /* Maintain the Gold on Obsidian aesthetic during load */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; 
+            background: #000; /* Pure Obsidian */
+        }
+        
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            background: #000;
+        }
     </style>
 
     <script>
-        // LANGUAGE: CHINESE
+        // 1. LOCK LANGUAGE: Ensures the "zh" preference persists
         localStorage.setItem("site_lang", "zh");
 
+        // 2. SECURITY: Prevents unauthorized framing of the brand
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -23,4 +38,5 @@
 <body>
     <iframe src="https://phrinusomyis.com" title="PHRINUSOMYIS 首页"></iframe>
 </body>
-</html>
+</ht
+    ml>
