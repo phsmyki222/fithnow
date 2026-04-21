@@ -3,84 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | Insights & Excellence</title>
-    
-    <meta name="description" content="Exclusive articles and cinematic insights from PHRINUSOMYIS.">
-    <meta property="og:image" content="https://phrinusomyis.com/assets/images/obsidian-gold-banner.jpg">
-
+    <title>Article | PHRINUSOMYIS</title>
     <style>
-        /* Obsidian Base Aesthetic */
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100vh; 
-            width: 100vw; 
-            overflow: hidden; 
-            background-color: #000; /* Pure Obsidian */
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; background-color: #000; overflow: hidden; }
+        
+        /* This ensures the iframe takes up the full visual space without scrollbar glitches */
+        .container {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
         }
 
-        /* 12K Precision Iframe */
         iframe { 
-            display: block;
-            width: 100%; 
-            height: 100%; 
-            border: none;
+            width: 100%; height: 100%; border: none; 
             background-color: #000;
         }
-
-        /* Subtle Loading State - Pure Gold Tone */
-        #loader {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99;
-            transition: opacity 0.8s ease-out;
-        }
-
-        .gold-spinner {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #D4AF37; /* Pure Gold */
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
-
-    <script>
-        localStorage.setItem("site_lang", "fr");
-
-        // Protection against framing
-        if (window.self !== window.top) {
-            window.top.location.href = window.location.href;
-        }
-
-        // Remove loader once content is ready
-        window.onload = function() {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none'; }, 800);
-        };
-    </script>
 </head>
-
 <body>
-    <div id="loader">
-        <div class="gold-spinner"></div>
+
+    <div class="container">
+        <iframe 
+            src="https://phrinusomyis.com/article" 
+            loading="lazy"
+            allow="autoplay; fullscreen"
+            title="PHRINUSOMYIS Content">
+        </iframe>
     </div>
 
-    <iframe 
-        src="https://phrinusomyis.com/article" 
-        title="PHRINUSOMYIS Article Center"
-        allowfullscreen>
-        <p>Votre navigateur ne supporte pas les iframes. 
-           <a href="https://phrinusomyis.com/article" style="color: #D4AF37;">Accéder aux articles.</a>
-        </p>
-    </iframe>
+    <script>
+        // Simple error check: if the iframe fails to load content after 5 seconds, 
+        // it might be a security block.
+        console.log("Loading PHRINUSOMYIS Article Node...");
+    </script>
 </body>
 </html>
