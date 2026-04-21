@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Événements | PHRINUSOMYIS</title>
+    <meta name="description" content="Découvrez les événements à venir de PHRINUSOMYIS.">
 
     <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100vh; 
+            width: 100vw; 
+            overflow: hidden; 
+            background-color: #000; 
+        }
+        iframe { 
+            display: block;
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
     </style>
 
     <script>
-        // LANGUAGE: FRENCH
         localStorage.setItem("site_lang", "fr");
 
         if (window.self !== window.top) {
@@ -21,6 +33,10 @@
 </head>
 
 <body>
-    <iframe src="https://phrinusomyis.com/fr/events" title="PHRINUSOMYIS Événements"></iframe>
+    <iframe src="https://phrinusomyis.com/events" title="Centre d'événements PHRINUSOMYIS">
+        <p>Votre navigateur ne supporte pas les iframes. 
+           <a href="https://phrinusomyis.com/events">Cliquez ici pour voir les événements.</a>
+        </p>
+    </iframe>
 </body>
 </html>
