@@ -3,37 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://your-api-or-cdn.com">
+    
     <title>PHRINUSOMYIS | 官方网站</title>
     
     <style>
-        /* Obsidian Visual Standard */
+        /* 2. Critical CSS: Inlined to avoid a second network request */
+        :root { --bg: #000; --text: #fff; }
         body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            background: #000; 
+            margin: 0; padding: 0; 
+            height: 100%; width: 100%;
+            background: var(--bg); 
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             overflow: hidden; 
+            display: flex; align-items: center; justify-content: center;
         }
-        #main-stage { 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-        }
+
+        /* Rapid fade-in animation */
+        .content { animation: opac 0.1s ease-in; }
+        @keyframes opac { from { opacity: 0; } to { opacity: 1; } }
     </style>
 
     <script>
-        // Force language to Chinese (locked)
-        localStorage.setItem("site_lang", "zh");
-        document.documentElement.lang = "zh";
-        document.title = "PHRINUSOMYIS | 官方网站";
-
-        // Security: No unauthorized framing
-        if (window.self !== window.top) {
-            window.top.location.href = window.location.href;
-        }
+        /* 3. Instant Logic: Runs before the body even loads */
+        (function() {
+            // Lock language
+            localStorage.setItem("site_lang", "zh");
+            
+            // Security: Break out of unauthorized frames
+            if (window.self !== window.top) {
+                window.top.location.href = window.location.href;
+            }
+            
+            // Performance Mark
+            window.mark_start = performance.now();
+        })();
     </script>
 </head>
 <body>
-    <iframe id="main-stage" src="/"></iframe>
+
+    <div id="app" class="content">
+        <h1>PHRINUSOMYIS</h1>
+        </div>
+
+    <script>
+        /* 5. Service Worker: This is the ONLY way to hit 0.02s on repeat visits.
+           It serves the site from the user's disk/RAM instead of the internet. */
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(() => {
+                console.log("Cached for near-zero latency.");
+            });
+        }
+
+        /* Speed Log */
+        window.addEventListener('load', () => {
+            const loadTime = performance.now() - window.mark_start;
+            console.log(`Load Speed: ${loadTime.toFixed(2)}ms`);
+        });
+    </script>
 </body>
 </html>
