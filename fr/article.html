@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Événements | PHRINUSOMYIS</title>
-    <meta name="description" content="Découvrez les événements à venir de PHRINUSOMYIS.">
+    <title>Article | PHRINUSOMYIS</title>
+    
+    <meta property="og:title" content="PHRINUSOMYIS - Lecture">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://phrinusomyis.com/assets/images/article-thumbnail.jpg">
+    <meta property="og:description" content="Découvrez nos dernières perspectives sur l'excellence et le luxe.">
 
     <style>
         body, html { 
@@ -13,7 +17,7 @@
             height: 100vh; 
             width: 100vw; 
             overflow: hidden; 
-            background-color: #000; 
+            background-color: #000; /* Matching Obsidian aesthetic */
         }
         iframe { 
             display: block;
@@ -26,6 +30,7 @@
     <script>
         localStorage.setItem("site_lang", "fr");
 
+        // Frame-busting protection
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -33,9 +38,9 @@
 </head>
 
 <body>
-    <iframe src="https://phrinusomyis.com/events" title="Centre d'événements PHRINUSOMYIS">
+    <iframe src="https://phrinusomyis.com/articles" title="PHRINUSOMYIS Article Reader">
         <p>Votre navigateur ne supporte pas les iframes. 
-           <a href="https://phrinusomyis.com/events">Cliquez ici pour voir les événements.</a>
+           <a href="https://phrinusomyis.com/articles">Lire l'article ici.</a>
         </p>
     </iframe>
 </body>
