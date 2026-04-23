@@ -252,60 +252,59 @@ h1 {
     50% { transform: scale(1.05); text-shadow: 0 0 20px var(--diamond-glow); }
     100% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
 }
-    /* PHRINUSOMYIS GLOBAL REGISTRY STYLING */
-.phrinus-footer-registry {
+    /* PHRINUSOMYIS GOLD & DIAMOND REGISTRY */
+.phrinus-registry-footer {
     background-color: #000;
-    color: #D4AF37; /* Pure Gold */
-    padding: 60px 20px;
-    font-family: 'Times New Roman', serif; /* Cinematic Serif */
-    border-top: 1px solid #D4AF37;
+    padding: 60px 15px;
+    border-top: 1px solid #D4AF37; /* Gold Divider */
     text-align: center;
+    font-family: 'Times New Roman', serif;
 }
 
-.registry-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.registry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 Grid for Mobile scale */
+    gap: 40px 15px;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 40px;
 }
 
-.office-node {
-    flex: 1;
-    min-width: 260px;
-    margin-bottom: 30px;
-}
-
-.office-header {
-    font-size: 18px;
-    letter-spacing: 3px;
+.node-header {
+    font-size: 14px;
     font-weight: bold;
-    margin-bottom: 15px;
+    color: #D4AF37; /* Pure Gold Header */
+    letter-spacing: 2px;
+    margin-bottom: 12px;
     display: block;
+    text-transform: uppercase;
 }
 
-.address-text {
-    color: #D4AF37; /* Gold Address */
-    font-size: 16px;
-    line-height: 1.8;
+.node-address {
+    color: #E5E4E2; /* Diamond/Platinum Text */
+    font-size: 14px;
+    line-height: 1.6;
     margin: 0;
 }
 
-.contact-registry {
-    margin-top: 50px;
-    border-top: 1px solid #222;
-    padding-top: 40px;
+.pin {
+    margin-top: 8px;
+    display: inline-block;
 }
 
-.contact-item {
+.contact-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #222;
+}
+
+.contact-link {
     display: block;
-    font-size
-        : 18px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    color: #D4AF37; /* Gold for Action Links */
     text-decoration: none;
-    color: #D4AF37;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 footer {
     margin-top: 80px;
