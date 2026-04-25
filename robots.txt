@@ -4,6 +4,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /config/
 
 # Primary Domain
 Host: https://phrinusomyis.com
@@ -16,9 +18,10 @@ Sitemap: https://phrinusomyis.com/events.xml
 Sitemap: https://phrinusomyis.com/press.xml
 Sitemap: https://phrinusomyis.com/rss.xml
 
-# Crawl Delay (optional, prevents server overload)
-Crawl-delay: 10
+# Crawl Delay
+Crawl-delay: 5
 
 # ==========================================
-# END
-# ==========================================
+# END OF PROTOCOL
+# ======================================
+====
