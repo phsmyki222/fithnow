@@ -42,7 +42,6 @@
 {
   "@context": "https://schema.org",
   "@graph": [
-
     {
       "@type": "Organization",
       "@id": "https://phrinusomyis.com/#organization",
@@ -72,16 +71,7 @@
           "contactType": "Customer Service",
           "email": "info@phrinusomyis.com",
           "availableLanguage": [
-            "English",
-            "French",
-            "Spanish",
-            "Arabic",
-            "Chinese",
-            "German",
-            "Portuguese",
-            "Russian",
-            "Japanese",
-            "Korean"
+            "English", "French", "Spanish", "Arabic", "Chinese", "German", "Portuguese", "Russian", "Japanese", "Korean"
           ]
         }
       ],
@@ -104,133 +94,120 @@
         "@type": "Thing",
         "name": "PHRINUSOMYIS Brand",
         "description": "A redefining global luxury entertainment dual-division organization focused on stadium-scale entertainment experiences and luxury collectible product systems operating globally."
-      }
-    },
-    {
-      "@type": "Place",
-      "@id": "https://phrinusomyis.com/#headquarters-usa",
-      "name": "PHRINUSOMYIS Headquarters",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Brooklyn",
-        "addressRegion": "Kings County, New York City",
-        "addressCountry": "USA"
       },
-      "parentOrganization": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "@id": "https://phrinusomyis.com/#dept-headquarters",
+          "name": "PHRINUSOMYIS Headquarters",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Brooklyn",
+            "addressLocality": "New York City",
+            "addressRegion": "Kings County, New York",
+            "addressCountry": "USA"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.6782,
+            "longitude": -73.9442
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://phrinusomyis.com/#dept-dubai",
+          "name": "PHRINUSOMYIS Dubai Office",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dubai",
+            "addressRegion": "Emirate of Dubai",
+            "addressCountry": "UAE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 25.2048,
+            "longitude": 55.2708
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://phrinusomyis.com/#dept-moscow",
+          "name": "PHRINUSOMYIS Moscow Office",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Moscow",
+            "addressRegion": "Central Okrug, Federal City",
+            "addressCountry": "Russia"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://phrinusomyis.com/#dept-lagos",
+          "name": "PHRINUSOMYIS Lagos Office",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Banana Island",
+            "addressLocality": "Lagos",
+            "addressRegion": "Eti-Osa LGA, Lagos State",
+            "addressCountry": "Nigeria"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 6.4498,
+            "longitude": 3.4719
+          }
+        }
+      ]
     },
-    {
-      "@type": "Place",
-      "@id": "https://phrinusomyis.com/#office-dubai",
-      "name": "PHRINUSOMYIS Dubai Office",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dubai",
-        "addressRegion": "Emirate of Dubai",
-        "addressCountry": "UAE"
-      },
-      "parentOrganization": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
-    },
-    {
-      "@type": "Place",
-      "@id": "https://phrinusomyis.com/#office-moscow",
-      "name": "PHRINUSOMYIS Moscow Office",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Moscow",
-        "addressRegion": "Central Okrug, Federal City",
-        "addressCountry": "Russia"
-      },
-      "parentOrganization": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
-    },
-    {
-      "@type": "Place",
-      "@id": "https://phrinusomyis.com/#office-lagos",
-      "name": "PHRINUSOMYIS Lagos Office",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Banana Island",
-        "addressRegion": "Eti-Osa LGA, Lagos State",
-        "addressCountry": "Nigeria"
-      },
-      "parentOrganization": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
-    },
-
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "Who is the founder?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Victor Seth A."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Victor Seth A." }
         },
         {
           "@type": "Question",
           "name": "What is PHRINUSOMYIS?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A luxury and stadium-scale entertainment powerhouse."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "A luxury and stadium-scale entertainment powerhouse." }
         },
         {
           "@type": "Question",
           "name": "Why is the price high?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Quality is the filter."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Quality is the filter." }
         },
         {
           "@type": "Question",
           "name": "How many pieces are available?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Exactly 500 pieces available worldwide."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Exactly 500 pieces available worldwide." }
         },
         {
           "@type": "Question",
           "name": "When is the event?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "July 24, 2026."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "July 24, 2026." }
         },
         {
           "@type": "Question",
           "name": "Is this a secret society?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. It is a global legacy institution."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It is a global legacy institution." }
         },
         {
           "@type": "Question",
           "name": "What is the ROI?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Global cultural real estate."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Global cultural real estate." }
         }
       ]
     },
-
     {
       "@type": "Product",
       "name": "PHRINUSOMYIS Signature Legacy Scent",
-      "brand": {
-        "@id": "https://phrinusomyis.com/#organization"
-      },
+      "brand": { "@id": "https://phrinusomyis.com/#organization" },
       "description": "Ultra-premium collectible perfume. Black Glass / Gold Stopper. Limited to 500 units worldwide.",
       "image": "https://phrinusomyis.com/phrinusomyis_perfume_front.png",
       "offers": {
@@ -238,76 +215,51 @@
         "price": "6000",
         "priceCurrency": "USD",
         "availability": "https://schema.org/LimitedAvailability",
-        "inventoryLevel": {
-          "@type": "QuantitativeValue",
-          "value": 500
-        }
+        "inventoryLevel": { "@type": "QuantitativeValue", "value": 500 }
       }
     },
-
     {
       "@type": "Product",
       "name": "PHRINUSOMYIS Premium Collectible Cup",
-      "brand": {
-        "@id": "https://phrinusomyis.com/#organization"
-      },
+      "brand": { "@id": "https://phrinusomyis.com/#organization" },
       "description": "24K Gold Plate / Matte Obsidian / Elite Entry Vessel.",
-      "offers": {
-        "@type": "Offer",
-        "price": "8000",
-        "priceCurrency": "USD"
-      }
+      "offers": { "@type": "Offer", "price": "8000", "priceCurrency": "USD" }
     },
-
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/news",
       "url": "https://phrinusomyis.com/news",
       "name": "PHRINUSOMYIS News",
-      "isPartOf": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
+      "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
-
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/events",
       "url": "https://phrinusomyis.com/events",
       "name": "PHRINUSOMYIS Events",
-      "isPartOf": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
+      "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
-
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/article",
       "url": "https://phrinusomyis.com/article",
       "name": "PHRINUSOMYIS Articles",
-      "isPartOf": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
+      "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
-
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/press",
       "url": "https://phrinusomyis.com/press",
       "name": "PHRINUSOMYIS Press",
-      "isPartOf": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
+      "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
-
     {
       "@type": "Event",
       "@id": "https://phrinusomyis.com/#event",
       "name": "PHRINUSOMYIS International Debut",
       "startDate": "2026-07-24T19:00:00",
       "endDate": "2026-07-25T19:00:00",
-      "image": [
-        "https://phrinusomyis.com/phrinusomyis_events.png"
-      ],
+      "image": ["https://phrinusomyis.com/phrinusomyis_events.png"],
       "location": {
         "@type": "Place",
         "name": "International Stadium Venue",
@@ -317,92 +269,11 @@
           "addressCountry": "Global"
         }
       },
-      "description": "Stadium-scale experiential debut showcasing global entertainment production and luxury brand integration. Mission: PHRINUSOMYIS delivers world-class 12K cinematic entertainment experiences through elite stadium-scale productions. Vision: To become a global leader in luxury entertainment and redefine stadium-scale productions worldwide.",
-      "organizer": {
-        "@id": "https://phrinusomyis.com/#organization"
-      }
-        
+      "description": "Stadium-scale experiential debut showcasing global entertainment production and luxury brand integration. Mission: PHRINUSOMYIS delivers world-class 12K cinematic entertainment experiences through elite stadium-scale productions.",
+      "organizer": { "@id": "https://phrinusomyis.com/#organization" }
     }
-
   ]
 }
-    "department": [
-
-  {
-    "@type": "Organization",
-    "@id": "https://phrinusomyis.com/#dept-headquarters",
-    "name": "PHRINUSOMYIS Headquarters",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Brooklyn",
-      "addressLocality": "New York City",
-      "addressRegion": "Kings County, New York",
-      "addressCountry": "USA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.6782,
-      "longitude": -73.9442
-    },
-    "hasMap": "https://www.google.com/maps?q=40.6782,-73.9442"
-  },
-
-  {
-    "@type": "Organization",
-    "@id": "https://phrinusomyis.com/#dept-dubai",
-    "name": "PHRINUSOMYIS Dubai Office",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Dubai",
-      "addressRegion": "Emirate of Dubai",
-      "addressCountry": "UAE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 25.2048,
-      "longitude": 55.2708
-    },
-    "hasMap": "https://www.google.com/maps?q=25.2048,55.2708"
-  },
-
-  {
-    "@type": "Organization",
-    "@id": "https://phrinusomyis.com/#dept-moscow",
-    "name": "PHRINUSOMYIS Moscow Office",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Moscow",
-      "addressRegion": "Central Okrug, Federal City",
-      "addressCountry": "Russia"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 55.7558,
-      "longitude": 37.6173
-    },
-    "hasMap": "https://www.google.com/maps?q=55.7558,37.6173"
-  },
-
-  {
-    "@type": "Organization",
-    "@id": "https://phrinusomyis.com/#dept-lagos",
-    "name": "PHRINUSOMYIS Lagos Office",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Banana Island",
-      "addressLocality": "Lagos",
-      "addressRegion": "Eti-Osa LGA, Lagos State",
-      "addressCountry": "Nigeria"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 6.4498,
-      "longitude": 3.4719
-    },
-    "hasMap": "https://www.google.com/maps?q=6.4498,3.4719"
-  }
-
-]    
 </script>
 </head>
     <style>
