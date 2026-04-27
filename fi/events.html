@@ -2,18 +2,60 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tapahtumat | PHRINUSOMYIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHRINUSOMYIS | Tapahtumat</title>
 
     <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
+        /* Globaali asetus: Gold on Obsidian */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; 
+            background: #000; /* Obsidian musta */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Optimoitu säiliö sujuvaa selausta varten */
+        .iframe-sailio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
+
+        /* Kultainen vierityspalkki brändin mukaisesti */
+        .iframe-sailio::-webkit-scrollbar {
+            width: 5px;
+        }
+        .iframe-sailio::-webkit-scrollbar-thumb {
+            background: #D4AF37; /* Puhdas kulta */
+            border-radius: 5px;
+        }
     </style>
 
     <script>
-        // LANGUAGE: FINNISH
+        // Asetetaan sivuston kieleksi SUOMI
         localStorage.setItem("site_lang", "fi");
 
+        // Frame-buster: Suojaa sivuston eheyttä
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -21,6 +63,15 @@
 </head>
 
 <body>
-    <iframe src="https://phrinusomyis.com/fi/events" title="PHRINUSOMYIS Tapahtumat"></iframe>
+
+    <div class="iframe-sailio">
+        <iframe 
+            src="https://phrinusomyis.com/events" 
+            title="PHRINUSOMYIS Tapahtumat"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
 </body>
 </html>
