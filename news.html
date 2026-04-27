@@ -122,32 +122,22 @@ body{
   user-select:none;
   top: 0 !important;
 }
-      /* Completely hide the Google Translate Top Bar */
-             .goog-te-banner-frame, 
-              .goog-te-banner, 
-           .goog-te-menu-frame, 
-           .skiptranslate {
-           display: none !important;
-           visibility: hidden !important;
+      /* SILENT GOOGLE TRANSLATE ENGINE */
+        .goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, 
+        .goog-te-gadget, #google_translate_element, .goog-te-balloon-frame, .goog-tooltip {
+            display: none !important;
+            visibility: hidden !important;
         }
+        .goog-text-highlight { background: none !important; box-shadow: none !important; }
+        html { margin-top: 0 !important; }
 
-           /* Prevent the white space at the top of the screen */
-            body {
-               top: 0 !important;
-         }
-
-             html {
-              margin-top: 0px !important;
-          }
-
-             /* Hide the "Show Original" tooltip when hovering */
-              #goog-gt-tt, .goog-te-balloon-frame {
-                display: none !important;
-           }
-               .goog-text-highlight {
-                 background: none !important;
-                  box-shadow: none !important;
-            }
+        footer {
+            margin-top: 80px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #444;
+            text-transform: uppercase;
+        }
 }
 /* PERFORMANCE: Lazy render non-critical images */
 img:not(.above-the-fold) {
