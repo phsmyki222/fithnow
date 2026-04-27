@@ -2,17 +2,77 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Prensa | PHRINUSOMYIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHRINUSOMYIS | Noticias</title>
+
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #000; }
-        iframe { width: 100%; height: 100%; border: none; }
+        /* Ajuste de precisión visual para el mercado global */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; 
+            background: #000; /* Negro Obsidiana */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Contenedor diseñado para la carga rápida de noticias */
+        .noticias-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
+
+        /* Barra de desplazamiento refinada en Oro */
+        .noticias-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .noticias-container::-webkit-scrollbar-thumb {
+            background: #D4AF37; /* Color Oro */
+            border-radius: 2px;
+        }
     </style>
+
     <script>
+        // Configuración de persistencia de idioma: Español
         localStorage.setItem("site_lang", "es");
+
+        // Seguridad: Frame-buster para proteger la integridad corporativa
+        if (window.self !== window.top) {
+            window.top.location.href = window.location.href;
+        }
     </script>
 </head>
+
 <body>
-    <iframe src="https://phrinusomyis.com/news" title="PHRINUSOMYIS Centro de Prensa"></iframe>
+
+    <div class="noticias-container">
+        <iframe 
+            src="https://phrinusomyis.com/news" 
+            title="PHRINUSOMYIS Noticias y Actualizaciones"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
 </body>
+    
 </html>
