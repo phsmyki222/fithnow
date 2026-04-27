@@ -2,18 +2,60 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uutiset | PHRINUSOMYIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHRINUSOMYIS | Uutiset</title>
 
     <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
+        /* Tekninen tarkkuus ja Gold on Obsidian -tyyli */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; 
+            background: #000; /* Obsidian musta */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Säiliö optimoitu nopeaan uutisvirran selaamiseen */
+        .uutiset-sailio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
+
+        /* Kultainen vierityspalkki uutissivulle */
+        .uutiset-sailio::-webkit-scrollbar {
+            width: 4px;
+        }
+        .uutiset-sailio::-webkit-scrollbar-thumb {
+            background: #D4AF37; /* Kultainen tehoste */
+            border-radius: 2px;
+        }
     </style>
 
     <script>
-        // LANGUAGE: FINNISH
+        // Kieliasetus: Suomi
         localStorage.setItem("site_lang", "fi");
 
+        // Frame-buster turvallisuuden varmistamiseksi
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -21,6 +63,15 @@
 </head>
 
 <body>
-    <iframe src="https://phrinusomyis.com/fi/news" title="PHRINUSOMYIS Uutiset"></iframe>
+
+    <div class="uutiset-sailio">
+        <iframe 
+            src="https://phrinusomyis.com/news" 
+            title="PHRINUSOMYIS Uutiset ja päivitykset"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
 </body>
 </html>
