@@ -752,8 +752,10 @@ updateClock();
 setInterval(updateClock,1000);
 
 </script>
-  <script>
-function googleTranslateElementInit() {
+  <script> 
+    new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
+    }
+    function googleTranslateElementInit() {
     new google.translate.TranslateElement(
         {
             pageLanguage: 'en',
