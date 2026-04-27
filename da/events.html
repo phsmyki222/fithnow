@@ -2,18 +2,51 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | Officiel Hjemmeside</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHRINUSOMYIS | Begivenheder</title>
 
     <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
+        /* Nulstilling og Full Screen Setup */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; /* Forhindrer dobbelte rullebjælker */
+            background: #000; /* Obsidian sort baggrund */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Sikrer glidende rulning på mobile enheder */
+        .iframe-beholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
     </style>
 
     <script>
-        // LANGUAGE: DANISH
+        // Indstiller sprog til dansk i browserens hukommelse
         localStorage.setItem("site_lang", "da");
 
+        // Frame-buster: Sikrer at siden ikke kan indlejres i uautoriserede rammer
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -21,6 +54,16 @@
 </head>
 
 <body>
-    <iframe src="https://phrinusomyis.com/events" title="PHRINUSOMYIS Forside"></iframe>
+
+    <div class="iframe-beholder">
+        <iframe 
+            src="https://phrinusomyis.com/events" 
+            title="PHRINUSOMYIS Begivenheder"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
 </body>
+
 </html>
