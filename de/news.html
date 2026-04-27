@@ -2,18 +2,60 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | Offizielle Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHRINUSOMYIS | Neuigkeiten</title>
 
     <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
+        /* Technischer Reset für maximale Präzision */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; 
+            background: #000; /* Obsidian Schwarz */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Container für aktuelle Nachrichten-Updates */
+        .news-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
+
+        /* Goldener Scrollbalken für das Branding */
+        .news-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .news-container::-webkit-scrollbar-thumb {
+            background: #D4AF37; /* Reines Gold */
+            border-radius: 2px;
+        }
     </style>
 
     <script>
-        // LANGUAGE: GERMAN
+        // Setze Sprache dauerhaft auf DEUTSCH
         localStorage.setItem("site_lang", "de");
 
+        // Frame-Buster Schutz
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -21,6 +63,16 @@
 </head>
 
 <body>
-    <iframe src="https://phrinusomyis.com/news" title="PHRINUSOMYIS Startseite"></iframe>
+
+    <div class="news-container">
+        <iframe 
+            src="https://phrinusomyis.com/news" 
+            title="PHRINUSOMYIS Neuigkeiten & Updates"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
 </body>
+    
 </html>
