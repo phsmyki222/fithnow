@@ -238,20 +238,25 @@ h1 {
     border-bottom: 1px solid var(--glass-border);
     padding-bottom: 10px;
 }
+/* SILENT GOOGLE TRANSLATE ENGINE */
+        .goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, 
+        .goog-te-gadget, #google_translate_element, .goog-te-balloon-frame, .goog-tooltip {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        .goog-text-highlight { background: none !important; box-shadow: none !important; }
+        html { margin-top: 0 !important; }
 
-/* --- 6. HIDE GOOGLE OVERLAYS (STRICT) --- */
-.goog-te-banner-frame, 
-.goog-te-balloon-frame, 
-#goog-gt-tt, 
-.skiptranslate, 
-.goog-te-gadget,
-#google_translate_element { 
-    display: none !important; 
-    visibility: hidden !important;
+        footer {
+            margin-top: 80px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #444;
+            text-transform: uppercase;
 }
 
-/* --- 7. ANIMATIONS --- */
-@keyframes pulse {
+  /* --- 7. ANIMATIONS --- */
+  @keyframes pulse {
     0% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
     50% { transform: scale(1.05); text-shadow: 0 0 20px var(--diamond-glow); }
     100% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
