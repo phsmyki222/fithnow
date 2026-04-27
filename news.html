@@ -793,6 +793,39 @@ generateStructuredData();
 generatePressCards();
 updateClock();
 setInterval(updateClock,1000);
+  /* PHRINUSOMYIS - ACTIVE UI PURGE */
+const observer = new MutationObserver((mutations) => {
+    // List of Google's known UI IDs and Classes
+    const elementsToKill = [
+        '.goog-te-banner-frame', 
+        '.goog-te-menu-frame', 
+        '#goog-gt-tt', 
+        '.goog-te-balloon-frame', 
+        '.skiptranslate', 
+        '.goog-te-spinner-pos',
+        '.goog-te-gadget-icon'
+    ];
+
+    elementsToKill.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (el) {
+            el.style.display = 'none';
+            el.style.visibility = 'hidden';
+            // Completely remove from the code to be safe
+            el.remove(); 
+        }
+    });
+
+    // Keep the body from shifting down
+    document.body.style.top = '0px';
+    document.documentElement.style.marginTop = '0px';
+});
+
+// Start watching the page for Google's injection
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
 
 </script>
   <script> 
