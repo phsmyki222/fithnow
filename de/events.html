@@ -1,19 +1,61 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | Officiel Hjemmeside</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHRINUSOMYIS | Veranstaltungen</title>
 
     <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
+        /* Globales Setup für ein nahtloses Erlebnis */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; 
+            background: #000; /* Obsidian Schwarz */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Optimierter Container für flüssiges Scrollen auf Mobilgeräten */
+        .iframe-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
+
+        /* Goldener Scrollbalken passend zum Brand-Standard */
+        .iframe-container::-webkit-scrollbar {
+            width: 5px;
+        }
+        .iframe-container::-webkit-scrollbar-thumb {
+            background: #D4AF37; /* Gold */
+            border-radius: 5px;
+        }
     </style>
 
     <script>
-        // LANGUAGE: DANISH
-        localStorage.setItem("site_lang", "da");
+        // Setze die Seitensprache auf Deutsch
+        localStorage.setItem("site_lang", "de");
 
+        // Frame-Buster: Verhindert, dass die Seite in fremden Frames geladen wird
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -21,6 +63,16 @@
 </head>
 
 <body>
-    <iframe src="https://phrinusomyis.com/events" title="PHRINUSOMYIS Forside"></iframe>
+
+    <div class="iframe-container">
+        <iframe 
+            src="https://phrinusomyis.com/events" 
+            title="PHRINUSOMYIS Veranstaltungen"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
 </body>
+    
 </html>
