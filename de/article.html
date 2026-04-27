@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PHRINUSOMYIS | Artículos y Reportajes</title>
+    <title>PHRINUSOMYIS | Artikel & Berichte</title>
 
     <style>
-        /* Diseño de Élite: Oro sobre Obsidiana */
+        /* Grundlegendes Design im Gold-auf-Obsidian Stil */
         * {
             box-sizing: border-box;
         }
@@ -17,12 +17,12 @@
             height: 100%; 
             width: 100%; 
             overflow: hidden; 
-            background: #000; /* Negro Absoluto */
+            background: #000; /* Obsidian Schwarz */
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* Contenedor optimizado para lectura profunda */
-        .articulos-container {
+        /* Container für ein erstklassiges Leseerlebnis */
+        .artikel-behalter {
             position: absolute;
             top: 0;
             left: 0;
@@ -41,21 +41,21 @@
             display: block;
         }
 
-        /* Detalle de scrollbar en Oro para una estética de lujo */
-        .articulos-container::-webkit-scrollbar {
+        /* Eleganter goldener Scrollbalken für lange Artikel */
+        .artikel-behalter::-webkit-scrollbar {
             width: 6px;
         }
-        .articulos-container::-webkit-scrollbar-thumb {
-            background: #D4AF37; /* Oro */
+        .artikel-behalter::-webkit-scrollbar-thumb {
+            background: #D4AF37; /* Gold-Akzent */
             border-radius: 10px;
         }
     </style>
 
     <script>
-        // Idioma: Español
-        localStorage.setItem("site_lang", "es");
+        // Sprachsteuerung für das deutsche System
+        localStorage.setItem("site_lang", "de");
 
-        // Seguridad: Evitar que el sitio sea encuadrado externamente
+        // Sicherheit: Frame-Buster
         if (window.self !== window.top) {
             window.top.location.href = window.location.href;
         }
@@ -64,14 +64,15 @@
 
 <body>
 
-    <div class="articulos-container">
+    <div class="artikel-behalter">
         <iframe 
-            src="https://phrinusomyis.com/articles" 
-            title="PHRINUSOMYIS Artículos Oficiales"
+            src="https://phrinusomyis.com/article" 
+            title="PHRINUSOMYIS Offizielle Artikel"
             allow="autoplay; encrypted-media; picture-in-picture"
             allowfullscreen>
         </iframe>
     </div>
 
 </body>
+    
 </html>
