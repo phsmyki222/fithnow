@@ -830,49 +830,69 @@ observer.observe(document.body, {
 <div id="google_translate_element" style="display:none;"></div>
 
 <script type="text/javascript">
+/* --- PHRINUSOMYIS - ACTIVE UI PURGE (Kills Icons & Banners) --- */
+const observer = new MutationObserver((mutations) => {
+    const elementsToKill = [
+        '.goog-te-banner-frame', 
+        '.goog-te-menu-frame', 
+        '#goog-gt-tt', 
+        '.goog-te-balloon-frame', 
+        '.skiptranslate', 
+        '.goog-te-spinner-pos',
+        '.goog-te-gadget-icon',
+        '.goog-te-gadget-simple',
+        'iframe.goog-te-banner-frame'
+    ];
+
+    elementsToKill.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (el) {
+            el.remove(); // Physically deletes the Google UI
+        }
+    });
+
+    // Force layout to stay at the top
+    document.body.style.top = '0px';
+    document.documentElement.style.marginTop = '0px';
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
+/* --- TRANSLATION CORE LOGIC --- */
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+        autoDisplay: false
+    }, 'google_translate_element');
 
     // Apply saved language on load
     const savedLang = localStorage.getItem("site_lang");
     if (savedLang) {
-        setTimeout(() => {
-            changeLanguage(savedLang);
-        }, 1000);
+        setTimeout(() => { changeLanguage(savedLang); }, 1000);
     }
 }
 
-// Change language function
 function changeLanguage(lang) {
     const select = document.querySelector(".goog-te-combo");
-
     if (select) {
         select.value = lang;
         select.dispatchEvent(new Event("change"));
-
         localStorage.setItem("site_lang", lang);
-    } else {
-        console.warn("Google Translate not loaded yet");
     }
 }
 
-// Hook your dropdown
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("languageSwitcher").addEventListener("change", function () {
-        changeLanguage(this.value);
-    });
+    const switcher = document.getElementById("languageSwitcher");
+    if (switcher) {
+        switcher.addEventListener("change", function () {
+            changeLanguage(this.value);
+        });
+    }
 });
 </script>
 
-<script type="text/javascript"
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
 </body>
 </html>
