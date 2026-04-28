@@ -979,6 +979,122 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script type="text/javascript"
 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
+</script> 
+    <script>
+/**
+ * PHRINUSOMYIS Global Homepage Authority Schema
+ * HQ: Brooklyn, NY | Lagos | Dubai | Moscow
+ * FEATURE: Deep-scans every word and all 4+ countdown timers for Google Search Results.
+ */
+(function() {
+  const base = "https://phrinusomyis.com";
+  const graph = [];
+
+  // 1. THE DEEP SCANNER: Reads the page word-by-word
+  const pageTitle = document.title;
+  const h1Text = document.querySelector('h1') ? document.querySelector('h1').innerText.trim() : "";
+  
+  // Scans the entire body text line-by-line for Google
+  const fullTextScrape = document.body.innerText
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .join(' | ');
+
+  // THE MULTI-COUNTDOWN SCANNER: Finds all 4+ timers
+  // This looks for any element containing time-related keywords
+  const allCountdowns = Array.from(document.querySelectorAll('*'))
+    .filter(el => {
+      const text = el.innerText.toLowerCase();
+      return (el.children.length === 0) && // Only grab the deepest elements (the actual numbers/labels)
+             (text.includes('day') || text.includes('hour') || text.includes('min') || text.includes('sec') || /[0-9]/.test(text));
+    })
+    .map(el => el.innerText.trim())
+    .filter((value, index, self) => value !== "" && self.indexOf(value) === index) // Remove duplicates
+    .join(' ');
+
+  // 2. WEBSITE & SEARCHBOX SCHEMA
+  graph.push({
+    "@type": "WebSite",
+    "@id": `${base}/#website`,
+    "url": base,
+    "name": "PHRINUSOMYIS",
+    "description": "Live Page Content: " + fullTextScrape.substring(0, 1500),
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${base}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  });
+
+  // 3. ORGANIZATION & FULL PHYSICAL BRANCHES
+  graph.push({
+    "@type": "Organization",
+    "@id": `${base}/#organization`,
+    "name": "PHRINUSOMYIS",
+    "url": base,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${base}/assets/Phrinusomyis_logo.png`
+    },
+    // We feed all 4+ countdowns into the Keywords and Description
+    "keywords": "Live Countdowns: " + allCountdowns,
+    "address": {
+      "@type": "PostalAddress",
+      "@id": `${base}/#dept-headquarters`,
+      "streetAddress": "Brooklyn", 
+      "addressLocality": "New York City",
+      "addressRegion": "Kings County, New York",
+      "postalCode": "11201",
+      "addressCountry": "USA"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 40.6782, "longitude": -73.9442 },
+    "subOrganization": [
+      {
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS Dubai Office",
+        "address": { "streetAddress": "Downtown Dubai", "addressLocality": "Dubai", "addressCountry": "UAE" }
+      },
+      {
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS Moscow Office",
+        "address": { "streetAddress": "Central Okrug", "addressLocality": "Moscow", "addressCountry": "Russia" }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${base}/#dept-lagos`,
+        "name": "PHRINUSOMYIS Lagos Office",
+        "address": {
+          "streetAddress": "Banana Island",
+          "addressLocality": "Lagos",
+          "addressRegion": "Lagos State",
+          "addressCountry": "Nigeria"
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": `${base}/press` }
+      }
+    ]
+  });
+
+  // 4. THE LIVE DATA ENTITY (To force Google to show the countdowns)
+  graph.push({
+    "@type": "SpecialAnnouncement",
+    "name": h1Text || pageTitle,
+    "description": "Active Timers Detected: " + allCountdowns,
+    "datePosted": new Date().toISOString(),
+    "url": base,
+    "publisher": { "@id": `${base}/#organization` }
+  });
+
+  // 5. INJECT
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": graph
+  });
+  document.head.appendChild(script);
+})();
+    </script>
 </body>
 </html>
+
