@@ -45,25 +45,18 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "Brand"],
       "@id": "https://phrinusomyis.com/#organization",
       "name": "PHRINUSOMYIS",
       "url": "https://phrinusomyis.com/",
-      "logo": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
-      "image": {
+      "logo": {
         "@type": "ImageObject",
         "url": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
         "width": "600",
         "height": "600"
       },
-      "foundingDate": "2020",
-      "description": "PHRINUSOMYIS es una organización global de doble división que opera en el entretenimiento experiencial a escala de estadio y productos de colección de lujo. Enfocada en la expansión mundial y la producción cinematográfica de alta gama.",
-      "brand": {
-        "@type": "Brand",
-        "@id": "https://phrinusomyis.com/#brand",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/"
-      },
+      "foundingDate": "2020-10-28",
+      "description": "PHRINUSOMYIS es una organización global de doble división que opera en el entretenimiento experiencial a escala de estadios y productos de lujo coleccionables. Enfocada en la expansión mundial y la producción cinematográfica de alta gama.",
       "founder": {
         "@type": "Person",
         "name": "Victor Seth A",
@@ -107,7 +100,7 @@
       "about": {
         "@type": "Thing",
         "name": "Marca PHRINUSOMYIS",
-        "description": "Una organización global de entretenimiento de lujo que redefine las experiencias en estadios y sistemas de productos de colección de lujo con presencia mundial."
+        "description": "Una organización global de entretenimiento de lujo de doble división que redefine el sector, enfocada en experiencias de entretenimiento a escala de estadios y sistemas de productos coleccionables de lujo con operaciones globales."
       },
       "subOrganization": [
         {
@@ -130,7 +123,7 @@
         {
           "@type": "Organization",
           "@id": "https://phrinusomyis.com/#dept-dubai",
-          "name": "Oficina de PHRINUSOMYIS Dubái",
+          "name": "Oficina de PHRINUSOMYIS en Dubái",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Dubái",
@@ -146,12 +139,12 @@
         {
           "@type": "Organization",
           "@id": "https://phrinusomyis.com/#dept-moscow",
-          "name": "Oficina de PHRINUSOMYIS Moscú",
+          "name": "Oficina de PHRINUSOMYIS en Moscú",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Moscú",
-            "addressRegion": "Distrito Central",
-            "addressCountry": "Rusia"
+            "addressRegion": "Distrito Central, Ciudad Federal",
+            "addressCountry": "Russia"
           },
           "geo": {
             "@type": "GeoCoordinates",
@@ -162,12 +155,12 @@
         {
           "@type": "Organization",
           "@id": "https://phrinusomyis.com/#dept-lagos",
-          "name": "Oficina de PHRINUSOMYIS Lagos",
+          "name": "Oficina de PHRINUSOMYIS en Lagos",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Banana Island",
             "addressLocality": "Lagos",
-            "addressRegion": "Estado de Lagos",
+            "addressRegion": "Eti-Osa LGA, Estado de Lagos",
             "addressCountry": "Nigeria"
           },
           "geo": {
@@ -189,7 +182,7 @@
         {
           "@type": "Question",
           "name": "¿Qué es PHRINUSOMYIS?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Una potencia de lujo y entretenimiento a escala de estadio." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Una potencia de lujo y entretenimiento a escala de estadios." }
         },
         {
           "@type": "Question",
@@ -208,19 +201,19 @@
         },
         {
           "@type": "Question",
-          "name": "¿Es una sociedad secreta?",
+          "name": "¿Es esta una sociedad secreta?",
           "acceptedAnswer": { "@type": "Answer", "text": "No. Es una institución de legado global." }
         },
         {
           "@type": "Question",
           "name": "¿Cuál es el ROI?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Activos culturales globales." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Bienes raíces culturales globales." }
         }
       ]
     },
     {
       "@type": "Product",
-      "name": "Perfume de Lujo PHRINUSOMYIS",
+      "name": "Perfume de lujo PHRINUSOMYIS",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
       "description": "Perfume coleccionable ultra-premium. Cristal negro / Tapón de oro. Limitado a 500 unidades en todo el mundo.",
       "image": "https://phrinusomyis.com/phrinusomyis_perfume_front.png",
@@ -233,13 +226,13 @@
     },
     {
       "@type": "Product",
-      "name": "Copa Coleccionable de LUJO PHRINUSOMYIS",
+      "name": "Copa de Colección de LUJO PHRINUSOMYIS",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
       "description": "Placa de oro de 24K / Obsidiana mate / Recipiente de entrada de élite. Limitado a 50 unidades en todo el mundo.",
       "image": "https://phrinusomyis.com/phriyis_logo2.png",
-      "offers": { 
-        "@type": "Offer", 
-        "price": "8000", 
+      "offers": {
+        "@type": "Offer",
+        "price": "8000",
         "priceCurrency": "USD",
         "inventoryLevel": { "@type": "QuantitativeValue", "value": 50 }
       }
@@ -248,51 +241,52 @@
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/news",
       "url": "https://phrinusomyis.com/news",
-      "name": "Noticias PHRINUSOMYIS",
+      "name": "Noticias de PHRINUSOMYIS",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/events",
       "url": "https://phrinusomyis.com/events",
-      "name": "Eventos PHRINUSOMYIS",
+      "name": "Eventos de PHRINUSOMYIS",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/article",
       "url": "https://phrinusomyis.com/article",
-      "name": "Artículos PHRINUSOMYIS",
+      "name": "Artículos de PHRINUSOMYIS",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/press",
       "url": "https://phrinusomyis.com/press",
-      "name": "Prensa PHRINUSOMYIS",
+      "name": "Prensa de PHRINUSOMYIS",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "Event",
       "@id": "https://phrinusomyis.com/#event",
-      "name": "Evento de Debut Internacional PHRINUSOMYIS",
+      "name": "Eventos de Debut Internacional de PHRINUSOMYIS",
       "startDate": "2026-07-24T19:00:00",
       "endDate": "2026-07-25T19:00:00",
       "image": ["https://phrinusomyis.com/phrinusomyis_events.png"],
       "location": {
         "@type": "Place",
-        "name": "Estadio Internacional",
+        "name": "Sede en Estadio Internacional",
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "África Occidental",
           "addressCountry": "Global"
         }
       },
-      "description": "Debut experiencial a escala de estadio que muestra la producción de entretenimiento global y la integración de marcas de lujo. Misión: Entretenimiento cinematográfico de clase mundial.",
+      "description": "Debut experiencial a escala de estadio que muestra la producción de entretenimiento global y la integración de marcas de lujo. Misión: PHRINUSOMYIS ofrece experiencias de entretenimiento cinematográfico de clase mundial a través de producciones de élite en estadios.",
       "organizer": { "@id": "https://phrinusomyis.com/#organization" }
     }
   ]
 }
+
     </script>
     <title>PHRINUSOMYIS | Sitio Web Oficial</title>
 
