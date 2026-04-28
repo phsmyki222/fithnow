@@ -45,37 +45,31 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "Brand"],
       "@id": "https://phrinusomyis.com/#organization",
       "name": "PHRINUSOMYIS",
       "url": "https://phrinusomyis.com/",
-      "image": {
+      "logo": {
         "@type": "ImageObject",
         "url": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
         "width": "600",
         "height": "600"
       },
-      "foundingDate": "2020",
-      "description": "PHRINUSOMYIS er en global organisation med to divisioner, der opererer inden for oplevelsesbaseret underholdning i stadionstørrelse og luksuriøse samleobjekter. Fokuseret på verdensomspændende ekspansion og high-end filmproduktion.",
-      "brand": {
-        "@type": "Brand",
-        "@id": "https://phrinusomyis.com/#brand",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/"
-      },
+      "foundingDate": "2020-10-28",
+      "description": "PHRINUSOMYIS er en global organisation med to divisioner, der opererer inden for oplevelsesorienteret underholdning i stadionstørrelse og luksus-samlerobjekter. Fokuseret på verdensomspændende ekspansion og high-end filmproduktion.",
       "founder": {
         "@type": "Person",
         "name": "Victor Seth A",
-        "jobTitle": "Stifter og administrerende direktør"
+        "jobTitle": "Grundlægger og administrerende direktør"
       },
       "areaServed": [
-        "West Africa",
-        "Russia",
-        "China",
-        "Europe",
-        "North America",
-        "South America",
-        "Oceania"
+        "Vestafrika",
+        "Rusland",
+        "Kina",
+        "Europa",
+        "Nordamerika",
+        "Sydamerika",
+        "Oceanien"
       ],
       "contactPoint": [
         {
@@ -106,7 +100,7 @@
       "about": {
         "@type": "Thing",
         "name": "PHRINUSOMYIS Brand",
-        "description": "En gendefinerende global luksusunderholdningsorganisation med fokus på stadionoplevelser og luksuriøse samleobjekter, der opererer globalt."
+        "description": "En redefinerende global luksusunderholdningsorganisation med to divisioner, fokuseret på underholdningsoplevelser i stadionstørrelse og luksus-samlerobjektsystemer med global drift."
       },
       "subOrganization": [
         {
@@ -148,9 +142,9 @@
           "name": "PHRINUSOMYIS Moskva Kontor",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Moscow",
+            "addressLocality": "Moskva",
             "addressRegion": "Central Okrug, Federal City",
-            "addressCountry": "Russia"
+            "addressCountry": "Rusland"
           },
           "geo": {
             "@type": "GeoCoordinates",
@@ -188,7 +182,7 @@
         {
           "@type": "Question",
           "name": "Hvad er PHRINUSOMYIS?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Et kraftcenter for luksus og underholdning i stadionstørrelse." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Et kraftcenter inden for luksus og underholdning i stadionstørrelse." }
         },
         {
           "@type": "Question",
@@ -198,7 +192,7 @@
         {
           "@type": "Question",
           "name": "Hvor mange eksemplarer er tilgængelige?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Præcis 500 stykker tilgængelige på verdensplan." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Præcis 500 eksemplarer tilgængelige på verdensplan." }
         },
         {
           "@type": "Question",
@@ -219,9 +213,9 @@
     },
     {
       "@type": "Product",
-      "name": "PHRINUSOMYIS Luksus Parfume",
+      "name": "PHRINUSOMYIS luksusparfume",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "Ultra-premium samleobjekt parfume. Sort glas / Guldprop. Begrænset til 500 enheder på verdensplan.",
+      "description": "Ultra-premium samlerparfume. Sort glas / guldprop. Begrænset til 500 enheder på verdensplan.",
       "image": "https://phrinusomyis.com/phrinusomyis_perfume_front.png",
       "offers": {
         "@type": "Offer",
@@ -234,11 +228,11 @@
       "@type": "Product",
       "name": "PHRINUSOMYIS LUKSUS Samlerkop",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "24K guldbelægning / Matsort Obsidian / Elite adgangsbeholder. Begrænset til 50 enheder på verdensplan.",
+      "description": "24K guldbelægning / mat obsidian / elite adgangsbeholder. Begrænset til 50 enheder på verdensplan.",
       "image": "https://phrinusomyis.com/phriyis_logo2.png",
-      "offers": { 
-        "@type": "Offer", 
-        "price": "8000", 
+      "offers": {
+        "@type": "Offer",
+        "price": "8000",
         "priceCurrency": "USD",
         "inventoryLevel": { "@type": "QuantitativeValue", "value": 50 }
       }
@@ -280,18 +274,19 @@
       "image": ["https://phrinusomyis.com/phrinusomyis_events.png"],
       "location": {
         "@type": "Place",
-        "name": "International Stadion Arena",
+        "name": "International Stadion-lokation",
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "Vestafrika",
           "addressCountry": "Global"
         }
       },
-      "description": "Oplevelsesbaseret debut i stadionstørrelse, der fremviser global underholdningsproduktion og luksusbrand-integration. Mission: PHRINUSOMYIS leverer filmoplevelser i verdensklasse.",
+      "description": "Oplevelsesorienteret debut i stadionstørrelse, der fremviser global underholdningsproduktion og luksusbrand-integration. Mission: PHRINUSOMYIS leverer filmiske underholdningsoplevelser i verdensklasse gennem elite stadionproduktioner.",
       "organizer": { "@id": "https://phrinusomyis.com/#organization" }
     }
   ]
 }
+
     </script>
     <title>PHRINUSOMYIS | Officiel Hjemmeside</title>
 
