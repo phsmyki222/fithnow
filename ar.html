@@ -45,37 +45,31 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "Brand"],
       "@id": "https://phrinusomyis.com/#organization",
       "name": "PHRINUSOMYIS",
       "url": "https://phrinusomyis.com/",
-      "image": {
+      "logo": {
         "@type": "ImageObject",
         "url": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
         "width": "600",
         "height": "600"
       },
-      "foundingDate": "2020",
-      "description": "PHRINUSOMYIS هي منظمة عالمية ثنائية القسم تعمل في مجال الترفيه التجريبي على مستوى الملاعب والمنتجات الفاخرة القابلة للاقتناء. تركز على التوسع العالمي والإنتاج السينمائي عالي الجودة.",
-      "brand": {
-        "@type": "Brand",
-        "@id": "https://phrinusomyis.com/#brand",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/"
-      },
+      "foundingDate": "2020-10-28",
+      "description": "PHRINUSOMYIS هي منظمة عالمية ثنائية القسم تعمل في مجال الترفيه التجريبي على مستوى الاستادات والمنتجات الفاخرة القابلة للاقتناء. تركز على التوسع العالمي والإنتاج السينمائي فائق الجودة.",
       "founder": {
         "@type": "Person",
         "name": "Victor Seth A",
         "jobTitle": "المؤسس والرئيس التنفيذي"
       },
       "areaServed": [
-        "West Africa",
-        "Russia",
-        "China",
-        "Europe",
-        "North America",
-        "South America",
-        "Oceania"
+        "غرب أفريقيا",
+        "روسيا",
+        "الصين",
+        "أوروبا",
+        "أمريكا الشمالية",
+        "أمريكا الجنوبية",
+        "أوقيانوسيا"
       ],
       "contactPoint": [
         {
@@ -106,13 +100,13 @@
       "about": {
         "@type": "Thing",
         "name": "علامة PHRINUSOMYIS التجارية",
-        "description": "منظمة عالمية رائدة للترفيه الفاخر ثنائية القسم تركز على تجارب الترفيه في الملاعب ومنظومات المنتجات الفاخرة التي تعمل عالميًا."
+        "description": "منظمة عالمية ثنائية القسم تعيد تعريف الترفيه الفاخر، تركز على تجارب الترفيه في الاستادات وأنظمة المنتجات الفاخرة القابلة للاقتناء وتعمل على مستوى عالمي."
       },
       "subOrganization": [
         {
           "@type": "Organization",
           "@id": "https://phrinusomyis.com/#dept-headquarters",
-          "name": "المقر الرئيسي لـ PHRINUSOMYIS",
+          "name": "مقر PHRINUSOMYIS الرئيسي",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Brooklyn",
@@ -134,7 +128,7 @@
             "@type": "PostalAddress",
             "addressLocality": "دبي",
             "addressRegion": "إمارة دبي",
-            "addressCountry": "الإمارات العربية المتحدة"
+            "addressCountry": "UAE"
           },
           "geo": {
             "@type": "GeoCoordinates",
@@ -148,7 +142,7 @@
           "name": "مكتب PHRINUSOMYIS موسكو",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Moscow",
+            "addressLocality": "موسكو",
             "addressRegion": "Central Okrug, Federal City",
             "addressCountry": "Russia"
           },
@@ -188,7 +182,7 @@
         {
           "@type": "Question",
           "name": "ما هي PHRINUSOMYIS؟",
-          "acceptedAnswer": { "@type": "Answer", "text": "قوة ترفيهية فاخرة وعلى مستوى الملاعب." }
+          "acceptedAnswer": { "@type": "Answer", "text": "قوة ترفيهية فاخرة تعمل على نطاق الاستادات." }
         },
         {
           "@type": "Question",
@@ -198,11 +192,11 @@
         {
           "@type": "Question",
           "name": "كم عدد القطع المتاحة؟",
-          "acceptedAnswer": { "@type": "Answer", "text": "بالتحديد 500 قطعة متاحة في جميع أنحاء العالم." }
+          "acceptedAnswer": { "@type": "Answer", "text": "بالتحديد 500 قطعة متاحة حول العالم." }
         },
         {
           "@type": "Question",
-          "name": "متى ستقام الفعالية؟",
+          "name": "متى موعد الفعالية؟",
           "acceptedAnswer": { "@type": "Answer", "text": "24 يوليو 2026." }
         },
         {
@@ -221,7 +215,7 @@
       "@type": "Product",
       "name": "عطر PHRINUSOMYIS الفاخر",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "عطر فاخر للغاية قابل للاقتناء. زجاج أسود / سدادة ذهبية. محدود بـ 500 وحدة عالمياً.",
+      "description": "عطر فاخر للغاية قابل للاقتناء. زجاج أسود / سدادة ذهبية. محدود بـ 500 وحدة حول العالم.",
       "image": "https://phrinusomyis.com/phrinusomyis_perfume_front.png",
       "offers": {
         "@type": "Offer",
@@ -232,13 +226,13 @@
     },
     {
       "@type": "Product",
-      "name": "كوب PHRINUSOMYIS الفاخر للمقتنيات",
+      "name": "كأس PHRINUSOMYIS الفاخر للمقتنيات",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "طلاء ذهب عيار 24 / أوبسيديان مطفي / وعاء دخول النخبة. محدود بـ 50 وحدة عالمياً.",
+      "description": "طلاء ذهب عيار 24 / سبج مطفي / وعاء دخول النخبة. محدود بـ 50 وحدة حول العالم.",
       "image": "https://phrinusomyis.com/phriyis_logo2.png",
-      "offers": { 
-        "@type": "Offer", 
-        "price": "8000", 
+      "offers": {
+        "@type": "Offer",
+        "price": "8000",
         "priceCurrency": "USD",
         "inventoryLevel": { "@type": "QuantitativeValue", "value": 50 }
       }
@@ -274,24 +268,25 @@
     {
       "@type": "Event",
       "@id": "https://phrinusomyis.com/#event",
-      "name": "فعاليات الانطلاق الدولي لـ PHRINUSOMYIS",
+      "name": "فعاليات الانطلاق العالمي لـ PHRINUSOMYIS",
       "startDate": "2026-07-24T19:00:00",
       "endDate": "2026-07-25T19:00:00",
       "image": ["https://phrinusomyis.com/phrinusomyis_events.png"],
       "location": {
         "@type": "Place",
-        "name": "ملعب دولي ضخم",
+        "name": "استاد دولي",
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "غرب أفريقيا",
-          "addressCountry": "عالمي"
+          "addressCountry": "Global"
         }
       },
-      "description": "انطلاقة تجريبية على مستوى الملاعب تعرض الإنتاج الترفيهي العالمي وتكامل العلامة التجارية الفاخرة. المهمة: PHRINUSOMYIS تقدم تجارب ترفيهية سينمائية عالمية المستوى.",
+      "description": "انطلاق تجريبي على نطاق الاستادات يستعرض الإنتاج الترفيهي العالمي وتكامل العلامة التجارية الفاخرة. المهمة: تقدم PHRINUSOMYIS تجارب ترفيهية سينمائية عالمية المستوى من خلال إنتاجات النخبة في الاستادات.",
       "organizer": { "@id": "https://phrinusomyis.com/#organization" }
     }
   ]
 }
+
     </script>
     <title>PHRINUSOMYIS | الموقع الرسمي</title>
 
