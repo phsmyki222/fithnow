@@ -980,65 +980,46 @@ document.addEventListener("DOMContentLoaded", function () {
 <script type="text/javascript"
 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script> 
-    <script>
+<script>
 /**
- * PHRINUSOMYIS Global Homepage Authority Schema
+ * PHRINUSOMYIS Universal Search & AI Authority
  * HQ: Brooklyn, NY | Lagos | Dubai | Moscow
- * FEATURE: Deep-scans every word and all 4+ countdown timers for Google Search Results.
+ * AUTO-SYNC: Scans every word, timer, and SEO tag line-by-line.
  */
 (function() {
   const base = "https://phrinusomyis.com";
-  const graph = [];
+  const currentUrl = window.location.href;
+  const now = new Date().toISOString();
 
-  // 1. THE DEEP SCANNER: Reads the page word-by-word
-  const pageTitle = document.title;
-  const h1Text = document.querySelector('h1') ? document.querySelector('h1').innerText.trim() : "";
-  
-  // Scans the entire body text line-by-line for Google
-  const fullTextScrape = document.body.innerText
-    .split('\n')
+  // 1. THE DEEP SCRAPER (SEO & TEXT SCANNER)
+  // Extracts every word from the page for Google's Knowledge Graph
+  const allText = document.body.innerText.split('\n')
     .map(line => line.trim())
-    .filter(line => line.length > 0)
-    .join(' | ');
+    .filter(line => line.length > 5);
 
-  // THE MULTI-COUNTDOWN SCANNER: Finds all 4+ timers
-  // This looks for any element containing time-related keywords
-  const allCountdowns = Array.from(document.querySelectorAll('*'))
+  const metaDesc = document.querySelector('meta[name="description"]')?.content || "";
+  const h1 = document.querySelector('h1')?.innerText || document.title;
+
+  // MULTI-COUNTDOWN DETECTOR
+  // Finds every timer on the page to display in search results
+  const timers = Array.from(document.querySelectorAll('*'))
     .filter(el => {
-      const text = el.innerText.toLowerCase();
-      return (el.children.length === 0) && // Only grab the deepest elements (the actual numbers/labels)
-             (text.includes('day') || text.includes('hour') || text.includes('min') || text.includes('sec') || /[0-9]/.test(text));
+      const t = el.innerText.toLowerCase();
+      return (t.includes('day') || t.includes('hour') || t.includes('min')) && /[0-9]/.test(t);
     })
     .map(el => el.innerText.trim())
-    .filter((value, index, self) => value !== "" && self.indexOf(value) === index) // Remove duplicates
-    .join(' ');
+    .join(' | ');
 
-  // 2. WEBSITE & SEARCHBOX SCHEMA
-  graph.push({
-    "@type": "WebSite",
-    "@id": `${base}/#website`,
-    "url": base,
-    "name": "PHRINUSOMYIS",
-    "description": "Live Page Content: " + fullTextScrape.substring(0, 1500),
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${base}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
-  });
+  const graph = [];
 
-  // 3. ORGANIZATION & FULL PHYSICAL BRANCHES
+  // 2. THE MASTER ORGANIZATION (Brooklyn HQ Priority)
   graph.push({
     "@type": "Organization",
     "@id": `${base}/#organization`,
     "name": "PHRINUSOMYIS",
     "url": base,
-    "logo": {
-      "@type": "ImageObject",
-      "url": `${base}/assets/Phrinusomyis_logo.png`
-    },
-    // We feed all 4+ countdowns into the Keywords and Description
-    "keywords": "Live Countdowns: " + allCountdowns,
+    "logo": `${base}/assets/Phrinusomyis_logo.png`,
+    "description": metaDesc + " | Live Updates: " + allText.slice(0, 10).join(' '),
     "address": {
       "@type": "PostalAddress",
       "@id": `${base}/#dept-headquarters`,
@@ -1049,52 +1030,77 @@ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
       "addressCountry": "USA"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 40.6782, "longitude": -73.9442 },
+    // LINKING ALL DEPARTMENTS
+    "sameAs": [
+      `${base}/press`,
+      `${base}/news`,
+      `${base}/events`,
+      `${base}/article`
+    ],
     "subOrganization": [
-      {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS Dubai Office",
-        "address": { "streetAddress": "Downtown Dubai", "addressLocality": "Dubai", "addressCountry": "UAE" }
-      },
-      {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS Moscow Office",
-        "address": { "streetAddress": "Central Okrug", "addressLocality": "Moscow", "addressCountry": "Russia" }
-      },
-      {
-        "@type": "Organization",
+      { "@type": "Organization", "name": "PHRINUSOMYIS Dubai", "address": { "addressLocality": "Dubai", "addressCountry": "UAE" } },
+      { "@type": "Organization", "name": "PHRINUSOMYIS Moscow", "address": { "addressLocality": "Moscow", "addressCountry": "Russia" } },
+      { 
+        "@type": "Organization", 
         "@id": `${base}/#dept-lagos`,
-        "name": "PHRINUSOMYIS Lagos Office",
-        "address": {
-          "streetAddress": "Banana Island",
-          "addressLocality": "Lagos",
-          "addressRegion": "Lagos State",
-          "addressCountry": "Nigeria"
-        },
+        "name": "PHRINUSOMYIS Lagos Office", 
+        "address": { "streetAddress": "Banana Island", "addressLocality": "Lagos", "addressCountry": "Nigeria" },
         "mainEntityOfPage": { "@type": "WebPage", "@id": `${base}/press` }
       }
     ]
   });
 
-  // 4. THE LIVE DATA ENTITY (To force Google to show the countdowns)
+  // 3. THE LIVE WEB-ENTITY (For "Minutes Ago" Updates)
   graph.push({
-    "@type": "SpecialAnnouncement",
-    "name": h1Text || pageTitle,
-    "description": "Active Timers Detected: " + allCountdowns,
-    "datePosted": new Date().toISOString(),
-    "url": base,
-    "publisher": { "@id": `${base}/#organization` }
+    "@type": "WebPage",
+    "@id": `${currentUrl}#webpage`,
+    "url": currentUrl,
+    "name": h1,
+    "datePublished": now,
+    "dateModified": now,
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": base
+      }]
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "xpath": ["/html/head/title", "h1", "h2", ".main-text"]
+    }
   });
 
-  // 5. INJECT
+  // 4. DYNAMIC FAQ & AI ANSWERS (Line-by-Line)
+  const faqItems = allText.slice(0, 8).map((line, i) => ({
+    "@type": "Question",
+    "name": `Update ${i+1}: ${line.substring(0, 50)}?`,
+    "acceptedAnswer": { "@type": "Answer", "text": line }
+  }));
+
+  graph.push({
+    "@type": "FAQPage",
+    "mainEntity": faqItems
+  });
+
+  // 5. THE SEARCH RESULT "LIVE" TRIGGER
+  graph.push({
+    "@type": "SpecialAnnouncement",
+    "name": "Real-Time Updates",
+    "description": "Active Timers: " + timers + " | Content Scrape: " + allText.slice(0, 5).join(' '),
+    "datePosted": now,
+    "url": currentUrl
+  });
+
+  // 6. INJECT
   const script = document.createElement('script');
   script.type = 'application/ld+json';
-  script.text = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": graph
-  });
+  script.text = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
   document.head.appendChild(script);
 })();
-    </script>
+</script>
 </body>
 </html>
 
