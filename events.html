@@ -332,5 +332,145 @@ document.getElementById("languageSwitcher").addEventListener("change", function(
 document.addEventListener('contextmenu', e => e.preventDefault());
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+/**
+ * PHRINUSOMYIS EVENT SCHEMA
+ * HQ: Brooklyn, NY | Lagos | Dubai | Moscow
+ * AUTO-SCAN: Reads all text and countdowns line-by-line
+ */
+(function() {
+  const base = "https://phrinusomyis.com";
+  const currentUrl = window.location.href;
+  
+  // 1. SCRAPER: READS EVERY WORD ON THE PAGE
+  // Grabs the Headline
+  const eventHeadline = document.querySelector('h1') ? document.querySelector('h1').innerText.trim() : document.title;
+  
+  // Grabs ALL visible text from the body (Line-by-Line)
+  const fullBodyText = document.body.innerText.replace(/\s+/g, ' ').trim();
+  
+  // Scans for ALL active countdowns/timers
+  const activeTimers = Array.from(document.querySelectorAll('[class*="countdown"], [id*="timer"], .timer, .count'))
+    .map(el => el.innerText.trim())
+    .filter(text => text.length > 0)
+    .join(' | ');
+
+  const graph = [];
+
+  // 2. THE ORGANIZATION & GLOBAL OFFICES (Full Physical Addresses)
+  graph.push({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${base}/#organization`,
+    "name": "PHRINUSOMYIS",
+    "url": base,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${base}/assets/Phrinusomyis_logo.png`
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "@id": `${base}/#dept-headquarters`,
+      "streetAddress": "Brooklyn", // Primary HQ
+      "addressLocality": "New York City",
+      "addressRegion": "Kings County, New York",
+      "postalCode": "11201",
+      "addressCountry": "USA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.6782,
+      "longitude": -73.9442
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+1 (602) 842-3713",
+      "contactType": "Customer Service",
+      "email": "info@phrinusomyis.com"
+    }],
+    "subOrganization": [
+      {
+        "@type": "Organization",
+        "@id": `${base}/#dept-dubai`,
+        "name": "PHRINUSOMYIS Dubai Office",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Downtown Dubai",
+          "addressLocality": "Dubai",
+          "addressRegion": "Emirate of Dubai",
+          "addressCountry": "UAE"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${base}/#dept-moscow`,
+        "name": "PHRINUSOMYIS Moscow Office",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Central Okrug",
+          "addressLocality": "Moscow",
+          "addressCountry": "Russia"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${base}/#dept-lagos`,
+        "name": "PHRINUSOMYIS Lagos Office",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Banana Island",
+          "addressLocality": "Lagos",
+          "addressRegion": "Lagos State",
+          "addressCountry": "Nigeria"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `${base}/events`
+        }
+      }
+    ]
+  });
+
+  // 3. THE COMPLETE EVENT (Scanned and Detailed)
+  graph.push({
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "@id": `${currentUrl}#event`,
+    "name": eventHeadline,
+    "description": "Full Page Scrape: " + fullBodyText.substring(0, 500) + " | Timers Detected: " + activeTimers,
+    "image": [`${base}/assets/Phrinusomyis_logo.png`],
+    // This uses the current time to signal to Google that the event is "Live Now" or "Starting"
+    "startDate": new Date().toISOString(),
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "PHRINUSOMYIS Headquarters",
+      "address": { "@id": `${base}/#dept-headquarters` }
+    },
+    "organizer": {
+      "@id": `${base}/#organization`
+    },
+    "performer": {
+      "@id": `${base}/#organization`
+    },
+    // Main Entity linking the event back to the website structure
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": currentUrl
+    }
+  });
+
+  // 4. INJECT TO HTML
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": graph
+  });
+  document.head.appendChild(script);
+})();
+        </script>
 </body>
 </html>
+
