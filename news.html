@@ -746,38 +746,29 @@ function generateStructuredData() {
 
     // Organization
   graph.push({
-    "@type": "Organization",
-    "@id": "https://phrinusomyis.com/#organization",
-    "name": "PHRINUSOMYIS",
-    "url": "https://phrinusomyis.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png" 
-        }))
-  });
-        
-  // ItemList and Articles logic remains the same...
-  graph.push({
-    "@type": "ItemList",
-    "itemListElement": articles.map((a, i) => ({
-      "@type": "ListItem",
-      "position": i + 1,
-      "item": { "@id": base + a[1] + "#article" }
-    }))
-  });
-
-  articles.forEach(a => {
-    graph.push({
+    "@context": "https://schema.org",
+    "@graph": pressNews.map(item => ({
       "@type": "NewsArticle",
-      "@id": base + a[1] + "#article",
-      "headline": a[2],
-      "datePublished": a[0],
-      "dateModified": a[0],
-      "mainEntityOfPage": base + a[1],
-      "publisher": { "@id": "https://phrinusomyis.com/#organization" }
-    });
-  });
-
+      "headline": item.title,
+      "datePublished": item.date,
+      "dateModified": item.date,
+      "author": {
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS",
+        "@id": "https://phrinusomyis.com/#organization",
+        "url": "https://phrinusomyis.com",
+       "logo": {
+        "@type": "ImageObject",
+        "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
+        }
+      }
+    }))
+  };
+  
   const script = document.createElement("script");
   script.type = "application/ld+json";
   script.textContent = JSON.stringify(data);
@@ -842,3 +833,4 @@ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
   
 </body>
 </html>
+
