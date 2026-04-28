@@ -605,6 +605,141 @@ document.addEventListener("DOMContentLoaded", function () {
 <script type="text/javascript"
 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
+    <script>
+/**
+ * PHRINUSOMYIS Complete Article Page Schema
+ * HQ: Brooklyn, NY | Lagos | Dubai | Moscow
+ * This script is fully automatic.
+ */
+(function() {
+  const base = "https://phrinusomyis.com";
+  const currentUrl = window.location.href;
+  
+  // Automatically grab the headline from the H1 tag or the page Title
+  const articleHeadline = document.querySelector('h1') ? document.querySelector('h1').innerText.trim() : document.title;
+  
+  const graph = [];
+
+  // 1. THE MAIN ORGANIZATION & HEADQUARTERS (Brooklyn)
+  graph.push({
+    "@type": "Organization",
+    "@id": `${base}/#organization`,
+    "name": "PHRINUSOMYIS",
+    "url": base,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${base}/assets/Phrinusomyis_logo.png`
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "@id": `${base}/#dept-headquarters`,
+      "streetAddress": "Brooklyn",
+      "addressLocality": "New York City",
+      "addressRegion": "Kings County, New York",
+      "addressCountry": "USA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.6782,
+      "longitude": -73.9442
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+1 (602) 842-3713",
+        "contactType": "Customer Service",
+        "email": "info@phrinusomyis.com"
+      }
+    ],
+    // 2. GLOBAL OFFICES (Sub-Organizations)
+    "subOrganization": [
+      {
+        "@type": "Organization",
+        "@id": `${base}/#dept-dubai`,
+        "name": "PHRINUSOMYIS Dubai Office",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressRegion": "Emirate of Dubai",
+          "addressCountry": "UAE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.2048,
+          "longitude": 55.2708
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${base}/#dept-moscow`,
+        "name": "PHRINUSOMYIS Moscow Office",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Moscow",
+          "addressRegion": "Central Okrug, Federal City",
+          "addressCountry": "Russia"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 55.7558,
+          "longitude": 37.6173
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${base}/#dept-lagos`,
+        "name": "PHRINUSOMYIS Lagos Office",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Banana Island",
+          "addressLocality": "Lagos",
+          "addressRegion": "Eti-Osa LGA, Lagos State",
+          "addressCountry": "Nigeria"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 6.4498,
+          "longitude": 3.4719
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `${base}/article`
+        }
+      }
+    ]
+  });
+
+  // 3. THE SPECIFIC ARTICLE (Automatic Detection)
+  graph.push({
+    "@type": "NewsArticle",
+    "@id": `${currentUrl}#article`,
+    "headline": articleHeadline,
+    "mainEntityOfPage": currentUrl,
+    "datePublished": document.lastModified ? new Date(document.lastModified).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+    "dateModified": document.lastModified ? new Date(document.lastModified).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+    "author": {
+      "@id": `${base}/#organization`
+    },
+    "publisher": {
+      "@id": `${base}/#organization`
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": `${base}/assets/Phrinusomyis_logo.png`
+    }
+  });
+
+  // 4. INJECT TO PAGE
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": graph
+  });
+  document.head.appendChild(script);
+})();
+      </script>
 </body>
     </html>
+
 
