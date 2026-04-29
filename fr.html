@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <meta name="address-hq" content="PHRINUSOMYIS Global Headquarters, 157 13th St, Brooklyn, New York City, NY 11215, USA">
+    <meta name="address-dubai" content="PHRINUSOMYIS Dubai Office, Burj Khalifa District, Downtown Dubai, Emirate of Dubai, PO Box 123456, UAE">
+    <meta name="address-moscow" content="PHRINUSOMYIS Moscow Office, Tverskaya St, Central Okrug, Presnensky District, Moscow, 123100, Russia">
+    <meta name="address-lagos" content="PHRINUSOMYIS Lagos Office, 805 Close, Banana Island, Ikoyi, Lagos State, 101233, Nigeria">
+    <meta name="geo.region" content="US-NY">
+    <meta name="geo.placename" content="Brooklyn">
+    <meta name="geo.position" content="40.6782;-73.9442">
+    <meta name="ICBM" content="40.6782, -73.9442">
+    <meta name="latitude" content="40.6782">
+    <meta name="longitude" content="-73.9442">
+    <meta name="press-authority-link" content="https://phrinusomyis.com/press">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="yandex-verification" content="1f5132e94cbcdbd3" />
     <meta name="msvalidate.01" content="6A819BD6EB10D3C285099CAC103BBD9B" /> 
     <meta name="msvalidate.01" content="A1B2C3D4E5..." /> 
     <meta name="robots" content="max-image-preview:large"> 
-    <meta name="mission" content="PHRINUSOMYIS propose des expériences de divertissement cinématographique de classe mondiale à travers des productions d'élite à l'échelle des stades, un branding de luxe et des événements mondiaux conçus pour un public international.">
+    <meta name="mission" content="PHRINUSOMYIS propose des expériences de divertissement cinématographique de classe mondiale grâce à des productions d'élite à l'échelle des stades, un branding de luxe et des événements mondiaux conçus pour un public international.">
     <meta name="vision" content="PHRINUSOMYIS ambitionne de devenir un leader mondial du divertissement de luxe, en redéfinissant les productions à l'échelle des stades, l'excellence cinématographique et les expériences de marque premium sur les marchés internationaux.">  
     <meta name="keywords" content="PHRINUSOMYIS, marque de divertissement, divertissement de luxe mondial, productions à l'échelle des stades, excellence cinématographique, événements mondiaux d'élite, branding de luxe, entreprise de divertissement premium, productions internationales, spectacles exclusifs, divertissement de classe mondiale">
-    <meta name="description" content="PHRINUSOMYIS : La référence du divertissement d'élite en stade et du branding de luxe. Découvrez une excellence cinématographique mondiale et des spectacles exclusifs qui redéfinissent la grande scène.">
+    <meta name="description" content="PHRINUSOMYIS : La référence du divertissement d'élite en stade et du branding de luxe. Découvrez l'excellence cinématographique mondiale et des spectacles internationaux exclusifs qui redéfinissent la grande scène.">
     <link rel="alternate" hreflang="en" href="https://phrinusomyis.com/">
     <link rel="alternate" hreflang="en" href="https://phrinusomyis.com/en/">
     <link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr/">
@@ -45,29 +55,36 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "Brand"],
       "@id": "https://phrinusomyis.com/#organization",
       "name": "PHRINUSOMYIS",
       "url": "https://phrinusomyis.com/",
-      "logo": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
-      "image": {
+      "logo": {
         "@type": "ImageObject",
         "url": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
         "width": "600",
         "height": "600"
       },
-      "foundingDate": "2020",
+      "foundingDate": "2020-10-28",
       "description": "PHRINUSOMYIS est une organisation mondiale à double division opérant dans le divertissement expérientiel à l'échelle des stades et les produits de collection de luxe. Axée sur l'expansion mondiale et la production cinématographique haut de gamme.",
-      "brand": {
-        "@type": "Brand",
-        "@id": "https://phrinusomyis.com/#brand",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/"
-      },
       "founder": {
         "@type": "Person",
         "name": "Victor Seth A",
         "jobTitle": "Fondateur et Directeur Général"
+        },
+      /* PRIMARY GLOBAL HEADQUARTERS */
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://phrinusomyis.com/#dept-headquarters",
+        "streetAddress": "Brooklyn",
+        "addressLocality": "New York City",
+        "addressRegion": "Comté de Kings, New York",
+        "addressCountry": "USA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.6782,
+        "longitude": -73.9442
       },
       "areaServed": [
         "Afrique de l'Ouest",
@@ -82,10 +99,10 @@
         {
           "@type": "ContactPoint",
           "telephone": "+1 (602) 842-3713",
-          "contactType": "Service Client",
+          "contactType": "Service Clientèle",
           "email": "info@phrinusomyis.com",
           "availableLanguage": [
-            "English", "French", "Spanish", "Arabic", "Chinese", "German", "Portuguese", "Russian", "Japanese", "Korean"
+            "Anglais", "Français", "Espagnol", "Arabe", "Chinois", "Allemand", "Portugais", "Russe", "Japonais", "Coréen"
           ]
         }
       ],
@@ -107,73 +124,57 @@
       "about": {
         "@type": "Thing",
         "name": "Marque PHRINUSOMYIS",
-        "description": "Une organisation mondiale de divertissement de luxe redéfinissant les expériences en stade et les systèmes de produits de collection de luxe à l'échelle mondiale."
+        "description": "Une organisation mondiale redéfinissant le divertissement de luxe, axée sur les expériences de divertissement à l'échelle des stades et les systèmes de produits de collection de luxe opérant à l'échelle mondiale."
       },
-      "subOrganization": [
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-headquarters",
-          "name": "Siège Social PHRINUSOMYIS",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Brooklyn",
-            "addressLocality": "New York City",
-            "addressRegion": "Kings County, New York",
-            "addressCountry": "USA"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 40.6782,
-            "longitude": -73.9442
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-dubai",
-          "name": "Bureau PHRINUSOMYIS Dubaï",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Dubaï",
-            "addressRegion": "Émirat de Dubaï",
-            "addressCountry": "UAE"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 25.2048,
-            "longitude": 55.2708
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-moscow",
-          "name": "Bureau PHRINUSOMYIS Moscou",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Moscou",
-            "addressRegion": "District Administratif Central",
-            "addressCountry": "Russia"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 55.7558,
-            "longitude": 37.6173
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-lagos",
-          "name": "Bureau PHRINUSOMYIS Lagos",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Banana Island",
-            "addressLocality": "Lagos",
-            "addressRegion": "État de Lagos",
-            "addressCountry": "Nigeria"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 6.4498,
-            "longitude": 3.4719
+  /* SUB-ORGANIZATIONS & REGIONAL OFFICES */
+  "subOrganization": [
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#dept-dubai",
+      "name": "PHRINUSOMYIS Bureau de Dubaï",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubaï",
+        "addressRegion": "Émirat de Dubaï",
+        "addressCountry": "EAU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.2048,
+        "longitude": 55.2708
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#dept-moscow",
+      "name": "PHRINUSOMYIS Bureau de Moscou",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Moscou",
+        "addressRegion": "District administratif central",
+        "addressCountry": "Russie"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.7558,
+        "longitude": 37.6173
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#dept-lagos",
+      "name": "PHRINUSOMYIS Bureau de Lagos",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Banana Island",
+        "addressLocality": "Lagos",
+        "addressRegion": "État de Lagos",
+        "addressCountry": "Nigeria"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.4498,
+        "longitude": 3.4719
           }
         }
       ]
@@ -189,7 +190,7 @@
         {
           "@type": "Question",
           "name": "Qu'est-ce que PHRINUSOMYIS ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Une puissance du divertissement de luxe et à l'échelle des stades." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Un moteur mondial du divertissement de luxe et à l'échelle des stades." }
         },
         {
           "@type": "Question",
@@ -204,25 +205,25 @@
         {
           "@type": "Question",
           "name": "Quand l'événement a-t-il lieu ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Le 24 juillet 2026." }
+          "acceptedAnswer": { "@type": "Answer", "text": "24 juillet 2026." }
         },
         {
           "@type": "Question",
-          "name": "Est-ce une société secrète ?",
+          "name": "S'agit-il d'une société secrète ?",
           "acceptedAnswer": { "@type": "Answer", "text": "Non. C'est une institution de patrimoine mondial." }
         },
         {
           "@type": "Question",
-          "name": "Quel est le retour sur investissement ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Patrimoine culturel mondial." }
+          "name": "Quel est le ROI ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Immobilier culturel mondial." }
         }
       ]
     },
     {
       "@type": "Product",
-      "name": "Parfum de Luxe PHRINUSOMYIS",
+      "name": "Parfum de luxe PHRINUSOMYIS",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "Parfum de collection ultra-premium. Verre Noir / Bouchon en Or. Limité à 500 unités dans le monde.",
+      "description": "Parfum de collection ultra-premium. Verre noir / Bouchon en or. Limité à 500 unités dans le monde.",
       "image": "https://phrinusomyis.com/phrinusomyis_perfume_front.png",
       "offers": {
         "@type": "Offer",
@@ -233,13 +234,13 @@
     },
     {
       "@type": "Product",
-      "name": "Coupe de Collection de LUXE PHRINUSOMYIS",
+      "name": "Coupe de collection LUXURY PHRINUSOMYIS",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "Plaqué Or 24K / Obsidienne Mate / Récipient d'entrée d'élite. Limité à 50 unités dans le monde.",
+      "description": "Plaqué or 24 carats / Obsidienne mate / Vaisseau d'entrée d'élite. Limité à 50 unités dans le monde.",
       "image": "https://phrinusomyis.com/phriyis_logo2.png",
-      "offers": { 
-        "@type": "Offer", 
-        "price": "8000", 
+      "offers": {
+        "@type": "Offer",
+        "price": "8000",
         "priceCurrency": "USD",
         "inventoryLevel": { "@type": "QuantitativeValue", "value": 50 }
       }
@@ -275,25 +276,39 @@
     {
       "@type": "Event",
       "@id": "https://phrinusomyis.com/#event",
-      "name": "Événements de Début International PHRINUSOMYIS",
+      "name": "Événements de début international de PHRINUSOMYIS en Afrique de l'Ouest",
       "startDate": "2026-07-24T19:00:00",
       "endDate": "2026-07-25T19:00:00",
       "image": ["https://phrinusomyis.com/phrinusomyis_events.png"],
-      "location": {
-        "@type": "Place",
-        "name": "Stade International",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Afrique de l'Ouest",
-          "addressCountry": "Global"
+      "organizer": {
+      "@type": "Organization",
+      "name": "PHRINUSOMYIS",
+      "url": "https://phrinusomyis.com",
+      "email": "info@phrinusomyis.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://phrinusomyis.com/events",
+      "price": "10",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-05-22T00:00:00",
+      "description": "Événements de début international de PHRINUSOMYIS en Afrique de l'Ouest."
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Stade international",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Afrique de l'Ouest",
+        "addressCountry": "Global"
         }
       },
-      "description": "Début expérientiel à l'échelle des stades présentant la production mondiale de divertissement et l'intégration de marques de luxe. Mission : Divertissement cinématographique de classe mondiale.",
-      "organizer": { "@id": "https://phrinusomyis.com/#organization" }
+      "description": "Début expérientiel à l'échelle des stades présentant la production mondiale de divertissement et l'intégration de marques de luxe. Mission : PHRINUSOMYIS offre des expériences de divertissement cinématographique de classe mondiale.",
     }
   ]
 }
-    </script>
+</script>
     <title>PHRINUSOMYIS | Site Officiel</title>
 
     <style>
