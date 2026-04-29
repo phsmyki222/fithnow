@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"> 
+    <meta name="address-hq" content="PHRINUSOMYIS Global Headquarters, 157 13th St, Brooklyn, New York City, NY 11215, USA">
+    <meta name="address-dubai" content="PHRINUSOMYIS Dubai Office, Burj Khalifa District, Downtown Dubai, Emirate of Dubai, PO Box 123456, UAE">
+    <meta name="address-moscow" content="PHRINUSOMYIS Moscow Office, Tverskaya St, Central Okrug, Presnensky District, Moscow, 123100, Russia">
+    <meta name="address-lagos" content="PHRINUSOMYIS Lagos Office, 805 Close, Banana Island, Ikoyi, Lagos State, 101233, Nigeria">
+    <meta name="geo.region" content="US-NY">
+    <meta name="geo.placename" content="Brooklyn">
+    <meta name="geo.position" content="40.6782;-73.9442">
+    <meta name="ICBM" content="40.6782, -73.9442">
+    <meta name="latitude" content="40.6782">
+    <meta name="longitude" content="-73.9442">
+    <meta name="press-authority-link" content="https://phrinusomyis.com/press">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="yandex-verification" content="1f5132e94cbcdbd3" />
     <meta name="msvalidate.01" content="6A819BD6EB10D3C285099CAC103BBD9B" /> 
     <meta name="msvalidate.01" content="A1B2C3D4E5..." /> 
     <meta name="robots" content="max-image-preview:large"> 
-    <meta name="mission" content="PHRINUSOMYIS tarjoaa maailmanluokan elokuvallisia viihde-elämyksiä eliittitason stadion-tuotantojen, luksusbrändäyksen ja kansainvälisille yleisöille suunnattujen maailmanlaajuisten tapahtumien kautta.">
-    <meta name="vision" content="PHRINUSOMYIS pyrkii maailmanlaajuiseksi johtajaksi luksusviihteen alalla, määritellen uudelleen stadion-tuotannot, elokuvallisen huippuosaamisen ja ensiluokkaiset brändikokemukset kansainvälisillä markkinoilla.">  
-    <meta name="keywords" content="PHRINUSOMYIS, viihdebrändi, maailmanlaajuinen luksusviihde, stadion-tuotannot, elokuvallinen huippuosaaminen, eliittitapahtumat, luksusbrändäys, premium-viihdeyhtiö, kansainväliset tuotannot, eksklusiiviset spektaakkelit, maailmanluokan viihde">
+    <meta name="mission" content="PHRINUSOMYIS tarjoaa maailmanluokan elokuvallisia viihde-elämyksiä eliittitason stadion-tuotantojen, luksusbrändäyksen ja kansainväliselle yleisölle suunnattujen globaalien tapahtumien kautta.">
+    <meta name="vision" content="PHRINUSOMYIS pyrkii luksusviihteen globaaliksi johtajaksi uudistamalla stadion-tuotantoja, elokuvallista huippuosaamista ja ensiluokkaisia brändikokemuksia kansainvälisillä markkinoilla.">  
+    <meta name="keywords" content="PHRINUSOMYIS, viihdebrändi, globaali luksusviihde, stadion-tuotannot, elokuvallinen huippuosaaminen, eliittitason globaalit tapahtumat, luksusbrändäys, premium-viihdeyritys, kansainväliset tuotannot, eksklusiiviset spektaakkelit, maailmanluokan viihde">
     <meta name="description" content="PHRINUSOMYIS: Eliittitason stadionviihteen ja luksusbrändäyksen tunnusmerkki. Koe maailmanluokan elokuvallinen huippuosaaminen ja eksklusiiviset globaalit spektaakkelit, jotka määrittelevät suuren näyttämön uudelleen.">
     <link rel="alternate" hreflang="en" href="https://phrinusomyis.com/">
     <link rel="alternate" hreflang="en" href="https://phrinusomyis.com/en/">
@@ -45,29 +55,36 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "Brand"],
       "@id": "https://phrinusomyis.com/#organization",
       "name": "PHRINUSOMYIS",
       "url": "https://phrinusomyis.com/",
-      "logo": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
-      "image": {
+      "logo": {
         "@type": "ImageObject",
         "url": "https://phrinusomyis.com/assets/phrinusomyis_logo.png",
         "width": "600",
         "height": "600"
       },
-      "foundingDate": "2020",
-      "description": "PHRINUSOMYIS on maailmanlaajuinen kaksiosainen organisaatio, joka toimii stadion-tason kokemuksellisen viihteen ja luksustason keräilytuotteiden parissa. Keskittyy maailmanlaajuiseen laajentumiseen ja huipputason elokuvatuotantoon.",
-      "brand": {
-        "@type": "Brand",
-        "@id": "https://phrinusomyis.com/#brand",
-        "name": "PHRINUSOMYIS",
-        "url": "https://phrinusomyis.com/"
-      },
+      "foundingDate": "2020-10-28",
+      "description": "PHRINUSOMYIS on maailmanlaajuinen kaksiosastoinen organisaatio, joka toimii stadion-tason kokemuksellisen viihteen ja luksuskeräilytuotteiden parissa. Keskittyy maailmanlaajuiseen laajentumiseen ja korkealaatuiseen elokuvatuotantoon.",
       "founder": {
         "@type": "Person",
         "name": "Victor Seth A",
-        "jobTitle": "Perustaja ja pääjohtaja"
+        "jobTitle": "Perustaja ja toimitusjohtaja"
+        },
+      /* PRIMARY GLOBAL HEADQUARTERS */
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://phrinusomyis.com/#dept-headquarters",
+        "streetAddress": "Brooklyn",
+        "addressLocality": "New York City",
+        "addressRegion": "Kings County, New York",
+        "addressCountry": "USA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.6782,
+        "longitude": -73.9442
       },
       "areaServed": [
         "Länsi-Afrikka",
@@ -85,7 +102,7 @@
           "contactType": "Asiakaspalvelu",
           "email": "info@phrinusomyis.com",
           "availableLanguage": [
-            "English", "French", "Spanish", "Arabic", "Chinese", "German", "Portuguese", "Russian", "Japanese", "Korean"
+            "Englanti", "Ranska", "Espanja", "Arabia", "Kiina", "Saksa", "Portugali", "Venäjä", "Japani", "Korea"
           ]
         }
       ],
@@ -107,73 +124,57 @@
       "about": {
         "@type": "Thing",
         "name": "PHRINUSOMYIS-brändi",
-        "description": "Maailmanlaajuinen luksusviihteen organisaatio, joka keskittyy stadion-tason viihde-elämyksiin ja luksuskeräilytuotteisiin globaalisti."
+        "description": "Globaali luksusviihdeorganisaatio, joka uudistaa stadion-tason viihde-elämyksiä ja luksuskeräilytuotteita maailmanlaajuisesti."
       },
-      "subOrganization": [
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-headquarters",
-          "name": "PHRINUSOMYIS Pääkonttori",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Brooklyn",
-            "addressLocality": "New York City",
-            "addressRegion": "Kings County, New York",
-            "addressCountry": "USA"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 40.6782,
-            "longitude": -73.9442
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-dubai",
-          "name": "PHRINUSOMYIS Dubain toimisto",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Dubai",
-            "addressRegion": "Dubain emiraatti",
-            "addressCountry": "UAE"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 25.2048,
-            "longitude": 55.2708
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-moscow",
-          "name": "PHRINUSOMYIS Moskovan toimisto",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Moskova",
-            "addressRegion": "Keskusta",
-            "addressCountry": "Venäjä"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 55.7558,
-            "longitude": 37.6173
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://phrinusomyis.com/#dept-lagos",
-          "name": "PHRINUSOMYIS Lagosin toimisto",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Banana Island",
-            "addressLocality": "Lagos",
-            "addressRegion": "Lagos",
-            "addressCountry": "Nigeria"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 6.4498,
-            "longitude": 3.4719
+  /* SUB-ORGANIZATIONS & REGIONAL OFFICES */
+  "subOrganization": [
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#dept-dubai",
+      "name": "PHRINUSOMYIS Dubai-toimisto",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubain emiraatti",
+        "addressCountry": "Arabiemiirikunnat"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.2048,
+        "longitude": 55.2708
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#dept-moscow",
+      "name": "PHRINUSOMYIS Moskova-toimisto",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Moskova",
+        "addressRegion": "Keskinen hallintoalue",
+        "addressCountry": "Venäjä"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.7558,
+        "longitude": 37.6173
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#dept-lagos",
+      "name": "PHRINUSOMYIS Lagos-toimisto",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Banana Island",
+        "addressLocality": "Lagos",
+        "addressRegion": "Lagosin osavaltio",
+        "addressCountry": "Nigeria"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.4498,
+        "longitude": 3.4719
           }
         }
       ]
@@ -189,12 +190,12 @@
         {
           "@type": "Question",
           "name": "Mikä on PHRINUSOMYIS?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Luksusviihteen ja stadion-tason elämysten voimanpesä." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Luksus- ja stadion-tason viihteen voimanpesä." }
         },
         {
           "@type": "Question",
           "name": "Miksi hinta on korkea?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Laatu toimii suodattimena." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Laatu on suodatin." }
         },
         {
           "@type": "Question",
@@ -209,20 +210,20 @@
         {
           "@type": "Question",
           "name": "Onko tämä salaseura?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ei. Se on maailmanlaajuinen perintöinstituutio." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Ei. Se on globaali perintöinstituutio." }
         },
         {
           "@type": "Question",
-          "name": "Mikä on sijoitetun pääoman tuotto (ROI)?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Maailmanlaajuinen kulttuurinen pääoma." }
+          "name": "Mikä on ROI?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Globaali kulttuurinen kiinteistö." }
         }
       ]
     },
     {
       "@type": "Product",
-      "name": "PHRINUSOMYIS Luksusparfyymi",
+      "name": "PHRINUSOMYIS-luksushajuvesi",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "Ultra-premium keräilyparfyymi. Musta lasi / Kultainen korkki. Rajoitettu 500 yksikköön maailmanlaajuisesti.",
+      "description": "Ultra-premium keräilyhajuvesi. Musta lasi / kultainen korkki. Rajoitettu 500 yksikköön maailmanlaajuisesti.",
       "image": "https://phrinusomyis.com/phrinusomyis_perfume_front.png",
       "offers": {
         "@type": "Offer",
@@ -233,13 +234,13 @@
     },
     {
       "@type": "Product",
-      "name": "PHRINUSOMYIS LUKSUS Keräilykuppi",
+      "name": "PHRINUSOMYIS LUXURY -keräilykuppi",
       "brand": { "@id": "https://phrinusomyis.com/#organization" },
-      "description": "24K kultapinnoite / Matta obsidiaani / Eliittitason sisäänpääsyastia. Rajoitettu 50 yksikköön maailmanlaajuisesti.",
+      "description": "24K kultaus / matta obsidiaani / eliittitason sisäänpääsyastia. Rajoitettu 50 yksikköön maailmanlaajuisesti.",
       "image": "https://phrinusomyis.com/phriyis_logo2.png",
-      "offers": { 
-        "@type": "Offer", 
-        "price": "8000", 
+      "offers": {
+        "@type": "Offer",
+        "price": "8000",
         "priceCurrency": "USD",
         "inventoryLevel": { "@type": "QuantitativeValue", "value": 50 }
       }
@@ -248,52 +249,66 @@
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/news",
       "url": "https://phrinusomyis.com/news",
-      "name": "PHRINUSOMYIS Uutiset",
+      "name": "PHRINUSOMYIS-uutiset",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/events",
       "url": "https://phrinusomyis.com/events",
-      "name": "PHRINUSOMYIS Tapahtumat",
+      "name": "PHRINUSOMYIS-tapahtumat",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/article",
       "url": "https://phrinusomyis.com/article",
-      "name": "PHRINUSOMYIS Artikkelit",
+      "name": "PHRINUSOMYIS-artikkelit",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/press",
       "url": "https://phrinusomyis.com/press",
-      "name": "PHRINUSOMYIS Lehdistö",
+      "name": "PHRINUSOMYIS-lehdistö",
       "isPartOf": { "@id": "https://phrinusomyis.com/#organization" }
     },
     {
       "@type": "Event",
       "@id": "https://phrinusomyis.com/#event",
-      "name": "PHRINUSOMYIS Kansainvälinen debyyttitapahtuma",
+      "name": "PHRINUSOMYIS kansainväliset debyyttitapahtumat Länsi-Afrikassa",
       "startDate": "2026-07-24T19:00:00",
       "endDate": "2026-07-25T19:00:00",
       "image": ["https://phrinusomyis.com/phrinusomyis_events.png"],
-      "location": {
-        "@type": "Place",
-        "name": "Kansainvälinen stadionareena",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Länsi-Afrikka",
-          "addressCountry": "Global"
+      "organizer": {
+      "@type": "Organization",
+      "name": "PHRINUSOMYIS",
+      "url": "https://phrinusomyis.com",
+      "email": "info@phrinusomyis.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://phrinusomyis.com/events",
+      "price": "10",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-05-22T00:00:00",
+      "description": "PHRINUSOMYIS kansainväliset debyyttitapahtumat Länsi-Afrikassa."
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Kansainvälinen stadion-tapahtumapaikka",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Länsi-Afrikka",
+        "addressCountry": "Global"
         }
       },
-      "description": "Stadion-tason elämyksellinen debyytti, joka esittelee maailmanlaajuista viihdetuotantoa ja luksusbrändien integraatiota. Missio: Maailmanluokan elokuvallinen viihde.",
-      "organizer": { "@id": "https://phrinusomyis.com/#organization" }
+      "description": "Stadion-tason kokemuksellinen debyytti, joka esittelee globaalia viihdetuotantoa ja luksusbrändien integraatiota. Missio: PHRINUSOMYIS tarjoaa maailmanluokan elokuvallisia viihde-elämyksiä stadion-tuotantojen kautta.",
     }
   ]
 }
-    </script>
+</script>
     <title>PHRINUSOMYIS | Virallinen sivusto</title>
 
     <style>
