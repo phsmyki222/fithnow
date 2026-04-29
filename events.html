@@ -222,7 +222,85 @@
             letter-spacing: 3px;
             color: #444;
             text-transform: uppercase;
-        }
+        } 
+      /* --- MOBILE RESPONSIVE OVERRIDES --- */
+
+/* 1. Adjust the Container Padding for smaller screens */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 15px 40px 15px; /* Reduced top/side padding */
+    text-align: center;
+}
+
+/* 2. Scale down the Heading */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 8vw, 3rem); /* Dynamically scales between 1.5rem and 3rem */
+    letter-spacing: 4px; /* Reduced from 10px for mobile */
+    margin: 15px 0;
+}
+
+/* 3. Handle the Header & Menu */
+header {
+    height: auto; /* Allow height to adjust */
+    padding: 10px 0;
+    min-height: 70px;
+}
+
+nav.menu {
+    flex-wrap: wrap; /* Allows links to drop to next line if screen is too narrow */
+    justify-content: center;
+    gap: 12px;
+    padding: 5px 10px;
+}
+
+nav.menu a {
+    font-size: 11px; /* Slightly smaller for mobile */
+    letter-spacing: 0.5px;
+}
+
+/* 4. Make Countdown Cards fluid */
+.countdown-container {
+    gap: 8px; /* Tighter gap on mobile */
+    display: flex;
+    justify-content: center;
+}
+
+.countdown-card.flip-card {
+    width: 20%; /* Takes up roughly 1/5th of the width */
+    min-width: 70px; /* Prevents them from getting too tiny */
+    padding: 15px 5px;
+}
+
+.flip-inner {
+    font-size: clamp(1.2rem, 5vw, 2.2rem); /* Numbers scale with screen */
+}
+
+/* 5. Adjust the Brand Seal */
+.brand-seal {
+    width: 120px; /* Smaller logo for mobile */
+    max-width: 40%;
+}
+
+/* 6. Media Query for very small devices (under 480px) */
+@media (max-width: 480px) {
+    .countdown-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid instead of one long row */
+        gap: 15px;
+        padding: 0 20px;
+    }
+    
+    .countdown-card.flip-card {
+        width: 100%; /* Fill the grid column */
+    }
+
+    header {
+        position: absolute; /* Prevents fixed header issues on very small scrollable areas
+      */
+    }
+} 
     </style>
 </head>
 <body>
