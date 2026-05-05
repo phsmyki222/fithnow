@@ -372,6 +372,30 @@ footer{
   color:var(--gold);
   text-transform:uppercase;
   text-align:center;
+} 
+      .press-kit-container {
+    margin: 40px 0;
+    text-align: left; /* Keep it aligned with your report text */
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #D4AF37; /* Gold color */
+    border: 1px solid #D4AF37;
+    text-decoration: none;
+    font-family: 'Times New Roman', serif; /* Or your site font */
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.download-btn:hover {
+    background-color: #D4AF37;
+    color: #000000; /* Inverts on hover */
+    cursor: pointer;
 }
 
 /* ================= FINAL MOBILE FIX ================= */
@@ -518,7 +542,12 @@ footer{
     <div class="number" id="seconds" translate="no"></div>
     <div class="label">Seconds</div>
   </div>
-</div>
+</div> 
+  <div class="press-kit-container">
+    <a href="path/to/PHRINUSOMYIS_Press_Kit_2026.pdf" class="download-btn" download>
+        DOWNLOAD OFFICIAL PRESS KIT (PDF)
+    </a>
+  </div>
 
 <div class="contact-email">info@phrinusomyis.com</div>
 <p class="last-updated" id="last-updated" translate="no"></p>
