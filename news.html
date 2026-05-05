@@ -57,6 +57,8 @@
 <meta name="robots" content="index, follow">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
+    </script>
+</head>
     <style>
 .goog-te-banner-frame {
     display: none !important;
@@ -133,22 +135,32 @@ body{
   user-select:none;
   top: 0 !important;
 }
-      /* SILENT GOOGLE TRANSLATE ENGINE */
-        .goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, 
-        .goog-te-gadget, #google_translate_element, .goog-te-balloon-frame, .goog-tooltip {
-            display: none !important;
-            visibility: hidden !important;
+      /* Completely hide the Google Translate Top Bar */
+             .goog-te-banner-frame, 
+              .goog-te-banner, 
+           .goog-te-menu-frame, 
+           .skiptranslate {
+           display: none !important;
+           visibility: hidden !important;
         }
-        .goog-text-highlight { background: none !important; box-shadow: none !important; }
-        html { margin-top: 0 !important; }
 
-        footer {
-            margin-top: 80px;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            color: #444;
-            text-transform: uppercase;
-        }
+           /* Prevent the white space at the top of the screen */
+            body {
+               top: 0 !important;
+         }
+
+             html {
+              margin-top: 0px !important;
+          }
+
+             /* Hide the "Show Original" tooltip when hovering */
+              #goog-gt-tt, .goog-te-balloon-frame {
+                display: none !important;
+           }
+               .goog-text-highlight {
+                 background: none !important;
+                  box-shadow: none !important;
+            }
 }
 /* PERFORMANCE: Lazy render non-critical images */
 img:not(.above-the-fold) {
@@ -344,53 +356,8 @@ h1{
   color:#ccc;
   font-size:0.85rem;
   text-align:justify;
-} 
-   /* 1. Hides the Google Translate Top Banner and Toolbars */
-.goog-te-banner-frame, 
-.goog-te-banner, 
-.goog-te-menu-frame, 
-.skiptranslate, 
-.goog-te-gadget, 
-#google_translate_element, 
-.goog-tooltip {
-    display: none !important;
-    visibility: hidden !important;
 }
 
-/* 2. Kills the "Original Text" hover pop-up tooltips */
-#goog-gt-tt, 
-.goog-te-balloon-frame, 
-.goog-te-balloon-text {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-/* 3. Hides the flickering loading spinner during language swap */
-.goog-te-spinner-pos {
-    display: none !important;
-}
-
-/* 4. Prevents the "Blue Highlight" glow on translated text */
-.goog-text-highlight { 
-    background: none !important; 
-    box-shadow: none !important; 
-}
-
-/* 5. Force-locks the page layout to the top (Prevents the 40px push-down) */
-body { 
-    top: 0 !important; 
-    position: static !important; 
-}
-
-html { 
-    margin-top: 0 !important; 
-}
-
-/* 6. Mobile & Global Override: Ensures no jump after translation happens */
-body.translated-ltr, 
-body.translated-rtl {
-    top: 0 !important;
-}
 .last-updated{
   color:#ccc;
   font-size:0.75rem;
