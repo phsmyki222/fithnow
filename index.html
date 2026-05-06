@@ -468,6 +468,44 @@ h1, .power-title {
     position: relative;
     z-index: 2;
 } 
+    MENU FIX - NOW REPOSITIONED TO THE BACK */  
+.nav-menu {  
+    display: flex !important;  
+    flex-direction: column;  
+    position: absolute;  
+    top: 60px;  
+    right: 10px;  
+    background: transparent; /* Changed from black to transparent to see through it */
+    padding: 10px;  
+    border: 1px solid #222;  
+    /* Changed z-index to a low number so it stays behind main content */
+    z-index: 1;  
+
+    /* LOCKED WIDTH FIX */
+    width: 150px !important;
+    max-width: 150px !important;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.nav-menu a {  
+    padding: 10px;  
+    border-bottom: 1px solid #222;  
+    display: block;  
+    color: rgba(255, 255, 255, 0.5); /* Dimmed the text so it looks like a background element */
+
+    /* PREVENT SIZE CHANGE */
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}  
+
+/* SAFETY SPACE */  
+section {  
+    padding-top: 80px;  
+    position: relative;
+    z-index: 5; /* Keeps the section content in front of the menu */
+}
     </style>
 </head>
 <body oncontextmenu="return false;">
