@@ -507,46 +507,28 @@ section {
     position: relative;
     z-index: 5; /* Keeps the section content in front of the menu */
 }
-
-} 
-        /* GLOBAL TEXT TARGETING */
-/* This covers paragraphs, spans, small text, list items, and links */
-p, span, li, a, .text-block, .description {
+        /* TARGET ONLY BODY TEXT (NO HEADERS) */
+p, span, li, a, small, .description {
     font-family: "Arial Black", "Arial", sans-serif;
     font-weight: 900;
-    color: #FFD700; /* Gold */
+    color: #FFD700;
     line-height: 1.6;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    text-decoration: none; /* Removes underlines from links */
-    
-    /* The "Live Breathing" Effect */
+    text-decoration: none;
+
     animation: globalBreath 10s ease-in-out infinite;
-    
-    /* Precision Rendering */
+
     -webkit-font-smoothing: antialiased;
-    display: block; /* Ensures the animation applies to the whole block */
 }
 
-/* Subtle Ambient Pulse */
-@keyframes globalBreath {
-    0%, 100% {
-        opacity: 0.8;
-        text-shadow: 0 0 8px rgba(255, 215, 0, 0.1);
-        filter: brightness(100%);
-    }
-    50% {
-        opacity: 1;
-        text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-        filter: brightness(115%);
-    }
-}
-
-/* Ensure the background is the required Obsidian for contrast */
-body {
-    background-color: #0B0B0B; /* Deep Obsidian */
-    margin: 0;
-    padding: 50px;
+/* EXPLICITLY PROTECT HEADERS */
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-transform: none;
+    animation: none;
 }
     </style>
 </head>
