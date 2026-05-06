@@ -567,51 +567,47 @@ footer {
 </div>
 
 <!-- Hidden Multi-Language JSON -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">  
+    {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#organization",
+      "name": "PHRINUSOMYIS",
+      "url": "https://phrinusomyis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://phrinusomyis.com/phrinusomyis_logo.png",
+        "width": 600,
+        "height": 600
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://phrinusomyis.com/article",
+      "url": "https://phrinusomyis.com/article",
+      "name": "PHRINUSOMYIS Luxury Articles",
+      "isPartOf": {
+        "@id": "https://phrinusomyis.com/#website"
+      }
+    },
     {
       "@type": "NewsArticle",
       "@id": "https://phrinusomyis.com/article#main",
       "headline": "PHRINUSOMYIS Luxury Articles",
       "description": "Explore PHRINUSOMYIS luxury articles featuring premium collectibles, signature scents, and elite lifestyle insights.",
       "image": "https://phrinusomyis.com/phrinusomyis_logo.png",
-      "logo": {
-      "@type": "ImageObject",
-      "url": "https://phrinusomyis.com/phrinusomyis_logo.png",
-      "width": "600",
-      "height": "600"
-      },
-      "datePublished": "2026-04-10T09:00:00+00:00",
-      "dateModified": "2026-04-10T13:12:00+00:00",
-      "inLanguage": "en",
       "author": {
         "@type": "Person",
-        "name": "Victor Seth A",
-        "url": "https://phrinusomyis.com/article"
+        "name": "Victor Seth A"
       },
       "publisher": {
         "@id": "https://phrinusomyis.com/#organization"
       },
       "mainEntityOfPage": {
-        "@type": "WebPage",
         "@id": "https://phrinusomyis.com/article"
       }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://phrinusomyis.com/#organization",
-      "name": "PHRINUSOMYIS",
-      "url": "https://phrinusomyis.com/",
-      "logo": "https://phrinusomyis.com/phrinusomyis_logo.png",
-      "sameAs": [
-        "https://www.facebook.com/phrinusomyis",
-        "https://www.twitter.com/phrinusomyis",
-        "https://www.instagram.com/phrinusomyis",
-        "https://www.youtube.com/@phrinusomyis0",
-        "https://www.tiktok.com/@phrinusomyis"
-      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -633,7 +629,6 @@ footer {
     }
   ]
 }
-
 </script>
 
 <script>
