@@ -342,6 +342,45 @@ footer {
   .goog-text-highlight { background: none !important; box-shadow: none !important; }
   html { margin-top: 0 !important;
 }
+    /* Target all normal body text (paragraphs) */
+p {
+    font-family: "Arial Black", "Arial", sans-serif;
+    font-weight: 900;
+    color: #FFD700; /* Pure Gold */
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    text-transform: uppercase; /* Standard for high-end luxury headers/text blocks */
+    
+    /* The "Breathing" Effect */
+    animation: atmosphericBreath 8s ease-in-out infinite;
+    
+    /* High-fidelity rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 800px;
+}
+
+/* Subtle animation to make the text feel alive */
+@keyframes atmosphericBreath {
+    0%, 100% {
+        opacity: 0.85;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        transform: scale(1.005); /* Very slight growth */
+    }
+}
+
+/* Ensure the background is the required Obsidian for contrast */
+body {
+    background-color: #0B0B0B; /* Deep Obsidian */
+    margin: 0;
+    padding: 50px;
+    
+}
 </style>
 </head>
 <body>
