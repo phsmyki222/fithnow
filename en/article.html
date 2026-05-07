@@ -1,26 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles | PHRINUSOMYIS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="address-hq" content="PHRINUSOMYIS Global Headquarters, 157 13th St, Brooklyn, New York City, NY 11215, USA">
+<meta name="address-dubai" content="PHRINUSOMYIS Dubai Office, Burj Khalifa District, Downtown Dubai, Emirate of Dubai, PO Box 123456, UAE">
+<meta name="address-moscow" content="PHRINUSOMYIS Moscow Office, Tverskaya St, Central Okrug, Presnensky District, Moscow, 123100, Russia">
+<meta name="address-lagos" content="PHRINUSOMYIS Lagos Office, 805 Close, Banana Island, Ikoyi, Lagos State, 101233, Nigeria">
+<meta name="geo.region" content="US-NY">
+<meta name="geo.placename" content="Brooklyn">
+<meta name="geo.position" content="40.6782;-73.9442">
+<meta name="ICBM" content="40.6782, -73.9442">
+<meta name="latitude" content="40.6782">
+<meta name="longitude" content="-73.9442">
+<meta name="keywords" content="PHRINUSOMYIS, luxury brand, premium cups collection, signature perfumes, high-end products, elite lifestyle, luxury entertainment, global productions, exclusive brand experience, luxury articles, premium living">
+<meta name="description" content="Explore PHRINUSOMYIS luxury articles featuring premium cups, signature perfumes, and elite lifestyle content, combined with expert insights on global entertainment and high-value productions.">
+<meta name="mission" content="PHRINUSOMYIS delivers world-class  cinematic entertainment experiences through elite stadium-scale productions, luxury branding, and global events designed for international audiences."> 
+<meta name="vision" content="PHRINUSOMYIS aims to become a global leader in luxury entertainment, redefining stadium-scale productions, cinematic excellence, and premium brand experiences across international markets.">  
+<link rel="icon" href="https://phrinusomyis.com/phrinusomyis_logo.png" sizes="32x32">
+<link rel="icon" href="https://phrinusomyis.com/phrinusomyis_logo.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://phrinusomyis.com/phrinusomyis_logo.png"> 
+<link rel="alternate" hreflang="en" href="https://phrinusomyis.com/article">
+<link rel="canonical" href="https://phrinusomyis.com/en/article">
+<link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr/article">
+<link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es/article">
+<link rel="alternate" hreflang="de" href="https://phrinusomyis.com/de/article">
+<link rel="alternate" hreflang="ar" href="https://phrinusomyis.com/ar/article">
+<link rel="alternate" hreflang="zh" href="https://phrinusomyis.com/zh/article">
+<link rel="alternate" hreflang="ru" href="https://phrinusomyis.com/ru/article">
+<link rel="alternate" hreflang="pt" href="https://phrinusomyis.com/pt/article">
+<link rel="alternate" hreflang="ja" href="https://phrinusomyis.com/ja/article">
+<link rel="alternate" hreflang="ko" href="https://phrinusomyis.com/ko/article">
+<link rel="alternate" hreflang="it" href="https://phrinusomyis.com/it/article">
+<link rel="alternate" hreflang="nl" href="https://phrinusomyis.com/nl/article">
+<link rel="alternate" hreflang="tr" href="https://phrinusomyis.com/tr/article">
+<link rel="alternate" hreflang="hi" href="https://phrinusomyis.com/hi/article">
+<link rel="alternate" hreflang="id" href="https://phrinusomyis.com/id/article">
+<link rel="alternate" hreflang="vi" href="https://phrinusomyis.com/vi/article">
+<link rel="alternate" hreflang="th" href="https://phrinusomyis.com/th/article">
+<link rel="alternate" hreflang="pl" href="https://phrinusomyis.com/pl/article">
+<link rel="alternate" hreflang="sv" href="https://phrinusomyis.com/sv/article">
+<link rel="alternate" hreflang="fi" href="https://phrinusomyis.com/fi/article">
+<link rel="alternate" hreflang="da" href="https://phrinusomyis.com/da/article">
+<link rel="icon" type="image/png" href="phrinusomyis_logo.png">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --diamond: #E5E5E5; /* Diamond white color for countdown */
+    --gold: #D4AF37;
+    --black: #050505;
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(212, 175, 55, 0.15);
+    --accent-glow: rgba(212, 175, 55, 0.3);
+    --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
 
-    <style>
-        body, html { margin:0; padding:0; height:100%; width:100%; overflow:hidden; background:#000; }
-        iframe { width:100%; height:100%; border:none; }
-    </style>
+/* MASTER THEME: Diamond & Gold (Phrinusomyis Luxe)
+   Updated: 2026 Stability & Cross-Browser Fix
+*/
 
-    <script>
-        // LANGUAGE: ENGLISH
-        localStorage.setItem("site_lang", "en");
+/* --- 1. ROOT & CORE --- */
+:root {
+    --gold: #D4AF37;
+    --gold-bright: #FFC72C;
+    --diamond: #E5E5E5;
+    --diamond-cyan: #E0FFFF;
+    --diamond-glow: rgba(178, 235, 242, 0.6);
+    --black: #050505;
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(212, 175, 55, 0.15);
+    --accent-glow: rgba(212, 175, 55, 0.3);
+    --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
 
-        if (window.self !== window.top) {
-            window.top.location.href = window.location.href;
-        }
-    </script>
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    /* CRITICAL FIX: Forces bullet points to disappear on older Mac/Safari */
+    list-style: none !important; 
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--black);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    top: 0 !important;
+} 
+    /* GLOBAL TEXT TARGETING */
+    /* This covers paragraphs, spans, small text, list items, and links */
+  p, span, li, a, .text-block, .description {
+    font-family: "Arial Black", "Arial", sans-serif;
+    font-weight: 900;
+    color: #FFD700; /* Gold */
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none; /* Removes underlines from links */
+    
+    /* The "Live Breathing" Effect */
+    animation: globalBreath 10s ease-in-out infinite;
+    
+    /* Precision Rendering */
+    -webkit-font-smoothing: antialiased;
+    display: block; /* Ensures the animation applies to the whole block */
+}
+
+   /* Subtle Ambient Pulse */
+   @keyframes globalBreath {
+    0%, 100% {
+        opacity: 0.8;
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.1);
+        filter: brightness(100%);
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        filter: brightness(115%);
+    }
+}
+
+/* Ensure the background is the required Obsidian for contrast */
+body {
+    background-color: #0B0B0B; /* Deep Obsidian */
+    margin: 0;
+    padding: 50px;
+    
+}
+
+/* --- 2. NAVIGATION & ELEMENTS --- */
+.navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 9999;
+    padding: 15px 5%;
+    border-bottom: 1px solid var(--gold);
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row; 
+    gap: 30px;
+    transition: right 0.3s ease;
+}
+
+.navbar a {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--diamond-cyan);
+    text-shadow: 0 0 10px var(--diamond-glow);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: var(--gold);
+}
+
+#languageSwitcher {
+    background-color: #050505;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
+/* --- 3. MOBILE VERSION --- */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: -100%; 
+        width: 200px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 40px 20px;
+        gap: 25px;
+        border-left: 2px solid var(--gold);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar ul.show {
+        right: 0; 
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        width: 100%;
+        display: block;
+    }
+}
+
+/* --- 4. HERO & CONTENT --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+.brand-seal {
+    width: clamp(150px, 20vw, 220px);
+    margin: 0 auto 30px;
+    display: block;
+    filter: drop-shadow(0 0 20px var(--gold));
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    letter-spacing: 8px;
+    color: var(--diamond-cyan);
+    text-shadow: 0 0 15px var(--diamond-glow);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+/* --- 5. COUNTDOWN & CARDS --- */
+.countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.countdown-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.countdown-card h2 {
+    color: var(--diamond-cyan);
+    text-shadow: 0 0 10px var(--diamond-glow);
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    animation: pulse 2.5s infinite;
+}
+
+.countdown-card span {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    backdrop-filter: blur(25px);
+}
+
+.card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 10px;
+}
+
+/* --- 6. REGISTRY FOOTER --- */
+.phrinus-registry-footer {
+    background-color: #000;
+    padding: 60px 15px;
+    border-top: 1px solid #D4AF37;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+}
+
+.registry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.node-header {
+    font-size: 14px;
+    font-weight: bold;
+    color: #D4AF37;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.node-address {
+    color: #E5E4E2;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #222;
+}
+
+.contact-link {
+    display: block;
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+footer {
+    margin-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: #444;
+    text-transform: uppercase;
+}
+
+/* --- 7. UTILITIES & ANIMATIONS --- */
+@keyframes pulse {
+    0% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
+    50% { transform: scale(1.05); text-shadow: 0 0 20px var(--diamond-glow); }
+    100% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
+}
+
+/* SILENT GOOGLE TRANSLATE ENGINE */
+.goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, 
+.goog-te-gadget, #google_translate_element, .goog-te-balloon-frame, .goog-tooltip {
+    display: none !important;
+    visibility: hidden !important;
+}
+  .goog-text-highlight { background: none !important; box-shadow: none !important; }
+  html { margin-top: 0 !important;
+} 
+</style>
 </head>
-
 <body>
-    <iframe src="https://phrinusomyis.com/en/articles" title="PHRINUSOMYIS Articles"></iframe>
-</body>
-</html>
+
+<!-- Cinematic Background -->
+<div class="cinematic-bg"></div>
+
+<!-- Navigation Menu -->
+<nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
+    <ul id="nav-links">
+        <li><a href="/" target="_self" class="active">HOME</a></li>
+        <li><a href="news" target="_self">NEWS</a></li>
+        <li><a href="events" target="_self">EVENTS</a></li>
+        <li><a href="press" target="_self">PRESS & MEDIA</a></li>
+                <select id="languageSwitcher">
+    <option value="en">English (EN)</option>
+    <option value="fr">Français (FR)</option>
+    <option value="es">Español (ES)</option>
+    <option value="de">Deutsch (DE)</option>
+    <option value="ar">العربية (AR)</option>
+    <option value="zh">中文 (ZH)</option>
+    <option value="ru">Русский (RU)</option>
+    <option value="pt">Português (PT)</option>
+    <option value="ja">日本語 (JA)</option>
+    <option value="ko">한국어 (KO)</option>
+    <option value="it">Italiano (IT)</option>
+    <option value="nl">Nederlands (NL)</option>
+    <option value="tr">Türkçe (TR)</option>
+    <option value="hi">हिन्दी (HI)</option>
+    <option value="id">Bahasa Indonesia (ID)</option>
+    <option value="vi">Tiếng Việt (VI)</option>
+    <option value="th">ไทย (TH)</option>
+    <option value="pl">Polski (PL)</option>
+    <option value="sv">Svenska (SV)</option>
+    <option value="fi">Suomi (FI)</option>
+    <option value="da">Dansk (DA)</option>
+                  </select> 
+            </nav>
+    </header>
+
+<div class="container">
+    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
+
+    <h1>PHRINUSOMYIS Series Luxury</h1>
+    
+
+    <!-- Modular Diamond-Style Live Time -->
+    <div class="countdown-container">
+        <div class="countdown-card"><h2 id="month">00</h2><span>Month</span></div>
+        <div class="countdown-card"><h2 id="year">0000</h2><span>Year</span></div>
+        <div class="countdown-card"><h2 id="days">00</h2><span>Days</span></div>
+        <div class="countdown-card"><h2 id="hours">00</h2><span>Hours</span></div>
+        <div class="countdown-card"><h2 id="minutes">00</h2><span>Minutes</span></div>
+        <div class="countdown-card"><h2 id="seconds">00</h2><span>Seconds</span></div>
+    </div>
+
+    <!-- PHRINUSOMYIS HUB-->
+    <div class="grid">
+        <div class="card">
+            <h3>Signature Legacy Scent</h3>
+            <div class="narrative-content">
+                The Signature Legacy Scent of PHRINUSOMYIS carries identity in atmosphere and form. Built with depth and balance, it moves with quiet confidence and leaves a lasting impression without seeking attention.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>24K Gold Collectible Cup Unit Series</h3>
+            <div class="narrative-content">
+                True distinction is not found in the many, but in the singular. We present a rare commission—an intentionally limited release defined by architectural precision and a refusal to compromise. This is not an object of volume. It is a statement of legacy.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Limited Edition Perfume Unit Series</h3>
+            <div class="narrative-content">
+                A controlled fragrance, created with precision and care. Each bottle belongs to a limited collection defined by rarity, ownership, and distinction. An olfactory moment, not a repeating release. Once introduced, the formula is retired. It is never repeated.
+            </div>
+        </div> 
+
+           <div class="card">
+            <h3>Stamped Serial Numbers</h3>
+            <div class="narrative-content">
+                Every piece is individually marked for identity and authenticity. Each number is hand-stamped to preserve its uniqueness. No duplication. No repetition. Each unit stands on its own.
+            </div>
+           </div> 
+        
+          <div class="card">
+            <h3>Stadium-Scale Experiential Assets</h3>
+            <div class="narrative-content">
+                Large-format production elements designed for live environments and stadium-level execution. Built for immersive experiences, structured performances, and large-scale events where detail, timing, and atmosphere work in harmony.
+            </div>
+          </div> 
+
+          <div class="card">
+            <h3>PHRINUSOMYIS LUXURY</h3>
+            <div class="narrative-content">
+                Luxury at PHRINUSOMYIS is defined through structure, discipline, and execution. It is not decoration or excess, but control, clarity, and consistency. Every detail is intentional, every experience built with purpose, and every outcome designed to meet a global standard of quality.
+            </div>
+           </div> 
+        <div style="background-color: #000; padding: 20px 0;">
+
+    <div style="text-align: center; margin-bottom: 30px; padding: 0 20px;">
+        <h3 style="color: #D4AF37; font-family: serif; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">The Visual Signature</h3>
+        <p style="color: #ffffff; max-width: 800px; margin: 0 auto; font-size: 16px; line-height: 1.8;">
+            Gold on obsidian. Light held in stillness. A visual identity defined by restraint and presence.
+        </p>
+    </div>
+
+    <div style="position: relative; width: 95%; max-width: 1000px; margin: 0 auto; background: #000; border: 1px solid #D4AF37;">
+        
+        <video autoplay muted loop playsinline style="width: 100%; height: auto; display: block;">
+            <source src="perfume-series-luxury.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.1);">
+            <h2 style="color: #D4AF37; font-family: serif; font-size: clamp(18px, 4vw, 30px); letter-spacing: 4px; text-transform: uppercase; margin: 0; text-shadow: 2px 2px 10px #000;">
+            
+            </h2>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 0 20px;">
+        <h3 style="color: #D4AF37; font-family: serif; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">Crafted for Presence</h3>
+        <p style="color: #ffffff; max-width: 800px; margin: 0 auto; font-size: 16px; line-height: 1.8;">
+            The bottle is crowned with a hand-finished gold lion head. Each unit is presented in a custom-engraved obsidian chest, accompanied by a serialized Certificate of Authenticity and a private invitation to the Lion’s Circle.
+        </p>
+    </div>
+
+        </div> 
+         <footer class="phrinus-registry-footer">
+    <div class="registry-grid"> 
+        <div class="office-node">
+            <span class="node-header">🇺🇸 HEADQUARTERS</span>
+            <p class="node-address">
+                New York City, USA<br>
+                Kings County<br>
+                <span class="pin">📍 Brooklyn</span>
+            </p>
+        </div>
+
+        <div class="office-node">
+            <span class="node-header">🇦🇪 DUBAI OFFICE</span>
+            <p class="node-address">
+                Dubai, UAE<br>
+                Emirate of Dubai<br>
+                <span class="pin">📍 Dubai</span>
+            </p>
+        </div>
+
+        <div class="office-node">
+            <span class="node-header">🇷🇺 MOSCOW OFFICE</span>
+            <p class="node-address">
+                Moscow, Russia<br>
+                Moscow Federal City<br>
+                <span class="pin">📍 Central Okrug</span>
+            </p>
+        </div>
+
+        <div class="office-node">
+            <span class="node-header">🇳🇬 LAGOS OFFICE</span>
+            <p class="node-address">
+                Lagos State, Nigeria<br>
+                Eti-Osa LGA<br>
+                <span class="pin">📍 Banana Island</span>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="contact-footer">
+        <a href="tel:+16028423713" class="contact-link">+1 (602) 842 - 3713</a>
+        <a href="mailto:Off
+        
