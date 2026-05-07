@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-    <!-- 🏛️ MAIN PRESS HUB -->
     <url>
         <loc>https://phrinusomyis.com/press</loc>
-        <priority>1.0</priority>
+        <lastmod>2026-05-07</lastmod>
         <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://phrinusomyis.com/press"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr/press"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es/press"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://phrinusomyis.com/de/press"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://phrinusomyis.com/ar/press"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phrinusomyis.com/zh/press"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://phrinusomyis.com/ru/press"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://phrinusomyis.com/pt/press"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://phrinusomyis.com/ja/press"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://phrinusomyis.com/ko/press"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://phrinusomyis.com/it/press"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://phrinusomyis.com/nl/press"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://phrinusomyis.com/tr/press"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://phrinusomyis.com/hi/press"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://phrinusomyis.com/id/press"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://phrinusomyis.com/vi/press"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://phrinusomyis.com/th/press"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://phrinusomyis.com/pl/press"/>
+        <xhtml:link rel="alternate" hreflang="sv" href="https://phrinusomyis.com/sv/press"/>
+        <xhtml:link rel="alternate" hreflang="fi" href="https://phrinusomyis.com/fi/press"/>
+        <xhtml:link rel="alternate" hreflang="da" href="https://phrinusomyis.com/da/press"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phrinusomyis.com/press"/>
     </url>
 
-    <!-- 🌐 PRESS MULTILINGUAL PAGES -->
-
-    <url><loc>https://phrinusomyis.com/fr/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/es/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/de/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/ar/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/zh/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/ru/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/pt/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/ja/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/ko/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/it/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/nl/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/tr/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/hi/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/id/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/vi/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/th/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/pl/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/sv/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/fi/press</loc><priority>0.9</priority></url>
-    <url><loc>https://phrinusomyis.com/da/press</loc><priority>0.9</priority></url>
-
-</urlset>
+    </urlset>
