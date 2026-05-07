@@ -451,14 +451,16 @@ body {
 
             @media (max-width: 768px) {
 
-       /* HEADER TITLE FIX */
-         h1,
-       .power-title {
-        font-size: 1.6rem !important;
-        line-height: 1.3;
-        padding: 0 10px;
-        text-align: center;
-        word-break: break-word;
+             /* HEADER TITLE FIX */
+           h1,
+         .power-title {
+          font-size: 1.6rem !important;
+          line-height: 1.3;
+          padding: 0 10px;
+          text-align: center;
+          word-break: break-word;
+
+        /* Keeps title above menu */
         position: relative;
         z-index: 2;
     }
@@ -471,15 +473,18 @@ body {
         top: 60px;
         right: 10px;
 
+        /* Transparent background */
         background: transparent;
+
         padding: 10px;
         border: 1px solid #222;
 
+        /* Keeps menu behind content */
         z-index: 1;
 
+        /* LOCKED WIDTH FIX */
         width: 150px !important;
         max-width: 150px !important;
-
         box-sizing: border-box;
         overflow: hidden;
     }
@@ -489,8 +494,10 @@ body {
         border-bottom: 1px solid #222;
         display: block;
 
+        /* Dimmed text */
         color: rgba(255, 255, 255, 0.5);
 
+        /* PREVENT SIZE CHANGE */
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
@@ -500,28 +507,11 @@ body {
     section {
         padding-top: 80px;
         position: relative;
+
+        /* Keeps section content in front */
         z-index: 5;
     }
-
-    /* MOBILE BODY FIX */
-    body {
-        background-color: #0B0B0B;
-        margin: 0;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-        color: #FFD700;
-
-        overflow-x: hidden;
-    }
-
-    /* CONTROLLED TYPOGRAPHY */
-    p,
-    li,
-    .description {
-        font-weight: 600;
-        line-height: 1.6;
-        letter-spacing: 0.02em;
-    }
+}
     </style>
 </head>
 <body oncontextmenu="return false;">
