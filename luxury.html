@@ -585,15 +585,15 @@ footer {
     },
     {
       "@type": "WebPage",
-      "@id": "https://phrinusomyis.com/article",
-      "url": "https://phrinusomyis.com/article",
-      "name": "PHRINUSOMYIS Luxury Articles",
+      "@id": "https://phrinusomyis.com/luxury",
+      "url": "https://phrinusomyis.com/luxury",
+      "name": "PHRINUSOMYIS Luxury",
       "isPartOf": {
         "@id": "https://phrinusomyis.com/#website"
       }
     },
     {
-      "@type": "NewsArticle",
+      "@type": "NewsLuxury",
       "@id": "https://phrinusomyis.com/article#main",
       "headline": "PHRINUSOMYIS Luxury Articles",
       "description": "Explore PHRINUSOMYIS luxury articles featuring premium collectibles, signature scents, and elite lifestyle insights.",
@@ -606,7 +606,7 @@ footer {
         "@id": "https://phrinusomyis.com/#organization"
       },
       "mainEntityOfPage": {
-        "@id": "https://phrinusomyis.com/article"
+        "@id": "https://phrinusomyis.com/luxury"
       }
     },
     {
@@ -622,8 +622,8 @@ footer {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Articles",
-          "item": "https://phrinusomyis.com/article"
+          "name": "luxury",
+          "item": "https://phrinusomyis.com/luxury"
         }
       ]
     }
@@ -806,7 +806,7 @@ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `${base}/article`
+          "@id": `${base}/luxury`
         }
       }
     ]
@@ -814,9 +814,9 @@ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
 
   // 3. THE SPECIFIC ARTICLE (Automatic Detection)
   graph.push({
-    "@type": "NewsArticle",
-    "@id": `${currentUrl}#article`,
-    "headline": articleHeadline,
+    "@type": "NewsLuxury",
+    "@id": `${currentUrl}#luxury`,
+    "headline": LuxuryHeadline,
     "mainEntityOfPage": currentUrl,
     "datePublished": document.lastModified ? new Date(document.lastModified).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
     "dateModified": document.lastModified ? new Date(document.lastModified).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
