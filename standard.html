@@ -3,200 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE STANDARD | PHRINUSOMYIS TECHNICAL AUDIT</title>
+    <title>THE STANDARD | PHRINUSOMYIS</title>
     <style>
+        :root {
+            --gold: #D4AF37;
+            --obsidian: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
         body, html {
             margin: 0;
             padding: 0;
             background-color: #000;
             color: #fff;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* HERO SECTION */
-        .std-hero {
-            height: 60vh;
+        /* CINEMATIC HERO */
+        .hero {
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            border-bottom: 1px solid #1a1a1a;
-            background: linear-gradient(to bottom, #050505, #000);
-            padding: 0 20px;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            position: relative;
         }
 
-        .std-hero h1 {
-            font-size: clamp(30px, 5vw, 50px);
-            letter-spacing: 15px;
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 100px);
             font-weight: 900;
+            letter-spacing: 25px;
             margin: 0;
             text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff 30%, #444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.9;
         }
 
-        .std-hero p {
-            color: #D4AF37;
+        .hero-line {
+            width: 1px;
+            height: 100px;
+            background: var(--gold);
+            margin: 40px 0;
+            box-shadow: 0 0 15px var(--gold);
+        }
+
+        /* TECHNICAL GRID - THE POWERHOUSE */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 150px 40px;
+        }
+
+        .standard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px; /* Creating sharp borders via background */
+            background-color: #111;
+            border: 1px solid #111;
+        }
+
+        .card {
+            background-color: #000;
+            padding: 80px 50px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            background-color: #050505;
+        }
+
+        .card:hover .card-num {
+            color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .card-num {
             font-size: 12px;
+            color: #333;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            display: block;
+            transition: all 0.5s;
+        }
+
+        .card h2 {
+            font-size: 18px;
             letter-spacing: 5px;
             text-transform: uppercase;
-            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: 900;
         }
 
-        /* GRID CONTENT */
-        .std-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        .std-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 80px;
-        }
-
-        @media (min-width: 768px) {
-            .std-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        .std-item h2 {
+        .card p {
+            color: #666;
+            line-height: 1.8;
             font-size: 14px;
-            letter-spacing: 3px;
-            color: #D4AF37;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            border-left: 2px solid #D4AF37;
-            padding-left: 15px;
-        }
-
-        .std-item p {
-            color: #888;
-            font-size: 15px;
             letter-spacing: 0.5px;
         }
 
-        /* TECHNICAL SPECS BAR */
-        .specs-bar {
-            background-color: #050505;
-            padding: 60px 20px;
-            border-top: 1px solid #1a1a1a;
-            border-bottom: 1px solid #1a1a1a;
-            margin-top: 50px;
+        /* FLOATING SPECS - THE INTERFACE FEEL */
+        .interface-specs {
+            background: var(--obsidian);
+            padding: 100px 40px;
+            border-top: 1px solid #111;
         }
 
-        .specs-flex {
-            max-width: 1100px;
+        .spec-container {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
-            gap: 30px;
+            flex-wrap: wrap;
+            gap: 50px;
         }
 
-        .spec-unit {
-            flex: 1;
-            min-width: 200px;
+        .spec-box {
+            border-left: 1px solid var(--gold);
+            padding-left: 30px;
         }
 
         .spec-label {
-            display: block;
             font-size: 10px;
+            letter-spacing: 3px;
             color: #444;
-            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
             margin-bottom: 10px;
-            text-transform: uppercase;
         }
 
-        .spec-value {
-            font-size: 20px;
-            font-weight: bold;
+        .spec-data {
+            font-size: 24px;
+            font-weight: 200;
             letter-spacing: 2px;
+            color: #fff;
         }
 
-        /* AUDIT SEAL */
-        .audit-seal {
+        /* FINAL SEAL */
+        .seal-section {
+            padding: 200px 40px;
             text-align: center;
-            padding: 100px 20px;
         }
 
-        .seal-box {
-            display: inline-block;
-            border: 1px solid #D4AF37;
-            padding: 40px;
-            max-width: 500px;
-        }
-
-        .seal-box h3 {
-            font-size: 12px;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-        }
-
-        .seal-box p {
+        .seal-logo {
             font-size: 11px;
-            color: #666;
-            margin: 0;
+            letter-spacing: 10px;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 20px 40px;
+            display: inline-block;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .seal-logo:hover {
+            background: var(--gold);
+            color: #000;
         }
     </style>
 </head>
 <body>
 
-    <section class="std-hero">
+    <section class="hero">
         <h1>THE STANDARD</h1>
-        <p>Technical Excellence // Global Audit Passed</p>
+        <div class="hero-line"></div>
+        <p style="letter-spacing: 8px; font-size: 10px; color: #444;">GLOBAL PRODUCTION BENCHMARK</p>
     </section>
 
-    <div class="std-container">
-        <div class="std-grid">
-            <div class="std-item">
-                <h2>12K Visual Fidelity</h2>
-                <p>Every PHRINUSOMYIS production is engineered to the 12K cinematic benchmark. We deliver optical precision that merges the scale of the stadium with the clarity of high-end cinema, ensuring every seat in the venue holds the front-row perspective.</p>
+    <section class="content-section">
+        <div class="standard-grid">
+            <div class="card">
+                <span class="card-num">01 / VISUAL</span>
+                <h2>12K PRECISION</h2>
+                <p>Engineering a visual frequency that exceeds stadium capacity. We synchronize high-fidelity cinematic output with stadium-scale projection to create a zero-pixel lag environment.</p>
             </div>
-            <div class="std-item">
-                <h2>Acoustic Sovereignty</h2>
-                <p>We utilize proprietary spatial audio mapping to eliminate stadium echo and deliver immersive soundscapes. Our engineering ensures a 360-degree sonic environment where audio follows the movement of the performance in real-time.</p>
+            <div class="card">
+                <span class="card-num">02 / SONIC</span>
+                <h2>ACOUSTIC AUDIT</h2>
+                <p>Proprietary wave-mapping technology that treats the stadium as a high-end studio. Immersive audio delivery with <0.5ms latency across all global operational nodes.</p>
             </div>
-            <div class="std-item">
-                <h2>Structural Innovation</h2>
-                <p>Our stage architectures are custom-built for stadium environments. Designed for rapid global deployment, these structures house integrated lighting and visual assets that transform the atmosphere into a living, breathing theater.</p>
+            <div class="card">
+                <span class="card-num">03 / LOGISTICS</span>
+                <h2>BROOKLYN CORE</h2>
+                <p>Managed from our Global HQ in Brooklyn, NY. Our deployment protocol ensures that the Phrinusomyis standard is identical from Dubai to West Africa.</p>
             </div>
-            <div class="std-item">
-                <h2>Operational Readiness</h2>
-                <p>With nodes established in Brooklyn, Lagos, Dubai, and Moscow, our logistics network is optimized for stadium-scale efficiency. Every component of our production is audited for safety, speed, and technical reliability.</p>
-            </div>
-        </div>
-    </div>
-
-    <section class="specs-bar">
-        <div class="specs-flex">
-            <div class="spec-unit">
-                <span class="spec-label">Visual Output</span>
-                <span class="spec-value">12K NATIVE</span>
-            </div>
-            <div class="spec-unit">
-                <span class="spec-label">Audio Latency</span>
-                <span class="spec-value">< 0.5MS</span>
-            </div>
-            <div class="spec-unit">
-                <span class="spec-label">HQ Operational Node</span>
-                <span class="spec-value">BROOKLYN, NY</span>
-            </div>
-            <div class="spec-unit">
-                <span class="spec-label">Audit Certification</span>
-                <span class="spec-value">PASSED // 2026</span>
+            <div class="card">
+                <span class="card-num">04 / STATUS</span>
+                <h2>AUDIT PASSED</h2>
+                <p>The 2026 Technical Audit is finalized. All stadium-scale hardware and luxury asset production cycles have cleared the elite threshold for international deployment.</p>
             </div>
         </div>
     </section>
 
-    <section class="audit-seal">
-        <div class="seal-box">
-            <h3>OFFICIALLY AUDITED</h3>
-            <p>PHRINUSOMYIS Global Operations and Technical Standards verified for international stadium deployment.</p>
+    <section class="interface-specs">
+        <div class="spec-container">
+            <div class="spec-box">
+                <span class="spec-label">Fidelity</span>
+                <span class="spec-data">12K NATIVE</span>
+            </div>
+            <div class="spec-box">
+                <span class="spec-label">Response</span>
+                <span class="spec-data">ELITE READY</span>
+            </div>
+            <div class="spec-box">
+                <span class="spec-label">Network</span>
+                <span class="spec-data">GLOBAL HUB</span>
+            </div>
+            <div class="spec-box">
+                <span class="spec-label">Auth</span>
+                <span class="spec-data">SECURE</span>
+            </div>
         </div>
     </section>
 
-    </body>
+    <section class="seal-section">
+        <div class="seal-logo">Authorized by PHRINUSOMYIS Global</div>
+    </section>
+
+</body>
 </html>
