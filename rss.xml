@@ -1,173 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
+  <channel>
+    <title>PHRINUSOMYIS Press</title>
+    <link>https://phrinusomyis.com</link>
+    <description>Official news feed for PHRINUSOMYIS global operations and updates.</description>
+    <language>en-us</language>
 
-<channel>
+    <item>
+      <title>PHRINUSOMYIS Commits to Global Operations</title>
+      <description>HQ | BROOKLYN, NY — PHRINUSOMYIS has finalized the trajectory for its worldwide operations. The company is moving beyond regional borders to bring its stadium productions to the global circuit, targeting major markets effective immediately.</description>
+      <pubDate>Sat, 05 Sep 2025 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/global-operations-commitment</guid>
+    </item>
 
-<title>PHRINUSOMYIS Official Press Room</title>
-<link>https://phrinusomyis.com/press</link>
-<description>Official press releases and strategic announcements from PHRINUSOMYIS.</description>
-<language>en-us</language>
-<lastBuildDate>Mon, 20 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>PHRINUSOMYIS Launches Luxury Entertainment Division</title>
+      <description>HQ | BROOKLYN, NY — The company has revealed a new division focused on the intersection of luxury branding and large-scale production environments. This structure serves as the blueprint for the 2026 international calendar.</description>
+      <pubDate>Mon, 15 Sep 2025 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/luxury-entertainment-division</guid>
+    </item>
 
-<!-- ===================== 2025 ===================== -->
+    <item>
+      <title>PHRINUSOMYIS Activates Borderless Production Model</title>
+      <description>HQ | BROOKLYN, NY — PHRINUSOMYIS has launched a custom-built operations hub, removing logistical barriers of stadium-scale entertainment for global deployment.</description>
+      <pubDate>Sun, 12 Oct 2025 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/borderless-production-model</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Establishes Strategic Direction for Global Operations</title>
-<link>https://phrinusomyis.com/press/strategic-direction-global-operations</link>
-<description>Official announcement establishing global operational strategy and direction.</description>
-<category>Press</category>
-<pubDate>Fri, 05 Sep 2025 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/strategic-direction-global-operations</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Unveils "Sports Theater" Concepts</title>
+      <description>HQ | BROOKLYN, NY — First look at 2026 stadium designs introducing immersive Sports Theater environments for 50,000-seat venues.</description>
+      <pubDate>Fri, 07 Nov 2025 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/sports-theater-concepts</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Unveils New Luxury Entertainment Development Concept</title>
-<link>https://phrinusomyis.com/press/luxury-entertainment-concept</link>
-<description>Introduction of new luxury entertainment development concept framework.</description>
-<category>Press</category>
-<pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/luxury-entertainment-concept</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Unifies Global Media Voice</title>
+      <description>HQ | BROOKLYN, NY — Launch of a unified international media office across West Africa, Europe, and the Middle East ahead of 2026 circuit.</description>
+      <pubDate>Thu, 20 Nov 2025 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/global-media-voice</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Launches Proprietary Internal Operational Framework</title>
-<link>https://phrinusomyis.com/press/internal-operational-framework</link>
-<description>Launch of internal operational systems and company framework structure.</description>
-<category>Press</category>
-<pubDate>Sun, 12 Oct 2025 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/internal-operational-framework</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Declares 2026 "Year of Expansion"</title>
+      <description>HQ | BROOKLYN, NY — Entry into 2026 operational phase targeting multi-continental stadium expansion.</description>
+      <pubDate>Wed, 01 Jan 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/year-of-expansion</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Unveils Stadium-Scale Production Concept Designs</title>
-<link>https://phrinusomyis.com/press/stadium-production-designs</link>
-<description>Revealing large-scale stadium production and entertainment design concepts.</description>
-<category>Press</category>
-<pubDate>Fri, 07 Nov 2025 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/stadium-production-designs</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Enters Dubai Market</title>
+      <description>HQ | BROOKLYN, NY — Expansion into UAE with Dubai as a key luxury production hub.</description>
+      <pubDate>Fri, 23 Jan 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/dubai-market-entry</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Announces New International Media Positioning Strategy</title>
-<link>https://phrinusomyis.com/press/media-positioning-strategy</link>
-<description>Strategic update on global media positioning and brand direction.</description>
-<category>Press</category>
-<pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/media-positioning-strategy</guid>
-</item>
+    <item>
+      <title>July 24 Confirmed for International Stadium Debut</title>
+      <description>HQ | BROOKLYN, NY — Official confirmation of July 24, 2026 West Africa stadium debut introducing Sports Theater model.</description>
+      <pubDate>Sun, 08 Feb 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/july-24-debut</guid>
+    </item>
 
-<!-- ===================== 2026 ===================== -->
+    <item>
+      <title>PHRINUSOMYIS Finalizes Strategic Global Alliances</title>
+      <description>HQ | BROOKLYN, NY — International partnerships secured for global deployment of 2026 stadium operations.</description>
+      <pubDate>Tue, 10 Feb 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/global-alliances</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Debuts 2026 Global Innovation Strategy</title>
-<link>https://phrinusomyis.com/press/2026-global-innovation-strategy</link>
-<description>Announcement of global innovation roadmap for 2026 operations.</description>
-<category>Press</category>
-<pubDate>Wed, 01 Jan 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/2026-global-innovation-strategy</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Targets UK Stadium Circuit</title>
+      <description>HQ | BROOKLYN, NY — UK identified as priority market for stadium rollout in 2026.</description>
+      <pubDate>Tue, 10 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/uk-stadium-circuit</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Announces Strategic Entry into Dubai Market</title>
-<link>https://phrinusomyis.com/press/dubai-market-entry</link>
-<description>Official confirmation of strategic expansion into Dubai market.</description>
-<category>Press</category>
-<pubDate>Fri, 23 Jan 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/dubai-market-entry</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Expands into French Market</title>
+      <description>HQ | BROOKLYN, NY — Entry into France with Paris positioned as key European node.</description>
+      <pubDate>Sun, 15 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/france-expansion</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Confirms International Debut in West Africa</title>
-<link>https://phrinusomyis.com/press/west-africa-debut</link>
-<description>Official confirmation of international debut event in West Africa.</description>
-<category>Press</category>
-<pubDate>Fri, 08 Feb 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/west-africa-debut</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Secures Spain as Critical Territory</title>
+      <description>HQ | BROOKLYN, NY — Expansion into Madrid and Barcelona for 2026 global tour coverage.</description>
+      <pubDate>Fri, 20 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/spain-territory</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Expands Global Partner Ecosystem</title>
-<link>https://phrinusomyis.com/press/global-partner-ecosystem</link>
-<description>Expansion of global partnerships and strategic alliances network.</description>
-<category>Press</category>
-<pubDate>Sun, 10 Feb 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/global-partner-ecosystem</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Enters China’s Stadium Sector</title>
+      <description>HQ | BROOKLYN, NY — Strategic expansion into Beijing and Shanghai stadium markets.</description>
+      <pubDate>Wed, 25 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/china-expansion</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Announces United Kingdom Market Entry Strategy</title>
-<link>https://phrinusomyis.com/press/uk-market-entry</link>
-<description>Strategic announcement for United Kingdom market expansion.</description>
-<category>Press</category>
-<pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/uk-market-entry</guid>
-</item>
+    <item>
+      <title>West Africa Designated as Central Operations Hub</title>
+      <description>HQ | BROOKLYN, NY — West Africa established as command center for all 2026 global stadium events.</description>
+      <pubDate>Wed, 08 Apr 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/west-africa-hub</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Expands European Presence with France Market Entry</title>
-<link>https://phrinusomyis.com/press/france-market-entry</link>
-<description>Official expansion into French and European markets.</description>
-<category>Press</category>
-<pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/france-market-entry</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Declares Full Operational Readiness</title>
+      <description>HQ | BROOKLYN, NY — Global systems cleared for full international deployment.</description>
+      <pubDate>Mon, 20 Apr 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/operational-readiness</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Sets Strategic Framework for Spain Market Expansion</title>
-<link>https://phrinusomyis.com/press/spain-market-framework</link>
-<description>Strategic framework established for Spain market expansion.</description>
-<category>Press</category>
-<pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/spain-market-framework</guid>
-</item>
+    <item>
+      <title>PHRINUSOMYIS Launches International Debut in West Africa</title>
+      <description>HQ | BROOKLYN, NY — First official stadium-scale production introducing Sports Theater model.</description>
+      <pubDate>Thu, 24 Jul 2026 08:00:00 +0000</pubDate>
+      <guid>https://phrinusomyis.com/news/international-debut</guid>
+    </item>
 
-<item>
-<title>PHRINUSOMYIS Announces Major Entry into China Market</title>
-<link>https://phrinusomyis.com/press/china-market-entry</link>
-<description>Official announcement of strategic entry into Chinese market.</description>
-<category>Press</category>
-<pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/china-market-entry</guid>
-</item>
-
-<item>
-<title>PHRINUSOMYIS Formalizes West African Market Expansion Hub</title>
-<link>https://phrinusomyis.com/press/west-africa-hub</link>
-<description>Establishment of West African operational expansion hub.</description>
-<category>Press</category>
-<pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/west-africa-hub</guid>
-</item>
-  
-<item>
-<title>Official Statement from the CEO: The PHRINUSOMYIS Velocity</title>
-<link>https://phrinusomyis.com/news/ceo-velocity-statement</link>
-<description>
-“Our trajectory is defined by a simple progression of speed: if you are standing, get ready to walk. If you are walking, get ready to run. If you are running, get ready to fly—and if you are flying, get ready to disappear. We do not speak much, because our movement is faster than the world can think. This is the PHRINUSOMYIS velocity.”
-</description>
-<category>News</category>
-<pubDate>Mon, 12 Apr 2026 00:00:00 GMT</pubDate>
-<guid>ceo-velocity-2026-04-12</guid>
-</item>
-  
-<item>
-<title>PHRINUSOMYIS Declares Full Operational Readiness for Global Events</title>
-<link>https://phrinusomyis.com/press/global-operational-readiness</link>
-<description>Company declares readiness for large-scale global event execution.</description>
-<category>Press</category>
-<pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/global-operational-readiness</guid>
-</item>
-
-<item>
-<title>PHRINUSOMYIS Hosts International Debut Showcase in West Africa</title>
-<link>https://phrinusomyis.com/press/west-africa-live-debut</link>
-<description>Live international debut showcase event hosted in West Africa.</description>
-<category>Press</category>
-<pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-<guid>https://phrinusomyis.com/press/west-africa-live-debut</guid>
-</item>
-
-</channel>
-
+  </channel>
 </rss>
