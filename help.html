@@ -223,32 +223,6 @@ body, html {
 
     <div class="language-bar">
 
-        <select id="languageSwitcher">
-            <option value="en">English (EN)</option>
-            <option value="fr">Français (FR)</option>
-            <option value="es">Español (ES)</option>
-            <option value="de">Deutsch (DE)</option>
-            <option value="ar">العربية (AR)</option>
-            <option value="zh">中文 (ZH)</option>
-            <option value="ru">Русский (RU)</option>
-            <option value="pt">Português (PT)</option>
-            <option value="ja">日本語 (JA)</option>
-            <option value="ko">한국어 (KO)</option>
-            <option value="it">Italiano (IT)</option>
-            <option value="nl">Nederlands (NL)</option>
-            <option value="tr">Türkçe (TR)</option>
-            <option value="hi">हिन्दी (HI)</option>
-            <option value="id">Bahasa Indonesia (ID)</option>
-            <option value="vi">Tiếng Việt (VI)</option>
-            <option value="th">ไทย (TH)</option>
-            <option value="pl">Polski (PL)</option>
-            <option value="sv">Svenska (SV)</option>
-            <option value="fi">Suomi (FI)</option>
-            <option value="da">Dansk (DA)</option>
-        </select>
-
-    </div>
-
 </header>
 
 <div class="search-wrap">
@@ -260,29 +234,23 @@ body, html {
 </div>
 
 <main class="help-container">
-
     <div class="help-grid">
-
         <div class="help-card">
             <h3>Account Access</h3>
             <p>Help with login, recovery, and account control.</p>
         </div>
-
         <div class="help-card">
             <h3>Product Verification</h3>
             <p>Verify registered products and authenticity systems.</p>
         </div>
-
         <div class="help-card">
             <h3>Event Support</h3>
             <p>Assistance for stadium events and schedules.</p>
         </div>
-
         <div class="help-card">
             <h3>Ticket Assistance</h3>
             <p>Support for ticket purchase and confirmations.</p>
         </div>
-
     </div>
 
     <section class="escalation-zone">
@@ -300,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(switcher) {
         switcher.addEventListener("change", function () {
             localStorage.setItem("site_lang", this.value);
-            // Optional: Redirect if you have language pages like 'press.html'
+            // Optional: Redirect if you have language pages like 'ja.html'
             // window.location.href = this.value + ".html"; 
         });
     }
@@ -385,54 +353,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>  
-</script>
-<div id="google_translate_element" style="display:none;"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
-
-    // Apply saved language on load
-    const savedLang = localStorage.getItem("site_lang");
-    if (savedLang) {
-        setTimeout(() => {
-            changeLanguage(savedLang);
-        }, 1000);
-    }
-}
-
-// Change language function
-function changeLanguage(lang) {
-    const select = document.querySelector(".goog-te-combo");
-
-    if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-
-        localStorage.setItem("site_lang", lang);
-    } else {
-        console.warn("Google Translate not loaded yet");
-    }
-}
-
-// Hook your dropdown
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("languageSwitcher").addEventListener("change", function () {
-        changeLanguage(this.value);
-    });
-});
-</script>
-
-<script type="text/javascript"
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script> 
   <script> 
 </body>
 </html>
