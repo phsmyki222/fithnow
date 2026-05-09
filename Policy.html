@@ -5,210 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRIVACY | PHRINUSOMYIS</title>
     <style>
-        :root {
-            --gold: #D4AF37;
-            --obsidian: #000000;
-        }
-
         body, html {
             margin: 0;
             padding: 0;
-            background-color: var(--obsidian);
-            color: #ffffff;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            letter-spacing: 0.5px;
+            background: #000;
+            color: #fff;
+            font-family: 'Times New Roman', serif; /* Classic elite authority */
+            letter-spacing: 2px;
         }
 
-        /* LOGO HEADER SECTION */
+        /* THE ROLEX SCALE */
         header {
-            padding: 120px 20px 80px;
-            text-align: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #111;
         }
 
-        .brand-logo {
-            width: 140px;
-            height: auto;
-            margin-bottom: 40px;
+        .logo {
+            width: 120px;
+            margin-bottom: 60px;
+            opacity: 0.9;
         }
 
         h1 {
-            font-size: clamp(24px, 4vw, 36px);
-            letter-spacing: 15px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin: 0;
-            color: #fff;
-        }
-
-        .version-stamp {
-            color: var(--gold);
             font-size: 10px;
-            letter-spacing: 5px;
+            letter-spacing: 20px;
             text-transform: uppercase;
-            margin-top: 25px;
-            display: block;
-            opacity: 0.8;
+            color: #D4AF37;
+            font-weight: 100;
         }
 
-        /* MASTER CONTAINER */
-        .policy-vault {
-            max-width: 850px;
+        /* THE VAULT CONTENT */
+        main {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 25px 150px;
+            padding: 150px 20px;
         }
 
-        .entry-statement {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 100px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: justify;
-        }
-
-        /* SECTION STYLING */
-        .policy-block {
-            margin-bottom: 100px;
-            position: relative;
-        }
-
-        .policy-block h2 {
-            font-size: 14px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 35px;
-            display: flex;
-            align-items: center;
-        }
-
-        .policy-block h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #1a1a1a;
-            margin-left: 20px;
-        }
-
-        .policy-block p {
-            font-size: 15px;
-            color: #999;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        .data-points {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-
-        .data-points li {
+        .statement {
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 150px;
             color: #fff;
-            font-size: 13px;
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .data-points li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 15px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        /* THE BROOKLYN NODE FOOTER */
-        .operational-footer {
-            margin-top: 100px;
-            padding: 60px;
-            background: #050505;
-            border: 1px solid #111;
+            font-weight: 100;
             text-align: center;
         }
 
-        .operational-footer h3 {
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: #fff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+        section {
+            margin-bottom: 150px;
         }
 
-        .operational-footer p {
-            font-size: 13px;
+        h2 {
+            font-size: 9px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
             color: #444;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #888;
+            line-height: 2;
             margin-bottom: 30px;
         }
 
-        .legal-link {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 13px;
+        .gold-text {
+            color: #D4AF37;
+            font-weight: bold;
         }
 
-        /* CUSTOM SCROLLBAR */
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: var(--gold); }
+        footer {
+            padding: 100px 20px;
+            text-align: center;
+            font-size: 9px;
+            letter-spacing: 5px;
+            color: #222;
+            text-transform: uppercase;
+        }
 
+        /* NO SCROLLBAR FOR CLEANLINESS */
+        ::-webkit-scrollbar { width: 0px; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS" class="brand-logo">
-        <h1>PRIVACY</h1>
-        <span class="version-stamp">PHRINUSOMYIS GLOBAL DECREE // MAY 2026</span>
+        <img src="phrinusomyis_logo.png" alt="" class="logo">
+        <h1>Privacy</h1>
     </header>
 
-    <main class="policy-vault">
-        
-        <p class="entry-statement">
-            PHRINUSOMYIS operates as a global entity with primary operational nodes in Brooklyn, New York. Our privacy protocols are designed to safeguard the integrity of our high-level associates and luxury asset holders. This is the definitive record of data management.
-        </p>
+    <main>
+        <div class="statement">
+            Your identity is your most valuable asset. <br>
+            We treat it as our own.
+        </div>
 
-        <section class="policy-block">
-            <h2>01. IDENTITY RETENTION</h2>
-            <p>We maintain strictly necessary identification records to authenticate the legal ownership of luxury assets and provide secure admission to the Phrinusomyis Executive Core. This includes:</p>
-            <ul class="data-points">
-                <li>Validation of physical serial numbers for high-end collectibles.</li>
-                <li>Encrypted authentication keys for Executive Core portal access.</li>
-                <li>Geographic synchronization for stadium-scale operational accuracy.</li>
-            </ul>
+        <section>
+            <h2>Ownership</h2>
+            <p>
+                PHRINUSOMYIS exists to protect the privacy of our associates. When you acquire our <span class="gold-text">Signature Scent</span> or enter the <span class="gold-text">Executive Core</span>, your data is locked within our private architecture in Brooklyn.
+            </p>
         </section>
 
-        <section class="policy-block">
-            <h2>02. THE BROOKLYN NODE</h2>
-            <p>All data is processed through our primary security architecture located in **Brooklyn, NY**. PHRINUSOMYIS utilizes military-grade encryption to ensure that client purchase history and digital dossiers remain impenetrable.</p>
-            <p>We do not participate in data brokerage. Your information is held exclusively for the purpose of asset authentication and the delivery of stadium-scale entertainment experiences.</p>
+        <section>
+            <h2>The Brooklyn Node</h2>
+            <p>
+                We do not sell. We do not share. We do not track. Every piece of information stays inside our New York headquarters. We use the same standards used by global banks to ensure your dossier remains invisible to the outside world.
+            </p>
         </section>
 
-        <section class="policy-block">
-            <h2>03. SOVEREIGN COMPLIANCE</h2>
-            <p>As a global organization spanning the US, UAE, Russia, and Nigeria, PHRINUSOMYIS maintains privacy standards that respect both local laws and our internal corporate sovereignty. We protect our network against unauthorized digital surveillance.</p>
+        <section>
+            <h2>The Core</h2>
+            <p>
+                Admission to our private circuit is a permanent agreement. If we detect any threat to our network, we kill the access immediately. No questions asked.
+            </p>
         </section>
-
-        <section class="policy-block">
-            <h2>04. EXECUTIVE ACCESS</h2>
-            <p>Access to the Phrinusomyis Executive Core is logged and monitored. We prioritize the security of the private network and will terminate any identification ID that demonstrates anomalous activity or security risks.</p>
-        </section>
-
-        <footer class="operational-footer">
-            <h3>GLOBAL OPERATIONS OFFICE</h3>
-            <p>Direct inquiries regarding our data protocols to the Brooklyn Headquarters.</p>
-            <a href="mailto:info@PHRINUSOMYIS.com" class="legal-link">INFO@PHRINUSOMYIS.com</a>
-        </footer>
-
     </main>
+
+    <footer>
+        Brooklyn HQ // PHRINUSOMYIS Global // 2026
+    </footer>
 
 </body>
 </html>
