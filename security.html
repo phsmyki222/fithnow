@@ -3,190 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SECURITY CONTROL CENTER | PHRINUSOMYIS GLOBAL</title>
+
+<title>SECURITY PROTOCOLS | PHRINUSOMYIS</title>
 
 <style>
+
 :root {
     --gold: #D4AF37;
     --obsidian: #050505;
-    --danger: #ff3e3e;
-    --line: #111;
+    --dark-gray: #111;
 }
 
 body, html {
     margin: 0;
     padding: 0;
-    background: #000;
+    background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 /* HEADER */
-.header {
+
+.sec-header {
     padding: 120px 20px 60px;
     text-align: center;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--dark-gray);
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
 }
 
-.header h1 {
-    font-size: 22px;
-    letter-spacing: 14px;
+.sec-header h1 {
+    font-size: 24px;
+    letter-spacing: 15px;
+    font-weight: 900;
     text-transform: uppercase;
     margin: 0;
 }
 
-.live {
-    margin-top: 20px;
+.sec-status {
+    color: var(--gold);
     font-size: 10px;
     letter-spacing: 4px;
-    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 25px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
-.dot {
+.status-dot {
     width: 8px;
     height: 8px;
-    background: var(--gold);
+    background-color: var(--gold);
     border-radius: 50%;
     box-shadow: 0 0 10px var(--gold);
-    animation: pulse 1.8s infinite;
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
     0% { opacity: 1; }
-    50% { opacity: 0.2; }
+    50% { opacity: 0.3; }
     100% { opacity: 1; }
 }
 
-/* GRID */
-.container {
+/* CONTAINER */
+
+.sec-container {
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
     padding: 80px 20px 150px;
 }
 
-.grid {
+/* GRID */
+
+.sec-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
-.card {
-    background: var(--obsidian);
-    border: 1px solid var(--line);
-    padding: 30px;
+/* CARD */
+
+.sec-card {
+    background-color: var(--obsidian);
+    border: 1px solid var(--dark-gray);
+    padding: 40px;
+    transition: border-color 0.4s;
 }
 
-.card h3 {
-    font-size: 13px;
+.sec-card:hover {
+    border-color: var(--gold);
+}
+
+.sec-card h3 {
+    font-size: 14px;
     letter-spacing: 3px;
     color: var(--gold);
-    margin-bottom: 15px;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-.card p {
-    font-size: 12px;
+.sec-card p {
     color: #666;
+    font-size: 13px;
+    margin: 0;
+    text-align: justify;
 }
 
-/* ACTION BUTTONS */
-.btn {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: 1px solid #333;
-    background: transparent;
-    color: #aaa;
-    transition: 0.3s;
-}
+/* AUDIT BAR */
 
-.btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-}
-
-.danger {
-    border-color: #300;
-    color: #700;
-}
-
-.danger:hover {
-    border-color: var(--danger);
-    color: var(--danger);
-}
-
-/* STATUS PANEL */
-.status {
+.tech-audit-bar {
     margin-top: 80px;
-    padding: 30px;
-    border: 1px solid var(--line);
+    padding: 40px;
+    background: repeating-linear-gradient(45deg, #050505, #050505 10px, #000 10px, #000 20px);
+    border: 1px solid #111;
+    text-align: center;
+}
+
+.tech-audit-bar h4 {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #444;
+}
+
+/* FOOTER STATS */
+
+.node-security {
+    margin-top: 100px;
+    border-top: 1px solid #111;
+    padding-top: 40px;
+}
+
+.node-flex {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #444;
 }
 
-.status span {
-    color: #fff;
+.node-stat {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #333;
+    text-transform: uppercase;
 }
+
+.node-stat span {
+    color: #fff;
+    margin-left: 5px;
+}
+
 </style>
 </head>
 
 <body>
 
-<header class="header">
-    <h1>Security Control Center</h1>
-    <div class="live">
-        <div class="dot"></div>
-        LIVE GLOBAL MONITORING ACTIVE
+<header class="sec-header">
+
+    <h1>Security Protocols</h1>
+
+    <div class="sec-status">
+        <div class="status-dot"></div>
+        System Status: Active and Monitored
     </div>
+
 </header>
 
-<main class="container">
+<main class="sec-container">
 
-    <div class="grid">
+    <div class="sec-grid">
 
-        <div class="card">
-            <h3>Global Surveillance Grid</h3>
-            <p>Real-time monitoring of all operational nodes across Brooklyn, Lagos, Dubai, and Moscow.</p>
-            <button class="btn">View Grid</button>
+        <div class="sec-card">
+            <h3>Access Control</h3>
+            <p>
+                Access to restricted areas is managed through verified user authentication and account-level permissions to protect sensitive operations.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Threat Detection System</h3>
-            <p>AI-driven anomaly detection scanning all incoming traffic and identity access requests.</p>
-            <button class="btn">Run Scan</button>
+        <div class="sec-card">
+            <h3>Content Protection</h3>
+            <p>
+                All media, design systems, and production materials are protected against unauthorized copying, distribution, or modification.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Identity Lock Override</h3>
-            <p>Force lock any Identity ID across the global network instantly.</p>
-            <button class="btn danger">Activate Lock</button>
+        <div class="sec-card">
+            <h3>System Monitoring</h3>
+            <p>
+                Platform activity is continuously monitored to detect unusual behavior and maintain system stability across all regions.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Node Shutdown Control</h3>
-            <p>Disable any regional node in case of breach or unauthorized access attempt.</p>
-            <button class="btn danger">Shutdown Node</button>
+        <div class="sec-card">
+            <h3>Product Authentication</h3>
+            <p>
+                Physical and digital products are verified through internal validation systems to ensure authenticity and prevent counterfeiting.
+            </p>
         </div>
 
     </div>
 
-    <div class="status">
-        <div>Firewall: <span>Active</span></div>
-        <div>Encryption: <span>AES-256</span></div>
-        <div>Nodes Online: <span>4/4</span></div>
-        <div>Threat Level: <span>Low</span></div>
+    <div class="tech-audit-bar">
+        <h4>SECURITY REVIEW STATUS — ACTIVE</h4>
+    </div>
+
+    <div class="node-security">
+
+        <div class="node-flex">
+            <div class="node-stat">Firewall: <span>Enabled</span></div>
+            <div class="node-stat">Encryption: <span>Active</span></div>
+            <div class="node-stat">Monitoring: <span>Continuous</span></div>
+            <div class="node-stat">Status: <span>Secure</span></div>
+        </div>
+
     </div>
 
 </main>
