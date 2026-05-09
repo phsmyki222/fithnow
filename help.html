@@ -354,37 +354,36 @@ searchInput.addEventListener("keyup", function () {
 
 </script>
     <script>
-/* PHRINUSOMYIS SEARCH ENGINE CORE */
-(function() {
+document.addEventListener("DOMContentLoaded", function() {
+    /* MAPPED TO GITHUB REPOSITORY FILENAMES */
     const sitePages = [
-        'index.html', 
-        'luxury.html', 
-        'news.html', 
-        'press.html', 
-        'security.html', 
-        'privacy.html',
-        'terms.html',
-        'events.html'
+        'index.html',
+        'events.html',
+        'news.html',
+        'press.html',
+        'luxury.html',
+        'lions-circle.html'
     ];
 
     let globalKnowledgeBase = [];
 
-    /* CRAWL ALL PAGES ON LOAD */
+    /* CRAWLER ENGINE */
     async function crawlSite() {
         for (let url of sitePages) {
             try {
                 const response = await fetch(url);
-                if (!response.ok) throw new Error();
+                if (!response.ok) continue;
                 
                 const text = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(text, 'text/html');
                 
-                // Grabs all headings and paragraphs from each page
-                const content = doc.querySelectorAll('h1, h2, h3, p');
+                // Specifically targeting your Help Center content structure
+                const content = doc.querySelectorAll('h1, h2, h3, p, .support-text');
+                
                 content.forEach(el => {
                     const cleanText = el.innerText.trim();
-                    if (cleanText.length > 0) {
+                    if (cleanText.length > 3) {
                         globalKnowledgeBase.push({
                             text: cleanText.toLowerCase(),
                             original: cleanText,
@@ -393,53 +392,48 @@ searchInput.addEventListener("keyup", function () {
                     }
                 });
             } catch (e) {
-                console.warn(`Node ${url} is secure or unreachable.`);
+                console.warn("Access Restricted for: " + url);
             }
         }
     }
 
-    // Initialize Crawler
     crawlSite();
 
-    /* SEARCH LOGIC */
+    /* SEARCH INTERFACE */
     const searchInput = document.querySelector(".search-bar");
     const results = document.getElementById("searchResults");
     const box = document.getElementById("resultBox");
 
-    // Safety check to ensure HTML elements exist
-    if (searchInput && results && box) {
+    if (searchInput && box) {
         searchInput.addEventListener("input", function () {
             const query = this.value.toLowerCase().trim();
             
-            if (query.length < 3) { 
-                results.style.display = "none"; 
+            if (query.length < 2) { 
+                if(results) results.style.display = "none";
                 return; 
             }
 
-            // Filter through global knowledge base
+            // Filter for matches
             let matches = globalKnowledgeBase.filter(item => item.text.includes(query));
 
             if (matches.length > 0) {
-                // Remove duplicates if same text appears multiple times
-                const uniqueMatches = Array.from(new Set(matches.map(a => a.original)))
-                    .map(original => matches.find(a => a.original === original));
-
-                box.innerHTML = uniqueMatches.slice(0, 5).map(match => `
-                    <div style="margin-bottom: 20px; padding: 15px; border-left: 2px solid #D4AF37; background: #050505; text-align: left;">
-                        <span style="font-size: 9px; color: #666; letter-spacing: 2px; display: block;">SOURCE: ${match.source}</span>
-                        <p style="color: #fff; margin-top: 5px; font-size: 14px; line-height: 1.6;">${match.original}</p>
+                // Display top 5 unique results
+                box.innerHTML = matches.slice(0, 5).map(match => `
+                    <div style="margin-bottom: 12px; padding: 15px; border-left: 2px solid #D4AF37; background: rgba(255,255,255,0.03); text-align: left;">
+                        <span style="display: block; font-size: 10px; color: #D4AF37; letter-spacing: 1px; margin-bottom: 5px;">SOURCE: ${match.source}</span>
+                        <p style="color: #ffffff; margin: 0; font-size: 14px; font-family: sans-serif;">${match.original}</p>
                     </div>
                 `).join('');
             } else {
-                box.innerHTML = `<p style="text-align:center; color: #D4AF37; padding: 20px;">NO DATA FOUND IN BROOKLYN ARCHIVES</p>`;
+                box.innerHTML = `<div style="padding: 20px; color: #444; font-size: 13px; text-align: center; border: 1px dashed #222;">NO DATA MATCHES IN ARCHIVES</div>`;
             }
-            results.style.display = "block";
+            
+            if(results) results.style.display = "block";
         });
-    } else {
-        console.error("Search Engine Error: Ensure .search-bar, #searchResults, and #resultBox exist in your HTML.");
     }
-})();
+});
 </script>
+
 </body>
 </html>
 
