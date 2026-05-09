@@ -353,6 +353,93 @@ searchInput.addEventListener("keyup", function () {
 });
 
 </script>
+    <script>
+/* PHRINUSOMYIS SEARCH ENGINE CORE */
+(function() {
+    const sitePages = [
+        'index.html', 
+        'luxury.html', 
+        'news.html', 
+        'press.html', 
+        'security.html', 
+        'privacy.html',
+        'terms.html',
+        'events.html'
+    ];
 
+    let globalKnowledgeBase = [];
+
+    /* CRAWL ALL PAGES ON LOAD */
+    async function crawlSite() {
+        for (let url of sitePages) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error();
+                
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                
+                // Grabs all headings and paragraphs from each page
+                const content = doc.querySelectorAll('h1, h2, h3, p');
+                content.forEach(el => {
+                    const cleanText = el.innerText.trim();
+                    if (cleanText.length > 0) {
+                        globalKnowledgeBase.push({
+                            text: cleanText.toLowerCase(),
+                            original: cleanText,
+                            source: url.replace('.html', '').toUpperCase()
+                        });
+                    }
+                });
+            } catch (e) {
+                console.warn(`Node ${url} is secure or unreachable.`);
+            }
+        }
+    }
+
+    // Initialize Crawler
+    crawlSite();
+
+    /* SEARCH LOGIC */
+    const searchInput = document.querySelector(".search-bar");
+    const results = document.getElementById("searchResults");
+    const box = document.getElementById("resultBox");
+
+    // Safety check to ensure HTML elements exist
+    if (searchInput && results && box) {
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase().trim();
+            
+            if (query.length < 3) { 
+                results.style.display = "none"; 
+                return; 
+            }
+
+            // Filter through global knowledge base
+            let matches = globalKnowledgeBase.filter(item => item.text.includes(query));
+
+            if (matches.length > 0) {
+                // Remove duplicates if same text appears multiple times
+                const uniqueMatches = Array.from(new Set(matches.map(a => a.original)))
+                    .map(original => matches.find(a => a.original === original));
+
+                box.innerHTML = uniqueMatches.slice(0, 5).map(match => `
+                    <div style="margin-bottom: 20px; padding: 15px; border-left: 2px solid #D4AF37; background: #050505; text-align: left;">
+                        <span style="font-size: 9px; color: #666; letter-spacing: 2px; display: block;">SOURCE: ${match.source}</span>
+                        <p style="color: #fff; margin-top: 5px; font-size: 14px; line-height: 1.6;">${match.original}</p>
+                    </div>
+                `).join('');
+            } else {
+                box.innerHTML = `<p style="text-align:center; color: #D4AF37; padding: 20px;">NO DATA FOUND IN BROOKLYN ARCHIVES</p>`;
+            }
+            results.style.display = "block";
+        });
+    } else {
+        console.error("Search Engine Error: Ensure .search-bar, #searchResults, and #resultBox exist in your HTML.");
+    }
+})();
+</script>
 </body>
 </html>
+
