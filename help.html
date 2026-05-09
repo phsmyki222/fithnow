@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HELP CENTER | PHRINUSOMYIS</title>
+
+<style>
+
+:root {
+    --gold: #D4AF37;
+    --obsidian: #050505;
+    --border: #1a1a1a;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.help-header {
+    padding: 120px 20px 80px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(to bottom, #0a0a0a, #000);
+}
+
+.help-logo {
+    width: 80px;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.help-header h1 {
+    font-size: 24px;
+    letter-spacing: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.help-status {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 25px;
+    display: block;
+}
+
+/* LANGUAGE SWITCHER */
+
+.language-bar {
+    margin-top: 30px;
+}
+
+#languageSwitcher {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
+
+#languageSwitcher option {
+    background: #000;
+    color: #fff;
+}
+
+/* SEARCH */
+
+.search-wrap {
+    max-width: 600px;
+    margin: -30px auto 0;
+    padding: 0 20px;
+}
+
+.search-bar {
+    width: 100%;
+    background-color: var(--obsidian);
+    border: 1px solid var(--gold);
+    padding: 20px 30px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    outline: none;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.search-bar::placeholder {
+    color: #555;
+}
+
+/* CONTAINER */
+
+.help-container {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px 150px;
+}
+
+/* GRID */
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+
+.help-card {
+    background-color: #050505;
+    border: 1px solid var(--border);
+    padding: 50px 40px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.help-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.help-card h3 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.help-card p {
+    color: #555;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* SUPPORT SECTION */
+
+.escalation-zone {
+    margin-top: 100px;
+    padding: 60px;
+    border: 1px solid #111;
+    text-align: center;
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+}
+
+.escalation-zone h2 {
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.escalation-zone p {
+    color: #444;
+    font-size: 13px;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: var(--gold);
+    color: #000;
+}
+
+/* GOOGLE TRANSLATE HIDE */
+
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-icon,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-text-highlight {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="help-header">
+
+    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS" class="help-logo">
+
+    <h1>Help Center</h1>
+
+    <span class="help-status">
+        Global Support Services — Active
+    </span>
+
+    <div class="language-bar">
+
+        <select id="languageSwitcher">
+            <option value="en">English (EN)</option>
+            <option value="fr">Français (FR)</option>
+            <option value="es">Español (ES)</option>
+            <option value="de">Deutsch (DE)</option>
+            <option value="ar">العربية (AR)</option>
+            <option value="zh">中文 (ZH)</option>
+            <option value="ru">Русский (RU)</option>
+            <option value="pt">Português (PT)</option>
+            <option value="ja">日本語 (JA)</option>
+            <option value="ko">한국어 (KO)</option>
+            <option value="it">Italiano (IT)</option>
+            <option value="nl">Nederlands (NL)</option>
+            <option value="tr">Türkçe (TR)</option>
+            <option value="hi">हिन्दी (HI)</option>
+            <option value="id">Bahasa Indonesia (ID)</option>
+            <option value="vi">Tiếng Việt (VI)</option>
+            <option value="th">ไทย (TH)</option>
+            <option value="pl">Polski (PL)</option>
+            <option value="sv">Svenska (SV)</option>
+            <option value="fi">Suomi (FI)</option>
+            <option value="da">Dansk (DA)</option>
+        </select>
+
+    </div>
+
+</header>
+
+<div class="search-wrap">
+    <input type="text" class="search-bar" placeholder="Search Help Topics">
+</div>
+
+<main class="help-container">
+
+    <div class="help-grid">
+
+        <div class="help-card">
+            <h3>Account Access</h3>
+            <p>
+                Help with account login, password recovery, and access management.
+            </p>
+        </div>
+
+        <div class="help-card">
+            <h3>Product Verification</h3>
+            <p>
+                Information about verifying registered products and purchase records.
+            </p>
+        </div>
+
+        <div class="help-card">
+            <h3>Event Support</h3>
+            <p>
+                Assistance for event access, schedules, media support, and venue information.
+            </p>
+        </div>
+
+        <div class="help-card">
+            <h3>Ticket Assistance</h3>
+            <p>
+                Support for ticket purchases, confirmations, and event-related inquiries.
+            </p>
+        </div>
+
+    </div>
+
+    <section class="escalation-zone">
+
+        <h2>Priority Support</h2>
+
+        <p>
+            For urgent support requests requiring direct assistance from our operations team.
+        </p>
+
+        <a href="mailto:ops@PHRINUSOMYIS.com" class="contact-btn">
+            Contact Support
+        </a>
+
+    </section>
+
+</main>
+
+<div id="google_translate_element" style="display:none;"></div>
+
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+
+    const savedLang = localStorage.getItem("site_lang");
+
+    if(savedLang) {
+        setTimeout(() => {
+            changeLanguage(savedLang);
+        }, 1000);
+    }
+}
+
+function changeLanguage(lang) {
+
+    const select = document.querySelector(".goog-te-combo");
+
+    if(select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+        localStorage.setItem("site_lang", lang);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("languageSwitcher")
+    .addEventListener("change", function () {
+        changeLanguage(this.value);
+    });
+
+});
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
