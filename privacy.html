@@ -1,246 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Center | PHRINUSOMYIS</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --obsidian: #050505;
+            --border: #1a1a1a;
+            --text-gray: #cccccc;
+            --danger: #ff3e3e;
+        }
 
-<title>PRIVACY CHOICES | PHRINUSOMYIS</title>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-<style>
+        /* HEADER & UTILITY */
+        .language-wrap {
+            padding: 20px;
+            text-align: right;
+        }
 
-:root {
-    --gold: #D4AF37;
-    --obsidian: #050505;
-    --border: #1a1a1a;
-}
+        #languageSwitcher {
+            background: #000;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 5px 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
+        .logo {
+            display: block;
+            margin: 40px auto;
+            max-width: 280px;
+        }
 
-/* HEADER */
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
 
-.choices-header {
-    padding: 120px 20px 60px;
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-}
+        .header-line {
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 60px;
+        }
 
-.choices-header h1 {
-    font-size: 22px;
-    letter-spacing: 12px;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 0;
-}
+        /* POLICY SECTIONS */
+        .policy-section {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
 
-.choices-subtitle {
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-top: 20px;
-    display: block;
-}
+        h2 {
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-left: 3px solid var(--gold);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
 
-/* CONTAINER */
+        p {
+            color: var(--text-gray);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
 
-.choices-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 80px 20px 150px;
-}
+        .policy-list {
+            list-style: none;
+            padding: 0;
+        }
 
-.intro-text {
-    color: #666;
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 80px;
-}
+        .policy-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: #ffffff;
+        }
 
-/* ROW */
+        .policy-list li::before {
+            content: '●';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+        }
 
-.choice-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0;
-    border-bottom: 1px solid var(--border);
-}
+        /* PRIVACY CHOICES SECTION */
+        .choices-section {
+            background-color: var(--obsidian);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 80px 0;
+            margin-top: 100px;
+        }
 
-.choice-info h3 {
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0 0 10px;
-}
+        .choices-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.choice-info p {
-    font-size: 12px;
-    color: #555;
-    margin: 0;
-}
+        .choices-header-inner {
+            text-align: center;
+            margin-bottom: 60px;
+        }
 
-/* SWITCH */
+        .choices-subtitle {
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
+        }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-}
+        .intro-text {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
+        .choice-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #1a1a1a;
-    transition: .4s;
-    border: 1px solid #333;
-}
+        .choice-info h3 {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 3px;
-    bottom: 3px;
-    background-color: #444;
-    transition: .4s;
-}
+        .choice-info p {
+            font-size: 12px;
+            color: #555;
+            margin: 0;
+        }
 
-input:checked + .slider {
-    border-color: var(--gold);
-}
+        /* SWITCH TOGGLE */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
 
-input:checked + .slider:before {
-    transform: translateX(26px);
-    background-color: var(--gold);
-}
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
 
-/* DELETE SECTION */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #1a1a1a;
+            transition: .4s;
+            border: 1px solid #333;
+        }
 
-.delete-protocol {
-    margin-top: 100px;
-    text-align: center;
-    padding: 40px;
-    border: 1px solid #1a1a1a;
-    background-color: #050505;
-}
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 3px;
+            bottom: 3px;
+            background-color: #444;
+            transition: .4s;
+        }
 
-.delete-protocol h4 {
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: #ff3e3e;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
+        input:checked + .slider {
+            border-color: var(--gold);
+        }
 
-.delete-btn {
-    background: transparent;
-    border: 1px solid #300;
-    color: #500;
-    padding: 12px 30px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        input:checked + .slider:before {
+            transform: translateX(26px);
+            background-color: var(--gold);
+        }
 
-.delete-btn:hover {
-    border-color: #ff3e3e;
-    color: #ff3e3e;
-}
+        /* DELETE SECTION */
+        .delete-protocol {
+            margin-top: 80px;
+            text-align: center;
+            padding: 40px;
+            border: 1px solid #300;
+            background-color: #050000;
+        }
 
-</style>
+        .delete-protocol h4 {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--danger);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .delete-btn {
+            background: transparent;
+            border: 1px solid #300;
+            color: #500;
+            padding: 12px 30px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .delete-btn:hover {
+            border-color: var(--danger);
+            color: var(--danger);
+            background: rgba(255, 62, 62, 0.05);
+        }
+
+        /* FOOTER */
+        .phr-main-footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 80px 20px 40px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .phr-footer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+
+        @media (min-width: 768px) {
+            .phr-footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .phr-footer-section h3 {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .phr-footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .phr-footer-section li {
+            margin-bottom: 15px;
+        }
+
+        .phr-footer-section a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .phr-footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .phr-global-bar {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .phr-global-bar h3 {
+            font-size: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .phr-hq-label {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .footer-note {
+            margin-top: 50px;
+            text-align: center;
+            color: #444;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="choices-header">
+<div class="language-wrap">
+    <select id="languageSwitcher">
+        <option value="en">English (EN)</option>
+        <option value="fr">Français (FR)</option>
+        <option value="es">Español (ES)</option>
+        <option value="de">Deutsch (DE)</option>
+        <option value="ar">العربية (AR)</option>
+        <option value="zh">中文 (ZH)</option>
+        <option value="ru">Русский (RU)</option>
+        <option value="pt">Português (PT)</option>
+        <option value="ja">日本語 (JA)</option>
+        <option value="ko">한국어 (KO)</option>
+    </select>
+</div>
 
-    <h1>Privacy Choices</h1>
+<img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="logo">
 
-    <span class="choices-subtitle">
-        Data and Account Preferences
-    </span>
+<h1>Privacy Mandate</h1>
+<div class="header-line"></div>
 
-</header>
-
-<main class="choices-container">
-
-    <p class="intro-text">
-        Manage how your information is used across the PHRINUSOMYIS platform. You can adjust settings at any time.
+<!-- SECTION 01-04: POLICY -->
+<section class="policy-section">
+    <h2>01. The Standard of Sovereignty</h2>
+    <p>
+        PHRINUSOMYIS operates at the summit of global entertainment and luxury. To maintain the elite status of our productions and the security of our patrons, we enforce a strict mandate on data sovereignty.
     </p>
+    <ul class="policy-list">
+        <li><strong>Elite Identification:</strong> We secure only the essential credentials required for global stadium access and Circle membership.</li>
+        <li><strong>Operational Precision:</strong> Digital footprinting is used strictly to synchronize international broadcasts and stadium logistics.</li>
+        <li><strong>Asset Protection:</strong> All transaction records for luxury collectibles are held under high-tier corporate encryption.</li>
+    </ul>
+</section>
 
-    <div class="choice-row">
+<section class="policy-section">
+    <h2>02. Zero-Trade Commitment</h2>
+    <p>
+        Unlike standard platforms, PHRINUSOMYIS does not trade in the data of its citizens. We do not sell or lease any personal information to outside marketing firms or data brokers.
+    </p>
+    <p>
+        Your information serves one purpose: the flawless execution of the PHRINUSOMYIS experience across our global nodes.
+    </p>
+</section>
 
-        <div class="choice-info">
-            <h3>Asset Verification</h3>
-            <p>Allow verification of registered product serial numbers linked to your account.</p>
+<section class="policy-section">
+    <h2>03. Global Command & Security</h2>
+    <p>
+        Our infrastructure is built to withstand the demands of international power. With headquarters in Brooklyn and strategic hubs in Dubai, Moscow, and Lagos, we utilize advanced defensive systems to keep user data sealed from unauthorized reach.
+    </p>
+</section>
+
+<section class="policy-section">
+    <h2>04. International Jurisdiction</h2>
+    <p>
+        By engaging with PHRINUSOMYIS, you acknowledge that your data moves within our global circuit. We uphold a singular, high-level privacy standard that governs all territories, from West Africa to the United States.
+    </p>
+</section>
+
+<!-- PRIVACY CHOICES INTERACTIVE SECTION -->
+<section class="choices-section" id="preferences">
+    <div class="choices-container">
+        <div class="choices-header-inner">
+            <h2 style="border:none; text-align:center; padding:0;">Privacy Choices</h2>
+            <span class="choices-subtitle">Data and Account Preferences</span>
         </div>
 
-        <label class="switch">
-            <input type="checkbox" checked>
-            <span class="slider"></span>
-        </label>
-
-    </div>
-
-    <div class="choice-row">
-
-        <div class="choice-info">
-            <h3>Location Preferences</h3>
-            <p>Enable location-based settings for improved regional experience and delivery accuracy.</p>
-        </div>
-
-        <label class="switch">
-            <input type="checkbox" checked>
-            <span class="slider"></span>
-        </label>
-
-    </div>
-
-    <div class="choice-row">
-
-        <div class="choice-info">
-            <h3>Content Personalization</h3>
-            <p>Receive updates and recommendations based on your activity and preferences.</p>
-        </div>
-
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider"></span>
-        </label>
-
-    </div>
-
-    <div class="delete-protocol">
-
-        <h4>Account Removal</h4>
-
-        <p style="font-size:11px; color:#444; margin-bottom:25px;">
-            Permanently delete your account and all associated data. This action cannot be reversed.
+        <p class="intro-text">
+            Manage how your information is used across the PHRINUSOMYIS platform. You can adjust settings at any time.
         </p>
 
-        <button class="delete-btn">Delete Account</button>
+        <div class="choice-row">
+            <div class="choice-info">
+                <h3>Asset Verification</h3>
+                <p>Allow verification of registered product serial numbers linked to your account.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" checked class="preference-toggle" data-name="Asset Verification">
+                <span class="slider"></span>
+            </label>
+        </div>
 
+        <div class="choice-row">
+            <div class="choice-info">
+                <h3>Location Preferences</h3>
+                <p>Enable location-based settings for improved regional experience and delivery accuracy.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" checked class="preference-toggle" data-name="Location Preferences">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="choice-row">
+            <div class="choice-info">
+                <h3>Content Personalization</h3>
+                <p>Receive updates and recommendations based on your activity and preferences.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" class="preference-toggle" data-name="Content Personalization">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="delete-protocol">
+            <h4>Account Removal</h4>
+            <p style="font-size:11px; color:#444; margin-bottom:25px;">
+                Permanently delete your account and all associated data. This action cannot be reversed.
+            </p>
+            <button class="delete-btn" id="deleteAccountBtn">Delete Account</button>
+        </div>
+    </div>
+</section>
+
+<footer class="phr-main-footer">
+    <div class="phr-footer-grid">
+        <div class="phr-footer-section">
+            <h3>PHRINUSOMYIS.COM</h3>
+            <ul>
+                <li><a href="#">Latest News</a></li>
+                <li><a href="#">Press Release</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">PHRINUSOMYIS Luxury</a></li>
+            </ul>
+        </div>
+        <div class="phr-footer-section">
+            <h3>ABOUT</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Copyright</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#preferences">Privacy Choices</a></li>
+            </ul>
+        </div>
+        <div class="phr-footer-section">
+            <h3>HELP</h3>
+            <ul>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Closed Captions</a></li>
+            </ul>
+        </div>
+        <div class="phr-footer-section">
+            <h3>LUXURY</h3>
+            <ul>
+                <li><a href="#">Luxury Identity</a></li>
+                <li><a href="#">PHRINUSOMYIS CIRCLE</a></li>
+                <li><a href="#">Global Impact</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
 
-</main>
+    <div class="phr-global-bar">
+        <h3>PHRINUSOMYIS OFFICE</h3>
+        <p style="color: #666; font-size: 13px; letter-spacing: 1px;">
+            <span class="phr-hq-label">BROOKLYN (HQ)</span> | MOSCOW | DUBAI | LAGOS 
+        </p>
+    </div>
+
+    <div class="footer-note">
+        © 2026 PHRINUSOMYIS. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+
+<script>
+    // 1. Language Switcher Logic
+    document.getElementById('languageSwitcher').addEventListener('change', function() {
+        const lang = this.value;
+        console.log("Language shifted to: " + lang);
+        // In a real application, this would trigger a translation function or page reload
+        alert("Language preference updated to " + lang.toUpperCase());
+    });
+
+    // 2. Preference Toggles feedback
+    const toggles = document.querySelectorAll('.preference-toggle');
+    toggles.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            const settingName = this.getAttribute('data-name');
+            const status = this.checked ? "ENABLED" : "DISABLED";
+            console.log(`Setting [${settingName}] is now ${status}`);
+            
+            // Optional: visual pulse effect on change
+            this.parentElement.style.opacity = "0.7";
+            setTimeout(() => { this.parentElement.style.opacity = "1"; }, 200);
+        });
+    });
+
+    // 3. Delete Account Security Protocol
+    document.getElementById('deleteAccountBtn').addEventListener('click', function() {
+        const confirmation = confirm("CRITICAL: You are about to initiate the Account Removal Protocol. This action is permanent and cannot be reversed. Proceed?");
+        
+        if (confirmation) {
+            const secondAuth = confirm("Final Authorization: Confirm permanent deletion of all associated PHRINUSOMYIS data?");
+            if (secondAuth) {
+                alert("Account removal protocol initiated. You will be redirected shortly.");
+                // Implementation for deletion would go here
+            }
+        }
+    });
+
+    // 4. Smooth scroll for footer links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
