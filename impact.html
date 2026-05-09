@@ -1,240 +1,802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE LION'S CIRCLE | PHRINUSOMYIS</title>
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --obsidian: #050505;
-            --border: rgba(212, 175, 55, 0.2);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Times New Roman', serif;
-            overflow-x: hidden;
-        }
+<title>THE LION'S CIRCLE | PHRINUSOMYIS</title>
 
-        /* CINEMATIC VIDEO ENGINE */
-        .video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: -1;
-            filter: brightness(0.4);
-        }
+<style>
 
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+:root{
+    --gold:#D4AF37;
+    --black:#000000;
+    --obsidian:#050505;
+    --gray:#777;
+    --light:#d6d6d6;
+    --border:rgba(212,175,55,0.18);
+}
 
-        /* NAVIGATION OVERLAY */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 40px;
-            display: flex;
-            justify-content: space-between;
-            box-sizing: border-box;
-            z-index: 100;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .logo-text {
-            letter-spacing: 12px;
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* SCROLL SECTIONS */
-        section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            box-sizing: border-box;
-        }
+body{
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+    font-family:Arial,sans-serif;
+}
 
-        .hero-img {
-            max-width: 450px;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
-            border: 1px solid var(--border);
-            margin-bottom: 30px;
-        }
+/* VIDEO BACKGROUND */
 
-        h1 {
-            font-size: clamp(30px, 6vw, 80px);
-            letter-spacing: 25px;
-            text-transform: uppercase;
-            margin: 0;
-            color: var(--gold);
-        }
+.video-container{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+}
 
-        .manifesto {
-            max-width: 600px;
-            font-size: 18px;
-            letter-spacing: 2px;
-            line-height: 2;
-            color: #aaa;
-            font-style: italic;
-        }
+.video-container::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)),
+    radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 40%);
+}
 
-        /* AUTHENTICATION SYSTEM (The $20k Experience) */
-        .ledger-box {
-            background: rgba(5, 5, 5, 0.9);
-            border: 1px solid var(--gold);
-            padding: 60px;
-            max-width: 700px;
-            width: 100%;
-            backdrop-filter: blur(10px);
-        }
+video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(0.45);
+}
 
-        .ledger-header {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-size: 12px;
-            margin-bottom: 40px;
-            display: block;
-        }
+/* NAVIGATION */
 
-        .input-line {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border);
-            color: #fff;
-            padding: 20px 0;
-            font-size: 16px;
-            letter-spacing: 4px;
-            text-align: center;
-            margin-bottom: 30px;
-            outline: none;
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:35px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:999;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.75), transparent);
+}
 
-        .input-line:focus {
-            border-bottom-color: var(--gold);
-        }
+.logo-text{
+    letter-spacing:10px;
+    font-size:12px;
+    text-transform:uppercase;
+    font-weight:900;
+}
 
-        /* ACTION BUTTON */
-        .procure-btn {
-            background: var(--gold);
-            color: #000;
-            border: none;
-            padding: 25px 80px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            cursor: pointer;
-            transition: 0.5s;
-            margin-top: 20px;
-        }
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
 
-        .procure-btn:hover {
-            background: #fff;
-            letter-spacing: 10px;
-        }
+.status-dot{
+    width:8px;
+    height:8px;
+    background:var(--gold);
+    border-radius:50%;
+    box-shadow:0 0 15px var(--gold);
+}
 
-        /* BOTTLE COUNTER */
-        .allocation {
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: #444;
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
+/* HERO SECTION */
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            font-size: 10px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            animation: pulse 2s infinite;
-        }
+.hero-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:140px 8%;
+}
 
-        @keyframes pulse {
-            0% { opacity: 0.2; }
-            50% { opacity: 1; }
-            100% { opacity: 0.2; }
-        }
-    </style>
+.hero-grid{
+    width:100%;
+    max-width:1400px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+@media(max-width:950px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+
+.product-frame{
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.glow-ring{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.2);
+    animation:spin 20s linear infinite;
+}
+
+.glow-ring::after{
+    content:"";
+    position:absolute;
+    inset:35px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.08);
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.hero-img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:430px;
+    filter:drop-shadow(0 20px 80px rgba(0,0,0,0.9));
+    transition:0.6s;
+}
+
+.hero-img:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.hero-content small{
+    color:var(--gold);
+    letter-spacing:5px;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:25px;
+    font-size:11px;
+}
+
+.hero-content h1{
+    font-size:clamp(45px,8vw,100px);
+    text-transform:uppercase;
+    letter-spacing:18px;
+    line-height:1;
+    margin-bottom:30px;
+    font-weight:900;
+}
+
+.hero-content p{
+    max-width:620px;
+    color:#bdbdbd;
+    font-size:17px;
+    line-height:2;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+    padding:18px 45px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:11px;
+    cursor:pointer;
+    transition:0.4s;
+    text-decoration:none;
+}
+
+.hero-btn.primary{
+    background:var(--gold);
+    color:#000;
+}
+
+.hero-btn.primary:hover{
+    background:#fff;
+}
+
+.hero-btn.secondary{
+    border:1px solid var(--border);
+    color:#fff;
+    backdrop-filter:blur(10px);
+}
+
+.hero-btn.secondary:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+/* FEATURES */
+
+.features{
+    background:rgba(0,0,0,0.88);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:120px 8%;
+}
+
+.features-grid{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+@media(max-width:1000px){
+
+    .features-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .features-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+.feature-card{
+    background:linear-gradient(to bottom,#080808,#000);
+    border:1px solid var(--border);
+    padding:50px 30px;
+    transition:0.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+}
+
+.feature-card h3{
+    color:var(--gold);
+    font-size:14px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.feature-card p{
+    color:#8f8f8f;
+    line-height:1.9;
+    font-size:14px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    padding:140px 8%;
+}
+
+.experience-wrap{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+@media(max-width:950px){
+
+    .experience-wrap{
+        grid-template-columns:1fr;
+    }
+
+}
+
+.experience-image img{
+    width:100%;
+    border:1px solid var(--border);
+}
+
+.experience-content h2{
+    font-size:32px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    margin-bottom:30px;
+    color:var(--gold);
+}
+
+.experience-content p{
+    color:#b1b1b1;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.detail-list{
+    list-style:none;
+    margin-top:35px;
+}
+
+.detail-list li{
+    margin-bottom:15px;
+    color:#8a8a8a;
+    letter-spacing:1px;
+    position:relative;
+    padding-left:25px;
+}
+
+.detail-list li::before{
+    content:"●";
+    position:absolute;
+    left:0;
+    color:var(--gold);
+}
+
+/* LEDGER */
+
+.ledger-section{
+    padding:140px 8%;
+    background:rgba(0,0,0,0.92);
+}
+
+.ledger-box{
+    max-width:900px;
+    margin:auto;
+    border:1px solid var(--gold);
+    padding:70px 50px;
+    background:rgba(5,5,5,0.95);
+    backdrop-filter:blur(15px);
+    text-align:center;
+}
+
+.ledger-header{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:6px;
+    font-size:12px;
+    display:block;
+    margin-bottom:25px;
+}
+
+.ledger-box h2{
+    font-size:40px;
+    letter-spacing:10px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.ledger-text{
+    color:#777;
+    margin-bottom:50px;
+    line-height:2;
+}
+
+.input-line{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--border);
+    color:#fff;
+    padding:22px 0;
+    margin-bottom:30px;
+    text-align:center;
+    letter-spacing:4px;
+    font-size:13px;
+    outline:none;
+}
+
+.input-line:focus{
+    border-bottom-color:var(--gold);
+}
+
+.procure-btn{
+    width:100%;
+    background:var(--gold);
+    color:#000;
+    border:none;
+    padding:24px;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-weight:900;
+    cursor:pointer;
+    transition:0.5s;
+    margin-top:20px;
+}
+
+.procure-btn:hover{
+    background:#fff;
+    letter-spacing:8px;
+}
+
+.allocation{
+    margin-top:30px;
+    color:#555;
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+/* TESTIMONIAL */
+
+.quote-section{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.quote-section h2{
+    color:var(--gold);
+    letter-spacing:8px;
+    text-transform:uppercase;
+    margin-bottom:35px;
+}
+
+.quote{
+    max-width:850px;
+    margin:auto;
+    font-size:26px;
+    line-height:2;
+    color:#d0d0d0;
+    font-weight:300;
+}
+
+.quote-author{
+    margin-top:40px;
+    color:#666;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-size:11px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:80px 20px 60px;
+    background:#000;
+    text-align:center;
+}
+
+.footer-logo{
+    letter-spacing:10px;
+    font-size:18px;
+    text-transform:uppercase;
+    margin-bottom:35px;
+    display:block;
+    font-weight:900;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.footer-links a{
+    color:#777;
+    text-decoration:none;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+}
+
+.footer-copy{
+    color:#333;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+</style>
 </head>
+
 <body>
 
-    <!-- SECTION 1: THE VISUAL VORTEX -->
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
-            <source src="perfume-series-luxury.mp4" type="video/mp4">
-        </video>
+<!-- VIDEO -->
+<div class="video-container">
+
+    <video autoplay muted loop playsinline>
+        <source src="perfume-series-luxury.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+<!-- NAV -->
+<nav>
+
+    <span class="logo-text">
+        PHRINUSOMYIS
+    </span>
+
+    <div class="nav-right">
+
+        <div class="status-dot"></div>
+
+        <span class="logo-text" style="color:var(--gold)">
+            GLOBAL EDITION 001 / 500
+        </span>
+
     </div>
 
-    <nav>
-        <span class="logo-text">PHRINUSOMYIS</span>
-        <span class="logo-text" style="color:var(--gold)">001/500</span>
-    </nav>
+</nav>
 
-    <!-- SECTION 2: THE IMAGE -->
-    <section>
-        <img src="phrinusomyis_perfume_front.png" alt="Sovereign Scent" class="hero-img">
-        <h1>Sovereign</h1>
-        <p class="manifesto">It is not a fragrance. It is a certificate of existence. A liquid asset for the Lion’s Circle.</p>
-        <div class="scroll-indicator">Scroll to Authenticate</div>
-    </section>
+<!-- HERO -->
+<section class="hero-section">
 
-    <!-- SECTION 3: THE LEDGER (VERIFICATION) -->
-    <section>
-        <div class="ledger-box">
-            <span class="ledger-header">Asset Ledger Verification</span>
-            <p style="font-size:14px; color:#666; margin-bottom:40px;">To acquire or verify a bottle, enter your Circle Credentials. This transmission is encrypted.</p>
-            
-            <input type="text" class="input-line" placeholder="TAB ID / MEMBER NAME">
-            <input type="text" class="input-line" placeholder="BOTTLE ALLOCATION CODE">
-            
-            <button class="procure-btn" onclick="initiateVault()">Initiate Procurement</button>
-            <div class="allocation">Current Global Allocation: 001/500 remaining</div>
+    <div class="hero-grid">
+
+        <div class="product-frame">
+
+            <div class="glow-ring"></div>
+
+            <img src="phrinusomyis_perfume_front.png" alt="PHRINUSOMYIS Perfume" class="hero-img">
+
         </div>
-    </section>
 
-    <!-- SECTION 4: COMPLIANCE & LEGAL -->
-    <section style="background:rgba(0,0,0,0.95)">
-        <h2 style="letter-spacing:10px; color:var(--gold)">COMPLIANCE</h2>
-        <div style="max-width:800px; text-align:left; color:#333; font-size:12px; line-height:2;">
-            <p>PHRINUSOMYIS SOVEREIGN is a verified ledger asset. Each bottle contains 100ml of pure distilled power, hand-casked in charred obsidian. By initiating procurement, the patron acknowledges that this asset is non-transferable without Circle Authorization. Security protocols are active. All data remains within the Phrinusomyis circuit.</p>
+        <div class="hero-content">
+
+            <small>
+                The Lion's Circle Collection
+            </small>
+
+            <h1>
+                Sovereign
+            </h1>
+
+            <p>
+                Created for the PHRINUSOMYIS Circle, SOVEREIGN is a limited luxury fragrance connected to identity, status, and modern international culture. Each bottle carries its own verification allocation within the official collection.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#ledger" class="hero-btn primary">
+                    Verify Allocation
+                </a>
+
+                <a href="#experience" class="hero-btn secondary">
+                    Explore Experience
+                </a>
+
+            </div>
+
         </div>
-        <p style="margin-top:100px; font-size:10px; letter-spacing:5px; color:#111;">© 2026 PHRINUSOMYIS GLOBAL CIRCUIT</p>
-    </section>
 
-    <script>
-        function initiateVault() {
-            const btn = document.querySelector('.procure-btn');
-            btn.innerHTML = "VERIFYING LEDGER...";
-            setTimeout(() => {
-                alert("IDENTITY DETECTED. Standby for secure checkout transmission.");
-                btn.innerHTML = "ACCESS GRANTED";
-            }, 2000);
-        }
+    </div>
 
-        // Automatic Replay / Sync Logic
-        const vid = document.querySelector('video');
-        vid.addEventListener('ended', function() {
-            vid.play();
-        });
-    </script>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <h3>
+                Limited Allocation
+            </h3>
+
+            <p>
+                Only 500 official bottles released worldwide as part of the Lion's Circle collection.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <h3>
+                Verified Identity
+            </h3>
+
+            <p>
+                Each bottle includes an official allocation code connected to the PHRINUSOMYIS ledger system.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <h3>
+                Luxury Packaging
+            </h3>
+
+            <p>
+                Designed with premium presentation materials inspired by modern international fashion houses.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <h3>
+                Global Delivery
+            </h3>
+
+            <p>
+                International distribution support for approved regions and verified Circle members.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+
+    <div class="experience-wrap">
+
+        <div class="experience-content">
+
+            <h2>
+                The Experience
+            </h2>
+
+            <p>
+                SOVEREIGN was designed to feel cinematic, modern, and exclusive. The experience combines luxury presentation, collectible identity systems, and high-end visual storytelling.
+            </p>
+
+            <p>
+                From the packaging to the verification process, every detail is structured to create a premium international product experience.
+            </p>
+
+            <ul class="detail-list">
+
+                <li>Luxury collector presentation</li>
+
+                <li>Official verification allocation</li>
+
+                <li>International Circle access system</li>
+
+                <li>Modern cinematic campaign design</li>
+
+                <li>Premium fragrance identity</li>
+
+            </ul>
+
+        </div>
+
+        <div class="experience-image">
+
+            <img src="perfume-luxury-detail.jpg" alt="Luxury Perfume">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LEDGER -->
+<section class="ledger-section" id="ledger">
+
+    <div class="ledger-box">
+
+        <span class="ledger-header">
+            Official Verification System
+        </span>
+
+        <h2>
+            Verify Allocation
+        </h2>
+
+        <p class="ledger-text">
+            Enter your member identification details and bottle allocation code to continue with official verification and secure purchase access.
+        </p>
+
+        <input type="text" class="input-line" placeholder="MEMBER NAME / ID">
+
+        <input type="text" class="input-line" placeholder="ALLOCATION CODE">
+
+        <button class="procure-btn" onclick="initiateVault()">
+            Continue Verification
+        </button>
+
+        <div class="allocation">
+            Current Global Allocation: 001 / 500 Remaining
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+
+    <h2>
+        The Lion's Circle
+    </h2>
+
+    <p class="quote">
+        “Luxury is not only what you wear. It is the atmosphere around your name, your presence, and your identity.”
+    </p>
+
+    <div class="quote-author">
+        PHRINUSOMYIS
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <span class="footer-logo">
+        PHRINUSOMYIS
+    </span>
+
+    <div class="footer-links">
+
+        <a href="#">Collection</a>
+
+        <a href="#">Circle</a>
+
+        <a href="#">Luxury</a>
+
+        <a href="#">Global Access</a>
+
+        <a href="#">Contact</a>
+
+    </div>
+
+    <p class="footer-copy">
+        © 2026 PHRINUSOMYIS GLOBAL CIRCUIT
+    </p>
+
+</footer>
+
+<script>
+
+function initiateVault(){
+
+    const btn = document.querySelector('.procure-btn');
+
+    btn.innerHTML = "VERIFYING...";
+
+    setTimeout(() => {
+
+        btn.innerHTML = "ACCESS GRANTED";
+
+        alert("Verification complete. Secure access confirmed.");
+
+    }, 2200);
+
+}
+
+const video = document.querySelector('video');
+
+video.addEventListener('ended', function(){
+
+    video.play();
+
+});
+
+</script>
 
 </body>
-</html>
+    </html>
