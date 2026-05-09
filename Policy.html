@@ -232,50 +232,6 @@ body > .skiptranslate{
     font-size:18px;
 }
 
-/* COUNTDOWN GRID */
-
-.timer-grid{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin:50px 0;
-    flex-wrap:wrap;
-}
-
-.time-box{
-    background:rgba(15,15,15,0.9);
-    padding:20px;
-    border-radius:6px;
-    border:1px solid rgba(212,175,55,0.25);
-    min-width:100px;
-    text-align:center;
-    backdrop-filter:blur(10px);
-}
-
-.time-box span{
-    font-size:3rem;
-    font-weight:900;
-    display:block;
-}
-
-.time-box label{
-    font-size:0.6rem;
-    text-transform:uppercase;
-    color:#888;
-    letter-spacing:1px;
-}
-
-.gold-timer span{
-    color:var(--gold);
-    text-shadow:0 0 15px rgba(212,175,55,0.5);
-}
-
-.rainbow-timer span{
-    background:linear-gradient(to bottom, #FF0000 50%, #00FFFF 50%);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
 /* CONTACT */
 
 .legal-contact{
@@ -340,19 +296,6 @@ body > .skiptranslate{
         padding:45px 25px;
     }
 
-    .timer-grid{
-        gap:10px;
-    }
-
-    .time-box{
-        min-width:80px;
-        padding:15px;
-    }
-
-    .time-box span{
-        font-size:2rem;
-    }
-
     .language-wrap{
         top:20px;
         right:20px;
@@ -412,10 +355,6 @@ body > .skiptranslate{
     <h1>Privacy Policy</h1>
 
     <div class="header-line"></div>
-
-    <span class="update-tag">
-        Effective Date — May 09, 2026
-    </span>
 
 </header>
 
@@ -499,31 +438,6 @@ body > .skiptranslate{
 
     </section>
 
-    <!-- OPTIONAL TIMER -->
-    <div class="timer-grid">
-
-        <div class="time-box gold-timer">
-            <span>24</span>
-            <label>Days</label>
-        </div>
-
-        <div class="time-box gold-timer">
-            <span>08</span>
-            <label>Hours</label>
-        </div>
-
-        <div class="time-box rainbow-timer">
-            <span>12</span>
-            <label>Minutes</label>
-        </div>
-
-        <div class="time-box rainbow-timer">
-            <span>59</span>
-            <label>Seconds</label>
-        </div>
-
-    </div>
-
     <section class="legal-contact">
 
         <h3>Contact</h3>
@@ -557,7 +471,6 @@ function googleTranslateElementInit(){
         'google_translate_element'
     );
 
-    /* SAVED LANGUAGE */
     const savedLang = localStorage.getItem("site_lang");
 
     if(savedLang){
@@ -578,8 +491,6 @@ function googleTranslateElementInit(){
 
 }
 
-/* CHANGE LANGUAGE */
-
 function changeLanguage(lang){
 
     const select = document.querySelector(".goog-te-combo");
@@ -598,8 +509,6 @@ function changeLanguage(lang){
     }
 
 }
-
-/* DROPDOWN LISTENER */
 
 document.addEventListener("DOMContentLoaded", function(){
 
