@@ -6,8 +6,52 @@
 
 <title>HELP CENTER | PHRINUSOMYIS</title>
 
-<style>
+<style> 
+    /* 1. Hides the top banner frame entirely */
+.goog-te-banner-frame.skiptranslate, 
+.goog-te-banner-frame, 
+#goog-gt-tt, 
+.goog-te-balloon-frame {
+    display: none !important;
+}
 
+/* 2. Forces the page content to the top (removes the blank gap) */
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+/* 3. Hides Google branding and "Powered by" text in the widget */
+.goog-te-gadget {
+    font-size: 0px !important;
+}
+
+/* 4. Ensures the dropdown menu remains visible while the text is hidden */
+.goog-te-gadget .goog-te-combo {
+    font-size: 14px !important; /* Adjust size as needed */
+    color: #FFD700; /* Sets text to Gold to match your brand */
+    background-color: #000; /* Sets background to Obsidian */
+    border: 1px solid #FFD700;
+}
+
+/* 5. Hides the Google Translate logo icon */
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* 6. Removes the 'Translate' tooltip on hover */
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+/* 7. Targets modern script containers (if applicable) */
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+    display: none !import
+        ant;
+}
 :root {
     --gold: #D4AF37;
     --obsidian: #050505;
