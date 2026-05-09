@@ -258,6 +258,31 @@ body, html {
         <p>For urgent operational support from HQ team.</p>
         <a href="mailto:ops@PHRINUSOMYIS.com" class="contact-btn">Contact Support</a>
     </section>
+<main class="help-container">
+    <div class="help-grid">
+        <div class="help-card">
+            <h3>Account Access</h3>
+            <p>Help with login, recovery, and account control.</p>
+        </div>
+        <div class="help-card">
+            <h3>Product Verification</h3>
+            <p>Verify registered products and authenticity systems.</p>
+        </div>
+        <div class="help-card">
+            <h3>Event Support</h3>
+            <p>Assistance for stadium events and schedules.</p>
+        </div>
+        <div class="help-card">
+            <h3>Ticket Assistance</h3>
+            <p>Support for ticket purchase and confirmations.</p>
+        </div>
+    </div>
+
+    <section class="escalation-zone">
+        <h2>Priority Support</h2>
+        <p>For urgent operational support from HQ team.</p>
+        <a href="mailto:ops@PHRINUSOMYIS.com" class="contact-btn">Contact Support</a>
+    </section>
 </main>
 
 <script>
@@ -280,14 +305,25 @@ document.addEventListener("DOMContentLoaded", function() {
         'news.html',
         'press.html',
         'luxury.html',
-        'lions-circle.html'
-        'ru.html',
-        'hi.html',
+        'lions-circle.html',
+        'id.html',
+        'it.html',
+        'ja.html',
+        'ko.html'
     ];
 
-    let globalKnowledgeBase = [];
+    // Fallback data in case GitHub fetch fails or is slow
+    let globalKnowledgeBase = [
+        { text: "security protocols protection", original: "Security protocols and protection systems.", source: "SYSTEM" },
+        { text: "privacy settings data control", original: "Privacy settings and data control.", source: "SYSTEM" },
+        { text: "ticket support events", original: "Ticket support and events.", source: "SYSTEM" }
+    ];
 
-    /* CRAWLER ENGINE */
+    const searchInput = document.querySelector(".search-bar");
+    const resultsContainer = document.getElementById("searchResults");
+    const resultBox = document.getElementById("resultBox");
+
+    /* 3. CRAWLER ENGINE (Fetches content from your other GitHub files) */
     async function crawlSite() {
         for (let url of sitePages) {
             try {
@@ -298,12 +334,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(text, 'text/html');
                 
-                // Specifically targeting your Help Center content structure
                 const content = doc.querySelectorAll('h1, h2, h3, p, .support-text');
                 
                 content.forEach(el => {
                     const cleanText = el.innerText.trim();
-                    if (cleanText.length > 3) {
+                    if (cleanText.length > 5) {
                         globalKnowledgeBase.push({
                             text: cleanText.toLowerCase(),
                             original: cleanText,
@@ -312,49 +347,44 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
             } catch (e) {
-                console.warn("Access Restricted for: " + url);
+                console.warn("Could not index: " + url);
             }
         }
     }
 
     crawlSite();
 
-    /* SEARCH INTERFACE */
-    const searchInput = document.querySelector(".search-bar");
-    const results = document.getElementById("searchResults");
-    const box = document.getElementById("resultBox");
-
-    if (searchInput && box) {
+    /* 4. SEARCH LOGIC */
+    if (searchInput && resultBox) {
         searchInput.addEventListener("input", function () {
             const query = this.value.toLowerCase().trim();
             
             if (query.length < 2) { 
-                if(results) results.style.display = "none";
+                resultsContainer.style.display = "none";
                 return; 
             }
 
-            // Filter for matches
+            // Search the knowledge base
             let matches = globalKnowledgeBase.filter(item => item.text.includes(query));
 
             if (matches.length > 0) {
-                // Display top 5 unique results
-                box.innerHTML = matches.slice(0, 5).map(match => `
-                    <div style="margin-bottom: 12px; padding: 15px; border-left: 2px solid #D4AF37; background: rgba(255,255,255,0.03); text-align: left;">
-                        <span style="display: block; font-size: 10px; color: #D4AF37; letter-spacing: 1px; margin-bottom: 5px;">SOURCE: ${match.source}</span>
-                        <p style="color: #ffffff; margin: 0; font-size: 14px; font-family: sans-serif;">${match.original}</p>
+                // Remove duplicates and show top 6
+                const uniqueResults = [...new Map(matches.map(m => [m.original, m])).values()];
+                
+                resultBox.innerHTML = uniqueResults.slice(0, 6).map(match => `
+                    <div style="margin-bottom: 15px; padding: 15px; border-left: 2px solid #D4AF37; background: rgba(255,255,255,0.03);">
+                        <span style="display: block; font-size: 9px; color: #D4AF37; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">ARCHIVE: ${match.source}</span>
+                        <p style="color: #ffffff; margin: 0; font-size: 14px; line-height: 1.5;">${match.original}</p>
                     </div>
                 `).join('');
             } else {
-                box.innerHTML = `<div style="padding: 20px; color: #444; font-size: 13px; text-align: center; border: 1px dashed #222;">NO DATA MATCHES IN ARCHIVES</div>`;
+                resultBox.innerHTML = `<div style="padding: 20px; color: #444; text-align: center;">NO DATA MATCHES IN BROOKLYN ARCHIVES</div>`;
             }
             
-            if(results) results.style.display = "block";
+            resultsContainer.style.display = "block";
         });
     }
 });
-</script>  
-  <script> 
+</script>
 </body>
 </html>
-
-
