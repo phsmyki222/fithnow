@@ -25,7 +25,6 @@ body, html {
 }
 
 /* HEADER */
-
 .help-header {
     padding: 120px 20px 80px;
     text-align: center;
@@ -57,7 +56,6 @@ body, html {
 }
 
 /* LANGUAGE SWITCHER */
-
 .language-bar {
     margin-top: 30px;
 }
@@ -81,7 +79,6 @@ body, html {
 }
 
 /* SEARCH */
-
 .search-wrap {
     max-width: 600px;
     margin: -30px auto 0;
@@ -98,15 +95,9 @@ body, html {
     letter-spacing: 2px;
     outline: none;
     text-transform: uppercase;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.search-bar::placeholder {
-    color: #555;
 }
 
 /* CUSTOM SEARCH RESULTS */
-
 #searchResults {
     max-width: 700px;
     margin: 40px auto;
@@ -120,20 +111,10 @@ body, html {
     padding: 35px;
     color: #777;
     font-size: 13px;
-    letter-spacing: 1px;
     line-height: 1.8;
 }
 
-/* GOOGLE SEARCH */
-
-.google-search-wrap {
-    max-width: 1100px;
-    margin: 60px auto 0;
-    padding: 0 20px;
-}
-
 /* CONTAINER */
-
 .help-container {
     max-width: 1100px;
     margin: 100px auto;
@@ -141,7 +122,6 @@ body, html {
 }
 
 /* GRID */
-
 .help-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -149,7 +129,6 @@ body, html {
 }
 
 /* CARD */
-
 .help-card {
     background-color: #050505;
     border: 1px solid var(--border);
@@ -177,8 +156,7 @@ body, html {
     margin: 0;
 }
 
-/* SUPPORT SECTION */
-
+/* SUPPORT */
 .escalation-zone {
     margin-top: 100px;
     padding: 60px;
@@ -217,23 +195,7 @@ body, html {
     color: #000;
 }
 
-/* GOOGLE TRANSLATE HIDE */
-
-.goog-te-banner-frame.skiptranslate,
-.goog-te-gadget-icon,
-#goog-gt-tt,
-.goog-tooltip,
-.goog-text-highlight,
-.goog-te-balloon-frame {
-    display: none !important;
-}
-
-body {
-    top: 0 !important;
-}
-
 /* SCROLLBAR */
-
 ::-webkit-scrollbar {
     width: 4px;
 }
@@ -253,20 +215,15 @@ body {
 
 <header class="help-header">
 
-    <img src="phrinusomyis_logo.png"
-    alt="PHRINUSOMYIS"
-    class="help-logo">
+    <img src="phrinusomyis_logo.png" class="help-logo" alt="PHRINUSOMYIS">
 
     <h1>Help Center</h1>
 
-    <span class="help-status">
-        Global Support Services — Active
-    </span>
+    <span class="help-status">Global Support Services — Active</span>
 
     <div class="language-bar">
 
         <select id="languageSwitcher">
-
             <option value="en">English (EN)</option>
             <option value="fr">Français (FR)</option>
             <option value="es">Español (ES)</option>
@@ -288,42 +245,19 @@ body {
             <option value="sv">Svenska (SV)</option>
             <option value="fi">Suomi (FI)</option>
             <option value="da">Dansk (DA)</option>
-
         </select>
 
     </div>
 
 </header>
 
-<!-- CUSTOM SEARCH -->
-
 <div class="search-wrap">
-
-    <input type="text"
-    class="search-bar"
-    placeholder="Search Help Topics">
-
+    <input type="text" class="search-bar" placeholder="Search Help Topics">
 </div>
-
-<!-- CUSTOM RESULTS -->
 
 <div id="searchResults">
-
     <div id="resultBox"></div>
-
 </div>
-
-<!-- GOOGLE SEARCH -->
-
-<div class="google-search-wrap">
-
-    <div class="gcse-searchbox-only"></div>
-
-    <div class="gcse-searchresults-only"></div>
-
-</div>
-
-<!-- MAIN CONTENT -->
 
 <main class="help-container">
 
@@ -331,30 +265,22 @@ body {
 
         <div class="help-card">
             <h3>Account Access</h3>
-            <p>
-                Help with account login, password recovery, and access management.
-            </p>
+            <p>Help with login, recovery, and account control.</p>
         </div>
 
         <div class="help-card">
             <h3>Product Verification</h3>
-            <p>
-                Information about verifying registered products and purchase records.
-            </p>
+            <p>Verify registered products and authenticity systems.</p>
         </div>
 
         <div class="help-card">
             <h3>Event Support</h3>
-            <p>
-                Assistance for event access, schedules, media support, and venue information.
-            </p>
+            <p>Assistance for stadium events and schedules.</p>
         </div>
 
         <div class="help-card">
             <h3>Ticket Assistance</h3>
-            <p>
-                Support for ticket purchases, confirmations, and event-related inquiries.
-            </p>
+            <p>Support for ticket purchase and confirmations.</p>
         </div>
 
     </div>
@@ -363,12 +289,9 @@ body {
 
         <h2>Priority Support</h2>
 
-        <p>
-            For urgent support requests requiring direct assistance from our operations team.
-        </p>
+        <p>For urgent operational support from HQ team.</p>
 
-        <a href="mailto:ops@PHRINUSOMYIS.com"
-        class="contact-btn">
+        <a href="mailto:ops@PHRINUSOMYIS.com" class="contact-btn">
             Contact Support
         </a>
 
@@ -376,252 +299,59 @@ body {
 
 </main>
 
-<!-- GOOGLE TRANSLATE -->
-
-<div id="google_translate_element"
-style="display:none;"></div>
-
 <script>
 
-function googleTranslateElementInit() {
-
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
-
-    const savedLang = localStorage.getItem("site_lang");
-
-    if(savedLang) {
-
-        setTimeout(() => {
-            changeLanguage(savedLang);
-        }, 1000);
-
-    }
-
-}
-
+/* LANGUAGE SYSTEM */
 function changeLanguage(lang) {
-
-    const select = document.querySelector(".goog-te-combo");
-
-    if(select) {
-
-        select.value = lang;
-
-        select.dispatchEvent(new Event("change"));
-
-        localStorage.setItem("site_lang", lang);
-
-    }
-
+    localStorage.setItem("site_lang", lang);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    document.getElementById("languageSwitcher")
-    .addEventListener("change", function () {
-
-        changeLanguage(this.value);
-
-    });
-
+document.getElementById("languageSwitcher")
+.addEventListener("change", function () {
+    changeLanguage(this.value);
 });
 
-/* SMART HELP SEARCH */
-
+/* SIMPLE SEARCH */
 const helpTopics = {
-
-    "security": {
-        text: "View platform protection and security protocols.",
-        link: "/security"
-    },
-
-    "privacy": {
-        text: "Manage privacy and data preferences.",
-        link: "/privacy-choices"
-    },
-
-    "terms": {
-        text: "Read the official Terms of Use.",
-        link: "/terms"
-    },
-
-    "copyright": {
-        text: "View copyright and intellectual property information.",
-        link: "/copyright"
-    },
-
-    "cookies": {
-        text: "Learn about operational cookies.",
-        link: "/cookie-policy"
-    },
-
-    "captions": {
-        text: "Accessibility and closed captions support.",
-        link: "/closed-captions"
-    },
-
-    "ticket": {
-        text: "Support for ticket access and confirmations.",
-        link: "/tickets"
-    },
-
-    "event": {
-        text: "Event schedules and venue information.",
-        link: "/events"
-    },
-
-    "commanding the stage": {
-        text: "Official live stadium performance division and stage execution systems.",
-        link: "/news"
-    },
-
-    "product": {
-        text: "Registered product verification and support systems.",
-        link: "/products"
-    },
-
-    "brooklyn": {
-        text: "Brooklyn headquarters operational systems.",
-        link: "/about"
-    },
-
-    "lagos": {
-        text: "West Africa regional operations and support.",
-        link: "/about"
-    }
-
+    "security": "Security protocols and protection systems.",
+    "privacy": "Privacy settings and data control.",
+    "terms": "Terms of Use information.",
+    "cookies": "Cookie policy explanation.",
+    "captions": "Accessibility and subtitles.",
+    "ticket": "Ticket support and events.",
+    "commanding the stage": "Live stadium performance system."
 };
 
 const searchInput = document.querySelector(".search-bar");
+const results = document.getElementById("searchResults");
+const box = document.getElementById("resultBox");
 
-searchInput.addEventListener("keyup", function() {
+searchInput.addEventListener("keyup", function () {
 
-    const value = this.value.toLowerCase().trim();
+    const value = this.value.toLowerCase();
 
-    const results = document.getElementById("searchResults");
-
-    const resultBox = document.getElementById("resultBox");
-
-    if(value.length < 2) {
-
+    if (value.length < 2) {
         results.style.display = "none";
-
         return;
-
     }
 
-    let matches = [];
+    let output = "";
 
-    for(let key in helpTopics) {
-
-        if(value.includes(key)) {
-
-            matches.push(helpTopics[key]);
-
+    for (let key in helpTopics) {
+        if (value.includes(key)) {
+            output += `<p style="margin-bottom:15px;">${helpTopics[key]}</p>`;
         }
-
     }
 
-    if(matches.length > 0) {
-
-        let html = `
-
-        <strong style="
-        color:#D4AF37;
-        display:block;
-        margin-bottom:25px;
-        letter-spacing:2px;
-        ">
-        SEARCH RESULTS
-        </strong>
-
-        `;
-
-        matches.forEach(item => {
-
-            html += `
-
-            <div style="
-            border-top:1px solid #111;
-            padding:25px 0;
-            ">
-
-                <p style="
-                color:#777;
-                margin-bottom:20px;
-                line-height:1.8;
-                ">
-                ${item.text}
-                </p>
-
-                <a href="${item.link}" style="
-                display:inline-block;
-                padding:12px 25px;
-                border:1px solid #D4AF37;
-                color:#D4AF37;
-                text-decoration:none;
-                font-size:10px;
-                letter-spacing:2px;
-                text-transform:uppercase;
-                ">
-                Open Page
-                </a>
-
-            </div>
-
-            `;
-
-        });
-
-        resultBox.innerHTML = html;
-
-        results.style.display = "block";
-
+    if (output === "") {
+        box.innerHTML = "<p>No results found</p>";
     } else {
-
-        resultBox.innerHTML = `
-
-        <strong style="
-        color:#D4AF37;
-        display:block;
-        margin-bottom:20px;
-        letter-spacing:2px;
-        ">
-        NO RESULTS FOUND
-        </strong>
-
-        <p style="
-        color:#666;
-        line-height:1.8;
-        ">
-        No matching operational results were found for this inquiry.
-        </p>
-
-        `;
-
-        results.style.display = "block";
-
+        box.innerHTML = output;
     }
 
+    results.style.display = "block";
 });
 
-</script>
-
-<!-- GOOGLE TRANSLATE -->
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<!-- GOOGLE SEARCH -->
-
-<script async
-src="https://cse.google.com/cse.js?cx=9425f8f390eca4363">
 </script>
 
 </body>
