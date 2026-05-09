@@ -105,6 +105,33 @@ body, html {
     color: #555;
 }
 
+/* CUSTOM SEARCH RESULTS */
+
+#searchResults {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: none;
+}
+
+#resultBox {
+    border: 1px solid #1a1a1a;
+    background: #050505;
+    padding: 35px;
+    color: #777;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+/* GOOGLE SEARCH */
+
+.google-search-wrap {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
 /* CONTAINER */
 
 .help-container {
@@ -196,7 +223,8 @@ body, html {
 .goog-te-gadget-icon,
 #goog-gt-tt,
 .goog-tooltip,
-.goog-text-highlight {
+.goog-text-highlight,
+.goog-te-balloon-frame {
     display: none !important;
 }
 
@@ -225,7 +253,9 @@ body {
 
 <header class="help-header">
 
-    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS" class="help-logo">
+    <img src="phrinusomyis_logo.png"
+    alt="PHRINUSOMYIS"
+    class="help-logo">
 
     <h1>Help Center</h1>
 
@@ -236,6 +266,7 @@ body {
     <div class="language-bar">
 
         <select id="languageSwitcher">
+
             <option value="en">English (EN)</option>
             <option value="fr">Français (FR)</option>
             <option value="es">Español (ES)</option>
@@ -257,15 +288,42 @@ body {
             <option value="sv">Svenska (SV)</option>
             <option value="fi">Suomi (FI)</option>
             <option value="da">Dansk (DA)</option>
+
         </select>
 
     </div>
 
 </header>
 
+<!-- CUSTOM SEARCH -->
+
 <div class="search-wrap">
-    <input type="text" class="search-bar" placeholder="Search Help Topics">
+
+    <input type="text"
+    class="search-bar"
+    placeholder="Search Help Topics">
+
 </div>
+
+<!-- CUSTOM RESULTS -->
+
+<div id="searchResults">
+
+    <div id="resultBox"></div>
+
+</div>
+
+<!-- GOOGLE SEARCH -->
+
+<div class="google-search-wrap">
+
+    <div class="gcse-searchbox-only"></div>
+
+    <div class="gcse-searchresults-only"></div>
+
+</div>
+
+<!-- MAIN CONTENT -->
 
 <main class="help-container">
 
@@ -309,7 +367,8 @@ body {
             For urgent support requests requiring direct assistance from our operations team.
         </p>
 
-        <a href="mailto:ops@PHRINUSOMYIS.com" class="contact-btn">
+        <a href="mailto:ops@PHRINUSOMYIS.com"
+        class="contact-btn">
             Contact Support
         </a>
 
@@ -317,10 +376,15 @@ body {
 
 </main>
 
-<div id="google_translate_element" style="display:none;"></div>
+<!-- GOOGLE TRANSLATE -->
+
+<div id="google_translate_element"
+style="display:none;"></div>
 
 <script>
+
 function googleTranslateElementInit() {
+
     new google.translate.TranslateElement(
         {
             pageLanguage: 'en',
@@ -333,10 +397,13 @@ function googleTranslateElementInit() {
     const savedLang = localStorage.getItem("site_lang");
 
     if(savedLang) {
+
         setTimeout(() => {
             changeLanguage(savedLang);
         }, 1000);
+
     }
+
 }
 
 function changeLanguage(lang) {
@@ -344,23 +411,218 @@ function changeLanguage(lang) {
     const select = document.querySelector(".goog-te-combo");
 
     if(select) {
+
         select.value = lang;
+
         select.dispatchEvent(new Event("change"));
+
         localStorage.setItem("site_lang", lang);
+
     }
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("languageSwitcher")
     .addEventListener("change", function () {
+
         changeLanguage(this.value);
+
     });
 
 });
+
+/* SMART HELP SEARCH */
+
+const helpTopics = {
+
+    "security": {
+        text: "View platform protection and security protocols.",
+        link: "/security"
+    },
+
+    "privacy": {
+        text: "Manage privacy and data preferences.",
+        link: "/privacy-choices"
+    },
+
+    "terms": {
+        text: "Read the official Terms of Use.",
+        link: "/terms"
+    },
+
+    "copyright": {
+        text: "View copyright and intellectual property information.",
+        link: "/copyright"
+    },
+
+    "cookies": {
+        text: "Learn about operational cookies.",
+        link: "/cookie-policy"
+    },
+
+    "captions": {
+        text: "Accessibility and closed captions support.",
+        link: "/closed-captions"
+    },
+
+    "ticket": {
+        text: "Support for ticket access and confirmations.",
+        link: "/tickets"
+    },
+
+    "event": {
+        text: "Event schedules and venue information.",
+        link: "/events"
+    },
+
+    "commanding the stage": {
+        text: "Official live stadium performance division and stage execution systems.",
+        link: "/news"
+    },
+
+    "product": {
+        text: "Registered product verification and support systems.",
+        link: "/products"
+    },
+
+    "brooklyn": {
+        text: "Brooklyn headquarters operational systems.",
+        link: "/about"
+    },
+
+    "lagos": {
+        text: "West Africa regional operations and support.",
+        link: "/about"
+    }
+
+};
+
+const searchInput = document.querySelector(".search-bar");
+
+searchInput.addEventListener("keyup", function() {
+
+    const value = this.value.toLowerCase().trim();
+
+    const results = document.getElementById("searchResults");
+
+    const resultBox = document.getElementById("resultBox");
+
+    if(value.length < 2) {
+
+        results.style.display = "none";
+
+        return;
+
+    }
+
+    let matches = [];
+
+    for(let key in helpTopics) {
+
+        if(value.includes(key)) {
+
+            matches.push(helpTopics[key]);
+
+        }
+
+    }
+
+    if(matches.length > 0) {
+
+        let html = `
+
+        <strong style="
+        color:#D4AF37;
+        display:block;
+        margin-bottom:25px;
+        letter-spacing:2px;
+        ">
+        SEARCH RESULTS
+        </strong>
+
+        `;
+
+        matches.forEach(item => {
+
+            html += `
+
+            <div style="
+            border-top:1px solid #111;
+            padding:25px 0;
+            ">
+
+                <p style="
+                color:#777;
+                margin-bottom:20px;
+                line-height:1.8;
+                ">
+                ${item.text}
+                </p>
+
+                <a href="${item.link}" style="
+                display:inline-block;
+                padding:12px 25px;
+                border:1px solid #D4AF37;
+                color:#D4AF37;
+                text-decoration:none;
+                font-size:10px;
+                letter-spacing:2px;
+                text-transform:uppercase;
+                ">
+                Open Page
+                </a>
+
+            </div>
+
+            `;
+
+        });
+
+        resultBox.innerHTML = html;
+
+        results.style.display = "block";
+
+    } else {
+
+        resultBox.innerHTML = `
+
+        <strong style="
+        color:#D4AF37;
+        display:block;
+        margin-bottom:20px;
+        letter-spacing:2px;
+        ">
+        NO RESULTS FOUND
+        </strong>
+
+        <p style="
+        color:#666;
+        line-height:1.8;
+        ">
+        No matching operational results were found for this inquiry.
+        </p>
+
+        `;
+
+        results.style.display = "block";
+
+    }
+
+});
+
 </script>
 
+<!-- GOOGLE TRANSLATE -->
+
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- GOOGLE SEARCH -->
+
+<script async
+src="https://cse.google.com/cse.js?cx=9425f8f390eca4363">
+</script>
 
 </body>
 </html>
