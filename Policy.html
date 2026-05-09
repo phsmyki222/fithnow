@@ -1,134 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIVACY | PHRINUSOMYIS</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: 'Times New Roman', serif; /* Classic elite authority */
-            letter-spacing: 2px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        /* THE ROLEX SCALE */
-        header {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid #111;
-        }
+<title>Privacy Policy | PHRINUSOMYIS</title>
 
-        .logo {
-            width: 120px;
-            margin-bottom: 60px;
-            opacity: 0.9;
-        }
+<style>
 
-        h1 {
-            font-size: 10px;
-            letter-spacing: 20px;
-            text-transform: uppercase;
-            color: #D4AF37;
-            font-weight: 100;
-        }
+:root{
+    --gold:#D4AF37;
+    --black:#000;
+    --soft:#0d0d0d;
+    --text:#cfcfcf;
+    --line:#1c1c1c;
+}
 
-        /* THE VAULT CONTENT */
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 150px 20px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .statement {
-            font-size: 28px;
-            line-height: 1.2;
-            margin-bottom: 150px;
-            color: #fff;
-            font-weight: 100;
-            text-align: center;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        section {
-            margin-bottom: 150px;
-        }
+body{
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.9;
+    overflow-x:hidden;
+}
 
-        h2 {
-            font-size: 9px;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            color: #444;
-            margin-bottom: 40px;
-        }
+/* BACKGROUND GLOW */
 
-        p {
-            font-size: 16px;
-            color: #888;
-            line-height: 2;
-            margin-bottom: 30px;
-        }
+body::before{
+    content:"";
+    position:fixed;
+    top:-200px;
+    left:50%;
+    transform:translateX(-50%);
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle, rgba(212,175,55,0.10) 0%, transparent 70%);
+    z-index:-1;
+}
 
-        .gold-text {
-            color: #D4AF37;
-            font-weight: bold;
-        }
+/* HEADER */
 
-        footer {
-            padding: 100px 20px;
-            text-align: center;
-            font-size: 9px;
-            letter-spacing: 5px;
-            color: #222;
-            text-transform: uppercase;
-        }
+.policy-header{
+    text-align:center;
+    padding:120px 20px 70px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+}
 
-        /* NO SCROLLBAR FOR CLEANLINESS */
-        ::-webkit-scrollbar { width: 0px; }
-    </style>
+.logo{
+    width:110px;
+    margin-bottom:35px;
+    opacity:0.95;
+}
+
+.policy-header h1{
+    font-size:clamp(32px,6vw,72px);
+    text-transform:uppercase;
+    letter-spacing:12px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.header-line{
+    width:120px;
+    height:2px;
+    background:var(--gold);
+    margin:0 auto 25px;
+}
+
+.update-tag{
+    color:#9d9d9d;
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+/* CONTAINER */
+
+.policy-container{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 25px 120px;
+}
+
+/* SECTIONS */
+
+.policy-section{
+    padding:45px;
+    margin-bottom:35px;
+    background:linear-gradient(180deg,#0a0a0a 0%, #050505 100%);
+    border:1px solid #131313;
+    position:relative;
+    transition:0.4s ease;
+}
+
+.policy-section:hover{
+    border-color:#2d2d2d;
+    transform:translateY(-2px);
+}
+
+.policy-section::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:4px;
+    height:100%;
+    background:var(--gold);
+}
+
+.policy-section h2{
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:28px;
+}
+
+.policy-section p{
+    color:var(--text);
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+/* LIST */
+
+.policy-list{
+    list-style:none;
+    margin-top:20px;
+}
+
+.policy-list li{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:16px;
+    color:#b9b9b9;
+    font-size:14px;
+}
+
+.policy-list li::before{
+    content:"•";
+    color:var(--gold);
+    position:absolute;
+    left:0;
+    top:0;
+    font-size:18px;
+}
+
+/* CONTACT */
+
+.legal-contact{
+    margin-top:70px;
+    padding:60px 45px;
+    border:1px solid #1d1d1d;
+    background:#070707;
+    text-align:center;
+}
+
+.legal-contact h3{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.legal-contact p{
+    color:#bdbdbd;
+    font-size:15px;
+    margin-bottom:25px;
+}
+
+.legal-email{
+    color:var(--gold);
+    text-decoration:none;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* FOOTER */
+
+.footer-note{
+    margin-top:80px;
+    text-align:center;
+    color:#666;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .policy-header{
+        padding:90px 20px 55px;
+    }
+
+    .policy-header h1{
+        letter-spacing:6px;
+        line-height:1.3;
+    }
+
+    .policy-section{
+        padding:32px 24px;
+    }
+
+    .legal-contact{
+        padding:45px 25px;
+    }
+
+}
+
+::-webkit-scrollbar{
+    width:5px;
+}
+
+::-webkit-scrollbar-track{
+    background:#000;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--gold);
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <img src="phrinusomyis_logo.png" alt="" class="logo">
-        <h1>Privacy</h1>
-    </header>
+<header class="policy-header">
 
-    <main>
-        <div class="statement">
-            Your identity is your most valuable asset. <br>
-            We treat it as our own.
-        </div>
+    <!-- COMPANY LOGO -->
+    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="logo">
 
-        <section>
-            <h2>Ownership</h2>
-            <p>
-                PHRINUSOMYIS exists to protect the privacy of our associates. When you acquire our <span class="gold-text">Signature Scent</span> or enter the <span class="gold-text">Executive Core</span>, your data is locked within our private architecture in Brooklyn.
-            </p>
-        </section>
+    <h1>Privacy Policy</h1>
 
-        <section>
-            <h2>The Brooklyn Node</h2>
-            <p>
-                We do not sell. We do not share. We do not track. Every piece of information stays inside our New York headquarters. We use the same standards used by global banks to ensure your dossier remains invisible to the outside world.
-            </p>
-        </section>
+    <div class="header-line"></div>
 
-        <section>
-            <h2>The Core</h2>
-            <p>
-                Admission to our private circuit is a permanent agreement. If we detect any threat to our network, we kill the access immediately. No questions asked.
-            </p>
-        </section>
-    </main>
+    <span class="update-tag">
+        Effective Date — May 09, 2026
+    </span>
 
-    <footer>
-        Brooklyn HQ // PHRINUSOMYIS Global // 2026
-    </footer>
+</header>
+
+<main class="policy-container">
+
+    <section class="policy-section">
+
+        <h2>01. Information We Collect</h2>
+
+        <p>
+            PHRINUSOMYIS may collect basic information when you use our website,
+            contact our team, register for events, or access private services.
+        </p>
+
+        <ul class="policy-list">
+            <li>Name and contact details provided by the user.</li>
+            <li>Login activity for account protection and access security.</li>
+            <li>Location and device information for event scheduling and local time display.</li>
+            <li>Purchase and order records related to official products and services.</li>
+        </ul>
+
+    </section>
+
+    <section class="policy-section">
+
+        <h2>02. How Information Is Used</h2>
+
+        <p>
+            Information collected through PHRINUSOMYIS is used to improve services,
+            process requests, manage event access, and maintain account security.
+        </p>
+
+        <p>
+            We do not sell personal information to advertising companies or outside marketing groups.
+        </p>
+
+    </section>
+
+    <section class="policy-section">
+
+        <h2>03. Privacy & Security</h2>
+
+        <p>
+            PHRINUSOMYIS uses secure systems and protected infrastructure to help keep user information safe.
+        </p>
+
+        <p>
+            While no online system can guarantee complete security, we continue to maintain protective measures designed for modern global operations.
+        </p>
+
+    </section>
+
+    <section class="policy-section">
+
+        <h2>04. International Operations</h2>
+
+        <p>
+            PHRINUSOMYIS operates internationally and may process information across different regions where our services, productions, and operations are active.
+        </p>
+
+        <p>
+            By using our services, users understand that information may be handled in accordance with applicable international privacy standards and local regulations.
+        </p>
+
+    </section>
+
+    <section class="policy-section">
+
+        <h2>05. Updates To This Policy</h2>
+
+        <p>
+            This Privacy Policy may be updated from time to time to reflect operational, legal, or service changes.
+        </p>
+
+        <p>
+            Continued use of PHRINUSOMYIS services after updates means acceptance of the revised policy.
+        </p>
+
+    </section>
+
+    <section class="legal-contact">
+
+        <h3>Contact</h3>
+
+        <p>
+            For privacy questions or legal inquiries regarding PHRINUSOMYIS, contact:
+        </p>
+
+        <a href="mailto:info@phrinusomyis.com" class="legal-email">
+            info@phrinusomyis.com
+        </a>
+
+    </section>
+
+    <div class="footer-note">
+        © 2026 PHRINUSOMYIS. ALL RIGHTS RESERVED.
+    </div>
+
+</main>
 
 </body>
 </html>
