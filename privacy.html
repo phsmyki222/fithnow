@@ -1,178 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDENTITY SECURITY | PHRINUSOMYIS GLOBAL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --obsidian: #050505;
-            --border: #1a1a1a;
-        }
+<title>PRIVACY CHOICES | PHRINUSOMYIS</title>
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        /* HEADER */
-        .security-header {
-            padding: 120px 20px 60px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
+:root {
+    --gold: #D4AF37;
+    --obsidian: #050505;
+    --border: #1a1a1a;
+}
 
-        .security-header h1 {
-            font-size: 22px;
-            letter-spacing: 10px;
-            margin: 0;
-            text-transform: uppercase;
-        }
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
 
-        .security-subtitle {
-            font-size: 10px;
-            letter-spacing: 4px;
-            color: var(--gold);
-            margin-top: 18px;
-            display: block;
-        }
+/* HEADER */
 
-        /* CONTAINER */
-        .security-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 20px 140px;
-        }
+.choices-header {
+    padding: 120px 20px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
 
-        .section-title {
-            font-size: 12px;
-            letter-spacing: 3px;
-            color: #888;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
+.choices-header h1 {
+    font-size: 22px;
+    letter-spacing: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
 
-        /* CARD */
-        .card {
-            border: 1px solid var(--border);
-            padding: 30px;
-            margin-bottom: 25px;
-            background: #050505;
-        }
+.choices-subtitle {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    display: block;
+}
 
-        .card h3 {
-            font-size: 13px;
-            margin: 0 0 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+/* CONTAINER */
 
-        .card p {
-            font-size: 12px;
-            color: #555;
-            margin: 0 0 20px;
-        }
+.choices-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px 150px;
+}
 
-        .btn {
-            background: transparent;
-            border: 1px solid #333;
-            color: #aaa;
-            padding: 10px 18px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.intro-text {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 80px;
+}
 
-        .btn:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
+/* ROW */
 
-        .danger {
-            border-color: #300;
-            color: #600;
-        }
+.choice-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+}
 
-        .danger:hover {
-            border-color: #ff3e3e;
-            color: #ff3e3e;
-        }
+.choice-info h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
 
-        /* GRID */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+.choice-info p {
+    font-size: 12px;
+    color: #555;
+    margin: 0;
+}
 
-        @media(max-width: 700px){
-            .grid { grid-template-columns: 1fr; }
-        }
+/* SWITCH */
 
-        /* FOOT NOTE */
-        .foot-note {
-            text-align: center;
-            font-size: 10px;
-            color: #444;
-            margin-top: 60px;
-            letter-spacing: 1px;
-        }
-    </style>
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #1a1a1a;
+    transition: .4s;
+    border: 1px solid #333;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #444;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    border-color: var(--gold);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: var(--gold);
+}
+
+/* DELETE SECTION */
+
+.delete-protocol {
+    margin-top: 100px;
+    text-align: center;
+    padding: 40px;
+    border: 1px solid #1a1a1a;
+    background-color: #050505;
+}
+
+.delete-protocol h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #ff3e3e;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.delete-btn {
+    background: transparent;
+    border: 1px solid #300;
+    color: #500;
+    padding: 12px 30px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    border-color: #ff3e3e;
+    color: #ff3e3e;
+}
+
+</style>
 </head>
+
 <body>
 
-<header class="security-header">
-    <h1>Identity Security</h1>
-    <span class="security-subtitle">Private Control Layer</span>
+<header class="choices-header">
+
+    <h1>Privacy Choices</h1>
+
+    <span class="choices-subtitle">
+        Data and Account Preferences
+    </span>
+
 </header>
 
-<main class="security-container">
+<main class="choices-container">
 
-    <div class="section-title">Data Protection System</div>
+    <p class="intro-text">
+        Manage how your information is used across the PHRINUSOMYIS platform. You can adjust settings at any time.
+    </p>
 
-    <div class="grid">
+    <div class="choice-row">
 
-        <div class="card">
-            <h3>Download Identity Archive</h3>
-            <p>Export all stored identity markers, engagement logs, and asset records tied to your profile.</p>
-            <button class="btn">Generate Archive</button>
+        <div class="choice-info">
+            <h3>Asset Verification</h3>
+            <p>Allow verification of registered product serial numbers linked to your account.</p>
         </div>
 
-        <div class="card">
-            <h3>Access History Log</h3>
-            <p>View all recent system access points including devices, locations, and authentication events.</p>
-            <button class="btn">View Log</button>
-        </div>
-
-        <div class="card">
-            <h3>Security Layer Upgrade</h3>
-            <p>Upgrade encryption level for your Lion’s Circle identity and global node synchronization.</p>
-            <button class="btn">Upgrade Security</button>
-        </div>
-
-        <div class="card">
-            <h3>Session Control</h3>
-            <p>Log out all active sessions across devices and enforce immediate re-authentication.</p>
-            <button class="btn danger">Terminate Sessions</button>
-        </div>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>
 
     </div>
 
-    <div class="card" style="margin-top:40px;">
-        <h3>Emergency Lock Mode</h3>
-        <p>Instantly freeze identity activity, transactions, and data synchronization across all global nodes.</p>
-        <button class="btn danger">Activate Lock</button>
+    <div class="choice-row">
+
+        <div class="choice-info">
+            <h3>Location Preferences</h3>
+            <p>Enable location-based settings for improved regional experience and delivery accuracy.</p>
+        </div>
+
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>
+
     </div>
 
-    <div class="foot-note">
-        PHRINUSOMYIS GLOBAL • Identity Security Protocol Active
+    <div class="choice-row">
+
+        <div class="choice-info">
+            <h3>Content Personalization</h3>
+            <p>Receive updates and recommendations based on your activity and preferences.</p>
+        </div>
+
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+
+    </div>
+
+    <div class="delete-protocol">
+
+        <h4>Account Removal</h4>
+
+        <p style="font-size:11px; color:#444; margin-bottom:25px;">
+            Permanently delete your account and all associated data. This action cannot be reversed.
+        </p>
+
+        <button class="delete-btn">Delete Account</button>
+
     </div>
 
 </main>
