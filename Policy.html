@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Privacy Policy | PHRINUSOMYIS</title>
 
@@ -15,6 +16,8 @@
     --text:#cfcfcf;
     --line:#1c1c1c;
 }
+
+/* RESET */
 
 *{
     margin:0;
@@ -32,9 +35,10 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     line-height:1.9;
     overflow-x:hidden;
+    top:0 !important;
 }
 
-/* BACKGROUND GLOW */
+/* CINEMATIC BACKGROUND */
 
 body::before{
     content:"";
@@ -42,10 +46,25 @@ body::before{
     top:-200px;
     left:50%;
     transform:translateX(-50%);
-    width:700px;
-    height:700px;
+    width:900px;
+    height:900px;
     background:radial-gradient(circle, rgba(212,175,55,0.10) 0%, transparent 70%);
     z-index:-1;
+    pointer-events:none;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:5px;
+}
+
+::-webkit-scrollbar-track{
+    background:#000;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--gold);
 }
 
 /* HEADER */
@@ -58,13 +77,14 @@ body::before{
 }
 
 .logo{
-    width:110px;
+    width:120px;
     margin-bottom:35px;
-    opacity:0.95;
+    opacity:0.96;
+    filter:drop-shadow(0 0 25px rgba(212,175,55,0.12));
 }
 
 .policy-header h1{
-    font-size:clamp(32px,6vw,72px);
+    font-size:clamp(34px,7vw,74px);
     text-transform:uppercase;
     letter-spacing:12px;
     font-weight:900;
@@ -79,13 +99,67 @@ body::before{
 }
 
 .update-tag{
-    color:#9d9d9d;
+    color:#8c8c8c;
     font-size:11px;
     letter-spacing:4px;
     text-transform:uppercase;
 }
 
-/* CONTAINER */
+/* LANGUAGE SWITCHER */
+
+.language-wrap{
+    position:absolute;
+    top:30px;
+    right:30px;
+}
+
+#languageSwitcher{
+    background:rgba(0,0,0,0.85);
+    color:#D4AF37;
+    border:1px solid rgba(212,175,55,0.5);
+    border-radius:4px;
+    padding:6px 10px;
+    font-family:'Montserrat', sans-serif;
+    font-size:10px;
+    cursor:pointer;
+    text-transform:uppercase;
+    outline:none;
+    transition:0.3s ease;
+    backdrop-filter:blur(10px);
+}
+
+#languageSwitcher:hover{
+    border-color:#D4AF37;
+    box-shadow:0 0 18px rgba(212,175,55,0.2);
+}
+
+#languageSwitcher option{
+    background:#000;
+    color:#D4AF37;
+}
+
+/* HIDE GOOGLE BRANDING */
+
+.goog-logo-link,
+.goog-te-gadget span,
+.goog-te-banner-frame,
+body > .skiptranslate{
+    display:none !important;
+}
+
+/* HIDE TOOLTIP */
+
+#goog-gt-tt,
+.goog-te-balloon-frame{
+    display:none !important;
+}
+
+.goog-text-highlight{
+    background:none !important;
+    box-shadow:none !important;
+}
+
+/* MAIN */
 
 .policy-container{
     max-width:1100px;
@@ -96,17 +170,18 @@ body::before{
 /* SECTIONS */
 
 .policy-section{
-    padding:45px;
+    padding:50px;
     margin-bottom:35px;
     background:linear-gradient(180deg,#0a0a0a 0%, #050505 100%);
     border:1px solid #131313;
     position:relative;
     transition:0.4s ease;
+    overflow:hidden;
 }
 
 .policy-section:hover{
-    border-color:#2d2d2d;
     transform:translateY(-2px);
+    border-color:#2c2c2c;
 }
 
 .policy-section::before{
@@ -150,11 +225,55 @@ body::before{
 
 .policy-list li::before{
     content:"•";
-    color:var(--gold);
     position:absolute;
     left:0;
     top:0;
+    color:var(--gold);
     font-size:18px;
+}
+
+/* COUNTDOWN GRID */
+
+.timer-grid{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:50px 0;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:rgba(15,15,15,0.9);
+    padding:20px;
+    border-radius:6px;
+    border:1px solid rgba(212,175,55,0.25);
+    min-width:100px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.time-box span{
+    font-size:3rem;
+    font-weight:900;
+    display:block;
+}
+
+.time-box label{
+    font-size:0.6rem;
+    text-transform:uppercase;
+    color:#888;
+    letter-spacing:1px;
+}
+
+.gold-timer span{
+    color:var(--gold);
+    text-shadow:0 0 15px rgba(212,175,55,0.5);
+}
+
+.rainbow-timer span{
+    background:linear-gradient(to bottom, #FF0000 50%, #00FFFF 50%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 /* CONTACT */
@@ -205,7 +324,7 @@ body::before{
 @media(max-width:768px){
 
     .policy-header{
-        padding:90px 20px 55px;
+        padding:100px 20px 55px;
     }
 
     .policy-header h1{
@@ -214,25 +333,36 @@ body::before{
     }
 
     .policy-section{
-        padding:32px 24px;
+        padding:35px 25px;
     }
 
     .legal-contact{
         padding:45px 25px;
     }
 
-}
+    .timer-grid{
+        gap:10px;
+    }
 
-::-webkit-scrollbar{
-    width:5px;
-}
+    .time-box{
+        min-width:80px;
+        padding:15px;
+    }
 
-::-webkit-scrollbar-track{
-    background:#000;
-}
+    .time-box span{
+        font-size:2rem;
+    }
 
-::-webkit-scrollbar-thumb{
-    background:var(--gold);
+    .language-wrap{
+        top:20px;
+        right:20px;
+    }
+
+    #languageSwitcher{
+        font-size:8px;
+        padding:5px 8px;
+    }
+
 }
 
 </style>
@@ -240,9 +370,43 @@ body::before{
 
 <body>
 
+<!-- GOOGLE TRANSLATE -->
+<div id="google_translate_element" style="display:none;"></div>
+
 <header class="policy-header">
 
-    <!-- COMPANY LOGO -->
+    <!-- LANGUAGE -->
+    <div class="language-wrap">
+
+        <select id="languageSwitcher">
+
+            <option value="en">English (EN)</option>
+            <option value="fr">Français (FR)</option>
+            <option value="es">Español (ES)</option>
+            <option value="de">Deutsch (DE)</option>
+            <option value="ar">العربية (AR)</option>
+            <option value="zh">中文 (ZH)</option>
+            <option value="ru">Русский (RU)</option>
+            <option value="pt">Português (PT)</option>
+            <option value="ja">日本語 (JA)</option>
+            <option value="ko">한국어 (KO)</option>
+            <option value="it">Italiano (IT)</option>
+            <option value="nl">Nederlands (NL)</option>
+            <option value="tr">Türkçe (TR)</option>
+            <option value="hi">हिन्दी (HI)</option>
+            <option value="id">Bahasa Indonesia (ID)</option>
+            <option value="vi">Tiếng Việt (VI)</option>
+            <option value="th">ไทย (TH)</option>
+            <option value="pl">Polski (PL)</option>
+            <option value="sv">Svenska (SV)</option>
+            <option value="fi">Suomi (FI)</option>
+            <option value="da">Dansk (DA)</option>
+
+        </select>
+
+    </div>
+
+    <!-- LOGO -->
     <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="logo">
 
     <h1>Privacy Policy</h1>
@@ -262,15 +426,15 @@ body::before{
         <h2>01. Information We Collect</h2>
 
         <p>
-            PHRINUSOMYIS may collect basic information when you use our website,
-            contact our team, register for events, or access private services.
+            PHRINUSOMYIS may collect basic information when users access services,
+            contact our team, register for events, or interact with official platforms.
         </p>
 
         <ul class="policy-list">
-            <li>Name and contact details provided by the user.</li>
-            <li>Login activity for account protection and access security.</li>
-            <li>Location and device information for event scheduling and local time display.</li>
-            <li>Purchase and order records related to official products and services.</li>
+            <li>Name and contact information provided directly by the user.</li>
+            <li>Login activity for account protection and security monitoring.</li>
+            <li>Location and device information for event timing and regional services.</li>
+            <li>Order records connected to official products and experiences.</li>
         </ul>
 
     </section>
@@ -280,12 +444,12 @@ body::before{
         <h2>02. How Information Is Used</h2>
 
         <p>
-            Information collected through PHRINUSOMYIS is used to improve services,
-            process requests, manage event access, and maintain account security.
+            Information is used to improve services, manage requests,
+            maintain platform security, and support official operations.
         </p>
 
         <p>
-            We do not sell personal information to advertising companies or outside marketing groups.
+            PHRINUSOMYIS does not sell personal information to outside advertising companies.
         </p>
 
     </section>
@@ -295,11 +459,12 @@ body::before{
         <h2>03. Privacy & Security</h2>
 
         <p>
-            PHRINUSOMYIS uses secure systems and protected infrastructure to help keep user information safe.
+            We use secure systems and protective measures designed to help keep user information safe.
         </p>
 
         <p>
-            While no online system can guarantee complete security, we continue to maintain protective measures designed for modern global operations.
+            While no online system can guarantee complete protection,
+            we continue to improve security across our digital operations.
         </p>
 
     </section>
@@ -309,21 +474,23 @@ body::before{
         <h2>04. International Operations</h2>
 
         <p>
-            PHRINUSOMYIS operates internationally and may process information across different regions where our services, productions, and operations are active.
+            PHRINUSOMYIS operates internationally and may process information
+            in regions where official services and productions are active.
         </p>
 
         <p>
-            By using our services, users understand that information may be handled in accordance with applicable international privacy standards and local regulations.
+            By using our services, users acknowledge that information may be processed under applicable international privacy standards and local regulations.
         </p>
 
     </section>
 
     <section class="policy-section">
 
-        <h2>05. Updates To This Policy</h2>
+        <h2>05. Policy Updates</h2>
 
         <p>
-            This Privacy Policy may be updated from time to time to reflect operational, legal, or service changes.
+            This Privacy Policy may be updated when operational,
+            legal, or service changes are introduced.
         </p>
 
         <p>
@@ -332,12 +499,37 @@ body::before{
 
     </section>
 
+    <!-- OPTIONAL TIMER -->
+    <div class="timer-grid">
+
+        <div class="time-box gold-timer">
+            <span>24</span>
+            <label>Days</label>
+        </div>
+
+        <div class="time-box gold-timer">
+            <span>08</span>
+            <label>Hours</label>
+        </div>
+
+        <div class="time-box rainbow-timer">
+            <span>12</span>
+            <label>Minutes</label>
+        </div>
+
+        <div class="time-box rainbow-timer">
+            <span>59</span>
+            <label>Seconds</label>
+        </div>
+
+    </div>
+
     <section class="legal-contact">
 
         <h3>Contact</h3>
 
         <p>
-            For privacy questions or legal inquiries regarding PHRINUSOMYIS, contact:
+            For legal or privacy inquiries regarding PHRINUSOMYIS:
         </p>
 
         <a href="mailto:info@phrinusomyis.com" class="legal-email">
@@ -351,6 +543,81 @@ body::before{
     </div>
 
 </main>
+
+<script type="text/javascript">
+
+function googleTranslateElementInit(){
+
+    new google.translate.TranslateElement(
+        {
+            pageLanguage:'en',
+            includedLanguages:'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+            autoDisplay:false
+        },
+        'google_translate_element'
+    );
+
+    /* SAVED LANGUAGE */
+    const savedLang = localStorage.getItem("site_lang");
+
+    if(savedLang){
+
+        setTimeout(() => {
+
+            changeLanguage(savedLang);
+
+            const switcher = document.getElementById("languageSwitcher");
+
+            if(switcher){
+                switcher.value = savedLang;
+            }
+
+        },1000);
+
+    }
+
+}
+
+/* CHANGE LANGUAGE */
+
+function changeLanguage(lang){
+
+    const select = document.querySelector(".goog-te-combo");
+
+    if(select){
+
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+
+        localStorage.setItem("site_lang", lang);
+
+    }else{
+
+        console.warn("Google Translate not loaded yet");
+
+    }
+
+}
+
+/* DROPDOWN LISTENER */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const switcher = document.getElementById("languageSwitcher");
+
+    switcher.addEventListener("change", function(){
+
+        changeLanguage(this.value);
+
+    });
+
+});
+
+</script>
+
+<script type="text/javascript"
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 
 </body>
 </html>
