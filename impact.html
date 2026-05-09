@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHR FRAGRANCE | THE ART OF SCENT</title>
+    <title>THE LION'S CIRCLE | PHRINUSOMYIS</title>
     <style>
         :root {
             --gold: #D4AF37;
             --obsidian: #050505;
-            --border: #1a1a1a;
+            --border: rgba(212, 175, 55, 0.2);
         }
 
         body, html {
@@ -16,261 +16,224 @@
             padding: 0;
             background-color: #000;
             color: #fff;
-            font-family: 'Arial', sans-serif;
-            scroll-snap-type: y mandatory;
+            font-family: 'Times New Roman', serif;
             overflow-x: hidden;
         }
 
-        /* FULL SCREEN VIDEO SECTIONS */
+        /* CINEMATIC VIDEO ENGINE */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* NAVIGATION OVERLAY */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .logo-text {
+            letter-spacing: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* SCROLL SECTIONS */
         section {
             height: 100vh;
-            width: 100vw;
-            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            scroll-snap-align: start;
-            overflow: hidden;
-        }
-
-        .video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            filter: brightness(0.4);
-        }
-
-        .content {
             text-align: center;
-            z-index: 1;
-            padding: 20px;
+            padding: 0 10%;
+            box-sizing: border-box;
         }
 
-        .content h1 {
-            font-size: clamp(40px, 10vw, 80px);
-            letter-spacing: 20px;
+        .hero-img {
+            max-width: 450px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 6vw, 80px);
+            letter-spacing: 25px;
             text-transform: uppercase;
             margin: 0;
-            font-weight: 900;
-        }
-
-        .content p {
             color: var(--gold);
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-size: 12px;
-            margin-top: 20px;
         }
 
-        /* SCENT DESCRIPTIONS */
-        .scent-info {
-            max-width: 500px;
-            margin-top: 30px;
-            font-size: 14px;
-            color: #ccc;
-            line-height: 1.8;
-            letter-spacing: 1px;
+        .manifesto {
+            max-width: 600px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            line-height: 2;
+            color: #aaa;
+            font-style: italic;
         }
 
-        /* PROCUREMENT & COMPLIANCE SECTION */
-        .procurement-section {
-            background: var(--obsidian);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .procurement-card {
-            max-width: 700px;
-            width: 90%;
-            border: 1px solid var(--border);
+        /* AUTHENTICATION SYSTEM (The $20k Experience) */
+        .ledger-box {
+            background: rgba(5, 5, 5, 0.9);
+            border: 1px solid var(--gold);
             padding: 60px;
-            background: #000;
-            text-align: center;
+            max-width: 700px;
+            width: 100%;
+            backdrop-filter: blur(10px);
         }
 
-        .step-label {
+        .ledger-header {
             color: var(--gold);
-            font-size: 10px;
-            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            letter-spacing: 5px;
+            font-size: 12px;
+            margin-bottom: 40px;
             display: block;
         }
 
-        .verify-input {
+        .input-line {
             width: 100%;
             background: transparent;
             border: none;
             border-bottom: 1px solid var(--border);
-            padding: 15px 0;
             color: #fff;
-            margin-bottom: 30px;
+            padding: 20px 0;
+            font-size: 16px;
+            letter-spacing: 4px;
             text-align: center;
-            letter-spacing: 2px;
+            margin-bottom: 30px;
             outline: none;
         }
 
-        .verify-input:focus {
+        .input-line:focus {
             border-bottom-color: var(--gold);
         }
 
-        .compliance-box {
-            background: #050505;
-            padding: 20px;
-            font-size: 11px;
-            color: #444;
-            margin-bottom: 40px;
-            text-align: left;
-            border-left: 2px solid var(--gold);
-        }
-
-        .checkout-btn {
+        /* ACTION BUTTON */
+        .procure-btn {
             background: var(--gold);
             color: #000;
             border: none;
-            padding: 20px 60px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
+            padding: 25px 80px;
             font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
             cursor: pointer;
-            transition: 0.3s;
-            width: 100%;
+            transition: 0.5s;
+            margin-top: 20px;
         }
 
-        .checkout-btn:hover {
+        .procure-btn:hover {
             background: #fff;
-            transform: scale(1.02);
+            letter-spacing: 10px;
         }
 
-        /* NAVIGATION DOTS */
-        .nav-dots {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
+        /* BOTTLE COUNTER */
+        .allocation {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #444;
+            margin-top: 20px;
+            text-transform: uppercase;
         }
 
-        .dot {
-            width: 8px;
-            height: 8px;
-            background: #333;
-            border-radius: 50%;
-            margin: 15px 0;
-            cursor: pointer;
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            font-size: 10px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            animation: pulse 2s infinite;
         }
 
-        .dot.active {
-            background: var(--gold);
-            box-shadow: 0 0 10px var(--gold);
+        @keyframes pulse {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
         }
-
     </style>
 </head>
 <body>
 
-    <div class="nav-dots">
-        <div class="dot active"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+    <!-- SECTION 1: THE VISUAL VORTEX -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="perfume-series-luxury.mp4" type="video/mp4">
+        </video>
     </div>
 
-    <!-- VIDEO 1: THE ESSENCE -->
+    <nav>
+        <span class="logo-text">PHRINUSOMYIS</span>
+        <span class="logo-text" style="color:var(--gold)">001/500</span>
+    </nav>
+
+    <!-- SECTION 2: THE IMAGE -->
     <section>
-        <video class="video-bg" autoplay muted loop playsinline>
-            <source src="luxury_fragrance_v1.mp4" type="video/mp4">
-        </video>
-        <div class="content">
-            <h1>PHR-01</h1>
-            <p>Oud | Obsidian | Sovereignty</p>
-            <div class="scent-info">
-                A heavy, commanding scent designed for the global architect. Distilled in Dubai, bottled in Brooklyn.
-            </div>
-        </div>
+        <img src="phrinusomyis_perfume_front.png" alt="Sovereign Scent" class="hero-img">
+        <h1>Sovereign</h1>
+        <p class="manifesto">It is not a fragrance. It is a certificate of existence. A liquid asset for the Lion’s Circle.</p>
+        <div class="scroll-indicator">Scroll to Authenticate</div>
     </section>
 
-    <!-- VIDEO 2: THE AMBIENCE -->
+    <!-- SECTION 3: THE LEDGER (VERIFICATION) -->
     <section>
-        <video class="video-bg" autoplay muted loop playsinline>
-            <source src="luxury_fragrance_v2.mp4" type="video/mp4">
-        </video>
-        <div class="content">
-            <h1>Lagos Gold</h1>
-            <p>Amber | Citrus | Energy</p>
-            <div class="scent-info">
-                Inspired by the Lagos coastline at dusk. A vibrant, metallic floral with a core of pure amber.
-            </div>
-        </div>
-    </section>
-
-    <!-- VIDEO 3: THE VORTEX -->
-    <section>
-        <video class="video-bg" autoplay muted loop playsinline>
-            <source src="luxury_fragrance_v3.mp4" type="video/mp4">
-        </video>
-        <div class="content">
-            <h1>Midnight Moscow</h1>
-            <p>Leather | Ice | Smoke</p>
-            <div class="scent-info">
-                Sharp, cold, and eternal. A leather-forward fragrance that lingers through the harshest winters.
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: PROCUREMENT & COMPLIANCE -->
-    <section class="procurement-section">
-        <div class="procurement-card">
-            <span class="step-label">Step 01: Asset Verification</span>
-            <input type="text" class="verify-input" placeholder="ENTER CIRCLE TAB ID OR EMAIL">
+        <div class="ledger-box">
+            <span class="ledger-header">Asset Ledger Verification</span>
+            <p style="font-size:14px; color:#666; margin-bottom:40px;">To acquire or verify a bottle, enter your Circle Credentials. This transmission is encrypted.</p>
             
-            <span class="step-label">Step 02: Deployment Location</span>
-            <input type="text" class="verify-input" placeholder="CITY / HUB FOR DELIVERY">
-
-            <div class="compliance-box">
-                <strong>PHRINUSOMYIS COMPLIANCE CHECK:</strong><br>
-                By proceeding, you verify that you are a verified patron. All fragrance shipments are encrypted and tracked via PHR-Global Logistics. Alcohol-based assets are subject to regional hub regulations.
-            </div>
-
-            <button class="checkout-btn" onclick="initiateCheckout()">Compliant Checkout</button>
+            <input type="text" class="input-line" placeholder="TAB ID / MEMBER NAME">
+            <input type="text" class="input-line" placeholder="BOTTLE ALLOCATION CODE">
+            
+            <button class="procure-btn" onclick="initiateVault()">Initiate Procurement</button>
+            <div class="allocation">Current Global Allocation: 001/500 remaining</div>
         </div>
+    </section>
+
+    <!-- SECTION 4: COMPLIANCE & LEGAL -->
+    <section style="background:rgba(0,0,0,0.95)">
+        <h2 style="letter-spacing:10px; color:var(--gold)">COMPLIANCE</h2>
+        <div style="max-width:800px; text-align:left; color:#333; font-size:12px; line-height:2;">
+            <p>PHRINUSOMYIS SOVEREIGN is a verified ledger asset. Each bottle contains 100ml of pure distilled power, hand-casked in charred obsidian. By initiating procurement, the patron acknowledges that this asset is non-transferable without Circle Authorization. Security protocols are active. All data remains within the Phrinusomyis circuit.</p>
+        </div>
+        <p style="margin-top:100px; font-size:10px; letter-spacing:5px; color:#111;">© 2026 PHRINUSOMYIS GLOBAL CIRCUIT</p>
     </section>
 
     <script>
-        // Smooth Nav Dot behavior
-        const sections = document.querySelectorAll('section');
-        const dots = document.querySelectorAll('.dot');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach((section, i) => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 60) {
-                    current = i;
-                }
-            });
-
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[current].classList.add('active');
-        });
-
-        // Checkout Logic
-        function initiateCheckout() {
-            const id = document.querySelector('.verify-input').value;
-            if(!id) {
-                alert("IDENTITY REQUIRED: Please enter a Tab ID or Email for compliance verification.");
-            } else {
-                alert("COMPLIANCE VERIFIED: Initializing secure payment portal for " + id);
-            }
+        function initiateVault() {
+            const btn = document.querySelector('.procure-btn');
+            btn.innerHTML = "VERIFYING LEDGER...";
+            setTimeout(() => {
+                alert("IDENTITY DETECTED. Standby for secure checkout transmission.");
+                btn.innerHTML = "ACCESS GRANTED";
+            }, 2000);
         }
+
+        // Automatic Replay / Sync Logic
+        const vid = document.querySelector('video');
+        vid.addEventListener('ended', function() {
+            vid.play();
+        });
     </script>
 
 </body>
