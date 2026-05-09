@@ -3,760 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLOBAL IMPACT | PHRINUSOMYIS</title>
-
+    <title>PHR FRAGRANCE | THE ART OF SCENT</title>
     <style>
-        :root{
-            --gold:#D4AF37;
-            --black:#000000;
-            --obsidian:#050505;
-            --border:#1a1a1a;
-            --gray:#999999;
-            --light:#cccccc;
+        :root {
+            --gold: #D4AF37;
+            --obsidian: #050505;
+            --border: #1a1a1a;
         }
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            scroll-snap-type: y mandatory;
+            overflow-x: hidden;
         }
 
-        html{
-            scroll-behavior:smooth;
+        /* FULL SCREEN VIDEO SECTIONS */
+        section {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            overflow: hidden;
         }
 
-        body{
-            background:#000;
-            color:#fff;
-            font-family:Arial, sans-serif;
-            overflow-x:hidden;
-            line-height:1.8;
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            filter: brightness(0.4);
         }
 
-        /* HERO */
-
-        .impact-header{
-            position:relative;
-            min-height:85vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:120px 20px;
-            overflow:hidden;
-            border-bottom:1px solid var(--border);
-
-            background:
-            linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
-            url('impact_bg.jpg');
-
-            background-size:cover;
-            background-position:center;
+        .content {
+            text-align: center;
+            z-index: 1;
+            padding: 20px;
         }
 
-        .impact-overlay{
-            position:absolute;
-            inset:0;
-            background:
-            radial-gradient(circle at top, rgba(212,175,55,0.12), transparent 40%);
-            pointer-events:none;
+        .content h1 {
+            font-size: clamp(40px, 10vw, 80px);
+            letter-spacing: 20px;
+            text-transform: uppercase;
+            margin: 0;
+            font-weight: 900;
         }
 
-        .impact-header-content{
-            position:relative;
-            z-index:2;
-            max-width:1000px;
+        .content p {
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-top: 20px;
         }
 
-        .impact-tag{
-            color:var(--gold);
-            letter-spacing:5px;
-            text-transform:uppercase;
-            font-size:11px;
-            display:block;
-            margin-bottom:25px;
+        /* SCENT DESCRIPTIONS */
+        .scent-info {
+            max-width: 500px;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.8;
+            letter-spacing: 1px;
         }
 
-        .impact-header h1{
-            font-size:clamp(42px,9vw,90px);
-            letter-spacing:14px;
-            text-transform:uppercase;
-            font-weight:900;
-            line-height:1.1;
-            margin-bottom:25px;
+        /* PROCUREMENT & COMPLIANCE SECTION */
+        .procurement-section {
+            background: var(--obsidian);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .impact-header p{
-            max-width:780px;
-            margin:0 auto;
-            color:#bdbdbd;
-            font-size:16px;
+        .procurement-card {
+            max-width: 700px;
+            width: 90%;
+            border: 1px solid var(--border);
+            padding: 60px;
+            background: #000;
+            text-align: center;
         }
 
-        /* CONTAINER */
-
-        .container{
-            max-width:1200px;
-            margin:0 auto;
-            padding:120px 20px;
+        .step-label {
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
         }
 
-        /* INTRO */
-
-        .mission-statement{
-            max-width:950px;
-            margin:0 auto 130px;
-            text-align:center;
+        .verify-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 2px;
+            outline: none;
         }
 
-        .mission-statement h2{
-            color:var(--gold);
-            text-transform:uppercase;
-            letter-spacing:6px;
-            font-size:15px;
-            margin-bottom:30px;
+        .verify-input:focus {
+            border-bottom-color: var(--gold);
         }
 
-        .mission-statement p{
-            color:#bcbcbc;
-            font-size:22px;
-            line-height:2;
+        .compliance-box {
+            background: #050505;
+            padding: 20px;
+            font-size: 11px;
+            color: #444;
+            margin-bottom: 40px;
+            text-align: left;
+            border-left: 2px solid var(--gold);
         }
 
-        /* GRID */
-
-        .impact-grid{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:90px;
-            align-items:center;
-            margin-bottom:140px;
+        .checkout-btn {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 20px 60px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
         }
 
-        @media(max-width:900px){
-
-            .impact-grid{
-                grid-template-columns:1fr;
-                gap:40px;
-            }
-
+        .checkout-btn:hover {
+            background: #fff;
+            transform: scale(1.02);
         }
 
-        .impact-image{
-            position:relative;
-            overflow:hidden;
-            border:1px solid var(--border);
+        /* NAVIGATION DOTS */
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
         }
 
-        .impact-image img{
-            width:100%;
-            display:block;
-            filter:grayscale(100%);
-            transition:0.6s;
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            margin: 15px 0;
+            cursor: pointer;
         }
 
-        .impact-image:hover img{
-            transform:scale(1.05);
-            filter:grayscale(0%);
-        }
-
-        .impact-content h2{
-            color:var(--gold);
-            font-size:18px;
-            letter-spacing:4px;
-            text-transform:uppercase;
-            margin-bottom:25px;
-            border-left:2px solid var(--gold);
-            padding-left:18px;
-        }
-
-        .impact-content p{
-            color:var(--light);
-            font-size:15px;
-            margin-bottom:25px;
-        }
-
-        .impact-list{
-            list-style:none;
-            margin-top:30px;
-        }
-
-        .impact-list li{
-            color:#9d9d9d;
-            margin-bottom:14px;
-            position:relative;
-            padding-left:25px;
-            font-size:14px;
-        }
-
-        .impact-list li::before{
-            content:"●";
-            color:var(--gold);
-            position:absolute;
-            left:0;
-        }
-
-        /* METRICS */
-
-        .metrics-section{
-            margin:120px 0;
-        }
-
-        .metrics-title{
-            text-align:center;
-            margin-bottom:60px;
-        }
-
-        .metrics-title h2{
-            font-size:18px;
-            text-transform:uppercase;
-            letter-spacing:6px;
-            color:var(--gold);
-            margin-bottom:15px;
-        }
-
-        .metrics-title p{
-            color:#666;
-            font-size:14px;
-        }
-
-        .metrics-wrap{
-            display:grid;
-            grid-template-columns:repeat(4,1fr);
-            gap:20px;
-        }
-
-        @media(max-width:900px){
-            .metrics-wrap{
-                grid-template-columns:repeat(2,1fr);
-            }
-        }
-
-        @media(max-width:500px){
-            .metrics-wrap{
-                grid-template-columns:1fr;
-            }
-        }
-
-        .metric-card{
-            background:linear-gradient(to bottom,#050505,#000);
-            border:1px solid var(--border);
-            padding:55px 20px;
-            text-align:center;
-            transition:0.4s;
-        }
-
-        .metric-card:hover{
-            border-color:var(--gold);
-            transform:translateY(-5px);
-        }
-
-        .metric-card h3{
-            font-size:42px;
-            color:var(--gold);
-            margin-bottom:15px;
-        }
-
-        .metric-card p{
-            font-size:11px;
-            color:#777;
-            letter-spacing:2px;
-            text-transform:uppercase;
-        }
-
-        /* GLOBAL AREAS */
-
-        .global-map{
-            margin:140px 0;
-            border-top:1px solid var(--border);
-            border-bottom:1px solid var(--border);
-            padding:90px 0;
-        }
-
-        .global-map h2{
-            text-align:center;
-            color:var(--gold);
-            letter-spacing:5px;
-            text-transform:uppercase;
-            margin-bottom:60px;
-            font-size:18px;
-        }
-
-        .city-grid{
-            display:grid;
-            grid-template-columns:repeat(4,1fr);
-            gap:20px;
-        }
-
-        @media(max-width:900px){
-            .city-grid{
-                grid-template-columns:repeat(2,1fr);
-            }
-        }
-
-        @media(max-width:500px){
-            .city-grid{
-                grid-template-columns:1fr;
-            }
-        }
-
-        .city-card{
-            border:1px solid var(--border);
-            padding:40px 25px;
-            background:#050505;
-        }
-
-        .city-card h3{
-            color:#fff;
-            font-size:16px;
-            letter-spacing:3px;
-            margin-bottom:15px;
-            text-transform:uppercase;
-        }
-
-        .city-card span{
-            color:var(--gold);
-            font-size:11px;
-            letter-spacing:2px;
-            text-transform:uppercase;
-            display:block;
-            margin-bottom:20px;
-        }
-
-        .city-card p{
-            color:#8d8d8d;
-            font-size:14px;
-        }
-
-        /* REPORT */
-
-        .protocol-box{
-            border:1px solid var(--border);
-            background:linear-gradient(to bottom,#050505,#000);
-            padding:90px 40px;
-            text-align:center;
-            margin-top:130px;
-        }
-
-        .protocol-box h2{
-            letter-spacing:8px;
-            text-transform:uppercase;
-            margin-bottom:30px;
-            font-size:28px;
-        }
-
-        .protocol-box p{
-            max-width:760px;
-            margin:0 auto 40px;
-            color:#999;
-        }
-
-        .report-btn{
-            display:inline-block;
-            padding:16px 45px;
-            border:1px solid var(--gold);
-            color:var(--gold);
-            text-decoration:none;
-            text-transform:uppercase;
-            letter-spacing:2px;
-            font-size:12px;
-            transition:0.4s;
-        }
-
-        .report-btn:hover{
-            background:var(--gold);
-            color:#000;
-        }
-
-        /* FOOTER */
-
-        footer{
-            margin-top:140px;
-            border-top:1px solid var(--border);
-            padding:90px 20px 60px;
-            text-align:center;
-        }
-
-        .footer-logo{
-            display:block;
-            font-size:22px;
-            letter-spacing:10px;
-            font-weight:900;
-            margin-bottom:35px;
-            text-transform:uppercase;
-        }
-
-        .footer-links{
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:25px;
-            margin-bottom:40px;
-        }
-
-        .footer-links a{
-            color:#777;
-            text-decoration:none;
-            text-transform:uppercase;
-            letter-spacing:2px;
-            font-size:12px;
-            transition:0.3s;
-        }
-
-        .footer-links a:hover{
-            color:var(--gold);
-        }
-
-        .location-bar{
-            color:var(--gold);
-            font-size:12px;
-            letter-spacing:4px;
-            margin-bottom:20px;
-            text-transform:uppercase;
-        }
-
-        .copyright{
-            color:#333;
-            font-size:10px;
-            letter-spacing:2px;
-            text-transform:uppercase;
+        .dot.active {
+            background: var(--gold);
+            box-shadow: 0 0 10px var(--gold);
         }
 
     </style>
 </head>
 <body>
 
-    <!-- HERO -->
-    <header class="impact-header">
-
-        <div class="impact-overlay"></div>
-
-        <div class="impact-header-content">
-
-            <span class="impact-tag">
-                International Responsibility Program
-            </span>
-
-            <h1>Global Impact</h1>
-
-            <p>
-                PHRINUSOMYIS supports international cultural projects, event communities, youth development programs, and future-focused productions across multiple regions worldwide.
-            </p>
-
-        </div>
-
-    </header>
-
-    <!-- MAIN -->
-    <div class="container">
-
-        <!-- INTRO -->
-        <section class="mission-statement">
-
-            <h2>Our Mission</h2>
-
-            <p>
-                “PHRINUSOMYIS believes global entertainment should create long-term value beyond the stage. Our projects are focused on culture, opportunity, technology, education, and international community support.”
-            </p>
-
-        </section>
-
-        <!-- SECTION 01 -->
-        <section class="impact-grid">
-
-            <div class="impact-content">
-
-                <h2>01. Cultural Projects</h2>
-
-                <p>
-                    PHRINUSOMYIS supports creative programs connected to music, live productions, digital culture, and international entertainment communities.
-                </p>
-
-                <p>
-                    Through future partnerships and event programs, the organization aims to support creators, local talent, and cultural visibility across different regions.
-                </p>
-
-                <ul class="impact-list">
-
-                    <li>International creative partnerships</li>
-
-                    <li>Support for live production communities</li>
-
-                    <li>Regional cultural visibility programs</li>
-
-                    <li>Global entertainment development</li>
-
-                </ul>
-
-            </div>
-
-            <div class="impact-image">
-
-                <img src="culture.jpg" alt="Culture Program">
-
-            </div>
-
-        </section>
-
-        <!-- METRICS -->
-        <section class="metrics-section">
-
-            <div class="metrics-title">
-
-                <h2>Global Activity</h2>
-
-                <p>
-                    International operations and future development targets
-                </p>
-
-            </div>
-
-            <div class="metrics-wrap">
-
-                <div class="metric-card">
-
-                    <h3 id="metric-1">0</h3>
-
-                    <p>Global Hubs</p>
-
-                </div>
-
-                <div class="metric-card">
-
-                    <h3 id="metric-2">0</h3>
-
-                    <p>International Productions</p>
-
-                </div>
-
-                <div class="metric-card">
-
-                    <h3 id="metric-3">0</h3>
-
-                    <p>Community Projects</p>
-
-                </div>
-
-                <div class="metric-card">
-
-                    <h3 id="metric-4">0</h3>
-
-                    <p>Partner Networks</p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- SECTION 02 -->
-        <section class="impact-grid">
-
-            <div class="impact-image">
-
-                <img src="energy.jpg" alt="Future Operations">
-
-            </div>
-
-            <div class="impact-content">
-
-                <h2>02. Future Operations</h2>
-
-                <p>
-                    PHRINUSOMYIS continues to explore better production systems, modern venue technologies, and international operational improvements across future global events.
-                </p>
-
-                <p>
-                    Long-term plans include improved energy efficiency, digital event systems, and modern production infrastructure connected to large-scale entertainment experiences.
-                </p>
-
-                <ul class="impact-list">
-
-                    <li>Modern stadium production systems</li>
-
-                    <li>Digital event infrastructure</li>
-
-                    <li>International broadcast development</li>
-
-                    <li>Operational technology upgrades</li>
-
-                </ul>
-
-            </div>
-
-        </section>
-
-        <!-- SECTION 03 -->
-        <section class="impact-grid">
-
-            <div class="impact-content">
-
-                <h2>03. Community Development</h2>
-
-                <p>
-                    PHRINUSOMYIS plans to support programs connected to youth opportunities, digital learning, entertainment education, and international exposure for emerging talent.
-                </p>
-
-                <p>
-                    Community-focused initiatives may expand through future partnerships, event collaborations, and educational support programs.
-                </p>
-
-            </div>
-
-            <div class="impact-image">
-
-                <img src="community.jpg" alt="Community">
-
-            </div>
-
-        </section>
-
-        <!-- GLOBAL LOCATIONS -->
-        <section class="global-map">
-
-            <h2>International Presence</h2>
-
-            <div class="city-grid">
-
-                <div class="city-card">
-
-                    <h3>Brooklyn</h3>
-
-                    <span>Headquarters</span>
-
-                    <p>
-                        Strategic leadership, international planning, and global operational coordination.
-                    </p>
-
-                </div>
-
-                <div class="city-card">
-
-                    <h3>Dubai</h3>
-
-                    <span>Operations Hub</span>
-
-                    <p>
-                        Future-focused entertainment infrastructure and international business expansion.
-                    </p>
-
-                </div>
-
-                <div class="city-card">
-
-                    <h3>Moscow</h3>
-
-                    <span>Production Network</span>
-
-                    <p>
-                        Creative production systems, digital operations, and technical collaboration.
-                    </p>
-
-                </div>
-
-                <div class="city-card">
-
-                    <h3>Lagos</h3>
-
-                    <span>West Africa</span>
-
-                    <p>
-                        Regional entertainment growth, live event expansion, and youth-focused opportunities.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- REPORT -->
-        <section class="protocol-box">
-
-            <h2>Global Impact Report</h2>
-
-            <p>
-                Learn more about the international vision, development goals, operational growth, and future community programs connected to PHRINUSOMYIS global activities.
-            </p>
-
-            <a href="#" class="report-btn">
-                View 2026 Report
-            </a>
-
-        </section>
-
+    <div class="nav-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-
-        <span class="footer-logo">
-            PHRINUSOMYIS
-        </span>
-
-        <div class="footer-links">
-
-            <a href="#">Global Impact</a>
-
-            <a href="#">Events</a>
-
-            <a href="#">Press</a>
-
-            <a href="#">Privacy</a>
-
-            <a href="#">Contact</a>
-
+    <!-- VIDEO 1: THE ESSENCE -->
+    <section>
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="luxury_fragrance_v1.mp4" type="video/mp4">
+        </video>
+        <div class="content">
+            <h1>PHR-01</h1>
+            <p>Oud | Obsidian | Sovereignty</p>
+            <div class="scent-info">
+                A heavy, commanding scent designed for the global architect. Distilled in Dubai, bottled in Brooklyn.
+            </div>
         </div>
+    </section>
 
-        <div class="location-bar">
-            Brooklyn | Dubai | Moscow | Lagos
+    <!-- VIDEO 2: THE AMBIENCE -->
+    <section>
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="luxury_fragrance_v2.mp4" type="video/mp4">
+        </video>
+        <div class="content">
+            <h1>Lagos Gold</h1>
+            <p>Amber | Citrus | Energy</p>
+            <div class="scent-info">
+                Inspired by the Lagos coastline at dusk. A vibrant, metallic floral with a core of pure amber.
+            </div>
         </div>
+    </section>
 
-        <p class="copyright">
-            © 2026 PHRINUSOMYIS. ALL RIGHTS RESERVED.
-        </p>
+    <!-- VIDEO 3: THE VORTEX -->
+    <section>
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="luxury_fragrance_v3.mp4" type="video/mp4">
+        </video>
+        <div class="content">
+            <h1>Midnight Moscow</h1>
+            <p>Leather | Ice | Smoke</p>
+            <div class="scent-info">
+                Sharp, cold, and eternal. A leather-forward fragrance that lingers through the harshest winters.
+            </div>
+        </div>
+    </section>
 
-    </footer>
+    <!-- SECTION 4: PROCUREMENT & COMPLIANCE -->
+    <section class="procurement-section">
+        <div class="procurement-card">
+            <span class="step-label">Step 01: Asset Verification</span>
+            <input type="text" class="verify-input" placeholder="ENTER CIRCLE TAB ID OR EMAIL">
+            
+            <span class="step-label">Step 02: Deployment Location</span>
+            <input type="text" class="verify-input" placeholder="CITY / HUB FOR DELIVERY">
+
+            <div class="compliance-box">
+                <strong>PHRINUSOMYIS COMPLIANCE CHECK:</strong><br>
+                By proceeding, you verify that you are a verified patron. All fragrance shipments are encrypted and tracked via PHR-Global Logistics. Alcohol-based assets are subject to regional hub regulations.
+            </div>
+
+            <button class="checkout-btn" onclick="initiateCheckout()">Compliant Checkout</button>
+        </div>
+    </section>
 
     <script>
+        // Smooth Nav Dot behavior
+        const sections = document.querySelectorAll('section');
+        const dots = document.querySelectorAll('.dot');
 
-        function animateValue(obj, start, end, duration) {
-
-            let startTimestamp = null;
-
-            const step = (timestamp) => {
-
-                if (!startTimestamp) startTimestamp = timestamp;
-
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-
-                obj.innerHTML = Math.floor(progress * (end - start) + start);
-
-                if (progress < 1) {
-
-                    window.requestAnimationFrame(step);
-
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach((section, i) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = i;
                 }
+            });
 
-            };
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[current].classList.add('active');
+        });
 
-            window.requestAnimationFrame(step);
-
+        // Checkout Logic
+        function initiateCheckout() {
+            const id = document.querySelector('.verify-input').value;
+            if(!id) {
+                alert("IDENTITY REQUIRED: Please enter a Tab ID or Email for compliance verification.");
+            } else {
+                alert("COMPLIANCE VERIFIED: Initializing secure payment portal for " + id);
+            }
         }
-
-        window.onload = () => {
-
-            animateValue(document.getElementById("metric-1"), 0, 4, 2000);
-
-            animateValue(document.getElementById("metric-2"), 0, 120, 2200);
-
-            animateValue(document.getElementById("metric-3"), 0, 35, 2400);
-
-            animateValue(document.getElementById("metric-4"), 0, 18, 2600);
-
-        };
-
     </script>
 
 </body>
-    </html>
+</html>
