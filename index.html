@@ -881,8 +881,202 @@ body {
         <p style="color: #666; font-size: 13px; letter-spacing: 1px;">
             <span class="phr-hq-label">BROOKLYN (HQ)</span> | MOSCOW | DUBAI | LAGOS 
         </p>
+    </div>    
+
+       <style>
+
+/* =========================
+   PHRINUSOMYIS FOOTER STYLE
+========================= */
+
+.phrinus-registry-footer{
+    width:100%;
+    background:#000;
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding:70px 30px 40px;
+    margin-top:80px;
+    position:relative;
+    overflow:hidden;
+}
+
+.phrinus-registry-footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.5),
+        transparent
+    );
+}
+
+.registry-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    max-width:1300px;
+    margin:0 auto 45px;
+}
+
+.office-node{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:28px 24px;
+    transition:0.4s ease;
+    backdrop-filter:blur(10px);
+    position:relative;
+}
+
+.office-node:hover{
+    transform:translateY(-6px);
+    border-color:rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.05);
+    box-shadow:0 10px 35px rgba(255,255,255,0.04);
+}
+
+.node-header{
+    display:block;
+    font-size:14px;
+    letter-spacing:2px;
+    color:#ffffff;
+    font-weight:700;
+    margin-bottom:18px;
+    font-family:Arial, sans-serif;
+}
+
+.node-address{
+    color:rgba(255,255,255,0.72);
+    font-size:14px;
+    line-height:1.8;
+    font-family:Arial, sans-serif;
+}
+
+.pin{
+    color:#ffffff;
+    font-weight:600;
+}
+
+.contact-footer{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding-top:30px;
+}
+
+.contact-link{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:1px;
+    padding:14px 24px;
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:50px;
+    transition:0.35s ease;
+    background:rgba(255,255,255,0.03);
+    font-family:Arial, sans-serif;
+}
+
+.contact-link:hover{
+    background:#ffffff;
+    color:#000000;
+    border-color:#ffffff;
+    transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+    .phrinus-registry-footer{
+        padding:60px 20px 35px;
+    }
+
+    .registry-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .office-node{
+        padding:24px 20px;
+    }
+
+    .contact-footer{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .contact-link{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</div> 
+<footer class="phrinus-registry-footer">
+
+    <div class="registry-grid"> 
+
+        <div class="office-node">
+            <span class="node-header">🇺🇸 HEADQUARTERS</span>
+            <p class="node-address">
+                New York City, USA<br>
+                Kings County<br>
+                <span class="pin">📍 Brooklyn</span>
+            </p>
+        </div>
+
+        <div class="office-node">
+            <span class="node-header">🇦🇪 DUBAI OFFICE</span>
+            <p class="node-address">
+                Dubai, UAE<br>
+                Emirate of Dubai<br>
+                <span class="pin">📍 Dubai</span>
+            </p>
+        </div>
+
+        <div class="office-node">
+            <span class="node-header">🇷🇺 MOSCOW OFFICE</span>
+            <p class="node-address">
+                Moscow, Russia<br>
+                Moscow Federal City<br>
+                <span class="pin">📍 Central Okrug</span>
+            </p>
+        </div>
+
+        <div class="office-node">
+            <span class="node-header">🇳🇬 LAGOS OFFICE</span>
+            <p class="node-address">
+                Lagos State, Nigeria<br>
+                Eti-Osa LGA<br>
+                <span class="pin">📍 Banana Island</span>
+            </p>
+        </div>
+
     </div>
-        
+
+    <div class="contact-footer">
+        <a href="tel:+16028423713" class="contact-link">
+            +1 (602) 842 - 3713
+        </a>
+
+        <a href="mailto:Office@phrinusomyis.com" class="contact-link">
+            Office@phrinusomyis.com
+        </a>
+    </div>
+
+</footer>
+
+</div>
         <div id="social-media" style="display: flex; justify-content: center; gap: 20px; margin-top: 80px;">
             <img src="phrinusomyis_youtube.png" alt="YT" style="height: 35px;">
             <img src="phrinusomyis_tiktok.png" alt="TK" style="height: 35px;">
