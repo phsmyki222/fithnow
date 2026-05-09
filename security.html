@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SECURITY CONTROL CENTER | PHRINUSOMYIS GLOBAL</title>
+
+<style>
+:root {
+    --gold: #D4AF37;
+    --obsidian: #050505;
+    --danger: #ff3e3e;
+    --line: #111;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    padding: 120px 20px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+}
+
+.header h1 {
+    font-size: 22px;
+    letter-spacing: 14px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.live {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold);
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* GRID */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 80px 20px 150px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--obsidian);
+    border: 1px solid var(--line);
+    padding: 30px;
+}
+
+.card h3 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* ACTION BUTTONS */
+.btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid #333;
+    background: transparent;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.danger {
+    border-color: #300;
+    color: #700;
+}
+
+.danger:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* STATUS PANEL */
+.status {
+    margin-top: 80px;
+    padding: 30px;
+    border: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #444;
+}
+
+.status span {
+    color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Security Control Center</h1>
+    <div class="live">
+        <div class="dot"></div>
+        LIVE GLOBAL MONITORING ACTIVE
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Global Surveillance Grid</h3>
+            <p>Real-time monitoring of all operational nodes across Brooklyn, Lagos, Dubai, and Moscow.</p>
+            <button class="btn">View Grid</button>
+        </div>
+
+        <div class="card">
+            <h3>Threat Detection System</h3>
+            <p>AI-driven anomaly detection scanning all incoming traffic and identity access requests.</p>
+            <button class="btn">Run Scan</button>
+        </div>
+
+        <div class="card">
+            <h3>Identity Lock Override</h3>
+            <p>Force lock any Identity ID across the global network instantly.</p>
+            <button class="btn danger">Activate Lock</button>
+        </div>
+
+        <div class="card">
+            <h3>Node Shutdown Control</h3>
+            <p>Disable any regional node in case of breach or unauthorized access attempt.</p>
+            <button class="btn danger">Shutdown Node</button>
+        </div>
+
+    </div>
+
+    <div class="status">
+        <div>Firewall: <span>Active</span></div>
+        <div>Encryption: <span>AES-256</span></div>
+        <div>Nodes Online: <span>4/4</span></div>
+        <div>Threat Level: <span>Low</span></div>
+    </div>
+
+</main>
+
+</body>
+</html>
