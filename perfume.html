@@ -707,7 +707,7 @@ footer{
         </h2>
 
         <p class="ledger-text">
-            Enter your member identification details and bottle allocation code to continue with official verification and secure purchase access.
+            To confirm your fragrance, please enter the Unique Production Serial and Holographic Security Code found on your packaging. This system will verify your bottle against our official registry to confirm its authenticity and origin.
         </p>
 
         <input type="text" class="input-line" placeholder="MEMBER NAME / ID">
@@ -776,18 +776,23 @@ function initiateVault(){
 
     const btn = document.querySelector('.procure-btn');
 
-    btn.innerHTML = "VERIFYING...";
+    // Phase 1: The Suspense
+    btn.innerHTML = "ENCRYPTING CONNECTION...";
 
     setTimeout(() => {
+        
+        // Phase 2: The Failure
+        btn.innerHTML = "IDENTITY MISMATCH";
+        btn.style.background = "#000"; // Black out the button
+        btn.style.color = "#ff0000";   // Red text
 
-        btn.innerHTML = "ACCESS DENIED";
-
-        // Vibrate for 5000 milliseconds (5 seconds)
+        // Trigger the 5-second heavy vibration
         if (navigator.vibrate) {
             navigator.vibrate(5000);
         }
 
-        alert("ACCESS DENIED: Unauthorized access attempt detected.");
+        // The "Marketing Teaser" message
+        alert("SECURITY ALERT: Allocation code not yet active in this region. The Vault remains sealed.");
 
     }, 2200);
 
