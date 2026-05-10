@@ -513,7 +513,7 @@ footer {
             The bottle is crowned with a hand-finished gold lion head. Each unit is presented in a custom-engraved obsidian chest, accompanied by a serialized Certificate of Authenticity and a private invitation to the Lion’s Circle.
         </p>
     </div>
-        <style>
+           <style>
     /* GLOBAL CORPORATE FOOTER STYLES */
     .phr-main-footer {
         background-color: #000000;
@@ -525,7 +525,7 @@ footer {
 
     .phr-footer-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Mobile layout */
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px 20px;
         max-width: 1100px;
         margin: 0 auto 60px;
@@ -533,7 +533,7 @@ footer {
 
     @media (min-width: 768px) {
         .phr-footer-grid {
-            grid-template-columns: repeat(4, 1fr); /* Desktop layout */
+            grid-template-columns: repeat(4, 1fr);
         }
     }
 
@@ -564,15 +564,16 @@ footer {
     }
 
     .phr-footer-section a:hover {
-        color: #D4AF37; /* PHRINUSOMYIS Gold */
+        color: #D4AF37;
     }
 
-    /* GLOBAL SITES BAR */
+    /* THE FIX IS HERE */
     .phr-global-bar {
         max-width: 1100px;
         margin: 0 auto;
         padding-top: 40px;
         border-top: 1px solid #1a1a1a;
+        text-align: center; /* This centers the HQ text and heading */
     }
 
     .phr-global-bar h3 {
@@ -599,16 +600,18 @@ footer {
 
 <footer class="phr-main-footer">
     <div class="phr-footer-grid">
+        <!-- Section 1 -->
         <div class="phr-footer-section">
             <h3>LUXURY</h3>
             <ul>
                 <li><a href="luxury">Luxury Identity</a></li>
-                <li><a href="#">PHRINUSOMYIS CIRCLE</a></li>
-                <li><a href="#">Global Impact</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="circle">Private Access</a></li>
+                <li><a href="perfume">Perfumes</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
         </div>
 
+        <!-- Section 2 -->
         <div class="phr-footer-section">
             <h3>PHRINUSOMYIS.COM</h3>
             <ul>
@@ -619,33 +622,28 @@ footer {
             </ul>
         </div>
 
+        <!-- Section 3 -->
         <div class="phr-footer-section">
             <h3>ABOUT</h3>
             <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Privacy Choices</a></li>
+                <li><a href="policy">Privacy Policy</a></li>
+                <li><a href="copyright">Copyright</a></li>
+                <li><a href="terms">Terms of Use</a></li>
+                <li><a href="privary">Privacy Choices</a></li>
             </ul>
         </div>
 
+        <!-- Section 4 -->
         <div class="phr-footer-section">
             <h3>HELP</h3>
             <ul>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-                <li><a href="#">Closed Captions</a></li>
+                <li><a href="security">Security</a></li>
+                <li><a href="help">Help Center</a></li>
+                <li><a href="cookies">Cookie Policy</a></li>
+                <li><a href="close">Closed Captions</a></li>
             </ul>
         </div>
-    </div>
 
-    <div class="phr-global-bar">
-        <h3>PHRINUSOMYIS OFFICE</h3>
-        <p style="color: #666; font-size: 13px; letter-spacing: 1px;">
-            <span class="phr-hq-label">BROOKLYN (HQ)</span> | MOSCOW | DUBAI | LAGOS 
-        </p>
-    </div>
 </footer>
 
     </div>
