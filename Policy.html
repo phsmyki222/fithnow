@@ -1,292 +1,701 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Privacy Policy | PHRINUSOMYIS</title>  
-    <style>  
-        /* PHRINUSOMYIS LUXURY CORE CSS */  
-        body {  
-            background-color: #000000;  
-            color: #ffffff;  
-            font-family: 'Arial', sans-serif;  
-            margin: 0;  
-            padding: 0;  
-            line-height: 1.6;  
-        }  .language-wrap {  
-        padding: 20px;  
-        text-align: right;  
-    }  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    #languageSwitcher {  
-        background: #000;  
-        color: #D4AF37;  
-        border: 1px solid #D4AF37;  
-        padding: 5px 10px;  
-        cursor: pointer;  
-        text-transform: uppercase;  
-        font-size: 12px;  
-    }  
+<title>Policy Charter | PHRINUSOMYIS</title>
 
-    .logo {  
-        display: block;  
-        margin: 40px auto;  
-        max-width: 280px;  
-    }  
+<style>
 
-    h1 {  
-        text-align: center;  
-        text-transform: uppercase;  
-        letter-spacing: 8px;  
-        font-size: 2.5rem;  
-        margin-bottom: 10px;  
-        color: #D4AF37; /* PHRINUSOMYIS GOLD */  
-    }  
+:root{
+    --gold:#D4AF37;
+    --black:#000000;
+    --soft:#0a0a0a;
+    --border:#1a1a1a;
+    --text:#8a8a8a;
+    --white:#ffffff;
+}
 
-    .header-line {  
-        width: 100px;  
-        height: 2px;  
-        background: #D4AF37;  
-        margin: 0 auto 60px;  
-    }  
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    .policy-section {  
-        max-width: 900px;  
-        margin: 0 auto 50px;  
-        padding: 0 20px;  
-    }  
+html{
+    scroll-behavior:smooth;
+}
 
-    h2 {  
-        font-size: 18px;  
-        letter-spacing: 4px;  
-        text-transform: uppercase;  
-        border-left: 3px solid #D4AF37;  
-        padding-left: 15px;  
-        margin-bottom: 25px;  
-    }  
+body{
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
 
-    p {  
-        color: #cccccc;  
-        font-size: 16px;  
-        margin-bottom: 20px;  
-    }  
+/* TOP BAR */
 
-    .policy-list {  
-        list-style: none;  
-        padding: 0;  
-    }  
+.top-bar{
+    width:100%;
+    padding:25px 40px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-    .policy-list li {  
-        margin-bottom: 15px;  
-        padding-left: 25px;  
-        position: relative;  
-        color: #ffffff;  
-    }  
+.logo-text{
+    color:#fff;
+    letter-spacing:8px;
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+}
 
-    .policy-list li::before {  
-        content: '●';  
-        color: #D4AF37;  
-        position: absolute;  
-        left: 0;  
-    }  
+#languageSwitcher{
+    background:transparent;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    padding:8px 12px;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    outline:none;
+}
 
-    /* GLOBAL CORPORATE FOOTER */  
-    .phr-main-footer {  
-        background-color: #000000;  
-        color: #ffffff;  
-        padding: 80px 20px 40px;  
-        border-top: 1px solid #1a1a1a;  
-        margin-top: 100px;  
-    }  
+/* HERO */
 
-    .phr-footer-grid {  
-        display: grid;  
-        grid-template-columns: repeat(2, 1fr);  
-        gap: 40px 20px;  
-        max-width: 1100px;  
-        margin: 0 auto 60px;  
-    }  
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.92)),
+    url('policy-bg.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    border-bottom:1px solid var(--border);
+}
 
-    @media (min-width: 768px) {  
-        .phr-footer-grid {  
-            grid-template-columns: repeat(4, 1fr);  
-        }  
-    }  
+.hero-content{
+    max-width:900px;
+    padding:20px;
+}
 
-    .phr-footer-section h3 {  
-        color: #ffffff;  
-        font-size: 15px;  
-        font-weight: 900;  
-        letter-spacing: 2px;  
-        margin-bottom: 25px;  
-        text-transform: uppercase;  
-    }  
+.hero-mini{
+    color:var(--gold);
+    letter-spacing:6px;
+    text-transform:uppercase;
+    font-size:11px;
+    display:block;
+    margin-bottom:30px;
+}
 
-    .phr-footer-section ul {  
-        list-style: none;  
-        padding: 0;  
-        margin: 0;  
-    }  
+.hero h1{
+    font-size:clamp(45px,10vw,120px);
+    letter-spacing:18px;
+    text-transform:uppercase;
+    line-height:1;
+    margin-bottom:35px;
+}
 
-    .phr-footer-section li {  
-        margin-bottom: 15px;  
-    }  
+.hero p{
+    color:#999;
+    font-size:17px;
+    line-height:2;
+    max-width:760px;
+    margin:auto;
+}
 
-    .phr-footer-section a {  
-        color: #888;  
-        text-decoration: none;  
-        font-size: 14px;  
-        transition: color 0.3s;  
-    }  
+/* GLOBAL STRIP */
 
-    .phr-footer-section a:hover {  
-        color: #D4AF37;  
-    }  
+.global-strip{
+    width:100%;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:30px;
+    text-align:center;
+    background:#050505;
+}
 
-    .phr-global-bar {  
-        max-width: 1100px;  
-        margin: 0 auto;  
-        padding-top: 40px;  
-        border-top: 1px solid #1a1a1a;  
-    }  
+.global-strip span{
+    color:var(--gold);
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:11px;
+}
 
-    .phr-global-bar h3 {  
-        font-size: 15px;  
-        letter-spacing: 2px;  
-        margin-bottom: 20px;  
-        font-weight: 900;  
-    }  
+/* POLICY BLOCK */
 
-    .phr-hq-label {  
-        color: #D4AF37;  
-        font-weight: bold;  
-    }  
+.policy-block{
+    max-width:1250px;
+    margin:150px auto;
+    padding:0 40px;
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:60px;
+}
 
-    .footer-note {  
-        margin-top: 50px;  
-        text-align: center;  
-        color: #444;  
-        font-size: 11px;  
-        letter-spacing: 1px;  
-        text-transform: uppercase;  
-    }  
+.policy-number{
+    font-size:90px;
+    font-weight:900;
+    color:#111;
+    line-height:1;
+}
 
-    .legal-email {  
-        color: #D4AF37;  
-        text-decoration: none;  
-        font-weight: bold;  
-        letter-spacing: 1px;  
-    }  
+.policy-content h2{
+    font-size:34px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    margin-bottom:30px;
+}
+
+.policy-content p{
+    color:var(--text);
+    line-height:2;
+    font-size:16px;
+    max-width:850px;
+    margin-bottom:25px;
+}
+
+/* LIST */
+
+.policy-list{
+    list-style:none;
+    margin-top:30px;
+}
+
+.policy-list li{
+    color:#d0d0d0;
+    margin-bottom:18px;
+    padding-left:25px;
+    position:relative;
+    line-height:1.8;
+}
+
+.policy-list li::before{
+    content:"";
+    width:8px;
+    height:8px;
+    background:var(--gold);
+    position:absolute;
+    left:0;
+    top:10px;
+}
+
+/* STAT SECTION */
+
+.stats{
+    max-width:1300px;
+    margin:120px auto;
+    padding:0 30px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat-box{
+    background:#050505;
+    border:1px solid var(--border);
+    padding:80px 20px;
+    text-align:center;
+    transition:0.4s;
+}
+
+.stat-box:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+}
+
+.stat-box h3{
+    color:var(--gold);
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.stat-box p{
+    color:#666;
+    letter-spacing:3px;
+    font-size:11px;
+    text-transform:uppercase;
+}
+
+/* FINAL SECTION */
+
+.final-panel{
+    margin-top:180px;
+    padding:140px 30px;
+    background:linear-gradient(to bottom,#050505,#000);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    text-align:center;
+}
+
+.final-panel h2{
+    font-size:50px;
+    letter-spacing:10px;
+    text-transform:uppercase;
+    margin-bottom:40px;
+}
+
+.final-panel p{
+    max-width:850px;
+    margin:auto;
+    color:#777;
+    line-height:2;
+    font-size:16px;
+}
+
+.charter-btn{
+    margin-top:50px;
+    background:transparent;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    padding:18px 50px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.charter-btn:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+/* FOOTER */
+
+footer{
+    padding:100px 30px 60px;
+}
+
+.footer-grid{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:50px;
+}
+
+.footer-box h3{
+    color:#fff;
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+.footer-box a{
+    display:block;
+    color:#666;
+    text-decoration:none;
+    margin-bottom:14px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.footer-box a:hover{
+    color:var(--gold);
+}
+
+.footer-bottom{
+    margin-top:80px;
+    border-top:1px solid var(--border);
+    padding-top:40px;
+    text-align:center;
+}
+
+.footer-bottom span{
+    display:block;
+    color:var(--gold);
+    letter-spacing:4px;
+    margin-bottom:15px;
+    font-size:11px;
+}
+
+.footer-bottom p{
+    color:#333;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .policy-block{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .policy-number{
+        font-size:60px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero h1{
+        letter-spacing:8px;
+    }
+}
+
+@media(max-width:600px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        height:85vh;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .policy-content h2{
+        font-size:26px;
+    }
+}
+
 </style>
+</head>
 
-</head>  
-<body>  <div class="language-wrap">  
-    <select id="languageSwitcher">  
-        <option value="en">English (EN)</option>  
-        <option value="fr">Français (FR)</option>  
-        <option value="es">Español (ES)</option>  
-        <option value="de">Deutsch (DE)</option>  
-        <option value="ar">العربية (AR)</option>  
-        <option value="zh">中文 (ZH)</option>  
-        <option value="ru">Русский (RU)</option>  
-        <option value="pt">Português (PT)</option>  
-        <option value="ja">日本語 (JA)</option>  
-        <option value="ko">한국어 (KO)</option>  
-    </select>  
-</div>  
+<body>
 
-<img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="logo">  
+<!-- TOP BAR -->
 
-<h1>Privacy Mandate</h1>  
-<div class="header-line"></div>  
+<div class="top-bar">
 
-<section class="policy-section">  
-    <h2>01. The Standard of Sovereignty</h2>  
-    <p>  
-        PHRINUSOMYIS operates at the summit of global entertainment and luxury. To maintain the elite status of our productions and the security of our patrons, we enforce a strict mandate on data sovereignty.   
-    </p>  
-    <ul class="policy-list">  
-        <li><strong>Elite Identification:</strong> We secure only the essential credentials required for global stadium access and Circle membership.</li>  
-        <li><strong>Operational Precision:</strong> Digital footprinting is used strictly to synchronize international broadcasts and stadium logistics.</li>  
-        <li><strong>Asset Protection:</strong> All transaction records for luxury collectibles are held under high-tier corporate encryption.</li>  
-    </ul>  
-</section>  
+    <div class="logo-text">
+        PHRINUSOMYIS
+    </div>
 
-<section class="policy-section">  
-    <h2>02. Zero-Trade Commitment</h2>  
-    <p>  
-        Unlike standard platforms, PHRINUSOMYIS does not trade in the data of its citizens. We do not sell or lease any personal information to outside marketing firms or data brokers.  
-    </p>  
-    <p>  
-        Your information serves one purpose: the flawless execution of the PHRINUSOMYIS experience across our global nodes.  
-    </p>  
-</section>  
+    <select id="languageSwitcher">
+        <option>Global (EN)</option>
+        <option>International (FR)</option>
+    </select>
 
-<section class="policy-section">  
-    <h2>03. Global Command & Security</h2>  
-    <p>  
-        Our infrastructure is built to withstand the demands of international power. With headquarters in Brooklyn and strategic hubs in Dubai, Moscow, and Lagos, we utilize advanced defensive systems to keep user data sealed from unauthorized reach.  
-    </p>  
-</section>  
+</div>
 
-<section class="policy-section">  
-    <h2>04. International Jurisdiction</h2>  
-    <p>  
-        By engaging with PHRINUSOMYIS, you acknowledge that your data moves within our global circuit. We uphold a singular, high-level privacy standard that governs all territories, from West Africa to the United States.  
-    </p>  
-</section>  
+<!-- HERO -->
 
-<footer class="phr-main-footer">  
-    <div class="phr-footer-grid">  
-        <div class="phr-footer-section">  
-            <h3>PHRINUSOMYIS.COM</h3>  
-            <ul>  
-                <li><a href="news">Latest News</a></li>  
-                <li><a href="press">Press Release</a></li>  
-                <li><a href="events">Events</a></li>  
-                <li><a href="luxury">PHRINUSOMYIS Luxury</a></li>  
-            </ul>  
-        </div>  
-        <div class="phr-footer-section">  
-            <h3>ABOUT</h3>  
-            <ul>  
-                <li><a href="#">Privacy Policy</a></li>  
-                <li><a href="#">Copyright</a></li>  
-                <li><a href="#">Terms of Use</a></li>  
-                <li><a href="#">Privacy Choices</a></li>  
-            </ul>  
-        </div>  
-        <div class="phr-footer-section">  
-            <h3>HELP</h3>  
-            <ul>  
-                <li><a href="#">Security</a></li>  
-                <li><a href="#">Help Center</a></li>  
-                <li><a href="#">Cookie Policy</a></li>  
-                <li><a href="#">Closed Captions</a></li>  
-            </ul>  
-        </div>  
-        <div class="phr-footer-section">  
-            <h3>LUXURY</h3>  
-            <ul>  
-                <li><a href="#">Luxury Identity</a></li>  
-                <li><a href="#">PHRINUSOMYIS CIRCLE</a></li>  
-                <li><a href="#">Global Impact</a></li>  
-                <li><a href="#">Contact</a></li>  
-            </ul>  
-        </div>  
-    </div>  
+<header class="hero">
 
-    <div class="phr-global-bar">  
-        <h3>PHRINUSOMYIS OFFICE</h3>  
-        <p style="color: #666; font-size: 13px; letter-spacing: 1px;">  
-            <span class="phr-hq-label">BROOKLYN (HQ)</span> | MOSCOW | DUBAI | LAGOS   
-        </p>  
-    </div>  
+    <div class="hero-content">
 
-    <div class="footer-note">  
-        © 2026 PHRINUSOMYIS. ALL RIGHTS RESERVED.  
-    </div>  
+        <span class="hero-mini">
+            PHRINUSOMYIS GLOBAL STANDARD
+        </span>
+
+        <h1>
+            POLICY CHARTER
+        </h1>
+
+        <p>
+            Official policies, allocation standards, authentication rules, 
+            and platform guidelines connected to PHRINUSOMYIS services, 
+            fragrance collections, and global operations.
+        </p>
+
+    </div>
+
+</header>
+
+<!-- STRIP -->
+
+<div class="global-strip">
+
+    <span>
+        BROOKLYN • DUBAI • MOSCOW • LAGOS
+    </span>
+
+</div>
+
+<!-- SECTION -->
+
+<section class="policy-block">
+
+    <div class="policy-number">
+        01
+    </div>
+
+    <div class="policy-content">
+
+        <h2>
+            Circle Verification
+        </h2>
+
+        <p>
+            All fragrance allocations and registry services operate through official verification systems connected to PHRINUSOMYIS platforms.
+        </p>
+
+        <p>
+            Unauthorized allocation activity, false submissions, or misuse of registry systems may result in permanent restriction from future services and releases.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SECTION -->
+
+<section class="policy-block">
+
+    <div class="policy-number">
+        02
+    </div>
+
+    <div class="policy-content">
+
+        <h2>
+            Allocation Standards
+        </h2>
+
+        <p>
+            Fragrance allocations are processed according to availability, verification status, and operational review procedures.
+        </p>
+
+        <ul class="policy-list">
+
+            <li>
+                Every fragrance is connected to an official allocation record.
+            </li>
+
+            <li>
+                Registry modifications are restricted to authorized systems only.
+            </li>
+
+            <li>
+                Packaging verification may be required for authentication support.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- SECTION -->
+
+<section class="policy-block">
+
+    <div class="policy-number">
+        03
+    </div>
+
+    <div class="policy-content">
+
+        <h2>
+            Brand Protection
+        </h2>
+
+        <p>
+            The PHRINUSOMYIS name, visual identity, fragrance collections, 
+            and official materials remain protected across all regions and services.
+        </p>
+
+        <p>
+            Unauthorized commercial use, duplication, resale manipulation, 
+            or false representation connected to PHRINUSOMYIS operations may lead to enforcement action.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SECTION -->
+
+<section class="policy-block">
+
+    <div class="policy-number">
+        04
+    </div>
+
+    <div class="policy-content">
+
+        <h2>
+            Global Operations
+        </h2>
+
+        <p>
+            PHRINUSOMYIS operates internationally through official regional offices, event systems, allocation services, and digital platforms.
+        </p>
+
+        <p>
+            Operational procedures may vary depending on regional requirements, availability, and local service conditions.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat-box">
+        <h3>04</h3>
+        <p>Global Offices</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>500</h3>
+        <p>Private Allocations</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>2026</h3>
+        <p>Official Charter</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>24/7</h3>
+        <p>Registry Support</p>
+    </div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final-panel">
+
+    <h2>
+        Global Standard
+    </h2>
+
+    <p>
+        PHRINUSOMYIS continues to maintain international standards across fragrance authentication, allocation systems, digital services, and global operations through official registry procedures and platform protections.
+    </p>
+
+    <button class="charter-btn">
+        View Registry
+    </button>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-box">
+
+            <h3>
+                Governance
+            </h3>
+
+            <a href="#">
+                Charter
+            </a>
+
+            <a href="#">
+                Operations
+            </a>
+
+            <a href="#">
+                Standards
+            </a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>
+                Legal
+            </h3>
+
+            <a href="#">
+                Policy
+            </a>
+
+            <a href="#">
+                Copyright
+            </a>
+
+            <a href="#">
+                Global Terms
+            </a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>
+                Registry
+            </h3>
+
+            <a href="#">
+                Authentication
+            </a>
+
+            <a href="#">
+                Allocation
+            </a>
+
+            <a href="#">
+                Verification
+            </a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>
+                Offices
+            </h3>
+
+            <a href="#">
+                Brooklyn
+            </a>
+
+            <a href="#">
+                Dubai
+            </a>
+
+            <a href="#">
+                Moscow
+            </a>
+
+            <a href="#">
+                Lagos
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            PHRINUSOMYIS GLOBAL NETWORK
+        </span>
+
+        <p>
+            © 2026 PHRINUSOMYIS. ALL RIGHTS RESERVED.
+        </p>
+
+    </div>
+
 </footer>
 
-</body>  
-</html>  
+</body>
+</html>
