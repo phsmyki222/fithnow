@@ -114,7 +114,7 @@ nav{
     align-items:center;
 }
 
-@media(max-width:760px){
+@media(max-width:950px){
 
     .hero-grid{
         grid-template-columns:1fr;
@@ -248,7 +248,7 @@ nav{
     gap:25px;
 }
 
-@media(max-width:768px){
+@media(max-width:1000px){
 
     .features-grid{
         grid-template-columns:repeat(2,1fr);
@@ -305,7 +305,7 @@ nav{
     align-items:center;
 }
 
-@media(max-width:760px){
+@media(max-width:950px){
 
     .experience-wrap{
         grid-template-columns:1fr;
@@ -511,8 +511,60 @@ footer{
     font-size:10px;
     letter-spacing:3px;
     text-transform:uppercase;
-}
+} 
+    /* MOBILE OPTIMIZATION */
+@media screen and (max-width: 768px) {
+    
+    /* Stack the 4 info boxes vertically */
+    .info-grid, 
+    .container-section { 
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 15px !important;
+    }
 
+    /* Adjust the text boxes to take full width */
+    .info-box, 
+    .limited-allocation,
+    .verified-identity {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Scale the Experience image to fit the screen width */
+    .experience-image-container img, 
+    .bottle-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Center headers and text for better mobile readability */
+    .experience-text {
+        text-align: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    h2, h3 {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+    }
+
+    p, li {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Ensure the button stays full width and easy to tap */
+    .procure-btn {
+        width: 100% !important;
+        padding: 20px !important;
+        font-size: 14px !important;
+ 
+    }
+}
 </style>
 </head>
 
