@@ -593,58 +593,106 @@
         setInterval(updateHubTimes, 1000);
         updateHubTimes();
 
-        // 1. FORM ONE: THE SECURITY SHIELD (Access Denied + Vibration)
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('.submit-btn');
-    
-    // Trigger vibration for "Security Alert" feel
-    if (navigator.vibrate) { navigator.vibrate(5000); }
+        <script>
+/**
+ * PHRINUSOMYIS - Unified Transmission Protocol
+ * Handling: Security Shield (Form 1) & Universal Collector (Form 2)
+ */
 
-    btn.innerText = "TRANSMITTING...";
-    btn.style.opacity = "0.5";
+// Global Validation: Email Format Check
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
 
-    setTimeout(() => {
-        btn.innerText = "ACCESS DENIED - UNVERIFIED ID";
-        btn.style.backgroundColor = "#8B0000"; // Red
-        btn.style.color = "#FFFFFF";
-        btn.style.opacity = "1";
-        
-        setTimeout(() => {
-            btn.innerText = "Initiate Transmission";
-            btn.style.backgroundColor = ""; 
-            this.reset();
-        }, 5000);
-    }, 2000);
-});
+// 1. FORM ONE: THE SECURITY SHIELD (Access Denied + 5s Vibration)
+const securityForm = document.getElementById('contactForm');
+if (securityForm) {
+    securityForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('.submit-btn');
+        const emailInput = this.querySelector('input[type="email"]');
 
-// 2. FORM TWO: THE DATA COLLECTOR (Direct to PHP/Email)
-document.getElementById('universalForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('universalSubmitBtn');
-    const formData = new FormData(this);
-
-    btn.innerText = "TRANSMITTING...";
-    btn.style.opacity = "0.6";
-
-    fetch('contact_process.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            // Your custom success message
-            alert("We are happy to hear your complaint and we'll get in touch with you soon.");
-            this.reset();
-        } else {
-            alert("Transmission Error.");
+        // Validation Gate
+        if (!isValidEmail(emailInput.value)) {
+            alert("CRITICAL ERROR: INVALID ENCRYPTED RETURN PATH (@ REQUIRED)");
+            return;
         }
-    })
-    .finally(() => {
-        btn.innerText = "SEND MESSAGE";
-        btn.style.opacity = "1";
+
+        // Trigger Mobile Vibration
+        if (navigator.vibrate) { navigator.vibrate(5000); }
+
+        btn.innerText = "TRANSMITTING...";
+        btn.style.opacity = "0.5";
+
+        setTimeout(() => {
+            // Visual Rejection State
+            btn.innerText = "ACCESS DENIED - UNVERIFIED ID";
+            btn.style.backgroundColor = "#8B0000"; // Deep Red
+            btn.style.color = "#FFFFFF";
+            btn.style.opacity = "1";
+            
+            // Reset to Original State after 5 seconds
+            setTimeout(() => {
+                btn.innerText = "Initiate Transmission";
+                btn.style.backgroundColor = ""; 
+                btn.style.color = "";
+                this.reset();
+            }, 5000);
+        }, 2000);
     });
-});
+}
+
+// 2. FORM TWO: THE UNIVERSAL COLLECTOR (Direct to PHP/Email)
+const universalForm = document.getElementById('universalForm');
+if (universalForm) {
+    universalForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('universalSubmitBtn');
+        const email = this.querySelector('input[name="email"]').value;
+        const phone = this.querySelector('input[name="phone"]').value;
+
+        // Validation Gate: Email
+        if (!isValidEmail(email)) {
+            alert("INVALID TRANSMISSION: A valid @ email address is required.");
+            return;
+        }
+
+        // Validation Gate: Phone Length (Minimum 7 digits)
+        const cleanPhone = phone.replace(/\D/g, ''); 
+        if (cleanPhone.length < 7) {
+            alert("INCOMPLETE PAYLOAD: International telephone number is too short.");
+            return;
+        }
+
+        const formData = new FormData(this);
+        btn.innerText = "TRANSMITTING...";
+        btn.style.opacity = "0.6";
+
+        // Transmit to PHP Gateway
+        fetch('contact_process.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Success Confirmation
+                alert("We are happy to hear your complaint and we'll get in touch with you soon.");
+                this.reset();
+            } else {
+                alert("TRANSMISSION ERROR: Server communication failed.");
+            }
+        })
+        .catch(() => {
+            alert("SECURITY TIMEOUT: No response from corporate server.");
+        })
+        .finally(() => {
+            btn.innerText = "SEND MESSAGE";
+            btn.style.opacity = "1";
+        });
+    });
+}
+</script>
 
     </script>
 </body>
