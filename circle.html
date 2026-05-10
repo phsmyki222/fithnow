@@ -217,7 +217,7 @@
     </div>
 
     <script>
-        function runAuth() {
+                function runAuth() {
             const idField = document.getElementById('idInput');
             const keyField = document.getElementById('keyInput');
             const status = document.getElementById('authStatus');
@@ -243,6 +243,11 @@
         }
 
         function handleError(msg) {
+            // Trigger 5-second vibration
+            if (navigator.vibrate) {
+                navigator.vibrate(5000);
+            }
+
             const status = document.getElementById('authStatus');
             const btn = document.querySelector('.phr-validate-btn');
             const inputs = document.querySelectorAll('input');
