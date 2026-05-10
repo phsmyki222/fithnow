@@ -597,59 +597,44 @@
         setInterval(updateHubTimes, 1000);
         updateHubTimes();
 
-    </script>. 
+    </script>
 
         <script>
-/**
- * PHRINUSOMYIS - Unified Transmission Protocol
- * Handling: Security Shield (Form 1) & Universal Collector (Form 2)
- */
-
-// Global Validation: Email Format Check
+// Global Validation
 function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
-// 1. FORM ONE: THE SECURITY SHIELD (Access Denied + 5s Vibration)
+// 1. FORM ONE: THE SECURITY SHIELD (Delayed Vibration)
 const securityForm = document.getElementById('contactForm');
 if (securityForm) {
     securityForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = this.querySelector('.submit-btn');
-        const emailInput = this.querySelector('input[type="email"]');
-
-        // Validation Gate
-        if (!isValidEmail(emailInput.value)) {
-            alert("CRITICAL ERROR: INVALID ENCRYPTED RETURN PATH (@ REQUIRED)");
-            return;
-        }
-
-        // Trigger Mobile Vibration
-        if (navigator.vibrate) { navigator.vibrate(5000); }
-
-        btn.innerText = "TRANSMITTING...";
+        
+        btn.innerText = "VERIFYING IDENTITY...";
         btn.style.opacity = "0.5";
 
+        // 5-SECOND SECURITY DELAY
         setTimeout(() => {
-            // Visual Rejection State
+            if (navigator.vibrate) { navigator.vibrate(5000); } // Vibrate AFTER delay
+            
             btn.innerText = "ACCESS DENIED - UNVERIFIED ID";
-            btn.style.backgroundColor = "#8B0000"; // Deep Red
+            btn.style.backgroundColor = "#8B0000";
             btn.style.color = "#FFFFFF";
             btn.style.opacity = "1";
             
-            // Reset to Original State after 5 seconds
             setTimeout(() => {
                 btn.innerText = "Initiate Transmission";
                 btn.style.backgroundColor = ""; 
-                btn.style.color = "";
                 this.reset();
             }, 5000);
-        }, 2000);
+        }, 5000); // 5000ms = 5 seconds of "processing"
     });
 }
 
-// 2. FORM TWO: THE UNIVERSAL COLLECTOR (Direct to PHP/Email)
+// 2. FORM TWO: THE UNIVERSAL COLLECTOR (Fixed Connection)
 const universalForm = document.getElementById('universalForm');
 if (universalForm) {
     universalForm.addEventListener('submit', function(e) {
@@ -658,16 +643,14 @@ if (universalForm) {
         const email = this.querySelector('input[name="email"]').value;
         const phone = this.querySelector('input[name="phone"]').value;
 
-        // Validation Gate: Email
         if (!isValidEmail(email)) {
-            alert("INVALID TRANSMISSION: A valid @ email address is required.");
+            alert("INVALID TRANSMISSION: @ email required.");
             return;
         }
 
-        // Validation Gate: Phone Length (Minimum 7 digits)
         const cleanPhone = phone.replace(/\D/g, ''); 
         if (cleanPhone.length < 7) {
-            alert("INCOMPLETE PAYLOAD: International telephone number is too short.");
+            alert("INCOMPLETE PAYLOAD: Number too short.");
             return;
         }
 
@@ -675,22 +658,21 @@ if (universalForm) {
         btn.innerText = "TRANSMITTING...";
         btn.style.opacity = "0.6";
 
-        // Transmit to PHP Gateway
+        // MATCHING YOUR FILE: contact_process.php
         fetch('contact_process.php', {
             method: 'POST',
             body: formData
         })
         .then(response => {
             if (response.ok) {
-                // Success Confirmation
                 alert("We are happy to hear your complaint and we'll get in touch with you soon.");
                 this.reset();
             } else {
-                alert("TRANSMISSION ERROR: Server communication failed.");
+                alert("TRANSMISSION ERROR: Error Code " + response.status);
             }
         })
         .catch(() => {
-            alert("SECURITY TIMEOUT: No response from corporate server.");
+            alert("SECURITY TIMEOUT: Server did not respond.");
         })
         .finally(() => {
             btn.innerText = "SEND MESSAGE";
