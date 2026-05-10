@@ -773,21 +773,24 @@ footer{
 <script>
 
 function initiateVault(){
+
     const btn = document.querySelector('.procure-btn');
 
     btn.innerHTML = "VERIFYING...";
 
     setTimeout(() => {
-        // Change text to Access Denied
+
         btn.innerHTML = "ACCESS DENIED";
 
-        // Trigger vibration (200ms pulse)
+        // Vibrate for 5000 milliseconds (5 seconds)
         if (navigator.vibrate) {
-            navigator.vibrate(200);
+            navigator.vibrate(5000);
         }
 
-        alert("Access Denied. Incorrect credentials.");
+        alert("ACCESS DENIED: Unauthorized access attempt detected.");
+
     }, 2200);
+
 }
 
 const video = document.querySelector('video');
