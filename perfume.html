@@ -774,25 +774,29 @@ footer{
 
 function initiateVault(){
 
+    function initiateVault(){
+
     const btn = document.querySelector('.procure-btn');
 
-    // Phase 1: The Suspense
-    btn.innerHTML = "ENCRYPTING CONNECTION...";
+    // 1. Initial Suspense
+    btn.innerHTML = "VERIFYING CREDENTIALS...";
 
     setTimeout(() => {
         
-        // Phase 2: The Failure
-        btn.innerHTML = "IDENTITY MISMATCH";
-        btn.style.background = "#000"; // Black out the button
-        btn.style.color = "#ff0000";   // Red text
-
-        // Trigger the 5-second heavy vibration
+        // 2. The 5-Second Intense Vibration
         if (navigator.vibrate) {
             navigator.vibrate(5000);
         }
 
-        // The "Marketing Teaser" message
-        alert("SECURITY ALERT: Allocation code not yet active in this region. The Vault remains sealed.");
+        // 3. Update the Button to the Elite Branding
+        // We use innerHTML to wrap the "Circle" name in a gold span
+        btn.innerHTML = '<span style="color: #FFD700; font-weight: bold;">PHRINUSOMYIS PERFUME CIRCLE</span><br><span style="color: #ff0000; font-size: 10px;">ACCESS DENIED</span>';
+        
+        // Style the button container to look like a high-end "Obsidian" lock
+        btn.style.backgroundColor = "#000";
+        btn.style.border = "1px solid #FFD700"; // Gold border
+        btn.style.lineHeight = "1.5";
+        btn.style.padding = "10px";
 
     }, 2200);
 
