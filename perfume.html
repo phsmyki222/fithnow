@@ -773,34 +773,54 @@ footer{
 <script>
 
 function initiateVault(){
-
-    function initiateVault(){
-
     const btn = document.querySelector('.procure-btn');
-
-    // 1. Initial Suspense
-    btn.innerHTML = "VERIFYING CREDENTIALS...";
+    btn.innerHTML = "SYNCHRONIZING...";
 
     setTimeout(() => {
-        
-        // 2. The 5-Second Intense Vibration
+        // 1. Trigger the 5-second heavy vibration
         if (navigator.vibrate) {
             navigator.vibrate(5000);
         }
 
-        // 3. Update the Button to the Elite Branding
-        // We use innerHTML to wrap the "Circle" name in a gold span
-        btn.innerHTML = '<span style="color: #FFD700; font-weight: bold;">PHRINUSOMYIS PERFUME CIRCLE</span><br><span style="color: #ff0000; font-size: 10px;">ACCESS DENIED</span>';
-        
-        // Style the button container to look like a high-end "Obsidian" lock
+        // 2. Change button appearance
+        btn.innerHTML = "ACCESS DENIED";
         btn.style.backgroundColor = "#000";
-        btn.style.border = "1px solid #FFD700"; // Gold border
-        btn.style.lineHeight = "1.5";
-        btn.style.padding = "10px";
+        btn.style.color = "#FFD700";
+
+        // 3. Create the "Elite Circle" Pop-up manually via JS
+        const box = document.createElement('div');
+        box.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            border: 2px solid #FFD700;
+            color: #fff;
+            padding: 30px;
+            z-index: 9999;
+            text-align: center;
+            font-family: serif;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            width: 80%;
+        `;
+
+        box.innerHTML = `
+            <h2 style="color: #FFD700; margin-bottom: 15px;">PHRINUSOMYIS PERFUME CIRCLE</h2>
+            <p style="font-size: 14px; line-height: 1.6;">
+                SECURITY ALERT: Allocation code not yet active in this region. 
+                The Vault remains sealed for official verification.
+            </p>
+            <button onclick="this.parentElement.remove()" style="margin-top: 20px; background: none; border: 1px solid #FFD700; color: #FFD700; padding: 10px 20px; cursor: pointer;">
+                CLOSE TERMINAL
+            </button>
+        `;
+
+        document.body.appendChild(box);
 
     }, 2200);
-
 }
+
 
 const video = document.querySelector('video');
 
