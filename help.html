@@ -302,7 +302,6 @@ body, html {
 </main>
 
      <style>
-    /* GLOBAL CORPORATE FOOTER STYLES */
     .phr-main-footer {
         background-color: #000000;
         color: #ffffff;
@@ -432,7 +431,7 @@ body, html {
             </ul>
         </div>
 
-<script>
+        <script>
 document.addEventListener("DOMContentLoaded", function() {
     
     /* 1. LANGUAGE SYSTEM */
@@ -464,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function() {
         'terms.html',
         'privary.html',
         'security.html',
-        'help.html',
+        'fr.html',
         'cookies.html'
         'close.html',
         'zh.html',
@@ -474,8 +473,7 @@ document.addEventListener("DOMContentLoaded", function() {
         'ru.html',
         'es.html'
     ];
-
-    // Fallback data in case GitHub fetch fails or is slow
+    
     let globalKnowledgeBase = [
         { text: "security protocols protection", original: "Security protocols and protection systems.", source: "SYSTEM" },
         { text: "privacy settings data control", original: "Privacy settings and data control.", source: "SYSTEM" },
@@ -486,7 +484,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultsContainer = document.getElementById("searchResults");
     const resultBox = document.getElementById("resultBox");
 
-    /* 3. CRAWLER ENGINE (Fetches content from your other GitHub files) */
     async function crawlSite() {
         for (let url of sitePages) {
             try {
@@ -517,7 +514,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     crawlSite();
 
-    /* 4. SEARCH LOGIC */
     if (searchInput && resultBox) {
         searchInput.addEventListener("input", function () {
             const query = this.value.toLowerCase().trim();
@@ -527,11 +523,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 return; 
             }
 
-            // Search the knowledge base
             let matches = globalKnowledgeBase.filter(item => item.text.includes(query));
 
             if (matches.length > 0) {
-                // Remove duplicates and show top 6
+        
                 const uniqueResults = [...new Map(matches.map(m => [m.original, m])).values()];
                 
                 resultBox.innerHTML = uniqueResults.slice(0, 6).map(match => `
