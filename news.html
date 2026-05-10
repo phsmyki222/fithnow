@@ -520,7 +520,7 @@ footer{
 <div id="breaking-bar" style="background:linear-gradient(90deg,#D4AF37,transparent);padding:10px;margin:20px 0;"></div>
 
 <div class="press-grid" id="press-news"></div> 
-      <style>
+   <style>
     /* GLOBAL CORPORATE FOOTER STYLES */
     .phr-main-footer {
         background-color: #000000;
@@ -532,7 +532,7 @@ footer{
 
     .phr-footer-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Mobile layout */
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px 20px;
         max-width: 1100px;
         margin: 0 auto 60px;
@@ -540,7 +540,7 @@ footer{
 
     @media (min-width: 768px) {
         .phr-footer-grid {
-            grid-template-columns: repeat(4, 1fr); /* Desktop layout */
+            grid-template-columns: repeat(4, 1fr);
         }
     }
 
@@ -571,15 +571,16 @@ footer{
     }
 
     .phr-footer-section a:hover {
-        color: #D4AF37; /* PHRINUSOMYIS Gold */
+        color: #D4AF37;
     }
 
-    /* GLOBAL SITES BAR */
+    /* THE FIX IS HERE */
     .phr-global-bar {
         max-width: 1100px;
         margin: 0 auto;
         padding-top: 40px;
         border-top: 1px solid #1a1a1a;
+        text-align: center; /* This centers the HQ text and heading */
     }
 
     .phr-global-bar h3 {
@@ -606,6 +607,7 @@ footer{
 
 <footer class="phr-main-footer">
     <div class="phr-footer-grid">
+        <!-- Section 1 -->
         <div class="phr-footer-section">
             <h3>LUXURY</h3>
             <ul>
@@ -616,6 +618,7 @@ footer{
             </ul>
         </div>
 
+        <!-- Section 2 -->
         <div class="phr-footer-section">
             <h3>PHRINUSOMYIS.COM</h3>
             <ul>
@@ -626,6 +629,7 @@ footer{
             </ul>
         </div>
 
+        <!-- Section 3 -->
         <div class="phr-footer-section">
             <h3>ABOUT</h3>
             <ul>
@@ -636,6 +640,7 @@ footer{
             </ul>
         </div>
 
+        <!-- Section 4 -->
         <div class="phr-footer-section">
             <h3>HELP</h3>
             <ul>
@@ -645,7 +650,9 @@ footer{
                 <li><a href="close">Closed Captions</a></li>
             </ul>
         </div>
+    </div>
 
+    <!-- Centered Office Section -->
     <div class="phr-global-bar">
         <h3>PHRINUSOMYIS OFFICE</h3>
         <p style="color: #666; font-size: 13px; letter-spacing: 1px;">
