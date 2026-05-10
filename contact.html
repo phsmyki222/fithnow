@@ -257,7 +257,178 @@
                 <a href="mailto:legal@phrinusomyis.com">legal@phrinusomyis.com</a>
             </div>
         </div>
-    </main>
+    </main> 
+
+          <style>
+    /* PHRINUSOMYIS Luxury Interface CSS */
+    :root {
+        --gold: #D4AF37;
+        --obsidian: #0A0A0A;
+        --input-bg: #1A1A1A;
+        --border: #333;
+    }
+
+    .form-container.v2 {
+        background: var(--obsidian);
+        padding: 40px;
+        border: 1px solid var(--border);
+        max-width: 500px;
+        margin: 40px auto;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        display: block;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .form-control {
+        width: 100%;
+        background: var(--input-bg);
+        border: 1px solid var(--border);
+        color: #FFFFFF;
+        padding: 14px;
+        font-size: 0.9rem;
+        border-radius: 0;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: var(--gold);
+        outline: none;
+    }
+
+    /* Telephone Layout */
+    .telephone-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .country-select {
+        width: 150px !important;
+        min-width: 150px;
+        cursor: pointer;
+        color: var(--gold) !important;
+    }
+
+    .phone-input {
+        flex: 1;
+    }
+
+    .submit-btn {
+        width: 100%;
+        background: var(--gold);
+        color: #000;
+        border: none;
+        padding: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #FFFFFF;
+        letter-spacing: 5px;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 480px) {
+        .form-container.v2 {
+            padding: 20px;
+            margin: 10px;
+        }
+        .country-select {
+            width: 115px !important;
+            min-width: 115px;
+            font-size: 0.75rem;
+        }
+    }
+</style>
+
+<section class="form-container v2">
+    <form id="universalForm">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="identity" class="form-control" placeholder="LEGAL NAME" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" class="form-control" placeholder="CORPORATE / PRIVATE EMAIL" required>
+        </div>
+
+        <div class="form-group">
+            <label>Telephone</label>
+            <div class="telephone-group">
+                <select name="countryCode" class="form-control country-select">
+                    <optgroup label="Core Operations">
+                        <option value="+1">🇺🇸 USA +1</option>
+                        <option value="+971">🇦🇪 UAE +971</option>
+                        <option value="+234" selected>🇳🇬 NGA +234</option>
+                        <option value="+7">🇷🇺 RUS +7</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="+44">🇬🇧 GBR +44</option><option value="+49">🇩🇪 DEU +49</option>
+                        <option value="+33">🇫🇷 FRA +33</option><option value="+39">🇮🇹 ITA +39</option>
+                        <option value="+34">🇪🇸 ESP +34</option><option value="+31">🇳🇱 NLD +31</option>
+                        <option value="+41">🇨🇭 CHE +41</option><option value="+46">🇸🇪 SWE +46</option>
+                        <option value="+353">🇮🇪 IRL +353</option><option value="+48">🇵🇱 POL +48</option>
+                        <option value="+32">🇧🇪 BEL +32</option><option value="+43">🇦🇹 AUT +43</option>
+                        <option value="+351">🇵🇹 PRT +351</option><option value="+30">🇬🇷 GRC +30</option>
+                        <option value="+47">🇳🇴 NOR +47</option><option value="+45">🇩🇰 DNK +45</option>
+                        <option value="+358">🇫🇮 FIN +358</option><option value="+420">🇨🇿 CZE +420</option>
+                        <option value="+36">🇭🇺 HUN +36</option><option value="+40">🇷🇴 ROU +40</option>
+                    </optgroup>
+                    <optgroup label="Americas">
+                        <option value="+1">🇨🇦 CAN +1</option><option value="+52">🇲🇽 MEX +52</option>
+                        <option value="+55">🇧🇷 BRA +55</option><option value="+54">🇦🇷 ARG +54</option>
+                        <option value="+57">🇨🇴 COL +57</option><option value="+56">🇨🇱 CHL +56</option>
+                        <option value="+51">🇵🇪 PER +51</option>
+                    </optgroup>
+                    <optgroup label="Middle East & Africa">
+                        <option value="+966">🇸🇦 SAU +966</option><option value="+974">🇶🇦 QAT +974</option>
+                        <option value="+965">🇰🇼 KWT +965</option><option value="+27">🇿🇦 ZAF +27</option>
+                        <option value="+20">🇪🇬 EGY +20</option><option value="+254">🇰🇪 KEN +254</option>
+                        <option value="+233">🇬🇭 GHA +233</option><option value="+212">🇲🇦 MAR +212</option>
+                        <option value="+972">🇮🇱 ISR +972</option><option value="+90">🇹🇷 TUR +90</option>
+                        <option value="+962">🇯🇴 JOR +962</option><option value="+216">🇹🇳 TUN +216</option>
+                        <option value="+251">🇪🇹 ETH +251</option>
+                    </optgroup>
+                    <optgroup label="Asia & Oceania">
+                        <option value="+86">🇨🇳 CHN +86</option><option value="+91">🇮🇳 IND +91</option>
+                        <option value="+81">🇯🇵 JPN +81</option><option value="+82">🇰🇷 KOR +82</option>
+                        <option value="+65">🇸🇬 SGP +65</option><option value="+61">🇦🇺 AUS +61</option>
+                        <option value="+64">🇳🇿 NZL +64</option><option value="+852">🇭🇰 HKG +852</option>
+                        <option value="+60">🇲🇾 MYS +60</option><option value="+66">🇹🇭 THA +66</option>
+                        <option value="+62">🇮🇩 IDN +62</option><option value="+63">🇵🇭 PHL +63</option>
+                        <option value="+84">🇻🇳 VNM +84</option><option value="+92">🇵🇰 PAK +92</option>
+                        <option value="+880">🇧🇩 BGD +880</option><option value="+94">🇱🇰 LKA +94</option>
+                    </optgroup>
+                </select>
+                <input type="tel" name="phone" class="form-control phone-input" placeholder="NUMBER" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" class="form-control" rows="4" placeholder="YOUR COMPLAINT OR INQUIRY"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="universalSubmitBtn">SEND MESSAGE</button>
+    </form>
+</section>
     
      <style>
     /* GLOBAL CORPORATE FOOTER STYLES */
