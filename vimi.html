@@ -11,10 +11,10 @@
 <style>
 
 :root{
-    --gold:#d4af37;
+    --gold:#D4AF37;
     --black:#000;
     --soft:#050505;
-    --line:rgba(255,255,255,0.06);
+    --line:rgba(255,255,255,0.07);
     --text:rgba(255,255,255,0.55);
 }
 
@@ -24,6 +24,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#000;
     color:#fff;
@@ -31,7 +35,9 @@ body{
     overflow-x:hidden;
 }
 
-/* ATMOSPHERE */
+/* ================================================= */
+/* GLOBAL ATMOSPHERE */
+/* ================================================= */
 
 body::before{
     content:'';
@@ -40,49 +46,53 @@ body::before{
     background-image:
     radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size:3px 3px;
-    opacity:0.1;
+    opacity:0.10;
     pointer-events:none;
     z-index:9999;
 }
 
+/* ================================================= */
 /* HERO */
+/* ================================================= */
 
-.hero{
+.sec-header{
     min-height:100vh;
     position:relative;
+    overflow:hidden;
     display:flex;
     align-items:center;
     padding:120px 7%;
-    overflow:hidden;
 
     background:
     radial-gradient(circle at top left,
-    rgba(212,175,55,0.12),
-    transparent 30%),
+    rgba(212,175,55,0.14),
+    transparent 28%),
 
-    linear-gradient(to bottom,
-    #000,
-    #040404);
+    radial-gradient(circle at bottom right,
+    rgba(255,255,255,0.04),
+    transparent 35%),
+
+    linear-gradient(to bottom,#000,#050505);
 }
 
-.hero::after{
+.sec-header::after{
     content:'';
     position:absolute;
-    width:1200px;
-    height:1200px;
+    width:1400px;
+    height:1400px;
     border:1px solid rgba(255,255,255,0.05);
     border-radius:50%;
-    right:-500px;
-    top:-300px;
-    animation:spin 55s linear infinite;
+    right:-550px;
+    top:-350px;
+    animation:rotate 55s linear infinite;
 }
 
-@keyframes spin{
+@keyframes rotate{
     from{transform:rotate(0deg);}
     to{transform:rotate(360deg);}
 }
 
-.hero-content{
+.hero-wrap{
     position:relative;
     z-index:2;
     width:100%;
@@ -97,7 +107,7 @@ body::before{
     margin-bottom:40px;
 }
 
-.hero h1{
+.sec-header h1{
     font-size:clamp(70px,13vw,220px);
     line-height:0.9;
     font-weight:900;
@@ -107,8 +117,8 @@ body::before{
     background:
     linear-gradient(to bottom,
     #fff 0%,
-    #9e9e9e 45%,
-    #333 100%);
+    #b8b8b8 45%,
+    #393939 100%);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -152,28 +162,62 @@ body::before{
     letter-spacing:2px;
 }
 
+/* STATUS */
+
+.sec-status{
+    margin-top:60px;
+    display:inline-flex;
+    align-items:center;
+    gap:15px;
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:10px;
+    text-transform:uppercase;
+}
+
+.status-dot{
+    width:10px;
+    height:10px;
+    background:var(--gold);
+    border-radius:50%;
+    box-shadow:0 0 15px var(--gold);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{opacity:1;}
+    50%{opacity:0.3;}
+    100%{opacity:1;}
+}
+
+/* ================================================= */
 /* DIVIDER */
+/* ================================================= */
 
 .divider{
     height:1px;
     background:
     linear-gradient(to right,
     transparent,
-    rgba(212,175,55,0.45),
+    rgba(212,175,55,0.5),
     transparent);
 }
 
-/* SECTION */
+/* ================================================= */
+/* MAIN SECTION */
+/* ================================================= */
 
-.section{
+.sec-container{
+    max-width:1600px;
+    margin:auto;
     padding:180px 7%;
 }
 
-.section-top{
+.section-title{
     margin-bottom:120px;
 }
 
-.section-mini{
+.section-title span{
     display:block;
     margin-bottom:20px;
     font-size:11px;
@@ -182,65 +226,67 @@ body::before{
     text-transform:uppercase;
 }
 
-.section-title{
+.section-title h2{
     font-size:clamp(45px,7vw,110px);
     line-height:0.95;
     font-weight:900;
-    text-transform:uppercase;
     letter-spacing:-4px;
+    text-transform:uppercase;
 }
 
+/* ================================================= */
 /* GRID */
+/* ================================================= */
 
-.security-grid{
+.sec-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     border-top:1px solid var(--line);
     border-left:1px solid var(--line);
 }
 
-.security-card{
-    min-height:450px;
+.sec-card{
+    min-height:430px;
     padding:80px;
+    background:#020202;
     border-right:1px solid var(--line);
     border-bottom:1px solid var(--line);
     position:relative;
-    background:#020202;
-    transition:0.5s ease;
     overflow:hidden;
+    transition:0.5s ease;
 }
 
-.security-card::before{
+.sec-card::before{
     content:'';
     position:absolute;
     inset:0;
     background:
-    linear-gradient(130deg,
+    linear-gradient(135deg,
     rgba(212,175,55,0.08),
     transparent 55%);
     opacity:0;
     transition:0.5s ease;
 }
 
-.security-card:hover::before{
+.sec-card:hover::before{
     opacity:1;
 }
 
-.security-card:hover{
+.sec-card:hover{
     transform:translateY(-10px);
     background:#050505;
 }
 
-.security-number{
+.sec-number{
     display:block;
     margin-bottom:60px;
+    color:#555;
     font-size:12px;
     letter-spacing:5px;
-    color:#555;
 }
 
-.security-card h3{
-    font-size:42px;
+.sec-card h3{
+    font-size:38px;
     line-height:1;
     font-weight:900;
     text-transform:uppercase;
@@ -248,54 +294,90 @@ body::before{
     max-width:450px;
 }
 
-.security-card p{
+.sec-card p{
     max-width:520px;
     color:var(--text);
     line-height:2;
     font-size:15px;
 }
 
-/* SECURITY STRIP */
+/* ================================================= */
+/* AUDIT BAR */
+/* ================================================= */
 
-.protocol-strip{
-    padding:140px 7%;
-    background:#040404;
+.tech-audit-bar{
+    margin-top:120px;
+    padding:80px;
+    text-align:center;
+
+    border:1px solid var(--line);
+
+    background:
+    linear-gradient(135deg,
+    rgba(212,175,55,0.06),
+    transparent 60%),
+    #030303;
 }
 
-.protocol-grid{
+.tech-audit-bar h4{
+    font-size:14px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    color:#888;
+    margin-bottom:25px;
+}
+
+.tech-audit-bar p{
+    max-width:850px;
+    margin:auto;
+    color:var(--text);
+    line-height:2;
+}
+
+/* ================================================= */
+/* METRICS */
+/* ================================================= */
+
+.node-security{
+    margin-top:120px;
+    padding-top:60px;
+    border-top:1px solid var(--line);
+}
+
+.node-flex{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:40px;
 }
 
-.protocol-box{
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:35px;
-}
-
-.protocol-box small{
-    display:block;
-    margin-bottom:18px;
+.node-stat{
+    border-left:1px solid rgba(212,175,55,0.3);
+    padding-left:25px;
     font-size:10px;
     letter-spacing:4px;
     color:#666;
     text-transform:uppercase;
 }
 
-.protocol-box h4{
-    font-size:40px;
-    font-weight:300;
+.node-stat span{
+    display:block;
+    margin-top:15px;
+    color:#fff;
+    font-size:30px;
+    letter-spacing:1px;
 }
 
+/* ================================================= */
 /* QUOTE */
+/* ================================================= */
 
-.quote{
+.quote-section{
     padding:220px 7%;
     text-align:center;
     background:#020202;
 }
 
-.quote h5{
+.quote-section h5{
     font-size:clamp(40px,6vw,95px);
     line-height:1.1;
     font-weight:800;
@@ -305,11 +387,13 @@ body::before{
     margin:auto;
 }
 
-.quote h5 span{
+.quote-section h5 span{
     color:var(--gold);
 }
 
+/* ================================================= */
 /* FINAL */
+/* ================================================= */
 
 .final{
     min-height:100vh;
@@ -318,8 +402,8 @@ body::before{
     justify-content:center;
     text-align:center;
     position:relative;
-    padding:100px 7%;
     overflow:hidden;
+    padding:100px 7%;
 }
 
 .final::before{
@@ -328,10 +412,12 @@ body::before{
     width:700px;
     height:700px;
     border-radius:50%;
+
     background:
     radial-gradient(circle,
     rgba(212,175,55,0.13),
     transparent 70%);
+
     filter:blur(80px);
 }
 
@@ -386,53 +472,126 @@ body::before{
     color:#000;
 }
 
+/* ================================================= */
 /* FOOTER */
+/* ================================================= */
 
-.footer{
-    padding:60px 7%;
+.phr-main-footer{
+    background:#020202;
     border-top:1px solid rgba(255,255,255,0.06);
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:20px;
+    padding:120px 7% 50px;
 }
 
-.footer span{
-    font-size:11px;
-    letter-spacing:4px;
-    color:#555;
+.phr-footer-grid{
+    max-width:1600px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:60px;
+}
+
+.phr-footer-section h3{
+    font-size:13px;
+    letter-spacing:5px;
+    margin-bottom:30px;
+    font-weight:900;
     text-transform:uppercase;
 }
 
+.phr-footer-section ul{
+    list-style:none;
+}
+
+.phr-footer-section li{
+    margin-bottom:18px;
+}
+
+.phr-footer-section a{
+    color:#777;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s ease;
+}
+
+.phr-footer-section a:hover{
+    color:var(--gold);
+}
+
+.phr-global-bar{
+    max-width:1600px;
+    margin:100px auto 0;
+    padding-top:50px;
+    border-top:1px solid rgba(255,255,255,0.06);
+    text-align:center;
+}
+
+.phr-global-bar h3{
+    font-size:28px;
+    font-weight:300;
+    letter-spacing:2px;
+    margin-bottom:25px;
+}
+
+.phr-hq-label{
+    color:var(--gold);
+    font-weight:700;
+}
+
+.phr-global-bar p{
+    max-width:850px;
+    margin:auto;
+    color:#666;
+    line-height:2;
+    font-size:14px;
+}
+
+.phr-footer-bottom{
+    margin-top:70px;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,0.06);
+    text-align:center;
+    color:#555;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* ================================================= */
 /* MOBILE */
+/* ================================================= */
 
 @media(max-width:1000px){
 
 .hero-grid,
-.security-grid,
-.protocol-grid{
+.sec-grid,
+.node-flex,
+.phr-footer-grid{
     grid-template-columns:1fr;
 }
 
-.security-card{
+.sec-card{
     min-height:auto;
     padding:60px 35px;
 }
 
-.hero h1{
+.sec-header h1{
     letter-spacing:-3px;
 }
 
-.section-title{
+.section-title h2{
     font-size:65px;
 }
 
-.quote h5{
+.quote-section h5{
     font-size:55px;
 }
 
 .final h6{
     font-size:70px;
+}
+
+.tech-audit-bar{
+    padding:50px 30px;
 }
 
 }
@@ -444,9 +603,9 @@ body::before{
 
 <!-- HERO -->
 
-<section class="hero">
+<header class="sec-header">
 
-<div class="hero-content">
+<div class="hero-wrap">
 
 <div class="hero-mini">
 PHRINUSOMYIS — GLOBAL SECURITY INFRASTRUCTURE
@@ -460,7 +619,7 @@ PROTOCOLS
 <div class="hero-grid">
 
 <div class="hero-text">
-PHRINUSOMYIS security architecture is engineered to protect executive environments, digital infrastructure, private operational systems, and international production assets through controlled access frameworks and monitored authorization protocols.
+PHRINUSOMYIS security architecture is engineered to protect executive environments, international production systems, digital infrastructure, private operational frameworks, and global deployment assets through monitored authorization protocols and controlled access systems.
 </div>
 
 <div class="hero-side">
@@ -476,7 +635,7 @@ PHRINUSOMYIS security architecture is engineered to protect executive environmen
 </div>
 
 <div class="hero-side-box">
-<span class="hero-side-label">Verification</span>
+<span class="hero-side-label">Infrastructure</span>
 <span class="hero-side-value">Secured</span>
 </div>
 
@@ -484,116 +643,131 @@ PHRINUSOMYIS security architecture is engineered to protect executive environmen
 
 </div>
 
+<div class="sec-status">
+<div class="status-dot"></div>
+SYSTEM STATUS — ACTIVE & MONITORED
 </div>
 
-</section>
+</div>
+
+</header>
 
 <div class="divider"></div>
 
-<!-- SECTION -->
+<!-- MAIN -->
 
-<section class="section">
+<main class="sec-container">
 
-<div class="section-top">
+<div class="section-title">
 
-<span class="section-mini">
-INTERNATIONAL SECURITY DIVISION
-</span>
+<span>INTERNATIONAL SECURITY DIVISION</span>
 
-<h2 class="section-title">
+<h2>
 Global Protection<br>
 Infrastructure
 </h2>
 
 </div>
 
-<div class="security-grid">
+<div class="sec-grid">
 
-<div class="security-card">
-<span class="security-number">01 — ACCESS CONTROL</span>
+<div class="sec-card">
+<span class="sec-number">01 — ACCESS CONTROL</span>
 <h3>EXECUTIVE AUTHORIZATION</h3>
 <p>
-Restricted environments and internal operational systems require controlled authorization and monitored identity verification before access is granted.
+Restricted environments and operational systems require controlled identity verification and monitored authorization before access is approved.
 </p>
 </div>
 
-<div class="security-card">
-<span class="security-number">02 — DIGITAL SECURITY</span>
-<h3>ENCRYPTED INFRASTRUCTURE</h3>
+<div class="sec-card">
+<span class="sec-number">02 — CONTENT SECURITY</span>
+<h3>INTELLECTUAL PROTECTION</h3>
 <p>
-PHRINUSOMYIS digital systems are structured through layered protection architecture designed to secure operational environments and private communication systems.
+All media assets, design systems, cinematic productions, and digital environments are protected against unauthorized replication, distribution, or manipulation.
 </p>
 </div>
 
-<div class="security-card">
-<span class="security-number">03 — EVENT SECURITY</span>
-<h3>STADIUM ENVIRONMENT CONTROL</h3>
-<p>
-Large-scale production environments operate under coordinated security supervision for audience protection, infrastructure monitoring, and operational continuity.
-</p>
-</div>
-
-<div class="security-card">
-<span class="security-number">04 — MONITORING NETWORK</span>
+<div class="sec-card">
+<span class="sec-number">03 — MONITORING NETWORK</span>
 <h3>REAL-TIME OVERSIGHT</h3>
 <p>
-Operational systems and authorized infrastructure environments are continuously monitored through internal verification and controlled supervision frameworks.
+Platform environments and operational systems are continuously monitored to maintain infrastructure stability, performance integrity, and security awareness.
 </p>
 </div>
 
-<div class="security-card">
-<span class="security-number">05 — PRIVATE DIVISION</span>
+<div class="sec-card">
+<span class="sec-number">04 — PRODUCT VERIFICATION</span>
+<h3>AUTHENTICITY SYSTEMS</h3>
+<p>
+Physical and digital products are validated through internal verification protocols designed to support authenticity and controlled distribution.
+</p>
+</div>
+
+<div class="sec-card">
+<span class="sec-number">05 — PRIVATE DIVISION</span>
 <h3>CONFIDENTIAL OPERATIONS</h3>
 <p>
-Restricted internal environments, executive systems, and strategic infrastructure divisions are maintained under confidential operational protocols.
+Executive infrastructure environments and internal operational frameworks are maintained under restricted confidential security procedures.
 </p>
 </div>
 
-<div class="security-card">
-<span class="security-number">06 — GLOBAL COMPLIANCE</span>
-<h3>INTERNATIONAL STANDARDS</h3>
+<div class="sec-card">
+<span class="sec-number">06 — GLOBAL COMPLIANCE</span>
+<h3>INTERNATIONAL SECURITY STANDARD</h3>
 <p>
-Security operations are aligned with internal international infrastructure standards designed to support premium global deployment environments.
+PHRINUSOMYIS infrastructure systems operate under internal international security protocols developed for premium global operational deployment.
 </p>
 </div>
 
 </div>
 
-</section>
+<!-- AUDIT -->
 
-<!-- STRIP -->
+<div class="tech-audit-bar">
 
-<section class="protocol-strip">
+<h4>SECURITY REVIEW STATUS — ACTIVE</h4>
 
-<div class="protocol-grid">
-
-<div class="protocol-box">
-<small>Protection Layer</small>
-<h4>ACTIVE</h4>
-</div>
-
-<div class="protocol-box">
-<small>Authorization</small>
-<h4>SECURED</h4>
-</div>
-
-<div class="protocol-box">
-<small>Monitoring</small>
-<h4>24/7</h4>
-</div>
-
-<div class="protocol-box">
-<small>Network</small>
-<h4>GLOBAL</h4>
-</div>
+<p>
+All monitored environments, operational systems, and executive infrastructure divisions are undergoing continuous internal security evaluation and authorization verification.
+</p>
 
 </div>
 
-</section>
+<!-- METRICS -->
+
+<div class="node-security">
+
+<div class="node-flex">
+
+<div class="node-stat">
+Firewall
+<span>Enabled</span>
+</div>
+
+<div class="node-stat">
+Encryption
+<span>Active</span>
+</div>
+
+<div class="node-stat">
+Monitoring
+<span>24/7</span>
+</div>
+
+<div class="node-stat">
+Status
+<span>Secure</span>
+</div>
+
+</div>
+
+</div>
+
+</main>
 
 <!-- QUOTE -->
 
-<section class="quote">
+<section class="quote-section">
 
 <h5>
 “Security is not a feature.  
@@ -608,7 +782,7 @@ It is the foundation of every authorized <span>PHRINUSOMYIS</span> environment.�
 
 <div class="final-content">
 
-<small>AUTHORIZED SECURITY DIVISION</small>
+<small>AUTHORIZED GLOBAL SECURITY DIVISION</small>
 
 <h6>
 PROTECTED<br>
@@ -616,7 +790,7 @@ INFRASTRUCTURE
 </h6>
 
 <p>
-PHRINUSOMYIS maintains a controlled security framework designed to support international operational environments, private infrastructure systems, and elite global presentation standards.
+PHRINUSOMYIS maintains a controlled security framework designed to support premium international infrastructure environments, executive operational systems, and elite global presentation standards.
 </p>
 
 <div class="final-seal">
@@ -629,13 +803,67 @@ SECURITY STATUS VERIFIED
 
 <!-- FOOTER -->
 
-<footer class="footer">
+<footer class="phr-main-footer">
 
-<span>PHRINUSOMYIS GLOBAL</span>
+<div class="phr-footer-grid">
 
-<span>SECURITY INFRASTRUCTURE DIVISION</span>
+<div class="phr-footer-section">
+<h3>Luxury</h3>
+<ul>
+<li><a href="luxury">Luxury Identity</a></li>
+<li><a href="circle">Private Access</a></li>
+<li><a href="perfume">Perfumes</a></li>
+<li><a href="contact">Contact</a></li>
+</ul>
+</div>
 
-<span>© 2026 ALL RIGHTS RESERVED</span>
+<div class="phr-footer-section">
+<h3>PHRINUSOMYIS.COM</h3>
+<ul>
+<li><a href="news">Latest News</a></li>
+<li><a href="press">Press Release</a></li>
+<li><a href="events">Events</a></li>
+<li><a href="luxury">PHRINUSOMYIS Luxury</a></li>
+</ul>
+</div>
+
+<div class="phr-footer-section">
+<h3>About</h3>
+<ul>
+<li><a href="policy">Privacy Policy</a></li>
+<li><a href="copyright">Copyright</a></li>
+<li><a href="terms">Terms of Use</a></li>
+<li><a href="privary">Privacy Choices</a></li>
+</ul>
+</div>
+
+<div class="phr-footer-section">
+<h3>Help</h3>
+<ul>
+<li><a href="security">Security</a></li>
+<li><a href="help">Help Center</a></li>
+<li><a href="cookies">Cookie Policy</a></li>
+<li><a href="close">Closed Captions</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="phr-global-bar">
+
+<h3>
+<span class="phr-hq-label">GLOBAL SECURITY NETWORK</span>
+</h3>
+
+<p>
+PHRINUSOMYIS infrastructure systems are designed to support secure international deployment environments, executive operational protection, and controlled global access architecture.
+</p>
+
+</div>
+
+<div class="phr-footer-bottom">
+© 2026 PHRINUSOMYIS — OFFICIAL GLOBAL SECURITY DIVISION. ALL RIGHTS RESERVED.
+</div>
 
 </footer>
 
