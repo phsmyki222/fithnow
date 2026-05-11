@@ -60,13 +60,25 @@
             overflow-x: hidden;
         }
 
-        /* GOOGLE TRANSLATE HIDE */
-        #goog-gt-tt,
-        .goog-te-balloon-frame,
-        .goog-logo-link,
-        .goog-te-banner-frame.skiptranslate,
-        .goog-te-gadget span {
-            display: none !important;
+               /* 1. Hides all Google UI elements */
+              .goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, 
+              .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame {
+              display: none !important;
+             visibility: hidden !important;
+       }
+
+            /* 2. Locks the page to the top and prevents Google's "shift" */
+           html, body {
+            top: 0 !important;
+            margin-top: 0 !important;
+            position: static !important; /* The secret weapon */
+       }
+
+             /* 3. Cleans up text highlights */
+            .goog-text-highlight {
+             background: none !important;
+            box-shadow: none !important;
+
         }
 
         body {
