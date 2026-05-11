@@ -640,26 +640,12 @@ if (universalForm) {
     universalForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = document.getElementById('universalSubmitBtn');
-        const email = this.querySelector('input[name="email"]').value;
-        const phone = this.querySelector('input[name="phone"]').value;
-
-        if (!isValidEmail(email)) {
-            alert("INVALID TRANSMISSION: @ email required.");
-            return;
-        }
-
-        const cleanPhone = phone.replace(/\D/g, ''); 
-        if (cleanPhone.length < 7) {
-            alert("INCOMPLETE PAYLOAD: Number too short.");
-            return;
-        }
-
         const formData = new FormData(this);
-        btn.innerText = "TRANSMITTING...";
-        btn.style.opacity = "0.6";
 
-        // MATCHING YOUR FILE: contact_process.php
-        fetch('https://phrinusomyis.com/contact_process.php', {
+        btn.innerText = "TRANSMITTING...";
+
+        // Updated filename to bypass the 405 error
+        fetch('transmit.php', {
             method: 'POST',
             body: formData
         })
@@ -668,15 +654,15 @@ if (universalForm) {
                 alert("We are happy to hear your complaint and we'll get in touch with you soon.");
                 this.reset();
             } else {
-                alert("TRANSMISSION ERROR: Error Code " + response.status);
+                // This will tell us if it's still 405 or something else
+                alert("TRANSMISSION ERROR: " + response.status);
             }
         })
         .catch(() => {
-            alert("SECURITY TIMEOUT: Server did not respond.");
+            alert("SECURITY TIMEOUT: Server connection blocked.");
         })
         .finally(() => {
             btn.innerText = "SEND MESSAGE";
-            btn.style.opacity = "1";
         });
     });
 }
