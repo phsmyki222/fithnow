@@ -828,55 +828,46 @@ function googleTranslateElementInit() {
         'google_translate_element'
     );
 
-    // --- INTERNAL CSS INJECTION ---
-    // This injects the CSS rules directly via JavaScript to hide all Google elements
+    // 1. Inject CSS immediately
     const style = document.createElement('style');
     style.innerHTML = `
-        .goog-te-banner-frame.skiptranslate, 
-        .goog-te-gadget-icon,
-        #goog-gt-tt, 
-        .goog-te-balloon-frame,
-        .goog-te-gadget-simple img,
-        .VIpgJd-Zvi9ab-aZ2w3d-v9v088,
-        .VIpgJd-Zvi9ab-OTTI0c-hSRGPd { 
-            display: none !important; 
+        .goog-te-banner-frame, .goog-te-gadget-icon, #goog-gt-tt, 
+        .goog-te-balloon-frame, .VIpgJd-Zvi9ab-aZ2w3d-v9v088, 
+        .VIpgJd-Zvi9ab-OTTI0c-hSRGPd, .goog-te-spinner-pos { 
+            display: none !important; visibility: hidden !important; opacity: 0 !important; 
         }
-        body { 
-            top: 0px !important; 
-        }
-        .goog-logo-link { 
-            display: none !important; 
-        }
-        .goog-te-gadget { 
-            color: transparent !important; 
-        }
+        body { top: 0px !important; position: static !important; }
     `;
     document.head.appendChild(style);
-    // ------------------------------
 
-    // Apply saved language on load
+    // 2. The "Security Guard" (Mutation Observer)
+    // This constantly looks for Google's popups and kills them
+    const observer = new MutationObserver(() => {
+        const googleIcon = document.querySelector('.VIpgJd-Zvi9ab-aZ2w3d-v9v088');
+        const googleBanner = document.querySelector('.goog-te-banner-frame');
+        if (googleIcon) googleIcon.style.display = 'none';
+        if (googleBanner) googleBanner.style.display = 'none';
+        document.body.style.top = '0px';
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // 3. Apply saved language
     const savedLang = localStorage.getItem("site_lang");
     if (savedLang) {
-        setTimeout(() => {
-            changeLanguage(savedLang);
-        }, 1000);
+        setTimeout(() => { changeLanguage(savedLang); }, 1000);
     }
 }
 
-// Change language function
 function changeLanguage(lang) {
     const select = document.querySelector(".goog-te-combo");
-
     if (select) {
         select.value = lang;
         select.dispatchEvent(new Event("change"));
         localStorage.setItem("site_lang", lang);
-    } else {
-        console.warn("Google Translate not loaded yet");
     }
 }
 
-// Hook your dropdown
 document.addEventListener("DOMContentLoaded", function () {
     const switcher = document.getElementById("languageSwitcher");
     if (switcher) {
@@ -887,7 +878,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<script type="text/javascript"
+<script type="text/javascript" 
 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
   <script>
