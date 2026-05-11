@@ -37,12 +37,30 @@
             cursor: pointer;
             text-transform: uppercase;
             font-size: 12px;
-        }
+        }     
+               /* 1. Hides all Google UI elements */
+               .goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, 
+                .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame {
+                display: none !important;
+               visibility: hidden !important;
+         }
 
-        .logo {
-            display: block;
-            margin: 40px auto;
-            max-width: 280px;
+               /* 2. Locks the page to the top and prevents Google's "shift" */
+               html, body {
+               top: 0 !important;
+                margin-top: 0 !important;
+                position: static !important; /* The secret weapon */
+         }
+
+                /* 3. Cleans up text highlights */
+                 .goog-text-highlight {
+                  background: none !important;
+                   box-shadow: none !important;
+         }
+              .logo {
+               display: block;
+               margin: 40px auto;
+               max-width: 280px;
         }
 
         h1 {
