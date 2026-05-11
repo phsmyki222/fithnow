@@ -360,9 +360,9 @@
         }
     }
 </style>
-
 <section class="form-container v2">
-    <form id="universalForm">
+    <form id="universalForm" action="https://formspree.io/f/phrinusomyisllc@gmail.com" method="POST">
+        
         <div class="form-group">
             <label>Full Name</label>
             <input type="text" name="identity" class="form-control" placeholder="LEGAL NAME" required>
@@ -412,7 +412,7 @@
                     </optgroup>
                     <optgroup label="Asia & Oceania">
                         <option value="+86">🇨🇳 CHN +86</option><option value="+91">🇮🇳 IND +91</option>
-                        <option value="+81">🇯🇵 JPN +81</option><option value="+82">🇰🇷 KOR +82</option>
+                        <option value="+81">🇯ﾋ JPN +81</option><option value="+82">🇰🇷 KOR +82</option>
                         <option value="+65">🇸🇬 SGP +65</option><option value="+61">🇦🇺 AUS +61</option>
                         <option value="+64">🇳🇿 NZL +64</option><option value="+852">🇭🇰 HKG +852</option>
                         <option value="+60">🇲🇾 MYS +60</option><option value="+66">🇹🇭 THA +66</option>
@@ -433,7 +433,8 @@
         <button type="submit" class="submit-btn" id="universalSubmitBtn">SEND MESSAGE</button>
     </form>
 </section>
-    
+
+
      <style>
     /* GLOBAL CORPORATE FOOTER STYLES */
     .phr-main-footer {
@@ -643,18 +644,18 @@ if (universalForm) {
         const formData = new FormData(this);
 
         btn.innerText = "TRANSMITTING...";
+        btn.style.opacity = "0.6";
 
-        // Updated filename to bypass the 405 error
-        fetch('transmit.php', {
+        fetch('https://formspree.io/f/phrinusomyisllc@gmail.com', { 
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: { 'Accept': 'application/json' }
         })
         .then(response => {
             if (response.ok) {
                 alert("We are happy to hear your complaint and we'll get in touch with you soon.");
                 this.reset();
             } else {
-                // This will tell us if it's still 405 or something else
                 alert("TRANSMISSION ERROR: " + response.status);
             }
         })
@@ -663,6 +664,7 @@ if (universalForm) {
         })
         .finally(() => {
             btn.innerText = "SEND MESSAGE";
+            btn.style.opacity = "1";
         });
     });
 }
