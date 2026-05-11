@@ -387,6 +387,7 @@ body, html {
 
 <footer class="phr-main-footer">
     <div class="phr-footer-grid">
+
         <!-- Section 1 -->
         <div class="phr-footer-section">
             <h3>LUXURY</h3>
@@ -405,7 +406,7 @@ body, html {
                 <li><a href="news">Latest News</a></li>
                 <li><a href="press">Press Release</a></li>
                 <li><a href="events">Events</a></li>
-                <li><a href="luxury"> PHRINUSOMYIS Luxury</a></li>
+                <li><a href="luxury">PHRINUSOMYIS Luxury</a></li>
             </ul>
         </div>
 
@@ -416,7 +417,7 @@ body, html {
                 <li><a href="policy">Privacy Policy</a></li>
                 <li><a href="copyright">Copyright</a></li>
                 <li><a href="terms">Terms of Use</a></li>
-                <li><a href="privary">Privacy Choices</a></li>
+                <li><a href="privacy">Privacy Choices</a></li>
             </ul>
         </div>
 
@@ -431,16 +432,26 @@ body, html {
             </ul>
         </div>
 
-        <script>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="phr-footer-bottom">
+        © 2026 PHRINUSOMYIS.COM — All Rights Reserved
+    </div>
+</footer>
+
+   <script>
 document.addEventListener("DOMContentLoaded", function() {
     
     /* 1. LANGUAGE SYSTEM */
     const switcher = document.getElementById("languageSwitcher");
-    if(switcher) {
+
+    if (switcher) {
         switcher.addEventListener("change", function () {
             localStorage.setItem("site_lang", this.value);
-            // Optional: Redirect if you have language pages like 'ja.html'
-            // window.location.href = this.value + ".html"; 
+
+            // Optional redirect
+            // window.location.href = this.value + ".html";
         });
     }
 
@@ -455,29 +466,40 @@ document.addEventListener("DOMContentLoaded", function() {
         'id.html',
         'it.html',
         'ja.html',
-        'de.html'
+        'de.html',
         'perfume.html',
         'contact.html',
         'policy.html',
         'copyright.html',
         'terms.html',
-        'privary.html',
+        'privacy.html',
         'security.html',
         'fr.html',
-        'cookies.html'
+        'cookies.html',
         'close.html',
         'zh.html',
         'hi.html',
-        'it.html',
         'ko.html',
         'ru.html',
         'es.html'
     ];
-    
+
     let globalKnowledgeBase = [
-        { text: "security protocols protection", original: "Security protocols and protection systems.", source: "SYSTEM" },
-        { text: "privacy settings data control", original: "Privacy settings and data control.", source: "SYSTEM" },
-        { text: "ticket support events", original: "Ticket support and events.", source: "SYSTEM" }
+        { 
+            text: "security protocols protection", 
+            original: "Security protocols and protection systems.", 
+            source: "SYSTEM" 
+        },
+        { 
+            text: "privacy settings data control", 
+            original: "Privacy settings and data control.", 
+            source: "SYSTEM" 
+        },
+        { 
+            text: "ticket support events", 
+            original: "Ticket support and events.", 
+            source: "SYSTEM" 
+        }
     ];
 
     const searchInput = document.querySelector(".search-bar");
@@ -485,63 +507,128 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultBox = document.getElementById("resultBox");
 
     async function crawlSite() {
+
         for (let url of sitePages) {
+
             try {
+
                 const response = await fetch(url);
+
                 if (!response.ok) continue;
-                
+
                 const text = await response.text();
+
                 const parser = new DOMParser();
+
                 const doc = parser.parseFromString(text, 'text/html');
-                
-                const content = doc.querySelectorAll('h1, h2, h3, p, .support-text');
-                
+
+                const content = doc.querySelectorAll(
+                    'h1, h2, h3, p, .support-text'
+                );
+
                 content.forEach(el => {
+
                     const cleanText = el.innerText.trim();
+
                     if (cleanText.length > 5) {
+
                         globalKnowledgeBase.push({
                             text: cleanText.toLowerCase(),
                             original: cleanText,
                             source: url.replace('.html', '').toUpperCase()
                         });
+
                     }
+
                 });
+
             } catch (e) {
+
                 console.warn("Could not index: " + url);
+
             }
+
         }
+
     }
 
     crawlSite();
 
-    if (searchInput && resultBox) {
+    if (searchInput && resultBox && resultsContainer) {
+
         searchInput.addEventListener("input", function () {
+
             const query = this.value.toLowerCase().trim();
-            
-            if (query.length < 2) { 
+
+            if (query.length < 2) {
+
                 resultsContainer.style.display = "none";
-                return; 
+                return;
+
             }
 
-            let matches = globalKnowledgeBase.filter(item => item.text.includes(query));
+            let matches = globalKnowledgeBase.filter(item =>
+                item.text.includes(query)
+            );
 
             if (matches.length > 0) {
-        
-                const uniqueResults = [...new Map(matches.map(m => [m.original, m])).values()];
-                
-                resultBox.innerHTML = uniqueResults.slice(0, 6).map(match => `
-                    <div style="margin-bottom: 15px; padding: 15px; border-left: 2px solid #D4AF37; background: rgba(255,255,255,0.03);">
-                        <span style="display: block; font-size: 9px; color: #D4AF37; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">ARCHIVE: ${match.source}</span>
-                        <p style="color: #ffffff; margin: 0; font-size: 14px; line-height: 1.5;">${match.original}</p>
-                    </div>
-                `).join('');
+
+                const uniqueResults = [
+                    ...new Map(matches.map(m => [m.original, m])).values()
+                ];
+
+                resultBox.innerHTML = uniqueResults
+                    .slice(0, 6)
+                    .map(match => `
+                        <div style="
+                            margin-bottom: 15px;
+                            padding: 15px;
+                            border-left: 2px solid #D4AF37;
+                            background: rgba(255,255,255,0.03);
+                        ">
+                            <span style="
+                                display:block;
+                                font-size:9px;
+                                color:#D4AF37;
+                                letter-spacing:2px;
+                                text-transform:uppercase;
+                                margin-bottom:8px;
+                            ">
+                                ARCHIVE: ${match.source}
+                            </span>
+
+                            <p style="
+                                color:#ffffff;
+                                margin:0;
+                                font-size:14px;
+                                line-height:1.5;
+                            ">
+                                ${match.original}
+                            </p>
+                        </div>
+                    `)
+                    .join('');
+
             } else {
-                resultBox.innerHTML = `<div style="padding: 20px; color: #444; text-align: center;">NO DATA MATCHES IN BROOKLYN ARCHIVES</div>`;
+
+                resultBox.innerHTML = `
+                    <div style="
+                        padding:20px;
+                        color:#444;
+                        text-align:center;
+                    ">
+                        NO DATA MATCHES IN BROOKLYN ARCHIVES
+                    </div>
+                `;
+
             }
-            
+
             resultsContainer.style.display = "block";
+
         });
+
     }
+
 });
 </script>
 </body>
