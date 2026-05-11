@@ -687,7 +687,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>Your inquiry has been formally received within the PHRINUSOMYIS corporate network. Our executive office is currently reviewing your submission in accordance with our international operational standards. For urgent assistance or priority follow-up, please contact our office directly via WhatsApp.</p>
             <div class="phrin-modal-footer">
                 <button class="phrin-btn" id="closePhrinModal">Close</button>
-                <a href="https://wa.me/message/637MGUO7ZLNYE1" class="phrin-btn wa-cta" target="_blank">WhatsApp</a>
+                <a href="https://wa.me/message/637MGUO7ZLNYE1" const customText = encodeURIComponent("Hello PHRINUSOMYIS Executive Office, I have just submitted a formal inquiry via your corporate portal and would like to request priority assistance.");
+                  const finalWaLink = `${waBaseURL}?text=${customText}`;</a>
             </div>
         </div>
     `;
