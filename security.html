@@ -4,474 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>THE STANDARD — PHRINUSOMYIS GLOBAL</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>SECURITY PROTOCOLS | PHRINUSOMYIS</title>
 
 <style>
 
-:root{
-    --gold:#d4af37;
-    --white:#f5f5f5;
-    --black:#000;
-    --soft:#070707;
-    --line:rgba(255,255,255,0.07);
-    --text:rgba(255,255,255,0.55);
+:root {
+    --gold: #D4AF37;
+    --obsidian: #050505;
+    --dark-gray: #111;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-html{
-    scroll-behavior:smooth;
+/* HEADER */
+
+.sec-header {
+    padding: 120px 20px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-gray);
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
 }
 
-body{
-    background:#000;
-    color:#fff;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
+.sec-header h1 {
+    font-size: 24px;
+    letter-spacing: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
 }
-
-/* GLOBAL ATMOSPHERE */
-
-body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    background-image:
-    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size:3px 3px;
-    opacity:0.12;
-    pointer-events:none;
-    z-index:99999;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    position:relative;
-    padding:120px 7%;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-
-    background:
-    radial-gradient(circle at top left,
-    rgba(212,175,55,0.15),
-    transparent 28%),
-
-    radial-gradient(circle at bottom right,
-    rgba(255,255,255,0.05),
-    transparent 35%),
-
-    linear-gradient(to bottom,#000,#050505);
-}
-
-.hero-ring{
-    position:absolute;
-    width:1400px;
-    height:1400px;
-    border:1px solid rgba(255,255,255,0.05);
-    border-radius:50%;
-    right:-500px;
-    top:-300px;
-    animation:spin 60s linear infinite;
-}
-
-@keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:1600px;
-    width:100%;
-}
-
-.hero-top{
+    
+.sec-status {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+} 
+ .phr-footer-bottom{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+    color:#777;
     font-size:11px;
-    letter-spacing:9px;
-    text-transform:uppercase;
-    color:#555;
-    margin-bottom:40px;
-}
-
-.hero h1{
-    font-size:clamp(80px,14vw,240px);
-    line-height:0.9;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:-8px;
-
-    background:
-    linear-gradient(to bottom,
-    #fff 0%,
-    #b5b5b5 45%,
-    #3a3a3a 100%);
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero-grid{
-    margin-top:90px;
-    display:grid;
-    grid-template-columns:1fr 320px;
-    gap:100px;
-}
-
-.hero-text{
-    max-width:760px;
-    color:var(--text);
-    line-height:2.1;
-    font-size:16px;
-}
-
-.hero-side{
-    border-left:1px solid var(--line);
-    padding-left:40px;
-}
-
-.side-box{
-    margin-bottom:45px;
-}
-
-.side-box span{
-    display:block;
-}
-
-.side-label{
-    font-size:10px;
-    letter-spacing:5px;
-    color:#555;
-    margin-bottom:12px;
-    text-transform:uppercase;
-}
-
-.side-value{
-    font-size:28px;
-    font-weight:300;
     letter-spacing:2px;
-}
-
-/* DIVIDER */
-
-.divider{
-    height:1px;
-    background:
-    linear-gradient(to right,
-    transparent,
-    rgba(212,175,55,0.5),
-    transparent);
-}
-
-/* SECTION */
-
-.section{
-    padding:180px 7%;
-    position:relative;
-}
-
-.section-head{
-    margin-bottom:120px;
-}
-
-.section-mini{
-    font-size:11px;
-    letter-spacing:8px;
-    color:#666;
-    margin-bottom:20px;
-    display:block;
-}
-
-.section-title{
-    font-size:clamp(45px,7vw,110px);
-    line-height:0.95;
-    font-weight:900;
-    letter-spacing:-4px;
     text-transform:uppercase;
+}
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold);
+    animation: pulse 2s infinite;
+}
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* CONTAINER */
+
+.sec-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px 150px;
 }
 
 /* GRID */
 
-.standard-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    border-top:1px solid var(--line);
-    border-left:1px solid var(--line);
+.sec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
-.standard-card{
-    min-height:480px;
-    padding:80px;
-    border-right:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    position:relative;
-    overflow:hidden;
-    background:#020202;
-    transition:0.5s ease;
+/* CARD */
+
+.sec-card {
+    background-color: var(--obsidian);
+    border: 1px solid var(--dark-gray);
+    padding: 40px;
+    transition: border-color 0.4s;
 }
 
-.standard-card::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(135deg,
-    rgba(212,175,55,0.08),
-    transparent 50%);
-    opacity:0;
-    transition:0.5s ease;
+.sec-card:hover {
+    border-color: var(--gold);
 }
 
-.standard-card:hover::before{
-    opacity:1;
+.sec-card h3 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-.standard-card:hover{
-    transform:translateY(-10px);
-    background:#050505;
+.sec-card p {
+    color: #666;
+    font-size: 13px;
+    margin: 0;
+    text-align: justify;
 }
 
-.standard-number{
-    display:block;
-    margin-bottom:60px;
-    color:#555;
-    letter-spacing:5px;
-    font-size:12px;
+/* AUDIT BAR */
+
+.tech-audit-bar {
+    margin-top: 80px;
+    padding: 40px;
+    background: repeating-linear-gradient(45deg, #050505, #050505 10px, #000 10px, #000 20px);
+    border: 1px solid #111;
+    text-align: center;
 }
 
-.standard-card h3{
-    font-size:44px;
-    line-height:1;
-    font-weight:900;
-    margin-bottom:35px;
-    text-transform:uppercase;
-    max-width:450px;
+.tech-audit-bar h4 {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #444;
 }
 
-.standard-card p{
-    max-width:500px;
-    color:var(--text);
-    line-height:2;
-    font-size:15px;
+/* FOOTER STATS */
+
+.node-security {
+    margin-top: 100px;
+    border-top: 1px solid #111;
+    padding-top: 40px;
 }
 
-/* QUOTE */
-
-.quote-section{
-    padding:220px 7%;
-    text-align:center;
-    position:relative;
-    background:#030303;
+.node-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.quote{
-    font-size:clamp(40px,6vw,100px);
-    line-height:1.1;
-    font-weight:800;
-    letter-spacing:-3px;
-    text-transform:uppercase;
-    max-width:1200px;
-    margin:auto;
+.node-stat {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #333;
+    text-transform: uppercase;
 }
 
-.quote span{
-    color:var(--gold);
-}
-
-/* TIMELINE */
-
-.timeline{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:40px;
-    margin-top:120px;
-}
-
-.timeline-box{
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:35px;
-}
-
-.timeline-year{
-    font-size:50px;
-    color:var(--gold);
-    font-weight:200;
-    margin-bottom:20px;
-}
-
-.timeline-box p{
-    color:var(--text);
-    line-height:1.9;
-    font-size:14px;
-}
-
-/* METRICS */
-
-.metrics{
-    padding:150px 7%;
-    background:#050505;
-}
-
-.metrics-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:50px;
-}
-
-.metric{
-    border-left:1px solid rgba(212,175,55,0.3);
-    padding-left:30px;
-}
-
-.metric small{
-    display:block;
-    margin-bottom:20px;
-    font-size:10px;
-    letter-spacing:4px;
-    color:#666;
-    text-transform:uppercase;
-}
-
-.metric h4{
-    font-size:45px;
-    font-weight:300;
-}
-
-/* FINAL */
-
-.final{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    padding:100px 7%;
-}
-
-.final::before{
-    content:'';
-    position:absolute;
-    width:700px;
-    height:700px;
-    background:
-    radial-gradient(circle,
-    rgba(212,175,55,0.14),
-    transparent 70%);
-    border-radius:50%;
-    filter:blur(80px);
-}
-
-.final-content{
-    position:relative;
-    z-index:2;
-    max-width:1100px;
-}
-
-.final small{
-    display:block;
-    margin-bottom:35px;
-    font-size:11px;
-    letter-spacing:8px;
-    color:#666;
-}
-
-.final h5{
-    font-size:clamp(55px,9vw,150px);
-    line-height:0.9;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:-6px;
-    margin-bottom:50px;
-}
-
-.final p{
-    max-width:780px;
-    margin:auto;
-    line-height:2.1;
-    color:var(--text);
-    font-size:15px;
-}
-
-.seal{
-    margin-top:70px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px 55px;
-    border:1px solid rgba(212,175,55,0.45);
-    color:var(--gold);
-    letter-spacing:7px;
-    font-size:11px;
-    text-transform:uppercase;
-    transition:0.4s ease;
-}
-
-.seal:hover{
-    background:var(--gold);
-    color:#000;
-}
-
-/* FOOTER */
-
-.footer{
-    padding:60px 7%;
-    border-top:1px solid rgba(255,255,255,0.06);
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.footer span{
-    font-size:11px;
-    letter-spacing:4px;
-    color:#555;
-    text-transform:uppercase;
-}
-
-/* MOBILE */
-
-@media(max-width:1000px){
-
-.hero-grid,
-.standard-grid,
-.timeline,
-.metrics-grid{
-    grid-template-columns:1fr;
-}
-
-.standard-card{
-    min-height:auto;
-    padding:60px 35px;
-}
-
-.hero h1{
-    letter-spacing:-3px;
-}
-
-.section-title{
-    font-size:65px;
-}
-
-.quote{
-    font-size:55px;
-}
-
-.final h5{
-    font-size:70px;
-}
-
+.node-stat span {
+    color: #fff;
+    margin-left: 5px;
 }
 
 </style>
@@ -479,231 +168,204 @@ body::before{
 
 <body>
 
-<!-- HERO -->
+<header class="sec-header">
 
-<section class="hero">
+    <h1>Security Protocols</h1>
 
-<div class="hero-ring"></div>
+    <div class="sec-status">
+        <div class="status-dot"></div>
+        System Status: Active and Monitored
+    </div>
 
-<div class="hero-content">
+</header>
 
-<div class="hero-top">
-PHRINUSOMYIS — INTERNATIONAL STANDARD DIVISION
+<main class="sec-container">
+
+    <div class="sec-grid">
+
+        <div class="sec-card">
+            <h3>Access Control</h3>
+            <p>
+                Access to restricted areas is managed through verified user authentication and account-level permissions to protect sensitive operations.
+            </p>
+        </div>
+
+        <div class="sec-card">
+            <h3>Content Protection</h3>
+            <p>
+                All media, design systems, and production materials are protected against unauthorized copying, distribution, or modification.
+            </p>
+        </div>
+
+        <div class="sec-card">
+            <h3>System Monitoring</h3>
+            <p>
+                Platform activity is continuously monitored to detect unusual behavior and maintain system stability across all regions.
+            </p>
+        </div>
+
+        <div class="sec-card">
+            <h3>Product Authentication</h3>
+            <p>
+                Physical and digital products are verified through internal validation systems to ensure authenticity and prevent counterfeiting.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="tech-audit-bar">
+        <h4>SECURITY REVIEW STATUS — ACTIVE</h4>
+    </div>
+
+    <div class="node-security">
+
+        <div class="node-flex">
+            <div class="node-stat">Firewall: <span>Enabled</span></div>
+            <div class="node-stat">Encryption: <span>Active</span></div>
+            <div class="node-stat">Monitoring: <span>Continuous</span></div>
+            <div class="node-stat">Status: <span>Secure</span></div>
+        </div>
+
+    </div>
+
+</main> 
+
+       <style>
+    /* GLOBAL CORPORATE FOOTER STYLES */
+    .phr-main-footer {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 80px 20px 40px;
+        border-top: 1px solid #1a1a1a;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .phr-footer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 20px;
+        max-width: 1100px;
+        margin: 0 auto 60px;
+    }
+
+    @media (min-width: 768px) {
+        .phr-footer-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .phr-footer-section h3 {
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+    }
+
+    .phr-footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .phr-footer-section li {
+        margin-bottom: 15px;
+    }
+
+    .phr-footer-section a {
+        color: #888;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+    }
+
+    .phr-footer-section a:hover {
+        color: #D4AF37;
+    }
+
+    /* THE FIX IS HERE */
+    .phr-global-bar {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-top: 40px;
+        border-top: 1px solid #1a1a1a;
+        text-align: center; /* This centers the HQ text and heading */
+    }
+
+    .phr-global-bar h3 {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        font-weight: 900;
+    }
+
+    .phr-hq-label {
+        color: #D4AF37;
+        font-weight: bold;
+    }
+
+    .phr-footer-legal {
+        margin-top: 50px;
+        text-align: center;
+        color: #444;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+</style>
+
+<footer class="phr-main-footer">
+<div class="phr-footer-grid">
+<!-- Section 1 -->
+<div class="phr-footer-section">
+<h3>LUXURY</h3>
+<ul>
+<li><a href="luxury">Luxury Identity</a></li>
+<li><a href="circle">Private Access</a></li>
+<li><a href="perfume">Perfumes</a></li>
+<li><a href="contact">Contact</a></li>
+</ul>
 </div>
 
-<h1>
-THE<br>
-STANDARD
-</h1>
+<!-- Section 2 -->  
+    <div class="phr-footer-section">  
+        <h3>PHRINUSOMYIS.COM</h3>  
+        <ul>  
+            <li><a href="news">Latest News</a></li>  
+            <li><a href="press">Press Release</a></li>  
+            <li><a href="events">Events</a></li>  
+            <li><a href="luxury"> PHRINUSOMYIS Luxury</a></li>  
+        </ul>  
+    </div>  
 
-<div class="hero-grid">
+    <!-- Section 3 -->  
+    <div class="phr-footer-section">  
+        <h3>ABOUT</h3>  
+        <ul>  
+            <li><a href="policy">Privacy Policy</a></li>  
+            <li><a href="copyright">Copyright</a></li>  
+            <li><a href="terms">Terms of Use</a></li>  
+            <li><a href="privary">Privacy Choices</a></li>  
+        </ul>  
+    </div>  
 
-<div class="hero-text">
-PHRINUSOMYIS operates as a cinematic luxury infrastructure authority focused on stadium-scale production, global entertainment environments, executive-grade presentation systems, and elite operational deployment. 
+    <!-- Section 4 -->  
+    <div class="phr-footer-section">  
+        <h3>HELP</h3>  
+        <ul>  
+            <li><a href="security">Security</a></li>  
+            <li><a href="help">Help Center</a></li>  
+            <li><a href="cookies">Cookie Policy</a></li>  
+            <li><a href="close">Closed Captions</a></li>  
+        </ul>  
+    </div>
+    </div>
 
-Every visual sequence, architectural interface, audio environment, and international activation follows a controlled internal benchmark engineered for premium international presentation.
-</div>
-
-<div class="hero-side">
-
-<div class="side-box">
-<span class="side-label">Global Classification</span>
-<span class="side-value">Elite Tier</span>
-</div>
-
-<div class="side-box">
-<span class="side-label">Operational Reach</span>
-<span class="side-value">International</span>
-</div>
-
-<div class="side-box">
-<span class="side-label">Infrastructure Status</span>
-<span class="side-value">Authorized</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<div class="divider"></div>
-
-<!-- STANDARD -->
-
-<section class="section">
-
-<div class="section-head">
-<span class="section-mini">GLOBAL PRODUCTION AUTHORITY</span>
-<h2 class="section-title">
-Built Beyond<br>
-Conventional Luxury
-</h2>
-</div>
-
-<div class="standard-grid">
-
-<div class="standard-card">
-<span class="standard-number">01 — VISUAL SYSTEMS</span>
-<h3>12K CINEMATIC ENGINEERING</h3>
-<p>
-Ultra-high fidelity projection architecture designed for premium stadium presentation and cinematic-scale immersive environments with advanced contrast calibration and motion precision.
-</p>
-</div>
-
-<div class="standard-card">
-<span class="standard-number">02 — SONIC ARCHITECTURE</span>
-<h3>ACOUSTIC INTELLIGENCE</h3>
-<p>
-PHRINUSOMYIS sound environments are engineered through multi-zone frequency balancing, spatial calibration, and synchronized audio distribution for elite broadcast-level clarity.
-</p>
-</div>
-
-<div class="standard-card">
-<span class="standard-number">03 — DEPLOYMENT NETWORK</span>
-<h3>GLOBAL INFRASTRUCTURE GRID</h3>
-<p>
-Every authorized environment operates under a synchronized international deployment framework ensuring identical luxury standards across all operational regions.
-</p>
-</div>
-
-<div class="standard-card">
-<span class="standard-number">04 — SECURITY PROTOCOL</span>
-<h3>PRIVATE ACCESS CONTROL</h3>
-<p>
-Internal systems, executive environments, production assets, and restricted infrastructure divisions operate through controlled authorization and monitored access verification.
-</p>
-</div>
-
-<div class="standard-card">
-<span class="standard-number">05 — EXECUTIVE PRODUCTION</span>
-<h3>STADIUM-SCALE EXPERIENCE</h3>
-<p>
-PHRINUSOMYIS environments are designed to merge luxury atmosphere, cinematic storytelling, live audience synchronization, and international entertainment architecture.
-</p>
-</div>
-
-<div class="standard-card">
-<span class="standard-number">06 — GLOBAL AUDIT</span>
-<h3>ELITE RELEASE VERIFIED</h3>
-<p>
-Every deployment cycle undergoes internal performance verification including technical stability, cinematic quality assurance, visual synchronization, and operational readiness.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- QUOTE -->
-
-<section class="quote-section">
-
-<div class="quote">
-“We do not follow industry standards.  
-We engineer the environment the industry attempts to reach.”
-</div>
-
-<div class="timeline">
-
-<div class="timeline-box">
-<div class="timeline-year">01</div>
-<p>
-Luxury-focused cinematic infrastructure engineered for international presentation environments.
-</p>
-</div>
-
-<div class="timeline-box">
-<div class="timeline-year">02</div>
-<p>
-Integrated deployment systems designed for synchronized stadium-scale experiences.
-</p>
-</div>
-
-<div class="timeline-box">
-<div class="timeline-year">03</div>
-<p>
-Global operational architecture developed for elite entertainment authority.
-</p>
-</div>
-
-<div class="timeline-box">
-<div class="timeline-year">04</div>
-<p>
-Continuous advancement in immersive visual technology and premium production systems.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- METRICS -->
-
-<section class="metrics">
-
-<div class="metrics-grid">
-
-<div class="metric">
-<small>Visual Fidelity</small>
-<h4>12K</h4>
-</div>
-
-<div class="metric">
-<small>Response Architecture</small>
-<h4>0.5MS</h4>
-</div>
-
-<div class="metric">
-<small>Network Reach</small>
-<h4>GLOBAL</h4>
-</div>
-
-<div class="metric">
-<small>Authorization Status</small>
-<h4>SECURED</h4>
-</div>
-
-</div>
-
-</section>
-
-<!-- FINAL -->
-
-<section class="final">
-
-<div class="final-content">
-
-<small>AUTHORIZED GLOBAL STANDARD</small>
-
-<h5>
-PHRINUSOMYIS
-</h5>
-
-<p>
-PHRINUSOMYIS represents a private luxury infrastructure and cinematic production authority focused on elite stadium presentation, global entertainment deployment, and premium international operational systems.
-</p>
-
-<div class="seal">
-AUTHORIZED INTERNATIONAL DIVISION
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-<span>PHRINUSOMYIS GLOBAL</span>
-
-<span>INTERNATIONAL STANDARD AUTHORITY</span>
-
-<span>© 2026 ALL RIGHTS RESERVED</span>
-
+    <!-- COPYRIGHT -->
+    <div class="phr-footer-bottom">
+        © 2026 PHRINUSOMYIS — Official Global Security Division. All Rights Reserved.
+    </div>
 </footer>
 
 </body>
