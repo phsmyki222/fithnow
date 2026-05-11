@@ -48,7 +48,27 @@
         height: 2px;  
         background: #D4AF37;  
         margin: 0 auto 60px;  
-    }  
+    }     
+
+         /* 1. Hides all Google UI elements */
+         .goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, 
+         .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame {
+          display: none !important;
+          visibility: hidden !important;
+     }
+
+          /* 2. Locks the page to the top and prevents Google's "shift" */
+            html, body {
+           top: 0 !important;
+          margin-top: 0 !important;
+        position: static !important; /* The secret weapon */
+    }
+
+       /* 3. Cleans up text highlights */
+        .goog-text-highlight {
+         background: none !important;
+        box-shadow: none !important;
+  }
 
     .policy-section {  
         max-width: 900px;  
@@ -200,7 +220,6 @@
 <h1>Privacy Mandate</h1>  
 <div class="header-line"></div>  
 
-<
 </section>  
 <!-- SECTION 01 -->
 <section class="policy-section">  
