@@ -1,230 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE STANDARD | PHRINUSOMYIS</title>
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --obsidian: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE STANDARD — PHRINUSOMYIS</title>
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Inter', 'Helvetica Neue', sans-serif;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
-        /* CINEMATIC HERO */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle at center, #111 0%, #000 100%);
-            position: relative;
-        }
+<style>
 
-        .hero h1 {
-            font-size: clamp(40px, 8vw, 100px);
-            font-weight: 900;
-            letter-spacing: 25px;
-            margin: 0;
-            text-transform: uppercase;
-            background: linear-gradient(to bottom, #fff 30%, #444 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0.9;
-        }
+:root{
+    --gold:#d4af37;
+    --silver:#f3f3f3;
+    --black:#020202;
+    --soft:#0a0a0a;
+    --line:rgba(255,255,255,0.06);
+}
 
-        .hero-line {
-            width: 1px;
-            height: 100px;
-            background: var(--gold);
-            margin: 40px 0;
-            box-shadow: 0 0 15px var(--gold);
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* TECHNICAL GRID - THE POWERHOUSE */
-        .content-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 150px 40px;
-        }
+body{
+    background:#000;
+    color:#fff;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
 
-        .standard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2px; /* Creating sharp borders via background */
-            background-color: #111;
-            border: 1px solid #111;
-        }
+/* PREMIUM NOISE */
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:3px 3px;
+    opacity:0.15;
+    pointer-events:none;
+    z-index:9999;
+}
 
-        .card {
-            background-color: #000;
-            padding: 80px 50px;
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
-        }
+/* HERO */
 
-        .card:hover {
-            background-color: #050505;
-        }
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8%;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.12), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 35%),
+    linear-gradient(to bottom,#000,#050505);
+}
 
-        .card:hover .card-num {
-            color: var(--gold);
-            transform: translateY(-10px);
-        }
+.hero::after{
+    content:'';
+    position:absolute;
+    width:1200px;
+    height:1200px;
+    border:1px solid rgba(255,255,255,0.04);
+    border-radius:50%;
+    animation:rotate 40s linear infinite;
+}
 
-        .card-num {
-            font-size: 12px;
-            color: #333;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
-            display: block;
-            transition: all 0.5s;
-        }
+@keyframes rotate{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
 
-        .card h2 {
-            font-size: 18px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            font-weight: 900;
-        }
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:1600px;
+}
 
-        .card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-        }
+.topline{
+    font-size:11px;
+    letter-spacing:8px;
+    color:rgba(255,255,255,0.35);
+    margin-bottom:40px;
+    text-transform:uppercase;
+}
 
-        /* FLOATING SPECS - THE INTERFACE FEEL */
-        .interface-specs {
-            background: var(--obsidian);
-            padding: 100px 40px;
-            border-top: 1px solid #111;
-        }
+.hero h1{
+    font-size:clamp(70px,13vw,220px);
+    line-height:0.9;
+    font-weight:900;
+    letter-spacing:-8px;
+    text-transform:uppercase;
+    background:
+    linear-gradient(to bottom,#fff 0%,#999 45%,#333 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        .spec-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
+.hero-grid{
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:1fr 300px;
+    gap:80px;
+    align-items:end;
+}
 
-        .spec-box {
-            border-left: 1px solid var(--gold);
-            padding-left: 30px;
-        }
+.hero-description{
+    max-width:700px;
+    font-size:16px;
+    line-height:2;
+    color:rgba(255,255,255,0.55);
+    letter-spacing:0.3px;
+}
 
-        .spec-label {
-            font-size: 10px;
-            letter-spacing: 3px;
-            color: #444;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 10px;
-        }
+.hero-side{
+    border-left:1px solid rgba(255,255,255,0.08);
+    padding-left:40px;
+}
 
-        .spec-data {
-            font-size: 24px;
-            font-weight: 200;
-            letter-spacing: 2px;
-            color: #fff;
-        }
+.hero-side div{
+    margin-bottom:35px;
+}
 
-        /* FINAL SEAL */
-        .seal-section {
-            padding: 200px 40px;
-            text-align: center;
-        }
+.hero-side span{
+    display:block;
+}
 
-        .seal-logo {
-            font-size: 11px;
-            letter-spacing: 10px;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 20px 40px;
-            display: inline-block;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
+.hero-side .label{
+    font-size:10px;
+    letter-spacing:5px;
+    color:#555;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
 
-        .seal-logo:hover {
-            background: var(--gold);
-            color: #000;
-        }
-    </style>
+.hero-side .value{
+    font-size:28px;
+    font-weight:200;
+    letter-spacing:2px;
+}
+
+/* MASSIVE DIVIDER */
+
+.divider{
+    height:1px;
+    background:linear-gradient(to right,transparent,var(--gold),transparent);
+    opacity:0.4;
+}
+
+/* STANDARD SECTION */
+
+.standard-section{
+    padding:180px 8%;
+    position:relative;
+}
+
+.section-title{
+    margin-bottom:120px;
+}
+
+.section-title span{
+    display:block;
+    font-size:11px;
+    letter-spacing:8px;
+    color:#555;
+    margin-bottom:20px;
+}
+
+.section-title h2{
+    font-size:clamp(40px,6vw,100px);
+    line-height:1;
+    text-transform:uppercase;
+    font-weight:900;
+    letter-spacing:-3px;
+}
+
+/* ULTRA GRID */
+
+.standard-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+}
+
+.standard-card{
+    min-height:420px;
+    padding:70px;
+    position:relative;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    transition:0.5s ease;
+    overflow:hidden;
+    background:#020202;
+}
+
+.standard-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(130deg,
+    rgba(212,175,55,0.08),
+    transparent 40%);
+    opacity:0;
+    transition:0.5s ease;
+}
+
+.standard-card:hover::before{
+    opacity:1;
+}
+
+.standard-card:hover{
+    transform:translateY(-10px);
+    background:#050505;
+}
+
+.standard-number{
+    font-size:12px;
+    letter-spacing:5px;
+    color:#555;
+    margin-bottom:60px;
+    display:block;
+}
+
+.standard-card h3{
+    font-size:42px;
+    line-height:1;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:35px;
+    max-width:400px;
+}
+
+.standard-card p{
+    color:rgba(255,255,255,0.48);
+    line-height:2;
+    font-size:15px;
+    max-width:480px;
+}
+
+/* LUXURY STRIP */
+
+.luxury-strip{
+    padding:120px 8%;
+    background:#050505;
+    position:relative;
+}
+
+.strip-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+}
+
+.strip-item{
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.strip-item .mini{
+    font-size:10px;
+    letter-spacing:4px;
+    color:#555;
+    display:block;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.strip-item h4{
+    font-size:38px;
+    font-weight:300;
+    letter-spacing:1px;
+}
+
+/* FINAL */
+
+.final{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    padding:100px 8%;
+}
+
+.final::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(212,175,55,0.12),
+    transparent 70%);
+    filter:blur(60px);
+}
+
+.final-box{
+    position:relative;
+    z-index:2;
+}
+
+.final small{
+    display:block;
+    margin-bottom:30px;
+    font-size:11px;
+    letter-spacing:8px;
+    color:#666;
+}
+
+.final h5{
+    font-size:clamp(50px,8vw,130px);
+    line-height:0.9;
+    text-transform:uppercase;
+    font-weight:900;
+    letter-spacing:-5px;
+    margin-bottom:40px;
+}
+
+.final p{
+    max-width:700px;
+    margin:auto;
+    color:rgba(255,255,255,0.45);
+    line-height:2;
+    font-size:15px;
+}
+
+.seal{
+    margin-top:70px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(212,175,55,0.4);
+    padding:22px 50px;
+    font-size:11px;
+    letter-spacing:7px;
+    text-transform:uppercase;
+    color:var(--gold);
+    transition:0.4s ease;
+}
+
+.seal:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+.hero-grid{
+    grid-template-columns:1fr;
+}
+
+.standard-grid{
+    grid-template-columns:1fr;
+}
+
+.strip-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.hero h1{
+    letter-spacing:-2px;
+}
+
+.standard-card{
+    padding:50px 35px;
+}
+
+}
+
+@media(max-width:700px){
+
+.strip-grid{
+    grid-template-columns:1fr;
+}
+
+.hero{
+    padding-top:160px;
+}
+
+.hero h1{
+    font-size:70px;
+}
+
+.section-title h2{
+    font-size:55px;
+}
+
+.final h5{
+    font-size:60px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <section class="hero">
-        <h1>THE STANDARD</h1>
-        <div class="hero-line"></div>
-        <p style="letter-spacing: 8px; font-size: 10px; color: #444;">GLOBAL PRODUCTION BENCHMARK</p>
-    </section>
+<section class="hero">
 
-    <section class="content-section">
-        <div class="standard-grid">
-            <div class="card">
-                <span class="card-num">01 / VISUAL</span>
-                <h2>12K PRECISION</h2>
-                <p>Engineering a visual frequency that exceeds stadium capacity. We synchronize high-fidelity cinematic output with stadium-scale projection to create a zero-pixel lag environment.</p>
-            </div>
-            <div class="card">
-                <span class="card-num">02 / SONIC</span>
-                <h2>ACOUSTIC AUDIT</h2>
-                <p>Proprietary wave-mapping technology that treats the stadium as a high-end studio. Immersive audio delivery with <0.5ms latency across all global operational nodes.</p>
-            </div>
-            <div class="card">
-                <span class="card-num">03 / LOGISTICS</span>
-                <h2>BROOKLYN CORE</h2>
-                <p>Managed from our Global HQ in Brooklyn, NY. Our deployment protocol ensures that the Phrinusomyis standard is identical from Dubai to West Africa.</p>
-            </div>
-            <div class="card">
-                <span class="card-num">04 / STATUS</span>
-                <h2>AUDIT PASSED</h2>
-                <p>The 2026 Technical Audit is finalized. All stadium-scale hardware and luxury asset production cycles have cleared the elite threshold for international deployment.</p>
-            </div>
-        </div>
-    </section>
+<div class="hero-content">
 
-    <section class="interface-specs">
-        <div class="spec-container">
-            <div class="spec-box">
-                <span class="spec-label">Fidelity</span>
-                <span class="spec-data">12K NATIVE</span>
-            </div>
-            <div class="spec-box">
-                <span class="spec-label">Response</span>
-                <span class="spec-data">ELITE READY</span>
-            </div>
-            <div class="spec-box">
-                <span class="spec-label">Network</span>
-                <span class="spec-data">GLOBAL HUB</span>
-            </div>
-            <div class="spec-box">
-                <span class="spec-label">Auth</span>
-                <span class="spec-data">SECURE</span>
-            </div>
-        </div>
-    </section>
+<div class="topline">
+PHRINUSOMYIS — GLOBAL STANDARD AUTHORITY
+</div>
 
-    <section class="seal-section">
-        <div class="seal-logo">Authorized by PHRINUSOMYIS Global</div>
-    </section>
+<h1>
+THE<br>
+STANDARD
+</h1>
+
+<div class="hero-grid">
+
+<div class="hero-description">
+PHRINUSOMYIS operates beyond conventional luxury presentation. 
+Every stadium-scale deployment, cinematic installation, and private production environment is engineered under a unified international benchmark designed for elite visual precision, controlled atmosphere, and global operational continuity.
+</div>
+
+<div class="hero-side">
+
+<div>
+<span class="label">Production Tier</span>
+<span class="value">SOVEREIGN</span>
+</div>
+
+<div>
+<span class="label">Network Status</span>
+<span class="value">GLOBAL</span>
+</div>
+
+<div>
+<span class="label">Audit Protocol</span>
+<span class="value">PASSED</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="divider"></div>
+
+<section class="standard-section">
+
+<div class="section-title">
+<span>INTERNATIONAL BENCHMARK</span>
+<h2>
+Beyond<br>
+Luxury
+</h2>
+</div>
+
+<div class="standard-grid">
+
+<div class="standard-card">
+<span class="standard-number">01 — VISUAL SYSTEMS</span>
+<h3>12K CINEMATIC CONTROL</h3>
+<p>
+Ultra-high fidelity rendering architecture designed for large-scale projection environments. Every motion layer, contrast balance, and atmospheric visual sequence is calibrated for stadium-grade immersion.
+</p>
+</div>
+
+<div class="standard-card">
+<span class="standard-number">02 — SOUND ENGINEERING</span>
+<h3>ACOUSTIC INTELLIGENCE</h3>
+<p>
+Precision-controlled audio environments engineered with multi-zone wave balancing and real-time frequency synchronization for elite broadcast-grade sound delivery.
+</p>
+</div>
+
+<div class="standard-card">
+<span class="standard-number">03 — DEPLOYMENT</span>
+<h3>GLOBAL OPERATIONAL GRID</h3>
+<p>
+PHRINUSOMYIS deployment infrastructure maintains identical luxury and production standards across every authorized international activation environment.
+</p>
+</div>
+
+<div class="standard-card">
+<span class="standard-number">04 — EXECUTIVE STANDARD</span>
+<h3>AUDITED FOR ELITE RELEASE</h3>
+<p>
+Every production cycle undergoes internal technical verification before international authorization. Performance, security, cinematic fidelity, and deployment stability are continuously monitored.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="luxury-strip">
+
+<div class="strip-grid">
+
+<div class="strip-item">
+<span class="mini">Visual Fidelity</span>
+<h4>12K</h4>
+</div>
+
+<div class="strip-item">
+<span class="mini">Latency</span>
+<h4>0.5MS</h4>
+</div>
+
+<div class="strip-item">
+<span class="mini">Infrastructure</span>
+<h4>GLOBAL</h4>
+</div>
+
+<div class="strip-item">
+<span class="mini">Authorization</span>
+<h4>SECURED</h4>
+</div>
+
+</div>
+
+</section>
+
+<section class="final">
+
+<div class="final-box">
+
+<small>AUTHORIZED INTERNATIONAL STANDARD</small>
+
+<h5>
+PHRINUSOMYIS
+</h5>
+
+<p>
+A private global production authority focused on cinematic stadium environments, elite deployment systems, and luxury-scale international presentation engineering.
+</p>
+
+<div class="seal">
+AUTHORIZED GLOBAL DIVISION
+</div>
+
+</div>
+
+</section>
 
 </body>
 </html>
