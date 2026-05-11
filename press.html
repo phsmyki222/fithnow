@@ -828,31 +828,51 @@ function googleTranslateElementInit() {
         'google_translate_element'
     );
 
-    // 1. Inject CSS immediately
+    // THE SHIELD: This injects CSS that targets every possible Google Translate container
     const style = document.createElement('style');
     style.innerHTML = `
-        .goog-te-banner-frame, .goog-te-gadget-icon, #goog-gt-tt, 
-        .goog-te-balloon-frame, .VIpgJd-Zvi9ab-aZ2w3d-v9v088, 
-        .VIpgJd-Zvi9ab-OTTI0c-hSRGPd, .goog-te-spinner-pos { 
-            display: none !important; visibility: hidden !important; opacity: 0 !important; 
+        /* 1. Kill the banner and any popups */
+        iframe.goog-te-banner-frame, 
+        .goog-te-banner-frame, 
+        .goog-te-balloon-frame, 
+        #goog-gt-tt, 
+        .goog-te-spinner-pos {
+            display: none !important;
+            visibility: hidden !important;
         }
-        body { top: 0px !important; position: static !important; }
+
+        /* 2. Target the specific mobile translate icon classes */
+        .VIpgJd-Zvi9ab-aZ2w3d-v9v088, 
+        .VIpgJd-Zvi9ab-OTTI0c-hSRGPd, 
+        #google_translate_element img {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        /* 3. Force the page to stay at the top */
+        body { 
+            top: 0 !important; 
+            position: static !important; 
+        }
+
+        /* 4. The Overlay Block: This covers the area where the icon usually pops out */
+        #google-translate-shield {
+            display: none;
+        }
     `;
     document.head.appendChild(style);
 
-    // 2. The "Security Guard" (Mutation Observer)
-    // This constantly looks for Google's popups and kills them
-    const observer = new MutationObserver(() => {
-        const googleIcon = document.querySelector('.VIpgJd-Zvi9ab-aZ2w3d-v9v088');
-        const googleBanner = document.querySelector('.goog-te-banner-frame');
-        if (googleIcon) googleIcon.style.display = 'none';
-        if (googleBanner) googleBanner.style.display = 'none';
-        document.body.style.top = '0px';
-    });
+    // THE CLEANER: A loop that runs every 100ms to delete the Google elements if they appear
+    setInterval(function() {
+        const icon = document.querySelector(".VIpgJd-Zvi9ab-aZ2w3d-v9v088");
+        const frame = document.querySelector(".goog-te-banner-frame");
+        if (icon) icon.remove(); 
+        if (frame) frame.remove();
+        document.body.style.top = "0px";
+    }, 100);
 
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    // 3. Apply saved language
+    // Apply saved language
     const savedLang = localStorage.getItem("site_lang");
     if (savedLang) {
         setTimeout(() => { changeLanguage(savedLang); }, 1000);
