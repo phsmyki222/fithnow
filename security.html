@@ -39,7 +39,7 @@ body, html {
     text-transform: uppercase;
     margin: 0;
 }
-
+    
 .sec-status {
     color: var(--gold);
     font-size: 10px;
@@ -49,9 +49,18 @@ body, html {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+} 
+ .phr-footer-bottom{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+    color:#777;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
-
-.status-dot {
+  .status-dot {
     width: 8px;
     height: 8px;
     background-color: var(--gold);
@@ -60,7 +69,7 @@ body, html {
     animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
+  @keyframes pulse {
     0% { opacity: 1; }
     50% { opacity: 0.3; }
     100% { opacity: 1; }
