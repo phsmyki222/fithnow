@@ -636,36 +636,34 @@ if (securityForm) {
 }
 
 /**
- * PHRINUSOMYIS - Global Corporate Form Bridge
- * Connects HTML Form to Formspree + Elite WhatsApp Modal
+ * PHRINUSOMYIS - Gatekeeper & WhatsApp Bridge
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     const universalForm = document.getElementById('universalForm');
     const submitBtn = document.getElementById('universalSubmitBtn');
 
-    // 1. INJECT ELITE STYLES
+    // 1. INJECT ELITE STYLES (Gold on Obsidian)
     const style = document.createElement('style');
     style.innerHTML = `
         .phrin-modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.98); display: flex; align-items: center;
             justify-content: center; z-index: 100000; opacity: 0; visibility: hidden;
-            transition: opacity 0.6s ease; backdrop-filter: blur(10px);
+            transition: opacity 0.5s ease; backdrop-filter: blur(12px);
         }
         .phrin-modal-overlay.active { opacity: 1; visibility: visible; }
         .phrin-modal-box {
             background: #000; border: 1px solid #d4af37; padding: 50px 40px;
             max-width: 450px; width: 90%; text-align: center;
-            box-shadow: 0 0 50px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
         }
         .phrin-modal-box h2 {
             color: #d4af37; font-size: 1.1rem; letter-spacing: 5px;
             margin-bottom: 20px; text-transform: uppercase;
         }
         .phrin-modal-box p {
-            color: #fff; font-size: 0.85rem; line-height: 1.8;
-            margin-bottom: 30px; opacity: 0.8;
+            color: #fff; font-size: 0.85rem; line-height: 1.8; margin-bottom: 30px;
         }
         .phrin-modal-footer { display: flex; gap: 15px; }
         .phrin-btn {
@@ -680,7 +678,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // 2. CREATE MODAL
+    // 2. CREATE THE POPOUT MODAL
     const modal = document.createElement('div');
     modal.className = 'phrin-modal-overlay';
     modal.innerHTML = `
@@ -695,52 +693,38 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(modal);
 
-    // 3. FORM SUBMISSION LOGIC
+    // 3. VALIDATION & POPOUT LOGIC
     if (universalForm) {
         universalForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // STOPS data from being sent to any backend/PHP
             
-            // Visual feedback for "Big Brand" feel
-            submitBtn.innerText = "TRANSMITTING TO PHRINUSOMYIS...";
-            submitBtn.style.opacity = "0.5";
-            submitBtn.disabled = true;
+            const email = this.querySelector('input[name="email"]').value;
+            const phone = this.querySelector('input[name="phone"]').value;
 
-            const formData = new FormData(this);
+            // Confirm if email and number are present
+            if (email !== "" && phone !== "") {
+                
+                // Show visual "processing" for prestige
+                submitBtn.innerText = "VERIFYING...";
+                submitBtn.style.opacity = "0.5";
 
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // THE 3-SECOND PRESTIGE DELAY
-                    setTimeout(() => {
-                        modal.classList.add('active');
-                        this.reset();
-                        submitBtn.innerText = "SEND MESSAGE";
-                        submitBtn.style.opacity = "1";
-                        submitBtn.disabled = false;
-                    }, 3000);
-                } else {
-                    alert("TRANSMISSION ERROR: System could not verify data.");
-                    resetBtn();
-                }
-            })
-            .catch(() => {
-                alert("SECURITY TIMEOUT: Connection interrupted.");
-                resetBtn();
-            });
+                setTimeout(() => {
+                    // Trigger the Popout
+                    modal.classList.add('active');
+                    
+                    // Reset button and form
+                    submitBtn.innerText = "SEND MESSAGE";
+                    submitBtn.style.opacity = "1";
+                    this.reset();
+                }, 2000); // 2 second prestige delay
+
+            } else {
+                alert("Please complete the required fields.");
+            }
         });
     }
 
-    function resetBtn() {
-        submitBtn.innerText = "SEND MESSAGE";
-        submitBtn.style.opacity = "1";
-        submitBtn.disabled = false;
-    }
-
-    // Close Modal Event
+    // Close Button Event
     document.getElementById('closePhrinModal').addEventListener('click', () => {
         modal.classList.remove('active');
     });
