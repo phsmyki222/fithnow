@@ -1,910 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PHRINUSOMYIS | International Partnership Office</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --gold:#D4AF37;
-    --gold-soft:#f1e2a6;
-    --black:#000000;
-    --surface:#0a0a0a;
-    --surface-2:#121212;
-    --line:rgba(255,255,255,0.08);
-    --text:#ffffff;
-    --muted:rgba(255,255,255,0.55);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#000;
-    color:#fff;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
-}
-
-/* ======================================== */
-/* GLOBAL ATMOSPHERE */
-/* ======================================== */
-
-body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-
-    background-image:
-    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-
-    background-size:3px 3px;
-
-    opacity:0.06;
-
-    pointer-events:none;
-
-    z-index:9999;
-}
-
-/* ======================================== */
-/* HERO */
-/* ======================================== */
-
-.hero{
-    position:relative;
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-
-    padding:120px 7%;
-
-    overflow:hidden;
-
-    background:
-    radial-gradient(circle at top left,
-    rgba(212,175,55,0.12),
-    transparent 30%),
-
-    radial-gradient(circle at bottom right,
-    rgba(255,255,255,0.04),
-    transparent 35%),
-
-    linear-gradient(to bottom,#000,#050505);
-}
-
-.hero::before{
-    content:'';
-
-    position:absolute;
-
-    width:1400px;
-    height:1400px;
-
-    border:1px solid rgba(255,255,255,0.04);
-
-    border-radius:50%;
-
-    right:-550px;
-    top:-450px;
-}
-
-.hero-wrap{
-    position:relative;
-    z-index:2;
-    width:100%;
-    max-width:1700px;
-}
-
-/* ======================================== */
-/* LOGO */
-/* ======================================== */
-
-.hero-logo{
-    margin-bottom:45px;
-}
-
-.hero-logo img{
-    width:140px;
-    max-width:100%;
-    object-fit:contain;
-
-    filter:
-    drop-shadow(0 0 20px rgba(212,175,55,0.15));
-}
-
-/* ======================================== */
-/* TEXT */
-/* ======================================== */
-
-.hero-mini{
-    font-size:11px;
-    letter-spacing:8px;
-    text-transform:uppercase;
-    color:#666;
-
-    margin-bottom:40px;
-}
-
-.hero h1{
-    font-size:clamp(70px,14vw,220px);
-
-    line-height:0.88;
-
-    font-weight:900;
-
-    letter-spacing:-8px;
-
-    text-transform:uppercase;
-
-    background:
-    linear-gradient(to bottom,
-    #ffffff 0%,
-    #bfbfbf 50%,
-    #3d3d3d 100%);
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero-grid{
-    margin-top:100px;
-
-    display:grid;
-
-    grid-template-columns:1fr 380px;
-
-    gap:120px;
-}
-
-.hero-text{
-    max-width:850px;
-
-    color:var(--muted);
-
-    font-size:16px;
-
-    line-height:2.2;
-}
-
-.hero-side{
-    border-left:1px solid var(--line);
-
-    padding-left:45px;
-}
-
-.hero-side-box{
-    margin-bottom:45px;
-}
-
-.hero-side-box small{
-    display:block;
-
-    margin-bottom:12px;
-
-    color:#666;
-
-    font-size:10px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-}
-
-.hero-side-box h3{
-    font-size:34px;
-
-    font-weight:300;
-
-    letter-spacing:2px;
-}
-
-/* ======================================== */
-/* STATUS */
-/* ======================================== */
-
-.hero-status{
-    margin-top:70px;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    color:var(--gold);
-
-    font-size:10px;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-}
-
-.status-dot{
-    width:10px;
-    height:10px;
-
-    background:var(--gold);
-
-    border-radius:50%;
-
-    box-shadow:0 0 15px var(--gold);
-}
-
-/* ======================================== */
-/* FORM SECTION */
-/* ======================================== */
-
-.form-section{
-    padding:160px 7%;
-
-    background:#050505;
-}
-
-.form-top{
-    margin-bottom:90px;
-}
-
-.form-mini{
-    display:block;
-
-    margin-bottom:20px;
-
-    color:#666;
-
-    font-size:11px;
-
-    letter-spacing:8px;
-
-    text-transform:uppercase;
-}
-
-.form-title{
-    font-size:clamp(50px,7vw,110px);
-
-    line-height:0.92;
-
-    font-weight:900;
-
-    letter-spacing:-5px;
-
-    text-transform:uppercase;
-
-    max-width:1200px;
-}
-
-/* ======================================== */
-/* FORM CONTAINER */
-/* ======================================== */
-
-.portal-container{
-    width:100%;
-
-    max-width:1400px;
-
-    margin:auto;
-
-    padding:90px;
-
-    background:
-    linear-gradient(135deg,
-    rgba(255,255,255,0.03),
-    rgba(255,255,255,0.01));
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.portal-container::before{
-    content:'';
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(135deg,
-    rgba(212,175,55,0.08),
-    transparent 60%);
-
-    pointer-events:none;
-}
-
-/* ======================================== */
-/* FORM GRID */
-/* ======================================== */
-
-.form-grid{
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:35px;
-}
-
-.form-group{
-    display:flex;
-
-    flex-direction:column;
-}
-
-.full-width{
-    grid-column:span 2;
-}
-
-label{
-    margin-bottom:15px;
-
-    color:var(--gold);
-
-    font-size:11px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    font-weight:700;
-}
-
-input,
-select{
-    width:100%;
-
-    padding:20px;
-
-    background:#000;
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    color:#fff;
-
-    font-size:15px;
-
-    transition:0.4s ease;
-}
-
-input:focus,
-select:focus{
-    outline:none;
-
-    border-color:rgba(212,175,55,0.5);
-}
-
-/* ======================================== */
-/* CHECKBOX */
-/* ======================================== */
-
-.checkbox-grid{
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-}
-
-.checkbox-box{
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:14px;
-
-    padding:22px;
-
-    background:#080808;
-
-    border:1px solid rgba(255,255,255,0.06);
-
-    transition:0.3s ease;
-}
-
-.checkbox-box:hover{
-    border-color:rgba(212,175,55,0.35);
-}
-
-.checkbox-box input{
-    width:18px;
-    height:18px;
-
-    accent-color:var(--gold);
-
-    margin-top:2px;
-}
-
-.checkbox-box span{
-    color:rgba(255,255,255,0.82);
-
-    line-height:1.8;
-
-    font-size:14px;
-}
-
-/* ======================================== */
-/* BUTTON */
-/* ======================================== */
-
-.submit-btn{
-    margin-top:50px;
-
-    width:100%;
-
-    padding:24px;
-
-    background:var(--gold);
-
-    color:#000;
-
-    border:none;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    letter-spacing:6px;
-
-    text-transform:uppercase;
-
-    cursor:pointer;
-
-    transition:0.4s ease;
-}
-
-.submit-btn:hover{
-    background:var(--gold-soft);
-}
-
-/* ======================================== */
-/* FOOTER NOTICE */
-/* ======================================== */
-
-.footer-notice{
-    margin-top:60px;
-
-    padding-top:40px;
-
-    border-top:1px solid rgba(255,255,255,0.08);
-
-    color:#666;
-
-    font-size:11px;
-
-    letter-spacing:3px;
-
-    line-height:2;
-
-    text-transform:uppercase;
-}
-
-/* ======================================== */
-/* FOOTER */
-/* ======================================== */
-
-.footer{
-    background:#020202;
-
-    border-top:1px solid rgba(255,255,255,0.06);
-}
-
-/* LAYER 1 */
-
-.footer-layer-1{
-    padding:120px 7%;
-
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.footer-title{
-    font-size:clamp(40px,5vw,90px);
-
-    line-height:1;
-
-    font-weight:900;
-
-    letter-spacing:-3px;
-
-    text-transform:uppercase;
-
-    max-width:1100px;
-}
-
-/* LAYER 2 */
-
-.footer-layer-2{
-    padding:90px 7%;
-
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.footer-grid{
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:70px;
-}
-
-.footer-column h3{
-    margin-bottom:35px;
-
-    font-size:13px;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-}
-
-.footer-column ul{
-    list-style:none;
-}
-
-.footer-column li{
-    margin-bottom:18px;
-}
-
-.footer-column a{
-    color:#777;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    transition:0.3s ease;
-}
-
-.footer-column a:hover{
-    color:var(--gold);
-}
-
-/* LAYER 3 */
-
-.footer-layer-3{
-    padding:70px 7%;
-
-    border-bottom:1px solid rgba(255,255,255,0.05);
-
-    text-align:center;
-}
-
-.footer-layer-3 h4{
-    font-size:32px;
-
-    font-weight:300;
-
-    margin-bottom:25px;
-
-    letter-spacing:2px;
-}
-
-.footer-layer-3 p{
-    max-width:900px;
-
-    margin:auto;
-
-    color:#666;
-
-    line-height:2;
-
-    font-size:14px;
-}
-
-/* LAYER 4 */
-
-.footer-layer-4{
-    padding:35px 7%;
-
-    text-align:center;
-}
-
-.footer-layer-4 p{
-    color:#555;
-
-    font-size:11px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-}
-
-/* ======================================== */
-/* MOBILE */
-/* ======================================== */
-
-@media(max-width:1000px){
-
-.hero-grid,
-.form-grid,
-.checkbox-grid,
-.footer-grid{
-    grid-template-columns:1fr;
-}
-
-.full-width{
-    grid-column:span 1;
-}
-
-.portal-container{
-    padding:45px 30px;
-}
-
-.hero h1{
-    letter-spacing:-3px;
-}
-
-.form-title{
-    font-size:65px;
-}
-
-.footer-title{
-    font-size:55px;
-}
-
-.hero-logo img{
-    width:110px;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHRINUSOMYIS | International Partnership Gateway</title>
+    <style>
+        :root {
+            --obsidian: #0A0A0A;
+            --obsidian-surface: #121212;
+            --obsidian-border: #222222;
+            --gold-primary: #D4AF37;
+            --gold-hover: #F3E5AB;
+            --text-main: #FFFFFF;
+            --text-muted: #8A8A8A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--obsidian);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .portal-container {
+            width: 100%;
+            max-width: 650px;
+            background-color: var(--obsidian-surface);
+            border: 1px solid var(--obsidian-border);
+            border-top: 4px solid var(--gold-primary);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .logo-placeholder {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--obsidian);
+            border: 1px solid var(--obsidian-border);
+            color: var(--text-main);
+            font-size: 14px;
+            border-radius: 2px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+        }
+
+        /* Custom Checkbox Styling */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: var(--obsidian);
+            padding: 16px;
+            border: 1px solid var(--obsidian-border);
+            border-radius: 2px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-main);
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: normal;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+
+        .checkbox-label input {
+            margin-right: 12px;
+            accent-color: var(--gold-primary);
+            width: 16px;
+            height: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--gold-primary);
+            color: var(--obsidian);
+            border: none;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--gold-hover);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.99);
+        }
+
+        .footer-notice {
+            text-align: center;
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 30px;
+            letter-spacing: 0.05em;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .portal-container {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-wrap">
-
-<div class="hero-logo">
-<img src="Phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo">
-</div>
-
-<div class="hero-mini">
-PHRINUSOMYIS — INTERNATIONAL PARTNERSHIP OFFICE
-</div>
-
-<h1>
-PARTNERSHIP<br>
-GATEWAY
-</h1>
-
-<div class="hero-grid">
-
-<div class="hero-text">
-PHRINUSOMYIS maintains an international partnership structure designed for premium infrastructure collaborations, luxury brand alignments, global presentation environments, stadium-scale integrations, and executive institutional relationships.
-</div>
-
-<div class="hero-side">
-
-<div class="hero-side-box">
-<small>Status</small>
-<h3>Open</h3>
-</div>
-
-<div class="hero-side-box">
-<small>Region</small>
-<h3>Global</h3>
-</div>
-
-<div class="hero-side-box">
-<small>Access</small>
-<h3>Verified</h3>
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-status">
-<div class="status-dot"></div>
-INTERNATIONAL PARTNERSHIP STATUS — ACTIVE
-</div>
-
-</div>
-
-</section>
-
-<!-- FORM SECTION -->
-
-<section class="form-section">
-
-<div class="form-top">
-
-<span class="form-mini">
-GLOBAL PARTNERSHIP INFRASTRUCTURE
-</span>
-
-<h2 class="form-title">
-Executive Institutional<br>
-Partnership Access
-</h2>
-
-</div>
-
 <div class="portal-container">
+    <div class="header-section">
+        <div class="logo-placeholder">PHRINUSOMYIS</div>
+        <p class="subtitle">International Partnership Gateway<br>Access to the July 24, 2026 World Debut, 12K Visual Sovereignty Integrations, and Circle Asset Allocations.</p>
+    </div>
 
-<form>
+    <form action="#" method="POST">
+        
+        <div class="form-group">
+            <label for="entity-name">Entity / Corporate Name</label>
+            <input type="text" id="entity-name" name="entity_name" placeholder="e.g., Tencent Holdings, BYD Auto, Sovereign Fund" required>
+        </div>
 
-<div class="form-grid">
+        <div class="form-group">
+            <label for="region">Primary Region of Operation</label>
+            <select id="region" name="operating_region" required>
+                <option value="" disabled selected>Select Region...</option>
+                <option value="mainland_china_apac">Mainland China / APAC</option>
+                <option value="middle_east">Middle East / Dubai Node</option>
+                <option value="west_africa">West Africa / Epicenter</option>
+                <option value="europe">Europe (London/Paris Nodes)</option>
+                <option value="americas">Americas</option>
+            </select>
+        </div>
 
-<div class="form-group">
-<label>Entity / Corporate Name</label>
-<input type="text" placeholder="Corporate or Institutional Name">
+        <div class="form-group">
+            <label>Primary Alignment Area</label>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="alignment[]" value="hardware_infrastructure">
+                    Hardware & 12K Infrastructure Partnership
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="alignment[]" value="circle_assets">
+                    Circle Gold Asset Institutional Acquisition
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="alignment[]" value="local_node_operation">
+                    Offline Experience Center / Localized Node Operation (Shanghai/Dubai)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="alignment[]" value="luxury_branding">
+                    Premium Luxury Branding & Stadium Naming Rights
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="verification-link">Corporate Verification Link</label>
+            <input type="text" id="verification-link" name="verification_link" placeholder="Website, WeChat Official ID, or Bloomberg Profile" required>
+        </div>
+
+        <div class="form-group">
+            <label for="secure-contact">Secure Corporate Email / WeChat ID</label>
+            <input type="email" id="secure-contact" name="secure_contact" placeholder="executive@company.com" required>
+        </div>
+
+        <button type="submit" class="submit-btn">Transmit Secure Inquiry</button>
+
+    </form>
+
+    <div class="footer-notice">
+        CLASSIFICATION: SECURE INSTITUTIONAL INTAKE<br>
+        All submissions are automatically routed directly to the International Relations Bureau. Priority is allocated via algorithmic verification based on institutional asset minimums.
+    </div>
 </div>
-
-<div class="form-group">
-<label>Primary Region</label>
-
-<select>
-<option>Select Region</option>
-<option>Middle East</option>
-<option>West Africa</option>
-<option>Europe</option>
-<option>Asia Pacific</option>
-<option>Americas</option>
-</select>
-</div>
-
-<div class="form-group full-width">
-<label>Partnership Alignment</label>
-
-<div class="checkbox-grid">
-
-<label class="checkbox-box">
-<input type="checkbox">
-<span>Infrastructure Partnership</span>
-</label>
-
-<label class="checkbox-box">
-<input type="checkbox">
-<span>Luxury Brand Collaboration</span>
-</label>
-
-<label class="checkbox-box">
-<input type="checkbox">
-<span>International Presentation Environment</span>
-</label>
-
-<label class="checkbox-box">
-<input type="checkbox">
-<span>Regional Operational Integration</span>
-</label>
-
-</div>
-
-</div>
-
-<div class="form-group">
-<label>Corporate Verification</label>
-<input type="text" placeholder="Official Website or Corporate Profile">
-</div>
-
-<div class="form-group">
-<label>Executive Contact</label>
-<input type="email" placeholder="executive@company.com">
-</div>
-
-</div>
-
-<button class="submit-btn">
-Submit Partnership Inquiry
-</button>
-
-</form>
-
-<div class="footer-notice">
-OFFICIAL INTERNATIONAL PARTNERSHIP INTAKE<br>
-All partnership requests are reviewed through official institutional verification procedures.
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-<!-- LAYER 1 -->
-
-<div class="footer-layer-1">
-
-<h2 class="footer-title">
-GLOBAL PARTNERSHIP INFRASTRUCTURE FOR INTERNATIONAL DEPLOYMENT ENVIRONMENTS
-</h2>
-
-</div>
-
-<!-- LAYER 2 -->
-
-<div class="footer-layer-2">
-
-<div class="footer-grid">
-
-<div class="footer-column">
-<h3>LUXURY</h3>
-<ul>
-<li><a href="luxury">Luxury Identity</a></li>
-<li><a href="circle">Private Access</a></li>
-<li><a href="perfume">Perfumes</a></li>
-<li><a href="contact">Contact</a></li>
-</ul>
-</div>
-
-<div class="footer-column">
-<h3>GLOBAL</h3>
-<ul>
-<li><a href="news">Latest News</a></li>
-<li><a href="press">Press Release</a></li>
-<li><a href="events">Events</a></li>
-<li><a href="standard">The Standard</a></li>
-</ul>
-</div>
-
-<div class="footer-column">
-<h3>LEGAL</h3>
-<ul>
-<li><a href="policy">Privacy Policy</a></li>
-<li><a href="copyright">Copyright</a></li>
-<li><a href="terms">Terms of Use</a></li>
-<li><a href="privacy">Privacy Choices</a></li>
-</ul>
-</div>
-
-<div class="footer-column">
-<h3>SUPPORT</h3>
-<ul>
-<li><a href="security">Security</a></li>
-<li><a href="help">Help Center</a></li>
-<li><a href="cookies">Cookie Policy</a></li>
-<li><a href="access">Accessibility</a></li>
-</ul>
-</div>
-
-</div>
-
-</div>
-
-<!-- LAYER 3 -->
-
-<div class="footer-layer-3">
-
-<h4>PHRINUSOMYIS GLOBAL PARTNERSHIP NETWORK</h4>
-
-<p>
-PHRINUSOMYIS partnership infrastructure supports executive collaborations, luxury-scale operational environments, premium presentation systems, and international institutional deployment frameworks.
-</p>
-
-</div>
-
-<!-- LAYER 4 -->
-
-<div class="footer-layer-4">
-
-<p>
-© 2026 PHRINUSOMYIS — INTERNATIONAL PARTNERSHIP OFFICE. ALL RIGHTS RESERVED.
-</p>
-
-</div>
-
-</footer>
 
 </body>
-</html>
+    </html>
+    
