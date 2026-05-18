@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHRINUSOMYIS | International Partnership Gateway</title>
+    <title>PHRINUSOMYIS | International Partnership Portal</title>
+
     <style>
         :root {
             --obsidian: #0A0A0A;
@@ -91,12 +92,12 @@
             transition: border-color 0.3s ease;
         }
 
-        input:focus, select:focus {
+        input:focus,
+        select:focus {
             outline: none;
             border-color: var(--gold-primary);
         }
 
-        /* Custom Checkbox Styling */
         .checkbox-group {
             display: flex;
             flex-direction: column;
@@ -166,75 +167,142 @@
         }
     </style>
 </head>
+
 <body>
 
 <div class="portal-container">
+
     <div class="header-section">
         <div class="logo-placeholder">PHRINUSOMYIS</div>
-        <p class="subtitle">International Partnership Gateway<br>Access to the July 24, 2026 World Debut, 12K Visual Sovereignty Integrations, and Circle Asset Allocations.</p>
+
+        <p class="subtitle">
+            International Partnership Portal<br>
+            Expressions of interest for the July 24, 2026 international debut event, broadcast partnerships, infrastructure collaborations, and regional commercial opportunities.
+        </p>
     </div>
 
     <form action="#" method="POST">
-        
+
         <div class="form-group">
-            <label for="entity-name">Entity / Corporate Name</label>
-            <input type="text" id="entity-name" name="entity_name" placeholder="e.g., Tencent Holdings, BYD Auto, Sovereign Fund" required>
+            <label for="entity-name">Company / Organization Name</label>
+            <input 
+                type="text" 
+                id="entity-name" 
+                name="entity_name" 
+                placeholder="e.g., Tencent Holdings, BYD Auto, Sovereign Fund" 
+                required>
         </div>
 
         <div class="form-group">
             <label for="region">Primary Region of Operation</label>
+
             <select id="region" name="operating_region" required>
                 <option value="" disabled selected>Select Region...</option>
-                <option value="mainland_china_apac">Mainland China / APAC</option>
-                <option value="middle_east">Middle East / Dubai Node</option>
-                <option value="west_africa">West Africa / Epicenter</option>
-                <option value="europe">Europe (London/Paris Nodes)</option>
-                <option value="americas">Americas</option>
+
+                <option value="mainland_china_apac">
+                    Mainland China / APAC
+                </option>
+
+                <option value="middle_east">
+                    Middle East / Dubai
+                </option>
+
+                <option value="west_africa">
+                    West Africa
+                </option>
+
+                <option value="europe">
+                    Europe (London / Paris)
+                </option>
+
+                <option value="americas">
+                    Americas
+                </option>
             </select>
         </div>
 
         <div class="form-group">
-            <label>Primary Alignment Area</label>
+            <label>Partnership Interest</label>
+
             <div class="checkbox-group">
+
                 <label class="checkbox-label">
-                    <input type="checkbox" name="alignment[]" value="hardware_infrastructure">
-                    Hardware & 12K Infrastructure Partnership
+                    <input 
+                        type="checkbox" 
+                        name="alignment[]" 
+                        value="broadcast_infrastructure">
+
+                    Broadcast & Infrastructure Partnership
                 </label>
+
                 <label class="checkbox-label">
-                    <input type="checkbox" name="alignment[]" value="circle_assets">
-                    Circle Gold Asset Institutional Acquisition
+                    <input 
+                        type="checkbox" 
+                        name="alignment[]" 
+                        value="commercial_partnership">
+
+                    Commercial & Investment Partnership
                 </label>
+
                 <label class="checkbox-label">
-                    <input type="checkbox" name="alignment[]" value="local_node_operation">
-                    Offline Experience Center / Localized Node Operation (Shanghai/Dubai)
+                    <input 
+                        type="checkbox" 
+                        name="alignment[]" 
+                        value="regional_operations">
+
+                    Regional Experience Center Collaboration
                 </label>
+
                 <label class="checkbox-label">
-                    <input type="checkbox" name="alignment[]" value="luxury_branding">
-                    Premium Luxury Branding & Stadium Naming Rights
+                    <input 
+                        type="checkbox" 
+                        name="alignment[]" 
+                        value="branding_sponsorship">
+
+                    Branding & Stadium Sponsorship Opportunities
                 </label>
+
             </div>
         </div>
 
         <div class="form-group">
-            <label for="verification-link">Corporate Verification Link</label>
-            <input type="text" id="verification-link" name="verification_link" placeholder="Website, WeChat Official ID, or Bloomberg Profile" required>
+            <label for="verification-link">
+                Official Company Website or Profile
+            </label>
+
+            <input 
+                type="text" 
+                id="verification-link" 
+                name="verification_link" 
+                placeholder="Official website or company profile"
+                required>
         </div>
 
         <div class="form-group">
-            <label for="secure-contact">Secure Corporate Email / WeChat ID</label>
-            <input type="email" id="secure-contact" name="secure_contact" placeholder="executive@company.com" required>
+            <label for="secure-contact">
+                Official Contact Email
+            </label>
+
+            <input 
+                type="email" 
+                id="secure-contact" 
+                name="secure_contact" 
+                placeholder="executive@company.com"
+                required>
         </div>
 
-        <button type="submit" class="submit-btn">Transmit Secure Inquiry</button>
+        <button type="submit" class="submit-btn">
+            Submit Inquiry
+        </button>
 
     </form>
 
     <div class="footer-notice">
-        CLASSIFICATION: SECURE INSTITUTIONAL INTAKE<br>
-        All submissions are automatically routed directly to the International Relations Bureau. Priority is allocated via algorithmic verification based on institutional asset minimums.
+        All submissions are reviewed by the international partnerships team.<br>
+        Selected organizations may be contacted for further discussions and verification.
     </div>
+
 </div>
 
 </body>
-    </html>
-    
+</html>
