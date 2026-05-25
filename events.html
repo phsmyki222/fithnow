@@ -364,7 +364,7 @@ nav.menu a {
       <img src="Phrinusomyis_rollout.png" alt="Banner" style="width:100%; max-width:1100px; margin: 20px 0; border: 1px solid var(--glass-border);">
 
         <h3>Countdown to 24 July 2026</h3>
-    <div class="countdown-container ticket-countdown">
+    <div class="countdown-container count-countdown">
         <div class="countdown-card flip-card"><div class="flip-inner" id="t-days">0</div><div class="label">Days</div></div>
         <div class="countdown-card flip-card"><div class="flip-inner" id="t-hours">0</div><div class="label">Hours</div></div>
         <div class="countdown-card flip-card"><div class="flip-inner" id="t-minutes">0</div><div class="label">Minutes</div></div>
@@ -514,6 +514,8 @@ nav.menu a {
 // Countdown Logic
 const eventDate = new Date("July 24, 2026 00:00:00").getTime();
 const ticketDate = new Date("July 24, 2026 00:00:00").getTime(); 
+const countDate = new Date("July 24, 2026 00:00:00").getTime(); 
+  
   
 
 function update() {
@@ -529,6 +531,14 @@ function update() {
 
     const d2 = ticketDate - now;
     if(d2 > 0) {
+        document.getElementById('t-days').innerText = Math.floor(d2 / 86400000);
+        document.getElementById('t-hours').innerText = Math.floor((d2 % 86400000) / 3600000);
+        document.getElementById('t-minutes').innerText = Math.floor((d2 % 3600000) / 60000);
+        document.getElementById('t-seconds').innerText = Math.floor((d2 % 60000) / 1000); 
+       }
+
+    const d3 = countDate - now;
+    if(d3 > 0) {
         document.getElementById('t-days').innerText = Math.floor(d2 / 86400000);
         document.getElementById('t-hours').innerText = Math.floor((d2 % 86400000) / 3600000);
         document.getElementById('t-minutes').innerText = Math.floor((d2 % 3600000) / 60000);
