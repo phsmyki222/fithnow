@@ -352,24 +352,23 @@ nav.menu a {
 
     <img src="Phrinusomyis west African.png" alt="Banner" style="width:100%; max-width:1100px; margin: 20px 0; border: 1px solid var(--glass-border);">
 
-    <h3>COUNTDOWN TO 24 JULY 2026</h3>
-    <div class="countdown-container ticket-countdown">
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-days">0</div><div class="label">Days</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-hours">0</div><div class="label">Hours</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-minutes">0</div><div class="label">Minutes</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-seconds">0</div><div class="label">Seconds</div></div>
-    </div>  
+   <h3>COUNTDOWN TO 24 JULY 2026</h3>
+<div class="countdown-container ticket-countdown">
+    <div class="countdown-card flip-card"><div class="flip-inner t-days">0</div><div class="label">Days</div></div>
+    <div class="countdown-card flip-card"><div class="flip-inner t-hours">0</div><div class="label">Hours</div></div>
+    <div class="countdown-card flip-card"><div class="flip-inner t-minutes">0</div><div class="label">Minutes</div></div>
+    <div class="countdown-card flip-card"><div class="flip-inner t-seconds">0</div><div class="label">Seconds</div></div>
+</div>  
 
-  
-      <img src="Phrinusomyis_rollout.png" alt="Banner" style="width:100%; max-width:1100px; margin: 20px 0; border: 1px solid var(--glass-border);">
+<img src="Phrinusomyis_rollout.png" alt="Banner" style="width:100%; max-width:1100px; margin: 20px 0; border: 1px solid var(--glass-border);">
 
-        <h3>Countdown to 24 July 2026</h3>
-    <div class="countdown-container ticket-countdown">
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-days">0</div><div class="label">Days</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-hours">0</div><div class="label">Hours</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-minutes">0</div><div class="label">Minutes</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="t-seconds">0</div><div class="label">Seconds</div></div>
-    </div>  
+<h3>Countdown to 24 July 2026</h3>
+<div class="countdown-container ticket-countdown">
+    <div class="countdown-card flip-card"><div class="flip-inner t-days">0</div><div class="label">Days</div></div>
+    <div class="countdown-card flip-card"><div class="flip-inner t-hours">0</div><div class="label">Hours</div></div>
+    <div class="countdown-card flip-card"><div class="flip-inner t-minutes">0</div><div class="label">Minutes</div></div>
+    <div class="countdown-card flip-card"><div class="flip-inner t-seconds">0</div><div class="label">Seconds</div></div>
+</div>  
 
 
     <span class="contact-email">info@phrinusomyis.com</span>
@@ -514,8 +513,6 @@ nav.menu a {
 // Countdown Logic
 const eventDate = new Date("July 24, 2026 00:00:00").getTime();
 const ticketDate = new Date("July 24, 2026 00:00:00").getTime(); 
-const ticketDate = new Date("July 24, 2026 00:00:00").getTime(); 
-  
   
 
 function update() {
@@ -529,20 +526,21 @@ function update() {
         document.getElementById('seconds').innerText = Math.floor((d1 % 60000) / 1000);
     }
 
-    const d2 = ticketDate - now;
-    if(d2 > 0) {
-        document.getElementById('t-days').innerText = Math.floor(d2 / 86400000);
-        document.getElementById('t-hours').innerText = Math.floor((d2 % 86400000) / 3600000);
-        document.getElementById('t-minutes').innerText = Math.floor((d2 % 3600000) / 60000);
-        document.getElementById('t-seconds').innerText = Math.floor((d2 % 60000) / 1000); 
-       }
+    // inside your interval loop function where 'now' is defined:
+const d2 = ticketDate - now;
 
-    const d3 = ticketDate - now;
-    if(d3 > 0) {
-        document.getElementById('t-days').innerText = Math.floor(d2 / 86400000);
-        document.getElementById('t-hours').innerText = Math.floor((d2 % 86400000) / 3600000);
-        document.getElementById('t-minutes').innerText = Math.floor((d2 % 3600000) / 60000);
-        document.getElementById('t-seconds').innerText = Math.floor((d2 % 60000) / 1000);
+if (d2 > 0) {
+    // Calculate the time units
+    const days = Math.floor(d2 / 86400000);
+    const hours = Math.floor((d2 % 86400000) / 3600000);
+    const minutes = Math.floor((d2 % 3600000) / 60000);
+    const seconds = Math.floor((d2 % 60000) / 1000); 
+
+    // Find ALL elements with these classes and update their text
+    document.querySelectorAll('.t-days').forEach(el => el.innerText = days);
+    document.querySelectorAll('.t-hours').forEach(el => el.innerText = hours);
+    document.querySelectorAll('.t-minutes').forEach(el => el.innerText = minutes);
+    document.querySelectorAll('.t-seconds').forEach(el => el.innerText = seconds);
     }
 }
 setInterval(update, 1000);
