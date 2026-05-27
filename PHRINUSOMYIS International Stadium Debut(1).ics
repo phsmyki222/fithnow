@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTAMP:20260527T212213Z
+UID:1779916333445-48471@ical.marudot.com
+DTSTART;VALUE=DATE:20260724
+DTEND;VALUE=DATE:20260725
+SUMMARY:PHRINUSOMYIS International Stadium Debut
+URL:https://phrinusomyis.com
+DESCRIPTION:The global launch of Sports Theater by PHRINUSOMYIS. Experience cinematic excellence live.
+LOCATION:West Africa 
+END:VEVENT
+END:VCALENDAR
