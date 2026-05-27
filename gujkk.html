@@ -46,15 +46,6 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root {
-    --diamond: #E5E5E5; /* Diamond white color for countdown */
-    --gold: #D4AF37;
-    --black: #050505;
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(212, 175, 55, 0.15);
-    --accent-glow: rgba(212, 175, 55, 0.3);
-    --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-
 /* MASTER THEME: Diamond & Gold (Phrinusomyis Luxe)
    Updated: 2026 Stability & Cross-Browser Fix
 */
@@ -77,7 +68,7 @@
     box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
-    /* CRITICAL FIX: Forces bullet points to disappear on older Mac/Safari */
+    /* CRITICAL FIX: Forces bullet points to disappear completely */
     list-style: none !important; 
     text-decoration: none;
 }
@@ -339,26 +330,24 @@ footer {
     display: none !important;
     visibility: hidden !important;
 }
-  .goog-text-highlight { background: none !important; box-shadow: none !important; }
-  html { margin-top: 0 !important;
-} 
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+html { margin-top: 0 !important; } 
 </style>
 </head>
 <body>
 
-<!-- Cinematic Background -->
 <div class="cinematic-bg"></div>
 
-<!-- Navigation Menu -->
-<nav class="navbar">
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
-    </div>
-    <ul id="nav-links">
-        <li><a href="/" target="_self" class="active">HOME</a></li>
-        <li><a href="news" target="_self">NEWS</a></li>
-        <li><a href="events" target="_self">EVENTS</a></li>
-        <li><a href="press" target="_self">PRESS & MEDIA</a></li>
+<header>
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div><div></div><div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="/" target="_self" class="active">HOME</a></li>
+            <li><a href="news" target="_self">NEWS</a></li>
+            <li><a href="events" target="_self">EVENTS</a></li>
+            <li><a href="press" target="_self">PRESS & MEDIA</a></li>
                 <select id="languageSwitcher">
     <option value="en">English (EN)</option>
     <option value="fr">Français (FR)</option>
