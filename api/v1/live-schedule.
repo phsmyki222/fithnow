@@ -1,0 +1,28 @@
+{
+  "sportId": "sports_theater",
+  "organization": {
+    "id": "phrinusomyis",
+    "name": "PHRINUSOMYIS"
+  },
+  "tournament": {
+    "id": "stadium_debut_2026",
+    "name": "International Stadium Debut Series",
+    "season": "2026"
+  },
+  "schedule": [
+    {
+      "matchId": "activation_node_01",
+      "status": "SCHEDULED",
+      "startTime": "2026-07-24T19:00:00+01:00",
+      "venue": "West Africa Stadium Node",
+      "group": "Global Launch Phase",
+      "participants": [
+        {
+          "id": "phr_global",
+          "name": "PHRINUSOMYIS Performance Unit",
+          "type": "PRIMARY"
+        }
+      ]
+    }
+  ]
+}
