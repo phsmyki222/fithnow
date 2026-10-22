@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,752 +59,677 @@
   <meta property="og:url" content="https://phrinusomyis.com/en/luxury">
   <meta property="og:image" content="https://phrinusomyis.com/assets/Phrinusomyis_logo.png">
   <meta property="og:image:alt" content="PHRINUSOMYIS™ official logo">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PHRINUSOMYIS™ Luxury | THE STANDARD">
   <meta name="twitter:description" content="Premium cups, signature perfumes and selected collectible products from PHRINUSOMYIS™.">
   <meta name="twitter:image" content="https://phrinusomyis.com/assets/Phrinusomyis_logo.png">
+
   <style>
-</head>
-/* MASTER THEME: Diamond & Gold (Phrinusomyis Luxe)
-   Updated: 2026 Stability & Cross-Browser Fix
-*/
+    :root {
+      --gold: #D4AF37;
+      --gold-bright: #FFC72C;
+      --diamond: #E5E5E5;
+      --diamond-cyan: #E0FFFF;
+      --diamond-glow: rgba(178, 235, 242, 0.6);
+      --black: #050505;
+      --glass-bg: rgba(255, 255, 255, 0.02);
+      --glass-border: rgba(212, 175, 55, 0.15);
+      --accent-glow: rgba(212, 175, 55, 0.3);
+    }
 
-/* --- 1. ROOT & CORE --- */
-:root {
-    --gold: #D4AF37;
-    --gold-bright: #FFC72C;
-    --diamond: #E5E5E5;
-    --diamond-cyan: #E0FFFF;
-    --diamond-glow: rgba(178, 235, 242, 0.6);
-    --black: #050505;
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(212, 175, 55, 0.15);
-    --accent-glow: rgba(212, 175, 55, 0.3);
-    --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-}
+    * {
+      box-sizing: border-box;
+    }
 
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-    /* CRITICAL FIX: Forces bullet points to disappear completely */
-    list-style: none !important; 
-    text-decoration: none;
-}
+    html {
+      margin-top: 0 !important;
+      scroll-behavior: smooth;
+    }
 
-body {
-    background-color: var(--black);
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.8;
-    overflow-x: hidden;
-    top: 0 !important;
-} 
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--black);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+      top: 0 !important;
+    }
 
-/* --- 2. NAVIGATION & ELEMENTS --- */
-.navbar {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    background: rgba(5, 5, 5, 0.95);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    z-index: 9999;
-    padding: 15px 5%;
-    border-bottom: 1px solid var(--gold);
-}
+    a {
+      text-decoration: none;
+    }
 
-.navbar ul {
-    display: flex;
-    flex-direction: row; 
-    gap: 30px;
-    transition: right 0.3s ease;
-}
-
-.navbar a {
-    color: var(--gold);
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.navbar a:hover {
-    color: var(--diamond-cyan);
-    text-shadow: 0 0 10px var(--diamond-glow);
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background: var(--gold);
-}
-
-#languageSwitcher {
-    background-color: #050505;
-    color: #D4AF37;
-    border: 1px solid #D4AF37;
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-}
-
-/* --- 3. MOBILE VERSION --- */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: flex;
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(5, 5, 5, 0.95);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      z-index: 9999;
+      padding: 15px 5%;
+      border-bottom: 1px solid var(--gold);
     }
 
     .navbar ul {
-        flex-direction: column;
-        position: fixed;
-        top: 60px;
-        right: -100%; 
-        width: 200px;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 40px 20px;
-        gap: 25px;
-        border-left: 2px solid var(--gold);
-        backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .navbar ul.show {
-        right: 0; 
+    .navbar li {
+      list-style: none;
     }
 
     .navbar a {
-        font-size: 1rem;
-        width: 100%;
-        display: block;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
     }
-}
 
-/* --- 4. HERO & CONTENT --- */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 120px 20px 60px;
-    text-align: center;
-}
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--diamond-cyan);
+      text-shadow: 0 0 10px var(--diamond-glow);
+    }
 
-.brand-seal {
-    width: clamp(150px, 20vw, 220px);
-    margin: 0 auto 30px;
-    display: block;
-    filter: drop-shadow(0 0 20px var(--gold));
-}
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      padding: 5px;
+      background: transparent;
+      border: 0;
+    }
 
-h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(1.8rem, 6vw, 3.5rem);
-    letter-spacing: 8px;
-    color: var(--diamond-cyan);
-    text-shadow: 0 0 15px var(--diamond-glow);
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--gold);
+    }
 
-/* --- 5. COUNTDOWN & CARDS --- */
-.countdown-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 60px;
-}
+    #languageSwitcher {
+      background: #050505;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 7px 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      cursor: pointer;
+      max-width: 100%;
+    }
 
-.countdown-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--gold);
-    border-radius: 12px;
-    padding: 20px 10px;
-    width: 100px;
-    text-align: center;
-}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 130px 20px 60px;
+      text-align: center;
+    }
 
-.countdown-card h2 {
-    color: var(--diamond-cyan);
-    text-shadow: 0 0 10px var(--diamond-glow);
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    animation: pulse 2.5s infinite;
-}
+    .brand-seal {
+      width: clamp(150px, 20vw, 220px);
+      margin: 0 auto 30px;
+      display: block;
+      filter: drop-shadow(0 0 20px var(--gold));
+    }
 
-.countdown-card span {
-    display: block;
-    font-size: 0.65rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-top: 5px;
-}
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 6vw, 3.5rem);
+      letter-spacing: clamp(2px, 1vw, 8px);
+      color: var(--diamond-cyan);
+      text-shadow: 0 0 15px var(--diamond-glow);
+      text-transform: uppercase;
+      margin: 0 0 50px;
+    }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
+    .countdown-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 60px;
+    }
 
-.card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    padding: 40px;
-    backdrop-filter: blur(25px);
-}
+    .countdown-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 20px 10px;
+      width: 100px;
+      text-align: center;
+    }
 
-.card h3 {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 10px;
-}
+    .countdown-card h2 {
+      color: var(--diamond-cyan);
+      text-shadow: 0 0 10px var(--diamond-glow);
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      margin: 0;
+      animation: pulse 2.5s infinite;
+    }
 
-/* --- 6. REGISTRY FOOTER --- */
-.phrinus-registry-footer {
-    background-color: #000;
-    padding: 60px 15px;
-    border-top: 1px solid #D4AF37;
-    text-align: center;
-    font-family: 'Times New Roman', serif;
-}
+    .countdown-card span {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
 
-.registry-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 30px;
+    }
 
-.node-header {
-    font-size: 14px;
-    font-weight: bold;
-    color: #D4AF37;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-    display: block;
-    text-transform: uppercase;
-}
+    .card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      padding: 35px;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+    }
 
-.node-address {
-    color: #E5E4E2;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
+    .card h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      margin: 0 0 20px;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 10px;
+    }
 
-.contact-footer {
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid #222;
-}
+    .narrative-content {
+      color: #E5E4E2;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
 
-.contact-link {
-    display: block;
-    color: #D4AF37;
-    text-decoration: none;
-    font-size: 16px;
-    margin-bottom: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-footer {
-    margin-top: 80px;
-    padding-bottom: 30px;
-    text-align: center;
-    font-size: 0.6rem;
-    letter-spacing: 3px;
-    color: #444;
-    text-transform: uppercase;
-}
-
-/* --- 7. UTILITIES & ANIMATIONS --- */
-@keyframes pulse {
-    0% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
-    50% { transform: scale(1.05); text-shadow: 0 0 20px var(--diamond-glow); }
-    100% { transform: scale(1); text-shadow: 0 0 10px var(--diamond-glow); }
-}
-
-/* SILENT GOOGLE TRANSLATE ENGINE */
-.goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, 
-.goog-te-gadget, #google_translate_element, .goog-te-balloon-frame, .goog-tooltip {
-    display: none !important;
-    visibility: hidden !important;
-}
-.goog-text-highlight { background: none !important; box-shadow: none !important; }
-html { margin-top: 0 !important; } 
-</style>
-</head>
-<body>
-
-<div class="cinematic-bg"></div>
-
-<header>
-    <nav class="navbar">
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div><div></div><div></div>
-        </div>
-        <ul id="nav-links">
-            <li><a href="/" target="_self" class="active">HOME</a></li>
-            <li><a href="news" target="_self">NEWS</a></li>
-            <li><a href="events" target="_self">EVENTS</a></li>
-            <li><a href="press" target="_self">PRESS & MEDIA</a></li>
-                <select id="languageSwitcher">
-    <option value="en">English (EN)</option>
-    <option value="fr">Français (FR)</option>
-    <option value="es">Español (ES)</option>
-    <option value="de">Deutsch (DE)</option>
-    <option value="ar">العربية (AR)</option>
-    <option value="zh">中文 (ZH)</option>
-    <option value="ru">Русский (RU)</option>
-    <option value="pt">Português (PT)</option>
-    <option value="ja">日本語 (JA)</option>
-    <option value="ko">한국어 (KO)</option>
-    <option value="it">Italiano (IT)</option>
-    <option value="nl">Nederlands (NL)</option>
-    <option value="tr">Türkçe (TR)</option>
-    <option value="hi">हिन्दी (HI)</option>
-    <option value="id">Bahasa Indonesia (ID)</option>
-    <option value="vi">Tiếng Việt (VI)</option>
-    <option value="th">ไทย (TH)</option>
-    <option value="pl">Polski (PL)</option>
-    <option value="sv">Svenska (SV)</option>
-    <option value="fi">Suomi (FI)</option>
-    <option value="da">Dansk (DA)</option>
-                  </select> 
-            </nav>
-    </header>
-
-<div class="container">
-    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
-
-    <h1>PHRINUSOMYIS Series Luxury</h1>
-    
-
-    <!-- Modular Diamond-Style Live Time -->
-    <div class="countdown-container">
-        <div class="countdown-card"><h2 id="month">00</h2><span>Month</span></div>
-        <div class="countdown-card"><h2 id="year">0000</h2><span>Year</span></div>
-        <div class="countdown-card"><h2 id="days">00</h2><span>Days</span></div>
-        <div class="countdown-card"><h2 id="hours">00</h2><span>Hours</span></div>
-        <div class="countdown-card"><h2 id="minutes">00</h2><span>Minutes</span></div>
-        <div class="countdown-card"><h2 id="seconds">00</h2><span>Seconds</span></div>
-    </div>
-
-    <div class="grid">
-        <div class="card">
-            <h3>Signature Legacy Scent</h3>
-            <div class="narrative-content">
-                The Signature Legacy Scent of PHRINUSOMYIS carries identity in atmosphere and form. Built with depth and balance, it moves with quiet confidence and leaves a lasting impression without seeking attention.
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>24K Gold Collectible Cup Unit Series</h3>
-            <div class="narrative-content">
-                True distinction is not found in the many, but in the singular. We present a rare commission—an intentionally limited release defined by architectural precision and a refusal to compromise. This is not an object of volume. It is a statement of legacy.
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>Limited Edition Perfume Unit Series</h3>
-            <div class="narrative-content">
-                A controlled fragrance, created with precision and care. Each bottle belongs to a limited collection defined by rarity, ownership, and distinction. An olfactory moment, not a repeating release. Once introduced, the formula is retired. It is never repeated.
-            </div>
-        </div> 
-
-           <div class="card">
-            <h3>Stamped Serial Numbers</h3>
-            <div class="narrative-content">
-                Every piece is individually marked for identity and authenticity. Each number is hand-stamped to preserve its uniqueness. No duplication. No repetition. Each unit stands on its own.
-            </div>
-           </div> 
-        
-          <div class="card">
-            <h3>Stadium-Scale Experiential Assets</h3>
-            <div class="narrative-content">
-                Large-format production elements designed for live environments and stadium-level execution. Built for immersive experiences, structured performances, and large-scale events where detail, timing, and atmosphere work in harmony.
-            </div>
-          </div> 
-
-          <div class="card">
-            <h3>PHRINUSOMYIS LUXURY</h3>
-            <div class="narrative-content">
-                Luxury at PHRINUSOMYIS is defined through structure, discipline, and execution. It is not decoration or excess, but control, clarity, and consistency. Every detail is intentional, every experience built with purpose, and every outcome designed to meet a global standard of quality.
-            </div>
-           </div> 
-          </div>
-</footer>
-<style>
-    /* Your CSS remains the same as you wrote it */
     .phr-main-footer {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 80px 20px 40px;
-        border-top: 1px solid #1a1a1a;
-        font-family: 'Arial', sans-serif;
+      background: #000;
+      color: #fff;
+      padding: 70px 20px 35px;
+      border-top: 1px solid var(--gold);
+      font-family: 'Montserrat', sans-serif;
     }
+
     .phr-footer-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px 20px;
-        max-width: 1100px;
-        margin: 0 auto 60px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
     }
-    @media (min-width: 768px) {
-        .phr-footer-grid { grid-template-columns: repeat(4, 1fr); }
-    }
+
     .phr-footer-section h3 {
-        color: #ffffff; font-size: 15px; font-weight: 900; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin: 0 0 25px;
+      text-transform: uppercase;
     }
-    .phr-footer-section ul { list-style: none; padding: 0; margin: 0; }
-    .phr-footer-section li { margin-bottom: 15px; }
-    .phr-footer-section a { color: #888; text-decoration: none; font-size: 14px; transition: color 0.3s; }
-    .phr-footer-section a:hover { color: #D4AF37; }
-    .phr-footer-legal { margin-top: 50px; text-align: center; color: #444; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
-</style>
 
-<footer class="phr-main-footer">
-    <div class="phr-footer-grid">
-        <div class="phr-footer-section">
-            <h3>LUXURY</h3>
-            <ul>
-                <li><a href="luxury">Luxury Identity</a></li>
-                <li><a href="circle">Private Access</a></li>
-                <li><a href="perfume">Perfumes</a></li>
-                <li><a href="contact">Contact</a></li>
-            </ul>
-        </div>
+    .phr-footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        <div class="phr-footer-section">
-            <h3>M3AN</h3>
-            <ul>
-                <li><a href="news">Latest News</a></li>
-                <li><a href="press">Press Release</a></li>
-                <li><a href="events">Events</a></li>
-                <li><a href="luxury">PHRINUSOMYIS Luxury</a></li>
-            </ul>
-        </div>
+    .phr-footer-section li {
+      list-style: none;
+      margin-bottom: 15px;
+    }
 
-        <div class="phr-footer-section">
-            <h3>ABOUT</h3>
-            <ul>
-                <li><a href="policy">Privacy Policy</a></li>
-                <li><a href="copyright">Copyright</a></li>
-                <li><a href="terms">Terms of Use</a></li>
-                <li><a href="privacy">Privacy Choices</a></li>
-            </ul>
-        </div>
+    .phr-footer-section a {
+      color: #888;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
 
-        <div class="phr-footer-section">
-            <h3>HELP</h3>
-            <ul>
-                <li><a href="security">Security</a></li>
-                <li><a href="help">Help Center</a></li>
-                <li><a href="cookies">Cookie Policy</a></li>
-                <li><a href="close">Closed Captions</a></li>
-            </ul>
-        </div>
-    </div> <div class="phr-footer-legal">
-        © 2026 PHRINUSOMYIS GLOBAL PRODUCTION. LUXURY BRAND.
-    </div>
-</footer> 
+    .phr-footer-section a:hover {
+      color: var(--gold);
+    }
 
-<!-- Hidden Multi-Language JSON -->
-<script type="application/ld+json">  
-    {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://phrinusomyis.com/#organization",
-      "name": "PHRINUSOMYIS",
-      "url": "https://phrinusomyis.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://phrinusomyis.com/phrinusomyis_logo.png",
-        "width": 600,
-        "height": 600
+    .phr-footer-legal {
+      margin-top: 50px;
+      text-align: center;
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .goog-te-banner-frame,
+    .goog-te-banner,
+    .goog-te-menu-frame,
+    .skiptranslate,
+    .goog-te-gadget,
+    #google_translate_element,
+    .goog-te-balloon-frame,
+    .goog-tooltip {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    .goog-text-highlight {
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px var(--diamond-glow);
       }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://phrinusomyis.com/luxury",
-      "url": "https://phrinusomyis.com/luxury",
-      "name": "PHRINUSOMYIS Luxury",
-      "isPartOf": {
-        "@id": "https://phrinusomyis.com/#website"
+      50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 20px var(--diamond-glow);
       }
-    },
-    {
-      "@type": "NewsLuxury",
-      "@id": "https://phrinusomyis.com/article#main",
-      "headline": "PHRINUSOMYIS Luxury Articles",
-      "description": "Explore PHRINUSOMYIS luxury articles featuring premium collectibles, signature scents, and elite lifestyle insights.",
-      "image": "https://phrinusomyis.com/phrinusomyis_logo.png",
-      "author": {
-        "@type": "Person",
-        "name": "Victor Seth A"
-      },
-      "publisher": {
-        "@id": "https://phrinusomyis.com/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://phrinusomyis.com/luxury"
+    }
+
+    @media (min-width: 768px) {
+      .phr-footer-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://phrinusomyis.com/#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://phrinusomyis.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "luxury",
-          "item": "https://phrinusomyis.com/luxury"
-        }
-      ]
     }
-  ]
-}
-</script>
 
-<script>
-/* Hamburger Toggle */
-function toggleMenu(){
-    document.getElementById('nav-links').classList.toggle('show');
-}
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 12px 5%;
+      }
 
-/* Live Time Display */
-function updateTime(){
-    const now = new Date();
+      .hamburger {
+        display: flex;
+      }
 
-    const month = ("0" + (now.getMonth() + 1)).slice(-2); // 01-12
-    const year = now.getFullYear();
-    const days = ("0" + now.getDate()).slice(-2); // 01-31
-    const hours = ("0" + now.getHours()).slice(-2); // 00-23
-    const minutes = ("0" + now.getMinutes()).slice(-2); // 00-59
-    const seconds = ("0" + now.getSeconds()).slice(-2); // 00-59
+      .navbar ul {
+        flex-direction: column;
+        align-items: stretch;
+        position: fixed;
+        top: 60px;
+        right: -110%;
+        width: min(280px, 85vw);
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+        background: rgba(0, 0, 0, 0.97);
+        padding: 35px 22px;
+        gap: 25px;
+        border-left: 2px solid var(--gold);
+        transition: right 0.3s ease;
+      }
 
-    document.getElementById("month").innerText = month;
-    document.getElementById("year").innerText = year;
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
-}
+      .navbar ul.show {
+        right: 0;
+      }
 
-// Update every second
-setInterval(updateTime, 1000);
-updateTime();
-</script>
-</script> 
-<div id="google_translate_element" style="display:none;"></div>
+      .navbar a {
+        display: block;
+        font-size: 0.95rem;
+      }
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
+      #languageSwitcher {
+        width: 100%;
+      }
 
-    // Apply saved language on load
-    const savedLang = localStorage.getItem("site_lang");
-    if (savedLang) {
-        setTimeout(() => {
-            changeLanguage(savedLang);
-        }, 1000);
+      .container {
+        padding-top: 105px;
+      }
+
+      .card {
+        padding: 25px;
+      }
     }
-}
 
-// Change language function
-function changeLanguage(lang) {
-    const select = document.querySelector(".goog-te-combo");
-
-    if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-
-        localStorage.setItem("site_lang", lang);
-    } else {
-        console.warn("Google Translate not loaded yet");
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
-}
+  </style>
 
-// Hook your dropdown
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("languageSwitcher").addEventListener("change", function () {
-        changeLanguage(this.value);
-    });
-});
-</script>
-
-<script type="text/javascript"
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
-    <script>
-/**
- * PHRINUSOMYIS Complete Article Page Schema
- * HQ: Brooklyn, NY | Lagos | Dubai | Moscow
- * This script is fully automatic.
- */
-(function() {
-  const base = "https://phrinusomyis.com";
-  const currentUrl = window.location.href;
-  
-  // Automatically grab the headline from the H1 tag or the page Title
-  const articleHeadline = document.querySelector('h1') ? document.querySelector('h1').innerText.trim() : document.title;
-  
-  const graph = [];
-
-  // 1. THE MAIN ORGANIZATION & HEADQUARTERS (Brooklyn)
-  graph.push({
-    "@type": "Organization",
-    "@id": `${base}/#organization`,
-    "name": "PHRINUSOMYIS",
-    "url": base,
-    "logo": {
-      "@type": "ImageObject",
-      "url": `${base}/assets/Phrinusomyis_logo.png`
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "@id": `${base}/#dept-headquarters`,
-      "streetAddress": "Brooklyn",
-      "addressLocality": "New York City",
-      "addressRegion": "Kings County, New York",
-      "addressCountry": "USA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.6782,
-      "longitude": -73.9442
-    },
-    "contactPoint": [
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        "@type": "ContactPoint",
-        "telephone": "+1 (602) 842-3713",
-        "contactType": "Customer Service",
+        "@type": "SportsOrganization",
+        "@id": "https://phrinusomyis.com/#organization",
+        "name": "PHRINUSOMYIS",
+        "alternateName": "PHRINUSOMYIS™",
+        "url": "https://phrinusomyis.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
+        },
+        "slogan": "THE STANDARD",
+        "description": "PHRINUSOMYIS™ is an international sports organization that develops, owns and administers sports competitions and Sports Theater™ worldwide. It creates original sports formats that break away from traditional sports structures. The organization also leads the Global Flood Resilience Programme, addressing flood-related challenges through infrastructure development and community resilience.",
+        "areaServed": "Worldwide",
         "email": "info@phrinusomyis.com"
-      }
-    ],
-    // 2. GLOBAL OFFICES (Sub-Organizations)
-    "subOrganization": [
+      },
       {
-        "@type": "Organization",
-        "@id": `${base}/#dept-dubai`,
-        "name": "PHRINUSOMYIS Dubai Office",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dubai",
-          "addressRegion": "Emirate of Dubai",
-          "addressCountry": "UAE"
+        "@type": "WebSite",
+        "@id": "https://phrinusomyis.com/#website",
+        "url": "https://phrinusomyis.com/",
+        "name": "PHRINUSOMYIS™",
+        "alternateName": "THE STANDARD",
+        "publisher": {
+          "@id": "https://phrinusomyis.com/#organization"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 25.2048,
-          "longitude": 55.2708
+        "inLanguage": "en"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://phrinusomyis.com/en/luxury#webpage",
+        "url": "https://phrinusomyis.com/en/luxury",
+        "name": "PHRINUSOMYIS™ Luxury | THE STANDARD",
+        "description": "Explore premium cups, signature perfumes, collectible pieces and selected lifestyle products from PHRINUSOMYIS™.",
+        "isPartOf": {
+          "@id": "https://phrinusomyis.com/#website"
+        },
+        "about": {
+          "@id": "https://phrinusomyis.com/#organization"
+        },
+        "publisher": {
+          "@id": "https://phrinusomyis.com/#organization"
+        },
+        "inLanguage": "en",
+        "breadcrumb": {
+          "@id": "https://phrinusomyis.com/en/luxury#breadcrumbs"
         }
       },
       {
-        "@type": "Organization",
-        "@id": `${base}/#dept-moscow`,
-        "name": "PHRINUSOMYIS Moscow Office",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Moscow",
-          "addressRegion": "Central Okrug, Federal City",
-          "addressCountry": "Russia"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 55.7558,
-          "longitude": 37.6173
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": `${base}/#dept-lagos`,
-        "name": "PHRINUSOMYIS Lagos Office",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Banana Island",
-          "addressLocality": "Lagos",
-          "addressRegion": "Eti-Osa LGA, Lagos State",
-          "addressCountry": "Nigeria"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 6.4498,
-          "longitude": 3.4719
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": `${base}/luxury`
-        }
+        "@type": "BreadcrumbList",
+        "@id": "https://phrinusomyis.com/en/luxury#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://phrinusomyis.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Luxury",
+            "item": "https://phrinusomyis.com/en/luxury"
+          }
+        ]
       }
     ]
-  });
+  }
+  </script>
+</head>
 
-  // 3. THE SPECIFIC ARTICLE (Automatic Detection)
-  graph.push({
-    "@type": "NewsLuxury",
-    "@id": `${currentUrl}#luxury`,
-    "headline": LuxuryHeadline,
-    "mainEntityOfPage": currentUrl,
-    "datePublished": document.lastModified ? new Date(document.lastModified).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
-    "dateModified": document.lastModified ? new Date(document.lastModified).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
-    "author": {
-      "@id": `${base}/#organization`
-    },
-    "publisher": {
-      "@id": `${base}/#organization`
-    },
-    "image": {
-      "@type": "ImageObject",
-      "url": `${base}/assets/Phrinusomyis_logo.png`
+<body>
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <button class="hamburger" type="button" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul id="nav-links">
+        <li><a href="/" target="_self">HOME</a></li>
+        <li><a href="/en/news" target="_self">NEWS</a></li>
+        <li><a href="/en/events" target="_self">EVENTS</a></li>
+        <li><a href="/en/press" target="_self">PRESS &amp; MEDIA</a></li>
+        <li>
+          <label for="languageSwitcher" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Choose language</label>
+          <select id="languageSwitcher">
+            <option value="en">English (EN)</option>
+            <option value="fr">Français (FR)</option>
+            <option value="es">Español (ES)</option>
+            <option value="de">Deutsch (DE)</option>
+            <option value="ar">العربية (AR)</option>
+            <option value="zh">中文 (ZH)</option>
+            <option value="ru">Русский (RU)</option>
+            <option value="pt">Português (PT)</option>
+            <option value="ja">日本語 (JA)</option>
+            <option value="ko">한국어 (KO)</option>
+            <option value="it">Italiano (IT)</option>
+            <option value="nl">Nederlands (NL)</option>
+            <option value="tr">Türkçe (TR)</option>
+            <option value="hi">हिन्दी (HI)</option>
+            <option value="id">Bahasa Indonesia (ID)</option>
+            <option value="vi">Tiếng Việt (VI)</option>
+            <option value="th">ไทย (TH)</option>
+            <option value="pl">Polski (PL)</option>
+            <option value="sv">Svenska (SV)</option>
+            <option value="fi">Suomi (FI)</option>
+            <option value="da">Dansk (DA)</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS™ official logo" class="brand-seal">
+
+    <h1>PHRINUSOMYIS™ Luxury</h1>
+
+    <div class="countdown-container" aria-label="Current date and time">
+      <div class="countdown-card">
+        <h2 id="month">--</h2>
+        <span>Month</span>
+      </div>
+      <div class="countdown-card">
+        <h2 id="year">----</h2>
+        <span>Year</span>
+      </div>
+      <div class="countdown-card">
+        <h2 id="days">--</h2>
+        <span>Day</span>
+      </div>
+      <div class="countdown-card">
+        <h2 id="hours">--</h2>
+        <span>Hours</span>
+      </div>
+      <div class="countdown-card">
+        <h2 id="minutes">--</h2>
+        <span>Minutes</span>
+      </div>
+      <div class="countdown-card">
+        <h2 id="seconds">--</h2>
+        <span>Seconds</span>
+      </div>
+    </div>
+
+    <section class="grid" aria-label="PHRINUSOMYIS Luxury collection">
+      <article class="card">
+        <h3>Signature Legacy Scent</h3>
+        <div class="narrative-content">
+          The Signature Legacy Scent of PHRINUSOMYIS™ carries identity in atmosphere and form. Built with depth and balance, it moves with quiet confidence and leaves a lasting impression without seeking attention.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>24K Gold Collectible Cup Unit Series</h3>
+        <div class="narrative-content">
+          True distinction is not found in the many, but in the singular. We present a rare commission—an intentionally limited release defined by architectural precision and a refusal to compromise. This is not an object of volume. It is a statement of legacy.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Limited Edition Perfume Unit Series</h3>
+        <div class="narrative-content">
+          A controlled fragrance, created with precision and care. Each bottle belongs to a limited collection defined by rarity, ownership, and distinction. An olfactory moment, not a repeating release. Once introduced, the formula is retired. It is never repeated.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Stamped Serial Numbers</h3>
+        <div class="narrative-content">
+          Every piece is individually marked for identity and authenticity. Each number is hand-stamped to preserve its uniqueness. No duplication. No repetition. Each unit stands on its own.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Stadium-Scale Experiential Assets</h3>
+        <div class="narrative-content">
+          Large-format production elements designed for live environments and stadium-level execution. Built for immersive experiences, structured performances, and large-scale events where detail, timing, and atmosphere work in harmony.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>PHRINUSOMYIS™ Luxury</h3>
+        <div class="narrative-content">
+          Luxury at PHRINUSOMYIS™ is defined through structure, discipline, and execution. It is not decoration or excess, but control, clarity, and consistency. Every detail is intentional, every experience built with purpose, and every outcome designed to meet a global standard of quality.
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="phr-main-footer">
+    <div class="phr-footer-grid">
+      <section class="phr-footer-section">
+        <h3>Luxury</h3>
+        <ul>
+          <li><a href="/en/luxury">Luxury Identity</a></li>
+          <li><a href="/en/circle">Private Access</a></li>
+          <li><a href="/en/perfume">Perfumes</a></li>
+          <li><a href="/en/contact">Contact</a></li>
+        </ul>
+      </section>
+
+      <section class="phr-footer-section">
+        <h3>M3AN</h3>
+        <ul>
+          <li><a href="/en/news">Latest News</a></li>
+          <li><a href="/en/press">Press Releases</a></li>
+          <li><a href="/en/events">Events</a></li>
+          <li><a href="/en/luxury">PHRINUSOMYIS™ Luxury</a></li>
+        </ul>
+      </section>
+
+      <section class="phr-footer-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/en/policy">Privacy Policy</a></li>
+          <li><a href="/en/copyright">Copyright</a></li>
+          <li><a href="/en/terms">Terms of Use</a></li>
+          <li><a href="/en/privacy">Privacy Choices</a></li>
+        </ul>
+      </section>
+
+      <section class="phr-footer-section">
+        <h3>Help</h3>
+        <ul>
+          <li><a href="/en/security">Security</a></li>
+          <li><a href="/en/help">Help Center</a></li>
+          <li><a href="/en/cookies">Cookie Policy</a></li>
+          <li><a href="/en/close">Closed Captions</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="phr-footer-legal">
+      © 2032 PHRINUSOMYIS™. THE STANDARD.
+    </div>
+  </footer>
+
+  <div id="google_translate_element" hidden></div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      const button = document.querySelector('.hamburger');
+      const isOpen = nav.classList.toggle('show');
+
+      button.setAttribute('aria-expanded', String(isOpen));
     }
-  });
 
-  // 4. INJECT TO PAGE
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.text = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": graph
-  });
-  document.head.appendChild(script);
-})();
-      </script>
+    function updateTime() {
+      const now = new Date();
+
+      document.getElementById('month').textContent =
+        String(now.getMonth() + 1).padStart(2, '0');
+
+      document.getElementById('year').textContent =
+        String(now.getFullYear());
+
+      document.getElementById('days').textContent =
+        String(now.getDate()).padStart(2, '0');
+
+      document.getElementById('hours').textContent =
+        String(now.getHours()).padStart(2, '0');
+
+      document.getElementById('minutes').textContent =
+        String(now.getMinutes()).padStart(2, '0');
+
+      document.getElementById('seconds').textContent =
+        String(now.getSeconds()).padStart(2, '0');
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+          autoDisplay: false
+        },
+        'google_translate_element'
+      );
+
+      const savedLang = localStorage.getItem('site_lang');
+      if (savedLang) {
+        document.getElementById('languageSwitcher').value = savedLang;
+
+        setTimeout(function () {
+          changeLanguage(savedLang);
+        }, 1000);
+      }
+    }
+
+    function changeLanguage(lang) {
+      const translateSelect = document.querySelector('.goog-te-combo');
+
+      if (translateSelect) {
+        translateSelect.value = lang;
+        translateSelect.dispatchEvent(new Event('change'));
+        localStorage.setItem('site_lang', lang);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const languageSwitcher = document.getElementById('languageSwitcher');
+
+      languageSwitcher.addEventListener('change', function () {
+        changeLanguage(this.value);
+      });
+    });
+  </script>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
-    </html>
-
-
+</html>
