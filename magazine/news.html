@@ -3,31 +3,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>PHRINUSOMYIS™ Magazine | THE NEXT CHAPTER OF COMPETITIVE SPORT</title>
-
-  <meta name="description" content="PHRINUSOMYIS™ Magazine presents THE NEXT CHAPTER OF COMPETITIVE SPORT, exploring the history of competition and the direction of competitive sport.">
+  <meta name="description" content="PHRINUSOMYIS™ Magazine presents The Next Chapter of Competitive Sport, a feature exploring the history and evolution of competition.">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#090909">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="canonical" href="https://phrinusomyis.com/magazine/news.html">
+  <link rel="icon" href="https://phrinusomyis.com/phrinusomyis_logo.png">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="PHRINUSOMYIS™ Magazine">
   <meta property="og:title" content="PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT">
   <meta property="og:description" content="A feature from PHRINUSOMYIS™ Magazine.">
   <meta property="og:url" content="https://phrinusomyis.com/magazine/news.html">
-  <meta property="og:image" content="">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=85">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT">
   <meta name="twitter:description" content="A feature from PHRINUSOMYIS™ Magazine.">
-  <meta name="twitter:image" content="">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=85">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Barlow+Condensed:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -39,6 +39,9 @@
       "@type": "WebPage",
       "@id": "https://phrinusomyis.com/magazine/news.html"
     },
+    "image": [
+      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=85"
+    ],
     "author": {
       "@type": "Organization",
       "name": "PHRINUSOMYIS™ Editorial"
@@ -58,15 +61,13 @@
 
   <style>
     :root {
-      --black: #090909;
-      --black-soft: #101010;
-      --panel: #151515;
-      --gold: #c9a45c;
-      --gold-light: #e6c982;
-      --white: #f7f5f0;
-      --muted: #aaa69e;
-      --line: rgba(201, 164, 92, .3);
-      --max-width: 1200px;
+      --paper: #ffffff;
+      --paper-soft: #f5f5f2;
+      --ink: #151515;
+      --muted: #686868;
+      --gold: #b18a43;
+      --line: #deded8;
+      --content: 1240px;
     }
 
     * {
@@ -77,19 +78,14 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px;
+      scroll-padding-top: 90px;
     }
 
     body {
-      background: var(--black);
-      color: var(--white);
+      background: var(--paper);
+      color: var(--ink);
       font-family: "DM Sans", sans-serif;
       line-height: 1.75;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     img {
@@ -97,52 +93,45 @@
       width: 100%;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     button {
       font: inherit;
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 44px));
+      width: min(var(--content), calc(100% - 48px));
       margin: 0 auto;
     }
 
     .eyebrow {
-      color: var(--gold-light);
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    .section-rule {
-      width: 55px;
-      height: 2px;
-      background: var(--gold);
-      margin: 16px 0;
-    }
-
-    /* Top strip */
-
-    .top-strip {
-      background: var(--gold);
-      color: #080808;
-      padding: 7px 15px;
-      text-align: center;
       font-size: .68rem;
       font-weight: 800;
       letter-spacing: .18em;
       text-transform: uppercase;
     }
 
-    /* Magazine masthead */
+    .gold {
+      color: var(--gold);
+    }
+
+    /* HEADER */
+
+    .topline {
+      height: 5px;
+      background: var(--ink);
+    }
 
     .masthead {
-      background: #080808;
       border-bottom: 1px solid var(--line);
+      background: #fff;
     }
 
     .masthead-inner {
-      min-height: 100px;
+      min-height: 105px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -152,303 +141,344 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 13px;
     }
 
-    .brand-logo {
-      width: 55px;
-      height: 55px;
+    .brand img {
+      width: 53px;
+      height: 53px;
       object-fit: contain;
     }
 
     .brand-name {
       font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(1.2rem, 2.8vw, 2rem);
-      font-weight: 800;
-      letter-spacing: .06em;
-      line-height: 1.05;
+      font-weight: 900;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      line-height: 1;
+      letter-spacing: .025em;
     }
 
-    .brand-tagline {
-      display: block;
-      margin-top: 5px;
+    .brand-subtitle {
+      margin-top: 6px;
       color: var(--gold);
-      font-size: .62rem;
-      letter-spacing: .28em;
-      font-weight: 700;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .23em;
     }
 
-    .masthead-edition {
+    .masthead-right {
       text-align: right;
-      font-size: .7rem;
-      color: var(--muted);
-      letter-spacing: .1em;
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
-    .masthead-edition strong {
+    .masthead-right span {
       display: block;
-      color: var(--white);
-      font-size: .82rem;
-      margin-bottom: 4px;
+      margin-top: 4px;
+      color: var(--muted);
+      font-weight: 500;
     }
 
-    /* Navigation */
+    /* NAVIGATION */
 
-    .navigation {
-      background: var(--black-soft);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+    .nav {
+      border-bottom: 1px solid var(--line);
+      background: white;
     }
 
     .nav-inner {
+      min-height: 49px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
-      min-height: 52px;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 27px;
+      gap: 25px;
       list-style: none;
     }
 
-    .nav-links a {
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .1em;
+    .nav a {
+      font-size: .69rem;
+      font-weight: 800;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      color: #d5d1c9;
-      transition: color .2s;
     }
 
-    .nav-links a:hover {
-      color: var(--gold-light);
+    .nav a:hover {
+      color: var(--gold);
     }
 
-    .newswire-link {
-      color: var(--gold-light) !important;
+    .nav-newswire {
+      color: #866324;
     }
 
-    /* Cover */
+    /* COVER */
 
     .cover {
-      padding: 48px 0 0;
+      padding-top: 34px;
+    }
+
+    .cover-kicker {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 13px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .cover-kicker span {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     .cover-grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      min-height: 470px;
-      border: 1px solid var(--line);
-      background: var(--black-soft);
+      grid-template-columns: .88fr 1.12fr;
+      min-height: 490px;
     }
 
     .cover-copy {
-      padding: clamp(28px, 5vw, 65px);
+      padding: 42px 36px 38px 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: flex-start;
+      justify-content: center;
     }
 
-    .issue-label {
+    .cover-label {
       display: inline-block;
-      padding: 7px 11px;
       border: 1px solid var(--gold);
-      color: var(--gold-light);
-      font-size: .66rem;
-      font-weight: 700;
-      letter-spacing: .16em;
+      color: #80601f;
+      padding: 6px 10px;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
 
     .cover h1 {
       margin-top: 25px;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(3rem, 6vw, 6rem);
+      font-size: clamp(3.4rem, 6.5vw, 6.6rem);
+      line-height: .88;
       font-weight: 900;
-      line-height: .94;
-      letter-spacing: -.025em;
+      letter-spacing: -.035em;
       text-transform: uppercase;
     }
 
     .cover h1 span {
       display: block;
-      color: var(--gold-light);
+      margin-top: 12px;
+      color: var(--gold);
     }
 
     .cover-description {
-      max-width: 500px;
-      margin-top: 25px;
-      color: #c5c0b7;
-      font-size: .98rem;
+      max-width: 430px;
+      margin-top: 24px;
+      color: #555;
+      font-family: "Playfair Display", serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
     }
 
     .cover-byline {
-      margin-top: 26px;
-      color: var(--muted);
-      font-size: .72rem;
+      margin-top: 24px;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .cover-photo {
+      position: relative;
+      min-width: 0;
+      min-height: 490px;
+      overflow: hidden;
+      background: #e7e7e2;
+    }
+
+    .cover-slides,
+    .cover-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cover-slide {
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .cover-slide.active {
+      opacity: 1;
+    }
+
+    .cover-photo::after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.65));
+      pointer-events: none;
+    }
+
+    .cover-photo-caption {
+      position: absolute;
+      z-index: 2;
+      bottom: 20px;
+      left: 22px;
+      right: 22px;
+      color: white;
+      font-size: .68rem;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
 
-    .cover-image {
-      min-height: 380px;
-      position: relative;
-      background: #1b1b1b;
-      border-left: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .cover-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 470px;
-      object-fit: cover;
-    }
-
-    .image-placeholder {
+    .slide-indicators {
       position: absolute;
-      inset: 0;
+      z-index: 3;
+      top: 18px;
+      right: 18px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      color: #777;
-      text-align: center;
-      font-size: .78rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+      gap: 7px;
     }
 
-    .cover-image img:not([src]),
-    .cover-image img[src=""] {
-      display: none;
+    .slide-dot {
+      width: 9px;
+      height: 9px;
+      border: 1px solid white;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
     }
 
-    .cover-image:has(img[src=""]) .image-placeholder,
-    .cover-image:not(:has(img[src])) .image-placeholder {
-      background:
-        linear-gradient(135deg, #171717 25%, #202020 25%, #202020 50%, #171717 50%, #171717 75%, #202020 75%);
-      background-size: 24px 24px;
+    .slide-dot.active {
+      background: white;
     }
 
-    .cover-image figcaption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 32px 20px 15px;
-      background: linear-gradient(transparent, rgba(0,0,0,.85));
-      color: #e2ddd4;
-      font-size: .68rem;
-    }
+    /* EDITORIAL STRIP */
 
-    /* Editorial ticker */
-
-    .ticker {
-      margin-top: 24px;
-      padding: 13px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .ticker-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .ticker strong {
-      color: var(--gold-light);
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.05rem;
-      letter-spacing: .12em;
-    }
-
-    .ticker span {
-      color: var(--muted);
-      font-size: .68rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    /* Main editorial layout */
-
-    .editorial-layout {
+    .editorial-strip {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 55px;
-      padding-top: 70px;
-      padding-bottom: 80px;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      margin-top: 27px;
+    }
+
+    .strip-item {
+      padding: 18px 20px;
+      border-right: 1px solid var(--line);
+    }
+
+    .strip-item:last-child {
+      border-right: 0;
+    }
+
+    .strip-item strong {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.35rem;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .strip-item span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .67rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* ARTICLE LAYOUT */
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 65px;
       align-items: start;
+      padding-top: 68px;
+      padding-bottom: 80px;
     }
 
     .article-header {
-      border-bottom: 1px solid var(--line);
       padding-bottom: 25px;
-      margin-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 30px;
     }
 
     .article-category {
-      color: var(--gold-light);
-      font-size: .7rem;
+      color: #8d6829;
+      font-size: .68rem;
       font-weight: 800;
-      letter-spacing: .2em;
+      letter-spacing: .17em;
       text-transform: uppercase;
     }
 
     .article-title {
-      margin-top: 14px;
+      margin-top: 13px;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(2.5rem, 4.5vw, 4.4rem);
-      font-weight: 800;
-      line-height: 1;
+      font-size: clamp(2.7rem, 5vw, 4.5rem);
+      line-height: .98;
+      font-weight: 900;
       text-transform: uppercase;
     }
 
     .article-deck {
-      margin-top: 20px;
+      margin-top: 18px;
+      color: #555;
       font-family: "Playfair Display", serif;
       font-size: 1.2rem;
-      line-height: 1.65;
-      color: #d1ccc3;
+      line-height: 1.7;
     }
 
     .article-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px 20px;
-      margin-top: 23px;
+      margin-top: 20px;
       color: var(--muted);
-      font-size: .72rem;
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      letter-spacing: .06em;
     }
 
     .article-body {
+      color: #303030;
       font-size: 1rem;
-      color: #dedad2;
+      line-height: 1.9;
     }
 
     .article-body p {
-      margin-bottom: 24px;
+      margin-bottom: 23px;
+    }
+
+    .article-body .lead {
+      color: #181818;
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      line-height: 1.85;
     }
 
     .article-body h2 {
-      margin: 48px 0 18px;
-      color: var(--white);
+      margin: 45px 0 17px;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(1.9rem, 3vw, 2.6rem);
-      font-weight: 800;
-      line-height: 1.08;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.05;
       text-transform: uppercase;
     }
 
@@ -456,327 +486,272 @@
       content: "";
       display: block;
       width: 45px;
-      height: 2px;
-      margin-top: 13px;
+      height: 3px;
       background: var(--gold);
+      margin-top: 12px;
     }
 
-    .article-body .lead {
-      font-family: "Playfair Display", serif;
-      font-size: 1.22rem;
-      line-height: 1.8;
-      color: var(--white);
-    }
-
-    .article-body .dropcap::first-letter {
-      float: left;
-      padding: 7px 11px 0 0;
-      color: var(--gold-light);
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 5rem;
-      font-weight: 800;
-      line-height: .8;
-    }
-
-    .pull-quote {
-      margin: 42px 0;
+    .pullquote {
+      margin: 38px 0;
       padding: 28px 30px;
-      border-left: 3px solid var(--gold);
-      background: var(--panel);
+      border-left: 4px solid var(--gold);
+      background: var(--paper-soft);
+      color: #222;
       font-family: "Playfair Display", serif;
-      font-size: clamp(1.3rem, 2.6vw, 1.8rem);
-      line-height: 1.55;
-      color: var(--white);
+      font-size: 1.55rem;
+      line-height: 1.65;
     }
 
-    .pull-quote span {
+    .pullquote cite {
       display: block;
-      margin-top: 14px;
-      color: var(--gold-light);
+      margin-top: 15px;
+      color: #7e5c23;
       font-family: "DM Sans", sans-serif;
       font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .15em;
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
-    /* Inline editorial images */
+    /* ARTICLE PHOTOGRAPHS */
 
-    .editorial-image {
-      margin: 36px 0;
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,.08);
+    .article-photo {
+      margin: 35px 0;
     }
 
-    .editorial-image img {
+    .article-photo img {
       width: 100%;
-      min-height: 160px;
-      max-height: 520px;
+      height: auto;
+      max-height: 510px;
       object-fit: cover;
+      background: #eee;
     }
 
-    .editorial-image figcaption {
-      padding: 12px 15px;
+    .article-photo figcaption {
+      padding-top: 9px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 11px;
       color: var(--muted);
-      font-size: .7rem;
-      border-top: 1px solid rgba(255,255,255,.08);
+      font-size: .68rem;
     }
 
-    .inline-image-placeholder {
-      min-height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: .7rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      background: repeating-linear-gradient(
-        135deg,
-        #141414,
-        #141414 12px,
-        #191919 12px,
-        #191919 24px
-      );
-    }
-
-    .editorial-image img:not([src]),
-    .editorial-image img[src=""] {
-      display: none;
-    }
-
-    /* Sidebar */
+    /* SIDEBAR */
 
     .sidebar {
       position: sticky;
-      top: 25px;
+      top: 20px;
     }
 
     .sidebar-block {
-      margin-bottom: 25px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      background: var(--black-soft);
+      padding: 23px 0;
+      border-top: 2px solid var(--ink);
+      margin-bottom: 27px;
     }
 
     .sidebar-heading {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       font-weight: 800;
-      letter-spacing: .06em;
+      line-height: 1.1;
       text-transform: uppercase;
     }
 
-    .contents-list {
+    .contents {
       list-style: none;
-      counter-reset: contents;
     }
 
-    .contents-list li {
-      counter-increment: contents;
-      border-top: 1px solid rgba(255,255,255,.08);
+    .contents li {
+      border-top: 1px solid var(--line);
     }
 
-    .contents-list a {
-      display: flex;
-      gap: 12px;
-      padding: 12px 0;
-      color: #d2cdc4;
-      font-size: .82rem;
+    .contents a {
+      display: block;
+      padding: 11px 0;
+      font-size: .8rem;
       line-height: 1.5;
     }
 
-    .contents-list a::before {
-      content: "0" counter(contents);
-      color: var(--gold-light);
-      font-weight: 700;
-      font-size: .7rem;
-    }
-
-    .contents-list a:hover {
-      color: var(--gold-light);
+    .contents a:hover {
+      color: #916b2d;
     }
 
     .sidebar-copy {
-      color: #bcb7af;
-      font-size: .83rem;
+      color: #555;
+      font-size: .85rem;
     }
 
-    .sidebar-cta {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-top: 20px;
+    .sidebar-button {
+      display: block;
+      margin-top: 17px;
       padding: 13px 15px;
-      background: var(--gold);
-      color: #090909;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .1em;
+      border: 1px solid var(--ink);
       text-align: center;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .09em;
       text-transform: uppercase;
-      transition: background .2s;
+      transition: background .2s, color .2s;
     }
 
-    .sidebar-cta:hover {
-      background: var(--gold-light);
+    .sidebar-button:hover {
+      background: var(--ink);
+      color: white;
     }
 
-    .share-buttons {
+    .share-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
 
-    .share-button {
-      border: 1px solid rgba(255,255,255,.2);
-      background: transparent;
-      color: var(--white);
-      padding: 10px;
-      font-size: .7rem;
+    .share-grid button {
+      padding: 10px 6px;
+      border: 1px solid var(--line);
+      background: white;
       cursor: pointer;
-      transition: border-color .2s, color .2s;
+      font-size: .7rem;
+      font-weight: 700;
     }
 
-    .share-button:hover {
+    .share-grid button:hover {
       border-color: var(--gold);
-      color: var(--gold-light);
+      color: #8a6528;
     }
 
-    /* Official Newswire callout */
+    #share-status {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .75rem;
+    }
 
-    .newswire-callout {
-      margin-top: 50px;
+    /* NEWSWIRE CROSS-LINK */
+
+    .newswire-panel {
+      margin-top: 45px;
       padding: 30px;
-      border: 1px solid var(--gold);
-      background: linear-gradient(135deg, #17140f, #0d0d0d);
+      border: 1px solid var(--line);
+      background: var(--paper-soft);
     }
 
-    .newswire-callout h3 {
+    .newswire-panel h3 {
+      margin-top: 8px;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
       line-height: 1.1;
       text-transform: uppercase;
     }
 
-    .newswire-callout p {
+    .newswire-panel p {
       margin-top: 12px;
-      color: #c4beb4;
+      color: #555;
       font-size: .9rem;
     }
 
-    .text-link {
+    .newswire-panel a {
       display: inline-block;
-      margin-top: 18px;
-      padding-bottom: 5px;
-      color: var(--gold-light);
-      border-bottom: 1px solid var(--gold);
-      font-size: .76rem;
+      margin-top: 16px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--gold);
+      font-size: .72rem;
       font-weight: 800;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
 
-    /* Magazine end panel */
+    /* END PANEL */
 
-    .end-panel {
-      margin-top: 55px;
-      padding: 35px;
-      background: var(--panel);
-      border-top: 2px solid var(--gold);
+    .closing-panel {
+      margin-top: 50px;
+      padding: 35px 25px;
+      background: #f3f1ec;
       text-align: center;
     }
 
-    .end-panel .end-title {
+    .closing-panel h3 {
       font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
       font-weight: 900;
       line-height: 1;
       text-transform: uppercase;
     }
 
-    .end-panel p {
-      margin-top: 15px;
-      color: var(--muted);
+    .closing-panel p {
+      margin-top: 13px;
+      color: #555;
+      font-size: .86rem;
     }
 
-    /* Footer */
+    /* FOOTER */
 
-    .footer {
-      border-top: 1px solid var(--line);
-      background: #070707;
-      padding: 45px 0 25px;
+    footer {
+      border-top: 2px solid var(--ink);
+      background: white;
     }
 
     .footer-main {
+      padding: 35px 0;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 30px;
-      padding-bottom: 30px;
     }
 
     .footer-brand {
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: .06em;
+      font-size: 1.7rem;
+      font-weight: 900;
     }
 
-    .footer-tagline {
-      color: var(--gold-light);
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .2em;
+    .footer-slogan {
+      margin-top: 4px;
+      color: #8d6829;
+      font-size: .67rem;
+      font-weight: 800;
+      letter-spacing: .16em;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 24px;
+      gap: 12px 22px;
       font-size: .75rem;
-      color: #c3beb5;
+      font-weight: 700;
     }
 
     .footer-links a:hover {
-      color: var(--gold-light);
+      color: var(--gold);
     }
 
     .footer-bottom {
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.08);
+      border-top: 1px solid var(--line);
+      padding: 17px 0;
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
       gap: 10px;
-      color: #85817a;
+      color: #777;
       font-size: .68rem;
     }
 
-    .back-to-top {
+    .back-top {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 20;
+      z-index: 10;
+      right: 18px;
+      bottom: 18px;
       width: 42px;
       height: 42px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--gold);
-      background: #111;
-      color: var(--gold-light);
-      font-size: 1.2rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--ink);
+      background: white;
       opacity: 0;
       visibility: hidden;
       transition: opacity .2s;
     }
 
-    .back-to-top.visible {
+    .back-top.visible {
       opacity: 1;
       visibility: visible;
     }
@@ -786,82 +761,84 @@
         grid-template-columns: 1fr;
       }
 
-      .cover-image {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-        min-height: 300px;
+      .cover-copy {
+        padding: 35px 0;
       }
 
-      .cover-image img {
-        min-height: 300px;
-        max-height: 460px;
+      .cover-photo {
+        min-height: 380px;
       }
 
-      .editorial-layout {
-        grid-template-columns: minmax(0, 1fr) 250px;
-        gap: 28px;
-      }
-
-      .sidebar-block {
-        padding: 18px;
+      .layout {
+        grid-template-columns: minmax(0, 1fr) 240px;
+        gap: 30px;
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 680px) {
       .container {
-        width: min(100% - 30px, var(--max-width));
+        width: calc(100% - 30px);
       }
 
       .masthead-inner {
-        min-height: 80px;
+        min-height: 82px;
       }
 
-      .brand-logo {
+      .brand img {
         width: 42px;
         height: 42px;
       }
 
-      .masthead-edition {
-        font-size: .58rem;
+      .masthead-right {
+        font-size: .56rem;
       }
 
       .nav-inner {
-        padding: 13px 0;
+        padding: 12px 0;
         align-items: flex-start;
-        flex-direction: column;
       }
 
       .nav-links {
-        gap: 12px 20px;
+        gap: 10px 16px;
       }
 
-      .nav-links a {
-        font-size: .65rem;
+      .nav a {
+        font-size: .62rem;
       }
 
       .cover {
-        padding-top: 25px;
+        padding-top: 22px;
       }
 
-      .cover-copy {
-        padding: 28px 22px;
+      .cover-grid {
+        min-height: 0;
       }
 
       .cover h1 {
-        font-size: clamp(3rem, 13vw, 5rem);
+        font-size: clamp(3.5rem, 14vw, 5.3rem);
       }
 
-      .cover-image {
-        min-height: 240px;
+      .cover-photo {
+        min-height: 270px;
       }
 
-      .cover-image img {
-        min-height: 240px;
-      }
-
-      .editorial-layout {
+      .editorial-strip {
         grid-template-columns: 1fr;
-        gap: 45px;
+      }
+
+      .strip-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 14px 4px;
+      }
+
+      .strip-item:last-child {
+        border-bottom: 0;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
         padding-top: 45px;
         padding-bottom: 50px;
       }
@@ -871,19 +848,16 @@
       }
 
       .article-title {
-        font-size: clamp(2.5rem, 11vw, 4rem);
-      }
-
-      .article-deck {
-        font-size: 1.05rem;
+        font-size: clamp(2.8rem, 12vw, 4rem);
       }
 
       .article-body {
         font-size: .96rem;
       }
 
-      .pull-quote {
+      .pullquote {
         padding: 23px;
+        font-size: 1.3rem;
       }
 
       .footer-main {
@@ -896,50 +870,32 @@
     }
 
     @media print {
-      body {
-        background: white;
-        color: black;
-      }
-
-      .top-strip,
-      .navigation,
+      .nav,
       .sidebar,
-      .share-buttons,
-      .back-to-top,
-      .footer,
-      .newswire-callout .text-link {
+      .share-grid,
+      .back-top {
         display: none !important;
       }
 
-      .container {
-        width: 100%;
+      body {
+        color: #000;
+        background: #fff;
       }
 
-      .cover-grid,
-      .newswire-callout,
-      .end-panel {
-        background: white;
-        color: black;
-      }
-
-      .cover-description,
-      .article-body,
-      .article-deck,
-      .newswire-callout p {
-        color: #222;
-      }
-
-      .editorial-layout {
+      .layout {
         display: block;
-        padding-top: 25px;
       }
 
-      .sidebar {
+      .cover-photo {
+        max-height: 350px;
+      }
+
+      .cover-slide {
         display: none;
       }
 
-      a {
-        text-decoration: none;
+      .cover-slide.active {
+        display: block;
       }
     }
   </style>
@@ -947,98 +903,126 @@
 
 <body id="top">
 
-  <div class="top-strip">
-    PHRINUSOMYIS™ MAGAZINE · THE STANDARD
-  </div>
+  <div class="topline"></div>
 
   <header class="masthead">
     <div class="container masthead-inner">
-
-      <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
-        <img
-          class="brand-logo"
-          src="https://phrinusomyis.com/phrinusomyis_logo.png"
-          alt="PHRINUSOMYIS logo"
-        >
+      <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS official website">
+        <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
         <span>
           <span class="brand-name">PHRINUSOMYIS™</span>
-          <span class="brand-tagline">THE STANDARD</span>
+          <span class="brand-subtitle">COMMANDING THE WORLD STAGE™</span>
         </span>
       </a>
 
-      <div class="masthead-edition">
-        <strong>THE MAGAZINE</strong>
-        SPORTS · COMPETITION · PERSPECTIVE
+      <div class="masthead-right">
+        THE MAGAZINE
+        <span>Official Editorial Publication</span>
       </div>
-
     </div>
   </header>
 
-  <nav class="navigation" aria-label="Main navigation">
+  <nav class="nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <ul class="nav-links">
         <li><a href="https://phrinusomyis.com/">Home</a></li>
-        <li><a href="#cover">Cover Story</a></li>
-        <li><a href="#feature">The Feature</a></li>
+        <li><a href="#cover">Cover</a></li>
+        <li><a href="#feature">Feature</a></li>
         <li><a href="#contents">Contents</a></li>
-        <li><a class="newswire-link" href="https://phrinusomyis.com/newsroom/newswire.html">Newswire ↗</a></li>
+        <li><a class="nav-newswire" href="https://phrinusomyis.com/newsroom/newswire.html">Newswire ↗</a></li>
       </ul>
     </div>
   </nav>
 
   <main>
 
-    <!-- MAGAZINE COVER -->
+    <!-- COVER: THE SLIDES ROTATE AUTOMATICALLY.
+         Replace each image URL with your preferred image URL. -->
 
     <section class="cover container" id="cover">
-      <div class="cover-grid">
+      <div class="cover-kicker">
+        <span>PHRINUSOMYIS™ MAGAZINE</span>
+        <span>THE FEATURE</span>
+      </div>
 
+      <div class="cover-grid">
         <div class="cover-copy">
-          <span class="issue-label">THE FEATURE · SPORTS</span>
+          <span class="cover-label">The Cover Story</span>
 
           <h1>
             The Next Chapter
             <span>of Competitive Sport</span>
           </h1>
 
-          <div class="section-rule"></div>
-
           <p class="cover-description">
-            A journey through the history of human competition and the
-            direction of PHRINUSOMYIS™.
+            From the ancient history of human competition to the next
+            chapter in the evolution of sport.
           </p>
 
-          <p class="cover-byline">
-            PHRINUSOMYIS™ EDITORIAL
-          </p>
+          <p class="cover-byline">PHRINUSOMYIS™ EDITORIAL</p>
         </div>
 
-        <figure class="cover-image">
-          <!-- Add your cover image URL to the src attribute. -->
-          <img src="" alt="">
-          <div class="image-placeholder">
-            Cover photograph placement
-          </div>
-          <figcaption>
-            Cover image · Add your own image and caption
-          </figcaption>
-        </figure>
+        <div class="cover-photo" aria-label="Magazine cover photography">
 
+          <div class="cover-slides">
+
+            <!-- IMAGE 1: SPORTS COMPETITION -->
+            <img
+              class="cover-slide active"
+              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1800&q=90"
+              alt="Athletes competing on a running track"
+              fetchpriority="high"
+            >
+
+            <!-- IMAGE 2: STADIUM -->
+            <img
+              class="cover-slide"
+              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=90"
+              alt="Sports stadium"
+              loading="eager"
+            >
+
+            <!-- IMAGE 3: ANCIENT COMPETITION -->
+            <img
+              class="cover-slide"
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruins_of_Olympia,_Greece,_Stadium.jpg"
+              alt="Ancient stadium at Olympia in Greece"
+              loading="eager"
+            >
+
+          </div>
+
+          <div class="slide-indicators" aria-label="Select cover photograph">
+            <button class="slide-dot active" type="button" aria-label="Show sports photograph" data-slide="0"></button>
+            <button class="slide-dot" type="button" aria-label="Show stadium photograph" data-slide="1"></button>
+            <button class="slide-dot" type="button" aria-label="Show ancient stadium photograph" data-slide="2"></button>
+          </div>
+
+          <div class="cover-photo-caption">
+            The history of competition. The future of sport.
+          </div>
+        </div>
+      </div>
+
+      <div class="editorial-strip">
+        <div class="strip-item">
+          <strong>Competition</strong>
+          <span>The contest and the competitor</span>
+        </div>
+        <div class="strip-item">
+          <strong>Sports Theater™</strong>
+          <span>Original sports formats</span>
+        </div>
+        <div class="strip-item">
+          <strong>PHRINUSOMYIS™</strong>
+          <span>An international sports organization</span>
+        </div>
       </div>
     </section>
 
-    <div class="container ticker">
-      <div class="ticker-inner">
-        <strong>PHRINUSOMYIS™</strong>
-        <span>International Sports Organization</span>
-        <span>Original Sports Formats</span>
-        <span>Sports Theater™</span>
-      </div>
-    </div>
+    <!-- MAIN FEATURE -->
 
-    <!-- ARTICLE AND SIDEBAR -->
-
-    <div class="container editorial-layout">
+    <div class="container layout">
 
       <article id="feature">
 
@@ -1050,8 +1034,9 @@
           </h2>
 
           <p class="article-deck">
-            Competition is older than modern sport. Its history is a story
-            of human will, rules, rivalry and the search for a new test.
+            The story of competition reaches across thousands of years.
+            Its structures have changed, but the human desire to test
+            ability, resolve and performance remains.
           </p>
 
           <div class="article-meta">
@@ -1063,38 +1048,37 @@
 
         <div class="article-body">
 
-          <!-- Replace the sample editorial copy below with the exact
-               paragraphs from your published Newswire article. -->
+          <!-- Replace the editorial text below with the exact published
+               Newswire article text when transferring your original copy. -->
 
-          <p class="lead dropcap">
-            Competition has always been part of the human story. Long before
-            modern sporting institutions, people tested their strength,
-            skill, endurance and resolve against one another.
+          <p class="lead">
+            Competition is one of the oldest expressions of human ability.
+            Across generations, people have tested strength, skill,
+            endurance and resolve against one another.
           </p>
 
           <p>
-            Across generations, competition has taken many forms. The
-            settings have changed, the rules have evolved, and the
-            expectations surrounding performance have grown. Yet the central
-            idea remains recognisable: individuals and teams enter a contest
-            to prove what they can do when the outcome matters.
+            The forms have changed throughout history. The settings, rules
+            and expectations have evolved, but competition continues to
+            place individuals and teams before a test in which performance
+            matters and an outcome must be determined.
           </p>
 
           <p>
-            Modern sport developed structures that brought order, recognition
-            and consistency to competition. Rules, governing bodies and
-            established formats helped create the sporting landscape known
-            around the world today.
+            Modern sport developed established structures that brought
+            organisation, consistency and international recognition to
+            competition. Those structures became a defining part of the
+            sporting world.
           </p>
 
-          <figure class="editorial-image">
-            <!-- Add an image URL to src when ready. -->
-            <img src="" alt="">
-            <div class="inline-image-placeholder">
-              Editorial photograph placement
-            </div>
+          <figure class="article-photo">
+            <img
+              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=85"
+              alt="Stadium setting for organised sporting competition"
+              loading="lazy"
+            >
             <figcaption>
-              Editorial image · Add your own caption and credit
+              Sport has developed across eras, places and generations.
             </figcaption>
           </figure>
 
@@ -1108,126 +1092,129 @@
           </p>
 
           <p>
-            The forms of competition differed from one civilisation to
-            another. What connects these periods is the enduring human
-            desire to test ability, confront difficulty and distinguish
-            performance under pressure.
+            Ancient civilisations developed their own traditions of physical
+            contests. The settings and practices differed, but competition
+            offered a way to demonstrate ability and confront a test in
+            front of others.
           </p>
+
+          <figure class="article-photo">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruins_of_Olympia,_Greece,_Stadium.jpg"
+              alt="Historical remains of the ancient stadium at Olympia"
+              loading="lazy"
+            >
+            <figcaption>
+              Ancient Olympia, Greece — a historic setting associated with
+              the development of organised athletic competition.
+            </figcaption>
+          </figure>
 
           <p>
-            From ancient contests to organised modern sport, competition has
-            continued to change. Each era has brought its own expectations,
-            structures and interpretations of what a contest can represent.
+            From ancient contests to modern international sport, the history
+            of competition reflects a continuing evolution in how people
+            organise, perform and measure sporting achievement.
           </p>
 
-          <blockquote class="pull-quote">
-            The history of competition is not only a history of games. It is
-            also a history of how people choose to test themselves.
-            <span>PHRINUSOMYIS™ Magazine</span>
+          <blockquote class="pullquote">
+            Competition is not confined to one era. Its history continues
+            wherever people create a contest and step forward to meet it.
+            <cite>PHRINUSOMYIS™ Magazine</cite>
           </blockquote>
 
           <h2 id="present">Returning to the Present</h2>
 
           <p>
-            Today's sporting landscape contains established disciplines,
-            international competitions and familiar structures. It also
-            leaves room for original formats and different ways to organise
-            a contest.
+            Today's sporting landscape includes established disciplines,
+            international competitions and familiar governing structures.
+            It also leaves room for original formats and different ways to
+            organise a sporting contest.
           </p>
 
           <p>
             PHRINUSOMYIS™ is an international sports organization that
-            develops, owns and administers sports competitions and Sports
-            Theater™ worldwide. It creates original sports formats that
-            break away from traditional sports structures.
+            develops, owns and administers sports competitions and
+            Sports Theater™ worldwide. It creates original sports formats
+            that break away from traditional sports structures.
           </p>
 
-          <figure class="editorial-image">
-            <!-- Add an image URL to src when ready. -->
-            <img src="" alt="">
-            <div class="inline-image-placeholder">
-              PHRINUSOMYIS editorial image placement
-            </div>
+          <figure class="article-photo">
+            <img
+              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=85"
+              alt="Athletes racing on a track"
+              loading="lazy"
+            >
             <figcaption>
-              PHRINUSOMYIS™ · Add your own caption and credit
+              Performance under pressure remains central to competitive sport.
             </figcaption>
           </figure>
 
           <h2 id="direction">A Different Direction</h2>
 
           <p>
-            The PHRINUSOMYIS™ approach centres on original sports formats
-            and the development of competitions with their own identity.
-            Sports Theater™ forms part of that direction, providing the
-            concept through which its sporting ideas are presented.
+            PHRINUSOMYIS™ develops original competitions with their own
+            identity. Sports Theater™ is part of this sporting direction,
+            providing the concept through which its sporting ideas are
+            presented.
           </p>
 
           <p>
             SOUL SURVIVE™ is a competition within the Sports Theater™
-            concept. Its central themes include will, resolve, endurance,
-            discipline and performance under pressure.
+            concept. Its themes include will, resolve, endurance, discipline
+            and performance under pressure.
           </p>
 
           <p>
-            The broader idea is that competition can be expressed through
-            more than one familiar structure. Different formats can place
-            different demands on competitors while retaining the essential
-            significance of performance and outcome.
+            Different formats can create different demands on competitors.
+            Each contest has its own purpose, structure and outcome, while
+            retaining the central significance of performance.
           </p>
 
           <h2 id="next-chapter">The Next Chapter</h2>
 
           <p>
-            The evolution of sport has never belonged to a single moment in
-            history. It has been shaped over time by people who created
-            contests, established rules and introduced new ways to measure
-            performance.
+            The evolution of sport has been shaped over time by people who
+            created contests, developed rules and introduced new ways to
+            measure performance.
           </p>
 
           <p>
-            PHRINUSOMYIS™ represents its own direction within that continuing
-            story: an international sports organization developing and
-            administering original competitions and Sports Theater™
-            worldwide.
+            PHRINUSOMYIS™ develops and administers its own sporting
+            competitions and Sports Theater™ worldwide. Its work forms part
+            of the continuing story of competitive sport and original
+            sporting formats.
           </p>
 
           <p>
-            The history of competition has already travelled thousands of
-            years. Its next chapter will be defined by the formats people
-            choose to create, the competitors who enter them and the
-            performances that follow.
+            The history of competition stretches back thousands of years.
+            Its continuing story will be written through the formats people
+            create, the competitors who enter them and the performances
+            that follow.
           </p>
-
-          <!-- Insert the exact original closing paragraph from Newswire here
-               if it differs from the text above. -->
 
         </div>
 
-        <!-- OFFICIAL NEWSWIRE LINK -->
+        <!-- NEWSWIRE LINK -->
 
-        <section class="newswire-callout" id="official-newswire">
-          <p class="eyebrow">Official Newswire Publication</p>
-          <h3>Read the Newswire Version</h3>
+        <section class="newswire-panel" id="official-newswire">
+          <p class="eyebrow gold">Official Newswire</p>
+
+          <h3>Read the Newswire Edition</h3>
+
           <p>
-            Visit the official PHRINUSOMYIS™ Newswire publication of this
-            feature.
+            Read the corresponding publication on the official
+            PHRINUSOMYIS™ Newswire.
           </p>
-          <a
-            class="text-link"
-            href="https://phrinusomyis.com/newsroom/newswire.html"
-          >
-            Read on Newswire ↗
+
+          <a href="https://phrinusomyis.com/newsroom/newswire.html">
+            Visit Official Newswire ↗
           </a>
         </section>
 
-        <section class="end-panel">
-          <p class="eyebrow">PHRINUSOMYIS™ Magazine</p>
-          <div class="section-rule" style="margin-left:auto;margin-right:auto;"></div>
-          <p class="end-title">THE STANDARD</p>
-          <p>
-            International sports. Original competitions. A different
-            direction for competitive sport.
-          </p>
+        <section class="closing-panel">
+          <p class="eyebrow gold">PHRINUSOMYIS™</p>
+          <h3>Commanding the World Stage™</h3>
+          <p>Official Magazine · Competitive Sport · Original Sports Formats</p>
         </section>
 
       </article>
@@ -1237,20 +1224,20 @@
       <aside class="sidebar">
 
         <section class="sidebar-block" id="contents">
-          <h3 class="sidebar-heading">In This Feature</h3>
+          <h3 class="sidebar-heading">Contents</h3>
 
-          <ol class="contents-list">
+          <ol class="contents">
             <li><a href="#cover">The Cover Story</a></li>
             <li><a href="#history">Travel Back to 3000 BC</a></li>
             <li><a href="#present">Returning to the Present</a></li>
             <li><a href="#direction">A Different Direction</a></li>
             <li><a href="#next-chapter">The Next Chapter</a></li>
-            <li><a href="#official-newswire">Official Newswire Version</a></li>
+            <li><a href="#official-newswire">Newswire Edition</a></li>
           </ol>
         </section>
 
         <section class="sidebar-block">
-          <h3 class="sidebar-heading">About PHRINUSOMYIS™</h3>
+          <h3 class="sidebar-heading">The Organization</h3>
 
           <p class="sidebar-copy">
             PHRINUSOMYIS™ is an international sports organization that
@@ -1258,7 +1245,7 @@
             Sports Theater™ worldwide.
           </p>
 
-          <a class="sidebar-cta" href="https://phrinusomyis.com/">
+          <a class="sidebar-button" href="https://phrinusomyis.com/">
             Official Website
           </a>
         </section>
@@ -1266,97 +1253,132 @@
         <section class="sidebar-block">
           <h3 class="sidebar-heading">Share This Feature</h3>
 
-          <div class="share-buttons">
-            <button class="share-button" id="share-button" type="button">
-              Share
-            </button>
-            <button class="share-button" id="copy-button" type="button">
-              Copy Link
-            </button>
-            <button class="share-button" id="facebook-button" type="button">
-              Facebook
-            </button>
-            <button class="share-button" id="linkedin-button" type="button">
-              LinkedIn
-            </button>
-            <button class="share-button" id="x-button" type="button">
-              X
-            </button>
-            <button class="share-button" id="print-button" type="button">
-              Print
-            </button>
+          <div class="share-grid">
+            <button type="button" id="share-native">Share</button>
+            <button type="button" id="share-copy">Copy Link</button>
+            <button type="button" id="share-facebook">Facebook</button>
+            <button type="button" id="share-x">X / Twitter</button>
+            <button type="button" id="share-linkedin">LinkedIn</button>
+            <button type="button" id="share-print">Print</button>
           </div>
 
-          <p id="share-status" class="sidebar-copy" aria-live="polite" style="margin-top:12px;"></p>
+          <p id="share-status" aria-live="polite"></p>
         </section>
 
         <section class="sidebar-block">
-          <h3 class="sidebar-heading">Official Publication</h3>
+          <h3 class="sidebar-heading">Also Published</h3>
+
           <p class="sidebar-copy">
-            This magazine feature is published by PHRINUSOMYIS™.
-            The official Newswire publication is available separately.
+            The official Newswire edition of this feature is available
+            through PHRINUSOMYIS™.
           </p>
-          <a class="text-link" href="https://phrinusomyis.com/newsroom/newswire.html">
-            Visit Newswire ↗
+
+          <a class="sidebar-button" href="https://phrinusomyis.com/newsroom/newswire.html">
+            Read Newswire ↗
           </a>
         </section>
 
       </aside>
 
     </div>
-
   </main>
 
-  <footer class="footer">
-    <div class="container">
+  <footer>
+    <div class="container footer-main">
 
-      <div class="footer-main">
-        <div>
-          <div class="footer-brand">PHRINUSOMYIS™</div>
-          <div class="footer-tagline">THE STANDARD</div>
-        </div>
-
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="https://phrinusomyis.com/">Official Website</a>
-          <a href="https://phrinusomyis.com/newsroom/newswire.html">Newswire</a>
-          <a href="#cover">Magazine Feature</a>
-          <a href="#top">Back to Top</a>
-        </nav>
+      <div>
+        <div class="footer-brand">PHRINUSOMYIS™</div>
+        <div class="footer-slogan">COMMANDING THE WORLD STAGE™</div>
       </div>
 
-      <div class="footer-bottom">
-        <span>© <span id="copyright-year"></span> PHRINUSOMYIS™. All rights reserved.</span>
-        <span>PHRINUSOMYIS™ Magazine · THE STANDARD</span>
-      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="https://phrinusomyis.com/">Home</a>
+        <a href="https://phrinusomyis.com/newsroom/newswire.html">Newswire</a>
+        <a href="#cover">Magazine</a>
+        <a href="#top">Back to Top ↑</a>
+      </nav>
 
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> PHRINUSOMYIS™. All rights reserved.</span>
+      <span>PHRINUSOMYIS™ Magazine · Official Publication</span>
     </div>
   </footer>
 
-  <a class="back-to-top" id="back-to-top" href="#top" aria-label="Back to top">
-    ↑
-  </a>
+  <a class="back-top" id="back-top" href="#top" aria-label="Back to top">↑</a>
 
   <script>
     (() => {
       "use strict";
 
+      /* ROTATING COVER IMAGES */
+
+      const slides = Array.from(document.querySelectorAll(".cover-slide"));
+      const dots = Array.from(document.querySelectorAll(".slide-dot"));
+      const coverPhoto = document.querySelector(".cover-photo");
+
+      let currentSlide = 0;
+      let rotationTimer;
+
+      function showSlide(index) {
+        if (!slides.length) return;
+
+        currentSlide = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === currentSlide);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentSlide);
+        });
+      }
+
+      function startRotation() {
+        clearInterval(rotationTimer);
+
+        rotationTimer = setInterval(() => {
+          showSlide(currentSlide + 1);
+        }, 6000);
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          showSlide(Number(dot.dataset.slide));
+          startRotation();
+        });
+      });
+
+      coverPhoto?.addEventListener("mouseenter", () => {
+        clearInterval(rotationTimer);
+      });
+
+      coverPhoto?.addEventListener("mouseleave", startRotation);
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          clearInterval(rotationTimer);
+        } else {
+          startRotation();
+        }
+      });
+
+      startRotation();
+
+      /* SHARE, COPY AND PRINT */
+
+      const status = document.getElementById("share-status");
       const pageUrl = window.location.href;
       const pageTitle =
         document.querySelector(".article-title")?.textContent.trim() ||
         document.title;
 
-      const status = document.getElementById("share-status");
-      const copyButton = document.getElementById("copy-button");
-      const shareButton = document.getElementById("share-button");
-
-      document.getElementById("copyright-year").textContent =
-        new Date().getFullYear();
-
-      function setStatus(message) {
+      function showStatus(message) {
         if (status) status.textContent = message;
       }
 
-      async function copyPageLink() {
+      async function copyLink() {
         try {
           if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(pageUrl);
@@ -1364,79 +1386,84 @@
             const field = document.createElement("textarea");
             field.value = pageUrl;
             field.style.position = "fixed";
-            field.style.opacity = "0";
+            field.style.left = "-9999px";
             document.body.appendChild(field);
             field.select();
 
-            const copied = document.execCommand("copy");
+            const successful = document.execCommand("copy");
             field.remove();
 
-            if (!copied) throw new Error("Copy command failed");
+            if (!successful) throw new Error("Copy unavailable");
           }
 
-          setStatus("Link copied.");
+          showStatus("Link copied.");
         } catch (error) {
-          setStatus("Copy was unavailable. Copy the page address from your browser.");
+          showStatus("Copy unavailable. Copy the page address from your browser.");
         }
       }
 
-      copyButton?.addEventListener("click", copyPageLink);
+      document.getElementById("share-copy")?.addEventListener("click", copyLink);
 
-      shareButton?.addEventListener("click", async () => {
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: pageTitle,
-              text: "Read this feature from PHRINUSOMYIS™ Magazine.",
-              url: pageUrl
-            });
-            setStatus("");
-          } catch (error) {
-            if (error.name !== "AbortError") {
-              setStatus("Sharing was unavailable. Use one of the sharing options.");
-            }
+      document.getElementById("share-native")?.addEventListener("click", async () => {
+        if (!navigator.share) {
+          await copyLink();
+          return;
+        }
+
+        try {
+          await navigator.share({
+            title: pageTitle,
+            text: "Read this feature from PHRINUSOMYIS™ Magazine.",
+            url: pageUrl
+          });
+
+          showStatus("");
+        } catch (error) {
+          if (error.name !== "AbortError") {
+            showStatus("Sharing was unavailable.");
           }
-        } else {
-          await copyPageLink();
         }
       });
 
-      document.getElementById("facebook-button")?.addEventListener("click", () => {
-        const url =
-          "https://www.facebook.com/sharer/sharer.php?u=" +
+      document.getElementById("share-facebook")?.addEventListener("click", () => {
+        const url = "https://www.facebook.com/sharer/sharer.php?u=" +
           encodeURIComponent(pageUrl);
+
         window.open(url, "_blank", "noopener,noreferrer");
       });
 
-      document.getElementById("linkedin-button")?.addEventListener("click", () => {
-        const url =
-          "https://www.linkedin.com/sharing/share-offsite/?url=" +
-          encodeURIComponent(pageUrl);
-        window.open(url, "_blank", "noopener,noreferrer");
-      });
-
-      document.getElementById("x-button")?.addEventListener("click", () => {
-        const url =
-          "https://twitter.com/intent/tweet?url=" +
+      document.getElementById("share-x")?.addEventListener("click", () => {
+        const url = "https://twitter.com/intent/tweet?url=" +
           encodeURIComponent(pageUrl) +
-          "&text=" +
-          encodeURIComponent(pageTitle);
+          "&text=" + encodeURIComponent(pageTitle);
+
         window.open(url, "_blank", "noopener,noreferrer");
       });
 
-      document.getElementById("print-button")?.addEventListener("click", () => {
+      document.getElementById("share-linkedin")?.addEventListener("click", () => {
+        const url = "https://www.linkedin.com/sharing/share-offsite/?url=" +
+          encodeURIComponent(pageUrl);
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+
+      document.getElementById("share-print")?.addEventListener("click", () => {
         window.print();
       });
 
-      const topButton = document.getElementById("back-to-top");
+      /* CURRENT YEAR */
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+      /* BACK-TO-TOP BUTTON */
+
+      const backTop = document.getElementById("back-top");
 
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 450) {
-          topButton?.classList.add("visible");
-        } else {
-          topButton?.classList.remove("visible");
-        }
+        backTop?.classList.toggle("visible", window.scrollY > 400);
       }, { passive: true });
+
     })();
   </script>
 
