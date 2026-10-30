@@ -438,19 +438,27 @@
   </script>
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+/* =========================================================
+   PHRINUSOMYIS™ — WEBSITE DESIGN SYSTEM
+   Continuation after existing structured-data schema
+========================================================= */
 
 :root {
-  --white: #ffffff;
-  --black: #101010;
-  --dark: #171717;
-  --grey: #666666;
-  --light-grey: #f5f5f3;
-  --border: #e8e8e5;
-  --gold: #b99a55;
-  --gold-light: #d7bd7d;
-  --max-width: 1240px;
-  --header-height: 82px;
+  --stone: #EAE7DF;
+  --ivory: #F3F0E9;
+  --ivory-deep: #E4E0D7;
+  --charcoal: #242522;
+  --charcoal-soft: #30312D;
+  --bronze: #A78A51;
+  --bronze-light: #C2A878;
+  --white: #FFFFFF;
+  --text: #292A26;
+  --muted: #77776F;
+  --border: rgba(36, 37, 34, .13);
+  --shadow: 0 18px 55px rgba(36, 37, 34, .09);
+  --container: 1240px;
+  --radius: 5px;
+  --transition: .3s ease;
 }
 
 * {
@@ -465,24 +473,15 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  color: var(--black);
-  background: var(--white);
+  background: var(--stone);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.65;
   overflow-x: hidden;
 }
 
-body, button, input, select, textarea {
-  font-family: 'DM Sans', sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
+body.nav-open {
+  overflow: hidden;
 }
 
 img {
@@ -490,53 +489,58 @@ img {
   max-width: 100%;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
 .container {
-  width: min(92%, var(--max-width));
-  margin: 0 auto;
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
 }
 
 .section {
   padding: 105px 0;
 }
 
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 19px;
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
-}
-
-.section-label::before {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-}
-
 .section-heading {
-  max-width: 800px;
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(32px, 4.5vw, 55px);
+  max-width: 760px;
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--bronze);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.35rem);
   line-height: 1.12;
-  font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -.045em;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.section-description {
+.section-heading p {
   max-width: 680px;
-  margin-top: 22px;
-  color: var(--grey);
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-.gold-text {
-  color: var(--gold);
+  color: var(--muted);
+  font-size: 1.02rem;
 }
 
 .btn {
@@ -544,126 +548,110 @@ img {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-height: 52px;
-  padding: 0 25px;
-  border: 1px solid var(--black);
-  background: var(--black);
-  color: var(--white);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: .7px;
+  min-height: 49px;
+  padding: 13px 23px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .09em;
   text-transform: uppercase;
-  transition: .25s ease;
+  transition: var(--transition);
 }
 
-.btn:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--black);
-  transform: translateY(-2px);
+.btn-dark {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background: var(--bronze);
+  color: var(--charcoal);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--black);
+  border-color: rgba(255,255,255,.55);
+  color: var(--white);
 }
 
 .btn-outline:hover {
-  color: var(--black);
+  background: var(--ivory);
+  color: var(--charcoal);
 }
 
-.btn-light {
-  background: var(--white);
-  color: var(--black);
-  border-color: var(--white);
+.btn-bronze {
+  background: var(--bronze);
+  color: var(--charcoal);
 }
 
-.btn-light:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
+.btn-bronze:hover {
+  background: var(--bronze-light);
 }
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
-  height: var(--header-height);
-  background: rgba(255,255,255,.97);
+  background: rgba(243, 240, 233, .96);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
 }
 
 .header-inner {
-  width: min(94%, 1380px);
-  height: 100%;
-  margin: auto;
+  min-height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 30px;
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   flex-shrink: 0;
-  gap: 12px;
 }
 
 .brand img {
-  width: 53px;
-  height: 53px;
+  width: 190px;
+  height: auto;
+  max-height: 58px;
   object-fit: contain;
 }
 
-.brand-name {
-  font-family: 'Manrope', sans-serif;
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: -.5px;
-}
-
-.brand-name span {
-  display: block;
-  color: var(--gold);
-  font-size: 9px;
-  letter-spacing: 2.5px;
-  font-weight: 700;
-}
-
-.main-nav {
+.desktop-nav {
   display: flex;
   align-items: center;
-  gap: 27px;
+  gap: 25px;
 }
 
-.main-nav a {
+.desktop-nav a {
   position: relative;
-  color: #292929;
-  font-size: 12px;
+  color: var(--charcoal);
+  font-size: .75rem;
   font-weight: 700;
-  transition: color .2s ease;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--transition);
 }
 
-.main-nav a:hover {
-  color: var(--gold);
-}
-
-.main-nav a::after {
+.desktop-nav a::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -8px;
+  left: 0;
   width: 0;
   height: 2px;
-  background: var(--gold);
-  transition: width .2s ease;
+  background: var(--bronze);
+  transition: var(--transition);
 }
 
-.main-nav a:hover::after {
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
   width: 100%;
 }
 
@@ -674,177 +662,220 @@ img {
 }
 
 .language-select {
-  max-width: 112px;
-  padding: 9px 8px;
+  background: transparent;
   border: 1px solid var(--border);
-  background: var(--white);
-  color: var(--black);
-  font-size: 11px;
-  font-weight: 700;
-  outline: none;
+  color: var(--charcoal);
+  padding: 8px 9px;
+  font-size: .75rem;
+  border-radius: 2px;
 }
 
 .menu-toggle {
   display: none;
-  width: 44px;
-  height: 44px;
+  width: 43px;
+  height: 43px;
+  background: transparent;
   border: 1px solid var(--border);
-  background: var(--white);
-  color: var(--black);
-  font-size: 23px;
+  color: var(--charcoal);
+  font-size: 1.4rem;
 }
 
-/* HERO */
+.mobile-nav {
+  display: none;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
   position: relative;
-  min-height: 680px;
+  min-height: 690px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--dark);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(27, 29, 27, .94) 0%,
+      rgba(27, 29, 27, .76) 48%,
+      rgba(27, 29, 27, .30) 100%
+    ),
+    url("https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG")
+    center/cover no-repeat;
   color: var(--white);
 }
 
-.hero-image {
+.hero::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: .47;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg,
-    rgba(0,0,0,.91) 0%,
-    rgba(0,0,0,.73) 48%,
-    rgba(0,0,0,.25) 100%);
+  inset: auto 0 0;
+  height: 130px;
+  background: linear-gradient(transparent, rgba(20,21,19,.28));
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(92%, var(--max-width));
-  margin: auto;
-  padding: 110px 0;
+  width: min(850px, 100%);
+  padding: 105px 0 125px;
 }
 
-.hero-kicker {
-  color: var(--gold-light);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 3px;
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--bronze-light);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
+}
+
+.hero-label::before {
+  content: "";
+  width: 37px;
+  height: 1px;
+  background: var(--bronze-light);
 }
 
 .hero h1 {
   max-width: 850px;
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(44px, 7.5vw, 88px);
-  line-height: 1.02;
-  letter-spacing: -4px;
+  font-size: clamp(2.8rem, 7.3vw, 6.1rem);
+  line-height: .99;
+  letter-spacing: -.055em;
   font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 29px;
 }
 
 .hero h1 span {
-  color: var(--gold-light);
+  color: var(--bronze-light);
 }
 
 .hero-description {
-  max-width: 620px;
-  margin-top: 28px;
-  color: rgba(255,255,255,.83);
-  font-size: 18px;
-  line-height: 1.8;
+  max-width: 650px;
+  color: rgba(255,255,255,.85);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.85;
+  margin-bottom: 34px;
 }
 
-.hero-buttons {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 38px;
+  gap: 13px;
 }
 
-/* ORGANIZATION */
-
-.organization-section {
-  background: var(--white);
+.hero-bottom {
+  position: absolute;
+  z-index: 3;
+  bottom: 29px;
+  left: 0;
+  right: 0;
 }
 
-.organization-grid {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
+.hero-bottom-inner {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-bottom p {
+  color: rgba(255,255,255,.72);
+  font-size: .72rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.hero-scroll {
+  color: var(--bronze-light);
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ORGANIZATION IDENTITY
+========================================================= */
+
+.identity-section {
+  background: var(--ivory);
+}
+
+.identity-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
   gap: 75px;
+  align-items: center;
 }
 
-.organization-image {
+.identity-copy h2 {
+  font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  margin-bottom: 26px;
+}
+
+.identity-copy p {
+  color: var(--muted);
+  margin-bottom: 19px;
+  max-width: 650px;
+}
+
+.identity-image {
   position: relative;
-  min-height: 480px;
+  min-height: 490px;
   overflow: hidden;
-  background: var(--light-grey);
+  background: var(--charcoal);
 }
 
-.organization-image img {
+.identity-image img {
   width: 100%;
-  height: 480px;
+  height: 490px;
   object-fit: cover;
 }
 
-.organization-image::after {
+.identity-image::after {
   content: "";
   position: absolute;
-  inset: 0;
-  border: 12px solid rgba(185,154,85,.12);
-  pointer-events: none;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.4));
 }
 
-.organization-copy p {
-  margin-top: 20px;
-  color: var(--grey);
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.organization-copy .btn {
-  margin-top: 30px;
-}
-
-/* DARK STATEMENT */
+/* =========================================================
+   STATEMENT BAND
+========================================================= */
 
 .statement-band {
-  padding: 90px 0;
-  background: var(--black);
-  color: var(--white);
+  background: var(--charcoal);
+  color: var(--ivory);
+  padding: 76px 0;
   text-align: center;
 }
 
-.statement-band h2 {
-  max-width: 950px;
-  margin: auto;
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(30px, 5vw, 58px);
-  font-weight: 800;
-  line-height: 1.18;
-  letter-spacing: -2px;
-}
-
 .statement-band p {
-  max-width: 680px;
-  margin: 25px auto 0;
-  color: rgba(255,255,255,.7);
-  font-size: 16px;
+  max-width: 970px;
+  margin: auto;
+  font-size: clamp(1.6rem, 3.7vw, 3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.035em;
 }
 
-/* SPORTS THEATER */
+.statement-band span {
+  color: var(--bronze-light);
+}
+
+/* =========================================================
+   SPORTS THEATER
+========================================================= */
 
 .theater-section {
-  background: var(--light-grey);
+  background: var(--stone);
 }
 
 .theater-grid {
@@ -855,337 +886,454 @@ img {
 }
 
 .theater-image {
-  height: 490px;
+  min-height: 480px;
   overflow: hidden;
+  background: var(--charcoal);
 }
 
 .theater-image img {
   width: 100%;
-  height: 100%;
+  height: 480px;
   object-fit: cover;
 }
 
+.theater-copy h2 {
+  font-size: clamp(2.2rem, 4.2vw, 3.7rem);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  margin-bottom: 24px;
+}
+
 .theater-copy p {
-  margin-top: 22px;
-  color: var(--grey);
-  font-size: 16px;
-  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 18px;
 }
 
-.theater-copy .btn {
-  margin-top: 30px;
-}
-
-/* ORIGINAL FORMATS */
+/* =========================================================
+   ORIGINAL SPORTING FORMATS
+========================================================= */
 
 .formats-section {
-  background: var(--white);
+  background: var(--ivory);
 }
 
 .formats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-  margin-top: 48px;
 }
 
 .format-card {
-  min-height: 260px;
-  padding: 35px 30px;
+  min-height: 310px;
+  padding: 34px 29px;
+  background: var(--stone);
   border: 1px solid var(--border);
-  background: var(--white);
-  transition: .25s ease;
+  transition: var(--transition);
 }
 
 .format-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,.06);
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+  border-color: var(--bronze);
 }
 
 .format-number {
-  color: var(--gold);
-  font-family: 'Manrope', sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  display: block;
+  color: var(--bronze);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  margin-bottom: 40px;
 }
 
 .format-card h3 {
-  margin-top: 27px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.3;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin-bottom: 15px;
 }
 
 .format-card p {
-  margin-top: 13px;
-  color: var(--grey);
-  font-size: 14px;
-  line-height: 1.8;
+  color: var(--muted);
+  font-size: .94rem;
 }
 
-/* SOUL SURVIVE */
+/* =========================================================
+   SOUL SURVIVE
+========================================================= */
 
 .soul-section {
   position: relative;
+  background:
+    linear-gradient(rgba(28,29,27,.88), rgba(28,29,27,.91)),
+    url("https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg")
+    center/cover no-repeat;
+  color: var(--ivory);
   padding: 115px 0;
-  overflow: hidden;
-  background: #111;
-  color: var(--white);
-}
-
-.soul-background {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .19;
 }
 
 .soul-content {
-  position: relative;
-  z-index: 2;
-  max-width: 850px;
+  max-width: 790px;
 }
 
-.soul-content .section-heading {
-  color: var(--white);
+.soul-content h2 {
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  margin-bottom: 25px;
+}
+
+.soul-content h2 span {
+  color: var(--bronze-light);
 }
 
 .soul-content p {
-  max-width: 690px;
-  margin-top: 24px;
-  color: rgba(255,255,255,.75);
-  font-size: 17px;
-  line-height: 1.9;
+  max-width: 680px;
+  color: rgba(255,255,255,.78);
+  font-size: 1.05rem;
+  margin-bottom: 30px;
 }
 
-.soul-content .btn {
-  margin-top: 35px;
+/* =========================================================
+   COMPETITION CAROUSEL
+========================================================= */
+
+.competition-section {
+  background: var(--stone);
 }
 
-/* CAROUSEL */
-
-.carousel-section {
-  background: var(--light-grey);
+.carousel-shell {
+  position: relative;
+  overflow: hidden;
 }
 
-.carousel-heading {
+.competition-track {
   display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 30px;
+  gap: 22px;
+  transition: transform .55s ease;
+  will-change: transform;
+}
+
+.competition-card {
+  flex: 0 0 calc((100% - 44px) / 3);
+  min-width: 0;
+  background: var(--ivory);
+  border: 1px solid var(--border);
+}
+
+.competition-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.competition-card-content {
+  padding: 24px;
+}
+
+.competition-card-content small {
+  display: block;
+  color: var(--bronze);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+}
+
+.competition-card-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.competition-card-content p {
+  color: var(--muted);
+  font-size: .9rem;
 }
 
 .carousel-controls {
   display: flex;
+  justify-content: flex-end;
   gap: 10px;
-  flex-shrink: 0;
+  margin-top: 25px;
 }
 
-.carousel-button {
-  width: 48px;
-  height: 48px;
-  border: 1px solid #d6d6d2;
-  background: var(--white);
-  color: var(--black);
-  font-size: 21px;
-  transition: .2s ease;
+.carousel-controls button {
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--border);
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-size: 1.15rem;
+  transition: var(--transition);
 }
 
-.carousel-button:hover {
-  background: var(--black);
+.carousel-controls button:hover {
+  background: var(--charcoal);
   color: var(--white);
-  border-color: var(--black);
 }
 
-.carousel-window {
-  margin-top: 45px;
-  overflow: hidden;
+/* =========================================================
+   NEWSROOM
+========================================================= */
+
+.news-section {
+  background: var(--ivory);
 }
 
-.carousel-track {
-  display: flex;
-  gap: 22px;
-  transition: transform .55s cubic-bezier(.22,.61,.36,1);
-  will-change: transform;
-}
-
-.carousel-card {
-  flex: 0 0 calc((100% - 44px) / 3);
-  min-width: 0;
-  background: var(--white);
-  border: 1px solid var(--border);
-}
-
-.carousel-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-
-.carousel-card-content {
-  padding: 26px;
-}
-
-.carousel-card-content span {
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.7px;
-  text-transform: uppercase;
-}
-
-.carousel-card-content h3 {
-  margin-top: 12px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 21px;
-  line-height: 1.35;
-  font-weight: 800;
-}
-
-.carousel-card-content p {
-  margin-top: 12px;
-  color: var(--grey);
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 32px;
-}
-
-.carousel-dot {
-  width: 8px;
-  height: 8px;
-  border: none;
-  border-radius: 50%;
-  background: #c7c7c3;
-  transition: .2s ease;
-}
-
-.carousel-dot.active {
-  width: 25px;
-  border-radius: 8px;
-  background: var(--gold);
-}
-
-/* EDITORIAL */
-
-.editorial-section {
-  background: var(--white);
-}
-
-.editorial-grid {
+.news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 23px;
-  margin-top: 45px;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 25px;
 }
 
-.editorial-card {
-  border: 1px solid var(--border);
-  background: var(--white);
-  transition: .25s ease;
+.news-feature {
+  background: var(--stone);
 }
 
-.editorial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,.06);
-}
-
-.editorial-card img {
+.news-feature img {
   width: 100%;
-  height: 230px;
+  height: 370px;
   object-fit: cover;
 }
 
-.editorial-card-content {
-  padding: 27px;
+.news-feature-content {
+  padding: 30px;
 }
 
-.editorial-card-content span {
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.6px;
+.news-feature-content small,
+.news-item small {
+  color: var(--bronze);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
   text-transform: uppercase;
 }
 
-.editorial-card h3 {
-  margin-top: 12px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 23px;
-  line-height: 1.3;
-  font-weight: 800;
+.news-feature-content h3 {
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1.2;
+  margin: 13px 0;
 }
 
-.editorial-card p {
-  margin-top: 12px;
-  color: var(--grey);
-  font-size: 14px;
-  line-height: 1.8;
+.news-feature-content p,
+.news-item p {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-item {
+  background: var(--stone);
+  padding: 25px;
+  border-left: 3px solid var(--bronze);
+}
+
+.news-item h3 {
+  font-size: 1.12rem;
+  line-height: 1.35;
+  margin: 9px 0;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 22px;
-  color: var(--black);
-  font-size: 12px;
-  font-weight: 800;
+  gap: 9px;
+  margin-top: 16px;
+  color: var(--charcoal);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .09em;
   text-transform: uppercase;
-  letter-spacing: .8px;
 }
 
 .text-link:hover {
-  color: var(--gold);
+  color: var(--bronze);
 }
 
-/* PROFILE STRIP */
+/* =========================================================
+   MAGAZINE
+========================================================= */
 
-.profile-strip {
-  padding: 65px 0;
-  background: var(--light-grey);
+.magazine-section {
+  background: var(--charcoal);
+  color: var(--ivory);
 }
 
-.profile-strip-inner {
-  display: flex;
-  justify-content: space-between;
+.magazine-section .section-heading p {
+  color: rgba(255,255,255,.65);
+}
+
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.magazine-card {
+  background: var(--charcoal-soft);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.magazine-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.magazine-card-content {
+  padding: 25px;
+}
+
+.magazine-card-content small {
+  color: var(--bronze-light);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.magazine-card-content h3 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin: 12px 0;
+}
+
+.magazine-card-content p {
+  color: rgba(255,255,255,.65);
+  font-size: .9rem;
+}
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.events-section {
+  background: var(--stone);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.event-card {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+}
+
+.event-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.event-card-content {
+  padding: 24px;
+}
+
+.event-card-content small {
+  color: var(--bronze);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.event-card-content h3 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+}
+
+.event-card-content p {
+  color: var(--muted);
+  font-size: .91rem;
+}
+
+/* =========================================================
+   DOWNLOAD CENTRE — ANDROID ONLY
+========================================================= */
+
+.download-section {
+  padding: 100px 0;
+  background: var(--ivory);
+}
+
+.download-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
   align-items: center;
-  gap: 35px;
+  padding: 55px;
+  background: var(--charcoal);
+  color: var(--ivory);
 }
 
-.profile-strip h2 {
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(26px, 3.5vw, 39px);
-  font-weight: 800;
-  line-height: 1.2;
+.download-copy {
+  max-width: 690px;
 }
 
-.profile-strip p {
-  max-width: 510px;
-  margin-top: 12px;
-  color: var(--grey);
-  font-size: 15px;
+.download-copy .eyebrow {
+  color: var(--bronze-light);
 }
 
-/* FAQ */
+.download-copy h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.08;
+  margin-bottom: 20px;
+  letter-spacing: -.04em;
+}
+
+.download-copy p {
+  color: rgba(255,255,255,.7);
+  margin-bottom: 25px;
+}
+
+.download-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.download-action .btn {
+  min-width: 230px;
+}
+
+.download-meta {
+  color: rgba(255,255,255,.58);
+  font-size: .76rem;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
 
 .faq-section {
-  background: var(--white);
+  background: var(--stone);
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 70px;
+}
+
+.faq-intro h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.faq-intro p {
+  color: var(--muted);
 }
 
 .faq-list {
-  max-width: 900px;
-  margin-top: 40px;
   border-top: 1px solid var(--border);
 }
 
@@ -1196,173 +1344,186 @@ img {
 .faq-question {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
-  padding: 24px 0;
-  border: none;
+  padding: 23px 0;
+  border: 0;
   background: transparent;
-  color: var(--black);
+  color: var(--charcoal);
   text-align: left;
-  font-family: 'Manrope', sans-serif;
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.faq-icon {
-  color: var(--gold);
-  font-size: 25px;
-  transition: transform .2s ease;
+.faq-question span:last-child {
+  color: var(--bronze);
+  font-size: 1.35rem;
+  transition: transform var(--transition);
 }
 
 .faq-answer {
   display: none;
-  max-width: 760px;
-  padding: 0 30px 25px 0;
-  color: var(--grey);
-  font-size: 15px;
-  line-height: 1.85;
+  padding: 0 35px 23px 0;
+  color: var(--muted);
+  font-size: .94rem;
 }
 
 .faq-item.open .faq-answer {
   display: block;
 }
 
-.faq-item.open .faq-icon {
+.faq-item.open .faq-question span:last-child {
   transform: rotate(45deg);
 }
 
-/* CONTACT */
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact-section {
-  padding: 105px 0;
-  background: var(--black);
-  color: var(--white);
+  background: var(--ivory);
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: .85fr 1.15fr;
   gap: 70px;
-  align-items: center;
 }
 
 .contact-copy h2 {
-  max-width: 680px;
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(35px, 5vw, 60px);
+  font-size: clamp(2rem, 4vw, 3.4rem);
   line-height: 1.1;
-  letter-spacing: -2px;
-}
-
-.contact-copy p {
-  max-width: 570px;
-  margin-top: 22px;
-  color: rgba(255,255,255,.7);
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.contact-details {
-  padding: 35px;
-  border: 1px solid rgba(255,255,255,.2);
-}
-
-.contact-details h3 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 22px;
-  margin-bottom: 18px;
-}
-
-.contact-details p {
-  color: rgba(255,255,255,.7);
-  font-size: 14px;
   margin-bottom: 22px;
 }
 
-.contact-details .btn {
-  width: 100%;
+.contact-copy p {
+  color: var(--muted);
+  margin-bottom: 18px;
 }
 
-/* FOOTER */
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 15px 16px;
+  background: var(--stone);
+  color: var(--charcoal);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--bronze);
+}
+
+.contact-form textarea {
+  min-height: 155px;
+  resize: vertical;
+}
+
+.form-status {
+  min-height: 22px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .site-footer {
+  background: #1D1E1B;
+  color: var(--ivory);
   padding: 70px 0 25px;
-  background: #0b0b0b;
-  color: var(--white);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.35fr .8fr .8fr .8fr;
   gap: 45px;
-  padding-bottom: 55px;
+  padding-bottom: 50px;
+}
+
+.footer-brand img {
+  width: 185px;
+  max-height: 65px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
-  max-width: 310px;
-  margin-top: 20px;
-  color: rgba(255,255,255,.6);
-  font-size: 13px;
-  line-height: 1.9;
+  max-width: 340px;
+  color: rgba(255,255,255,.58);
+  font-size: .9rem;
 }
 
-.footer-column h4 {
-  margin-bottom: 20px;
-  color: var(--gold-light);
-  font-size: 12px;
-  letter-spacing: 1.5px;
+.footer-column h3 {
+  color: var(--bronze-light);
+  font-size: .75rem;
+  letter-spacing: .15em;
   text-transform: uppercase;
+  margin-bottom: 19px;
 }
 
 .footer-column a {
   display: block;
-  width: fit-content;
-  margin-bottom: 13px;
-  color: rgba(255,255,255,.7);
-  font-size: 13px;
-  transition: color .2s ease;
+  color: rgba(255,255,255,.67);
+  font-size: .88rem;
+  margin-bottom: 11px;
+  transition: var(--transition);
 }
 
 .footer-column a:hover {
-  color: var(--gold-light);
+  color: var(--bronze-light);
 }
 
 .footer-bottom {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,.13);
-  color: rgba(255,255,255,.5);
-  font-size: 11px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.48);
+  font-size: .76rem;
 }
 
-.footer-bottom a {
-  color: rgba(255,255,255,.65);
-}
-
-.footer-bottom a:hover {
-  color: var(--gold-light);
-}
-
-/* BACK TO TOP */
+/* =========================================================
+   BACK TO TOP
+========================================================= */
 
 .back-to-top {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
   z-index: 900;
+  right: 24px;
+  bottom: 24px;
   width: 46px;
   height: 46px;
-  border: none;
-  background: var(--gold);
-  color: var(--black);
-  font-size: 21px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--bronze);
+  color: var(--charcoal);
+  font-size: 1.3rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: .25s ease;
+  transition: var(--transition);
 }
 
 .back-to-top.visible {
@@ -1371,264 +1532,229 @@ img {
   transform: translateY(0);
 }
 
-/* REVEAL EFFECT */
+/* =========================================================
+   REVEAL EFFECT
+========================================================= */
 
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(24px);
   transition: opacity .7s ease, transform .7s ease;
 }
 
-.reveal.revealed {
+.reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* GOOGLE TRANSLATE */
+/* =========================================================
+   GOOGLE TRANSLATE PRESENTATION
+   Translation remains browser-side unless a translation
+   API/backend is separately configured.
+========================================================= */
 
-#google_translate_element {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+.goog-te-gadget select {
+  max-width: 130px;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--charcoal);
 }
 
 .goog-te-banner-frame,
-.goog-te-menu-frame,
-#goog-gt-tt,
 .goog-te-balloon-frame,
-.goog-tooltip,
-.goog-tooltip:hover,
-.goog-text-highlight {
+#goog-gt-tt {
   display: none !important;
-  visibility: hidden !important;
 }
 
 body {
   top: 0 !important;
 }
 
-html {
-  margin-top: 0 !important;
-}
-
-body.translated-ltr,
-body.translated-rtl {
-  top: 0 !important;
-}
-
-.skiptranslate {
-  max-height: 0 !important;
-}
-
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
 
 @media (max-width: 1100px) {
-  .main-nav {
-    gap: 16px;
+  .desktop-nav {
+    gap: 15px;
   }
 
-  .main-nav a {
-    font-size: 11px;
+  .desktop-nav a {
+    font-size: .68rem;
   }
 
-  .header-inner {
-    width: 95%;
+  .identity-grid,
+  .theater-grid {
+    gap: 40px;
   }
 
-  .brand-name {
-    font-size: 14px;
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr 1fr;
   }
 }
 
 @media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
+  .desktop-nav,
+  .header-actions .language-select {
+    display: none;
   }
 
-  .main-nav {
-    position: absolute;
-    top: var(--header-height);
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 82px;
     left: 0;
     right: 0;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 15px 5% 25px;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 15px 25px rgba(0,0,0,.06);
-  }
-
-  .main-nav.open {
+    z-index: 999;
     display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 24px 25px;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    max-height: calc(100vh - 82px);
+    overflow-y: auto;
   }
 
-  .main-nav a {
+  .mobile-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav a {
     padding: 14px 0;
     border-bottom: 1px solid var(--border);
-    font-size: 13px;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
   }
 
-  .main-nav a::after {
-    display: none;
-  }
-
-  .organization-grid,
+  .identity-grid,
   .theater-grid,
+  .faq-layout,
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
 
-  .formats-grid,
-  .editorial-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .identity-image,
+  .identity-image img,
+  .theater-image,
+  .theater-image img {
+    min-height: 350px;
+    height: 350px;
   }
 
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .news-grid {
+    grid-template-columns: 1fr;
   }
 
-  .profile-strip-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .carousel-card {
+  .competition-card {
     flex-basis: calc((100% - 22px) / 2);
   }
 
-  .hero {
-    min-height: 620px;
+  .download-panel {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 600px) {
-  :root {
-    --header-height: 72px;
+@media (max-width: 650px) {
+  .container {
+    width: min(var(--container), calc(100% - 34px));
   }
 
   .section {
     padding: 75px 0;
   }
 
-  .brand img {
-    width: 43px;
-    height: 43px;
-  }
-
-  .brand-name {
-    font-size: 12px;
-  }
-
-  .brand-name span {
-    font-size: 8px;
-  }
-
   .header-inner {
-    gap: 8px;
+    min-height: 72px;
   }
 
-  .header-actions {
-    gap: 8px;
+  .brand img {
+    width: 155px;
   }
 
-  .language-select {
-    max-width: 85px;
-    font-size: 10px;
-    padding: 8px 4px;
-  }
-
-  .menu-toggle {
-    width: 40px;
-    height: 40px;
+  .mobile-nav {
+    top: 72px;
   }
 
   .hero {
-    min-height: 590px;
+    min-height: 650px;
+    background-position: 57% center;
   }
 
   .hero-content {
-    padding: 85px 0;
+    padding: 90px 0 110px;
   }
 
   .hero h1 {
-    font-size: clamp(40px, 12vw, 58px);
-    letter-spacing: -2.5px;
+    font-size: clamp(2.6rem, 13vw, 4.2rem);
   }
 
   .hero-description {
-    font-size: 15px;
+    font-size: .96rem;
   }
 
-  .hero-buttons {
+  .hero-bottom-inner {
+    align-items: flex-start;
     flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-  }
-
-  .section-heading {
-    letter-spacing: -1.2px;
-  }
-
-  .organization-image,
-  .organization-image img {
-    min-height: 320px;
-    height: 320px;
-  }
-
-  .theater-image {
-    height: 320px;
+    gap: 7px;
   }
 
   .formats-grid,
-  .editorial-grid {
+  .magazine-grid,
+  .events-grid {
     grid-template-columns: 1fr;
   }
 
-  .format-card {
-    min-height: auto;
-  }
-
-  .carousel-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .carousel-card {
+  .competition-card {
     flex-basis: 100%;
   }
 
-  .carousel-card img {
-    height: 220px;
+  .competition-card img {
+    height: 230px;
   }
 
-  .statement-band {
-    padding: 70px 0;
+  .news-feature img {
+    height: 250px;
   }
 
-  .soul-section {
-    padding: 80px 0;
+  .download-panel {
+    padding: 32px 23px;
   }
 
-  .contact-section {
-    padding: 75px 0;
+  .download-action {
+    width: 100%;
   }
 
-  .contact-details {
-    padding: 25px;
+  .download-action .btn {
+    width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 35px 20px;
+    gap: 32px 20px;
   }
 
   .footer-brand {
@@ -1636,7 +1762,23 @@ body.translated-rtl {
   }
 
   .footer-bottom {
+    align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 390px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 }
 
@@ -1660,249 +1802,258 @@ body.translated-rtl {
 
 <body>
 
-<div id="google_translate_element" aria-hidden="true"></div>
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
-<!-- HEADER -->
 <header class="site-header">
-  <div class="header-inner">
+  <div class="container header-inner">
 
-    <a href="/" class="brand" aria-label="PHRINUSOMYIS homepage">
+    <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
       <img
         src="https://phrinusomyis.com/phrinusomyis_logo.png"
-        alt="PHRINUSOMYIS logo"
-        onerror="this.style.display='none';"
+        alt="PHRINUSOMYIS"
       >
-      <div class="brand-name">
-        PHRINUSOMYIS™
-        <span>COMMANDING THE WORLD STAGE™</span>
-      </div>
     </a>
 
-    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-      <a href="/">Home</a>
-      <a href="/events">Competitions</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="/" class="active">Home</a>
+      <a href="/#organization">Organization</a>
+      <a href="/#sports-theater">Sports Theater</a>
       <a href="/news">News</a>
-      <a href="/press">Press</a>
       <a href="/magazine/news.html">Magazine</a>
-      <a href="/help">Help</a>
+      <a href="/events">Events</a>
+      <a href="/#download">Download</a>
       <a href="/#contact">Contact</a>
     </nav>
 
     <div class="header-actions">
-
-      <label for="languageSelect" class="notranslate" style="position:absolute;left:-9999px;">
-        Select language
-      </label>
-
-      <select
-        class="language-select"
-        id="languageSelect"
-        aria-label="Select language"
-      >
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-        <option value="es">Español</option>
-        <option value="de">Deutsch</option>
-        <option value="ar">العربية</option>
-        <option value="zh-CN">中文</option>
-        <option value="ru">Русский</option>
-        <option value="pt">Português</option>
-        <option value="ja">日本語</option>
-        <option value="ko">한국어</option>
-        <option value="it">Italiano</option>
-        <option value="nl">Nederlands</option>
-        <option value="tr">Türkçe</option>
-        <option value="hi">हिन्दी</option>
-        <option value="id">Bahasa Indonesia</option>
-        <option value="vi">Tiếng Việt</option>
-        <option value="th">ไทย</option>
-        <option value="pl">Polski</option>
-        <option value="sv">Svenska</option>
-        <option value="fi">Suomi</option>
-        <option value="da">Dansk</option>
-      </select>
+      <div id="google_translate_element"></div>
 
       <button
         class="menu-toggle"
         id="menuToggle"
-        aria-label="Open navigation"
+        aria-label="Open navigation menu"
         aria-expanded="false"
-        aria-controls="mainNav"
+        aria-controls="mobileNav"
       >
         ☰
       </button>
-
     </div>
+
   </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/#organization">Organization</a>
+    <a href="/#sports-theater">Sports Theater</a>
+    <a href="/news">News</a>
+    <a href="/magazine/news.html">Magazine</a>
+    <a href="/events">Events</a>
+    <a href="/#download">Android Application</a>
+    <a href="/#faq">Frequently Asked Questions</a>
+    <a href="/#contact">Contact</a>
+  </nav>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- =======================================================
+     HERO
+======================================================= -->
+
 <section class="hero">
-  <img
-    class="hero-image"
-    src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG"
-    alt="Sports arena and competition environment"
-  >
+  <div class="container">
+    <div class="hero-content reveal">
 
-  <div class="hero-overlay"></div>
+      <div class="hero-label">International Sports Organization</div>
 
-  <div class="hero-content">
-    <div class="hero-kicker">International Sports Organization</div>
+      <h1>
+        INTERNATIONAL SPORT.
+        <span>ORIGINAL COMPETITION.</span>
+      </h1>
 
-    <h1>
-      A Different Dimension of
-      <span>Competitive Sport.</span>
-    </h1>
+      <p class="hero-description">
+        PHRINUSOMYIS™ develops, owns and administers sporting
+        competitions and Sports Theater™ worldwide. Its original
+        sporting formats define a distinct competitive identity
+        beyond traditional sports structures.
+      </p>
 
-    <p class="hero-description">
-      PHRINUSOMYIS™ develops, owns and administers sports competitions
-      and Sports Theater™ worldwide, creating original formats that
-      break away from traditional sports structures.
-    </p>
+      <div class="hero-actions">
+        <a href="/#sports-theater" class="btn btn-bronze">
+          Explore Sports Theater
+        </a>
 
-    <div class="hero-buttons">
-      <a href="/events" class="btn btn-light">Explore Competitions →</a>
-      <a href="/press" class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,.65);">
-        Discover PHRINUSOMYIS
-      </a>
+        <a href="/news" class="btn btn-outline">
+          Official Newsroom
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="container hero-bottom-inner">
+      <p>COMMANDING THE WORLD STAGE™</p>
+      <a class="hero-scroll" href="/#organization">Discover PHRINUSOMYIS ↓</a>
     </div>
   </div>
 </section>
 
-<!-- ORGANIZATION -->
-<section class="section organization-section">
-  <div class="container organization-grid">
+<!-- =======================================================
+     ORGANIZATION
+======================================================= -->
 
-    <div class="organization-image reveal">
+<section class="section identity-section" id="organization">
+  <div class="container identity-grid">
+
+    <div class="identity-copy reveal">
+      <span class="eyebrow">The Organization</span>
+
+      <h2>
+        An International Sporting Organization.
+        A Distinct Competitive Identity.
+      </h2>
+
+      <p>
+        PHRINUSOMYIS™ is an international sports organization
+        that develops, owns and administers sports competitions
+        and Sports Theater™ worldwide.
+      </p>
+
+      <p>
+        The organization creates original sporting formats that
+        break away from traditional sports structures, with a
+        distinct approach to competition, performance and the
+        sporting experience.
+      </p>
+
+      <p>
+        Its activities encompass sporting competitions,
+        intellectual property, event administration and the
+        development of original sports concepts.
+      </p>
+
+      <a href="/press" class="btn btn-dark">
+        Organization Information
+      </a>
+    </div>
+
+    <div class="identity-image reveal">
       <img
-        src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg"
-        alt="Athletes in a competitive sporting environment"
+        src="https://tf.hu/images/2021/07/F%C3%B3kuszban_a_tervez%C3%A9s_%C3%A9s_a_vez%C3%A9ny%C3%ADr%C3%A1ny%C3%ADt%C3%A1s_sportl%C3%A9tes%C3%ADtm%C3%A9ny-%C3%BCzemeltet%C5%91_k%C3%A9pz%C3%A9s.jpg"
+        alt="Sporting venue and competition environment"
         loading="lazy"
       >
     </div>
 
-    <div class="organization-copy reveal">
-      <div class="section-label">The Organization</div>
-
-      <h2 class="section-heading">
-        Sport Beyond Traditional Structures.
-      </h2>
-
-      <p>
-        PHRINUSOMYIS™ is an international sports organization with
-        a distinct approach to competitive sport. It develops,
-        owns and administers original competitions and sporting
-        concepts across international markets.
-      </p>
-
-      <p>
-        Its work extends beyond conventional competition formats,
-        bringing together original sporting ideas, structured
-        contests and new expressions of competitive performance.
-      </p>
-
-      <a href="/press" class="btn">Discover the Organization →</a>
-    </div>
-
   </div>
 </section>
 
-<!-- STATEMENT -->
-<section class="statement-band">
-  <div class="container reveal">
-    <h2>
-      The world of sport is not limited to what has always existed.
-    </h2>
+<!-- =======================================================
+     STATEMENT
+======================================================= -->
 
-    <p>
-      New formats. New competitive experiences. A distinct
-      sporting identity.
+<section class="statement-band">
+  <div class="container">
+    <p class="reveal">
+      Sport is more than the contest.
+      It is the <span>standard of competition,</span>
+      the strength of performance and the character of the moment.
     </p>
   </div>
 </section>
 
-<!-- SPORTS THEATER -->
-<section class="section theater-section">
+<!-- =======================================================
+     SPORTS THEATER
+======================================================= -->
+
+<section class="section theater-section" id="sports-theater">
   <div class="container theater-grid">
-
-    <div class="theater-copy reveal">
-      <div class="section-label">A PHRINUSOMYIS™ Concept</div>
-
-      <h2 class="section-heading">
-        Introducing <span class="gold-text">Sports Theater™.</span>
-      </h2>
-
-      <p>
-        Sports Theater™ is the PHRINUSOMYIS™ concept through which
-        original competitive formats are presented within a
-        structured sporting environment.
-      </p>
-
-      <p>
-        It represents a different expression of competition,
-        bringing sporting performance and the live competitive
-        experience into one distinctive concept.
-      </p>
-
-      <a href="/events" class="btn">Explore Sports Theater →</a>
-    </div>
 
     <div class="theater-image reveal">
       <img
-        src="https://tf.hu/images/2021/07/F%C3%B3kuszban_a_tervez%C3%A9s_%C3%A9s_a_vez%C3%A9ny%C3%ADr%C3%A1ny%C3%ADt%C3%A1s_sportl%C3%A9tes%C3%ADtm%C3%A9ny-%C3%BCzemeltet%C5%91_k%C3%A9pz%C3%A9s.jpg"
-        alt="Indoor sports facility"
+        src="https://media.insidethegames.biz/media/image/273507/o/Humo2.JPG"
+        alt="International sporting competition environment"
         loading="lazy"
       >
+    </div>
+
+    <div class="theater-copy reveal">
+      <span class="eyebrow">Sports Theater™</span>
+
+      <h2>
+        The Sporting World Beyond Traditional Structures.
+      </h2>
+
+      <p>
+        Sports Theater™ is the PHRINUSOMYIS™ sporting concept
+        through which original competitive formats are developed
+        and presented.
+      </p>
+
+      <p>
+        It brings together competition, performance, endurance,
+        discipline and the human response to pressure within
+        distinctive sporting experiences.
+      </p>
+
+      <p>
+        Each competition carries its own identity while remaining
+        part of the wider PHRINUSOMYIS™ sporting world.
+      </p>
+
+      <a href="/events" class="btn btn-dark">
+        Explore Competitions
+      </a>
     </div>
 
   </div>
 </section>
 
-<!-- ORIGINAL FORMATS -->
+<!-- =======================================================
+     ORIGINAL FORMATS
+======================================================= -->
+
 <section class="section formats-section">
   <div class="container">
 
-    <div class="reveal">
-      <div class="section-label">Original Sporting Formats</div>
-
-      <h2 class="section-heading">
-        Different Formats. Distinct Competitive Experiences.
-      </h2>
-
-      <p class="section-description">
-        PHRINUSOMYIS™ creates and administers original sporting
-        formats, each with its own identity and competitive purpose.
+    <div class="section-heading reveal">
+      <span class="eyebrow">Original Sporting Formats</span>
+      <h2>Competition Beyond Conventional Boundaries.</h2>
+      <p>
+        PHRINUSOMYIS™ develops original sports formats with
+        distinct competitive identities and sporting experiences.
       </p>
     </div>
 
     <div class="formats-grid">
 
       <article class="format-card reveal">
-        <div class="format-number">01 / CONCEPT</div>
-        <h3>Sports Theater™</h3>
-        <p>
-          A distinctive sporting concept presenting original
-          competitions within a structured live environment.
-        </p>
-      </article>
-
-      <article class="format-card reveal">
-        <div class="format-number">02 / COMPETITION</div>
-        <h3>SOUL SURVIVE™</h3>
-        <p>
-          A competition centred on resolve, endurance, discipline
-          and performance under pressure.
-        </p>
-      </article>
-
-      <article class="format-card reveal">
-        <div class="format-number">03 / DEVELOPMENT</div>
+        <span class="format-number">01 / COMPETITION</span>
         <h3>Original Sports Formats</h3>
         <p>
-          The development and administration of original
-          competitive structures beyond traditional sports formats.
+          Distinct sporting formats developed and administered
+          within the PHRINUSOMYIS™ competitive landscape.
+        </p>
+      </article>
+
+      <article class="format-card reveal">
+        <span class="format-number">02 / PERFORMANCE</span>
+        <h3>Performance Under Pressure</h3>
+        <p>
+          Sporting experiences shaped by endurance, discipline,
+          resilience and the ability to perform under pressure.
+        </p>
+      </article>
+
+      <article class="format-card reveal">
+        <span class="format-number">03 / SPORTING IDENTITY</span>
+        <h3>Distinct Competitive Experiences</h3>
+        <p>
+          Competition concepts with their own identities,
+          presentation and place within Sports Theater™.
         </p>
       </article>
 
@@ -1910,292 +2061,439 @@ body.translated-rtl {
   </div>
 </section>
 
-<!-- SOUL SURVIVE -->
-<section class="soul-section">
+<!-- =======================================================
+     SOUL SURVIVE
+======================================================= -->
 
-  <img
-    class="soul-background"
-    src="https://media.insidethegames.biz/media/image/273507/o/Humo2.JPG"
-    alt=""
-    loading="lazy"
-  >
-
+<section class="soul-section" id="soul-survive">
   <div class="container">
     <div class="soul-content reveal">
 
-      <div class="section-label">Within Sports Theater™</div>
+      <span class="eyebrow">Sports Theater™ Competition</span>
 
-      <h2 class="section-heading">
-        SOUL <span class="gold-text">SURVIVE™.</span>
+      <h2>
+        SOUL <span>SURVIVE™</span>
       </h2>
 
       <p>
-        More than a name, SOUL SURVIVE™ represents a contest
-        centred on the inner self: will, resolve, endurance,
-        resilience and the ability to perform under pressure.
+        A structured live competition within the Sports Theater™
+        concept. SOUL SURVIVE™ places the human will, resolve and
+        capacity to withstand pressure at the centre of the
+        competitive experience.
       </p>
 
-      <p>
-        It is an original competition within the Sports Theater™
-        concept. Its identity speaks to the strength required
-        when pressure becomes part of the contest.
-      </p>
-
-      <a href="/events" class="btn btn-light">
-        Discover the Competition →
+      <a href="/events" class="btn btn-bronze">
+        Competition Information
       </a>
 
     </div>
   </div>
 </section>
 
-<!-- CAROUSEL -->
-<section class="section carousel-section">
+<!-- =======================================================
+     COMPETITION VISUALS
+======================================================= -->
+
+<section class="section competition-section" id="competitions">
   <div class="container">
 
-    <div class="carousel-heading">
-      <div class="reveal">
-        <div class="section-label">Explore PHRINUSOMYIS™</div>
+    <div class="section-heading reveal">
+      <span class="eyebrow">The Competitive Landscape</span>
+      <h2>Inside the World of Competition.</h2>
+      <p>
+        Discover the sporting environments, competition
+        presentations and visual identity associated with
+        international sport.
+      </p>
+    </div>
 
-        <h2 class="section-heading">
-          The Organization in Focus.
+    <div class="carousel-shell">
+      <div class="competition-track" id="competitionTrack">
+
+        <article class="competition-card">
+          <img
+            src="https://tf.hu/images/2021/07/F%C3%B3kuszban_a_tervez%C3%A9s_%C3%A9s_a_vez%C3%A9ny%C3%ADr%C3%A1ny%C3%ADt%C3%A1s_sportl%C3%A9tes%C3%ADtm%C3%A9ny-%C3%BCzemeltet%C5%91_k%C3%A9pz%C3%A9s.jpg"
+            alt="Sporting venue"
+            loading="lazy"
+          >
+          <div class="competition-card-content">
+            <small>Sporting Infrastructure</small>
+            <h3>Competition Environments</h3>
+            <p>
+              The venues and environments in which sporting
+              competitions take place.
+            </p>
+          </div>
+        </article>
+
+        <article class="competition-card">
+          <img
+            src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg"
+            alt="Sporting event environment"
+            loading="lazy"
+          >
+          <div class="competition-card-content">
+            <small>Sporting Experience</small>
+            <h3>The Competitive Experience</h3>
+            <p>
+              The atmosphere, presentation and intensity
+              surrounding sporting competition.
+            </p>
+          </div>
+        </article>
+
+        <article class="competition-card">
+          <img
+            src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG"
+            alt="Competition arena"
+            loading="lazy"
+          >
+          <div class="competition-card-content">
+            <small>Competition Presentation</small>
+            <h3>The Sporting Stage</h3>
+            <p>
+              The visual environment and presentation
+              of international sporting events.
+            </p>
+          </div>
+        </article>
+
+        <article class="competition-card">
+          <img
+            src="https://media.insidethegames.biz/media/image/273507/o/Humo2.JPG"
+            alt="Athletic competition"
+            loading="lazy"
+          >
+          <div class="competition-card-content">
+            <small>Sporting Performance</small>
+            <h3>Performance and Resolve</h3>
+            <p>
+              The determination and discipline that define
+              competitive sporting performance.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button type="button" id="carouselPrev" aria-label="Previous images">←</button>
+      <button type="button" id="carouselNext" aria-label="Next images">→</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- =======================================================
+     NEWSROOM
+======================================================= -->
+
+<section class="section news-section" id="news">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Official Newsroom</span>
+      <h2>News. Announcements. Developments.</h2>
+      <p>
+        Official information, organizational announcements
+        and developments from PHRINUSOMYIS™.
+      </p>
+    </div>
+
+    <div class="news-grid">
+
+      <article class="news-feature reveal">
+        <img
+          src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG"
+          alt="International sporting arena"
+          loading="lazy"
+        >
+
+        <div class="news-feature-content">
+          <small>Official Organization News</small>
+          <h3>PHRINUSOMYIS™ and the International Sporting Landscape</h3>
+          <p>
+            Follow official developments, sporting activities
+            and organizational announcements through the
+            PHRINUSOMYIS™ newsroom.
+          </p>
+
+          <a href="/news" class="text-link">
+            Visit Newsroom →
+          </a>
+        </div>
+      </article>
+
+      <div class="news-list">
+
+        <article class="news-item reveal">
+          <small>Sports Theater™</small>
+          <h3>Original Sporting Formats and Competition</h3>
+          <p>
+            Explore the competitive identity and sporting
+            concepts administered by PHRINUSOMYIS™.
+          </p>
+          <a href="/news" class="text-link">Read More →</a>
+        </article>
+
+        <article class="news-item reveal">
+          <small>Official Announcements</small>
+          <h3>Updates from PHRINUSOMYIS™</h3>
+          <p>
+            Access official statements, organizational
+            announcements and published updates.
+          </p>
+          <a href="/press" class="text-link">Read More →</a>
+        </article>
+
+        <article class="news-item reveal">
+          <small>Media</small>
+          <h3>Press and Media Resources</h3>
+          <p>
+            Official information for journalists,
+            publishers and media representatives.
+          </p>
+          <a href="/press" class="text-link">Media Information →</a>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     MAGAZINE
+======================================================= -->
+
+<section class="section magazine-section" id="magazine">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">PHRINUSOMYIS™ Magazine</span>
+      <h2>Stories. Perspectives. Sporting Culture.</h2>
+      <p>
+        Editorial features, photography, sporting perspectives
+        and stories from the wider world of competition.
+      </p>
+    </div>
+
+    <div class="magazine-grid">
+
+      <article class="magazine-card reveal">
+        <img
+          src="https://tf.hu/images/2021/07/F%C3%B3kuszban_a_tervez%C3%A9s_%C3%A9s_a_vez%C3%A9ny%C3%ADr%C3%A1ny%C3%ADt%C3%A1s_sportl%C3%A9tes%C3%ADtm%C3%A9ny-%C3%BCzemeltet%C5%91_k%C3%A9pz%C3%A9s.jpg"
+          alt="Sports facilities and architecture"
+          loading="lazy"
+        >
+        <div class="magazine-card-content">
+          <small>Sporting Environments</small>
+          <h3>The Architecture of Competition</h3>
+          <p>
+            A closer look at the environments that shape
+            sporting events and competition.
+          </p>
+          <a href="/magazine/news.html" class="text-link" style="color:#C2A878">
+            Explore Magazine →
+          </a>
+        </div>
+      </article>
+
+      <article class="magazine-card reveal">
+        <img
+          src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg"
+          alt="Sporting event photography"
+          loading="lazy"
+        >
+        <div class="magazine-card-content">
+          <small>Sporting Perspectives</small>
+          <h3>The Meaning of Competition</h3>
+          <p>
+            Perspectives on performance, determination
+            and the sporting experience.
+          </p>
+          <a href="/magazine/news.html" class="text-link" style="color:#C2A878">
+            Explore Magazine →
+          </a>
+        </div>
+      </article>
+
+      <article class="magazine-card reveal">
+        <img
+          src="https://media.insidethegames.biz/media/image/273507/o/Humo2.JPG"
+          alt="Athletic sporting competition"
+          loading="lazy"
+        >
+        <div class="magazine-card-content">
+          <small>Sport and Performance</small>
+          <h3>Beyond the Final Result</h3>
+          <p>
+            Stories about the discipline, preparation
+            and resolve behind competition.
+          </p>
+          <a href="/magazine/news.html" class="text-link" style="color:#C2A878">
+            Explore Magazine →
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="margin-top:35px">
+      <a href="/magazine/news.html" class="btn btn-bronze">
+        Visit the Magazine
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =======================================================
+     EVENTS
+======================================================= -->
+
+<section class="section events-section" id="events">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Official Events</span>
+      <h2>Sporting Events and Competition.</h2>
+      <p>
+        Official event information, competition announcements
+        and updates from the PHRINUSOMYIS™ sporting calendar.
+      </p>
+    </div>
+
+    <div class="events-grid">
+
+      <article class="event-card reveal">
+        <img
+          src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG"
+          alt="Sporting event arena"
+          loading="lazy"
+        >
+        <div class="event-card-content">
+          <small>Competition Information</small>
+          <h3>Official Competitions</h3>
+          <p>
+            Information concerning competitions administered
+            within the PHRINUSOMYIS™ sporting world.
+          </p>
+          <a href="/events" class="text-link">View Events →</a>
+        </div>
+      </article>
+
+      <article class="event-card reveal">
+        <img
+          src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg"
+          alt="Sporting event setting"
+          loading="lazy"
+        >
+        <div class="event-card-content">
+          <small>Sports Theater™</small>
+          <h3>Sports Theater Events</h3>
+          <p>
+            Discover the competition concepts and event
+            presentations associated with Sports Theater™.
+          </p>
+          <a href="/events" class="text-link">View Events →</a>
+        </div>
+      </article>
+
+      <article class="event-card reveal">
+        <img
+          src="https://media.insidethegames.biz/media/image/273507/o/Humo2.JPG"
+          alt="Athletic event"
+          loading="lazy"
+        >
+        <div class="event-card-content">
+          <small>Event Updates</small>
+          <h3>Announcements and Updates</h3>
+          <p>
+            Follow published information and official
+            announcements concerning upcoming events.
+          </p>
+          <a href="/events" class="text-link">View Updates →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     ANDROID APPLICATION DOWNLOAD
+======================================================= -->
+
+<section class="download-section" id="download">
+  <div class="container">
+
+    <div class="download-panel reveal">
+
+      <div class="download-copy">
+        <span class="eyebrow">Official Mobile Application</span>
+
+        <h2>
+          PHRINUSOMYIS™
+          <br>FOR ANDROID.
         </h2>
 
-        <p class="section-description">
-          Explore the different dimensions of the organization,
-          its sporting concepts and its public platforms.
+        <p>
+          Access the PHRINUSOMYIS™ mobile experience directly
+          from your Android device. Download the official
+          application from the organization's website.
+        </p>
+
+        <p class="download-meta">
+          Official application distribution.
+          Installation information provided with the release.
         </p>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" id="carouselPrev" aria-label="Previous items">
-          ←
-        </button>
-        <button class="carousel-button" id="carouselNext" aria-label="Next items">
-          →
-        </button>
+      <div class="download-action">
+        <!-- Replace the placeholder URL with the verified,
+             signed APK download URL before publication. -->
+        <a
+          href="/downloads/phrinusomyis-android.apk"
+          class="btn btn-bronze"
+          id="androidDownload"
+          download
+        >
+          <span aria-hidden="true">↓</span>
+          Download for Android
+        </a>
+
+        <span class="download-meta">
+          Android application · Official APK
+        </span>
       </div>
-    </div>
-
-    <div class="carousel-window" id="carouselWindow">
-      <div class="carousel-track" id="carouselTrack">
-
-        <article class="carousel-card">
-          <img src="https://tf.hu/images/2021/07/F%C3%B3kuszban_a_tervez%C3%A9s_%C3%A9s_a_vez%C3%A9ny%C3%ADr%C3%A1ny%C3%ADt%C3%A1s_sportl%C3%A9tes%C3%ADtm%C3%A9ny-%C3%BCzemeltet%C5%91_k%C3%A9pz%C3%A9s.jpg" alt="Sports facility" loading="lazy">
-          <div class="carousel-card-content">
-            <span>01 / Organization</span>
-            <h3>International Sports Organization</h3>
-            <p>Discover the organization and its distinctive sporting identity.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg" alt="Sporting competition" loading="lazy">
-          <div class="carousel-card-content">
-            <span>02 / Competition</span>
-            <h3>Competitive Sport</h3>
-            <p>Explore the world of original competitions administered by PHRINUSOMYIS™.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG" alt="Sports arena" loading="lazy">
-          <div class="carousel-card-content">
-            <span>03 / Sports Theater</span>
-            <h3>Sports Theater™</h3>
-            <p>A different expression of the live competitive experience.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://media.insidethegames.biz/media/image/273507/o/Humo2.JPG" alt="Athletic performance" loading="lazy">
-          <div class="carousel-card-content">
-            <span>04 / Original Format</span>
-            <h3>SOUL SURVIVE™</h3>
-            <p>A competition built around resolve, endurance and performance under pressure.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg" alt="Athletes competing" loading="lazy">
-          <div class="carousel-card-content">
-            <span>05 / Performance</span>
-            <h3>Competitive Performance</h3>
-            <p>The discipline and determination that define competitive sport.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG" alt="Indoor sporting arena" loading="lazy">
-          <div class="carousel-card-content">
-            <span>06 / Events</span>
-            <h3>Competitions and Events</h3>
-            <p>Follow the organization's competition and event information.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://tf.hu/images/2021/07/F%C3%B3kuszban_a_tervez%C3%A9s_%C3%A9s_a_vez%C3%A9ny%C3%ADr%C3%A1ny%C3%ADt%C3%A1s_sportl%C3%A9tes%C3%ADtm%C3%A9ny-%C3%BCzemeltet%C5%91_k%C3%A9pz%C3%A9s.jpg" alt="Sports infrastructure" loading="lazy">
-          <div class="carousel-card-content">
-            <span>07 / Development</span>
-            <h3>Sporting Development</h3>
-            <p>Explore the structures and environments surrounding organized sport.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://media.insidethegames.biz/media/image/273507/o/Humo2.JPG" alt="Athlete in competition" loading="lazy">
-          <div class="carousel-card-content">
-            <span>08 / Identity</span>
-            <h3>A Distinct Sporting Identity</h3>
-            <p>Original concepts with their own competitive identity and purpose.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg" alt="Sports action" loading="lazy">
-          <div class="carousel-card-content">
-            <span>09 / Media</span>
-            <h3>News and Publications</h3>
-            <p>Access organizational news, press information and editorial content.</p>
-          </div>
-        </article>
-
-        <article class="carousel-card">
-          <img src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG" alt="International sports venue" loading="lazy">
-          <div class="carousel-card-content">
-            <span>10 / International</span>
-            <h3>Across International Markets</h3>
-            <p>Discover the organization's international sporting presence.</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <div class="carousel-dots" id="carouselDots" aria-label="Carousel pages"></div>
-
-  </div>
-</section>
-
-<!-- NEWS AND PUBLICATIONS -->
-<section class="section editorial-section">
-  <div class="container">
-
-    <div class="reveal">
-      <div class="section-label">Newsroom and Publications</div>
-
-      <h2 class="section-heading">
-        Follow the Organization.
-      </h2>
-
-      <p class="section-description">
-        Access news, official communications, editorial features
-        and information about upcoming competitions.
-      </p>
-    </div>
-
-    <div class="editorial-grid">
-
-      <article class="editorial-card reveal">
-        <img
-          src="https://cdn.sanity.io/images/bpfwm1du/production/b1b3e56572bf01769896018c0afb515ccb02c626-4291x2861.jpg"
-          alt="Sports editorial image"
-          loading="lazy"
-        >
-        <div class="editorial-card-content">
-          <span>Official Communications</span>
-          <h3>Newswire</h3>
-          <p>
-            Read official announcements, organizational statements
-            and press communications.
-          </p>
-          <a href="/article" class="text-link">Visit Newswire →</a>
-        </div>
-      </article>
-
-      <article class="editorial-card reveal">
-        <img
-          src="https://tf.hu/images/2021/07/F%C3%B3kuszban_a_tervez%C3%A9s_%C3%A9s_a_vez%C3%A9ny%C3%ADr%C3%A1ny%C3%ADt%C3%A1s_sportl%C3%A9tes%C3%ADtm%C3%A9ny-%C3%BCzemeltet%C5%91_k%C3%A9pz%C3%A9s.jpg"
-          alt="Sports venue editorial image"
-          loading="lazy"
-        >
-        <div class="editorial-card-content">
-          <span>Editorial Platform</span>
-          <h3>Magazine</h3>
-          <p>
-            Explore longer-form stories, features, photography
-            and perspectives on the world of sport.
-          </p>
-          <a href="/magazine/news.html" class="text-link">Read Magazine →</a>
-        </div>
-      </article>
-
-      <article class="editorial-card reveal">
-        <img
-          src="https://uww.org/static-assets/waf-images/1a/2f/2f/16-9/22a51837-1fd4-4828-8db0-e517f864809b-Arena-and-Branding-437.JPG"
-          alt="Sports event venue"
-          loading="lazy"
-        >
-        <div class="editorial-card-content">
-          <span>Competition Information</span>
-          <h3>News and Events</h3>
-          <p>
-            Find organizational updates and information
-            relating to competitions and events.
-          </p>
-          <a href="/events" class="text-link">Explore Events →</a>
-        </div>
-      </article>
 
     </div>
   </div>
 </section>
 
-<!-- ORGANIZATION PROFILE -->
-<section class="profile-strip">
-  <div class="container profile-strip-inner">
+<!-- =======================================================
+     FAQ
+======================================================= -->
 
-    <div class="reveal">
-      <div class="section-label">Leadership</div>
-      <h2>PHRINUSOMYIS™</h2>
+<section class="section faq-section" id="faq">
+  <div class="container faq-layout">
+
+    <div class="faq-intro reveal">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2>Information About PHRINUSOMYIS™.</h2>
       <p>
-        An international sports organization developing,
-        owning and administering competitions and Sports Theater™.
+        Answers to common questions about the organization,
+        its sporting activities, competitions and leadership.
       </p>
     </div>
 
-    <div class="reveal">
-      <p style="font-weight:800;color:#171717;font-size:17px;">
-        President
-      </p>
-      <p style="font-family:'Manrope',sans-serif;font-size:23px;font-weight:800;color:#171717;margin-top:5px;">
-        Victor Seth AMUNTHLIA
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section faq-section">
-  <div class="container">
-
-    <div class="reveal">
-      <div class="section-label">Information</div>
-      <h2 class="section-heading">Frequently Asked Questions.</h2>
-      <p class="section-description">
-        Find answers to general questions about PHRINUSOMYIS™
-        and its sporting concepts.
-      </p>
-    </div>
-
-    <div class="faq-list">
+    <div class="faq-list reveal">
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          What is PHRINUSOMYIS™?
-          <span class="faq-icon">+</span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What is PHRINUSOMYIS™?</span>
+          <span>+</span>
         </button>
         <div class="faq-answer">
           PHRINUSOMYIS™ is an international sports organization
@@ -2205,48 +2503,83 @@ body.translated-rtl {
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          What is Sports Theater™?
-          <span class="faq-icon">+</span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What does PHRINUSOMYIS™ do?</span>
+          <span>+</span>
         </button>
         <div class="faq-answer">
-          Sports Theater™ is a PHRINUSOMYIS™ concept presenting
-          original competitive formats within a structured
-          sporting environment.
+          The organization develops original sporting formats,
+          owns and administers competitions, and oversees
+          sporting concepts and related activities.
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          What is SOUL SURVIVE™?
-          <span class="faq-icon">+</span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What is Sports Theater™?</span>
+          <span>+</span>
         </button>
         <div class="faq-answer">
-          SOUL SURVIVE™ is an original competition within
-          Sports Theater™, centred on resolve, endurance,
-          resilience and performance under pressure.
+          Sports Theater™ is the PHRINUSOMYIS™ sporting concept
+          through which original competitive formats are
+          developed and presented.
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Where can I find competition information?
-          <span class="faq-icon">+</span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What is SOUL SURVIVE™?</span>
+          <span>+</span>
         </button>
         <div class="faq-answer">
-          Visit the Competitions and Events section for
-          available organizational and event information.
+          SOUL SURVIVE™ is a structured live competition within
+          the Sports Theater™ concept. Its public themes include
+          will, resolve, endurance and performance under pressure.
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          How can I contact PHRINUSOMYIS™?
-          <span class="faq-icon">+</span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Who is the President of PHRINUSOMYIS™?</span>
+          <span>+</span>
         </button>
         <div class="faq-answer">
-          Use the contact section of this website to reach
-          the organization regarding enquiries and communications.
+          The President of PHRINUSOMYIS™ is Victor Seth AMUNTHLIA.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Where can I find official news and announcements?</span>
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Official news, announcements and press information
+          are available through the PHRINUSOMYIS™ newsroom.
+          <a href="/news" class="text-link">Visit the Newsroom →</a>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Does PHRINUSOMYIS™ have a mobile application?</span>
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          The official Android application can be accessed
+          through the download section of this website when
+          the application release is available.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>How can I contact PHRINUSOMYIS™?</span>
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          You can use the official contact section on this
+          website to direct an enquiry to the organization.
         </div>
       </div>
 
@@ -2254,478 +2587,463 @@ body.translated-rtl {
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
+<!-- =======================================================
+     CONTACT
+======================================================= -->
+
+<section class="section contact-section" id="contact">
   <div class="container contact-grid">
 
     <div class="contact-copy reveal">
-      <div class="section-label">Connect With Us</div>
-
-      <h2>
-        The Conversation Starts Here.
-      </h2>
-
+      <span class="eyebrow">Official Contact</span>
+      <h2>Connect with PHRINUSOMYIS™.</h2>
       <p>
-        For organizational enquiries, media communications,
-        competition information and official correspondence,
-        connect with PHRINUSOMYIS™.
+        For official enquiries, media communications,
+        organizational matters and general correspondence,
+        use the contact form.
+      </p>
+      <p>
+        Select the nature of your enquiry so it can be
+        directed appropriately.
       </p>
     </div>
 
-    <div class="contact-details reveal">
-      <h3>PHRINUSOMYIS™</h3>
+    <form class="contact-form reveal" id="contactForm">
 
-      <p>
-        International Sports Organization
-      </p>
+      <div class="form-row">
+        <input
+          type="text"
+          name="name"
+          placeholder="Full name"
+          autocomplete="name"
+          required
+        >
 
-      <a href="mailto:info@phrinusomyis.com" class="btn btn-light">
-        Contact the Organization →
-      </a>
-    </div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          autocomplete="email"
+          required
+        >
+      </div>
 
+      <select name="subject" required>
+        <option value="">Select enquiry category</option>
+        <option value="General Enquiry">General Enquiry</option>
+        <option value="Media and Press">Media and Press</option>
+        <option value="Sports Theater">Sports Theater</option>
+        <option value="Competition">Competition</option>
+        <option value="Partnership">Partnership</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea
+        name="message"
+        placeholder="Write your message"
+        required
+      ></textarea>
+
+      <button type="submit" class="btn btn-dark">
+        Submit Enquiry
+      </button>
+
+      <p class="form-status" id="formStatus" aria-live="polite"></p>
+
+    </form>
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
 <footer class="site-footer">
   <div class="container">
 
     <div class="footer-grid">
 
       <div class="footer-brand">
-        <a href="/" class="brand">
+        <a href="/" aria-label="PHRINUSOMYIS homepage">
           <img
             src="https://phrinusomyis.com/phrinusomyis_logo.png"
-            alt="PHRINUSOMYIS logo"
-            loading="lazy"
+            alt="PHRINUSOMYIS"
           >
-          <div class="brand-name" style="color:white;">
-            PHRINUSOMYIS™
-            <span>COMMANDING THE WORLD STAGE™</span>
-          </div>
         </a>
 
         <p>
           An international sports organization developing,
-          owning and administering sports competitions and
-          Sports Theater™ worldwide.
+          owning and administering sporting competitions
+          and Sports Theater™ worldwide.
         </p>
       </div>
 
       <div class="footer-column">
-        <h4>Organization</h4>
-        <a href="/">Home</a>
-        <a href="/events">Competitions</a>
-        <a href="/press">Press</a>
-        <a href="/news">News</a>
+        <h3>Organization</h3>
+        <a href="/#organization">About PHRINUSOMYIS</a>
+        <a href="/#sports-theater">Sports Theater™</a>
+        <a href="/#soul-survive">SOUL SURVIVE™</a>
+        <a href="/press">Press Information</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Media and Activities</h3>
+        <a href="/news">Newsroom</a>
         <a href="/magazine/news.html">Magazine</a>
+        <a href="/events">Events</a>
+        <a href="/#download">Android Application</a>
       </div>
 
       <div class="footer-column">
-        <h4>Programmes</h4>
-        <a href="/events">Sports Theater™</a>
-        <a href="/events">SOUL SURVIVE™</a>
-        <a href="/perfume">Perfume</a>
-        <a href="/luxury">Luxury</a>
-        <a href="/circle">Circle</a>
-      </div>
-
-      <div class="footer-column">
-        <h4>Information</h4>
+        <h3>Information</h3>
         <a href="/help">Help Centre</a>
+        <a href="/terms">Terms</a>
+        <a href="/privacy">Privacy</a>
         <a href="/security">Security</a>
         <a href="/cookies">Cookies</a>
-        <a href="/policy">Privacy Policy</a>
-        <a href="/privacy">Privacy Choices</a>
-        <a href="/terms">Terms of Use</a>
         <a href="/copyright">Copyright</a>
-        <a href="/close">Accessibility</a>
+        <a href="/#contact">Contact</a>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <p>
-        © <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.
-      </p>
-
-      <p>
-        <a href="/policy">Privacy</a>
-        &nbsp; | &nbsp;
-        <a href="/terms">Terms</a>
-        &nbsp; | &nbsp;
-        <a href="/copyright">Copyright</a>
-      </p>
+      <p>© <span id="copyrightYear"></span> PHRINUSOMYIS™. All rights reserved.</p>
+      <p>COMMANDING THE WORLD STAGE™</p>
     </div>
 
   </div>
 </footer>
 
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
+<button
+  class="back-to-top"
+  id="backToTop"
+  aria-label="Back to top"
+  type="button"
+>
   ↑
 </button>
 
-<!-- JAVASCRIPT -->
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+"use strict";
 
-  /* MOBILE NAVIGATION */
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
 
-  const menuToggle = document.getElementById("menuToggle");
-  const mainNav = document.getElementById("mainNav");
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("open");
+function closeMobileMenu() {
+  if (!menuToggle || !mobileNav) return;
 
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation" : "Open navigation"
-      );
+  mobileNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+  document.body.classList.remove("nav-open");
+  menuToggle.textContent = "☰";
+}
 
-      menuToggle.textContent = isOpen ? "×" : "☰";
-    });
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileNav.classList.toggle("open");
 
-    mainNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation");
-        menuToggle.textContent = "☰";
-      });
-    });
-  }
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
 
-  /* CURRENT YEAR */
-
-  const currentYear = document.getElementById("currentYear");
-
-  if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-  }
-
-  /* FAQ ACCORDION */
-
-  document.querySelectorAll(".faq-question").forEach(function (button) {
-    button.addEventListener("click", function () {
-      const item = button.closest(".faq-item");
-      const isOpen = item.classList.toggle("open");
-
-      button.setAttribute("aria-expanded", String(isOpen));
-    });
+    menuToggle.textContent = isOpen ? "×" : "☰";
+    document.body.classList.toggle("nav-open", isOpen);
   });
 
-  /* CAROUSEL */
+  mobileNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMobileMenu);
+  });
 
-  const track = document.getElementById("carouselTrack");
-  const carouselWindow = document.getElementById("carouselWindow");
-  const prevButton = document.getElementById("carouselPrev");
-  const nextButton = document.getElementById("carouselNext");
-  const dotsContainer = document.getElementById("carouselDots");
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeMobileMenu();
+  });
 
-  if (track && carouselWindow && prevButton && nextButton && dotsContainer) {
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) closeMobileMenu();
+  });
+}
 
-    const cards = Array.from(track.children);
-    let currentPage = 0;
-    let visibleItems = 3;
-    let autoplay = null;
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
 
-    function getVisibleItems() {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 900) return 2;
-      return 3;
-    }
+document.querySelectorAll(".faq-item").forEach(item => {
+  const question = item.querySelector(".faq-question");
 
-    function getPageCount() {
-      return Math.ceil(cards.length / visibleItems);
-    }
+  if (!question) return;
 
-    function updateCarousel() {
-      visibleItems = getVisibleItems();
-
-      const pageCount = getPageCount();
-
-      if (currentPage >= pageCount) {
-        currentPage = 0;
-      }
-
-      const cardWidth = cards[0].getBoundingClientRect().width;
-      const gap = parseFloat(getComputedStyle(track).gap) || 0;
-      const offset = currentPage * visibleItems * (cardWidth + gap);
-
-      track.style.transform = "translateX(-" + offset + "px)";
-
-      dotsContainer.innerHTML = "";
-
-      for (let i = 0; i < pageCount; i++) {
-        const dot = document.createElement("button");
-
-        dot.className = "carousel-dot" +
-          (i === currentPage ? " active" : "");
-
-        dot.setAttribute("aria-label", "Go to carousel page " + (i + 1));
-
-        dot.addEventListener("click", function () {
-          currentPage = i;
-          updateCarousel();
-          restartAutoplay();
-        });
-
-        dotsContainer.appendChild(dot);
-      }
-
-      prevButton.disabled = pageCount <= 1;
-      nextButton.disabled = pageCount <= 1;
-    }
-
-    function nextPage() {
-      const pageCount = getPageCount();
-      currentPage = (currentPage + 1) % pageCount;
-      updateCarousel();
-    }
-
-    function previousPage() {
-      const pageCount = getPageCount();
-      currentPage = (currentPage - 1 + pageCount) % pageCount;
-      updateCarousel();
-    }
-
-    function startAutoplay() {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
-      }
-
-      stopAutoplay();
-
-      autoplay = setInterval(nextPage, 6000);
-    }
-
-    function stopAutoplay() {
-      if (autoplay) {
-        clearInterval(autoplay);
-        autoplay = null;
-      }
-    }
-
-    function restartAutoplay() {
-      stopAutoplay();
-      startAutoplay();
-    }
-
-    prevButton.addEventListener("click", function () {
-      previousPage();
-      restartAutoplay();
-    });
-
-    nextButton.addEventListener("click", function () {
-      nextPage();
-      restartAutoplay();
-    });
-
-    carouselWindow.addEventListener("mouseenter", stopAutoplay);
-    carouselWindow.addEventListener("mouseleave", startAutoplay);
-    carouselWindow.addEventListener("focusin", stopAutoplay);
-    carouselWindow.addEventListener("focusout", startAutoplay);
-
-    let resizeTimer;
-
-    window.addEventListener("resize", function () {
-      clearTimeout(resizeTimer);
-
-      resizeTimer = setTimeout(function () {
-        updateCarousel();
-      }, 150);
-    });
-
-    updateCarousel();
-    startAutoplay();
-  }
-
-  /* SCROLL REVEAL */
-
-  const revealElements = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("revealed");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12
-    });
-
-    revealElements.forEach(function (element) {
-      revealObserver.observe(element);
-    });
-  } else {
-    revealElements.forEach(function (element) {
-      element.classList.add("revealed");
-    });
-  }
-
-  /* BACK TO TOP */
-
-  const backToTop = document.getElementById("backToTop");
-
-  if (backToTop) {
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 500) {
-        backToTop.classList.add("visible");
-      } else {
-        backToTop.classList.remove("visible");
-      }
-    }, { passive: true });
-
-    backToTop.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-  }
-
+  question.addEventListener("click", () => {
+    const isOpen = item.classList.toggle("open");
+    question.setAttribute("aria-expanded", String(isOpen));
+  });
 });
 
-/* GOOGLE TRANSLATE INITIALIZATION */
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
 
-function googleTranslateElementInit() {
-  if (window.google && google.translate) {
-    new google.translate.TranslateElement({
-      pageLanguage: "en",
-      includedLanguages: "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-      autoDisplay: false
-    }, "google_translate_element");
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -35px 0px"
+    }
+  );
+
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
+} else {
+  revealElements.forEach(element => {
+    element.classList.add("is-visible");
+  });
+}
+
+/* =========================================================
+   COMPETITION CAROUSEL
+========================================================= */
+
+const competitionTrack = document.getElementById("competitionTrack");
+const carouselPrev = document.getElementById("carouselPrev");
+const carouselNext = document.getElementById("carouselNext");
+
+let carouselIndex = 0;
+
+function getCarouselVisibleCount() {
+  if (window.innerWidth <= 650) return 1;
+  if (window.innerWidth <= 900) return 2;
+  return 3;
+}
+
+function updateCompetitionCarousel() {
+  if (!competitionTrack) return;
+
+  const cards = Array.from(
+    competitionTrack.querySelectorAll(".competition-card")
+  );
+
+  if (!cards.length) return;
+
+  const visibleCount = getCarouselVisibleCount();
+  const maxIndex = Math.max(0, cards.length - visibleCount);
+
+  carouselIndex = Math.min(carouselIndex, maxIndex);
+
+  const cardWidth = cards[0].getBoundingClientRect().width;
+  const gap = parseFloat(getComputedStyle(competitionTrack).gap) || 0;
+
+  competitionTrack.style.transform =
+    `translateX(-${carouselIndex * (cardWidth + gap)}px)`;
+
+  if (carouselPrev) {
+    carouselPrev.disabled = carouselIndex === 0;
+    carouselPrev.style.opacity = carouselPrev.disabled ? ".4" : "1";
+  }
+
+  if (carouselNext) {
+    carouselNext.disabled = carouselIndex >= maxIndex;
+    carouselNext.style.opacity = carouselNext.disabled ? ".4" : "1";
   }
 }
 
-/* LANGUAGE SELECTOR */
+if (carouselPrev && carouselNext && competitionTrack) {
+  carouselPrev.addEventListener("click", () => {
+    carouselIndex = Math.max(0, carouselIndex - 1);
+    updateCompetitionCarousel();
+  });
 
-(function () {
+  carouselNext.addEventListener("click", () => {
+    carouselIndex += 1;
+    updateCompetitionCarousel();
+  });
 
-  const languageSelect = document.getElementById("languageSelect");
+  window.addEventListener("resize", updateCompetitionCarousel);
 
-  if (!languageSelect) return;
+  updateCompetitionCarousel();
+}
 
-  function getCookie(name) {
-    const match = document.cookie.match(
-      new RegExp("(^|;\\s*)" + name + "=([^;]*)")
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      backToTop.classList.toggle("visible", window.scrollY > 500);
+    },
+    { passive: true }
+  );
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth"
+    });
+  });
+}
+
+/* =========================================================
+   COPYRIGHT YEAR
+========================================================= */
+
+const copyrightYear = document.getElementById("copyrightYear");
+
+if (copyrightYear) {
+  copyrightYear.textContent = new Date().getFullYear();
+}
+
+/* =========================================================
+   CONTACT FORM
+   IMPORTANT:
+   Connect this form to a secure backend endpoint before
+   accepting live enquiries. This frontend does not send
+   or store messages by itself.
+========================================================= */
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector(
+      'button[type="submit"]'
     );
 
-    return match ? decodeURIComponent(match[2]) : "";
-  }
+    if (!contactForm.reportValidity()) return;
 
-  function setLanguageCookie(language) {
-    const value = "/en/" + language;
-    const hostname = window.location.hostname;
-    const expiry = "expires=Fri, 31 Dec 2038 23:59:59 GMT";
-    const secure = location.protocol === "https:" ? ";secure" : "";
+    /*
+      Replace this endpoint with the real, secured Node.js
+      contact API when the backend is deployed.
 
-    document.cookie =
-      "googtrans=" + value + ";path=/;" + expiry + ";samesite=lax" + secure;
+      Example:
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          Object.fromEntries(new FormData(contactForm))
+        )
+      });
+    */
 
-    if (hostname.indexOf(".") !== -1) {
-      document.cookie =
-        "googtrans=" + value +
-        ";domain=." + hostname +
-        ";path=/;" + expiry + ";samesite=lax" + secure;
+    formStatus.textContent =
+      "The contact form is ready for connection to the official enquiry service.";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Backend connection required";
     }
-  }
+  });
+}
 
-  function clearLanguageCookie() {
-    const hostname = window.location.hostname;
+/* =========================================================
+   ANDROID DOWNLOAD LINK CHECK
+   The APK must be uploaded to the exact path configured
+   in the download button before the button is published.
+========================================================= */
 
-    document.cookie =
-      "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+const androidDownload = document.getElementById("androidDownload");
 
-    if (hostname.indexOf(".") !== -1) {
-      document.cookie =
-        "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=." +
-        hostname;
+if (androidDownload) {
+  androidDownload.addEventListener("click", event => {
+    const downloadPath = androidDownload.getAttribute("href");
+
+    if (
+      !downloadPath ||
+      downloadPath === "#" ||
+      downloadPath.includes("placeholder")
+    ) {
+      event.preventDefault();
+      alert("The official Android application download is not yet available.");
     }
+  });
+}
 
-    try {
-      localStorage.removeItem("preferredLanguage");
-    } catch (error) {}
+/* =========================================================
+   GOOGLE TRANSLATE INITIALIZATION
+   Browser-side translation. This is not a backend
+   translation service.
+========================================================= */
+
+function googleTranslateElementInit() {
+  if (
+    window.google &&
+    google.translate &&
+    google.translate.TranslateElement
+  ) {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        autoDisplay: false,
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      "google_translate_element"
+    );
   }
+}
 
-  languageSelect.addEventListener("change", function () {
-    const language = languageSelect.value;
+/* =========================================================
+   GOOGLE TRANSLATE OVERLAY CLEANUP
+========================================================= */
 
-    if (language === "en") {
-      clearLanguageCookie();
-    } else {
-      setLanguageCookie(language);
-
-      try {
-        localStorage.setItem("preferredLanguage", language);
-      } catch (error) {}
-    }
-
-    window.location.reload();
+function cleanTranslationOverlays() {
+  document.querySelectorAll(
+    ".goog-te-banner-frame, .goog-te-balloon-frame"
+  ).forEach(element => {
+    element.style.display = "none";
   });
 
-  try {
-    const savedLanguage = localStorage.getItem("preferredLanguage");
-    const cookieValue = getCookie("googtrans");
-    const activeLanguage = savedLanguage ||
-      (cookieValue ? cookieValue.split("/").pop() : "en");
-
-    if (activeLanguage && languageSelect.querySelector(
-      'option[value="' + activeLanguage + '"]'
-    )) {
-      languageSelect.value = activeLanguage;
-    }
-  } catch (error) {}
-
-})();
-
-/* PREVENT GOOGLE TRANSLATE PAGE SHIFT */
-
-(function () {
-
-  function removeTranslationOffset() {
-    document.documentElement.style.setProperty("margin-top", "0px", "important");
-
-    if (document.body) {
-      document.body.style.setProperty("top", "0px", "important");
-      document.body.style.setProperty("margin-top", "0px", "important");
-    }
-
-    document.querySelectorAll(
-      ".goog-te-banner-frame, .goog-te-menu-frame, #goog-gt-tt, .goog-te-balloon-frame"
-    ).forEach(function (element) {
-      element.style.setProperty("display", "none", "important");
-      element.style.setProperty("visibility", "hidden", "important");
-    });
+  if (document.body) {
+    document.body.style.top = "0px";
   }
 
-  removeTranslationOffset();
+  if (document.documentElement) {
+    document.documentElement.style.marginTop = "0px";
+  }
+}
 
-  const translationObserver = new MutationObserver(function () {
-    removeTranslationOffset();
-  });
+const translationObserver = new MutationObserver(() => {
+  cleanTranslationOverlays();
+});
 
-  translationObserver.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["style", "class"],
-    childList: true,
-    subtree: true
-  });
+translationObserver.observe(document.documentElement, {
+  childList: true,
+  subtree: true
+});
 
-})();
+cleanTranslationOverlays();
+
 </script>
-
-<script
-  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-  async
-></script>
 
 </body>
 </html>
