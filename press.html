@@ -209,991 +209,1876 @@
   </script> 
 </head>
   <body>
-    <style>
-.goog-te-banner-frame {
-    display: none !important;
+   <style>
+:root {
+    --gold: #B18A2D;
+    --gold-dark: #8D6A1D;
+    --ink: #202020;
+    --muted: #737373;
+    --paper: #F4F3EF;
+    --white: #FFFFFF;
+    --soft: #EBE9E2;
+    --panel: #FAF9F6;
+    --border: #DEDAD0;
+    --dark: #202020;
+    --dark-soft: #303030;
+    --shadow: 0 18px 55px rgba(0,0,0,.10);
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 body {
-    top: 0 !important;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-.goog-te-gadget {
-    display: none !important;
+body.modal-open { overflow: hidden; }
+
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+button, a, select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+img { max-width: 100%; }
+
+.site-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 85% 5%, rgba(177,138,45,.07), transparent 28%),
+        linear-gradient(180deg, #F8F7F3 0%, #F0EFEA 100%);
 }
 
-#google_translate_element {
-    display: none !important;
-} 
-      
-/* ROOT VARIABLES */
-:root {
-  --gold: #FFC72C;
-  --black: #050505;
-  --glass-border: rgba(212, 175, 55, 0.15);
-  --glass-bg:rgba(255,255,255,0.02);
-  --rainbow:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-} 
-    /* FORCE LAYOUT STABILITY */
-body { top: 0 !important; position: static !important; }
-.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate { 
-    display: none !important; 
-    visibility: hidden !important; 
+/* HEADER */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(248,247,243,.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
 }
 
-/* ACCESSIBILITY FIX (For the 85 Score) */
-nav a {
-    min-height: 48px; /* Correct touch target size */
+.header-inner {
+    max-width: 1280px;
+    margin: auto;
+    padding: 15px 28px;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-    /* 1. PERFORMANCE: Only lazy-render non-critical images */
-img:not(.above-the-fold) { 
-    content-visibility: auto; 
+    justify-content: space-between;
+    gap: 25px;
 }
 
-/* 2. ACCESSIBILITY: Better mobile tap targets */
-nav a {
-    min-height: 48px; 
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.brand img { width: 46px; height: 46px; object-fit: contain; }
+
+.brand-name {
+    font-family: 'Cinzel', serif;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.main-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 12px; /* prevents text from sticking to edges */
+    justify-content: flex-end;
+    gap: 21px;
+    flex-wrap: wrap;
 }
 
-/* 3. CONTRAST: Balanced premium gold */
-:root {
-  --gold: #FFC72C; 
-}
-
-/* 4. STABILITY: Proper CLS fix */
-.brand-seal {
-    aspect-ratio: 1 / 1; 
-    width: 60px; /* important: prevents layout jump */
-    height: auto;
-    background: rgba(255, 255, 255, 0.05); 
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-
-body{
-  background-color:var(--black);
-  color:#fff;
-  font-family:'Montserrat',sans-serif;
-  line-height:1.8;
-  overflow-x:hidden;
-  user-select:none;
-  top: 0 !important;
-}
-      /* Completely hide the Google Translate Top Bar */
-             .goog-te-banner-frame, 
-              .goog-te-banner, 
-           .goog-te-menu-frame, 
-           .skiptranslate {
-           display: none !important;
-           visibility: hidden !important;
-        }
-
-           /* Prevent the white space at the top of the screen */
-            body {
-               top: 0 !important;
-         }
-
-             html {
-              margin-top: 0px !important;
-          }
-
-             /* Hide the "Show Original" tooltip when hovering */
-              #goog-gt-tt, .goog-te-balloon-frame {
-                display: none !important;
-           }
-               .goog-text-highlight {
-                 background: none !important;
-                  box-shadow: none !important;
-            }
-}
-/* PERFORMANCE: Lazy render non-critical images */
-img:not(.above-the-fold) {
-    content-visibility: auto;
-}
-
-/* ACCESSIBILITY: Better tap targets */
-nav a {
-    min-height: 48px;
+.main-nav a {
+    color: #555;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    min-height: 42px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 12px;
+    transition: color .2s ease;
 }
 
-/* BRAND COLOR: Premium gold */
-:root {
-  --gold: #FFC72C;
-}
-
-/* CLS FIX: Stable logo/container */
-.brand-seal {
-    aspect-ratio: 1 / 1;
-    width: 60px;
-    height: auto;
-    background: rgba(255, 255, 255, 0.05);
-    }
-      .goog-text-highlight {
-       background: none !important;
-     box-shadow: none !important;
-}
-
-html {
-  margin-top: 0px !important;
-}
-
-a{color:inherit;text-decoration:none;cursor:pointer;}
-
-.cinematic-bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 100%);
-  z-index:-1;
-}
-
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:60px 20px;
-  text-align:center;
-  position:relative;
-}
-
-nav{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  margin-bottom:50px;
-  flex-wrap:wrap;
-}
-
-nav a{
-  color:var(--gold);
-  font-family:'Cinzel',serif;
-  font-weight:700;
-  padding:10px 20px;
-  border-radius:8px;
-  border:1px solid var(--glass-border);
-  transition:0.3s;
-}
-
-nav a:hover{
-  background:var(--gold);
-  color:var(--black);
-}
+.main-nav a:hover, .main-nav a.active { color: var(--gold-dark); }
 
 #languageSwitcher {
-  background-color: #050505;
-  color: #D4AF37;
-  border: 1px solid #D4AF37;
-  border-radius: 4px;
-  padding: 5px 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  cursor: pointer;
-  outline: none;
+    background: var(--white);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 9px 10px;
+    font-size: 11px;
+    max-width: 145px;
+    outline: none;
 }
 
-.brand-seal{
-  width:160px;
-  margin-bottom:20px;
-  filter:drop-shadow(0 0 30px var(--accent-glow));
+/* PAGE */
+
+.page-container {
+    max-width: 1220px;
+    margin: auto;
+    padding: 65px 26px 85px;
 }
 
-h1{
-  font-family:'Cinzel',serif;
-  font-size:3rem;
-  letter-spacing:8px;
-  color:var(--gold);
-  text-transform:uppercase;
-  margin-bottom:5px;
+.page-heading { text-align: center; margin-bottom: 48px; }
+
+.eyebrow {
+    color: var(--gold-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
-.registry-status,
-.tagline{
-  font-size:0.7rem;
-  letter-spacing:4px;
-  color:#888;
-  border-top:1px solid var(--glass-border);
-  display:inline-block;
-  padding-top:10px;
-  margin-bottom:30px;
+.page-heading h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--ink);
+    font-size: clamp(36px, 6vw, 65px);
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.2;
 }
 
-.contact-email{
-  position:absolute;
-  left:20px;
-  bottom:145px;
-  font-weight:700;
-  background:var(--rainbow);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  font-size:1rem;
+.page-heading p {
+    max-width: 720px;
+    margin: 18px auto 0;
+    color: var(--muted);
+    font-size: 13px;
 }
 
-.live-clock{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  margin:30px 0;
-  flex-wrap:wrap;
+/* SECTION HEADINGS */
+
+.content-section { margin-bottom: 70px; }
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 13px;
 }
 
-.time-box{
-  background:var(--glass-bg);
-  border:1px solid var(--glass-border);
-  backdrop-filter:blur(20px);
-  padding:20px 15px;
-  border-radius:12px;
-  min-width:80px;
-  font-family:'Cinzel',serif;
-  color:var(--gold);
-  text-align:center;
-}.     
-
-.time-box .number{
-  font-size:1.5rem;
-  font-weight:900;
-}
-
-.time-box .label{
-  font-size:0.7rem;
-  color:#ccc;
-  margin-top:5px;
-  text-transform:uppercase;
-}
-
-.press-grid{
-  display:flex;
-  flex-direction:column;
-  gap:30px;
-  margin-top:40px;
-  text-align:left;
-}
-
-.press-card{
-  background:var(--glass-bg);
-  border:1px solid var(--glass-border);
-  padding:30px;
-  backdrop-filter:blur(20px);
-  transition:opacity 0.8s ease, transform 0.8s ease;
-  opacity:0;
-  transform:translateY(40px);
-}
-
-.press-card.visible{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.press-card h3{
-  font-family:'Cinzel',serif;
-  color:var(--gold);
-  font-size:1.3rem;
-  margin-bottom:10px;
-}
-
-.press-card p{
-  color:#ccc;
-  font-size:0.85rem;
-  text-align:justify;
-}
-
-.last-updated{
-  color:#ccc;
-  font-size:0.75rem;
-  text-align:right;
-  margin-top:-30px;
-}
-
-footer{
-  margin-top:80px;
-  font-size:0.65rem;
-  letter-spacing:2px;
-  color:var(--gold);
-  text-transform:uppercase;
-  text-align:center;
-} 
-      .press-kit-container {
-    margin: 40px 0;
-    text-align: left; /* Keep it aligned with your report text */
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: transparent;
-    color: #D4AF37; /* Gold color */
-    border: 1px solid #D4AF37;
-    text-decoration: none;
-    font-family: 'Times New Roman', serif; /* Or your site font */
-    font-size: 14px;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
+.section-heading h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--ink);
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
-.download-btn:hover {
-    background-color: #D4AF37;
-    color: #000000; /* Inverts on hover */
-    cursor: pointer;
+.section-heading span {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
-/* ================= FINAL MOBILE FIX ================= */
-@media (max-width: 768px) {
-  /* 1. HIDE GOOGLE UI (Stops Layout Shift - Big Performance Gain) */
-  .goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate {
-      display: none !important;
-      visibility: hidden !important;
-  }
-  body { top: 0 !important; }
+/* IMAGES */
 
-  /* 2. BUTTON GRID - Uses 'fr' for faster rendering */
-  nav {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
-      margin-bottom: 30px !important;
-  }
+.story-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #D9D6CE;
+}
 
-  nav a {
-      width: 100% !important;
-      padding: 12px 0 !important;
-      font-size: 13px !important;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      /* Removes heavy transitions for mobile performance */
-      transition: none !important; 
-  }
+.image-frame { overflow: hidden; background: #E2DFD7; }
+.image-frame img { transition: transform .5s ease; }
+.image-frame:hover img { transform: scale(1.025); }
 
-  #languageSwitcher {
-      grid-column: span 2;
-      height: 30px;
-      font-size: 10px !important;
-  }
+/* FEATURED PRESS STATEMENT */
 
-  /* 3. CLOCK - Fixed height to prevent "Jumping" during load */
-  .live-clock {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      min-height: 150px; 
-  }
+.featured-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
 
-  .time-box {
-      min-width: 0 !important;
-      padding: 10px !important;
-  }
+.featured-image { min-height: 390px; background: var(--soft); }
 
-  /* 4. TITLE - Optimized for mobile painting */
-  h1 {  
-      font-size: 1.5rem !important;  
-      letter-spacing: 3px !important;
-      margin-top: 20px;
-  }  
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 390px;
+    display: block;
+    object-fit: cover;
+}
 
-  /* 5. MENU - 150px Static Behind content */
-  .nav-menu {  
-      display: flex !important;
-      position: absolute;  
-      top: 60px;  
-      right: 10px;  
-      width: 150px !important;
-      z-index: 1;  
-      background: transparent !important;
-      overflow: hidden;
-  }
+.featured-content {
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.story-category {
+    color: var(--gold-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.featured-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(24px, 3vw, 35px);
+    line-height: 1.4;
+    margin-bottom: 17px;
+    color: var(--ink);
+}
+
+.featured-content p { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+
+.story-date {
+    color: #898989;
+    font-size: 10px;
+    margin-bottom: 15px;
+    letter-spacing: .5px;
+}
+
+.read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold-dark);
+    border: none;
+    border-bottom: 1px solid var(--gold);
+    background: transparent;
+    padding: 0 0 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    transition: color .2s ease;
+}
+
+.read-link:hover { color: var(--ink); }
+
+/* PRESS FILTERS */
+
+.news-tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.category-list { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.category-button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: #686868;
+    padding: 9px 13px;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    transition: .2s ease;
+}
+
+.category-button:hover,
+.category-button.active {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    min-width: 230px;
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 13px;
+    border: none;
+    outline: none;
+    color: var(--ink);
+    background: transparent;
+    font-size: 11px;
+}
+
+.search-box input::placeholder { color: #999; }
+
+/* PRESS GRID */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 21px;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.news-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.08); }
+
+.news-card-image { overflow: hidden; background: var(--soft); }
+
+.news-card-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: cover;
+}
+
+.news-card-content {
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.news-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 11px;
+    color: var(--ink);
+}
+
+.news-card p { color: var(--muted); font-size: 11px; margin-bottom: 20px; }
+.news-card .read-link { margin-top: auto; }
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 45px 20px;
+    text-align: center;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--white);
+    font-size: 13px;
+}
+
+/* PAGINATION */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    min-width: 39px;
+    min-height: 39px;
+    padding: 8px 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: #555;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.pagination button.active, .pagination button:hover { background: var(--dark); color: var(--white); }
+.pagination button:disabled { opacity: .35; cursor: not-allowed; }
+
+.archive-note { text-align: center; color: #888; font-size: 10px; margin-top: 16px; }
+
+/* PUBLICATION LINKS */
+
+.publication-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+.publication-card {
+    background: var(--dark);
+    color: var(--white);
+    padding: 32px;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 205px;
+}
+
+.publication-card h2 {
+    font-family: 'Cinzel', serif;
+    color: #E4C36F;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.publication-card p { color: #C2C2C2; font-size: 11px; margin-bottom: 22px; max-width: 500px; }
+
+.publication-card .read-link {
+    color: #E4C36F;
+    border-color: #B18A2D;
+    margin-top: auto;
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: #252525;
+    color: var(--white);
+    border-top: 3px solid var(--gold);
+    padding: 52px 26px 24px;
+}
+
+.footer-inner { max-width: 1180px; margin: auto; }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: #E4C36F;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+}
+
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 10px; }
+
+.footer-section a { color: #BDBDBD; font-size: 11px; transition: color .2s ease; }
+.footer-section a:hover { color: #E4C36F; }
+
+.footer-bottom {
+    border-top: 1px solid #454545;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p { color: #A0A0A0; font-size: 9px; letter-spacing: .8px; }
+
+.footer-slogan {
+    color: #E4C36F !important;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1.5px !important;
+}
+
+/* ARTICLE MODAL */
+
+.article-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15,15,15,.78);
+    backdrop-filter: blur(5px);
+}
+
+.article-modal.open { display: flex; }
+
+.modal-panel {
+    width: min(940px, 100%);
+    max-height: min(90vh, 950px);
+    display: flex;
+    flex-direction: column;
+    background: #F9F8F4;
+    border: 1px solid rgba(255,255,255,.35);
+    box-shadow: 0 25px 90px rgba(0,0,0,.35);
+    overflow: hidden;
+}
+
+@keyframes modalAppear {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-panel { animation: modalAppear .22s ease-out; }
+
+.modal-topbar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 22px;
+    background: #252525;
+    color: white;
+}
+
+.modal-brand { font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; }
+
+.modal-close {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #666;
+    background: transparent;
+    color: white;
+    font-size: 23px;
+    line-height: 1;
+    transition: background .2s ease;
+}
+
+.modal-close:hover { background: #555; }
+
+.modal-scroll { overflow-y: auto; overscroll-behavior: contain; }
+
+.modal-article { max-width: 790px; margin: auto; padding: 30px 35px 38px; }
+
+.modal-article .story-image { margin: 16px 0 25px; max-height: 430px; }
+
+.modal-article h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(25px, 4vw, 39px);
+    line-height: 1.35;
+    margin-bottom: 13px;
+    color: var(--ink);
+}
+
+.modal-article .article-meta { color: #888; font-size: 10px; margin-bottom: 18px; letter-spacing: .7px; }
+
+.modal-article .article-intro { font-size: 15px; font-weight: 500; color: #454545; margin-bottom: 20px; }
+
+.modal-article p { color: #555; font-size: 13px; line-height: 1.9; margin-bottom: 17px; }
+
+.modal-article h2 { font-family: 'Cinzel', serif; font-size: 19px; margin: 25px 0 10px; color: var(--ink); }
+
+.modal-article ul { padding-left: 21px; margin: 0 0 20px; color: #555; font-size: 13px; }
+.modal-article li { margin-bottom: 8px; }
+
+.article-external-link {
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 14px;
+    color: var(--gold-dark);
+    font-size: 11px;
+    font-weight: 800;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+}
+
+.modal-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border);
+    background: #F0EEE8;
+}
+
+.action-group { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+.action-button {
+    border: 1px solid #D4D0C5;
+    background: #fff;
+    color: #444;
+    padding: 9px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: .2s ease;
+}
+
+.action-button:hover { border-color: var(--gold); color: var(--gold-dark); }
+.action-button.primary { background: var(--dark); color: white; border-color: var(--dark); }
+.action-button.primary:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+
+.share-menu { position: relative; }
+
+.share-options {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    min-width: 180px;
+    padding: 8px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    z-index: 20;
+}
+
+.share-options.open { display: grid; gap: 4px; }
+
+.share-options button {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 9px 10px;
+    color: #444;
+    font-size: 11px;
+}
+
+.share-options button:hover { background: var(--soft); }
+.copy-status { color: #557044; font-size: 10px; min-width: 80px; }
+
+/* SEO CONTENT - AVAILABLE IN THE PAGE HTML */
+
+.seo-statements {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: normal;
+}
+
+/* GOOGLE TRANSLATE */
+
+#google_translate_element {
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-te-gadget-icon,
+.goog-logo-link { display: none !important; }
+
+.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
+body { top: 0 !important; }
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+    .header-inner { flex-direction: column; gap: 12px; }
+    .main-nav { justify-content: center; }
+    .news-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+    .header-inner { padding: 13px 15px; }
+    .main-nav { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; gap: 3px 7px; }
+    .main-nav a { justify-content: center; font-size: 9px; }
+    #languageSwitcher { grid-column: 1 / -1; justify-self: center; width: 155px; margin-top: 5px; }
+    .page-container { padding: 42px 15px 60px; }
+    .page-heading { margin-bottom: 35px; }
+    .page-heading h1 { letter-spacing: 1.5px; }
+    .section-heading h2 { font-size: 16px; }
+    .section-heading span { font-size: 8px; text-align: right; }
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-image, .featured-image img { min-height: 230px; height: 230px; }
+    .featured-content { padding: 25px; }
+    .news-grid { grid-template-columns: 1fr; gap: 15px; }
+    .news-tools { align-items: stretch; }
+    .category-list { display: grid; grid-template-columns: repeat(2, 1fr); }
+    .category-button { width: 100%; }
+    .search-box { width: 100%; }
+    .publication-grid { grid-template-columns: 1fr; }
+    .publication-card { padding: 25px; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 18px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .article-modal { padding: 0; align-items: stretch; }
+    .modal-panel { width: 100%; max-height: 100%; height: 100%; border: none; }
+    .modal-topbar { padding: 12px 15px; }
+    .modal-article { padding: 22px 18px 30px; }
+    .modal-article .story-image { max-height: 260px; }
+    .modal-actions { padding: 10px; align-items: flex-start; }
+    .action-group { gap: 5px; }
+    .action-button { padding: 9px; font-size: 9px; }
+}
+
+@media (max-width: 380px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .modal-actions { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* PRINT */
+
+@media print {
+    body { background: white !important; color: black !important; }
+    body * { visibility: hidden !important; }
+    .article-modal, .article-modal * { visibility: visible !important; }
+    .article-modal {
+        display: block !important;
+        position: absolute !important;
+        inset: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+    .modal-panel {
+        width: 100% !important;
+        max-height: none !important;
+        height: auto !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+    .modal-topbar, .modal-actions, .modal-close { display: none !important; }
+    .modal-scroll { overflow: visible !important; }
+    .modal-article { max-width: 100% !important; padding: 0 !important; }
+    .modal-article p, .modal-article h1, .modal-article h2, .modal-article li { color: black !important; }
+    .modal-article .story-image { max-height: 400px; }
+}
+
+/* RESPONSIVE AND TRANSLATION PROTECTION */
+
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+}
+
+body {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    margin-top: 0 !important;
+    transform: none !important;
+}
+
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-menu-frame,
+.goog-te-menu-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover { max-width: 100vw !important; }
+
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+}
+
+.goog-te-menu-frame { max-width: calc(100vw - 20px) !important; max-height: calc(100vh - 30px) !important; }
+.goog-te-menu2 { max-width: calc(100vw - 20px) !important; max-height: calc(100vh - 40px) !important; overflow: auto !important; }
+.goog-te-menu-frame.skiptranslate { z-index: 99999 !important; }
+.goog-te-spinner-pos, .goog-te-spinner { max-width: 100vw !important; }
+
+body > .skiptranslate,
+body > .goog-te-spinner-pos {
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+#google_translate_element, #google_translate_element * { max-width: 100% !important; }
+
+.site-header, .header-inner, .main-nav, .page-container, .content-section,
+.featured-card, .news-tools, .news-grid, .publication-grid,
+.footer-inner, .footer-grid {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.main-nav a, .brand-name, .section-heading h2, .section-heading span,
+.featured-content h2, .news-card h3, .publication-card h2 {
+    overflow-wrap: anywhere;
+}
+
+.article-modal {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
+.modal-panel { min-width: 0; max-width: 100%; }
+.modal-scroll, .modal-article { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+.modal-article img { max-width: 100%; height: auto; }
+
+@media (max-width: 650px) {
+    html, body { width: 100% !important; max-width: 100% !important; overflow-x: clip !important; }
+    .header-inner, .main-nav, .page-container, .page-heading,
+    .section-heading, .news-tools, .featured-content,
+    .publication-card, .footer-inner { min-width: 0; max-width: 100%; }
+    .main-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .main-nav a { min-width: 0; overflow-wrap: anywhere; text-align: center; }
+    .category-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .category-button { min-width: 0; overflow-wrap: anywhere; }
+    .modal-panel { width: 100%; max-width: 100%; min-width: 0; }
+    .modal-actions, .action-group { min-width: 0; max-width: 100%; }
+    .share-options { max-width: calc(100vw - 30px); }
+    .goog-te-menu-frame { left: 10px !important; right: 10px !important; width: auto !important; max-width: calc(100vw - 20px) !important; }
+}
+
+@media (max-width: 380px) {
+    .brand-name { font-size: 11px; letter-spacing: 1px; }
+    .section-heading { align-items: flex-start; }
+    .section-heading h2 { font-size: 14px; }
+    .section-heading span { max-width: 42%; overflow-wrap: anywhere; }
+    .modal-article { padding-left: 15px; padding-right: 15px; }
 }
 </style>
 </head>
 
 <body>
-<div class="cinematic-bg"></div>
 
-<div class="container">
+<div class="site-background"></div>
 
-<nav>
-<a href="/">HOME</a>
-<a href="events">EVENTS</a>
-<a href="news">NEWS</a>
-<a href="luxury">LUXURY</a>
-        <select id="languageSwitcher">
-    <option value="en">English (EN)</option>
-    <option value="fr">Français (FR)</option>
-    <option value="es">Español (ES)</option>
-    <option value="de">Deutsch (DE)</option>
-    <option value="ar">العربية (AR)</option>
-    <option value="zh">中文 (ZH)</option>
-    <option value="ru">Русский (RU)</option>
-    <option value="pt">Português (PT)</option>
-    <option value="ja">日本語 (JA)</option>
-    <option value="ko">한국어 (KO)</option>
-    <option value="it">Italiano (IT)</option>
-    <option value="nl">Nederlands (NL)</option>
-    <option value="tr">Türkçe (TR)</option>
-    <option value="hi">हिन्दी (HI)</option>
-    <option value="id">Bahasa Indonesia (ID)</option>
-    <option value="vi">Tiếng Việt (VI)</option>
-    <option value="th">ไทย (TH)</option>
-    <option value="pl">Polski (PL)</option>
-    <option value="sv">Svenska (SV)</option>
-    <option value="fi">Suomi (FI)</option>
-    <option value="da">Dansk (DA)</option>
-                  </select> 
-            </nav>
-    </header> 
+<header class="site-header">
+    <div class="header-inner">
 
-<img src="phrinusomyis_logo.png" 
-     class="brand-seal above-the-fold" 
-     fetchpriority="high"
-     loading="eager"
-     decoding="async"
-     alt="Phrinusomyis Logo">
-<h1>PHRINUSOMYIS MEDIA PRESS </h1> 
-  
-<div class="live-clock">
-  <div class="time-box">
-    <div class="number" id="month" translate="no"></div>
-    <div class="label">Month</div>
-  </div>
+        <a href="/" class="brand" aria-label="PHRINUSOMYIS homepage">
+            <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+            <span class="brand-name">PHRINUSOMYIS™</span>
+        </a>
 
-  <div class="time-box">
-    <div class="number" id="day"></div>
-    <div class="label">Day</div>
-  </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/news">News</a>
+            <a href="/events">Events</a>
+            <a href="/press" class="active" aria-current="page">Press</a>
+            <a href="/luxury">Luxury</a>
 
-  <div class="time-box">
-    <div class="number" id="year"></div>
-    <div class="label">Year</div>
-  </div>
+            <select id="languageSwitcher" aria-label="Select language">
+                <option value="en">English (EN)</option>
+                <option value="fr">Français (FR)</option>
+                <option value="es">Español (ES)</option>
+                <option value="de">Deutsch (DE)</option>
+                <option value="ar">العربية (AR)</option>
+                <option value="zh">中文 (ZH)</option>
+                <option value="ru">Русский (RU)</option>
+                <option value="pt">Português (PT)</option>
+                <option value="ja">日本語 (JA)</option>
+                <option value="ko">한국어 (KO)</option>
+                <option value="it">Italiano (IT)</option>
+                <option value="nl">Nederlands (NL)</option>
+                <option value="tr">Türkçe (TR)</option>
+                <option value="hi">हिन्दी (HI)</option>
+                <option value="id">Bahasa Indonesia (ID)</option>
+                <option value="vi">Tiếng Việt (VI)</option>
+                <option value="th">ไทย (TH)</option>
+                <option value="pl">Polski (PL)</option>
+                <option value="sv">Svenska (SV)</option>
+                <option value="fi">Suomi (FI)</option>
+                <option value="da">Dansk (DA)</option>
+            </select>
+        </nav>
 
-  <div class="time-box">
-    <div class="number" id="hours"></div>
-    <div class="label">Hours</div>
-  </div>
-
-  <div class="time-box">
-    <div class="number" id="minutes"></div>
-    <div class="label">Minutes</div>
-  </div>
-
-  <div class="time-box">
-    <div class="number" id="seconds" translate="no"></div>
-    <div class="label">Seconds</div>
-  </div>
-</div> 
-  <div class="press-kit-container">
-    <a href="Phrinusomyis_Company_Profile_Kit.pdf" class="download-btn" download>
-        DOWNLOAD OFFICIAL PRESS KIT (PDF)
-    </a>
-</div> 
-        
-<div class="contact-email">press@phrinusomyis.com</div>
-<p class="last-updated" id="last-updated" translate="no"></p>
-
-<div id="breaking-bar" style="background:linear-gradient(90deg,#D4AF37,transparent);padding:10px;margin:20px 0;"></div>
-
-<div class="press-grid" id="press-news"></div>
-<style>
-    /* GLOBAL CORPORATE FOOTER STYLES */
-    .phr-main-footer {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 80px 20px 40px;
-        border-top: 1px solid #1a1a1a;
-        font-family: 'Arial', sans-serif;
-    }
-
-    .phr-footer-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Mobile layout */
-        gap: 40px 20px;
-        max-width: 1100px;
-        margin: 0 auto 60px;
-    }
-
-    @media (min-width: 768px) {
-        .phr-footer-grid {
-            grid-template-columns: repeat(4, 1fr); /* Desktop layout */
-        }
-    }
-
-    .phr-footer-section h3 {
-        color: #ffffff;
-        font-size: 15px;
-        font-weight: 900;
-        letter-spacing: 2px;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-    }
-
-    .phr-footer-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .phr-footer-section li {
-        margin-bottom: 15px;
-    }
-
-    .phr-footer-section a {
-        color: #888;
-        text-decoration: none;
-        font-size: 14px;
-        transition: color: 0.3s;
-    }
-
-    .phr-footer-section a:hover {
-        color: #D4AF37; /* PHRINUSOMYIS Gold */
-    }
-
-    /* GLOBAL SITES BAR - CENTERED FIX */
-    .phr-global-bar {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding-top: 40px;
-        border-top: 1px solid #1a1a1a;
-        text-align: center; /* This centers the HQ office text */
-    }
-
-    .phr-global-bar h3 {
-        font-size: 15px;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        font-weight: 900;
-        color: #ffffff;
-    }
-
-    .phr-hq-label {
-        color: #D4AF37;
-        font-weight: bold;
-    }
-
-    .phr-footer-legal {
-        margin-top: 50px;
-        text-align: center;
-        color: #444;
-        font-size: 11px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-</style>
-
-<footer class="phr-main-footer">
-    <div class="phr-footer-grid">
-        <div class="phr-footer-section">
-            <h3>LUXURY</h3>
-            <ul>
-                <li><a href="luxury">Luxury Identity</a></li>
-                <li><a href="circle">Private Access</a></li>
-                <li><a href="perfume">Perfumes</a></li>
-                <li><a href="contact">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="phr-footer-section">
-            <h3>M3AN</h3>
-            <ul>
-                <li><a href="news">Latest News</a></li>
-                <li><a href="press">Press Release</a></li>
-                <li><a href="events">Events</a></li>
-                <li><a href="/">Main</a></li>
-            </ul>
-        </div>
-
-        <div class="phr-footer-section">
-            <h3>ABOUT</h3>
-            <ul>
-                <li><a href="policy">Privacy Policy</a></li>
-                <li><a href="copyright">Copyright</a></li>
-                <li><a href="terms">Terms of Use</a></li>
-                <li><a href="privacy">Privacy Choices</a></li>
-            </ul>
-        </div>
-
-        <div class="phr-footer-section">
-            <h3>HELP</h3>
-            <ul>
-                <li><a href="security">Security</a></li>
-                <li><a href="help">Help Center</a></li>
-                <li><a href="cookies">Cookie Policy</a></li>
-                <li><a href="close">Closed Captions</a></li>
-            </ul>
-        </div>
     </div>
+</header>
 
-    <div class="phr-global-bar">
-        <h3>PHRINUSOMYIS OFFICE</h3>
-        <p style="color: #666; font-size: 13px; letter-spacing: 1px;">
-            <span class="phr-hq-label">BROOKLYN (HQ)</span> | MOSCOW | DUBAI | LAGOS 
+<main class="page-container">
+
+    <section class="page-heading">
+        <div class="eyebrow">Official Statements &amp; Institutional Communications</div>
+        <h1>PHRINUSOMYIS PRESS</h1>
+        <p>
+            Official statements, sporting recognition, institutional perspectives
+            and formal communications from PHRINUSOMYIS™.
         </p>
-    </div>
+    </section>
 
-    <div class="phr-footer-legal">
-        © 2026 PHRINUSOMYIS PRESS RELEASE.
+    <!-- FEATURED PRESS STATEMENT -->
+
+    <section class="content-section">
+        <div class="section-heading">
+            <h2>Featured Statement</h2>
+            <span>Sporting Recognition</span>
+        </div>
+
+        <article class="featured-card">
+
+            <div class="featured-image">
+                <img
+                    src="/ballon-dor-trophy-2026.jpg"
+                    alt="Ballon d’Or trophy 2026"
+                    fetchpriority="high">
+            </div>
+
+            <div class="featured-content">
+                <div class="story-category">Official Sporting Recognition</div>
+
+                <h2>Recognising Excellence at the Highest Level of Football</h2>
+
+                <p>
+                    PHRINUSOMYIS™ recognises the achievements honoured at
+                    the 2026 Ballon d’Or, celebrating excellence across
+                    men's and women's football.
+                </p>
+
+                <button class="read-link" type="button" data-open-article="harry-kane-ballon-dor-2026">
+                    Read Men's Statement <span aria-hidden="true">→</span>
+                </button>
+            </div>
+
+        </article>
+    </section>
+
+    <!-- OFFICIAL PRESS STATEMENTS -->
+
+    <section class="content-section" id="press-statements">
+
+        <div class="section-heading">
+            <h2>Official Press Statements</h2>
+            <span id="results-count">2 Statements</span>
+        </div>
+
+        <div class="news-tools">
+
+            <div class="category-list" aria-label="Filter press statements">
+                <button class="category-button active" data-category="All">All Statements</button>
+                <button class="category-button" data-category="Sporting Recognition">Sporting Recognition</button>
+                <button class="category-button" data-category="Official Statements">Official Statements</button>
+            </div>
+
+            <div class="search-box">
+                <input
+                    type="search"
+                    id="pressSearch"
+                    placeholder="Search press statements..."
+                    aria-label="Search press statements">
+            </div>
+
+        </div>
+
+        <div class="news-grid" id="pressGrid"></div>
+
+        <div class="pagination" id="pagination"></div>
+
+        <p class="archive-note" id="archiveNote">
+            Official PHRINUSOMYIS™ press communications.
+        </p>
+
+    </section>
+
+    <!-- OFFICIAL PUBLICATIONS -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <h2>Official Publications</h2>
+            <span>Explore More</span>
+        </div>
+
+        <div class="publication-grid">
+
+            <article class="publication-card">
+                <div class="story-category">Official Announcements</div>
+                <h2>PHRINUSOMYIS™ Newswire</h2>
+                <p>
+                    Read official organizational announcements and
+                    complete institutional publications.
+                </p>
+                <a
+                    href="https://phrinusomyis.com/newswire/news"
+                    class="read-link"
+                    target="_blank"
+                    rel="noopener">
+                    Visit Newswire <span aria-hidden="true">→</span>
+                </a>
+            </article>
+
+            <article class="publication-card">
+                <div class="story-category">Editorial Publication</div>
+                <h2>PHRINUSOMYIS™ Magazine</h2>
+                <p>
+                    Explore editorial features, long-form stories,
+                    interviews and photographic publications.
+                </p>
+                <a
+                    href="https://phrinusomyis.com/magazine/news"
+                    class="read-link"
+                    target="_blank"
+                    rel="noopener">
+                    Visit Magazine <span aria-hidden="true">→</span>
+                </a>
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- CRAWLABLE STATEMENT CONTENT -->
+
+<div class="seo-statements" aria-hidden="true">
+
+    <article id="seo-harry-kane">
+        <h2>PHRINUSOMYIS™ Congratulates Harry Kane, 2026 Men's Ballon d’Or Winner</h2>
+        <p>26 October 2026. Official PHRINUSOMYIS™ press statement.</p>
+        <img src="/harry-kane-2026.jpg" alt="Harry Kane">
+        <p>
+            Every generation of sport produces moments that become part of its history.
+            Records are challenged, standards are raised, and achievements give the
+            world new reasons to celebrate the power of competition.
+        </p>
+        <p>
+            In football, individual excellence is often measured within a team game.
+            Behind every remarkable season are demanding contests, difficult moments,
+            consistency and the determination to deliver when expectations are highest.
+            Recognition at the highest level therefore represents more than a single
+            performance; it reflects excellence sustained across a season.
+        </p>
+        <p>
+            The Ballon d’Or holds a distinctive place in the history of football.
+            It recognises achievement at the highest level of the game and gives
+            particular recognition to performances that leave a lasting mark on
+            a season.
+        </p>
+        <p>
+            PHRINUSOMYIS™ congratulates Harry Kane on receiving the 2026 Men's
+            Ballon d’Or. The achievement represents a significant moment in his
+            sporting journey and recognises the quality, consistency and competitive
+            contribution demonstrated throughout the season.
+        </p>
+        <p>
+            The highest honours in sport are earned through performance.
+            They become part of the game's history and add another chapter
+            to the continuing story of football.
+        </p>
+    </article>
+
+    <article id="seo-alexia-putellas">
+        <h2>PHRINUSOMYIS™ Congratulates Alexia Putellas, 2026 Women's Ballon d’Or Winner</h2>
+        <p>26 October 2026. Official PHRINUSOMYIS™ press statement.</p>
+        <img src="/alexia-putellas-2026.jpg" alt="Alexia Putellas">
+        <p>
+            The history of sport is shaped by performances that move beyond
+            the result of a single contest. Across generations, the athletes
+            who reach the highest level are recognised for the standards they
+            establish, the consistency they demonstrate and the influence
+            of their achievements on the game.
+        </p>
+        <p>
+            Women's football has continued to produce remarkable competition,
+            exceptional technical quality and defining sporting moments.
+            Its development is reflected in the performances of athletes
+            who compete at the highest level and contribute to the history
+            of the game.
+        </p>
+        <p>
+            The Ballon d’Or is one of football's most distinguished individual
+            honours. Its recognition reflects achievement across a season
+            and acknowledges excellence within the wider story of the sport.
+        </p>
+        <p>
+            PHRINUSOMYIS™ congratulates Alexia Putellas on receiving the
+            2026 Women's Ballon d’Or. The honour recognises her sporting
+            achievement and the quality, commitment and competitive
+            excellence represented by her performances.
+        </p>
+        <p>
+            Every major sporting honour becomes part of a larger history.
+            This recognition adds another important moment to the continuing
+            story of women's football.
+        </p>
+    </article>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-section">
+                <h3>Organization</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/press">Press</a></li>
+                    <li><a href="/events">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sports</h3>
+                <ul>
+                    <li><a href="/sports">Sports</a></li>
+                    <li><a href="/sports-theater">Sports Theater™</a></li>
+                    <li><a href="/competitions">Competitions</a></li>
+                    <li><a href="/media">Media</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Publications</h3>
+                <ul>
+                    <li><a href="https://phrinusomyis.com/newswire/news">Newswire</a></li>
+                    <li><a href="https://phrinusomyis.com/magazine/news">Magazine</a></li>
+                    <li><a href="/luxury">Luxury</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/policy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Use</a></li>
+                    <li><a href="/copyright">Copyright</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© PHRINUSOMYIS™. All Rights Reserved.</p>
+            <p class="footer-slogan">COMMANDING THE WORLD STAGE™</p>
+        </div>
+
     </div>
+</footer>
+
+<!-- ARTICLE READER MODAL -->
+
+<div class="article-modal" id="articleModal" aria-hidden="true">
+
+    <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle">
+
+        <div class="modal-topbar">
+            <div class="modal-brand">PHRINUSOMYIS™ PRESS</div>
+
+            <button
+                class="modal-close"
+                id="closeArticle"
+                type="button"
+                aria-label="Close press statement">
+                ×
+            </button>
+        </div>
+
+        <div class="modal-scroll">
+            <article class="modal-article" id="modalArticleContent"></article>
+        </div>
+
+        <div class="modal-actions">
+
+            <div class="action-group">
+
+                <button class="action-button" id="printArticle" type="button">
+                    Print
+                </button>
+
+                <div class="share-menu">
+
+                    <button class="action-button primary" id="shareToggle" type="button" aria-expanded="false">
+                        Share
+                    </button>
+
+                    <div class="share-options" id="shareOptions">
+                        <button type="button" data-share="whatsapp">WhatsApp</button>
+                        <button type="button" data-share="facebook">Facebook</button>
+                        <button type="button" data-share="x">X</button>
+                        <button type="button" data-share="linkedin">LinkedIn</button>
+                        <button type="button" data-share="telegram">Telegram</button>
+                        <button type="button" data-share="email">Email</button>
+                    </div>
+
+                </div>
+
+                <button class="action-button" id="copyArticleLink" type="button">
+                    Copy Link
+                </button>
+
+                <span class="copy-status" id="copyStatus" aria-live="polite"></span>
+
+            </div>
+
+            <button class="action-button" id="closeArticleBottom" type="button">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="google_translate_element"></div>
 
 <script>
 
-// ===== YOUR PRESS DATA =====
-const pressNews =
-[
-{title:"PHRINUSOMYIS™ Defines a Different Direction for International Sports",description:"Sport is shaped by traditions that have endured across generations, from the rules of competition to the rivalries and identities that bring people together. PHRINUSOMYIS™ is an international sports organization responsible for the development, ownership and administration of sports competitions worldwide. Its work includes developing original formats that move beyond conventional sporting structures while giving each competition its own rules and identity. The organization’s scope extends beyond any single event, placing the design and administration of competition at the centre of its work.",date:"2025-09-05T08:00:00+00:00"},
-{title:"THE STANDARD Brings Luxury Products Under the PHRINUSOMYIS™ Name",description:"Luxury is expressed not only through individual products, but also through the identity that connects them. THE STANDARD brings together signature fragrances, limited-edition collectibles and selected lifestyle products under the PHRINUSOMYIS™ name. The collection gives these products a distinct identity within the organization’s commercial portfolio, extending its interests beyond sports while maintaining THE STANDARD as a separate product identity.",date:"2025-09-15T08:00:00+00:00"},
-{title:"Behind the Production of PHRINUSOMYIS™ Competitions",description:"A competition begins long before the audience sees the action. Its rules and format shape the technical preparation, logistics and production decisions required to bring it to the screen or venue. PHRINUSOMYIS™ coordinates these requirements around the structure of each competition, ensuring that production planning follows the demands of the contest rather than treating every format as the same event. The work behind the scenes is an essential part of delivering a competition as designed.",date:"2025-10-12T08:00:00+00:00"},
-{title:"PHRINUSOMYIS™ Introduces Sports Theater™ as a Distinct Category of Sport",description:"Sport has become far more than a contest. Across generations, it has carried national identity, rivalry, tradition and the pride people take in representing something greater than themselves. Those traditions have helped make sport one of the world’s most enduring cultural institutions. PHRINUSOMYIS™, an international sports organization responsible for the development, ownership and administration of sports competitions worldwide, introduces Sports Theater™ as a distinct category that moves beyond traditional sporting structures. WHERE THE RULES ARE NOT DESAME WITH TRADITIONAL SPORTS. The statement is about the structure of competition, not the absence of rules. Sports Theater™ is defined by its own approach to how a contest is organized and presented, rather than being confined to familiar sporting conventions. Its significance lies in opening space for a distinct category within sport, while recognizing that the history of sport has never meant that its structures must remain unchanged. Sports Theater™ belongs to the wider work of PHRINUSOMYIS™; it is a category, not the organization itself or a single competition. SOUL SURVIVE™ is one competition presented within that wider identity, with its own decisive-winner principle. The distinction is clear: PHRINUSOMYIS™ is the organization, Sports Theater™ is the category, and each competition has its own identity and rules.",date:"2025-11-07T08:00:00+00:00"},
-{title:"PHRINUSOMYIS™ Publishes Updates on Its Competitions and Programmes",description:"For an international sports organization, its public record extends beyond the competitions themselves. PHRINUSOMYIS™ shares information about its competitions, programmes and organizational developments through its official media channels. These updates cover the organization’s work in sports and commerce, while preserving the identity of the individual competitions and programmes under its name. The aim is to provide a clear account of developments associated with PHRINUSOMYIS™ and its activities.",date:"2025-11-20T08:00:00+00:00"},
-{title:"PHRINUSOMYIS™ Extends Its Commercial Interests Beyond Sports",description:"An international sports organization can have interests that extend beyond the competition arena. Alongside its work in developing, owning and administering sports competitions, PHRINUSOMYIS™ has commercial interests involving products, business activities and commercial programmes. These activities give the organization a broader commercial portfolio without making its identity dependent on any single product or competition. Sports remains central to PHRINUSOMYIS™, but it does not define the full extent of its business interests.",date:"2026-01-01T08:00:00+00:00"},
-{title:"Dubai Forms Part of PHRINUSOMYIS™’s Luxury and Commercial Programme",description:"Dubai is identified as a location within PHRINUSOMYIS™’s luxury and commercial programme, which includes THE STANDARD, signature fragrances and associated products. The city’s position in international retail and luxury commerce provides a relevant setting for the programme’s commercial interests. The products retain their identity under THE STANDARD, while the wider programme sits within PHRINUSOMYIS™’s commercial portfolio.",date:"2026-01-23T08:00:00+00:00"},
-{title:"Partnerships Form Part of PHRINUSOMYIS™’s Work in Sports and Commerce",description:"International sports competitions and commercial programmes require relationships that extend beyond the organization responsible for them. PHRINUSOMYIS™’s partnership activities relate to its competitions, programmes and commercial interests. These relationships form part of the wider framework through which the organization approaches its work in sports and commerce. Each partnership must be understood in relation to the activity it supports, rather than as a substitute for PHRINUSOMYIS™’s own organizational identity and responsibilities.",date:"2026-02-10T08:00:00+00:00"},
-{title:"United Kingdom Features in PHRINUSOMYIS™’s Sports and Commercial Programme",description:"The United Kingdom is included in PHRINUSOMYIS™’s sports and commercial programme, covering competition-related business and commercial interests, with London among the locations associated with the programme. The country’s established role in international business and sport provides a relevant setting for these interests. The programme places the United Kingdom within PHRINUSOMYIS™’s wider international scope, connecting its sports-related work with its commercial activities.",date:"2026-03-10T08:00:00+00:00"},
-{title:"France Features in PHRINUSOMYIS™’s Luxury and Fragrance Programme",description:"France occupies a distinctive place in the international luxury and fragrance industries, making it a relevant setting for PHRINUSOMYIS™’s luxury and commercial programme. The programme includes THE STANDARD and associated products, with Paris and Grasse among the locations identified within its geographic scope. Paris is internationally associated with luxury commerce, while Grasse has a long history of perfumery. The programme connects PHRINUSOMYIS™’s commercial interests with a country whose reputation in these sectors is well established.",date:"2026-03-15T08:00:00+00:00"},
-{title:"Spain Features in PHRINUSOMYIS™’s Sports and Commercial Programme",description:"Madrid and Barcelona are among the locations associated with PHRINUSOMYIS™’s sports and commercial programme in Spain. Both cities have prominent roles in the country’s business and sporting life, providing a relevant setting for competition-related activities and commercial interests. Spain’s inclusion reflects the geographic scope of the programme, which connects the organization’s work in sports with its wider commercial portfolio.",date:"2026-03-20T08:00:00+00:00"},
-{title:"China Features in PHRINUSOMYIS™’s Commercial Programme",description:"China is included in PHRINUSOMYIS™’s commercial programme, with Shanghai and Beijing identified among the locations associated with product opportunities and business interests. The country’s scale and importance in international commerce make it a significant market within a programme focused on commercial activity. Its inclusion places China within the wider geographic scope of PHRINUSOMYIS™’s business interests, alongside the organization’s activities in sports and other commercial areas.",date:"2026-03-25T08:00:00+00:00"},
-{title:"Technical Planning Shapes the Delivery of PHRINUSOMYIS™ Competitions",description:"The structure of a competition determines more than how a winner is decided. It also shapes the technical requirements, logistics and production arrangements needed to deliver the event. PHRINUSOMYIS™ coordinates these elements according to the rules and requirements of each format. This work connects the design of a competition with the practical decisions involved in presenting it, recognizing that different formats can require different technical and operational approaches.",date:"2026-04-20T08:00:00+00:00"},
-{title:"PHRINUSOMYIS™ Presents SOUL SURVIVE™: One Contest. One Winner.",description:"Every competition reaches a point at which the result must be decided. SOUL SURVIVE™, presented by PHRINUSOMYIS™, is built around that principle: no draw, no shared victory and no two sides finishing as equal winners. One competitor or one team must emerge as the champion and conqueror. ONE CONTEST. ONE WINNER. The principle gives SOUL SURVIVE™ a clear competitive identity, with the outcome determined by the contest itself. The uncertainty lies in who will win; the rule is that there must be a winner. SOUL SURVIVE™ is a competition presented within the wider PHRINUSOMYIS™ organization. It is distinct from Sports Theater™, the category associated with a broader departure from traditional sporting structures. PHRINUSOMYIS™ remains the organization responsible for the development, ownership and administration of its competitions, each with its own identity and rules.",date:"2026-06-23T08:00:00+00:00"},
-{title:"PHRINUSOMYIS™ Reschedules SOUL SURVIVE™ for December 2026",description:"PHRINUSOMYIS™ announced on August 25, 2026, that SOUL SURVIVE™ had been rescheduled for December 2026 following scheduling and production considerations. The revised schedule retained December as the planned release period, with the final date and venue to be announced once confirmed. The update addressed the timing of the competition while leaving its announced December window in place.",date:"2026-08-25T08:00:00+00:00"},
-{title:"SOUL SURVIVE™ to Be Distributed Free-to-Air in More Than 100 Countries",description:"SOUL SURVIVE™ is scheduled for free-to-air distribution in more than 100 countries upon release. The planned arrangement is intended to make the competition available to television audiences without requiring a paid television subscription. The distribution forms part of the competition’s announced release plans under PHRINUSOMYIS™, giving the broadcast its own international dimension alongside the competition’s format and rules.",date:"2026-08-25T08:00:00+00:00"},
-{title:"SOUL SURVIVE™ to Be Broadcast in Five Languages",description:"SOUL SURVIVE™ is scheduled to be broadcast in English, French, Spanish, Arabic and Mandarin Chinese upon release. The five-language plan is intended to make the competition accessible across a range of language markets. It complements the announced free-to-air distribution in more than 100 countries and forms part of the broadcast arrangements for SOUL SURVIVE™ under PHRINUSOMYIS™.",date:"2026-08-25T08:00:00+00:00"}
+/*
+ * PHRINUSOMYIS™ PRESS
+ * Official press statements and institutional communications.
+ * Each statement opens in the existing modal reader.
+ * Each statement has its own shareable URL.
+ */
+
+/* IMAGE PATHS */
+
+const PRESS_IMAGES = {
+    trophy: "/ballon-dor-trophy-2026.jpg",
+    harry: "/harry-kane-2026.jpg",
+    alexia: "/alexia-putellas-2026.jpg"
+};
+
+/* PUBLICATION DESTINATIONS */
+
+const NEWSWIRE_URL = "https://phrinusomyis.com/newswire/news";
+const MAGAZINE_URL = "https://phrinusomyis.com/magazine/news";
+
+/*
+ * Each statement URL uses the /press/ path.
+ * The hosting platform must serve this same Press HTML page
+ * for these two nested URLs if direct path access is required.
+ */
+
+const PRESS_BASE_URL = "https://phrinusomyis.com/press/";
+
+const pressArticles = [
+
+    {
+        id: "harry-kane-ballon-dor-2026",
+        slug: "harry-kane-2026-mens-ballon-dor-winner",
+        title: "PHRINUSOMYIS™ Congratulates Harry Kane, 2026 Men's Ballon d’Or Winner",
+        category: "Sporting Recognition",
+        date: "26 October 2026",
+        image: PRESS_IMAGES.harry,
+        imageAlt: "Harry Kane",
+        cardImage: PRESS_IMAGES.trophy,
+        description:
+            "PHRINUSOMYIS™ congratulates Harry Kane on receiving the 2026 Men's Ballon d’Or, recognising his achievement at the highest level of football.",
+        intro:
+            "Every generation of sport produces moments that become part of its history. Records are challenged, standards are raised, and achievements give the world new reasons to celebrate the power of competition.",
+        paragraphs: [
+            "In football, individual excellence is often measured within a team game. Behind every remarkable season are demanding contests, difficult moments, consistency and the determination to deliver when expectations are highest. Recognition at the highest level therefore represents more than a single performance; it reflects excellence sustained across a season.",
+            "The Ballon d’Or holds a distinctive place in the history of football. It recognises achievement at the highest level of the game and gives particular recognition to performances that leave a lasting mark on a season.",
+            "PHRINUSOMYIS™ congratulates Harry Kane on receiving the 2026 Men's Ballon d’Or. The achievement represents a significant moment in his sporting journey and recognises the quality, consistency and competitive contribution demonstrated throughout the season.",
+            "The highest honours in sport are earned through performance. They become part of the game's history and add another chapter to the continuing story of football."
+        ]
+    },
+
+    {
+        id: "alexia-putellas-ballon-dor-2026",
+        slug: "alexia-putellas-2026-womens-ballon-dor-winner",
+        title: "PHRINUSOMYIS™ Congratulates Alexia Putellas, 2026 Women's Ballon d’Or Winner",
+        category: "Sporting Recognition",
+        date: "26 October 2026",
+        image: PRESS_IMAGES.alexia,
+        imageAlt: "Alexia Putellas",
+        cardImage: PRESS_IMAGES.trophy,
+        description:
+            "PHRINUSOMYIS™ congratulates Alexia Putellas on receiving the 2026 Women's Ballon d’Or, recognising her achievement and excellence in women's football.",
+        intro:
+            "The history of sport is shaped by performances that move beyond the result of a single contest. Across generations, the athletes who reach the highest level are recognised for the standards they establish, the consistency they demonstrate and the influence of their achievements on the game.",
+        paragraphs: [
+            "Women's football has continued to produce remarkable competition, exceptional technical quality and defining sporting moments. Its development is reflected in the performances of athletes who compete at the highest level and contribute to the history of the game.",
+            "The Ballon d’Or is one of football's most distinguished individual honours. Its recognition reflects achievement across a season and acknowledges excellence within the wider story of the sport.",
+            "PHRINUSOMYIS™ congratulates Alexia Putellas on receiving the 2026 Women's Ballon d’Or. The honour recognises her sporting achievement and the quality, commitment and competitive excellence represented by her performances.",
+            "Every major sporting honour becomes part of a larger history. This recognition adds another important moment to the continuing story of women's football."
+        ]
+    }
+
 ];
-// ===== GENERATE CARDS =====
-function generatePressCards() {
-  const grid = document.getElementById("press-news");
-  grid.innerHTML="";
 
-  pressNews.sort((a,b)=> new Date(b.date)-new Date(a.date));
+/* SETTINGS */
 
-  document.getElementById("breaking-bar").innerText =
-    "Latest Update: " + pressNews[0].title;
+const ARTICLES_PER_PAGE = 6;
+let currentPage = 1;
+let activeCategory = "All";
+let searchTerm = "";
+let currentArticle = null;
 
-  pressNews.forEach((item,index)=>{
-    const card=document.createElement("div");
-    card.className="press-card";
+/* PERMANENT STATEMENT LINKS */
 
-    const badge=index<3?"<span style='color:gold;font-size:0.7rem;'>NEW</span><br>":"";
+function articleUrl(article) {
+    return PRESS_BASE_URL + article.slug;
+}
 
-    const formattedDate = new Date(item.date).toLocaleDateString('en-GB',{
-      day:'2-digit',month:'short',year:'numeric'
+function getArticleFromPath() {
+    const path = window.location.pathname.replace(/\/+$/, "");
+    return pressArticles.find(article => {
+        return path === "/press/" + article.slug;
+    });
+}
+
+/* FILTERING */
+
+function getFilteredArticles() {
+    return pressArticles.filter(article => {
+
+        const categoryMatch =
+            activeCategory === "All" ||
+            article.category === activeCategory;
+
+        const searchContent = (
+            article.title + " " +
+            article.description + " " +
+            article.category
+        ).toLowerCase();
+
+        const searchMatch = searchContent.includes(searchTerm.toLowerCase());
+
+        return categoryMatch && searchMatch;
+    });
+}
+
+/* BUILD PRESS CARDS */
+
+function renderPress() {
+
+    const grid = document.getElementById("pressGrid");
+    const pagination = document.getElementById("pagination");
+    const resultsCount = document.getElementById("results-count");
+    const archiveNote = document.getElementById("archiveNote");
+
+    const filtered = getFilteredArticles();
+    const totalPages = Math.ceil(filtered.length / ARTICLES_PER_PAGE);
+
+    if (currentPage > totalPages) {
+        currentPage = Math.max(1, totalPages);
+    }
+
+    const start = (currentPage - 1) * ARTICLES_PER_PAGE;
+    const visible = filtered.slice(start, start + ARTICLES_PER_PAGE);
+
+    grid.innerHTML = "";
+    pagination.innerHTML = "";
+
+    resultsCount.textContent = filtered.length + " Statements";
+
+    if (!visible.length) {
+        grid.innerHTML = `
+            <div class="empty-state">
+                No press statements match your search.
+                Try another keyword or category.
+            </div>
+        `;
+        archiveNote.textContent = "No matching statements.";
+        return;
+    }
+
+    visible.forEach(article => {
+
+        const card = document.createElement("article");
+        card.className = "news-card";
+
+        const imageFrame = document.createElement("div");
+        imageFrame.className = "news-card-image";
+
+        const image = document.createElement("img");
+        image.src = article.cardImage;
+        image.alt = "Ballon d’Or trophy 2026";
+        image.loading = "lazy";
+
+        imageFrame.appendChild(image);
+
+        const content = document.createElement("div");
+        content.className = "news-card-content";
+
+        const category = document.createElement("div");
+        category.className = "story-category";
+        category.textContent = article.category;
+
+        const date = document.createElement("div");
+        date.className = "story-date";
+        date.textContent = article.date;
+
+        const title = document.createElement("h3");
+        title.textContent = article.title;
+
+        const description = document.createElement("p");
+        description.textContent = article.description;
+
+        const readButton = document.createElement("button");
+        readButton.type = "button";
+        readButton.className = "read-link";
+        readButton.textContent = "Read Statement →";
+        readButton.dataset.openArticle = article.id;
+
+        content.append(category, date, title, description, readButton);
+        card.append(imageFrame, content);
+        grid.appendChild(card);
     });
 
-    card.innerHTML=`
-      ${badge}
-      <h3>${item.title}</h3>
-      <p style="color:#888;font-size:0.75rem;margin-bottom:8px;">${formattedDate}</p>
-      <p>${item.description || "Official corporate update from PHRINUSOMYIS."}</p>
-    `;
+    archiveNote.textContent =
+        "Showing " + (start + 1) + "–" +
+        (start + visible.length) + " of " +
+        filtered.length + " official statements.";
 
-    grid.appendChild(card);
-  });
-
-  animatePressCards();
+    renderPagination(totalPages);
 }
 
-// ===== ANIMATION =====
-function animatePressCards(){
-  const cards=document.querySelectorAll(".press-card");
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-      }
+/* PAGINATION */
+
+function renderPagination(totalPages) {
+
+    const pagination = document.getElementById("pagination");
+
+    if (totalPages <= 1) return;
+
+    const previous = document.createElement("button");
+    previous.textContent = "Previous";
+    previous.disabled = currentPage === 1;
+
+    previous.addEventListener("click", () => {
+        currentPage--;
+        renderPress();
     });
-  });
-  cards.forEach(card=>observer.observe(card));
-}
 
-// ===== CLOCK =====
-function updateClock(){
-  const now=new Date();
-  const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  document.getElementById("month").innerText=months[now.getMonth()];
-  document.getElementById("day").innerText=now.getDate();
-  document.getElementById("year").innerText=now.getFullYear();
-  document.getElementById("hours").innerText=String(now.getHours()).padStart(2,'0');
-  document.getElementById("minutes").innerText=String(now.getMinutes()).padStart(2,'0');
-  document.getElementById("seconds").innerText=String(now.getSeconds()).padStart(2,'0');
-  document.getElementById("last-updated").innerText =
-    "Last updated: " + now.toLocaleDateString();  
-}
-function generateStructuredData(){
-  const data = {
-    "@context": "https://schema.org",
-    "@graph": pressNews.map(item => ({
-      "@type": "NewsArticle",
-      "headline": item.title,
-      "datePublished": item.date,
-      "dateModified": item.date,
-      "author": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PHRINUSOMYIS",
-        "@id": "https://phrinusomyis.com/#organization",
-        "url": "https://phrinusomyis.com",
-       "logo": {
-        "@type": "ImageObject",
-        "url": "https://phrinusomyis.com/assets/Phrinusomyis_logo.png"
-        }
-      }
-    }))
-  };
-  
-  const script = document.createElement("script");
-  script.type = "application/ld+json";
-  script.textContent = JSON.stringify(data);
-  document.head.appendChild(script);
-}
+    pagination.appendChild(previous);
 
-generateStructuredData();
-// ===== INIT =====
-generatePressCards();
-updateClock();
-setInterval(updateClock,1000);
+    for (let page = 1; page <= totalPages; page++) {
 
-</script>
-</script>
-<div id="google_translate_element" style="display:none;"></div>
+        const button = document.createElement("button");
+        button.textContent = page;
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            includedLanguages: 'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
-
-    // THE SHIELD: This injects CSS that targets every possible Google Translate container
-    const style = document.createElement('style');
-    style.innerHTML = `
-        /* 1. Kill the banner and any popups */
-        iframe.goog-te-banner-frame, 
-        .goog-te-banner-frame, 
-        .goog-te-balloon-frame, 
-        #goog-gt-tt, 
-        .goog-te-spinner-pos {
-            display: none !important;
-            visibility: hidden !important;
+        if (page === currentPage) {
+            button.classList.add("active");
+            button.setAttribute("aria-current", "page");
         }
 
-        /* 2. Target the specific mobile translate icon classes */
-        .VIpgJd-Zvi9ab-aZ2w3d-v9v088, 
-        .VIpgJd-Zvi9ab-OTTI0c-hSRGPd, 
-        #google_translate_element img {
-            display: none !important;
-            width: 0 !important;
-            height: 0 !important;
-        }
+        button.addEventListener("click", () => {
+            currentPage = page;
+            renderPress();
 
-        /* 3. Force the page to stay at the top */
-        body { 
-            top: 0 !important; 
-            position: static !important; 
-        }
-
-        /* 4. The Overlay Block: This covers the area where the icon usually pops out */
-        #google-translate-shield {
-            display: none;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // THE CLEANER: A loop that runs every 100ms to delete the Google elements if they appear
-    setInterval(function() {
-        const icon = document.querySelector(".VIpgJd-Zvi9ab-aZ2w3d-v9v088");
-        const frame = document.querySelector(".goog-te-banner-frame");
-        if (icon) icon.remove(); 
-        if (frame) frame.remove();
-        document.body.style.top = "0px";
-    }, 100);
-
-    // Apply saved language
-    const savedLang = localStorage.getItem("site_lang");
-    if (savedLang) {
-        setTimeout(() => { changeLanguage(savedLang); }, 1000);
-    }
-}
-
-function changeLanguage(lang) {
-    const select = document.querySelector(".goog-te-combo");
-    if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-        localStorage.setItem("site_lang", lang);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const switcher = document.getElementById("languageSwitcher");
-    if (switcher) {
-        switcher.addEventListener("change", function () {
-            changeLanguage(this.value);
+            document.getElementById("press-statements").scrollIntoView({
+                behavior: "smooth"
+            });
         });
+
+        pagination.appendChild(button);
+    }
+
+    const next = document.createElement("button");
+    next.textContent = "Next";
+    next.disabled = currentPage === totalPages;
+
+    next.addEventListener("click", () => {
+        currentPage++;
+        renderPress();
+    });
+
+    pagination.appendChild(next);
+}
+
+/* FILTER BUTTONS */
+
+document.querySelectorAll(".category-button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        document.querySelectorAll(".category-button").forEach(item => {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        activeCategory = button.dataset.category;
+        currentPage = 1;
+
+        renderPress();
+    });
+
+});
+
+/* SEARCH */
+
+document.getElementById("pressSearch").addEventListener("input", event => {
+    searchTerm = event.target.value.trim();
+    currentPage = 1;
+    renderPress();
+});
+
+/* ARTICLE MODAL */
+
+const articleModal = document.getElementById("articleModal");
+const modalArticleContent = document.getElementById("modalArticleContent");
+const modalScroll = document.querySelector(".modal-scroll");
+
+function openArticle(id, updateAddress = true) {
+
+    const article = pressArticles.find(item => item.id === id);
+    if (!article) return;
+
+    currentArticle = article;
+
+    let articleHTML = `
+        <div class="story-category">${article.category}</div>
+        <h1 id="modalTitle">${article.title}</h1>
+        <div class="article-meta">
+            PHRINUSOMYIS™ · OFFICIAL PRESS STATEMENT · ${article.date}
+        </div>
+        <img class="story-image" src="${article.image}" alt="${article.imageAlt}">
+        <p class="article-intro">${article.intro}</p>
+    `;
+
+    article.paragraphs.forEach(paragraph => {
+        articleHTML += `<p>${paragraph}</p>`;
+    });
+
+    articleHTML += `
+        <p>
+            <strong>PHRINUSOMYIS™</strong><br>
+            COMMANDING THE WORLD STAGE™
+        </p>
+    `;
+
+    modalArticleContent.innerHTML = articleHTML;
+
+    articleModal.classList.add("open");
+    articleModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+
+    modalScroll.scrollTop = 0;
+    document.getElementById("copyStatus").textContent = "";
+
+    if (updateAddress) {
+        history.pushState(
+            { article: id },
+            "",
+            articleUrl(article)
+        );
+    }
+
+    document.getElementById("closeArticle").focus();
+}
+
+function closeArticle(updateAddress = true) {
+
+    articleModal.classList.remove("open");
+    articleModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+    document.getElementById("shareOptions").classList.remove("open");
+    document.getElementById("shareToggle").setAttribute("aria-expanded", "false");
+
+    currentArticle = null;
+
+    if (updateAddress && getArticleFromPath()) {
+        history.pushState({}, "", "/press");
+    }
+}
+
+/* OPEN ARTICLE BUTTONS */
+
+document.addEventListener("click", event => {
+
+    const trigger = event.target.closest("[data-open-article]");
+
+    if (trigger) {
+        openArticle(trigger.dataset.openArticle);
+    }
+
+});
+
+/* CLOSE CONTROLS */
+
+document.getElementById("closeArticle").addEventListener("click", () => {
+    closeArticle();
+});
+
+document.getElementById("closeArticleBottom").addEventListener("click", () => {
+    closeArticle();
+});
+
+articleModal.addEventListener("click", event => {
+    if (event.target === articleModal) {
+        closeArticle();
     }
 });
-</script>
 
-<script type="text/javascript" 
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
-  <script>
-/**
- * PHRINUSOMYIS Official Press Page Schema
- * HQ: Brooklyn, New York City
- */
-(function() {
-  const base = "https://phrinusomyis.com";
-  const pressUrl = `${base}/press`;
-  const graph = [];
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && articleModal.classList.contains("open")) {
+        closeArticle();
+    }
+});
 
-  // Data fallback for your articles array
-  const articles = window.articles || [];
+/* DEEP LINKS AND BROWSER HISTORY */
 
-  // 1. Organization - HEADQUARTERS (Brooklyn)
-  graph.push({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${base}/#organization`,
-    "name": "PHRINUSOMYIS",
-    "url": base,
-    "logo": {
-      "@type": "ImageObject",
-      "url": `${base}/assets/Phrinusomyis_logo.png`
-    },
-    // This defines the Brooklyn HQ
-    "address": {
-      "@type": "PostalAddress",
-      "@id": `${base}/#dept-headquarters`,
-      "streetAddress": "Brooklyn",
-      "addressLocality": "New York City",
-      "addressRegion": "Kings County, New York",
-      "addressCountry": "USA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.6782,
-      "longitude": -73.9442
-    },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+1 (602) 842-3713",
-        "contactType": "Customer Service",
-        "email": "info@phrinusomyis.com"
-      }
-    ],
-    // 2. Global Offices (Sub-Organizations)
-    "subOrganization": [
-      {
-        "@type": "Organization",
-        "@id": `${base}/#dept-dubai`,
-        "name": "PHRINUSOMYIS Dubai Office",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dubai",
-          "addressRegion": "Emirate of Dubai",
-          "addressCountry": "UAE"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 25.2048,
-          "longitude": 55.2708
+function readArticleAddress() {
+
+    const article = getArticleFromPath();
+
+    if (article) {
+        openArticle(article.id, false);
+    } else if (articleModal.classList.contains("open")) {
+        closeArticle(false);
+    }
+}
+
+window.addEventListener("popstate", readArticleAddress);
+
+/* PRINT */
+
+document.getElementById("printArticle").addEventListener("click", () => {
+    if (currentArticle) {
+        window.print();
+    }
+});
+
+/* COPY PERMANENT STATEMENT LINK */
+
+async function copyArticleLink() {
+
+    if (!currentArticle) return;
+
+    const link = articleUrl(currentArticle);
+    const status = document.getElementById("copyStatus");
+
+    try {
+        await navigator.clipboard.writeText(link);
+        status.textContent = "Link copied";
+    } catch (error) {
+
+        const temporary = document.createElement("textarea");
+        temporary.value = link;
+        temporary.style.position = "fixed";
+        temporary.style.opacity = "0";
+
+        document.body.appendChild(temporary);
+        temporary.select();
+
+        const copied = document.execCommand("copy");
+        temporary.remove();
+
+        status.textContent = copied ? "Link copied" : "Copy unavailable";
+    }
+}
+
+document.getElementById("copyArticleLink").addEventListener("click", copyArticleLink);
+
+/* SHARE MENU */
+
+const shareToggle = document.getElementById("shareToggle");
+const shareOptions = document.getElementById("shareOptions");
+
+shareToggle.addEventListener("click", () => {
+
+    const isOpen = shareOptions.classList.toggle("open");
+
+    shareToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll("[data-share]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        if (!currentArticle) return;
+
+        const url = articleUrl(currentArticle);
+        const title = currentArticle.title;
+
+        const encodedUrl = encodeURIComponent(url);
+        const encodedTitle = encodeURIComponent(title);
+
+        const shareTargets = {
+            whatsapp: "https://wa.me/?text=" + encodedTitle + "%20" + encodedUrl,
+            facebook: "https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl,
+            x: "https://twitter.com/intent/tweet?text=" + encodedTitle + "&url=" + encodedUrl,
+            linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + encodedUrl,
+            telegram: "https://t.me/share/url?url=" + encodedUrl + "&text=" + encodedTitle,
+            email: "mailto:?subject=" + encodedTitle + "&body=" + encodedUrl
+        };
+
+        const target = shareTargets[button.dataset.share];
+
+        if (target) {
+            window.open(
+                target,
+                "_blank",
+                "noopener,noreferrer,width=700,height=600"
+            );
         }
-      },
-      {
-        "@type": "Organization",
-        "@id": `${base}/#dept-moscow`,
-        "name": "PHRINUSOMYIS Moscow Office",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Moscow",
-          "addressRegion": "Central Okrug, Federal City",
-          "addressCountry": "Russia"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 55.7558,
-          "longitude": 37.6173
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": `${base}/#dept-lagos`,
-        "name": "PHRINUSOMYIS Lagos Office",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Banana Island",
-          "addressLocality": "Lagos",
-          "addressRegion": "Eti-Osa LGA, Lagos State",
-          "addressCountry": "Nigeria"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 6.4498,
-          "longitude": 3.4719
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": pressUrl
-        }
-      }
-    ]
-  });
 
-  // 3. ItemList for the Press Feed
-  if (articles.length > 0) {
-    graph.push({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": articles.map((a, i) => ({
-        "@type": "ListItem",
-        "position": i + 1,
-        "item": { "@id": base + a[1] + "#press" }
-      }))
+        shareOptions.classList.remove("open");
+        shareToggle.setAttribute("aria-expanded", "false");
     });
 
-    // 4. Individual Press Articles
-    articles.forEach(a => {
-      graph.push({
+});
+
+/* WEB SHARE API */
+
+if (navigator.share) {
+    shareToggle.addEventListener("contextmenu", async event => {
+        event.preventDefault();
+
+        if (!currentArticle) return;
+
+        try {
+            await navigator.share({
+                title: currentArticle.title,
+                text: currentArticle.description,
+                url: articleUrl(currentArticle)
+            });
+        } catch (error) {
+            // Sharing cancelled by the visitor.
+        }
+    });
+}
+
+/* STRUCTURED DATA */
+
+function generateStructuredData() {
+
+    const baseUrl = "https://phrinusomyis.com";
+
+    const structuredData = {
         "@context": "https://schema.org",
-        "@type": "pressnews",
-        "@id": base + a[1] + "#press",
-        "headline": a[2],
-        "datePublished": a[0],
-        "dateModified": a[0],
-        "mainEntityOfPage": base + a[1],
-        "publisher": { "@id": `${base}/#organization` }
-      });
-    });
-  }
+        "@type": "CollectionPage",
+        "name": "PHRINUSOMYIS™ Press",
+        "url": baseUrl + "/press",
+        "description":
+            "Official statements, sporting recognition, institutional perspectives and formal communications from PHRINUSOMYIS™.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "PHRINUSOMYIS™",
+            "url": baseUrl
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": pressArticles.map((article, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "url": articleUrl(article),
+                "name": article.title,
+                "description": article.description
+            }))
+        }
+    };
 
-  // 5. Final Injection into HTML
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.text = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": graph
-  });
-  document.body.appendChild(script);
-})();
-        </script>
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    pressArticles.forEach(article => {
+
+        const statementData = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article.title,
+            "description": article.description,
+            "image": "https://phrinusomyis.com" + article.image,
+            "datePublished": "2026-10-26",
+            "dateModified": "2026-10-26",
+            "mainEntityOfPage": articleUrl(article),
+            "author": {
+                "@type": "Organization",
+                "name": "PHRINUSOMYIS™"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "PHRINUSOMYIS™",
+                "url": baseUrl
+            }
+        };
+
+        const articleScript = document.createElement("script");
+        articleScript.type = "application/ld+json";
+        articleScript.textContent = JSON.stringify(statementData);
+        document.head.appendChild(articleScript);
+    });
+}
+
+/* INITIALIZE */
+
+renderPress();
+generateStructuredData();
+readArticleAddress();
+
+/* GOOGLE TRANSLATE */
+
+function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: "en",
+            includedLanguages:
+                "en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+            autoDisplay: false
+        },
+        "google_translate_element"
+    );
+
+    const savedLanguage = localStorage.getItem("site_lang");
+
+    if (savedLanguage && savedLanguage !== "en") {
+        const selector = document.getElementById("languageSwitcher");
+        selector.value = savedLanguage;
+
+        setTimeout(() => {
+            changeLanguage(savedLanguage);
+        }, 1200);
+    }
+}
+
+function changeLanguage(language) {
+
+    if (language === "en") {
+        localStorage.setItem("site_lang", "en");
+        location.reload();
+        return;
+    }
+
+    const translateSelect = document.querySelector(".goog-te-combo");
+
+    if (translateSelect) {
+        translateSelect.value = language;
+        translateSelect.dispatchEvent(new Event("change"));
+        localStorage.setItem("site_lang", language);
+    }
+}
+
+document.getElementById("languageSwitcher").addEventListener("change", function() {
+    changeLanguage(this.value);
+});
+
+</script>
+
+<script
+    type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
 </body>
 </html>
-
-
