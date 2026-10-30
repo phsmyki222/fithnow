@@ -496,6 +496,76 @@ a {
 button,
 select {
   font: inherit;
+} 
+  /* GOOGLE TRANSLATE — PREVENT PAGE SHIFTING */
+html,
+body {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-top: 0 !important;
+    transform: none !important;
+}
+
+/* Keep Google's translation engine available but invisible */
+#google_translate_element {
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+/* Remove Google's top banner and its reserved space */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-gadget,
+.goog-te-gadget-icon,
+.goog-te-gadget-simple,
+.goog-te-menu-value,
+.goog-logo-link,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Prevent Google's injected elements from moving the page */
+body > .skiptranslate {
+    display: none !important;
+}
+
+body.translated-ltr,
+body.translated-rtl,
+html.translated-ltr,
+html.translated-rtl {
+    top: 0 !important;
+    margin-top: 0 !important;
+    position: static !important;
+}
+
+/* Prevent horizontal displacement */
+html,
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Keep the original website header in place */
+header,
+.site-header,
+.main-header {
+    transform: none !important;
 }
 
 /* GOOGLE TRANSLATE: HIDE BANNERS, POP-OUTS AND TOOLTIP INTERFACE */
