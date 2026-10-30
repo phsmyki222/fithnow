@@ -498,7 +498,7 @@ select {
   font: inherit;
 }
 
-/* GOOGLE TRANSLATE: KEEP THE WIDGET HIDDEN */
+/* GOOGLE TRANSLATE: HIDE BANNERS, POP-OUTS AND TOOLTIP INTERFACE */
 
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
@@ -509,13 +509,30 @@ iframe.goog-te-banner-frame,
 .goog-tooltip:hover,
 .goog-te-spinner-pos,
 .goog-te-gadget-icon,
-.goog-te-menu-frame {
-  display: none !important;
+.goog-te-menu-frame,
+.goog-te-menu2,
+.goog-te-menu2-item,
+.goog-te-balloon-frame,
+iframe[src*="translate.google"],
+iframe[src*="translate.googleapis"] {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
   height: 0 !important;
   max-height: 0 !important;
+  border: 0 !important;
+}
+
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt {
+  position: fixed !important;
+  top: -10000px !important;
+  left: -10000px !important;
+  width: 1px !important;
+  overflow: hidden !important;
 }
 
 .goog-text-highlight {
@@ -525,7 +542,14 @@ iframe.goog-te-banner-frame,
 }
 
 body > .skiptranslate {
-  display: none !important;
+  position: fixed !important;
+  top: -10000px !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 html,
@@ -846,8 +870,7 @@ body.translated-rtl {
 }
 
 .identity-panel {
-  background:
-    linear-gradient(140deg, #24231f, #171715);
+  background: linear-gradient(140deg, #24231f, #171715);
   color: var(--ivory);
   padding: 48px 43px;
   border-left: 4px solid var(--bronze);
@@ -873,8 +896,7 @@ body.translated-rtl {
 /* STATEMENT BAND */
 
 .statement-band {
-  background:
-    linear-gradient(110deg, #292823, #353127 55%, #292823);
+  background: linear-gradient(110deg, #292823, #353127 55%, #292823);
   color: var(--ivory);
   padding: 52px 0;
   text-align: center;
@@ -896,7 +918,7 @@ body.translated-rtl {
   line-height: 1.2;
 }
 
-/* AUTOMATIC IMAGE PRESENTATIONS */
+/* IMAGE PRESENTATIONS: NATURAL IMAGE PROPORTIONS */
 
 .presentation {
   width: 100%;
@@ -907,9 +929,10 @@ body.translated-rtl {
 
 .presentation-track {
   display: flex;
+  align-items: flex-start;
   gap: 24px;
   width: 100%;
-  transition: transform 1.25s cubic-bezier(.22,.7,.2,1);
+  transition: transform .85s cubic-bezier(.22,.7,.2,1);
   will-change: transform;
 }
 
@@ -921,19 +944,21 @@ body.translated-rtl {
   background: transparent;
   border: 0;
   outline: none;
-  transform: translateZ(0);
 }
 
 .presentation-card img {
+  display: block;
   width: 100%;
-  height: 390px;
-  object-fit: cover;
-  background: #d9d0c1;
-  transition: transform 1.1s ease, filter .7s ease;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  aspect-ratio: auto;
+  background: transparent;
+  transition: filter .35s ease;
 }
 
 .presentation-card:hover img {
-  transform: scale(1.025);
   filter: brightness(1.035);
 }
 
@@ -949,10 +974,6 @@ body.translated-rtl {
 
 .sports-section .section-heading {
   max-width: 1050px;
-}
-
-.sports-section .presentation-card img {
-  height: 440px;
 }
 
 /* THEATER */
@@ -1053,12 +1074,7 @@ body.translated-rtl {
 /* COMPETITIONS */
 
 .competition-section {
-  background:
-    linear-gradient(135deg, #e8e1d5, #f1ece3);
-}
-
-.competition-section .presentation-card img {
-  height: 370px;
+  background: linear-gradient(135deg, #e8e1d5, #f1ece3);
 }
 
 /* EDITORIAL SECTIONS */
@@ -1071,38 +1087,22 @@ body.translated-rtl {
 }
 
 .editorial-section.light {
-  background:
-    linear-gradient(130deg, #eee8dc, #e5ded1);
+  background: linear-gradient(130deg, #eee8dc, #e5ded1);
   color: var(--text);
-}
-
-.editorial-section .presentation-card img {
-  height: 340px;
 }
 
 .section-action {
   margin-top: 27px;
 }
 
-/* MAGAZINE: PORTRAIT COVER PRESENTATION */
+/* MAGAZINE: KEEP THE FULL COVER IMAGE VISIBLE */
 
 .magazine-section {
-  background:
-    linear-gradient(130deg, #eee8dc, #e4dccf);
+  background: linear-gradient(130deg, #eee8dc, #e4dccf);
   color: var(--text);
 }
 
-.magazine-section .presentation-card {
-  flex-basis: calc((100% - 24px) / 2);
-}
-
-.magazine-section .presentation-card img {
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-}
-
-/* EVENTS: BILLBOARD PRESENTATION */
+/* EVENTS */
 
 .events-section {
   background:
@@ -1111,23 +1111,16 @@ body.translated-rtl {
   color: var(--text);
 }
 
-.events-section .presentation-card img {
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
 /* MEDIA */
 
-.media-section .presentation-card img {
-  height: 370px;
+.media-section {
+  color: var(--ivory);
 }
 
 /* LUXURY / PERFUME */
 
 .luxury-section {
-  background:
-    linear-gradient(135deg, #e9e2d6, #f2eee5 55%, #e4dacb);
+  background: linear-gradient(135deg, #e9e2d6, #f2eee5 55%, #e4dacb);
   color: var(--text);
 }
 
@@ -1144,11 +1137,6 @@ body.translated-rtl {
   margin-top: 17px;
   font-size: 17px;
   line-height: 1.8;
-}
-
-.luxury-section .presentation-card img {
-  height: 390px;
-  object-fit: cover;
 }
 
 .luxury-actions {
@@ -1389,14 +1377,6 @@ body.translated-rtl {
     gap: 20px;
   }
 
-  .sports-section .presentation-card img {
-    height: 350px;
-  }
-
-  .magazine-section .presentation-card {
-    flex-basis: calc((100% - 20px) / 2);
-  }
-
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1410,7 +1390,7 @@ body.translated-rtl {
   }
 }
 
-/* MOBILE: AUTOMATIC PRESENTATION, NO SWIPING OR CONTROLS */
+/* MOBILE */
 
 @media (max-width: 600px) {
   .container {
@@ -1500,15 +1480,13 @@ body.translated-rtl {
   }
 
   .presentation-card img {
-    height: 310px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .sports-section {
     padding: 72px 0;
-  }
-
-  .sports-section .presentation-card img {
-    height: 350px;
   }
 
   .theater-image {
@@ -1527,38 +1505,6 @@ body.translated-rtl {
 
   .soul-content h2 {
     font-size: 48px;
-  }
-
-  .competition-section .presentation-card img {
-    height: 300px;
-  }
-
-  .editorial-section .presentation-card img {
-    height: 310px;
-  }
-
-  .magazine-section .presentation-card {
-    flex: 0 0 100%;
-  }
-
-  .magazine-section .presentation-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-  }
-
-  .events-section .presentation-card img {
-    height: auto;
-    aspect-ratio: 16 / 9;
-  }
-
-  .media-section .presentation-card img {
-    height: 310px;
-  }
-
-  .luxury-section .presentation-card img {
-    height: 320px;
   }
 
   .luxury-actions {
@@ -1670,8 +1616,6 @@ body.translated-rtl {
 
 <main>
 
-  <!-- HERO -->
-
   <section class="hero">
     <div class="container">
       <div class="hero-content">
@@ -1704,8 +1648,6 @@ body.translated-rtl {
       </div>
     </div>
   </section>
-
-  <!-- ORGANIZATION -->
 
   <section class="section" id="organization">
     <div class="container identity-grid">
@@ -1749,8 +1691,6 @@ body.translated-rtl {
     </div>
   </section>
 
-  <!-- SPORTS: NINE IMAGE PRESENTATION CARDS -->
-
   <section class="sports-section" id="sports">
     <div class="container">
 
@@ -1769,35 +1709,27 @@ body.translated-rtl {
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation" fetchpriority="high">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
-
           <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
             <img data-shared-image alt="Sporting presentation">
           </a>
@@ -1813,16 +1745,12 @@ body.translated-rtl {
     </div>
   </section>
 
-  <!-- STATEMENT BAND -->
-
   <section class="statement-band">
     <div class="container">
       <p>PHRINUSOMYIS™</p>
       <h2>THE RULES ARE NO LONGER THE SAME.</h2>
     </div>
   </section>
-
-  <!-- SPORTS THEATER -->
 
   <section class="section section-dark" id="sports-theater">
     <div class="container theater-grid">
@@ -1854,8 +1782,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- ORIGINAL FORMATS -->
 
   <section class="section formats-section section-dark">
     <div class="container">
@@ -1904,8 +1830,6 @@ body.translated-rtl {
     </div>
   </section>
 
-  <!-- SOUL SURVIVE -->
-
   <section class="section soul-section">
     <div class="container">
       <div class="soul-content">
@@ -1928,8 +1852,6 @@ body.translated-rtl {
     </div>
   </section>
 
-  <!-- COMPETITIONS -->
-
   <section class="section competition-section" id="competitions">
     <div class="container">
 
@@ -1948,15 +1870,12 @@ body.translated-rtl {
           <a href="/events" class="presentation-card" aria-label="Explore competitions">
             <img data-shared-image alt="Sports Theater competition" loading="lazy">
           </a>
-
           <a href="/events" class="presentation-card" aria-label="Explore competitions">
             <img data-shared-image alt="Competitive sporting presentation" loading="lazy">
           </a>
-
           <a href="/events" class="presentation-card" aria-label="Explore competitions">
             <img data-shared-image alt="International sporting competition" loading="lazy">
           </a>
-
           <a href="/events" class="presentation-card" aria-label="Explore competitions">
             <img data-shared-image alt="Original sporting formats" loading="lazy">
           </a>
@@ -1970,8 +1889,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- NEWSWIRE -->
 
   <section class="section editorial-section" id="newswire">
     <div class="container">
@@ -1992,41 +1909,15 @@ body.translated-rtl {
       <div class="presentation" data-presentation="newswire">
         <div class="presentation-track">
 
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
-
-          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
-            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
-          </a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
 
         </div>
       </div>
@@ -2037,8 +1928,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- NEWS -->
 
   <section class="section editorial-section light" id="news">
     <div class="container">
@@ -2059,41 +1948,15 @@ body.translated-rtl {
       <div class="presentation" data-presentation="news">
         <div class="presentation-track">
 
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
-
-          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
-            <img data-shared-image alt="Organization news presentation" loading="lazy">
-          </a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news"><img data-shared-image alt="Organization news presentation" loading="lazy"></a>
 
         </div>
       </div>
@@ -2104,8 +1967,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- MEDIA -->
 
   <section class="section editorial-section media-section" id="media">
     <div class="container">
@@ -2126,41 +1987,15 @@ body.translated-rtl {
       <div class="presentation" data-presentation="media">
         <div class="presentation-track">
 
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
-
-          <a href="/media" class="presentation-card" aria-label="Visit media centre">
-            <img data-shared-image alt="Media presentation" loading="lazy">
-          </a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre"><img data-shared-image alt="Media presentation" loading="lazy"></a>
 
         </div>
       </div>
@@ -2171,8 +2006,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- MAGAZINE: PORTRAIT COVER ARTWORK -->
 
   <section class="section magazine-section" id="magazine">
     <div class="container">
@@ -2193,41 +2026,15 @@ body.translated-rtl {
       <div class="presentation" data-presentation="magazine">
         <div class="presentation-track">
 
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
-
-          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
-            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
-          </a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
 
         </div>
       </div>
@@ -2238,8 +2045,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- EVENTS: BILLBOARD ARTWORK -->
 
   <section class="section events-section" id="events">
     <div class="container">
@@ -2260,41 +2065,15 @@ body.translated-rtl {
       <div class="presentation" data-presentation="events">
         <div class="presentation-track">
 
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
-
-          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
-            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
-          </a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events"><img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy"></a>
 
         </div>
       </div>
@@ -2305,8 +2084,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- LUXURY / PERFUME -->
 
   <section class="section luxury-section" id="luxury">
     <div class="container">
@@ -2329,41 +2106,15 @@ body.translated-rtl {
       <div class="presentation" data-presentation="perfume">
         <div class="presentation-track">
 
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
-
-          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
-          </a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection"><img data-shared-image alt="Perfume collection presentation" loading="lazy"></a>
 
         </div>
       </div>
@@ -2381,8 +2132,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- ANDROID APPLICATION -->
 
   <section class="section download-section" id="download">
     <div class="container download-grid">
@@ -2418,8 +2167,6 @@ body.translated-rtl {
 
     </div>
   </section>
-
-  <!-- FAQ -->
 
   <section class="section" id="faq">
     <div class="container">
@@ -2500,8 +2247,6 @@ body.translated-rtl {
 
 </main>
 
-<!-- FOOTER -->
-
 <footer class="site-footer">
   <div class="container">
 
@@ -2577,7 +2322,7 @@ body.translated-rtl {
 (function () {
   "use strict";
 
-  /* ONE SHARED IMAGE PATH */
+  /* SHARED IMAGE SOURCE */
 
   const SHARED_IMAGE =
     "/PHRINUSOMYIS%20SOUL%20SURVIVE%202026%2001%20.png";
@@ -2594,9 +2339,10 @@ body.translated-rtl {
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", function () {
-      const open = mainNav.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(open));
-      menuToggle.textContent = open ? "✕" : "☰";
+      const isOpen = mainNav.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
     });
 
     mainNav.querySelectorAll("a").forEach(function (link) {
@@ -2618,226 +2364,287 @@ body.translated-rtl {
   }
 
 
-  /* AUTOMATIC PRESENTATIONS */
-
-  const presentations = [];
+  /* CONTINUOUS CAROUSEL: MOVE ONE IMAGE AT A TIME */
 
   const presentationSettings = {
-    sports:  { interval: 9300, initialDelay: 900 },
-    competition: { interval: 9700, initialDelay: 3100 },
-    newswire: { interval: 9400, initialDelay: 5200 },
-    news: { interval: 9800, initialDelay: 1800 },
-    media: { interval: 9600, initialDelay: 6500 },
-    magazine: { interval: 10500, initialDelay: 4000 },
-    events: { interval: 10200, initialDelay: 7500 },
-    perfume: { interval: 9900, initialDelay: 2800 }
+    sports:      { interval: 5000, initialDelay: 900 },
+    competition: { interval: 5000, initialDelay: 2100 },
+    newswire:    { interval: 5000, initialDelay: 3300 },
+    news:        { interval: 5000, initialDelay: 1500 },
+    media:       { interval: 5000, initialDelay: 3900 },
+    magazine:    { interval: 5500, initialDelay: 2700 },
+    events:      { interval: 5000, initialDelay: 4500 },
+    perfume:     { interval: 5000, initialDelay: 1800 }
   };
 
-  function visibleSlides() {
+  const carousels = [];
+
+  function getVisibleCount() {
     return window.innerWidth <= 600 ? 1 : 2;
   }
 
-  function createPresentation(viewport) {
+  function createCarousel(viewport) {
     const track = viewport.querySelector(".presentation-track");
-    const cards = Array.from(
+
+    if (!track) return;
+
+    const originalCards = Array.from(
       track.querySelectorAll(".presentation-card")
     );
 
-    if (!track || cards.length === 0) return;
+    if (originalCards.length <= 1) return;
 
     const name = viewport.dataset.presentation;
     const settings = presentationSettings[name] || {
-      interval: 9500,
+      interval: 5000,
       initialDelay: 2000
     };
 
-    const presentation = {
+    const carousel = {
       viewport: viewport,
       track: track,
-      cards: cards,
+      originals: originalCards,
       index: 0,
       timer: null,
-      startTimer: null,
+      delayTimer: null,
+      paused: false,
+      visible: getVisibleCount(),
+      step: 0,
+      rebuild: null,
+      advance: null,
       update: null
     };
 
+    function removeClones() {
+      track.querySelectorAll("[data-carousel-clone]").forEach(function (clone) {
+        clone.remove();
+      });
+    }
+
+    function buildCarousel() {
+      removeClones();
+
+      carousel.visible = getVisibleCount();
+      carousel.index = 0;
+
+      /*
+        Clone enough first images to fill the visible area.
+        This creates a seamless loop without moving the original
+        visible images out together.
+      */
+
+      const cloneCount = Math.min(
+        carousel.visible,
+        originalCards.length
+      );
+
+      originalCards.slice(0, cloneCount).forEach(function (card) {
+        const clone = card.cloneNode(true);
+
+        clone.setAttribute("data-carousel-clone", "true");
+        clone.setAttribute("aria-hidden", "true");
+
+        clone.querySelectorAll("a, img").forEach(function (element) {
+          if (element.tagName === "A") {
+            element.setAttribute("tabindex", "-1");
+          }
+        });
+
+        track.appendChild(clone);
+      });
+
+      carousel.update();
+    }
+
     function update() {
-      const visible = visibleSlides();
-      const maxIndex = Math.max(0, cards.length - visible);
+      const firstCard = track.querySelector(".presentation-card");
 
-      if (presentation.index > maxIndex) {
-        presentation.index = 0;
-      }
+      if (!firstCard) return;
 
-      const cardWidth = cards[0].getBoundingClientRect().width;
-      const gap = parseFloat(
-        window.getComputedStyle(track).gap
-      ) || 0;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      const computedStyle = window.getComputedStyle(track);
+      const gap = parseFloat(computedStyle.columnGap || computedStyle.gap) || 0;
 
-      const distance = presentation.index * (cardWidth + gap);
+      carousel.step = cardWidth + gap;
+
+      const distance = carousel.index * carousel.step;
 
       track.style.transform =
-        "translate3d(-" + distance + "px,0,0)";
+        "translate3d(-" + distance + "px, 0, 0)";
     }
 
     function advance() {
-      const maxIndex = Math.max(
-        0,
-        cards.length - visibleSlides()
-      );
+      if (carousel.paused || originalCards.length <= 1) return;
 
-      if (maxIndex === 0) return;
-
-      presentation.index++;
-
-      if (presentation.index > maxIndex) {
-        presentation.index = 0;
-      }
-
+      carousel.index += 1;
       update();
+
+      /*
+        Once the last original image has moved into position,
+        allow the cloned images to appear. Then reset invisibly
+        to the beginning to maintain the continuous loop.
+      */
+
+      if (carousel.index >= originalCards.length) {
+        window.setTimeout(function () {
+          track.style.transition = "none";
+          carousel.index = 0;
+          update();
+
+          track.offsetHeight;
+
+          track.style.transition = "";
+        }, 900);
+      }
     }
 
-    function startTimer() {
-      if (presentation.timer) {
-        clearInterval(presentation.timer);
+    function stop() {
+      if (carousel.timer) {
+        clearInterval(carousel.timer);
+        carousel.timer = null;
       }
 
-      presentation.timer = setInterval(
+      if (carousel.delayTimer) {
+        clearTimeout(carousel.delayTimer);
+        carousel.delayTimer = null;
+      }
+    }
+
+    function start() {
+      stop();
+
+      if (originalCards.length <= 1) return;
+
+      carousel.timer = window.setInterval(
         advance,
         settings.interval
       );
     }
 
-    presentation.update = update;
-    presentation.startTimer = startTimer;
+    function pause() {
+      carousel.paused = true;
+      stop();
+    }
 
-    presentations.push(presentation);
+    function resume() {
+      carousel.paused = false;
+      start();
+    }
 
-    update();
+    carousel.update = update;
+    carousel.rebuild = buildCarousel;
+    carousel.advance = advance;
 
-    window.setTimeout(function () {
-      advance();
-      startTimer();
+    buildCarousel();
+
+    viewport.addEventListener("mouseenter", pause);
+    viewport.addEventListener("mouseleave", resume);
+
+    viewport.addEventListener("focusin", pause);
+    viewport.addEventListener("focusout", resume);
+
+    carousels.push(carousel);
+
+    carousel.delayTimer = window.setTimeout(function () {
+      if (!carousel.paused) {
+        start();
+      }
     }, settings.initialDelay);
   }
 
   document.querySelectorAll("[data-presentation]").forEach(
-    createPresentation
+    createCarousel
   );
 
-  let resizeTimeout;
+  let resizeTimer = null;
+  let previousVisibleCount = getVisibleCount();
 
   window.addEventListener("resize", function () {
-    clearTimeout(resizeTimeout);
+    clearTimeout(resizeTimer);
 
-    resizeTimeout = setTimeout(function () {
-      presentations.forEach(function (presentation) {
-        presentation.update();
-      });
-    }, 180);
+    resizeTimer = window.setTimeout(function () {
+      const currentVisibleCount = getVisibleCount();
+
+      if (currentVisibleCount !== previousVisibleCount) {
+        previousVisibleCount = currentVisibleCount;
+
+        carousels.forEach(function (carousel) {
+          carousel.rebuild();
+        });
+      } else {
+        carousels.forEach(function (carousel) {
+          carousel.update();
+        });
+      }
+    }, 200);
   });
 
 
-  /* GOOGLE TRANSLATE */
+  /* GOOGLE TRANSLATE: FUNCTIONAL LANGUAGE SELECTOR */
 
   const languageSelector = document.getElementById("siteLanguage");
 
   let selectedLanguage = "en";
-  let googleWidgetReady = false;
   let translateWaitTimer = null;
   let translateAttempts = 0;
 
   function getGoogleSelect() {
     return document.querySelector(
-      "#google_translate_element .goog-te-combo"
-    ) || document.querySelector(".goog-te-combo");
+      "#google_translate_element select.goog-te-combo"
+    );
   }
 
-  function clearTranslateCookies() {
-    const host = window.location.hostname;
-    const parts = host.split(".");
-    const domains = [host];
+  function clearGoogleTranslateCookies() {
+    const hostname = window.location.hostname;
+    const hostnameParts = hostname.split(".");
+    const domains = [hostname];
 
-    if (parts.length > 1) {
-      domains.push("." + parts.slice(-2).join("."));
+    if (hostnameParts.length > 1) {
+      domains.push("." + hostnameParts.slice(-2).join("."));
     }
 
-    const expires =
-      "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    const cookieNames = ["googtrans"];
+    const expiry = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
 
-    document.cookie.split(";").forEach(function (item) {
-      const name = item.split("=")[0].trim();
+    cookieNames.forEach(function (cookieName) {
+      document.cookie =
+        cookieName + "=; " + expiry + "; path=/";
 
-      if (name === "googtrans") {
+      domains.forEach(function (domain) {
         document.cookie =
-          "googtrans=; " + expires + "; path=/";
-
-        domains.forEach(function (domain) {
-          document.cookie =
-            "googtrans=; " + expires +
-            "; path=/; domain=" + domain;
-        });
-      }
+          cookieName + "=; " + expiry +
+          "; path=/; domain=" + domain;
+      });
     });
   }
 
-  function applyLanguage(language) {
-    selectedLanguage = language;
-
-    if (language === "en") {
-      const hadTranslation =
-        document.cookie.indexOf("googtrans=") !== -1 ||
-        document.body.classList.contains("translated-ltr") ||
-        document.body.classList.contains("translated-rtl") ||
-        document.documentElement.classList.contains("translated-ltr") ||
-        document.documentElement.classList.contains("translated-rtl");
-
-      clearTranslateCookies();
-
-      if (hadTranslation) {
-        window.location.reload();
-      }
-
-      return;
-    }
-
+  function setGoogleLanguage(language) {
     const googleSelect = getGoogleSelect();
 
-    if (googleSelect) {
-      googleSelect.value = language;
+    if (!googleSelect) return false;
 
-      googleSelect.dispatchEvent(
-        new Event("change", { bubbles: true })
-      );
+    googleSelect.value = language;
 
-      return;
-    }
+    googleSelect.dispatchEvent(
+      new Event("change", { bubbles: true })
+    );
 
-    waitForGoogleWidget(language);
+    return true;
   }
 
-  function waitForGoogleWidget(language) {
+  function waitForGoogleTranslate(language) {
     if (translateWaitTimer) {
       clearInterval(translateWaitTimer);
     }
 
     translateAttempts = 0;
 
-    translateWaitTimer = setInterval(function () {
+    translateWaitTimer = window.setInterval(function () {
       translateAttempts++;
 
-      const googleSelect = getGoogleSelect();
-
-      if (googleSelect) {
+      if (setGoogleLanguage(language)) {
         clearInterval(translateWaitTimer);
         translateWaitTimer = null;
-
-        googleSelect.value = language;
-
-        googleSelect.dispatchEvent(
-          new Event("change", { bubbles: true })
-        );
-
         return;
       }
 
@@ -2847,6 +2654,36 @@ body.translated-rtl {
       }
     }, 500);
   }
+
+  function changeWebsiteLanguage(language) {
+    selectedLanguage = language;
+
+    if (language === "en") {
+      const wasTranslated =
+        document.cookie.indexOf("googtrans=") !== -1 ||
+        document.body.classList.contains("translated-ltr") ||
+        document.body.classList.contains("translated-rtl") ||
+        document.documentElement.classList.contains("translated-ltr") ||
+        document.documentElement.classList.contains("translated-rtl");
+
+      clearGoogleTranslateCookies();
+
+      if (wasTranslated) {
+        window.location.reload();
+      }
+
+      return;
+    }
+
+    if (!setGoogleLanguage(language)) {
+      waitForGoogleTranslate(language);
+    }
+  }
+
+  /*
+    Google calls this function after its translation library loads.
+    It must exist globally before the external script is requested.
+  */
 
   window.googleTranslateElementInit = function () {
     if (
@@ -2867,18 +2704,24 @@ body.translated-rtl {
       "google_translate_element"
     );
 
-    googleWidgetReady = true;
-
     if (selectedLanguage !== "en") {
-      waitForGoogleWidget(selectedLanguage);
+      waitForGoogleTranslate(selectedLanguage);
     }
   };
 
   if (languageSelector) {
     languageSelector.addEventListener("change", function () {
-      selectedLanguage = this.value;
-      applyLanguage(selectedLanguage);
+      changeWebsiteLanguage(this.value);
     });
+  }
+
+  /*
+    If Google Translate loads after the user has already selected
+    another language, the selected language is applied when ready.
+  */
+
+  if (languageSelector) {
+    selectedLanguage = languageSelector.value || "en";
   }
 
 })();
