@@ -153,236 +153,842 @@
   }
   </script>
 </head>
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --blue: #1E90FF;
-            --black: #050505;
-            --glass-bg: rgba(255, 255, 255, 0.02);
-            --glass-border: rgba(212, 175, 55, 0.15);
-            --accent-glow: rgba(212, 175, 55, 0.3);
-            --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-        }
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-        body {
-            background-color: var(--black);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            line-height: 1.8;
-            overflow-x: hidden;
-            user-select: none;
-            top: 0 !important;
-            position: static !important;
-        }
-
-        .cinematic-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #151515 0%, #050505 100%);
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 120px 20px 80px 20px;
-            text-align: center;
-        }
-
-        header {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            height: 80px;
-            background: #050505;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999999;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        nav.menu { display: flex; gap: 25px; align-items: center; }
-        nav.menu a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-size: 13px;
-            transition: 0.3s;
-        }
-        nav.menu a:hover { color: var(--blue); }
-
-        #languageSwitcher {
-            background: #050505;
-            color: #B9F2FF;
-            border: 1px solid var(--gold);
-            border-radius: 4px;
-            padding: 5px 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            letter-spacing: 10px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin: 20px 0;
-        }
-
-        .brand-seal {
-            width: 160px;
-            filter: drop-shadow(0 0 30px var(--accent-glow));
-            margin-top: 20px;
-        }
-
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 40px 0;
-        }
-
-        .countdown-card.flip-card {
-            background: rgba(0,0,0,0.25);
-            border: 2px solid rgba(212,175,55,0.5);
-            border-radius: 12px;
-            width: 95px;
-            padding: 20px 10px;
-            box-shadow: 0 0 20px rgba(212,175,55,0.4);
-        }
-
-        .flip-inner {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-        }
-
-        .ticket-countdown .flip-inner { color: var(--blue); }
-
-        .contact-email {
-            font-weight: 700;
-            background: var(--rainbow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.1rem;
-            margin: 40px 0;
-            display: block;
-        }
-
-        /* SILENT GOOGLE TRANSLATE ENGINE */
-        .goog-te-banner-frame, .goog-te-banner, .goog-te-menu-frame, .skiptranslate, 
-        .goog-te-gadget, #google_translate_element, .goog-te-balloon-frame, .goog-tooltip {
-            display: none !important;
-            visibility: hidden !important;
-        }
-        .goog-text-highlight { background: none !important; box-shadow: none !important; }
-        html { margin-top: 0 !important; }
-
-        footer {
-            margin-top: 80px;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            color: #444;
-            text-transform: uppercase;
-        } 
-      /* --- MOBILE RESPONSIVE OVERRIDES --- */
-
-/* 1. Adjust the Container Padding for smaller screens */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 15px 40px 15px; /* Reduced top/side padding */
-    text-align: center;
+:root {
+    --gold:#D4AF37;
+    --gold-light:#F0D77A;
+    --blue:#1E90FF;
+    --black:#050505;
+    --panel:#101010;
+    --panel-light:#171717;
+    --muted:#999;
+    --glass-border:rgba(212,175,55,.22);
+    --accent-glow:rgba(212,175,55,.25);
 }
 
-/* 2. Scale down the Heading */
-h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(1.5rem, 8vw, 3rem); /* Dynamically scales between 1.5rem and 3rem */
-    letter-spacing: 4px; /* Reduced from 10px for mobile */
-    margin: 15px 0;
+* { box-sizing:border-box; }
+
+html {
+    scroll-behavior:smooth;
+    margin-top:0 !important;
 }
 
-/* 3. Handle the Header & Menu */
-header {
-    height: auto; /* Allow height to adjust */
-    padding: 10px 0;
-    min-height: 70px;
+body {
+    background:var(--black);
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+    margin:0;
+    line-height:1.8;
+    overflow-x:hidden;
+    top:0 !important;
+    position:static !important;
 }
 
-nav.menu {
-    flex-wrap: wrap; /* Allows links to drop to next line if screen is too narrow */
-    justify-content: center;
-    gap: 12px;
-    padding: 5px 10px;
+a { color:inherit; }
+
+.cinematic-bg {
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(ellipse at 50% 18%,rgba(212,175,55,.075),transparent 38%),
+        radial-gradient(circle at 50% 50%,#151515 0%,#050505 75%);
+    z-index:-1;
+    pointer-events:none;
 }
 
-nav.menu a {
-    font-size: 11px; /* Slightly smaller for mobile */
-    letter-spacing: 0.5px;
+.site-header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:76px;
+    background:rgba(5,5,5,.96);
+    backdrop-filter:blur(12px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    border-bottom:1px solid var(--glass-border);
+    padding:10px 18px;
 }
 
-/* 4. Make Countdown Cards fluid */
-.countdown-container {
-    gap: 8px; /* Tighter gap on mobile */
-    display: flex;
-    justify-content: center;
+.menu {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
 }
 
-.countdown-card.flip-card {
-    width: 20%; /* Takes up roughly 1/5th of the width */
-    min-width: 70px; /* Prevents them from getting too tiny */
-    padding: 15px 5px;
+.menu a {
+    color:var(--gold);
+    text-decoration:none;
+    font-weight:800;
+    letter-spacing:1px;
+    font-size:12px;
+    transition:.25s;
 }
 
-.flip-inner {
-    font-size: clamp(1.2rem, 5vw, 2.2rem); /* Numbers scale with screen */
+.menu a:hover,
+.menu a[aria-current="page"] {
+    color:#fff;
 }
 
-/* 5. Adjust the Brand Seal */
+#languageSwitcher {
+    background:#050505;
+    color:#B9F2FF;
+    border:1px solid var(--gold);
+    border-radius:4px;
+    padding:7px 10px;
+    font-family:'Montserrat',sans-serif;
+    font-size:11px;
+    cursor:pointer;
+}
+
+.page-container {
+    max-width:1200px;
+    margin:0 auto;
+    padding:125px 22px 70px;
+}
+
+.hero {
+    text-align:center;
+    padding:25px 0 55px;
+}
+
 .brand-seal {
-    width: 120px; /* Smaller logo for mobile */
-    max-width: 40%;
+    width:130px;
+    max-width:38%;
+    filter:drop-shadow(0 0 25px var(--accent-glow));
+    margin:0 auto 20px;
 }
 
-/* 6. Media Query for very small devices (under 480px) */
-@media (max-width: 480px) {
-    .countdown-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2x2 grid instead of one long row */
-        gap: 15px;
-        padding: 0 20px;
+.eyebrow {
+    color:var(--gold);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+h1,h2,h3 {
+    font-family:'Cinzel',serif;
+    font-weight:700;
+}
+
+.hero h1 {
+    color:var(--gold);
+    font-size:clamp(2rem,6vw,4rem);
+    letter-spacing:clamp(3px,1vw,9px);
+    line-height:1.25;
+    text-transform:uppercase;
+    margin:14px 0;
+}
+
+.hero-subtitle {
+    color:#ccc;
+    max-width:760px;
+    margin:0 auto;
+    font-size:15px;
+}
+
+.hero-line {
+    width:90px;
+    height:2px;
+    background:var(--gold);
+    margin:28px auto;
+}
+
+.section {
+    margin:45px 0 75px;
+}
+
+.section-heading {
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-heading h2 {
+    color:var(--gold);
+    font-size:clamp(1.5rem,4vw,2.3rem);
+    letter-spacing:3px;
+    margin:8px 0;
+    text-transform:uppercase;
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:13px;
+    max-width:720px;
+    margin:0 auto;
+}
+
+.featured-event {
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    border:1px solid var(--glass-border);
+    background:linear-gradient(135deg,#151515,#080808);
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 15px 50px rgba(0,0,0,.35);
+}
+
+.featured-visual {
+    min-height:350px;
+    background:
+        radial-gradient(circle at center,rgba(212,175,55,.15),transparent 60%),
+        linear-gradient(145deg,#191919,#070707);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:35px;
+    text-align:center;
+    border-right:1px solid var(--glass-border);
+}
+
+.featured-visual img {
+    max-width:100%;
+    max-height:350px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    filter:drop-shadow(0 0 25px rgba(212,175,55,.15));
+}
+
+.featured-placeholder {
+    font-family:'Cinzel',serif;
+    color:var(--gold);
+    font-size:clamp(1.8rem,4vw,3rem);
+    letter-spacing:5px;
+    line-height:1.5;
+}
+
+.featured-copy {
+    padding:42px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.event-tag {
+    display:inline-block;
+    color:var(--gold);
+    border:1px solid var(--glass-border);
+    padding:5px 11px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    width:max-content;
+    max-width:100%;
+}
+
+.featured-copy h2 {
+    font-size:clamp(1.6rem,3vw,2.4rem);
+    color:#fff;
+    line-height:1.3;
+    margin:18px 0 12px;
+}
+
+.featured-copy p {
+    color:#aaa;
+    font-size:14px;
+}
+
+.gold-button {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:max-content;
+    max-width:100%;
+    padding:12px 20px;
+    margin-top:18px;
+    background:var(--gold);
+    color:#050505;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    border:1px solid var(--gold);
+    border-radius:3px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.gold-button:hover {
+    background:transparent;
+    color:var(--gold);
+}
+
+.archive-tools {
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0 32px;
+}
+
+.archive-tools input,
+.archive-tools select {
+    min-height:44px;
+    background:#101010;
+    color:#fff;
+    border:1px solid var(--glass-border);
+    border-radius:4px;
+    padding:10px 14px;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    outline:none;
+}
+
+.archive-tools input {
+    width:min(340px,100%);
+}
+
+.archive-tools input:focus,
+.archive-tools select:focus {
+    border-color:var(--gold);
+}
+
+.filter-row {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-bottom:30px;
+}
+
+.filter-button {
+    padding:9px 15px;
+    color:#aaa;
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:3px;
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    color:var(--gold);
+    border-color:var(--gold);
+}
+
+.event-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:20px;
+}
+
+.event-card {
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    background:linear-gradient(160deg,#151515,#090909);
+    border:1px solid #292929;
+    border-radius:8px;
+    overflow:hidden;
+    transition:transform .25s,border-color .25s;
+}
+
+.event-card:hover {
+    transform:translateY(-5px);
+    border-color:var(--gold);
+}
+
+.event-card-visual {
+    min-height:190px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    text-align:center;
+    background:
+        radial-gradient(circle at center,rgba(212,175,55,.13),transparent 65%),
+        #0d0d0d;
+    border-bottom:1px solid #292929;
+}
+
+.event-card-visual img {
+    width:100%;
+    max-height:190px;
+    object-fit:contain;
+}
+
+.event-card-visual span {
+    color:var(--gold);
+    font-family:'Cinzel',serif;
+    font-size:23px;
+    letter-spacing:3px;
+}
+
+.event-card-content {
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.event-card-content .event-tag {
+    font-size:9px;
+}
+
+.event-card h3 {
+    font-size:18px;
+    line-height:1.4;
+    margin:15px 0 8px;
+    color:#fff;
+}
+
+.event-card p {
+    color:#999;
+    font-size:12px;
+    margin:0 0 15px;
+    flex:1;
+}
+
+.text-link {
+    display:inline-block;
+    color:var(--gold);
+    text-decoration:none;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-top:10px;
+}
+
+.text-link:hover { color:#fff; }
+
+.empty-state {
+    grid-column:1/-1;
+    text-align:center;
+    padding:45px 20px;
+    border:1px dashed #333;
+    color:#999;
+    font-size:13px;
+}
+
+.pagination {
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:30px;
+}
+
+.pagination button {
+    background:#111;
+    color:var(--gold);
+    border:1px solid #333;
+    padding:8px 13px;
+    cursor:pointer;
+}
+
+.pagination button.active {
+    background:var(--gold);
+    color:#050505;
+}
+
+.next-stage {
+    position:relative;
+    text-align:center;
+    padding:55px 30px;
+    border:1px solid var(--glass-border);
+    border-radius:10px;
+    background:
+        radial-gradient(ellipse at center,rgba(212,175,55,.09),transparent 70%),
+        linear-gradient(145deg,#141414,#070707);
+    overflow:hidden;
+}
+
+.next-stage h2 {
+    color:var(--gold);
+    font-size:clamp(1.6rem,4vw,2.5rem);
+    letter-spacing:3px;
+    margin:12px 0;
+}
+
+.next-stage p {
+    max-width:700px;
+    margin:0 auto;
+    color:#aaa;
+    font-size:14px;
+}
+
+.next-stage .stage-note {
+    display:inline-block;
+    margin-top:25px;
+    border-top:1px solid var(--glass-border);
+    padding-top:18px;
+    color:#ddd;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.event-contact {
+    text-align:center;
+    padding:35px 20px;
+    border-top:1px solid #222;
+}
+
+.event-contact h2 {
+    color:var(--gold);
+    font-size:20px;
+    letter-spacing:2px;
+}
+
+.event-contact p {
+    color:#999;
+    font-size:13px;
+}
+
+.contact-button {
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    justify-content:center;
+    margin-top:12px;
+    padding:12px 22px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    text-decoration:none;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    border-radius:3px;
+}
+
+.contact-button:hover {
+    background:var(--gold);
+    color:#050505;
+}
+
+.contact-button svg {
+    width:17px;
+    height:17px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+}
+
+/* Event detail reader */
+
+.event-modal {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:100000;
+    background:rgba(0,0,0,.94);
+    overflow-y:auto;
+    padding:30px 15px;
+}
+
+.event-modal.open { display:block; }
+
+.modal-panel {
+    position:relative;
+    max-width:850px;
+    margin:35px auto;
+    padding:35px;
+    background:#101010;
+    border:1px solid var(--glass-border);
+    border-radius:8px;
+}
+
+.modal-close {
+    position:absolute;
+    top:12px;
+    right:15px;
+    width:40px;
+    height:40px;
+    color:var(--gold);
+    background:#080808;
+    border:1px solid #333;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-panel h2 {
+    color:var(--gold);
+    font-size:clamp(1.5rem,4vw,2.4rem);
+    line-height:1.35;
+    margin:20px 45px 10px 0;
+}
+
+.modal-meta {
+    color:#888;
+    font-size:11px;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.modal-hero {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#080808;
+    border:1px solid #292929;
+    padding:15px;
+    margin:20px 0;
+}
+
+.modal-hero img {
+    display:block;
+    max-width:100%;
+    max-height:480px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+}
+
+.modal-body {
+    color:#ccc;
+    font-size:14px;
+    line-height:2;
+}
+
+.modal-body p { margin:0 0 18px; }
+
+.modal-actions {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #292929;
+}
+
+.modal-actions button,
+.modal-actions a {
+    background:#080808;
+    color:var(--gold);
+    border:1px solid #333;
+    padding:9px 12px;
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;
+    font-weight:800;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.modal-actions button:hover,
+.modal-actions a:hover {
+    border-color:var(--gold);
+}
+
+.related-events {
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid #292929;
+}
+
+.related-events h3 {
+    color:var(--gold);
+    font-size:15px;
+}
+
+.related-events button {
+    display:block;
+    width:100%;
+    text-align:left;
+    background:none;
+    border:0;
+    border-bottom:1px solid #222;
+    color:#ccc;
+    padding:12px 0;
+    cursor:pointer;
+    font-family:'Montserrat',sans-serif;
+}
+
+.related-events button:hover { color:var(--gold); }
+
+/* Footer */
+
+.phr-main-footer {
+    background:#000;
+    color:#fff;
+    padding:75px 20px 35px;
+    border-top:1px solid #1a1a1a;
+    font-family:'Arial',sans-serif;
+}
+
+.phr-footer-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:40px 20px;
+    max-width:1100px;
+    margin:0 auto 55px;
+}
+
+.phr-footer-section h3 {
+    color:#fff;
+    font-family:'Arial',sans-serif;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:2px;
+    margin-bottom:22px;
+    text-transform:uppercase;
+}
+
+.phr-footer-section ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.phr-footer-section li { margin-bottom:13px; }
+
+.phr-footer-section a {
+    color:#888;
+    text-decoration:none;
+    font-size:13px;
+    transition:color .2s;
+}
+
+.phr-footer-section a:hover { color:var(--gold); }
+
+.phr-global-bar {
+    max-width:1100px;
+    margin:0 auto;
+    padding-top:35px;
+    border-top:1px solid #1a1a1a;
+    text-align:center;
+}
+
+.phr-global-bar h3 {
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.phr-hq-label {
+    color:var(--gold);
+    font-weight:bold;
+}
+
+.phr-footer-legal {
+    margin-top:35px;
+    text-align:center;
+    color:#555;
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* Google Translate */
+
+.goog-te-banner-frame,
+.goog-te-banner,
+.goog-te-menu-frame,
+.skiptranslate,
+.goog-te-gadget,
+#google_translate_element,
+.goog-te-balloon-frame,
+.goog-tooltip {
+    display:none !important;
+    visibility:hidden !important;
+}
+
+.goog-text-highlight {
+    background:none !important;
+    box-shadow:none !important;
+}
+
+@media(min-width:768px) {
+    .phr-footer-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+
+@media(max-width:850px) {
+    .event-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .featured-event { grid-template-columns:1fr; }
+    .featured-visual {
+        min-height:260px;
+        border-right:0;
+        border-bottom:1px solid var(--glass-border);
     }
-    
-    .countdown-card.flip-card {
-        width: 100%; /* Fill the grid column */
+}
+
+@media(max-width:600px) {
+    .site-header {
+        position:relative;
+        min-height:0;
+        padding:12px 8px;
     }
 
-    header {
-        position: absolute; /* Prevents fixed header issues on very small scrollable areas
-      */
+    .menu { gap:10px 15px; }
+    .menu a { font-size:10px; }
+    #languageSwitcher { font-size:10px; }
+
+    .page-container { padding:35px 15px 45px; }
+    .hero { padding:25px 0 35px; }
+    .brand-seal { width:105px; }
+    .hero-subtitle { font-size:13px; }
+
+    .event-grid { grid-template-columns:1fr; }
+    .featured-copy { padding:25px; }
+    .featured-visual { min-height:220px; }
+
+    .section { margin:35px 0 55px; }
+    .next-stage { padding:40px 20px; }
+
+    .modal-panel {
+        padding:25px 18px;
+        margin:15px auto;
     }
-} 
-    </style>
+
+    .modal-panel h2 { margin-right:35px; }
+}
+
+@media print {
+    body * { visibility:hidden; }
+    .event-modal,
+    .event-modal * { visibility:visible; }
+    .event-modal {
+        display:block !important;
+        position:absolute;
+        inset:0;
+        overflow:visible;
+        background:#fff;
+        color:#000;
+    }
+    .modal-panel {
+        max-width:100%;
+        margin:0;
+        color:#000;
+        background:#fff;
+        border:0;
+    }
+    .modal-panel h2,
+    .modal-body,
+    .modal-meta { color:#000; }
+    .modal-close,
+    .modal-actions,
+    .related-events { display:none !important; }
+}
+</style>
 </head>
 <body>
 
 <div class="cinematic-bg"></div>
 
-<header>
-    <nav class="menu">
+<header class="site-header">
+    <nav class="menu" aria-label="Main navigation">
         <a href="/">HOME</a>
-        <a href="news">NEWS</a>
-        <a href="luxury">LUXURY</a>
-        <a href="press">PRESS & MEDIA</a>
-        <select id="languageSwitcher">
+        <a href="/news">NEWS</a>
+        <a href="/events" aria-current="page">EVENTS</a>
+        <a href="/press">PRESS &amp; MEDIA</a>
+        <a href="/luxury">LUXURY</a>
+
+        <select id="languageSwitcher" aria-label="Select language">
             <option value="en">English (EN)</option>
             <option value="fr">Français (FR)</option>
             <option value="es">Español (ES)</option>
@@ -404,373 +1010,633 @@ nav.menu a {
             <option value="sv">Svenska (SV)</option>
             <option value="fi">Suomi (FI)</option>
             <option value="da">Dansk (DA)</option>
-        </select> 
+        </select>
     </nav>
 </header>
 
-<div class="container">
-    <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS Logo" class="brand-seal">
-    <h1>COMING SOON</h1>
+<main class="page-container">
 
-    <div class="countdown-container" id="event-countdown">
-        <div class="countdown-card flip-card"><div class="flip-inner" id="days">0</div><div class="label">Days</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="hours">0</div><div class="label">Hours</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="minutes">0</div><div class="label">Minutes</div></div>
-        <div class="countdown-card flip-card"><div class="flip-inner" id="seconds">0</div><div class="label">Seconds</div></div>
+    <section class="hero">
+        <img src="/phrinusomyis_logo.png"
+             alt="PHRINUSOMYIS"
+             class="brand-seal">
+
+        <div class="eyebrow">PHRINUSOMYIS™ Official Events</div>
+        <h1>EVENTS</h1>
+        <div class="hero-line"></div>
+
+        <p class="hero-subtitle">
+            A record of sporting occasions, competitions and experiences
+            associated with PHRINUSOMYIS™. Discover the events, the
+            competition and the moments that form part of its sporting history.
+        </p>
+    </section>
+
+    <!-- FEATURED EVENT -->
+
+    <section class="section" aria-labelledby="featured-heading">
+        <div class="section-heading">
+            <div class="eyebrow">In Focus</div>
+            <h2 id="featured-heading">Featured Event</h2>
+            <p>
+                A closer look at a defining competition within the
+                PHRINUSOMYIS™ sporting programme.
+            </p>
+        </div>
+
+        <div class="featured-event">
+            <div class="featured-visual">
+                <div class="featured-placeholder">
+                    SOUL<br>SURVIVE™
+                </div>
+            </div>
+
+            <div class="featured-copy">
+                <span class="event-tag">Sports Theater™</span>
+                <h2>SOUL SURVIVE™</h2>
+                <p>
+                    SOUL SURVIVE™ is a competition within the
+                    Sports Theater™ concept. Its central themes include
+                    will, endurance, resolve and performance under pressure.
+                </p>
+                <p>
+                    The event forms part of the PHRINUSOMYIS™ record
+                    of original sporting competition.
+                </p>
+                <button class="gold-button" type="button"
+                        onclick="openEvent('soul-survive')">
+                    Explore Event
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT RECORD -->
+
+    <section class="section" id="event-record" aria-labelledby="record-heading">
+        <div class="section-heading">
+            <div class="eyebrow">Competition History</div>
+            <h2 id="record-heading">The Event Record</h2>
+            <p>
+                Explore the competitions and sporting occasions that
+                form part of the PHRINUSOMYIS™ event record.
+            </p>
+        </div>
+
+        <div class="archive-tools">
+            <input type="search" id="eventSearch"
+                   placeholder="Search events..."
+                   aria-label="Search events">
+
+            <select id="eventCategory" aria-label="Filter by category">
+                <option value="all">All Categories</option>
+                <option value="sports-theater">Sports Theater™</option>
+                <option value="competition">Competitions</option>
+                <option value="programme">Sporting Programmes</option>
+            </select>
+        </div>
+
+        <div class="filter-row" aria-label="Event filters">
+            <button class="filter-button active" data-filter="all">
+                ALL EVENTS
+            </button>
+            <button class="filter-button" data-filter="sports-theater">
+                SPORTS THEATER™
+            </button>
+            <button class="filter-button" data-filter="competition">
+                COMPETITIONS
+            </button>
+            <button class="filter-button" data-filter="programme">
+                SPORTING PROGRAMMES
+            </button>
+        </div>
+
+        <div class="event-grid" id="eventGrid"></div>
+
+        <div class="pagination" id="eventPagination"></div>
+    </section>
+
+    <!-- NEXT STAGE -->
+
+    <section class="section" id="next-stage">
+        <div class="next-stage">
+            <div class="eyebrow">The Journey Continues</div>
+            <h2>THE NEXT STAGE</h2>
+
+            <p>
+                The next chapter of PHRINUSOMYIS™ competitions will be
+                presented here as official event information becomes
+                available. Confirmed announcements will include the
+                relevant event details, dates, venues and participation
+                information.
+            </p>
+
+            <div class="stage-note">
+                Official event announcements will be published here
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT ENQUIRIES -->
+
+    <section class="event-contact">
+        <h2>EVENT ENQUIRIES</h2>
+        <p>
+            For official enquiries concerning PHRINUSOMYIS™ events
+            and sporting programmes, contact the organization.
+        </p>
+
+        <a class="contact-button"
+           href="mailto:events@phrinusomyis.com?subject=PHRINUSOMYIS%20Events%20Enquiry">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m3 7 9 6 9-6"></path>
+            </svg>
+            Send Mail
+        </a>
+    </section>
+
+</main>
+
+<!-- EVENT DETAIL MODAL -->
+
+<div class="event-modal" id="eventModal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="modalTitle">
+
+    <div class="modal-panel">
+        <button class="modal-close" type="button"
+                onclick="closeEvent()" aria-label="Close event">
+            &times;
+        </button>
+
+        <span class="event-tag" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-meta" id="modalMeta"></div>
+
+        <div class="modal-hero" id="modalImageWrap" hidden>
+            <img id="modalImage" src="" alt="">
+        </div>
+
+        <div class="modal-body" id="modalBody"></div>
+
+        <div class="modal-actions">
+            <button type="button" onclick="shareEvent('whatsapp')">WhatsApp</button>
+            <button type="button" onclick="shareEvent('facebook')">Facebook</button>
+            <button type="button" onclick="shareEvent('x')">X</button>
+            <button type="button" onclick="shareEvent('linkedin')">LinkedIn</button>
+            <button type="button" onclick="shareEvent('telegram')">Telegram</button>
+            <button type="button" onclick="shareEvent('email')">Email</button>
+            <button type="button" onclick="copyEventLink()">Copy Link</button>
+            <button type="button" onclick="nativeShare()">Share</button>
+            <button type="button" onclick="window.print()">Print</button>
+        </div>
+
+        <div class="related-events" id="relatedEvents">
+            <h3>Explore Other Events</h3>
+            <div id="relatedList"></div>
+        </div>
     </div>
+</div>
 
-    <img src="PHRINUSOMYIS SOUL SURVIVE 2026.png" alt="Banner" style="width:100%; max-width:1100px; margin: 20px 0; border: 1px solid var(--glass-border);">
-
-   <h3>COUNTDOWN SOUL SURVIVE IS NOW DECEMBER 2026</h3>
-<div class="countdown-container ticket-countdown">
-    <div class="countdown-card flip-card"><div class="flip-inner t-days">0</div><div class="label">Days</div></div>
-    <div class="countdown-card flip-card"><div class="flip-inner t-hours">0</div><div class="label">Hours</div></div>
-    <div class="countdown-card flip-card"><div class="flip-inner t-minutes">0</div><div class="label">Minutes</div></div>
-    <div class="countdown-card flip-card"><div class="flip-inner t-seconds">0</div><div class="label">Seconds</div></div>
-</div>  
-
-<img src="PHRINUSOMYIS SOUL SURVIVE 2026 01 .png" alt="Banner" style="width:100%; max-width:1100px; margin: 20px 0; border: 1px solid var(--glass-border);">
-
-<h3>ROAD TO SOUL SURVIVE IS NOW DECEMBER </h3>
-<div class="countdown-container ticket-countdown">
-    <div class="countdown-card flip-card"><div class="flip-inner t-days">0</div><div class="label">Days</div></div>
-    <div class="countdown-card flip-card"><div class="flip-inner t-hours">0</div><div class="label">Hours</div></div>
-    <div class="countdown-card flip-card"><div class="flip-inner t-minutes">0</div><div class="label">Minutes</div></div>
-    <div class="countdown-card flip-card"><div class="flip-inner t-seconds">0</div><div class="label">Seconds</div></div>
-</div>  
-
-
-    <span class="contact-email">events@phrinusomyis.com</span>
-
-   <style>
-    /* GLOBAL CORPORATE FOOTER STYLES */
-    .phr-main-footer {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 80px 20px 40px;
-        border-top: 1px solid #1a1a1a;
-        font-family: 'Arial', sans-serif;
-    }
-
-    .phr-footer-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px 20px;
-        max-width: 1100px;
-        margin: 0 auto 60px;
-    }
-
-    @media (min-width: 768px) {
-        .phr-footer-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    .phr-footer-section h3 {
-        color: #ffffff;
-        font-size: 15px;
-        font-weight: 900;
-        letter-spacing: 2px;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-    }
-
-    .phr-footer-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .phr-footer-section li {
-        margin-bottom: 15px;
-    }
-
-    .phr-footer-section a {
-        color: #888;
-        text-decoration: none;
-        font-size: 14px;
-        transition: color 0.3s;
-    }
-
-    .phr-footer-section a:hover {
-        color: #D4AF37;
-    }
-
-    /* THE FIX IS HERE */
-    .phr-global-bar {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding-top: 40px;
-        border-top: 1px solid #1a1a1a;
-        text-align: center; /* This centers the HQ text and heading */
-    }
-
-    .phr-global-bar h3 {
-        font-size: 15px;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        font-weight: 900;
-    }
-
-    .phr-hq-label {
-        color: #D4AF37;
-        font-weight: bold;
-    }
-
-    .phr-footer-legal {
-        margin-top: 50px;
-        text-align: center;
-        color: #444;
-        font-size: 11px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
+<style>
+/* Footer styling */
 </style>
 
 <footer class="phr-main-footer">
     <div class="phr-footer-grid">
-        <!-- Section 1 -->
+
         <div class="phr-footer-section">
-            <h3>LUXURY</h3>
+            <h3>ORGANIZATION</h3>
             <ul>
-                <li><a href="luxury">Luxury Identity</a></li>
-                <li><a href="circle">Private Access</a></li>
-                <li><a href="perfume">Perfumes</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/press">Press &amp; Media</a></li>
+                <li><a href="/events">Events</a></li>
             </ul>
         </div>
 
-        <!-- Section 2 -->
         <div class="phr-footer-section">
-            <h3>M3AN</h3>
+            <h3>SPORTS</h3>
             <ul>
-                <li><a href="news">Latest News</a></li>
-                <li><a href="press">Press Release</a></li>
-                <li><a href="events">Events</a></li>
-                <li><a href="/">Main</a></li>
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/sports-theater">Sports Theater™</a></li>
+                <li><a href="/competitions">Competitions</a></li>
+                <li><a href="/media">Media</a></li>
             </ul>
         </div>
 
-        <!-- Section 3 -->
         <div class="phr-footer-section">
-            <h3>ABOUT</h3>
+            <h3>PUBLICATIONS</h3>
             <ul>
-                <li><a href="policy">Privacy Policy</a></li>
-                <li><a href="copyright">Copyright</a></li>
-                <li><a href="terms">Terms of Use</a></li>
-                <li><a href="privacy">Privacy Choices</a></li>
+                <li><a href="https://phrinusomyis.com/newswire/news">Newswire</a></li>
+                <li><a href="https://phrinusomyis.com/magazine/news">Magazine</a></li>
+                <li><a href="/luxury">Luxury</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
 
-        <!-- Section 4 -->
         <div class="phr-footer-section">
-            <h3>HELP</h3>
+            <h3>INFORMATION</h3>
             <ul>
-                <li><a href="security">Security</a></li>
-                <li><a href="help">Help Center</a></li>
-                <li><a href="cookies">Cookie Policy</a></li>
-                <li><a href="close">Closed Captions</a></li>
+                <li><a href="/policy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Use</a></li>
+                <li><a href="/copyright">Copyright</a></li>
             </ul>
         </div>
-      
-    <footer>© 2026 PHRINUSOMYIS SPORTS THEATER</footer>
-</div>
 
-<div id="google_translate_element" style="display:none;"></div>
+    </div>
+
+    <div class="phr-global-bar">
+        <h3>PHRINUSOMYIS™</h3>
+        <p>
+            <span class="phr-hq-label">Headquarters</span>
+            Brooklyn, New York
+        </p>
+        <p class="phr-footer-legal">
+            © 2032 PHRINUSOMYIS™. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<div id="google_translate_element" style="display:none"></div>
 
 <script>
-// Countdown Logic
-const eventDate = new Date("December 12, 2026 00:00:00").getTime();
-const ticketDate = new Date("December 12, 2026 00:00:00").getTime(); 
-  
+/*
+ * PHRINUSOMYIS™ EVENTS PAGE
+ * Reference year: 2032
+ * Individual event links use the existing /events page hash.
+ */
 
-function update() {
-    const now = new Date().getTime();
-    
-    const d1 = eventDate - now;
-    if(d1 > 0) {
-        document.getElementById('days').innerText = Math.floor(d1 / 86400000);
-        document.getElementById('hours').innerText = Math.floor((d1 % 86400000) / 3600000);
-        document.getElementById('minutes').innerText = Math.floor((d1 % 3600000) / 60000);
-        document.getElementById('seconds').innerText = Math.floor((d1 % 60000) / 1000);
+const eventRecords = [
+    {
+        id: "soul-survive",
+        title: "SOUL SURVIVE™",
+        category: "sports-theater",
+        categoryLabel: "Sports Theater™",
+        period: "2026",
+        description:
+            "A competition within the Sports Theater™ concept, centred on will, endurance, resolve and performance under pressure.",
+        paragraphs: [
+            "SOUL SURVIVE™ is a structured live competition within the Sports Theater™ concept. It places emphasis on the human qualities associated with competition: will, endurance, discipline, resolve and the ability to perform under pressure.",
+            "The competition forms part of the original sporting formats developed and administered by PHRINUSOMYIS™. Its identity is rooted in the contest itself and in the demands placed on those who take part.",
+            "SOUL SURVIVE™ is part of the PHRINUSOMYIS™ event record."
+        ],
+        image: "",
+        imageAlt: ""
+    }
+];
+
+/*
+ * Add verified event records to this array when their details
+ * are ready for publication. Do not enter unconfirmed dates,
+ * venues, results or attendance figures.
+ */
+
+const ITEMS_PER_PAGE = 6;
+let activeFilter = "all";
+let currentPage = 1;
+let currentEvent = null;
+
+const eventGrid = document.getElementById("eventGrid");
+const eventSearch = document.getElementById("eventSearch");
+const eventCategory = document.getElementById("eventCategory");
+const pagination = document.getElementById("eventPagination");
+
+function getFilteredEvents() {
+    const searchTerm = eventSearch.value.trim().toLowerCase();
+    const categoryValue = eventCategory.value;
+
+    return eventRecords.filter(event => {
+        const matchesFilter =
+            activeFilter === "all" || event.category === activeFilter;
+
+        const matchesCategory =
+            categoryValue === "all" || event.category === categoryValue;
+
+        const searchable =
+            (event.title + " " + event.description + " " +
+             event.categoryLabel + " " + event.period).toLowerCase();
+
+        return matchesFilter && matchesCategory &&
+               searchable.includes(searchTerm);
+    });
+}
+
+function renderEvents() {
+    const filtered = getFilteredEvents();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const visible = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+    eventGrid.innerHTML = "";
+
+    if (!visible.length) {
+        eventGrid.innerHTML =
+            '<div class="empty-state">No event records match this search. Please try another category or search term.</div>';
+        pagination.innerHTML = "";
+        return;
     }
 
-    // inside your interval loop function where 'now' is defined:
-const d2 = ticketDate - now;
+    visible.forEach(event => {
+        const card = document.createElement("article");
+        card.className = "event-card";
 
-if (d2 > 0) {
-    // Calculate the time units
-    const days = Math.floor(d2 / 86400000);
-    const hours = Math.floor((d2 % 86400000) / 3600000);
-    const minutes = Math.floor((d2 % 3600000) / 60000);
-    const seconds = Math.floor((d2 % 60000) / 1000); 
+        const visual = document.createElement("div");
+        visual.className = "event-card-visual";
 
-    // Find ALL elements with these classes and update their text
-    document.querySelectorAll('.t-days').forEach(el => el.innerText = days);
-    document.querySelectorAll('.t-hours').forEach(el => el.innerText = hours);
-    document.querySelectorAll('.t-minutes').forEach(el => el.innerText = minutes);
-    document.querySelectorAll('.t-seconds').forEach(el => el.innerText = seconds);
+        if (event.image) {
+            const img = document.createElement("img");
+            img.src = event.image;
+            img.alt = event.imageAlt || event.title;
+            img.loading = "lazy";
+            visual.appendChild(img);
+        } else {
+            const titleVisual = document.createElement("span");
+            titleVisual.textContent = event.title;
+            visual.appendChild(titleVisual);
+        }
+
+        const content = document.createElement("div");
+        content.className = "event-card-content";
+
+        const tag = document.createElement("span");
+        tag.className = "event-tag";
+        tag.textContent = event.categoryLabel;
+
+        const heading = document.createElement("h3");
+        heading.textContent = event.title;
+
+        const description = document.createElement("p");
+        description.textContent = event.description;
+
+        const link = document.createElement("button");
+        link.type = "button";
+        link.className = "text-link";
+        link.textContent = "EXPLORE EVENT";
+        link.style.background = "none";
+        link.style.border = "0";
+        link.style.cursor = "pointer";
+        link.style.textAlign = "left";
+        link.onclick = () => openEvent(event.id);
+
+        content.append(tag, heading, description, link);
+        card.append(visual, content);
+        eventGrid.appendChild(card);
+    });
+
+    renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+    pagination.innerHTML = "";
+
+    if (totalPages <= 1) return;
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement("button");
+        button.textContent = i;
+        button.className = i === currentPage ? "active" : "";
+        button.setAttribute("aria-label", "Page " + i);
+        button.onclick = () => {
+            currentPage = i;
+            renderEvents();
+            document.getElementById("event-record").scrollIntoView({
+                behavior: "smooth"
+            });
+        };
+        pagination.appendChild(button);
     }
 }
-setInterval(update, 1000);
-update();
 
-// Translation Initialization
+document.querySelectorAll(".filter-button").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-button").forEach(item =>
+            item.classList.remove("active")
+        );
+
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+        eventCategory.value = "all";
+        currentPage = 1;
+        renderEvents();
+    });
+});
+
+eventSearch.addEventListener("input", () => {
+    currentPage = 1;
+    renderEvents();
+});
+
+eventCategory.addEventListener("change", () => {
+    activeFilter = "all";
+    document.querySelectorAll(".filter-button").forEach(item =>
+        item.classList.toggle("active", item.dataset.filter === "all")
+    );
+    currentPage = 1;
+    renderEvents();
+});
+
+function openEvent(id, updateHistory = true) {
+    const event = eventRecords.find(item => item.id === id);
+    if (!event) return;
+
+    currentEvent = event;
+
+    document.getElementById("modalCategory").textContent = event.categoryLabel;
+    document.getElementById("modalTitle").textContent = event.title;
+    document.getElementById("modalMeta").textContent =
+        event.period ? "EVENT RECORD · " + event.period : "EVENT RECORD";
+
+    const imageWrap = document.getElementById("modalImageWrap");
+    const modalImage = document.getElementById("modalImage");
+
+    if (event.image) {
+        modalImage.src = event.image;
+        modalImage.alt = event.imageAlt || event.title;
+        imageWrap.hidden = false;
+    } else {
+        modalImage.removeAttribute("src");
+        imageWrap.hidden = true;
+    }
+
+    const body = document.getElementById("modalBody");
+    body.innerHTML = "";
+
+    event.paragraphs.forEach(paragraph => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        body.appendChild(p);
+    });
+
+    renderRelatedEvents(event.id);
+
+    document.getElementById("eventModal").classList.add("open");
+    document.body.style.overflow = "hidden";
+
+    if (updateHistory) {
+        history.pushState({eventId:id}, "", "/events#event=" + encodeURIComponent(id));
+    }
+}
+
+function renderRelatedEvents(currentId) {
+    const relatedList = document.getElementById("relatedList");
+    relatedList.innerHTML = "";
+
+    eventRecords
+        .filter(event => event.id !== currentId)
+        .slice(0, 4)
+        .forEach(event => {
+            const button = document.createElement("button");
+            button.textContent = event.title + " — " + event.categoryLabel;
+            button.onclick = () => openEvent(event.id);
+            relatedList.appendChild(button);
+        });
+
+    if (!relatedList.children.length) {
+        const note = document.createElement("p");
+        note.textContent = "More event records will appear here as they are published.";
+        note.style.color = "#888";
+        note.style.fontSize = "12px";
+        relatedList.appendChild(note);
+    }
+}
+
+function closeEvent(updateHistory = true) {
+    document.getElementById("eventModal").classList.remove("open");
+    document.body.style.overflow = "";
+    currentEvent = null;
+
+    if (updateHistory && location.hash.startsWith("#event=")) {
+        history.pushState({}, "", "/events");
+    }
+}
+
+function handleEventHash() {
+    const match = location.hash.match(/^#event=(.+)$/);
+
+    if (match) {
+        const id = decodeURIComponent(match[1]);
+        if (eventRecords.some(event => event.id === id)) {
+            openEvent(id, false);
+            return;
+        }
+    }
+
+    closeEvent(false);
+}
+
+window.addEventListener("popstate", handleEventHash);
+window.addEventListener("hashchange", handleEventHash);
+
+document.getElementById("eventModal").addEventListener("click", event => {
+    if (event.target.id === "eventModal") closeEvent();
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeEvent();
+});
+
+function getEventUrl() {
+    if (!currentEvent) return location.href;
+    return location.origin + "/events#event=" +
+        encodeURIComponent(currentEvent.id);
+}
+
+function shareEvent(platform) {
+    if (!currentEvent) return;
+
+    const url = getEventUrl();
+    const title = currentEvent.title;
+    const text = title + " | PHRINUSOMYIS™ Events";
+
+    const targets = {
+        whatsapp: "https://wa.me/?text=" + encodeURIComponent(text + " " + url),
+        facebook: "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url),
+        x: "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(url),
+        linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url),
+        telegram: "https://t.me/share/url?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text),
+        email: "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(text + "\n" + url)
+    };
+
+    if (targets[platform]) {
+        window.open(targets[platform], "_blank", "noopener,noreferrer");
+    }
+}
+
+async function copyEventLink() {
+    const url = getEventUrl();
+
+    try {
+        await navigator.clipboard.writeText(url);
+        alert("Event link copied.");
+    } catch (error) {
+        prompt("Copy this event link:", url);
+    }
+}
+
+async function nativeShare() {
+    if (!currentEvent) return;
+
+    const data = {
+        title: currentEvent.title,
+        text: currentEvent.title + " | PHRINUSOMYIS™ Events",
+        url: getEventUrl()
+    };
+
+    if (navigator.share) {
+        try {
+            await navigator.share(data);
+        } catch (error) {
+            // The visitor may cancel the native share panel.
+        }
+    } else {
+        copyEventLink();
+    }
+}
+
+/* Google Translate */
+
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
+    new google.translate.TranslateElement({
+        pageLanguage: "en",
+        autoDisplay: false
+    }, "google_translate_element");
 }
 
 document.getElementById("languageSwitcher").addEventListener("change", function() {
-    const select = document.querySelector(".goog-te-combo");
-    if (select) {
-        select.value = this.value;
-        select.dispatchEvent(new Event("change"));
+    const selectedLanguage = this.value;
+
+    try {
+        localStorage.setItem("site_lang", selectedLanguage);
+    } catch (error) {}
+
+    const translateSelect = document.querySelector(".goog-te-combo");
+
+    if (translateSelect) {
+        translateSelect.value = selectedLanguage;
+        translateSelect.dispatchEvent(new Event("change"));
     }
 });
 
-// Security
-document.addEventListener('contextmenu', e => e.preventDefault());
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-/**
- * PHRINUSOMYIS EVENT SCHEMA
- * HQ: Brooklyn, NY | Lagos | Dubai | Moscow
- * AUTO-SCAN: Reads all text and countdowns line-by-line
- */
-(function() {
-  const base = "https://phrinusomyis.com";
-  const currentUrl = window.location.href;
-  
-  // 1. SCRAPER: READS EVERY WORD ON THE PAGE
-  // Grabs the Headline
-  const eventHeadline = document.querySelector('h1') ? document.querySelector('h1').innerText.trim() : document.title;
-  
-  // Grabs ALL visible text from the body (Line-by-Line)
-  const fullBodyText = document.body.innerText.replace(/\s+/g, ' ').trim();
-  
-  // Scans for ALL active countdowns/timers
-  const activeTimers = Array.from(document.querySelectorAll('[class*="countdown"], [id*="timer"], .timer, .count'))
-    .map(el => el.innerText.trim())
-    .filter(text => text.length > 0)
-    .join(' | ');
+/* Restore selected language where available */
 
-  const graph = [];
-
-  // 2. THE ORGANIZATION & GLOBAL OFFICES (Full Physical Addresses)
-  graph.push({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${base}/#organization`,
-    "name": "PHRINUSOMYIS",
-    "url": base,
-    "logo": {
-      "@type": "ImageObject",
-      "url": `${base}/assets/Phrinusomyis_logo.png`
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "@id": `${base}/#dept-headquarters`,
-      "streetAddress": "Brooklyn", // Primary HQ
-      "addressLocality": "New York City",
-      "addressRegion": "Kings County, New York",
-      "postalCode": "11201",
-      "addressCountry": "USA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.6782,
-      "longitude": -73.9442
-    },
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+1 (602) 842-3713",
-      "contactType": "Customer Service",
-      "email": "info@phrinusomyis.com"
-    }],
-    "subOrganization": [
-      {
-        "@type": "Organization",
-        "@id": `${base}/#dept-dubai`,
-        "name": "PHRINUSOMYIS Dubai Office",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Downtown Dubai",
-          "addressLocality": "Dubai",
-          "addressRegion": "Emirate of Dubai",
-          "addressCountry": "UAE"
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": `${base}/#dept-moscow`,
-        "name": "PHRINUSOMYIS Moscow Office",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Central Okrug",
-          "addressLocality": "Moscow",
-          "addressCountry": "Russia"
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": `${base}/#dept-lagos`,
-        "name": "PHRINUSOMYIS Lagos Office",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Banana Island",
-          "addressLocality": "Lagos",
-          "addressRegion": "Lagos State",
-          "addressCountry": "Nigeria"
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": `${base}/events`
-        }
-      }
-    ]
-  });
-
-  // 3. THE COMPLETE EVENT (Scanned and Detailed)
-  graph.push({
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "@id": `${currentUrl}#event`,
-    "name": eventHeadline,
-    "description": "Full Page Scrape: " + fullBodyText.substring(0, 500) + " | Timers Detected: " + activeTimers,
-    "image": [`${base}/assets/Phrinusomyis_logo.png`],
-    // This uses the current time to signal to Google that the event is "Live Now" or "Starting"
-    "startDate": new Date().toISOString(),
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "PHRINUSOMYIS Headquarters",
-      "address": { "@id": `${base}/#dept-headquarters` }
-    },
-    "organizer": {
-      "@id": `${base}/#organization`
-    },
-    "performer": {
-      "@id": `${base}/#organization`
-    },
-    // Main Entity linking the event back to the website structure
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": currentUrl
+try {
+    const savedLanguage = localStorage.getItem("site_lang");
+    if (savedLanguage) {
+        document.getElementById("languageSwitcher").value = savedLanguage;
     }
-  });
+} catch (error) {}
 
-  // 4. INJECT TO HTML
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.text = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": graph
-  });
-  document.head.appendChild(script);
-})();
-        </script>
+/* Initial page render and direct event links */
+
+renderEvents();
+handleEventHash();
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
-
