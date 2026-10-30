@@ -153,735 +153,702 @@
   }
   </script>
 </head>
-  
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap');
 
-:root {
-    --gold:#D4AF37;
-    --gold-light:#F0D77A;
-    --blue:#1E90FF;
-    --black:#050505;
-    --panel:#101010;
-    --panel-light:#171717;
-    --muted:#999;
-    --glass-border:rgba(212,175,55,.22);
-    --accent-glow:rgba(212,175,55,.25);
+:root{
+  --bg:#f6f5f0;
+  --surface:#fff;
+  --surface-2:#eeece5;
+  --ink:#191919;
+  --muted:#625f57;
+  --gold:#b18a2d;
+  --gold-dark:#89691d;
+  --line:#dedbd1;
+  --footer:#20201e;
+  --footer-muted:#c3c0b8;
+  --shadow:0 15px 40px rgba(30,25,15,.08);
 }
 
-* { box-sizing:border-box; }
+*{box-sizing:border-box}
 
-html {
-    scroll-behavior:smooth;
-    margin-top:0 !important;
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+  margin-top:0!important;
 }
 
-body {
-    background:var(--black);
-    color:#fff;
-    font-family:'Montserrat',sans-serif;
-    margin:0;
-    line-height:1.8;
-    overflow-x:hidden;
-    top:0 !important;
-    position:static !important;
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Montserrat',sans-serif;
+  font-weight:600;
+  line-height:1.75;
+  overflow-x:hidden;
+  top:0!important;
+  position:static!important;
 }
 
-a { color:inherit; }
+body.modal-open{overflow:hidden}
 
-.cinematic-bg {
-    position:fixed;
-    inset:0;
-    background:
-        radial-gradient(ellipse at 50% 18%,rgba(212,175,55,.075),transparent 38%),
-        radial-gradient(circle at 50% 50%,#151515 0%,#050505 75%);
-    z-index:-1;
-    pointer-events:none;
+a{color:inherit}
+button,select{font:inherit}
+img{max-width:100%}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
+  background:rgba(250,249,245,.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  padding:13px 20px;
 }
 
-.site-header {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    min-height:76px;
-    background:rgba(5,5,5,.96);
-    backdrop-filter:blur(12px);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-    border-bottom:1px solid var(--glass-border);
-    padding:10px 18px;
+.menu{
+  max-width:1250px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
 }
 
-.menu {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap;
-}
-
-.menu a {
-    color:var(--gold);
-    text-decoration:none;
-    font-weight:800;
-    letter-spacing:1px;
-    font-size:12px;
-    transition:.25s;
+.menu a{
+  color:var(--ink);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+  transition:.2s;
 }
 
 .menu a:hover,
-.menu a[aria-current="page"] {
-    color:#fff;
+.menu a[aria-current="page"]{color:var(--gold-dark)}
+
+#languageSwitcher{
+  background:var(--surface);
+  color:var(--ink);
+  border:1px solid var(--line);
+  border-radius:3px;
+  padding:8px 10px;
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.page-container{
+  width:min(1200px,100%);
+  margin:0 auto;
+  padding:45px 22px 75px;
+}
+
+.hero{
+  text-align:center;
+  padding:45px 0 65px;
+}
+
+.brand-seal{
+  display:block;
+  width:125px;
+  height:auto;
+  max-height:150px;
+  object-fit:contain;
+  margin:0 auto 22px;
+}
+
+.eyebrow{
+  color:var(--gold-dark);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+h1,h2,h3{
+  font-family:'Cinzel',serif;
+  font-weight:800;
+}
+
+.hero h1{
+  margin:12px 0;
+  color:var(--ink);
+  font-size:clamp(2.5rem,7vw,5rem);
+  letter-spacing:clamp(3px,1vw,10px);
+  line-height:1.2;
+}
+
+.hero-subtitle{
+  max-width:760px;
+  margin:15px auto 0;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+}
+
+.hero-line{
+  width:85px;
+  height:3px;
+  margin:25px auto;
+  background:var(--gold);
+}
+
+.section{margin:45px 0 75px}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-heading h2{
+  color:var(--ink);
+  font-size:clamp(1.5rem,4vw,2.5rem);
+  letter-spacing:2px;
+  line-height:1.35;
+  margin:8px 0;
+}
+
+.section-heading p{
+  max-width:740px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+}
+
+.image-frame{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  min-height:260px;
+  padding:25px;
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+
+.image-frame img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:560px;
+  object-fit:contain;
+  object-position:center;
+}
+
+.featured-event{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.featured-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  min-width:0;
+  background:var(--surface-2);
+  border-right:1px solid var(--line);
+}
+
+.featured-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:480px;
+  object-fit:contain;
+}
+
+.featured-copy{
+  padding:clamp(25px,4vw,48px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.event-tag{
+  display:inline-block;
+  width:max-content;
+  max-width:100%;
+  padding:6px 12px;
+  border:1px solid rgba(177,138,45,.45);
+  color:var(--gold-dark);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.featured-copy h2{
+  color:var(--ink);
+  font-size:clamp(1.7rem,3vw,2.5rem);
+  line-height:1.3;
+  margin:18px 0 10px;
+}
+
+.featured-copy p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+}
+
+.gold-button,
+.outline-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  max-width:100%;
+  min-height:45px;
+  margin-top:15px;
+  padding:11px 19px;
+  border:1px solid var(--gold);
+  border-radius:3px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.3px;
+  text-decoration:none;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.gold-button{
+  background:var(--gold);
+  color:#fff;
+}
+
+.gold-button:hover{
+  background:var(--gold-dark);
+  border-color:var(--gold-dark);
+}
+
+.outline-button{
+  background:transparent;
+  color:var(--gold-dark);
+}
+
+.outline-button:hover{
+  background:var(--gold);
+  color:#fff;
+}
+
+.explore-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+
+.explore-card{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:9px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .2s,border-color .2s;
+}
+
+.explore-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--gold);
+}
+
+.explore-card .image-frame{
+  min-height:220px;
+  border:0;
+  border-bottom:1px solid var(--line);
+}
+
+.explore-copy{
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.explore-copy h3{
+  margin:8px 0;
+  font-size:21px;
+  color:var(--ink);
+}
+
+.explore-copy p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  margin:0 0 10px;
+  flex:1;
+}
+
+.text-button{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  width:max-content;
+  margin-top:12px;
+  padding:0;
+  border:0;
+  background:none;
+  color:var(--gold-dark);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.3px;
+  cursor:pointer;
+  text-transform:uppercase;
+}
+
+.text-button:hover{color:var(--ink)}
+
+.gallery-panel{
+  display:none;
+  margin:35px 0;
+  padding:clamp(18px,3vw,35px);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  scroll-margin-top:100px;
+}
+
+.gallery-panel.open{display:block}
+
+.gallery-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.gallery-header h2{
+  margin:5px 0;
+  font-size:clamp(1.4rem,3vw,2.2rem);
+}
+
+.gallery-header p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  margin:0;
+}
+
+.close-gallery{
+  min-height:40px;
+  padding:9px 15px;
+  border:1px solid var(--line);
+  border-radius:3px;
+  background:var(--bg);
+  color:var(--ink);
+  font-size:10px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.close-gallery:hover{
+  border-color:var(--gold);
+  color:var(--gold-dark);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:17px;
+}
+
+.gallery-item{
+  min-width:0;
+  background:var(--bg);
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+
+.gallery-item .image-frame{
+  min-height:170px;
+  padding:15px;
+  border:0;
+  border-bottom:1px solid var(--line);
 }
 
-#languageSwitcher {
-    background:#050505;
-    color:#B9F2FF;
-    border:1px solid var(--gold);
-    border-radius:4px;
-    padding:7px 10px;
-    font-family:'Montserrat',sans-serif;
-    font-size:11px;
-    cursor:pointer;
+.gallery-item .image-frame img{
+  max-height:300px;
 }
 
-.page-container {
-    max-width:1200px;
-    margin:0 auto;
-    padding:125px 22px 70px;
+.gallery-item-copy{padding:15px}
+
+.gallery-item-copy h3{
+  margin:0 0 5px;
+  font-size:14px;
+}
+
+.gallery-item-copy p{
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:700;
+}
+
+.theater-sections{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+
+.theater-item{
+  display:grid;
+  grid-template-columns:105px 1fr;
+  gap:15px;
+  align-items:center;
+  padding:13px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  min-width:0;
+}
+
+.theater-item .image-frame{
+  min-height:90px;
+  padding:8px;
+}
+
+.theater-item .image-frame img{max-height:130px}
+
+.theater-item h3{
+  font-size:13px;
+  margin:0 0 4px;
+}
+
+.theater-item p{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:700;
+  line-height:1.6;
+  margin:0;
+}
+
+.announcement{
+  padding:clamp(30px,5vw,60px);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+
+.announcement h2{
+  color:var(--ink);
+  font-size:clamp(1.6rem,4vw,2.6rem);
+  margin:10px 0;
+  letter-spacing:2px;
+}
+
+.announcement p{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+}
+
+.ticket-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.ticket-card{
+  padding:28px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+}
+
+.ticket-card h3{
+  margin:0 0 10px;
+  font-size:19px;
+}
+
+.ticket-card p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
 }
 
-.hero {
-    text-align:center;
-    padding:25px 0 55px;
+.ticket-card ul{
+  padding-left:19px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
 }
+
+.ticket-card li{margin:7px 0}
 
-.brand-seal {
-    width:130px;
-    max-width:38%;
-    filter:drop-shadow(0 0 25px var(--accent-glow));
-    margin:0 auto 20px;
+.ticket-status{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid var(--line);
+  color:var(--gold-dark);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
-.eyebrow {
-    color:var(--gold);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:4px;
-    text-transform:uppercase;
+.event-contact{
+  padding:45px 20px;
+  text-align:center;
+  border-top:1px solid var(--line);
 }
 
-h1,h2,h3 {
-    font-family:'Cinzel',serif;
-    font-weight:700;
+.event-contact h2{
+  margin:0 0 8px;
+  font-size:clamp(1.4rem,3vw,2rem);
 }
 
-.hero h1 {
-    color:var(--gold);
-    font-size:clamp(2rem,6vw,4rem);
-    letter-spacing:clamp(3px,1vw,9px);
-    line-height:1.25;
-    text-transform:uppercase;
-    margin:14px 0;
+.event-contact p{
+  max-width:650px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
 }
 
-.hero-subtitle {
-    color:#ccc;
-    max-width:760px;
-    margin:0 auto;
-    font-size:15px;
+.contact-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
 }
 
-.hero-line {
-    width:90px;
-    height:2px;
-    background:var(--gold);
-    margin:28px auto;
+.contact-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:46px;
+  padding:12px 20px;
+  border:1px solid var(--gold);
+  background:var(--gold);
+  color:#fff;
+  border-radius:3px;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:.2s;
 }
 
-.section {
-    margin:45px 0 75px;
+.contact-button:hover{
+  background:var(--gold-dark);
+  border-color:var(--gold-dark);
 }
 
-.section-heading {
-    text-align:center;
-    margin-bottom:30px;
+.contact-button.secondary{
+  background:transparent;
+  color:var(--gold-dark);
 }
-
-.section-heading h2 {
-    color:var(--gold);
-    font-size:clamp(1.5rem,4vw,2.3rem);
-    letter-spacing:3px;
-    margin:8px 0;
-    text-transform:uppercase;
-}
-
-.section-heading p {
-    color:var(--muted);
-    font-size:13px;
-    max-width:720px;
-    margin:0 auto;
+
+.contact-button.secondary:hover{
+  background:var(--gold);
+  color:#fff;
 }
 
-.featured-event {
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    border:1px solid var(--glass-border);
-    background:linear-gradient(135deg,#151515,#080808);
-    overflow:hidden;
-    border-radius:12px;
-    box-shadow:0 15px 50px rgba(0,0,0,.35);
-}
-
-.featured-visual {
-    min-height:350px;
-    background:
-        radial-gradient(circle at center,rgba(212,175,55,.15),transparent 60%),
-        linear-gradient(145deg,#191919,#070707);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:35px;
-    text-align:center;
-    border-right:1px solid var(--glass-border);
-}
-
-.featured-visual img {
-    max-width:100%;
-    max-height:350px;
-    width:auto;
-    height:auto;
-    object-fit:contain;
-    filter:drop-shadow(0 0 25px rgba(212,175,55,.15));
-}
-
-.featured-placeholder {
-    font-family:'Cinzel',serif;
-    color:var(--gold);
-    font-size:clamp(1.8rem,4vw,3rem);
-    letter-spacing:5px;
-    line-height:1.5;
-}
-
-.featured-copy {
-    padding:42px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.event-tag {
-    display:inline-block;
-    color:var(--gold);
-    border:1px solid var(--glass-border);
-    padding:5px 11px;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    width:max-content;
-    max-width:100%;
-}
-
-.featured-copy h2 {
-    font-size:clamp(1.6rem,3vw,2.4rem);
-    color:#fff;
-    line-height:1.3;
-    margin:18px 0 12px;
-}
-
-.featured-copy p {
-    color:#aaa;
-    font-size:14px;
-}
-
-.gold-button {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:max-content;
-    max-width:100%;
-    padding:12px 20px;
-    margin-top:18px;
-    background:var(--gold);
-    color:#050505;
-    text-decoration:none;
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    border:1px solid var(--gold);
-    border-radius:3px;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.gold-button:hover {
-    background:transparent;
-    color:var(--gold);
-}
-
-.archive-tools {
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin:25px 0 32px;
-}
-
-.archive-tools input,
-.archive-tools select {
-    min-height:44px;
-    background:#101010;
-    color:#fff;
-    border:1px solid var(--glass-border);
-    border-radius:4px;
-    padding:10px 14px;
-    font-family:'Montserrat',sans-serif;
-    font-size:12px;
-    outline:none;
-}
-
-.archive-tools input {
-    width:min(340px,100%);
-}
-
-.archive-tools input:focus,
-.archive-tools select:focus {
-    border-color:var(--gold);
-}
-
-.filter-row {
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:9px;
-    margin-bottom:30px;
-}
-
-.filter-button {
-    padding:9px 15px;
-    color:#aaa;
-    background:#101010;
-    border:1px solid #292929;
-    border-radius:3px;
-    font-family:'Montserrat',sans-serif;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.filter-button:hover,
-.filter-button.active {
-    color:var(--gold);
-    border-color:var(--gold);
-}
-
-.event-grid {
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:20px;
-}
-
-.event-card {
-    display:flex;
-    flex-direction:column;
-    min-width:0;
-    background:linear-gradient(160deg,#151515,#090909);
-    border:1px solid #292929;
-    border-radius:8px;
-    overflow:hidden;
-    transition:transform .25s,border-color .25s;
-}
-
-.event-card:hover {
-    transform:translateY(-5px);
-    border-color:var(--gold);
-}
-
-.event-card-visual {
-    min-height:190px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:25px;
-    text-align:center;
-    background:
-        radial-gradient(circle at center,rgba(212,175,55,.13),transparent 65%),
-        #0d0d0d;
-    border-bottom:1px solid #292929;
-}
-
-.event-card-visual img {
-    width:100%;
-    max-height:190px;
-    object-fit:contain;
-}
-
-.event-card-visual span {
-    color:var(--gold);
-    font-family:'Cinzel',serif;
-    font-size:23px;
-    letter-spacing:3px;
-}
-
-.event-card-content {
-    padding:22px;
-    display:flex;
-    flex-direction:column;
-    flex:1;
-}
-
-.event-card-content .event-tag {
-    font-size:9px;
-}
-
-.event-card h3 {
-    font-size:18px;
-    line-height:1.4;
-    margin:15px 0 8px;
-    color:#fff;
-}
-
-.event-card p {
-    color:#999;
-    font-size:12px;
-    margin:0 0 15px;
-    flex:1;
-}
-
-.text-link {
-    display:inline-block;
-    color:var(--gold);
-    text-decoration:none;
-    font-size:10px;
-    font-weight:900;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    margin-top:10px;
-}
-
-.text-link:hover { color:#fff; }
-
-.empty-state {
-    grid-column:1/-1;
-    text-align:center;
-    padding:45px 20px;
-    border:1px dashed #333;
-    color:#999;
-    font-size:13px;
-}
-
-.pagination {
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    margin-top:30px;
-}
-
-.pagination button {
-    background:#111;
-    color:var(--gold);
-    border:1px solid #333;
-    padding:8px 13px;
-    cursor:pointer;
-}
-
-.pagination button.active {
-    background:var(--gold);
-    color:#050505;
-}
-
-.next-stage {
-    position:relative;
-    text-align:center;
-    padding:55px 30px;
-    border:1px solid var(--glass-border);
-    border-radius:10px;
-    background:
-        radial-gradient(ellipse at center,rgba(212,175,55,.09),transparent 70%),
-        linear-gradient(145deg,#141414,#070707);
-    overflow:hidden;
-}
-
-.next-stage h2 {
-    color:var(--gold);
-    font-size:clamp(1.6rem,4vw,2.5rem);
-    letter-spacing:3px;
-    margin:12px 0;
-}
-
-.next-stage p {
-    max-width:700px;
-    margin:0 auto;
-    color:#aaa;
-    font-size:14px;
-}
-
-.next-stage .stage-note {
-    display:inline-block;
-    margin-top:25px;
-    border-top:1px solid var(--glass-border);
-    padding-top:18px;
-    color:#ddd;
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.event-contact {
-    text-align:center;
-    padding:35px 20px;
-    border-top:1px solid #222;
-}
-
-.event-contact h2 {
-    color:var(--gold);
-    font-size:20px;
-    letter-spacing:2px;
-}
-
-.event-contact p {
-    color:#999;
-    font-size:13px;
-}
-
-.contact-button {
-    display:inline-flex;
-    gap:10px;
-    align-items:center;
-    justify-content:center;
-    margin-top:12px;
-    padding:12px 22px;
-    border:1px solid var(--gold);
-    color:var(--gold);
-    text-decoration:none;
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    border-radius:3px;
-}
-
-.contact-button:hover {
-    background:var(--gold);
-    color:#050505;
-}
-
-.contact-button svg {
-    width:17px;
-    height:17px;
-    fill:none;
-    stroke:currentColor;
-    stroke-width:1.8;
-}
-
-/* Event detail reader */
-
-.event-modal {
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:100000;
-    background:rgba(0,0,0,.94);
-    overflow-y:auto;
-    padding:30px 15px;
-}
-
-.event-modal.open { display:block; }
-
-.modal-panel {
-    position:relative;
-    max-width:850px;
-    margin:35px auto;
-    padding:35px;
-    background:#101010;
-    border:1px solid var(--glass-border);
-    border-radius:8px;
-}
-
-.modal-close {
-    position:absolute;
-    top:12px;
-    right:15px;
-    width:40px;
-    height:40px;
-    color:var(--gold);
-    background:#080808;
-    border:1px solid #333;
-    font-size:25px;
-    cursor:pointer;
-}
-
-.modal-panel h2 {
-    color:var(--gold);
-    font-size:clamp(1.5rem,4vw,2.4rem);
-    line-height:1.35;
-    margin:20px 45px 10px 0;
-}
-
-.modal-meta {
-    color:#888;
-    font-size:11px;
-    letter-spacing:1px;
-    margin-bottom:20px;
-}
-
-.modal-hero {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#080808;
-    border:1px solid #292929;
-    padding:15px;
-    margin:20px 0;
-}
-
-.modal-hero img {
-    display:block;
-    max-width:100%;
-    max-height:480px;
-    width:auto;
-    height:auto;
-    object-fit:contain;
-}
-
-.modal-body {
-    color:#ccc;
-    font-size:14px;
-    line-height:2;
-}
-
-.modal-body p { margin:0 0 18px; }
-
-.modal-actions {
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid #292929;
-}
-
-.modal-actions button,
-.modal-actions a {
-    background:#080808;
-    color:var(--gold);
-    border:1px solid #333;
-    padding:9px 12px;
-    font-family:'Montserrat',sans-serif;
-    font-size:10px;
-    font-weight:800;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-.modal-actions button:hover,
-.modal-actions a:hover {
-    border-color:var(--gold);
-}
-
-.related-events {
-    margin-top:30px;
-    padding-top:20px;
-    border-top:1px solid #292929;
-}
-
-.related-events h3 {
-    color:var(--gold);
-    font-size:15px;
-}
-
-.related-events button {
-    display:block;
-    width:100%;
-    text-align:left;
-    background:none;
-    border:0;
-    border-bottom:1px solid #222;
-    color:#ccc;
-    padding:12px 0;
-    cursor:pointer;
-    font-family:'Montserrat',sans-serif;
-}
-
-.related-events button:hover { color:var(--gold); }
+.contact-button svg{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
 
 /* Footer */
 
-.phr-main-footer {
-    background:#000;
-    color:#fff;
-    padding:75px 20px 35px;
-    border-top:1px solid #1a1a1a;
-    font-family:'Arial',sans-serif;
+.phr-main-footer{
+  background:var(--footer);
+  color:#fff;
+  padding:65px 22px 30px;
+  font-family:'Montserrat',sans-serif;
 }
 
-.phr-footer-grid {
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:40px 20px;
-    max-width:1100px;
-    margin:0 auto 55px;
+.phr-footer-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:35px 25px;
+  max-width:1120px;
+  margin:0 auto 45px;
 }
 
-.phr-footer-section h3 {
-    color:#fff;
-    font-family:'Arial',sans-serif;
-    font-size:13px;
-    font-weight:900;
-    letter-spacing:2px;
-    margin-bottom:22px;
-    text-transform:uppercase;
+.phr-footer-section h3{
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.8px;
+  margin:0 0 18px;
 }
 
-.phr-footer-section ul {
-    list-style:none;
-    padding:0;
-    margin:0;
+.phr-footer-section ul{
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 
-.phr-footer-section li { margin-bottom:13px; }
+.phr-footer-section li{margin-bottom:11px}
 
-.phr-footer-section a {
-    color:#888;
-    text-decoration:none;
-    font-size:13px;
-    transition:color .2s;
+.phr-footer-section a{
+  color:var(--footer-muted);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  transition:color .2s;
 }
 
-.phr-footer-section a:hover { color:var(--gold); }
+.phr-footer-section a:hover{color:var(--gold-light)}
 
-.phr-global-bar {
-    max-width:1100px;
-    margin:0 auto;
-    padding-top:35px;
-    border-top:1px solid #1a1a1a;
-    text-align:center;
+.phr-footer-brand{
+  max-width:1120px;
+  margin:auto;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.13);
+  text-align:center;
 }
 
-.phr-global-bar h3 {
-    font-size:13px;
-    letter-spacing:2px;
+.phr-footer-brand h3{
+  color:var(--gold-light);
+  font-size:15px;
+  letter-spacing:2px;
+  margin:0 0 7px;
 }
 
-.phr-hq-label {
-    color:var(--gold);
-    font-weight:bold;
+.phr-footer-brand p{
+  margin:0;
+  color:var(--footer-muted);
+  font-size:10px;
+  font-weight:700;
 }
 
-.phr-footer-legal {
-    margin-top:35px;
-    text-align:center;
-    color:#555;
-    font-size:10px;
-    letter-spacing:1px;
-    text-transform:uppercase;
+.phr-footer-legal{
+  margin-top:25px!important;
+  color:#aaa!important;
+  font-size:9px!important;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 /* Google Translate */
@@ -893,750 +860,787 @@ h1,h2,h3 {
 .goog-te-gadget,
 #google_translate_element,
 .goog-te-balloon-frame,
-.goog-tooltip {
-    display:none !important;
-    visibility:hidden !important;
+.goog-tooltip{
+  display:none!important;
+  visibility:hidden!important;
 }
 
-.goog-text-highlight {
-    background:none !important;
-    box-shadow:none !important;
+.goog-text-highlight{
+  background:none!important;
+  box-shadow:none!important;
 }
 
-@media(min-width:768px) {
-    .phr-footer-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+@media(min-width:768px){
+  .phr-footer-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 
-@media(max-width:850px) {
-    .event-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .featured-event { grid-template-columns:1fr; }
-    .featured-visual {
-        min-height:260px;
-        border-right:0;
-        border-bottom:1px solid var(--glass-border);
-    }
+@media(max-width:850px){
+  .featured-event{grid-template-columns:1fr}
+  .featured-visual{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
-@media(max-width:600px) {
-    .site-header {
-        position:relative;
-        min-height:0;
-        padding:12px 8px;
-    }
-
-    .menu { gap:10px 15px; }
-    .menu a { font-size:10px; }
-    #languageSwitcher { font-size:10px; }
-
-    .page-container { padding:35px 15px 45px; }
-    .hero { padding:25px 0 35px; }
-    .brand-seal { width:105px; }
-    .hero-subtitle { font-size:13px; }
-
-    .event-grid { grid-template-columns:1fr; }
-    .featured-copy { padding:25px; }
-    .featured-visual { min-height:220px; }
-
-    .section { margin:35px 0 55px; }
-    .next-stage { padding:40px 20px; }
-
-    .modal-panel {
-        padding:25px 18px;
-        margin:15px auto;
-    }
-
-    .modal-panel h2 { margin-right:35px; }
+@media(max-width:600px){
+  .site-header{
+    position:relative;
+    padding:12px 8px;
+  }
+  .menu{gap:10px 14px}
+  .menu a{font-size:9px}
+  #languageSwitcher{font-size:9px;padding:7px}
+  .page-container{padding:25px 14px 45px}
+  .hero{padding:25px 0 40px}
+  .brand-seal{width:100px}
+  .hero-subtitle{font-size:12px}
+  .section{margin:35px 0 55px}
+  .explore-grid,
+  .ticket-grid,
+  .theater-sections{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-item .image-frame{min-height:210px}
+  .theater-item{grid-template-columns:90px 1fr}
+  .featured-copy{padding:24px}
+  .featured-visual{padding:15px}
+  .featured-visual img{max-height:360px}
+  .announcement{padding:30px 20px}
+  .phr-footer-grid{gap:28px 16px}
+  .phr-main-footer{padding:45px 18px 25px}
 }
 
-@media print {
-    body * { visibility:hidden; }
-    .event-modal,
-    .event-modal * { visibility:visible; }
-    .event-modal {
-        display:block !important;
-        position:absolute;
-        inset:0;
-        overflow:visible;
-        background:#fff;
-        color:#000;
-    }
-    .modal-panel {
-        max-width:100%;
-        margin:0;
-        color:#000;
-        background:#fff;
-        border:0;
-    }
-    .modal-panel h2,
-    .modal-body,
-    .modal-meta { color:#000; }
-    .modal-close,
-    .modal-actions,
-    .related-events { display:none !important; }
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    transition:none!important;
+    animation:none!important;
+  }
 }
 </style>
 </head>
 <body>
 
-<div class="cinematic-bg"></div>
-
 <header class="site-header">
-    <nav class="menu" aria-label="Main navigation">
-        <a href="/">HOME</a>
-        <a href="/news">NEWS</a>
-        <a href="/events" aria-current="page">EVENTS</a>
-        <a href="/press">PRESS &amp; MEDIA</a>
-        <a href="/luxury">LUXURY</a>
+  <nav class="menu" aria-label="Main navigation">
+    <a href="/">HOME</a>
+    <a href="/news">NEWS</a>
+    <a href="/events" aria-current="page">EVENTS</a>
+    <a href="/press">PRESS &amp; MEDIA</a>
+    <a href="/luxury">LUXURY</a>
 
-        <select id="languageSwitcher" aria-label="Select language">
-            <option value="en">English (EN)</option>
-            <option value="fr">Français (FR)</option>
-            <option value="es">Español (ES)</option>
-            <option value="de">Deutsch (DE)</option>
-            <option value="ar">العربية (AR)</option>
-            <option value="zh">中文 (ZH)</option>
-            <option value="ru">Русский (RU)</option>
-            <option value="pt">Português (PT)</option>
-            <option value="ja">日本語 (JA)</option>
-            <option value="ko">한국어 (KO)</option>
-            <option value="it">Italiano (IT)</option>
-            <option value="nl">Nederlands (NL)</option>
-            <option value="tr">Türkçe (TR)</option>
-            <option value="hi">हिन्दी (HI)</option>
-            <option value="id">Bahasa Indonesia (ID)</option>
-            <option value="vi">Tiếng Việt (VI)</option>
-            <option value="th">ไทย (TH)</option>
-            <option value="pl">Polski (PL)</option>
-            <option value="sv">Svenska (SV)</option>
-            <option value="fi">Suomi (FI)</option>
-            <option value="da">Dansk (DA)</option>
-        </select>
-    </nav>
+    <select id="languageSwitcher" aria-label="Select language">
+      <option value="en">English (EN)</option>
+      <option value="fr">Français (FR)</option>
+      <option value="es">Español (ES)</option>
+      <option value="de">Deutsch (DE)</option>
+      <option value="ar">العربية (AR)</option>
+      <option value="zh">中文 (ZH)</option>
+      <option value="ru">Русский (RU)</option>
+      <option value="pt">Português (PT)</option>
+      <option value="ja">日本語 (JA)</option>
+      <option value="ko">한국어 (KO)</option>
+      <option value="it">Italiano (IT)</option>
+      <option value="nl">Nederlands (NL)</option>
+      <option value="tr">Türkçe (TR)</option>
+      <option value="hi">हिन्दी (HI)</option>
+      <option value="id">Bahasa Indonesia (ID)</option>
+      <option value="vi">Tiếng Việt (VI)</option>
+      <option value="th">ไทย (TH)</option>
+      <option value="pl">Polski (PL)</option>
+      <option value="sv">Svenska (SV)</option>
+      <option value="fi">Suomi (FI)</option>
+      <option value="da">Dansk (DA)</option>
+    </select>
+  </nav>
 </header>
 
 <main class="page-container">
 
-    <section class="hero">
-        <img src="/phrinusomyis_logo.png"
-             alt="PHRINUSOMYIS"
-             class="brand-seal">
+  <!-- MAIN INTRODUCTION -->
 
-        <div class="eyebrow">PHRINUSOMYIS™ Official Events</div>
-        <h1>EVENTS</h1>
-        <div class="hero-line"></div>
+  <section class="hero">
+    <img
+      src="/phrinusomyis_logo.png"
+      alt="PHRINUSOMYIS"
+      class="brand-seal"
+    >
 
-        <p class="hero-subtitle">
-            A record of sporting occasions, competitions and experiences
-            associated with PHRINUSOMYIS™. Discover the events, the
-            competition and the moments that form part of its sporting history.
-        </p>
-    </section>
+    <div class="eyebrow">PHRINUSOMYIS™</div>
+    <h1>EVENTS</h1>
+    <div class="hero-line"></div>
 
-    <!-- FEATURED EVENT -->
+    <p class="hero-subtitle">
+      Discover the competitions, sporting experiences and original
+      formats developed and administered by PHRINUSOMYIS™.
+      Explore Sports Theater™, its competitions and the world of
+      competitive sport presented by the organization.
+    </p>
+  </section>
 
-    <section class="section" aria-labelledby="featured-heading">
-        <div class="section-heading">
-            <div class="eyebrow">In Focus</div>
-            <h2 id="featured-heading">Featured Event</h2>
-            <p>
-                A closer look at a defining competition within the
-                PHRINUSOMYIS™ sporting programme.
-            </p>
-        </div>
+  <!-- FEATURED COMPETITION -->
 
-        <div class="featured-event">
-            <div class="featured-visual">
-                <div class="featured-placeholder">
-                    SOUL<br>SURVIVE™
-                </div>
-            </div>
+  <section class="section" id="featured" aria-labelledby="featured-heading">
+    <div class="section-heading">
+      <div class="eyebrow">Featured Competition</div>
+      <h2 id="featured-heading">THE COMPETITIVE STAGE</h2>
+      <p>
+        An introduction to an original competition within the
+        PHRINUSOMYIS™ sporting portfolio.
+      </p>
+    </div>
 
-            <div class="featured-copy">
-                <span class="event-tag">Sports Theater™</span>
-                <h2>SOUL SURVIVE™</h2>
-                <p>
-                    SOUL SURVIVE™ is a competition within the
-                    Sports Theater™ concept. Its central themes include
-                    will, endurance, resolve and performance under pressure.
-                </p>
-                <p>
-                    The event forms part of the PHRINUSOMYIS™ record
-                    of original sporting competition.
-                </p>
-                <button class="gold-button" type="button"
-                        onclick="openEvent('soul-survive')">
-                    Explore Event
-                </button>
-            </div>
-        </div>
-    </section>
+    <div class="featured-event">
+      <div class="featured-visual">
+        <img
+          src="/phrinusomyis_logo.png"
+          alt="PHRINUSOMYIS featured competition"
+        >
+      </div>
 
-    <!-- EVENT RECORD -->
+      <div class="featured-copy">
+        <span class="event-tag">Sports Theater™</span>
+        <h2>SOUL SURVIVE™</h2>
 
-    <section class="section" id="event-record" aria-labelledby="record-heading">
-        <div class="section-heading">
-            <div class="eyebrow">Competition History</div>
-            <h2 id="record-heading">The Event Record</h2>
-            <p>
-                Explore the competitions and sporting occasions that
-                form part of the PHRINUSOMYIS™ event record.
-            </p>
-        </div>
-
-        <div class="archive-tools">
-            <input type="search" id="eventSearch"
-                   placeholder="Search events..."
-                   aria-label="Search events">
-
-            <select id="eventCategory" aria-label="Filter by category">
-                <option value="all">All Categories</option>
-                <option value="sports-theater">Sports Theater™</option>
-                <option value="competition">Competitions</option>
-                <option value="programme">Sporting Programmes</option>
-            </select>
-        </div>
-
-        <div class="filter-row" aria-label="Event filters">
-            <button class="filter-button active" data-filter="all">
-                ALL EVENTS
-            </button>
-            <button class="filter-button" data-filter="sports-theater">
-                SPORTS THEATER™
-            </button>
-            <button class="filter-button" data-filter="competition">
-                COMPETITIONS
-            </button>
-            <button class="filter-button" data-filter="programme">
-                SPORTING PROGRAMMES
-            </button>
-        </div>
-
-        <div class="event-grid" id="eventGrid"></div>
-
-        <div class="pagination" id="eventPagination"></div>
-    </section>
-
-    <!-- NEXT STAGE -->
-
-    <section class="section" id="next-stage">
-        <div class="next-stage">
-            <div class="eyebrow">The Journey Continues</div>
-            <h2>THE NEXT STAGE</h2>
-
-            <p>
-                The next chapter of PHRINUSOMYIS™ competitions will be
-                presented here as official event information becomes
-                available. Confirmed announcements will include the
-                relevant event details, dates, venues and participation
-                information.
-            </p>
-
-            <div class="stage-note">
-                Official event announcements will be published here
-            </div>
-        </div>
-    </section>
-
-    <!-- EVENT ENQUIRIES -->
-
-    <section class="event-contact">
-        <h2>EVENT ENQUIRIES</h2>
         <p>
-            For official enquiries concerning PHRINUSOMYIS™ events
-            and sporting programmes, contact the organization.
+          SOUL SURVIVE™ is a structured live competition within
+          the Sports Theater™ concept. Its identity centres on
+          will, endurance, resolve, discipline and performance
+          under pressure.
         </p>
 
-        <a class="contact-button"
-           href="mailto:events@phrinusomyis.com?subject=PHRINUSOMYIS%20Events%20Enquiry">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                <path d="m3 7 9 6 9-6"></path>
-            </svg>
-            Send Mail
+        <p>
+          It represents an original approach to competitive sport,
+          built around the human qualities revealed when individuals
+          face demanding conditions.
+        </p>
+
+        <button class="gold-button" type="button"
+          onclick="openEventDetails('soul-survive')">
+          EXPLORE SOUL SURVIVE™
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE THE ORGANIZATION'S SPORTING WORLD -->
+
+  <section class="section" id="explore">
+    <div class="section-heading">
+      <div class="eyebrow">Discover PHRINUSOMYIS™</div>
+      <h2>EXPLORE THE SPORTING WORLD</h2>
+      <p>
+        Explore the concepts, competitions and sporting experiences
+        that define the PHRINUSOMYIS™ approach to competition.
+      </p>
+    </div>
+
+    <div class="explore-grid">
+
+      <article class="explore-card">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png"
+            alt="Sports Theater™">
+        </div>
+        <div class="explore-copy">
+          <span class="eyebrow">Original Sporting Concept</span>
+          <h3>SPORTS THEATER™</h3>
+          <p>
+            Discover the concept, sporting identity, competitive
+            experience and presentation behind Sports Theater™.
+          </p>
+          <button class="text-button" type="button"
+            onclick="openGallery('theaterGallery')">
+            EXPLORE SPORTS THEATER™ →
+          </button>
+        </div>
+      </article>
+
+      <article class="explore-card">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png"
+            alt="PHRINUSOMYIS competitions">
+        </div>
+        <div class="explore-copy">
+          <span class="eyebrow">Competitive Portfolio</span>
+          <h3>COMPETITIONS</h3>
+          <p>
+            Explore the competitions and original sporting formats
+            developed, owned and administered by PHRINUSOMYIS™.
+          </p>
+          <button class="text-button" type="button"
+            onclick="openGallery('competitionGallery')">
+            EXPLORE COMPETITIONS →
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SPORTS THEATER CONTENT -->
+
+  <section class="gallery-panel" id="theaterGallery"
+    aria-labelledby="theater-gallery-heading">
+
+    <div class="gallery-header">
+      <div>
+        <div class="eyebrow">Explore the Concept</div>
+        <h2 id="theater-gallery-heading">SPORTS THEATER™</h2>
+        <p>
+          Ten perspectives introducing the Sports Theater™ concept.
+        </p>
+      </div>
+      <button class="close-gallery" type="button"
+        onclick="closeGallery('theaterGallery')">
+        CLOSE ✕
+      </button>
+    </div>
+
+    <div class="theater-sections">
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Sports Theater overview">
+        </div>
+        <div>
+          <h3>01. OVERVIEW</h3>
+          <p>An introduction to Sports Theater™ and its place within PHRINUSOMYIS™.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="The concept">
+        </div>
+        <div>
+          <h3>02. THE CONCEPT</h3>
+          <p>The central vision behind a distinctive approach to competitive sport.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Sporting identity">
+        </div>
+        <div>
+          <h3>03. SPORTING IDENTITY</h3>
+          <p>The identity, character and principles that shape the concept.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Competitions">
+        </div>
+        <div>
+          <h3>04. COMPETITIONS</h3>
+          <p>Original competitions presented within the Sports Theater™ concept.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Participants">
+        </div>
+        <div>
+          <h3>05. PARTICIPANTS</h3>
+          <p>The individuals and competitors who take part in the sporting experience.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Competitive experience">
+        </div>
+        <div>
+          <h3>06. THE COMPETITIVE EXPERIENCE</h3>
+          <p>The atmosphere, intensity and human qualities associated with competition.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Presentation and production">
+        </div>
+        <div>
+          <h3>07. PRESENTATION &amp; PRODUCTION</h3>
+          <p>The presentation of sporting experiences to audiences.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Global participation">
+        </div>
+        <div>
+          <h3>08. GLOBAL PARTICIPATION</h3>
+          <p>The international sporting reach and participation opportunities.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Event highlights">
+        </div>
+        <div>
+          <h3>09. EVENT HIGHLIGHTS</h3>
+          <p>Selected moments and features from the Sports Theater™ experience.</p>
+        </div>
+      </article>
+
+      <article class="theater-item">
+        <div class="image-frame">
+          <img src="/phrinusomyis_logo.png" alt="Media gallery">
+        </div>
+        <div>
+          <h3>10. MEDIA GALLERY</h3>
+          <p>Visual content, media features and official sporting materials.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center;margin-top:25px">
+      <a class="outline-button" href="/sports-theater">
+        SPORTS THEATER™ PAGE
+      </a>
+    </div>
+  </section>
+
+  <!-- COMPETITION GALLERY -->
+
+  <section class="gallery-panel" id="competitionGallery"
+    aria-labelledby="competition-gallery-heading">
+
+    <div class="gallery-header">
+      <div>
+        <div class="eyebrow">PHRINUSOMYIS™ Sporting Portfolio</div>
+        <h2 id="competition-gallery-heading">COMPETITIONS</h2>
+        <p>
+          A visual presentation of competitions and sporting formats.
+        </p>
+      </div>
+      <button class="close-gallery" type="button"
+        onclick="closeGallery('competitionGallery')">
+        CLOSE ✕
+      </button>
+    </div>
+
+    <div class="gallery-grid">
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="SOUL SURVIVE competition"></div>
+        <div class="gallery-item-copy">
+          <h3>SOUL SURVIVE™</h3>
+          <p>A Sports Theater™ competition.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS competition"></div>
+        <div class="gallery-item-copy">
+          <h3>COMPETITIVE FORMATS</h3>
+          <p>Original sporting formats by PHRINUSOMYIS™.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports Theater experience"></div>
+        <div class="gallery-item-copy">
+          <h3>SPORTS THEATER™</h3>
+          <p>Sporting experiences and competition.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="International competition"></div>
+        <div class="gallery-item-copy">
+          <h3>INTERNATIONAL COMPETITION</h3>
+          <p>Sporting competition across markets.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitive performance"></div>
+        <div class="gallery-item-copy">
+          <h3>PERFORMANCE</h3>
+          <p>Discipline, preparation and competitive performance.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sporting presentation"></div>
+        <div class="gallery-item-copy">
+          <h3>THE SPORTING STAGE</h3>
+          <p>The presentation of original sporting experiences.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competition highlights"></div>
+        <div class="gallery-item-copy">
+          <h3>COMPETITION HIGHLIGHTS</h3>
+          <p>Selected competition features and moments.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports media"></div>
+        <div class="gallery-item-copy">
+          <h3>SPORTS MEDIA</h3>
+          <p>Official visual and media content.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS sporting programme"></div>
+        <div class="gallery-item-copy">
+          <h3>SPORTING PROGRAMMES</h3>
+          <p>Programmes within the PHRINUSOMYIS™ portfolio.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center;margin-top:25px">
+      <a class="outline-button" href="/competitions">
+        COMPETITIONS PAGE
+      </a>
+    </div>
+  </section>
+
+  <!-- EVENT ANNOUNCEMENTS -->
+
+  <section class="section" id="announcements">
+    <div class="announcement">
+      <div class="eyebrow">PHRINUSOMYIS™ Announcements</div>
+      <h2>THE NEXT STAGE</h2>
+      <p>
+        Official announcements concerning PHRINUSOMYIS™ competitions,
+        sporting experiences and event participation will be presented
+        through this page. Follow the organization's official channels
+        for published announcements and event information.
+      </p>
+      <a class="gold-button" href="/news">VIEW OFFICIAL NEWS</a>
+    </div>
+  </section>
+
+  <!-- TICKETING -->
+
+  <section class="section" id="tickets">
+    <div class="section-heading">
+      <div class="eyebrow">Attend a Competition</div>
+      <h2>TICKETS &amp; EVENT INFORMATION</h2>
+      <p>
+        Information for spectators, attendees and those interested
+        in experiencing PHRINUSOMYIS™ competitions.
+      </p>
+    </div>
+
+    <div class="ticket-grid">
+
+      <article class="ticket-card">
+        <span class="ticket-status">Official Information</span>
+        <h3>Ticket Information</h3>
+        <p>
+          Ticket announcements and official purchasing information
+          will be communicated through PHRINUSOMYIS™ channels.
+        </p>
+        <ul>
+          <li>Official ticket announcements</li>
+          <li>Ticket categories and access information</li>
+          <li>Authorized ticket purchasing information</li>
+          <li>Event attendance guidance</li>
+        </ul>
+        <a class="outline-button" href="/news">
+          FOLLOW ANNOUNCEMENTS
         </a>
-    </section>
+      </article>
+
+      <article class="ticket-card">
+        <span class="ticket-status">Spectator Enquiries</span>
+        <h3>Attending an Event</h3>
+        <p>
+          For enquiries concerning attendance, ticketing, event
+          information and spectator arrangements, contact the
+          PHRINUSOMYIS™ events team.
+        </p>
+        <p>
+          Official information will be provided through the
+          organization's communication channels.
+        </p>
+        <a class="gold-button"
+          href="mailto:events@phrinusomyis.com?subject=Ticketing%20and%20Event%20Enquiry">
+          TICKET ENQUIRY
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="event-contact" id="event-enquiries">
+    <div class="eyebrow">Connect With the Organization</div>
+    <h2>CONTACT FOR MORE DETAILS</h2>
+    <p>
+      For official enquiries concerning competitions, Sports Theater™,
+      event participation, ticketing, media and sporting programmes,
+      contact PHRINUSOMYIS™.
+    </p>
+
+    <div class="contact-actions">
+      <a class="contact-button"
+        href="mailto:events@phrinusomyis.com?subject=PHRINUSOMYIS%20Events%20Enquiry">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          <path d="m3 7 9 6 9-6"></path>
+        </svg>
+        CONTACT EVENTS
+      </a>
+
+      <a class="contact-button secondary" href="/contact">
+        ORGANIZATION CONTACT
+      </a>
+    </div>
+  </section>
 
 </main>
 
 <!-- EVENT DETAIL MODAL -->
 
 <div class="event-modal" id="eventModal"
-     role="dialog" aria-modal="true"
-     aria-labelledby="modalTitle">
+  role="dialog" aria-modal="true"
+  aria-labelledby="modalTitle"
+  style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(20,20,18,.78);overflow-y:auto;padding:20px">
 
-    <div class="modal-panel">
-        <button class="modal-close" type="button"
-                onclick="closeEvent()" aria-label="Close event">
-            &times;
-        </button>
+  <div class="modal-panel"
+    style="position:relative;max-width:760px;margin:35px auto;padding:clamp(22px,4vw,40px);background:#fff;border:1px solid #dedbd1;border-radius:9px;color:#191919">
 
-        <span class="event-tag" id="modalCategory"></span>
-        <h2 id="modalTitle"></h2>
-        <div class="modal-meta" id="modalMeta"></div>
+    <button type="button" onclick="closeEventDetails()"
+      aria-label="Close"
+      style="position:absolute;right:13px;top:13px;width:40px;height:40px;background:#f6f5f0;border:1px solid #dedbd1;font-size:24px;cursor:pointer">
+      &times;
+    </button>
 
-        <div class="modal-hero" id="modalImageWrap" hidden>
-            <img id="modalImage" src="" alt="">
-        </div>
+    <span class="event-tag">Sports Theater™</span>
+    <h2 id="modalTitle"
+      style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.5rem);margin:20px 45px 15px 0">
+      SOUL SURVIVE™
+    </h2>
 
-        <div class="modal-body" id="modalBody"></div>
-
-        <div class="modal-actions">
-            <button type="button" onclick="shareEvent('whatsapp')">WhatsApp</button>
-            <button type="button" onclick="shareEvent('facebook')">Facebook</button>
-            <button type="button" onclick="shareEvent('x')">X</button>
-            <button type="button" onclick="shareEvent('linkedin')">LinkedIn</button>
-            <button type="button" onclick="shareEvent('telegram')">Telegram</button>
-            <button type="button" onclick="shareEvent('email')">Email</button>
-            <button type="button" onclick="copyEventLink()">Copy Link</button>
-            <button type="button" onclick="nativeShare()">Share</button>
-            <button type="button" onclick="window.print()">Print</button>
-        </div>
-
-        <div class="related-events" id="relatedEvents">
-            <h3>Explore Other Events</h3>
-            <div id="relatedList"></div>
-        </div>
+    <div class="image-frame" style="margin:20px 0">
+      <img src="/phrinusomyis_logo.png" alt="SOUL SURVIVE™">
     </div>
+
+    <div id="modalBody"
+      style="font-size:13px;font-weight:700;color:#625f57;line-height:2">
+      <p>
+        SOUL SURVIVE™ is a structured live competition within
+        the Sports Theater™ concept.
+      </p>
+      <p>
+        Its central themes include will, endurance, resolve,
+        discipline and performance under pressure. The competition
+        forms part of the original sporting formats developed
+        and administered by PHRINUSOMYIS™.
+      </p>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
+      <a class="gold-button"
+        href="mailto:events@phrinusomyis.com?subject=SOUL%20SURVIVE%20Enquiry">
+        MAKE AN ENQUIRY
+      </a>
+      <button class="outline-button" type="button"
+        onclick="shareFeaturedEvent()">
+        SHARE
+      </button>
+    </div>
+  </div>
 </div>
 
-<style>
-/* Footer styling */
-</style>
+<!-- FOOTER -->
 
 <footer class="phr-main-footer">
-    <div class="phr-footer-grid">
+  <div class="phr-footer-grid">
 
-        <div class="phr-footer-section">
-            <h3>ORGANIZATION</h3>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/press">Press &amp; Media</a></li>
-                <li><a href="/events">Events</a></li>
-            </ul>
-        </div>
-
-        <div class="phr-footer-section">
-            <h3>SPORTS</h3>
-            <ul>
-                <li><a href="/sports">Sports</a></li>
-                <li><a href="/sports-theater">Sports Theater™</a></li>
-                <li><a href="/competitions">Competitions</a></li>
-                <li><a href="/media">Media</a></li>
-            </ul>
-        </div>
-
-        <div class="phr-footer-section">
-            <h3>PUBLICATIONS</h3>
-            <ul>
-                <li><a href="https://phrinusomyis.com/newswire/news">Newswire</a></li>
-                <li><a href="https://phrinusomyis.com/magazine/news">Magazine</a></li>
-                <li><a href="/luxury">Luxury</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="phr-footer-section">
-            <h3>INFORMATION</h3>
-            <ul>
-                <li><a href="/policy">Privacy Policy</a></li>
-                <li><a href="/terms">Terms of Use</a></li>
-                <li><a href="/copyright">Copyright</a></li>
-            </ul>
-        </div>
-
+    <div class="phr-footer-section">
+      <h3>ORGANIZATION</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/press">Press &amp; Media</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
     </div>
 
-    <div class="phr-global-bar">
-        <h3>PHRINUSOMYIS™</h3>
-        <p>
-            <span class="phr-hq-label">Headquarters</span>
-            Brooklyn, New York
-        </p>
-        <p class="phr-footer-legal">
-            © 2032 PHRINUSOMYIS™. All Rights Reserved.
-        </p>
+    <div class="phr-footer-section">
+      <h3>SPORTS</h3>
+      <ul>
+        <li><a href="/sports">Sports</a></li>
+        <li><a href="/sports-theater">Sports Theater™</a></li>
+        <li><a href="/competitions">Competitions</a></li>
+        <li><a href="/media">Media</a></li>
+      </ul>
     </div>
+
+    <div class="phr-footer-section">
+      <h3>PUBLICATIONS</h3>
+      <ul>
+        <li><a href="https://phrinusomyis.com/newswire/news">Newswire</a></li>
+        <li><a href="https://phrinusomyis.com/magazine/news">Magazine</a></li>
+        <li><a href="/luxury">Luxury</a></li>
+      </ul>
+    </div>
+
+    <div class="phr-footer-section">
+      <h3>INFORMATION</h3>
+      <ul>
+        <li><a href="/policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Use</a></li>
+        <li><a href="/copyright">Copyright</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="phr-footer-brand">
+    <h3>PHRINUSOMYIS™</h3>
+    <p>COMMANDING THE WORLD STAGE™</p>
+    <p class="phr-footer-legal">
+      © PHRINUSOMYIS™. All Rights Reserved.
+    </p>
+  </div>
 </footer>
 
 <div id="google_translate_element" style="display:none"></div>
 
 <script>
-/*
- * PHRINUSOMYIS™ EVENTS PAGE
- * Reference year: 2032
- * Individual event links use the existing /events page hash.
- */
+/* PHRINUSOMYIS™ EVENTS PAGE */
 
-const eventRecords = [
-    {
-        id: "soul-survive",
-        title: "SOUL SURVIVE™",
-        category: "sports-theater",
-        categoryLabel: "Sports Theater™",
-        period: "2026",
-        description:
-            "A competition within the Sports Theater™ concept, centred on will, endurance, resolve and performance under pressure.",
-        paragraphs: [
-            "SOUL SURVIVE™ is a structured live competition within the Sports Theater™ concept. It places emphasis on the human qualities associated with competition: will, endurance, discipline, resolve and the ability to perform under pressure.",
-            "The competition forms part of the original sporting formats developed and administered by PHRINUSOMYIS™. Its identity is rooted in the contest itself and in the demands placed on those who take part.",
-            "SOUL SURVIVE™ is part of the PHRINUSOMYIS™ event record."
-        ],
-        image: "",
-        imageAlt: ""
-    }
-];
+function openGallery(id){
+  const target=document.getElementById(id);
+  if(!target)return;
 
-/*
- * Add verified event records to this array when their details
- * are ready for publication. Do not enter unconfirmed dates,
- * venues, results or attendance figures.
- */
+  document.querySelectorAll('.gallery-panel').forEach(panel=>{
+    if(panel.id!==id)panel.classList.remove('open');
+  });
 
-const ITEMS_PER_PAGE = 6;
-let activeFilter = "all";
-let currentPage = 1;
-let currentEvent = null;
+  target.classList.add('open');
 
-const eventGrid = document.getElementById("eventGrid");
-const eventSearch = document.getElementById("eventSearch");
-const eventCategory = document.getElementById("eventCategory");
-const pagination = document.getElementById("eventPagination");
+  requestAnimationFrame(()=>{
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
 
-function getFilteredEvents() {
-    const searchTerm = eventSearch.value.trim().toLowerCase();
-    const categoryValue = eventCategory.value;
+function closeGallery(id){
+  const target=document.getElementById(id);
+  if(target)target.classList.remove('open');
+}
 
-    return eventRecords.filter(event => {
-        const matchesFilter =
-            activeFilter === "all" || event.category === activeFilter;
+function openEventDetails(id){
+  if(id!=='soul-survive')return;
 
-        const matchesCategory =
-            categoryValue === "all" || event.category === categoryValue;
+  const modal=document.getElementById('eventModal');
+  modal.style.display='block';
+  document.body.classList.add('modal-open');
+  document.getElementById('modalTitle').textContent='SOUL SURVIVE™';
+  history.replaceState({event:'soul-survive'},'', '#event=soul-survive');
+}
 
-        const searchable =
-            (event.title + " " + event.description + " " +
-             event.categoryLabel + " " + event.period).toLowerCase();
+function closeEventDetails(){
+  document.getElementById('eventModal').style.display='none';
+  document.body.classList.remove('modal-open');
 
-        return matchesFilter && matchesCategory &&
-               searchable.includes(searchTerm);
+  if(location.hash==='#event=soul-survive'){
+    history.replaceState({},'',location.pathname+location.search);
+  }
+}
+
+document.getElementById('eventModal').addEventListener('click',function(event){
+  if(event.target===this)closeEventDetails();
+});
+
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'){
+    closeEventDetails();
+    document.querySelectorAll('.gallery-panel').forEach(panel=>{
+      panel.classList.remove('open');
     });
-}
-
-function renderEvents() {
-    const filtered = getFilteredEvents();
-    const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
-
-    if (currentPage > totalPages) currentPage = totalPages;
-
-    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    const visible = filtered.slice(start, start + ITEMS_PER_PAGE);
-
-    eventGrid.innerHTML = "";
-
-    if (!visible.length) {
-        eventGrid.innerHTML =
-            '<div class="empty-state">No event records match this search. Please try another category or search term.</div>';
-        pagination.innerHTML = "";
-        return;
-    }
-
-    visible.forEach(event => {
-        const card = document.createElement("article");
-        card.className = "event-card";
-
-        const visual = document.createElement("div");
-        visual.className = "event-card-visual";
-
-        if (event.image) {
-            const img = document.createElement("img");
-            img.src = event.image;
-            img.alt = event.imageAlt || event.title;
-            img.loading = "lazy";
-            visual.appendChild(img);
-        } else {
-            const titleVisual = document.createElement("span");
-            titleVisual.textContent = event.title;
-            visual.appendChild(titleVisual);
-        }
-
-        const content = document.createElement("div");
-        content.className = "event-card-content";
-
-        const tag = document.createElement("span");
-        tag.className = "event-tag";
-        tag.textContent = event.categoryLabel;
-
-        const heading = document.createElement("h3");
-        heading.textContent = event.title;
-
-        const description = document.createElement("p");
-        description.textContent = event.description;
-
-        const link = document.createElement("button");
-        link.type = "button";
-        link.className = "text-link";
-        link.textContent = "EXPLORE EVENT";
-        link.style.background = "none";
-        link.style.border = "0";
-        link.style.cursor = "pointer";
-        link.style.textAlign = "left";
-        link.onclick = () => openEvent(event.id);
-
-        content.append(tag, heading, description, link);
-        card.append(visual, content);
-        eventGrid.appendChild(card);
-    });
-
-    renderPagination(totalPages);
-}
-
-function renderPagination(totalPages) {
-    pagination.innerHTML = "";
-
-    if (totalPages <= 1) return;
-
-    for (let i = 1; i <= totalPages; i++) {
-        const button = document.createElement("button");
-        button.textContent = i;
-        button.className = i === currentPage ? "active" : "";
-        button.setAttribute("aria-label", "Page " + i);
-        button.onclick = () => {
-            currentPage = i;
-            renderEvents();
-            document.getElementById("event-record").scrollIntoView({
-                behavior: "smooth"
-            });
-        };
-        pagination.appendChild(button);
-    }
-}
-
-document.querySelectorAll(".filter-button").forEach(button => {
-    button.addEventListener("click", () => {
-        document.querySelectorAll(".filter-button").forEach(item =>
-            item.classList.remove("active")
-        );
-
-        button.classList.add("active");
-        activeFilter = button.dataset.filter;
-        eventCategory.value = "all";
-        currentPage = 1;
-        renderEvents();
-    });
+  }
 });
 
-eventSearch.addEventListener("input", () => {
-    currentPage = 1;
-    renderEvents();
-});
+function shareFeaturedEvent(){
+  const data={
+    title:'SOUL SURVIVE™ | PHRINUSOMYIS™',
+    text:'Discover SOUL SURVIVE™, a competition within the Sports Theater™ concept.',
+    url:location.origin+'/events#event=soul-survive'
+  };
 
-eventCategory.addEventListener("change", () => {
-    activeFilter = "all";
-    document.querySelectorAll(".filter-button").forEach(item =>
-        item.classList.toggle("active", item.dataset.filter === "all")
-    );
-    currentPage = 1;
-    renderEvents();
-});
-
-function openEvent(id, updateHistory = true) {
-    const event = eventRecords.find(item => item.id === id);
-    if (!event) return;
-
-    currentEvent = event;
-
-    document.getElementById("modalCategory").textContent = event.categoryLabel;
-    document.getElementById("modalTitle").textContent = event.title;
-    document.getElementById("modalMeta").textContent =
-        event.period ? "EVENT RECORD · " + event.period : "EVENT RECORD";
-
-    const imageWrap = document.getElementById("modalImageWrap");
-    const modalImage = document.getElementById("modalImage");
-
-    if (event.image) {
-        modalImage.src = event.image;
-        modalImage.alt = event.imageAlt || event.title;
-        imageWrap.hidden = false;
-    } else {
-        modalImage.removeAttribute("src");
-        imageWrap.hidden = true;
-    }
-
-    const body = document.getElementById("modalBody");
-    body.innerHTML = "";
-
-    event.paragraphs.forEach(paragraph => {
-        const p = document.createElement("p");
-        p.textContent = paragraph;
-        body.appendChild(p);
-    });
-
-    renderRelatedEvents(event.id);
-
-    document.getElementById("eventModal").classList.add("open");
-    document.body.style.overflow = "hidden";
-
-    if (updateHistory) {
-        history.pushState({eventId:id}, "", "/events#event=" + encodeURIComponent(id));
-    }
+  if(navigator.share){
+    navigator.share(data).catch(()=>{});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(data.url)
+      .then(()=>alert('Link copied.'))
+      .catch(()=>window.prompt('Copy this link:',data.url));
+  }else{
+    window.prompt('Copy this link:',data.url);
+  }
 }
 
-function renderRelatedEvents(currentId) {
-    const relatedList = document.getElementById("relatedList");
-    relatedList.innerHTML = "";
+/* Direct links to the featured competition */
 
-    eventRecords
-        .filter(event => event.id !== currentId)
-        .slice(0, 4)
-        .forEach(event => {
-            const button = document.createElement("button");
-            button.textContent = event.title + " — " + event.categoryLabel;
-            button.onclick = () => openEvent(event.id);
-            relatedList.appendChild(button);
-        });
-
-    if (!relatedList.children.length) {
-        const note = document.createElement("p");
-        note.textContent = "More event records will appear here as they are published.";
-        note.style.color = "#888";
-        note.style.fontSize = "12px";
-        relatedList.appendChild(note);
-    }
+function handleEventHash(){
+  if(location.hash==='#event=soul-survive'){
+    openEventDetails('soul-survive');
+  }
 }
 
-function closeEvent(updateHistory = true) {
-    document.getElementById("eventModal").classList.remove("open");
-    document.body.style.overflow = "";
-    currentEvent = null;
-
-    if (updateHistory && location.hash.startsWith("#event=")) {
-        history.pushState({}, "", "/events");
-    }
-}
-
-function handleEventHash() {
-    const match = location.hash.match(/^#event=(.+)$/);
-
-    if (match) {
-        const id = decodeURIComponent(match[1]);
-        if (eventRecords.some(event => event.id === id)) {
-            openEvent(id, false);
-            return;
-        }
-    }
-
-    closeEvent(false);
-}
-
-window.addEventListener("popstate", handleEventHash);
-window.addEventListener("hashchange", handleEventHash);
-
-document.getElementById("eventModal").addEventListener("click", event => {
-    if (event.target.id === "eventModal") closeEvent();
-});
-
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeEvent();
-});
-
-function getEventUrl() {
-    if (!currentEvent) return location.href;
-    return location.origin + "/events#event=" +
-        encodeURIComponent(currentEvent.id);
-}
-
-function shareEvent(platform) {
-    if (!currentEvent) return;
-
-    const url = getEventUrl();
-    const title = currentEvent.title;
-    const text = title + " | PHRINUSOMYIS™ Events";
-
-    const targets = {
-        whatsapp: "https://wa.me/?text=" + encodeURIComponent(text + " " + url),
-        facebook: "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url),
-        x: "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(url),
-        linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url),
-        telegram: "https://t.me/share/url?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text),
-        email: "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(text + "\n" + url)
-    };
-
-    if (targets[platform]) {
-        window.open(targets[platform], "_blank", "noopener,noreferrer");
-    }
-}
-
-async function copyEventLink() {
-    const url = getEventUrl();
-
-    try {
-        await navigator.clipboard.writeText(url);
-        alert("Event link copied.");
-    } catch (error) {
-        prompt("Copy this event link:", url);
-    }
-}
-
-async function nativeShare() {
-    if (!currentEvent) return;
-
-    const data = {
-        title: currentEvent.title,
-        text: currentEvent.title + " | PHRINUSOMYIS™ Events",
-        url: getEventUrl()
-    };
-
-    if (navigator.share) {
-        try {
-            await navigator.share(data);
-        } catch (error) {
-            // The visitor may cancel the native share panel.
-        }
-    } else {
-        copyEventLink();
-    }
-}
+window.addEventListener('hashchange',handleEventHash);
+handleEventHash();
 
 /* Google Translate */
 
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: "en",
-        autoDisplay: false
-    }, "google_translate_element");
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'en',
+    autoDisplay:false
+  },'google_translate_element');
+
+  restoreLanguage();
 }
 
-document.getElementById("languageSwitcher").addEventListener("change", function() {
-    const selectedLanguage = this.value;
+const languageSwitcher=document.getElementById('languageSwitcher');
 
-    try {
-        localStorage.setItem("site_lang", selectedLanguage);
-    } catch (error) {}
+function restoreLanguage(){
+  try{
+    const saved=localStorage.getItem('site_lang');
+    if(saved)languageSwitcher.value=saved;
+  }catch(error){}
+}
 
-    const translateSelect = document.querySelector(".goog-te-combo");
+languageSwitcher.addEventListener('change',function(){
+  const selected=this.value;
 
-    if (translateSelect) {
-        translateSelect.value = selectedLanguage;
-        translateSelect.dispatchEvent(new Event("change"));
-    }
+  try{
+    localStorage.setItem('site_lang',selected);
+  }catch(error){}
+
+  const translateSelect=document.querySelector('.goog-te-combo');
+
+  if(translateSelect){
+    translateSelect.value=selected;
+    translateSelect.dispatchEvent(new Event('change'));
+  }
 });
 
-/* Restore selected language where available */
-
-try {
-    const savedLanguage = localStorage.getItem("site_lang");
-    if (savedLanguage) {
-        document.getElementById("languageSwitcher").value = savedLanguage;
-    }
-} catch (error) {}
-
-/* Initial page render and direct event links */
-
-renderEvents();
-handleEventHash();
+restoreLanguage();
 </script>
 
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
