@@ -440,16 +440,19 @@
 <style>
 :root {
   --black: #171715;
-  --charcoal: #22221f;
-  --ivory: #f4f0e7;
-  --stone: #e7e0d3;
+  --charcoal: #25241f;
+  --ivory: #f2eee5;
+  --ivory-light: #f8f5ee;
+  --stone: #e5ded1;
+  --stone-deep: #d8cebd;
   --bronze: #a9824d;
   --gold: #c5a36b;
-  --white: #ffffff;
-  --muted: #a9a49a;
-  --dark-muted: #69665f;
-  --line: rgba(169, 130, 77, .28);
-  --max-width: 1240px;
+  --text: #24231f;
+  --muted: #69665f;
+  --line: rgba(169,130,77,.25);
+  --max-width: 1360px;
+  --heading-font: "Aptos Display", "Segoe UI", Arial, sans-serif;
+  --body-font: "Aptos", "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -460,15 +463,18 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 95px;
 }
 
 body {
   background: var(--ivory);
-  color: var(--black);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.65;
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.7;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body.translated-ltr,
@@ -478,8 +484,8 @@ body.translated-rtl {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 a {
@@ -487,26 +493,29 @@ a {
   text-decoration: none;
 }
 
-button, select {
+button,
+select {
   font: inherit;
 }
 
-/* GOOGLE TRANSLATE BANNER AND POP-OUT SUPPRESSION */
+/* GOOGLE TRANSLATE: KEEP THE WIDGET HIDDEN */
 
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
 .goog-te-balloon-frame,
 #goog-gt-tt,
 .goog-tooltip,
 .goog-tooltip:hover,
 .goog-te-spinner-pos,
-.goog-te-gadget-icon {
+.goog-te-gadget-icon,
+.goog-te-menu-frame {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
+  pointer-events: none !important;
   height: 0 !important;
   max-height: 0 !important;
-  pointer-events: none !important;
 }
 
 .goog-text-highlight {
@@ -519,7 +528,10 @@ body > .skiptranslate {
   display: none !important;
 }
 
-html body {
+html,
+html body,
+body.translated-ltr,
+body.translated-rtl {
   top: 0 !important;
 }
 
@@ -527,11 +539,12 @@ html body {
   position: fixed !important;
   left: -10000px !important;
   top: 0 !important;
-  width: 1px !important;
-  height: 1px !important;
+  width: 2px !important;
+  height: 2px !important;
   overflow: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  z-index: -1 !important;
 }
 
 #google_translate_element .goog-te-gadget {
@@ -544,15 +557,15 @@ html body {
   line-height: normal !important;
 }
 
-/* GENERAL */
+/* GENERAL LAYOUT */
 
 .container {
-  width: min(var(--max-width), calc(100% - 48px));
+  width: min(var(--max-width), calc(100% - 64px));
   margin: 0 auto;
 }
 
 .section {
-  padding: 105px 0;
+  padding: 94px 0;
 }
 
 .section-dark {
@@ -568,34 +581,35 @@ html body {
   color: var(--bronze);
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
   margin-bottom: 17px;
 }
 
 .section-heading {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(38px, 5vw, 62px);
-  font-weight: 400;
+  font-family: var(--heading-font);
+  font-size: clamp(37px, 4.3vw, 61px);
+  font-weight: 750;
   line-height: 1.12;
-  letter-spacing: -.8px;
-  max-width: 900px;
+  letter-spacing: -1.8px;
+  max-width: 1000px;
 }
 
 .section-intro {
-  max-width: 760px;
-  margin-top: 22px;
-  color: var(--dark-muted);
+  max-width: 790px;
+  margin-top: 20px;
+  color: var(--muted);
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.85;
+  font-weight: 450;
 }
 
 .section-dark .section-intro {
-  color: #c3bdb2;
+  color: #c5beb2;
 }
 
 .gold-line {
-  width: 65px;
+  width: 66px;
   height: 3px;
   background: var(--bronze);
   margin: 25px 0;
@@ -613,16 +627,16 @@ html body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 51px;
-  padding: 14px 26px;
+  min-height: 49px;
+  padding: 13px 25px;
   border: 1px solid var(--bronze);
   background: var(--bronze);
   color: #fff;
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  transition: .25s ease;
+  letter-spacing: 1.3px;
+  transition: background .25s ease, color .25s ease;
   cursor: pointer;
 }
 
@@ -634,7 +648,7 @@ html body {
 .btn-outline {
   background: transparent;
   color: var(--ivory);
-  border-color: rgba(244, 240, 231, .65);
+  border-color: rgba(244,240,231,.7);
 }
 
 .btn-outline:hover {
@@ -659,21 +673,21 @@ html body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(23, 23, 21, .98);
-  border-bottom: 1px solid rgba(197, 163, 107, .3);
-  backdrop-filter: blur(12px);
+  background: rgba(23,23,21,.97);
+  border-bottom: 1px solid rgba(197,163,107,.3);
+  backdrop-filter: blur(16px);
 }
 
 .header-inner {
-  min-height: 88px;
+  min-height: 86px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 24px;
 }
 
 .header-logo img {
-  width: 175px;
+  width: 165px;
   height: auto;
   object-fit: contain;
 }
@@ -682,16 +696,17 @@ html body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .main-nav a {
   color: #e8e2d7;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: .2s ease;
+  letter-spacing: .9px;
+  white-space: nowrap;
+  transition: color .2s ease;
 }
 
 .main-nav a:hover {
@@ -701,17 +716,18 @@ html body {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 12px;
 }
 
 .language-select {
   background: #262622;
-  border: 1px solid rgba(197, 163, 107, .65);
+  border: 1px solid rgba(197,163,107,.65);
   color: var(--ivory);
-  padding: 11px 9px;
+  padding: 10px 9px;
   font-size: 12px;
   max-width: 130px;
   outline: none;
+  border-radius: 0;
 }
 
 .language-select option {
@@ -720,9 +736,9 @@ html body {
 }
 
 .header-contact {
-  min-height: 42px;
-  padding: 10px 17px;
-  font-size: 11px;
+  min-height: 40px;
+  padding: 9px 15px;
+  font-size: 10px;
 }
 
 .menu-toggle {
@@ -737,12 +753,15 @@ html body {
 /* HERO */
 
 .hero {
-  min-height: 690px;
+  min-height: 680px;
   position: relative;
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(15,15,14,.97), rgba(15,15,14,.79) 57%, rgba(15,15,14,.4)),
+    linear-gradient(90deg,
+      rgba(17,17,15,.96),
+      rgba(17,17,15,.78) 55%,
+      rgba(17,17,15,.38)),
     url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=85");
   background-size: cover;
   background-position: center;
@@ -754,51 +773,53 @@ html body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(15,15,14,.55), transparent 50%);
+  background: linear-gradient(0deg, rgba(15,15,14,.5), transparent 55%);
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
-  padding: 100px 0;
+  max-width: 950px;
+  padding: 90px 0;
 }
 
 .hero-logo {
-  width: 205px;
-  margin-bottom: 32px;
-  padding: 10px;
-  background: rgba(244,240,231,.96);
+  width: 190px;
+  margin-bottom: 29px;
+  padding: 9px;
+  background: rgba(244,240,231,.97);
 }
 
 .hero-kicker {
   color: var(--gold);
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 850;
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: clamp(49px, 7vw, 88px);
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: clamp(47px, 6.6vw, 86px);
   line-height: 1.02;
-  max-width: 900px;
+  letter-spacing: -2.5px;
+  max-width: 950px;
 }
 
 .hero h1 span {
+  display: block;
   color: var(--gold);
 }
 
 .hero-description {
-  max-width: 700px;
+  max-width: 720px;
   color: #e0d9ce;
   font-size: 18px;
   font-weight: 500;
-  margin: 27px 0 34px;
+  margin: 26px 0 32px;
   line-height: 1.8;
 }
 
@@ -813,184 +834,128 @@ html body {
 .identity-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  gap: 65px;
   align-items: center;
 }
 
-.identity-copy p {
+.identity-copy p:not(.section-label) {
   color: #5f5c55;
-  margin-top: 19px;
+  margin-top: 18px;
   font-size: 17px;
   line-height: 1.85;
 }
 
 .identity-panel {
-  background: var(--black);
+  background:
+    linear-gradient(140deg, #24231f, #171715);
   color: var(--ivory);
-  padding: 52px 45px;
+  padding: 48px 43px;
   border-left: 4px solid var(--bronze);
+  box-shadow: 0 20px 55px rgba(37,33,25,.12);
 }
 
 .identity-panel .large-statement {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(29px, 3vw, 42px);
-  line-height: 1.3;
+  font-family: var(--heading-font);
+  font-size: clamp(29px, 3vw, 41px);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -1px;
 }
 
 .identity-panel .small-statement {
-  color: #c7c0b5;
-  font-size: 14px;
-  font-weight: 700;
-  margin-top: 24px;
-  letter-spacing: 1px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 850;
+  margin-top: 25px;
+  letter-spacing: 2px;
 }
 
 /* STATEMENT BAND */
 
 .statement-band {
-  background: #292823;
+  background:
+    linear-gradient(110deg, #292823, #353127 55%, #292823);
   color: var(--ivory);
-  padding: 58px 0;
+  padding: 52px 0;
   text-align: center;
 }
 
 .statement-band p {
   color: var(--gold);
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 850;
   letter-spacing: 4px;
   margin-bottom: 12px;
 }
 
 .statement-band h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: clamp(30px, 4vw, 50px);
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: clamp(27px, 3.8vw, 48px);
+  letter-spacing: -1px;
+  line-height: 1.2;
 }
 
-/* ALL AUTOMATIC IMAGE CAROUSELS */
+/* AUTOMATIC IMAGE PRESENTATIONS */
 
-.card-carousel {
-  position: relative;
+.presentation {
+  width: 100%;
   overflow: hidden;
-  margin-top: 45px;
+  margin-top: 40px;
+  position: relative;
 }
 
-.card-track {
+.presentation-track {
   display: flex;
-  gap: 20px;
-  transition: transform .65s ease;
+  gap: 24px;
+  width: 100%;
+  transition: transform 1.25s cubic-bezier(.22,.7,.2,1);
   will-change: transform;
 }
 
-.image-card {
-  flex: 0 0 calc((100% - 40px) / 3);
-  min-width: 0;
+.presentation-card {
   display: block;
-  background: #292823;
-  color: var(--ivory);
+  flex: 0 0 calc((100% - 24px) / 2);
+  min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(197,163,107,.25);
-  transition: border-color .25s ease, transform .25s ease;
-}
-
-.image-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-4px);
-}
-
-.image-card img {
-  width: 100%;
-  height: 245px;
-  object-fit: cover;
-  background: #34322d;
-  transition: transform .5s ease;
-}
-
-.image-card:hover img {
-  transform: scale(1.035);
-}
-
-.image-card-content {
-  padding: 23px;
-  min-height: 125px;
-}
-
-.image-card-content span {
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.8px;
-}
-
-.image-card-content h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 1.25;
-  margin-top: 8px;
-}
-
-.carousel-controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 25px;
-}
-
-.carousel-button {
-  width: 47px;
-  height: 47px;
-  border: 1px solid var(--bronze);
-  color: var(--black);
   background: transparent;
-  cursor: pointer;
-  font-size: 23px;
-  transition: .2s ease;
+  border: 0;
+  outline: none;
+  transform: translateZ(0);
 }
 
-.section-dark .carousel-button {
-  color: var(--ivory);
+.presentation-card img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  background: #d9d0c1;
+  transition: transform 1.1s ease, filter .7s ease;
 }
 
-.carousel-button:hover {
-  background: var(--bronze);
-  color: white;
+.presentation-card:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.035);
 }
 
-/* SPORTS SHOWCASE */
+/* SPORTS PRESENTATION */
 
 .sports-section {
-  background: #1b1b18;
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(169,130,77,.12), transparent 45%),
+    linear-gradient(135deg, #22221e, #181816 70%);
   color: var(--ivory);
-  padding: 110px 0;
+  padding: 94px 0;
 }
 
 .sports-section .section-heading {
-  max-width: 1000px;
+  max-width: 1050px;
 }
 
-.sports-section .image-card {
-  flex-basis: calc((100% - 40px) / 3);
-  background: #25241f;
-  border-color: rgba(197,163,107,.35);
+.sports-section .presentation-card img {
+  height: 440px;
 }
 
-.sports-section .image-card img {
-  height: 315px;
-}
-
-.sports-section .image-card-content {
-  min-height: 115px;
-  padding: 25px;
-}
-
-.sports-section .image-card-content h3 {
-  font-size: 28px;
-}
-
-/* SPORTS THEATER */
+/* THEATER */
 
 .theater-grid {
   display: grid;
@@ -1002,17 +967,17 @@ html body {
 .theater-image {
   min-height: 440px;
   background:
-    linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.3)),
-    url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=85");
+    linear-gradient(rgba(0,0,0,.12), rgba(0,0,0,.28)),
+    url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1400&q=85");
   background-position: center;
   background-size: cover;
 }
 
-.theater-copy p {
+.theater-copy p:not(.section-label) {
   color: #c7c0b5;
-  margin: 22px 0;
+  margin: 21px 0;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 /* ORIGINAL FORMATS */
@@ -1021,42 +986,43 @@ html body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  margin-top: 55px;
+  margin-top: 48px;
   background: rgba(197,163,107,.3);
   border: 1px solid rgba(197,163,107,.3);
 }
 
 .format-card {
-  padding: 38px 30px;
+  padding: 34px 28px;
   background: #1d1d1a;
-  min-height: 245px;
+  min-height: 225px;
 }
 
 .format-number {
   color: var(--bronze);
-  font-family: Georgia, serif;
-  font-size: 34px;
-  margin-bottom: 25px;
+  font-family: var(--heading-font);
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 22px;
 }
 
 .format-card h3 {
-  font-family: Georgia, serif;
-  font-size: 27px;
-  font-weight: 400;
-  margin-bottom: 13px;
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-weight: 750;
+  margin-bottom: 12px;
 }
 
 .format-card p {
   color: #c0baaf;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* SOUL SURVIVE */
 
 .soul-section {
   background:
-    linear-gradient(90deg, rgba(17,17,16,.97), rgba(17,17,16,.72)),
+    linear-gradient(90deg, rgba(17,17,16,.96), rgba(17,17,16,.7)),
     url("https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1800&q=85");
   background-position: center;
   background-size: cover;
@@ -1064,103 +1030,105 @@ html body {
 }
 
 .soul-content {
-  max-width: 800px;
+  max-width: 820px;
 }
 
 .soul-content h2 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(48px, 7vw, 80px);
-  line-height: 1.05;
+  font-family: var(--heading-font);
+  font-weight: 850;
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: 1.04;
+  letter-spacing: -2px;
   margin: 18px 0;
 }
 
-.soul-content p {
+.soul-content p:not(.section-label) {
   color: #d0c9bd;
-  max-width: 700px;
+  max-width: 720px;
   margin-bottom: 28px;
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
-/* COMPETITION CAROUSEL */
+/* COMPETITIONS */
 
 .competition-section {
-  background: var(--stone);
+  background:
+    linear-gradient(135deg, #e8e1d5, #f1ece3);
 }
 
-.competition-section .image-card {
-  background: #fff;
-  color: var(--black);
-}
-
-.competition-section .image-card-content {
-  min-height: 120px;
-}
-
-.competition-section .image-card-content h3 {
-  color: var(--black);
+.competition-section .presentation-card img {
+  height: 370px;
 }
 
 /* EDITORIAL SECTIONS */
 
 .editorial-section {
-  background: var(--black);
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(169,130,77,.1), transparent 40%),
+    #22221f;
   color: var(--ivory);
 }
 
 .editorial-section.light {
-  background: var(--stone);
-  color: var(--black);
+  background:
+    linear-gradient(130deg, #eee8dc, #e5ded1);
+  color: var(--text);
 }
 
-.editorial-section.light .image-card {
-  background: #f5f0e7;
-  color: var(--black);
-}
-
-.editorial-section.light .image-card-content h3 {
-  color: var(--black);
-}
-
-.editorial-section.light .image-card-content {
-  min-height: 130px;
+.editorial-section .presentation-card img {
+  height: 340px;
 }
 
 .section-action {
-  margin-top: 32px;
+  margin-top: 27px;
 }
 
-.editorial-section.light .carousel-button {
-  color: var(--black);
+/* MAGAZINE: PORTRAIT COVER PRESENTATION */
+
+.magazine-section {
+  background:
+    linear-gradient(130deg, #eee8dc, #e4dccf);
+  color: var(--text);
 }
 
-/* EVENTS */
+.magazine-section .presentation-card {
+  flex-basis: calc((100% - 24px) / 2);
+}
+
+.magazine-section .presentation-card img {
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* EVENTS: BILLBOARD PRESENTATION */
 
 .events-section {
-  background: var(--stone);
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(169,130,77,.13), transparent 42%),
+    #e5ded1;
+  color: var(--text);
 }
 
-.events-section .image-card {
-  background: #f5f0e7;
-  color: var(--black);
+.events-section .presentation-card img {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-.events-section .image-card-content h3 {
-  color: var(--black);
+/* MEDIA */
+
+.media-section .presentation-card img {
+  height: 370px;
 }
 
-/* SPORTS THEATER FORMATS */
-
-.formats-section {
-  background: var(--black);
-  color: var(--ivory);
-}
-
-/* PERFUME */
+/* LUXURY / PERFUME */
 
 .luxury-section {
-  background: #e9e2d6;
+  background:
+    linear-gradient(135deg, #e9e2d6, #f2eee5 55%, #e4dacb);
+  color: var(--text);
 }
 
 .luxury-heading-row {
@@ -1171,114 +1139,30 @@ html body {
 }
 
 .luxury-intro {
-  max-width: 680px;
+  max-width: 690px;
   color: #5f5a51;
-  margin-top: 20px;
+  margin-top: 17px;
   font-size: 17px;
+  line-height: 1.8;
 }
 
-.perfume-carousel {
-  overflow: hidden;
-  margin-top: 48px;
-}
-
-.perfume-track {
-  display: flex;
-  transition: transform .65s ease;
-  will-change: transform;
-}
-
-.perfume-page {
-  flex: 0 0 100%;
-  min-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.perfume-card {
-  background: #f6f2e9;
-  border: 1px solid rgba(169,130,77,.35);
-  min-width: 0;
-  color: var(--black);
-}
-
-.perfume-card img {
-  width: 100%;
-  height: 310px;
+.luxury-section .presentation-card img {
+  height: 390px;
   object-fit: cover;
-  background: #ded4c4;
-}
-
-.perfume-card-content {
-  padding: 23px;
-}
-
-.perfume-card-content span {
-  color: var(--bronze);
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.perfume-card-content h3 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: 25px;
-  margin-top: 8px;
-}
-
-.perfume-card-content p {
-  color: #69645a;
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.perfume-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 27px;
-}
-
-.perfume-page-indicators {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.perfume-dot {
-  width: 11px;
-  height: 11px;
-  border: 0;
-  border-radius: 50%;
-  background: #c6bba9;
-  cursor: pointer;
-}
-
-.perfume-dot.active {
-  background: var(--bronze);
-  transform: scale(1.25);
-}
-
-.perfume-arrows {
-  display: flex;
-  gap: 10px;
 }
 
 .luxury-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 38px;
+  margin-top: 32px;
 }
 
 /* ANDROID DOWNLOAD */
 
 .download-section {
   background:
-    linear-gradient(90deg, rgba(19,19,17,.97), rgba(19,19,17,.82)),
+    linear-gradient(90deg, rgba(19,19,17,.96), rgba(19,19,17,.79)),
     url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85");
   background-position: center;
   background-size: cover;
@@ -1292,49 +1176,50 @@ html body {
   align-items: center;
 }
 
-.download-copy p {
+.download-copy p:not(.section-label) {
   color: #d0c9bd;
-  max-width: 700px;
-  margin: 23px 0 28px;
+  max-width: 720px;
+  margin: 22px 0 27px;
   font-size: 17px;
 }
 
 .download-panel {
   border: 1px solid rgba(197,163,107,.5);
-  background: rgba(255,255,255,.05);
-  padding: 35px;
+  background: rgba(255,255,255,.055);
+  padding: 34px;
 }
 
 .download-panel h3 {
-  font-family: Georgia, serif;
-  font-size: 29px;
-  font-weight: 400;
-  margin-bottom: 12px;
+  font-family: var(--heading-font);
+  font-size: 27px;
+  font-weight: 750;
+  margin: 12px 0;
 }
 
-.download-panel p {
+.download-panel p:not(.eyebrow) {
   color: #c4bdb2;
   font-size: 15px;
-  margin-bottom: 23px;
+  margin-bottom: 22px;
 }
 
 /* FAQ */
 
 .faq-list {
-  margin-top: 45px;
-  max-width: 950px;
+  margin-top: 40px;
+  max-width: 980px;
 }
 
 .faq-item {
   border-bottom: 1px solid var(--line);
-  padding: 23px 0;
+  padding: 21px 0;
 }
 
 .faq-item summary {
   cursor: pointer;
   list-style: none;
-  font-family: Georgia, serif;
-  font-size: 23px;
+  font-family: var(--heading-font);
+  font-size: 21px;
+  font-weight: 700;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -1347,8 +1232,7 @@ html body {
 .faq-item summary::after {
   content: "+";
   color: var(--bronze);
-  font-family: Arial, sans-serif;
-  font-size: 26px;
+  font-size: 25px;
 }
 
 .faq-item[open] summary::after {
@@ -1357,10 +1241,10 @@ html body {
 
 .faq-item p {
   color: #5f5b54;
-  margin-top: 15px;
-  max-width: 800px;
+  margin-top: 13px;
+  max-width: 820px;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 /* FOOTER */
@@ -1368,44 +1252,45 @@ html body {
 .site-footer {
   background: #111110;
   color: var(--ivory);
-  padding: 70px 0 25px;
+  padding: 65px 0 23px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 55px;
+  gap: 38px;
+  padding-bottom: 48px;
 }
 
 .footer-logo {
-  width: 175px;
+  width: 165px;
   padding: 7px;
   background: #f4f0e7;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .footer-brand p {
-  max-width: 330px;
+  max-width: 340px;
   color: #bdb7ad;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .footer-column h4 {
   color: var(--gold);
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 850;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .footer-column a {
   display: block;
   color: #d0c9bd;
   font-size: 14px;
-  margin: 10px 0;
-  transition: .2s ease;
+  margin: 9px 0;
+  transition: color .2s ease;
 }
 
 .footer-column a:hover {
@@ -1414,25 +1299,25 @@ html body {
 
 .footer-bottom {
   border-top: 1px solid rgba(197,163,107,.25);
-  padding-top: 23px;
+  padding-top: 21px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 14px;
   color: #aaa49a;
   font-size: 12px;
 }
 
 .footer-bottom strong {
   color: var(--gold);
-  letter-spacing: 1.5px;
+  letter-spacing: 1.3px;
 }
 
 /* TABLET */
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   .main-nav {
-    gap: 12px;
+    gap: 11px;
   }
 
   .main-nav a {
@@ -1440,21 +1325,15 @@ html body {
   }
 
   .header-logo img {
-    width: 145px;
+    width: 140px;
   }
 
   .language-select {
     max-width: 105px;
   }
-
-  .identity-grid,
-  .theater-grid,
-  .download-grid {
-    gap: 35px;
-  }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
   .header-inner {
     min-height: 76px;
   }
@@ -1470,10 +1349,12 @@ html body {
     left: 0;
     right: 0;
     background: #171715;
-    padding: 25px 24px;
+    padding: 22px 28px;
     flex-direction: column;
     align-items: flex-start;
     border-top: 1px solid var(--line);
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
   }
 
   .main-nav.open {
@@ -1482,11 +1363,7 @@ html body {
 
   .main-nav a {
     font-size: 12px;
-    padding: 6px 0;
-  }
-
-  .header-actions {
-    gap: 8px;
+    padding: 5px 0;
   }
 
   .header-contact {
@@ -1497,27 +1374,27 @@ html body {
   .theater-grid,
   .download-grid {
     grid-template-columns: 1fr;
+    gap: 35px;
   }
 
   .formats-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .image-card {
+  .presentation-card {
     flex-basis: calc((100% - 20px) / 2);
   }
 
-  .sports-section .image-card {
+  .presentation-track {
+    gap: 20px;
+  }
+
+  .sports-section .presentation-card img {
+    height: 350px;
+  }
+
+  .magazine-section .presentation-card {
     flex-basis: calc((100% - 20px) / 2);
-  }
-
-  .sports-section .image-card img {
-    height: 270px;
-  }
-
-  .events-panel {
-    grid-template-columns: 1fr;
-    padding: 38px;
   }
 
   .footer-grid {
@@ -1527,108 +1404,178 @@ html body {
   .luxury-heading-row {
     display: block;
   }
+
+  .luxury-heading-row > .btn {
+    margin-top: 22px;
+  }
 }
 
-/* MOBILE */
+/* MOBILE: AUTOMATIC PRESENTATION, NO SWIPING OR CONTROLS */
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   .container {
-    width: min(100% - 32px, var(--max-width));
+    width: min(100% - 34px, var(--max-width));
   }
 
   .section {
-    padding: 75px 0;
+    padding: 70px 0;
+  }
+
+  .header-inner {
+    gap: 10px;
+  }
+
+  .header-logo img {
+    width: 128px;
+  }
+
+  .language-select {
+    max-width: 100px;
+    font-size: 10px;
+    padding: 9px 6px;
   }
 
   .hero {
-    min-height: 640px;
+    min-height: 620px;
+    background-position: 58% center;
   }
 
   .hero-content {
-    padding: 75px 0;
+    padding: 70px 0;
   }
 
   .hero-logo {
-    width: 165px;
+    width: 155px;
   }
 
   .hero h1 {
-    font-size: 47px;
+    font-size: clamp(42px, 11vw, 58px);
+    letter-spacing: -1.7px;
   }
 
   .hero-description {
     font-size: 16px;
+    line-height: 1.75;
   }
 
   .hero-buttons .btn {
     width: 100%;
   }
 
+  .section-heading {
+    font-size: clamp(34px, 9vw, 45px);
+    letter-spacing: -1px;
+  }
+
+  .section-intro {
+    font-size: 16px;
+  }
+
   .identity-panel {
-    padding: 35px 27px;
+    padding: 33px 25px;
+  }
+
+  .identity-panel .large-statement {
+    font-size: 30px;
+  }
+
+  .statement-band {
+    padding: 42px 0;
+  }
+
+  .statement-band h2 {
+    font-size: 27px;
+  }
+
+  .presentation {
+    margin-top: 30px;
+  }
+
+  .presentation-track {
+    gap: 0;
+  }
+
+  .presentation-card {
+    flex: 0 0 100%;
+  }
+
+  .presentation-card img {
+    height: 310px;
+  }
+
+  .sports-section {
+    padding: 72px 0;
+  }
+
+  .sports-section .presentation-card img {
+    height: 350px;
+  }
+
+  .theater-image {
+    min-height: 300px;
   }
 
   .formats-grid {
     grid-template-columns: 1fr;
+    margin-top: 35px;
   }
 
-  .image-card {
-    flex-basis: 100%;
+  .format-card {
+    min-height: 0;
+    padding: 28px 23px;
   }
 
-  .image-card img {
-    height: 245px;
+  .soul-content h2 {
+    font-size: 48px;
   }
 
-  .sports-section .image-card {
-    flex-basis: 100%;
+  .competition-section .presentation-card img {
+    height: 300px;
   }
 
-  .sports-section .image-card img {
-    height: 290px;
+  .editorial-section .presentation-card img {
+    height: 310px;
   }
 
-  .sports-section .image-card-content h3 {
-    font-size: 25px;
+  .magazine-section .presentation-card {
+    flex: 0 0 100%;
   }
 
-  .image-card-content h3 {
-    font-size: 24px;
+  .magazine-section .presentation-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
   }
 
-  .events-panel {
-    padding: 30px 25px;
+  .events-section .presentation-card img {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
-  .perfume-page {
-    gap: 8px;
+  .media-section .presentation-card img {
+    height: 310px;
   }
 
-  .perfume-card img {
-    height: 180px;
+  .luxury-section .presentation-card img {
+    height: 320px;
   }
 
-  .perfume-card-content {
-    padding: 12px 9px;
+  .luxury-actions {
+    flex-direction: column;
   }
 
-  .perfume-card-content span {
-    font-size: 8px;
-    letter-spacing: 1px;
+  .luxury-actions .btn {
+    width: 100%;
   }
 
-  .perfume-card-content h3 {
-    font-size: 15px;
-    line-height: 1.25;
-  }
-
-  .perfume-card-content p {
-    font-size: 10px;
+  .download-panel {
+    padding: 27px 23px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 30px 20px;
+    gap: 28px 17px;
   }
 
   .footer-brand {
@@ -1639,29 +1586,20 @@ html body {
     flex-direction: column;
   }
 
-  .language-select {
-    max-width: 105px;
-    font-size: 10px;
-  }
-
   .faq-item summary {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
-/* REDUCED MOTION ACCESSIBILITY */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
+  .presentation-track {
+    transition: none !important;
   }
 }
 </style>
@@ -1669,19 +1607,16 @@ html body {
 
 <body>
 
-<!-- GOOGLE TRANSLATE: HIDDEN GOOGLE WIDGET -->
 <div id="google_translate_element" aria-hidden="true"></div>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="container header-inner">
 
     <a href="/" class="header-logo" aria-label="PHRINUSOMYIS homepage">
-      <img
-        src="https://phrinusomyis.com/phrinusomyis_logo.png"
-        alt="PHRINUSOMYIS logo"
-        width="175"
-        fetchpriority="high">
+      <img src="https://phrinusomyis.com/phrinusomyis_logo.png"
+           alt="PHRINUSOMYIS logo"
+           width="165"
+           fetchpriority="high">
     </a>
 
     <nav class="main-nav" id="mainNav">
@@ -1736,6 +1671,7 @@ html body {
 <main>
 
   <!-- HERO -->
+
   <section class="hero">
     <div class="container">
       <div class="hero-content">
@@ -1743,8 +1679,8 @@ html body {
         <img class="hero-logo"
              src="https://phrinusomyis.com/phrinusomyis_logo.png"
              alt="PHRINUSOMYIS logo"
-             width="205"
-             loading="eager">
+             width="190"
+             fetchpriority="high">
 
         <p class="hero-kicker">COMMANDING THE WORLD STAGE™</p>
 
@@ -1770,6 +1706,7 @@ html body {
   </section>
 
   <!-- ORGANIZATION -->
+
   <section class="section" id="organization">
     <div class="container identity-grid">
 
@@ -1812,134 +1749,72 @@ html body {
     </div>
   </section>
 
-  <!-- SPORTS: FIRST MAJOR CARD COLLECTION -->
+  <!-- SPORTS: NINE IMAGE PRESENTATION CARDS -->
+
   <section class="sports-section" id="sports">
     <div class="container">
 
       <p class="section-label">The World of Sport</p>
 
-      <h2 class="section-heading">
-        Sport takes centre stage.
-      </h2>
+      <h2 class="section-heading">Sport takes centre stage.</h2>
 
       <p class="section-intro">
         Discover the sporting disciplines, athletic performances
         and competitive environments connected to the world of sport.
       </p>
 
-      <div class="card-carousel" data-carousel="sports">
-        <div class="card-track">
+      <div class="presentation" data-presentation="sports">
+        <div class="presentation-track">
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Sports and athletic competition" fetchpriority="high">
-            <div class="image-card-content">
-              <span>01 / SPORT</span>
-              <h3>Football</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation" fetchpriority="high">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Athletic competition">
-            <div class="image-card-content">
-              <span>02 / SPORT</span>
-              <h3>Athletics</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Competitive sporting activity">
-            <div class="image-card-content">
-              <span>03 / SPORT</span>
-              <h3>Track and Field</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Sporting performance">
-            <div class="image-card-content">
-              <span>04 / SPORT</span>
-              <h3>Basketball</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Athletes in competition">
-            <div class="image-card-content">
-              <span>05 / SPORT</span>
-              <h3>Volleyball</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="International sporting activity">
-            <div class="image-card-content">
-              <span>06 / SPORT</span>
-              <h3>Combat Sports</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Athletic endurance">
-            <div class="image-card-content">
-              <span>07 / SPORT</span>
-              <h3>Endurance</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Cycling competition">
-            <div class="image-card-content">
-              <span>08 / SPORT</span>
-              <h3>Cycling</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Swimming competition">
-            <div class="image-card-content">
-              <span>09 / SPORT</span>
-              <h3>Swimming</h3>
-            </div>
-          </a>
-
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Racquet sports">
-            <div class="image-card-content">
-              <span>10 / SPORT</span>
-              <h3>Racquet Sports</h3>
-            </div>
-          </a>
-
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="Athletic performance">
-            <div class="image-card-content">
-              <span>11 / SPORT</span>
-              <h3>Strength and Performance</h3>
-            </div>
-          </a>
-
-          <a href="/#sports-theater" class="image-card">
-            <img data-shared-image alt="International sports competition">
-            <div class="image-card-content">
-              <span>12 / SPORT</span>
-              <h3>International Competition</h3>
-            </div>
+          <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+            <img data-shared-image alt="Sporting presentation">
           </a>
 
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" data-prev="sports"
-                aria-label="Previous sports cards">‹</button>
-        <button class="carousel-button" data-next="sports"
-                aria-label="Next sports cards">›</button>
-      </div>
+      <p class="section-intro">
+        Sport is more than a discipline. It is a stage for human performance,
+        competition and achievement.
+      </p>
 
     </div>
   </section>
 
   <!-- STATEMENT BAND -->
+
   <section class="statement-band">
     <div class="container">
       <p>PHRINUSOMYIS™</p>
@@ -1948,6 +1823,7 @@ html body {
   </section>
 
   <!-- SPORTS THEATER -->
+
   <section class="section section-dark" id="sports-theater">
     <div class="container theater-grid">
 
@@ -1980,7 +1856,8 @@ html body {
   </section>
 
   <!-- ORIGINAL FORMATS -->
-  <section class="section formats-section">
+
+  <section class="section formats-section section-dark">
     <div class="container">
 
       <p class="section-label">Original Sporting Formats</p>
@@ -2028,6 +1905,7 @@ html body {
   </section>
 
   <!-- SOUL SURVIVE -->
+
   <section class="section soul-section">
     <div class="container">
       <div class="soul-content">
@@ -2050,7 +1928,8 @@ html body {
     </div>
   </section>
 
-  <!-- COMPETITION IMAGE CAROUSEL -->
+  <!-- COMPETITIONS -->
+
   <section class="section competition-section" id="competitions">
     <div class="container">
 
@@ -2063,55 +1942,37 @@ html body {
         developed under PHRINUSOMYIS™.
       </p>
 
-      <div class="card-carousel" data-carousel="competition">
-        <div class="card-track">
+      <div class="presentation" data-presentation="competition">
+        <div class="presentation-track">
 
-          <a href="/events" class="image-card">
+          <a href="/events" class="presentation-card" aria-label="Explore competitions">
             <img data-shared-image alt="Sports Theater competition" loading="lazy">
-            <div class="image-card-content">
-              <span>Sports Theater™</span>
-              <h3>Original Competition</h3>
-            </div>
           </a>
 
-          <a href="/events" class="image-card">
-            <img data-shared-image alt="Athletes in competition" loading="lazy">
-            <div class="image-card-content">
-              <span>Competitive Performance</span>
-              <h3>The World Stage</h3>
-            </div>
+          <a href="/events" class="presentation-card" aria-label="Explore competitions">
+            <img data-shared-image alt="Competitive sporting presentation" loading="lazy">
           </a>
 
-          <a href="/events" class="image-card">
-            <img data-shared-image alt="International competition" loading="lazy">
-            <div class="image-card-content">
-              <span>Sporting Identity</span>
-              <h3>International Competition</h3>
-            </div>
+          <a href="/events" class="presentation-card" aria-label="Explore competitions">
+            <img data-shared-image alt="International sporting competition" loading="lazy">
           </a>
 
-          <a href="/events" class="image-card">
+          <a href="/events" class="presentation-card" aria-label="Explore competitions">
             <img data-shared-image alt="Original sporting formats" loading="lazy">
-            <div class="image-card-content">
-              <span>Original Formats</span>
-              <h3>Beyond Convention</h3>
-            </div>
           </a>
 
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" data-prev="competition"
-                aria-label="Previous competition cards">‹</button>
-        <button class="carousel-button" data-next="competition"
-                aria-label="Next competition cards">›</button>
-      </div>
+      <p class="section-intro">
+        One contest. One winner. A stage defined by performance.
+      </p>
 
     </div>
   </section>
 
-  <!-- NEWSWIRE: NINE CARDS -->
+  <!-- NEWSWIRE -->
+
   <section class="section editorial-section" id="newswire">
     <div class="container">
 
@@ -2128,66 +1989,57 @@ html body {
         <a href="/press" class="btn">Enter Official Newswire</a>
       </div>
 
-      <div class="card-carousel" data-carousel="newswire">
-        <div class="card-track">
+      <div class="presentation" data-presentation="newswire">
+        <div class="presentation-track">
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Newswire official releases" loading="lazy">
-            <div class="image-card-content"><span>01 / NEWSWIRE</span><h3>Official Releases</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Organizational announcements" loading="lazy">
-            <div class="image-card-content"><span>02 / NEWSWIRE</span><h3>Announcements</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Official statements" loading="lazy">
-            <div class="image-card-content"><span>03 / NEWSWIRE</span><h3>Official Statements</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Sports competition releases" loading="lazy">
-            <div class="image-card-content"><span>04 / NEWSWIRE</span><h3>Competition Releases</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Sports Theater announcements" loading="lazy">
-            <div class="image-card-content"><span>05 / NEWSWIRE</span><h3>Sports Theater™</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="International communications" loading="lazy">
-            <div class="image-card-content"><span>06 / NEWSWIRE</span><h3>International Updates</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Press communications" loading="lazy">
-            <div class="image-card-content"><span>07 / NEWSWIRE</span><h3>Press Communications</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Organizational notices" loading="lazy">
-            <div class="image-card-content"><span>08 / NEWSWIRE</span><h3>Official Notices</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
-          <a href="/press" class="image-card">
-            <img data-shared-image alt="Media statements" loading="lazy">
-            <div class="image-card-content"><span>09 / NEWSWIRE</span><h3>Media Statements</h3></div>
+          <a href="/press" class="presentation-card" aria-label="Open official Newswire">
+            <img data-shared-image alt="Official Newswire presentation" loading="lazy">
           </a>
 
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" data-prev="newswire" aria-label="Previous Newswire cards">‹</button>
-        <button class="carousel-button" data-next="newswire" aria-label="Next Newswire cards">›</button>
-      </div>
+      <p class="section-intro">
+        Official communication. Direct from the organization.
+      </p>
 
     </div>
   </section>
 
-  <!-- NEWS: NINE CARDS -->
+  <!-- NEWS -->
+
   <section class="section editorial-section light" id="news">
     <div class="container">
 
@@ -2204,32 +2056,58 @@ html body {
         <a href="/news" class="btn btn-dark">Visit News</a>
       </div>
 
-      <div class="card-carousel" data-carousel="news">
-        <div class="card-track">
+      <div class="presentation" data-presentation="news">
+        <div class="presentation-track">
 
-          <a href="/news" class="image-card"><img data-shared-image alt="Organization news" loading="lazy"><div class="image-card-content"><span>01 / NEWS</span><h3>Organization News</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="Sports updates" loading="lazy"><div class="image-card-content"><span>02 / NEWS</span><h3>Sports Updates</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="Competition updates" loading="lazy"><div class="image-card-content"><span>03 / NEWS</span><h3>Competition Updates</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="International developments" loading="lazy"><div class="image-card-content"><span>04 / NEWS</span><h3>International Developments</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="Sports Theater news" loading="lazy"><div class="image-card-content"><span>05 / NEWS</span><h3>Sports Theater™</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="Organizational updates" loading="lazy"><div class="image-card-content"><span>06 / NEWS</span><h3>Organizational Updates</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="Events news" loading="lazy"><div class="image-card-content"><span>07 / NEWS</span><h3>Events and Competitions</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="Sports perspectives" loading="lazy"><div class="image-card-content"><span>08 / NEWS</span><h3>Sporting Perspectives</h3></div></a>
-          <a href="/news" class="image-card"><img data-shared-image alt="Latest news" loading="lazy"><div class="image-card-content"><span>09 / NEWS</span><h3>Latest Updates</h3></div></a>
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
+
+          <a href="/news" class="presentation-card" aria-label="Visit PHRINUSOMYIS news">
+            <img data-shared-image alt="Organization news presentation" loading="lazy">
+          </a>
 
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" data-prev="news" aria-label="Previous News cards">‹</button>
-        <button class="carousel-button" data-next="news" aria-label="Next News cards">›</button>
-      </div>
+      <p class="section-intro">
+        The latest developments, presented with clarity.
+      </p>
 
     </div>
   </section>
 
-  <!-- MEDIA: NINE CARDS -->
-  <section class="section editorial-section" id="media">
+  <!-- MEDIA -->
+
+  <section class="section editorial-section media-section" id="media">
     <div class="container">
 
       <p class="section-label">Visual and Media Resources</p>
@@ -2245,32 +2123,58 @@ html body {
         <a href="/media" class="btn">Visit Media Centre</a>
       </div>
 
-      <div class="card-carousel" data-carousel="media">
-        <div class="card-track">
+      <div class="presentation" data-presentation="media">
+        <div class="presentation-track">
 
-          <a href="/media" class="image-card"><img data-shared-image alt="Media resources" loading="lazy"><div class="image-card-content"><span>01 / MEDIA</span><h3>Media Resources</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Sports photography" loading="lazy"><div class="image-card-content"><span>02 / MEDIA</span><h3>Photography</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Sports video" loading="lazy"><div class="image-card-content"><span>03 / MEDIA</span><h3>Video</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Competition images" loading="lazy"><div class="image-card-content"><span>04 / MEDIA</span><h3>Competition Images</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Sports Theater visual material" loading="lazy"><div class="image-card-content"><span>05 / MEDIA</span><h3>Sports Theater™</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Official media materials" loading="lazy"><div class="image-card-content"><span>06 / MEDIA</span><h3>Official Materials</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Athlete imagery" loading="lazy"><div class="image-card-content"><span>07 / MEDIA</span><h3>Athlete Features</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Event imagery" loading="lazy"><div class="image-card-content"><span>08 / MEDIA</span><h3>Event Coverage</h3></div></a>
-          <a href="/media" class="image-card"><img data-shared-image alt="Media archive" loading="lazy"><div class="image-card-content"><span>09 / MEDIA</span><h3>Media Archive</h3></div></a>
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
+
+          <a href="/media" class="presentation-card" aria-label="Visit media centre">
+            <img data-shared-image alt="Media presentation" loading="lazy">
+          </a>
 
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" data-prev="media" aria-label="Previous Media cards">‹</button>
-        <button class="carousel-button" data-next="media" aria-label="Next Media cards">›</button>
-      </div>
+      <p class="section-intro">
+        A visual record of the organization and its sporting world.
+      </p>
 
     </div>
   </section>
 
-  <!-- MAGAZINE: NINE CARDS -->
-  <section class="section editorial-section light" id="magazine">
+  <!-- MAGAZINE: PORTRAIT COVER ARTWORK -->
+
+  <section class="section magazine-section" id="magazine">
     <div class="container">
 
       <p class="section-label">Editorial Publication</p>
@@ -2278,39 +2182,65 @@ html body {
       <h2 class="section-heading">PHRINUSOMYIS™ Magazine</h2>
 
       <p class="section-intro">
-        A dedicated editorial destination for sporting perspectives,
-        features, stories, photography and selected coverage.
+        Sporting perspectives, features, stories, photography
+        and selected editorial coverage.
       </p>
 
       <div class="section-action">
         <a href="/magazine/news.html" class="btn btn-dark">Enter Magazine</a>
       </div>
 
-      <div class="card-carousel" data-carousel="magazine">
-        <div class="card-track">
+      <div class="presentation" data-presentation="magazine">
+        <div class="presentation-track">
 
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Magazine cover story" loading="lazy"><div class="image-card-content"><span>01 / MAGAZINE</span><h3>Cover Story</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Sporting perspectives" loading="lazy"><div class="image-card-content"><span>02 / MAGAZINE</span><h3>Sporting Perspectives</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Competition magazine feature" loading="lazy"><div class="image-card-content"><span>03 / MAGAZINE</span><h3>Competition</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="World stage magazine feature" loading="lazy"><div class="image-card-content"><span>04 / MAGAZINE</span><h3>The World Stage</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Profiles magazine feature" loading="lazy"><div class="image-card-content"><span>05 / MAGAZINE</span><h3>Profiles</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Magazine features" loading="lazy"><div class="image-card-content"><span>06 / MAGAZINE</span><h3>Features</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Magazine photography" loading="lazy"><div class="image-card-content"><span>07 / MAGAZINE</span><h3>Photography</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Magazine special edition" loading="lazy"><div class="image-card-content"><span>08 / MAGAZINE</span><h3>Special Edition</h3></div></a>
-          <a href="/magazine/news.html" class="image-card"><img data-shared-image alt="Magazine archive" loading="lazy"><div class="image-card-content"><span>09 / MAGAZINE</span><h3>Magazine Archive</h3></div></a>
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
+
+          <a href="/magazine/news.html" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine">
+            <img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy">
+          </a>
 
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" data-prev="magazine" aria-label="Previous Magazine cards">‹</button>
-        <button class="carousel-button" data-next="magazine" aria-label="Next Magazine cards">›</button>
-      </div>
+      <p class="section-intro">
+        A publication with its own visual identity and editorial voice.
+      </p>
 
     </div>
   </section>
 
-  <!-- EVENTS: NINE CARDS -->
+  <!-- EVENTS: BILLBOARD ARTWORK -->
+
   <section class="section events-section" id="events">
     <div class="container">
 
@@ -2319,7 +2249,7 @@ html body {
       <h2 class="section-heading">Events</h2>
 
       <p class="section-intro">
-        Explore events and competitions presented under
+        Sporting events and competitions presented under
         PHRINUSOMYIS™.
       </p>
 
@@ -2327,31 +2257,57 @@ html body {
         <a href="/events" class="btn btn-dark">Explore Events</a>
       </div>
 
-      <div class="card-carousel" data-carousel="events">
-        <div class="card-track">
+      <div class="presentation" data-presentation="events">
+        <div class="presentation-track">
 
-          <a href="/events" class="image-card"><img data-shared-image alt="PHRINUSOMYIS events" loading="lazy"><div class="image-card-content"><span>01 / EVENTS</span><h3>Upcoming Events</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="Sports competitions" loading="lazy"><div class="image-card-content"><span>02 / EVENTS</span><h3>Competitions</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="Sports Theater events" loading="lazy"><div class="image-card-content"><span>03 / EVENTS</span><h3>Sports Theater™</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="International sporting events" loading="lazy"><div class="image-card-content"><span>04 / EVENTS</span><h3>International Events</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="Athletic competition events" loading="lazy"><div class="image-card-content"><span>05 / EVENTS</span><h3>Sporting Calendar</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="Event announcements" loading="lazy"><div class="image-card-content"><span>06 / EVENTS</span><h3>Event Announcements</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="Competition information" loading="lazy"><div class="image-card-content"><span>07 / EVENTS</span><h3>Event Information</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="Event highlights" loading="lazy"><div class="image-card-content"><span>08 / EVENTS</span><h3>Event Highlights</h3></div></a>
-          <a href="/events" class="image-card"><img data-shared-image alt="Past sporting events" loading="lazy"><div class="image-card-content"><span>09 / EVENTS</span><h3>Event Archive</h3></div></a>
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
+
+          <a href="/events" class="presentation-card" aria-label="Explore PHRINUSOMYIS events">
+            <img data-shared-image alt="PHRINUSOMYIS event billboard" loading="lazy">
+          </a>
 
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-button" data-prev="events" aria-label="Previous Events cards">‹</button>
-        <button class="carousel-button" data-next="events" aria-label="Next Events cards">›</button>
-      </div>
+      <p class="section-intro">
+        The stage. The occasion. The competition.
+      </p>
 
     </div>
   </section>
 
   <!-- LUXURY / PERFUME -->
+
   <section class="section luxury-section" id="luxury">
     <div class="container">
 
@@ -2370,93 +2326,55 @@ html body {
         <a href="/luxury" class="btn btn-dark">Explore Luxury</a>
       </div>
 
-      <div class="perfume-carousel" id="perfumeViewport">
-        <div class="perfume-track" id="perfumeTrack">
+      <div class="presentation" data-presentation="perfume">
+        <div class="presentation-track">
 
-          <div class="perfume-page">
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 01" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 01</span><h3>Perfume 01</h3><p>Perfume collection.</p></div>
-            </a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 02" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 02</span><h3>Perfume 02</h3><p>Perfume collection.</p></div>
-            </a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 03" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 03</span><h3>Perfume 03</h3><p>Perfume collection.</p></div>
-            </a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-          </div>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-          <div class="perfume-page">
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 04" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 04</span><h3>Perfume 04</h3><p>Perfume collection.</p></div>
-            </a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 05" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 05</span><h3>Perfume 05</h3><p>Perfume collection.</p></div>
-            </a>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 06" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 06</span><h3>Perfume 06</h3><p>Perfume collection.</p></div>
-            </a>
-
-          </div>
-
-          <div class="perfume-page">
-
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 07" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 07</span><h3>Perfume 07</h3><p>Perfume collection.</p></div>
-            </a>
-
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 08" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 08</span><h3>Perfume 08</h3><p>Perfume collection.</p></div>
-            </a>
-
-            <a href="/perfume" class="perfume-card">
-              <img data-shared-image alt="Perfume collection 09" loading="lazy">
-              <div class="perfume-card-content"><span>Collection 09</span><h3>Perfume 09</h3><p>Perfume collection.</p></div>
-            </a>
-
-          </div>
+          <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
+            <img data-shared-image alt="Perfume collection presentation" loading="lazy">
+          </a>
 
         </div>
       </div>
 
-      <div class="perfume-controls">
-
-        <div class="perfume-page-indicators">
-          <button class="perfume-dot active" data-page="0"
-                  aria-label="Show perfume collection page 1"></button>
-          <button class="perfume-dot" data-page="1"
-                  aria-label="Show perfume collection page 2"></button>
-          <button class="perfume-dot" data-page="2"
-                  aria-label="Show perfume collection page 3"></button>
-        </div>
-
-        <div class="perfume-arrows">
-          <button class="carousel-button" id="perfumePrev"
-                  aria-label="Previous perfume collection">‹</button>
-          <button class="carousel-button" id="perfumeNext"
-                  aria-label="Next perfume collection">›</button>
-        </div>
-
-      </div>
+      <p class="section-intro">
+        A considered presentation of the collection.
+      </p>
 
       <div class="luxury-actions">
         <a href="/perfume" class="btn btn-dark">View Perfume Collection</a>
-        <a href="/luxury" class="btn"
-           style="background:transparent;color:#171715;">
+        <a href="/luxury" class="btn" style="background:transparent;color:#171715;">
           Visit Luxury
         </a>
       </div>
@@ -2464,7 +2382,8 @@ html body {
     </div>
   </section>
 
-  <!-- ANDROID APPLICATION DOWNLOAD -->
+  <!-- ANDROID APPLICATION -->
+
   <section class="section download-section" id="download">
     <div class="container download-grid">
 
@@ -2480,7 +2399,7 @@ html body {
 
         <a href="https://phrinusomyis.com/downloads/phrinusomyis-android.apk"
            class="btn" download>
-          ↓ &nbsp; Download Android App
+          Download Android App
         </a>
       </div>
 
@@ -2501,6 +2420,7 @@ html body {
   </section>
 
   <!-- FAQ -->
+
   <section class="section" id="faq">
     <div class="container">
 
@@ -2581,6 +2501,7 @@ html body {
 </main>
 
 <!-- FOOTER -->
+
 <footer class="site-footer">
   <div class="container">
 
@@ -2600,7 +2521,7 @@ html body {
           Sports Theater™ worldwide.
         </p>
 
-        <p style="margin-top:17px;color:#c5a36b;font-weight:800;">
+        <p style="margin-top:16px;color:#c5a36b;font-weight:800;">
           COMMANDING THE WORLD STAGE™
         </p>
       </div>
@@ -2652,16 +2573,11 @@ html body {
   </div>
 </footer>
 
-<!-- JAVASCRIPT -->
 <script>
 (function () {
   "use strict";
 
-  /* -------------------------------------------------
-     SHARED IMAGE
-     This is the only image filename used by all cards.
-     Change this one value if the image filename changes.
-  -------------------------------------------------- */
+  /* ONE SHARED IMAGE PATH */
 
   const SHARED_IMAGE =
     "/PHRINUSOMYIS%20SOUL%20SURVIVE%202026%2001%20.png";
@@ -2671,18 +2587,16 @@ html body {
   });
 
 
-  /* -------------------------------------------------
-     MOBILE NAVIGATION
-  -------------------------------------------------- */
+  /* MOBILE NAVIGATION */
 
   const menuToggle = document.getElementById("menuToggle");
   const mainNav = document.getElementById("mainNav");
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "✕" : "☰";
+      const open = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.textContent = open ? "✕" : "☰";
     });
 
     mainNav.querySelectorAll("a").forEach(function (link) {
@@ -2695,9 +2609,7 @@ html body {
   }
 
 
-  /* -------------------------------------------------
-     FOOTER YEAR
-  -------------------------------------------------- */
+  /* FOOTER YEAR */
 
   const yearElement = document.getElementById("currentYear");
 
@@ -2706,385 +2618,230 @@ html body {
   }
 
 
-  /* -------------------------------------------------
-     AUTOMATIC CARD CAROUSELS
-     All card collections move automatically every
-     five seconds. Manual arrows remain available.
-  -------------------------------------------------- */
+  /* AUTOMATIC PRESENTATIONS */
 
-  const carouselInstances = [];
+  const presentations = [];
 
-  function getVisibleCards(carousel) {
-    if (carousel.dataset.carousel === "sports") {
-      if (window.innerWidth <= 560) return 1;
-      if (window.innerWidth <= 820) return 2;
-      return 3;
-    }
+  const presentationSettings = {
+    sports:  { interval: 9300, initialDelay: 900 },
+    competition: { interval: 9700, initialDelay: 3100 },
+    newswire: { interval: 9400, initialDelay: 5200 },
+    news: { interval: 9800, initialDelay: 1800 },
+    media: { interval: 9600, initialDelay: 6500 },
+    magazine: { interval: 10500, initialDelay: 4000 },
+    events: { interval: 10200, initialDelay: 7500 },
+    perfume: { interval: 9900, initialDelay: 2800 }
+  };
 
-    if (window.innerWidth <= 560) return 1;
-    if (window.innerWidth <= 820) return 2;
-    return 3;
+  function visibleSlides() {
+    return window.innerWidth <= 600 ? 1 : 2;
   }
 
-  function createCardCarousel(viewport) {
-    const track = viewport.querySelector(".card-track");
-    const cards = Array.from(track.querySelectorAll(".image-card"));
-    const name = viewport.dataset.carousel;
+  function createPresentation(viewport) {
+    const track = viewport.querySelector(".presentation-track");
+    const cards = Array.from(
+      track.querySelectorAll(".presentation-card")
+    );
 
-    if (!track || !cards.length) return;
+    if (!track || cards.length === 0) return;
 
-    const instance = {
+    const name = viewport.dataset.presentation;
+    const settings = presentationSettings[name] || {
+      interval: 9500,
+      initialDelay: 2000
+    };
+
+    const presentation = {
       viewport: viewport,
       track: track,
       cards: cards,
-      name: name,
       index: 0,
-      timer: null
+      timer: null,
+      startTimer: null,
+      update: null
     };
 
     function update() {
-      const visible = getVisibleCards(viewport);
+      const visible = visibleSlides();
       const maxIndex = Math.max(0, cards.length - visible);
 
-      if (instance.index > maxIndex) {
-        instance.index = 0;
+      if (presentation.index > maxIndex) {
+        presentation.index = 0;
       }
 
       const cardWidth = cards[0].getBoundingClientRect().width;
-      const trackStyle = window.getComputedStyle(track);
-      const gap = parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
-      const distance = instance.index * (cardWidth + gap);
+      const gap = parseFloat(
+        window.getComputedStyle(track).gap
+      ) || 0;
 
-      track.style.transform = "translate3d(-" + distance + "px,0,0)";
+      const distance = presentation.index * (cardWidth + gap);
+
+      track.style.transform =
+        "translate3d(-" + distance + "px,0,0)";
     }
 
-    function next() {
-      const visible = getVisibleCards(viewport);
-      const maxIndex = Math.max(0, cards.length - visible);
+    function advance() {
+      const maxIndex = Math.max(
+        0,
+        cards.length - visibleSlides()
+      );
 
-      if (maxIndex <= 0) return;
+      if (maxIndex === 0) return;
 
-      instance.index++;
+      presentation.index++;
 
-      if (instance.index > maxIndex) {
-        instance.index = 0;
+      if (presentation.index > maxIndex) {
+        presentation.index = 0;
       }
 
       update();
-    }
-
-    function previous() {
-      const visible = getVisibleCards(viewport);
-      const maxIndex = Math.max(0, cards.length - visible);
-
-      if (maxIndex <= 0) return;
-
-      instance.index--;
-
-      if (instance.index < 0) {
-        instance.index = maxIndex;
-      }
-
-      update();
-    }
-
-    instance.update = update;
-    instance.next = next;
-    instance.previous = previous;
-
-    const previousButton = document.querySelector(
-      '[data-prev="' + name + '"]'
-    );
-
-    const nextButton = document.querySelector(
-      '[data-next="' + name + '"]'
-    );
-
-    if (previousButton) {
-      previousButton.addEventListener("click", function () {
-        previous();
-        restartTimer();
-      });
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener("click", function () {
-        next();
-        restartTimer();
-      });
-    }
-
-    function stopTimer() {
-      if (instance.timer) {
-        clearInterval(instance.timer);
-        instance.timer = null;
-      }
     }
 
     function startTimer() {
-      stopTimer();
+      if (presentation.timer) {
+        clearInterval(presentation.timer);
+      }
 
-      instance.timer = setInterval(function () {
-        next();
-      }, 5000);
+      presentation.timer = setInterval(
+        advance,
+        settings.interval
+      );
     }
 
-    function restartTimer() {
-      stopTimer();
-      startTimer();
-    }
+    presentation.update = update;
+    presentation.startTimer = startTimer;
 
-    viewport.addEventListener("mouseenter", stopTimer);
-    viewport.addEventListener("mouseleave", startTimer);
-    viewport.addEventListener("focusin", stopTimer);
-    viewport.addEventListener("focusout", startTimer);
-
-    instance.startTimer = startTimer;
-    instance.stopTimer = stopTimer;
-
-    carouselInstances.push(instance);
+    presentations.push(presentation);
 
     update();
-    startTimer();
+
+    window.setTimeout(function () {
+      advance();
+      startTimer();
+    }, settings.initialDelay);
   }
 
-  document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
-    createCardCarousel(carousel);
-  });
+  document.querySelectorAll("[data-presentation]").forEach(
+    createPresentation
+  );
 
-  let resizeTimer;
+  let resizeTimeout;
 
   window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
+    clearTimeout(resizeTimeout);
 
-    resizeTimer = setTimeout(function () {
-      carouselInstances.forEach(function (instance) {
-        instance.update();
+    resizeTimeout = setTimeout(function () {
+      presentations.forEach(function (presentation) {
+        presentation.update();
       });
-
-      updatePerfumeCarousel();
-    }, 150);
+    }, 180);
   });
 
 
-  /* -------------------------------------------------
-     PERFUME CAROUSEL
-     Three products per page.
-     Automatically advances every five seconds.
-     Loops continuously through all three pages.
-  -------------------------------------------------- */
-
-  const perfumeTrack = document.getElementById("perfumeTrack");
-  const perfumeViewport = document.getElementById("perfumeViewport");
-  const perfumePrev = document.getElementById("perfumePrev");
-  const perfumeNext = document.getElementById("perfumeNext");
-  const perfumeDots = document.querySelectorAll(".perfume-dot");
-
-  let perfumePage = 0;
-  const perfumeTotalPages = 3;
-  let perfumeTimer = null;
-
-  function updatePerfumeCarousel() {
-    if (!perfumeTrack || !perfumeViewport) return;
-
-    const pageWidth = perfumeViewport.clientWidth;
-
-    perfumeTrack.style.transform =
-      "translate3d(-" + (perfumePage * pageWidth) + "px,0,0)";
-
-    perfumeDots.forEach(function (dot, index) {
-      dot.classList.toggle("active", index === perfumePage);
-    });
-  }
-
-  function nextPerfumePage() {
-    perfumePage++;
-
-    if (perfumePage >= perfumeTotalPages) {
-      perfumePage = 0;
-    }
-
-    updatePerfumeCarousel();
-  }
-
-  function previousPerfumePage() {
-    perfumePage--;
-
-    if (perfumePage < 0) {
-      perfumePage = perfumeTotalPages - 1;
-    }
-
-    updatePerfumeCarousel();
-  }
-
-  function stopPerfumeTimer() {
-    if (perfumeTimer) {
-      clearInterval(perfumeTimer);
-      perfumeTimer = null;
-    }
-  }
-
-  function startPerfumeTimer() {
-    stopPerfumeTimer();
-
-    perfumeTimer = setInterval(function () {
-      nextPerfumePage();
-    }, 5000);
-  }
-
-  function restartPerfumeTimer() {
-    stopPerfumeTimer();
-    startPerfumeTimer();
-  }
-
-  if (perfumePrev) {
-    perfumePrev.addEventListener("click", function () {
-      previousPerfumePage();
-      restartPerfumeTimer();
-    });
-  }
-
-  if (perfumeNext) {
-    perfumeNext.addEventListener("click", function () {
-      nextPerfumePage();
-      restartPerfumeTimer();
-    });
-  }
-
-  perfumeDots.forEach(function (dot) {
-    dot.addEventListener("click", function () {
-      const page = Number(dot.getAttribute("data-page"));
-
-      if (Number.isInteger(page) && page >= 0 && page < perfumeTotalPages) {
-        perfumePage = page;
-        updatePerfumeCarousel();
-        restartPerfumeTimer();
-      }
-    });
-  });
-
-  if (perfumeViewport) {
-    perfumeViewport.addEventListener("mouseenter", stopPerfumeTimer);
-    perfumeViewport.addEventListener("mouseleave", startPerfumeTimer);
-    perfumeViewport.addEventListener("focusin", stopPerfumeTimer);
-    perfumeViewport.addEventListener("focusout", startPerfumeTimer);
-  }
-
-  function updatePerfumeCarousel() {
-    if (!perfumeTrack || !perfumeViewport) return;
-
-    const pageWidth = perfumeViewport.clientWidth;
-
-    perfumeTrack.style.transform =
-      "translate3d(-" + (perfumePage * pageWidth) + "px,0,0)";
-
-    perfumeDots.forEach(function (dot, index) {
-      dot.classList.toggle("active", index === perfumePage);
-    });
-  }
-
-  updatePerfumeCarousel();
-  startPerfumeTimer();
-
-
-  /* -------------------------------------------------
-     GOOGLE TRANSLATE
-     Uses Google's standard website translation widget.
-     No custom API key or separate translation API.
-  -------------------------------------------------- */
+  /* GOOGLE TRANSLATE */
 
   const languageSelector = document.getElementById("siteLanguage");
 
-  let selectedSiteLanguage = "en";
-  let translateObserver = null;
+  let selectedLanguage = "en";
+  let googleWidgetReady = false;
   let translateWaitTimer = null;
-  let translateWaitCount = 0;
+  let translateAttempts = 0;
 
-  function getGoogleTranslateSelect() {
+  function getGoogleSelect() {
     return document.querySelector(
-      "#google_translate_element select.goog-te-combo"
+      "#google_translate_element .goog-te-combo"
     ) || document.querySelector(".goog-te-combo");
   }
 
-  function clearGoogleTranslateCookies() {
-    const hostname = window.location.hostname;
-    const parts = hostname.split(".");
-    const domains = [hostname];
+  function clearTranslateCookies() {
+    const host = window.location.hostname;
+    const parts = host.split(".");
+    const domains = [host];
 
-    if (parts.length >= 2) {
+    if (parts.length > 1) {
       domains.push("." + parts.slice(-2).join("."));
     }
 
-    document.cookie.split(";").forEach(function (cookie) {
-      const cookieName = cookie.split("=")[0].trim();
+    const expires =
+      "expires=Thu, 01 Jan 1970 00:00:00 GMT";
 
-      if (cookieName === "googtrans") {
+    document.cookie.split(";").forEach(function (item) {
+      const name = item.split("=")[0].trim();
+
+      if (name === "googtrans") {
         document.cookie =
-          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+          "googtrans=; " + expires + "; path=/";
 
         domains.forEach(function (domain) {
           document.cookie =
-            "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" +
-            domain;
+            "googtrans=; " + expires +
+            "; path=/; domain=" + domain;
         });
       }
     });
   }
 
-  function applyGoogleLanguage(language) {
-    selectedSiteLanguage = language;
+  function applyLanguage(language) {
+    selectedLanguage = language;
 
     if (language === "en") {
-      clearGoogleTranslateCookies();
-
-      if (
+      const hadTranslation =
         document.cookie.indexOf("googtrans=") !== -1 ||
-        document.documentElement.classList.contains("translated-ltr") ||
-        document.documentElement.classList.contains("translated-rtl") ||
         document.body.classList.contains("translated-ltr") ||
-        document.body.classList.contains("translated-rtl")
-      ) {
+        document.body.classList.contains("translated-rtl") ||
+        document.documentElement.classList.contains("translated-ltr") ||
+        document.documentElement.classList.contains("translated-rtl");
+
+      clearTranslateCookies();
+
+      if (hadTranslation) {
         window.location.reload();
       }
 
       return;
     }
 
-    const googleSelect = getGoogleTranslateSelect();
+    const googleSelect = getGoogleSelect();
 
-    if (!googleSelect) {
-      waitForGoogleTranslate(language);
+    if (googleSelect) {
+      googleSelect.value = language;
+
+      googleSelect.dispatchEvent(
+        new Event("change", { bubbles: true })
+      );
+
       return;
     }
 
-    googleSelect.value = language;
-
-    googleSelect.dispatchEvent(
-      new Event("change", { bubbles: true })
-    );
+    waitForGoogleWidget(language);
   }
 
-  function waitForGoogleTranslate(language) {
+  function waitForGoogleWidget(language) {
     if (translateWaitTimer) {
       clearInterval(translateWaitTimer);
     }
 
-    translateWaitCount = 0;
+    translateAttempts = 0;
 
     translateWaitTimer = setInterval(function () {
-      translateWaitCount++;
+      translateAttempts++;
 
-      const googleSelect = getGoogleTranslateSelect();
+      const googleSelect = getGoogleSelect();
 
       if (googleSelect) {
         clearInterval(translateWaitTimer);
         translateWaitTimer = null;
 
-        applyGoogleLanguage(language);
+        googleSelect.value = language;
+
+        googleSelect.dispatchEvent(
+          new Event("change", { bubbles: true })
+        );
+
         return;
       }
 
-      if (translateWaitCount >= 40) {
+      if (translateAttempts >= 40) {
         clearInterval(translateWaitTimer);
         translateWaitTimer = null;
       }
@@ -3110,52 +2867,23 @@ html body {
       "google_translate_element"
     );
 
-    waitForGoogleTranslate(selectedSiteLanguage);
+    googleWidgetReady = true;
+
+    if (selectedLanguage !== "en") {
+      waitForGoogleWidget(selectedLanguage);
+    }
   };
 
   if (languageSelector) {
     languageSelector.addEventListener("change", function () {
-      selectedSiteLanguage = this.value;
-      applyGoogleLanguage(selectedSiteLanguage);
+      selectedLanguage = this.value;
+      applyLanguage(selectedLanguage);
     });
   }
-
-  /*
-     Watch for the Google widget to insert its selector.
-     This avoids depending on a fixed delay.
-  */
-
-  const translateContainer = document.getElementById(
-    "google_translate_element"
-  );
-
-  if (translateContainer && "MutationObserver" in window) {
-    translateObserver = new MutationObserver(function () {
-      const googleSelect = getGoogleTranslateSelect();
-
-      if (googleSelect && selectedSiteLanguage !== "en") {
-        googleSelect.value = selectedSiteLanguage;
-        googleSelect.dispatchEvent(
-          new Event("change", { bubbles: true })
-        );
-      }
-    });
-
-    translateObserver.observe(translateContainer, {
-      childList: true,
-      subtree: true
-    });
-  }
-
-  /*
-     If the Google script loads after this code,
-     its callback above will initialize the widget.
-  */
 
 })();
 </script>
 
-<!-- GOOGLE TRANSLATE SCRIPT -->
 <script
   src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
   async>
