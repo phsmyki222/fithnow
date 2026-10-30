@@ -249,7 +249,6 @@
     ]
   }
   </script>
-</head>
 <style>
 :root {
     --gold: #B18A2D;
@@ -559,8 +558,10 @@ img {
     align-items: center;
     gap: 10px;
     color: var(--gold-dark);
+    border: none;
     border-bottom: 1px solid var(--gold);
-    padding-bottom: 6px;
+    background: transparent;
+    padding: 0 0 6px;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.4px;
@@ -1420,6 +1421,219 @@ body {
         max-height: 400px;
     }
 }
+
+/* ADDITIONAL GOOGLE TRANSLATE RESPONSIVE PROTECTION */
+
+html,
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+}
+
+body {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    margin-top: 0 !important;
+    transform: none !important;
+}
+
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-menu-frame,
+.goog-te-menu-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover {
+    max-width: 100vw !important;
+}
+
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+}
+
+.goog-te-menu-frame {
+    max-width: calc(100vw - 20px) !important;
+    max-height: calc(100vh - 30px) !important;
+}
+
+.goog-te-menu2 {
+    max-width: calc(100vw - 20px) !important;
+    max-height: calc(100vh - 40px) !important;
+    overflow: auto !important;
+}
+
+.goog-te-menu-frame.skiptranslate {
+    z-index: 99999 !important;
+}
+
+.goog-te-spinner-pos,
+.goog-te-spinner {
+    max-width: 100vw !important;
+}
+
+body > .skiptranslate,
+body > .goog-te-spinner-pos {
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+#google_translate_element,
+#google_translate_element * {
+    max-width: 100% !important;
+}
+
+.site-header,
+.header-inner,
+.main-nav,
+.page-container,
+.content-section,
+.featured-card,
+.president-card,
+.news-tools,
+.news-grid,
+.publication-grid,
+.footer-inner,
+.footer-grid {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.main-nav a,
+.brand-name,
+.section-heading h2,
+.section-heading span,
+.featured-content h2,
+.president-content h2,
+.news-card h3,
+.publication-card h2 {
+    overflow-wrap: anywhere;
+}
+
+.article-modal {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
+.modal-panel {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.modal-scroll,
+.modal-article {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.modal-article img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 650px) {
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: clip !important;
+    }
+
+    .header-inner,
+    .main-nav,
+    .page-container,
+    .page-heading,
+    .section-heading,
+    .news-tools,
+    .president-content,
+    .featured-content,
+    .publication-card,
+    .footer-inner {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .main-nav a {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+
+    .category-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-button {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .modal-panel {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .modal-actions,
+    .action-group {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .share-options {
+        max-width: calc(100vw - 30px);
+    }
+
+    .goog-te-menu-frame {
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+        max-width: calc(100vw - 20px) !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .brand-name {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .section-heading h2 {
+        font-size: 14px;
+    }
+
+    .section-heading span {
+        max-width: 42%;
+        overflow-wrap: anywhere;
+    }
+
+    .modal-article {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 </style>
 </head>
 
@@ -1581,16 +1795,19 @@ body {
             <div class="president-content">
                 <div class="story-category">Office of the President</div>
 
-                <h2>A Statement from the President</h2>
+                <h2>What Should Competition Really Represent?</h2>
 
                 <p>
-                    An official statement from President Victor Seth
-                    AMUNTHLIA will be published in this section.
+                    A perspective on the meaning of competition,
+                    human ability and the continuing possibilities of sport.
                 </p>
 
-                <span class="placeholder-label">
-                    Presidential statement — content to be announced
-                </span>
+                <button
+                    class="read-link"
+                    type="button"
+                    data-open-article="presidents-word">
+                    Read Statement <span aria-hidden="true">→</span>
+                </button>
             </div>
 
         </article>
@@ -1777,6 +1994,7 @@ body {
 <div id="google_translate_element"></div>
 
 <script>
+
 /*
  * PHRINUSOMYIS NEWS
  * Main editorial catalogue and article reader.
@@ -1979,6 +2197,22 @@ const newsArticles = [
             }
         ],
         magazine: true
+    },
+
+    /* PRESIDENT'S WORD */
+
+    {
+        id: "presidents-word",
+        title: "What Should Competition Really Represent?",
+        category: "Office of the President",
+        description:
+            "A perspective on the meaning of competition, human ability and the continuing possibilities of sport.",
+        imageAlt: "Sporting competition",
+        intro:
+            "Competition should represent more than the pursuit of victory. It should reveal human ability, test character and create moments that define the spirit of sport.",
+        paragraphs: [
+            "At PHRINUSOMYIS™, we believe that the possibilities of competition extend beyond what the world already knows. Sport must retain the freedom to evolve, explore originality and create new standards of competitive experience."
+        ]
     }
 
 ];
