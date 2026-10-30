@@ -209,865 +209,261 @@
   </script> 
 </head>
   <body>
-   <style>
+  <style>
 :root {
-    --gold: #B18A2D;
-    --gold-dark: #8D6A1D;
-    --ink: #202020;
-    --muted: #737373;
-    --paper: #F4F3EF;
-    --white: #FFFFFF;
-    --soft: #EBE9E2;
-    --panel: #FAF9F6;
-    --border: #DEDAD0;
-    --dark: #202020;
-    --dark-soft: #303030;
-    --shadow: 0 18px 55px rgba(0,0,0,.10);
+    --gold:#B18A2D;
+    --gold-dark:#8D6A1D;
+    --ink:#202020;
+    --muted:#737373;
+    --paper:#F4F3EF;
+    --white:#FFFFFF;
+    --soft:#EBE9E2;
+    --panel:#FAF9F6;
+    --border:#DEDAD0;
+    --dark:#202020;
+    --shadow:0 18px 55px rgba(0,0,0,.10);
 }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-
-body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-body.modal-open { overflow: hidden; }
-
-a { color: inherit; text-decoration: none; }
-button, input, select { font: inherit; }
-button, a, select { -webkit-tap-highlight-color: transparent; }
-button { cursor: pointer; }
-img { max-width: 100%; }
-
-.site-background {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 85% 5%, rgba(177,138,45,.07), transparent 28%),
-        linear-gradient(180deg, #F8F7F3 0%, #F0EFEA 100%);
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--paper);color:var(--ink);font-family:'Montserrat',sans-serif;line-height:1.7;overflow-x:hidden}
+body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button,a,select{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+img{max-width:100%}
+.site-background{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 85% 5%,rgba(177,138,45,.07),transparent 28%),linear-gradient(180deg,#F8F7F3 0%,#F0EFEA 100%)}
 
 /* HEADER */
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    background: rgba(248,247,243,.96);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    max-width: 1280px;
-    margin: auto;
-    padding: 15px 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand img { width: 46px; height: 46px; object-fit: contain; }
-
-.brand-name {
-    font-family: 'Cinzel', serif;
-    color: var(--ink);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-}
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 21px;
-    flex-wrap: wrap;
-}
-
-.main-nav a {
-    color: #555;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    min-height: 42px;
-    display: flex;
-    align-items: center;
-    transition: color .2s ease;
-}
-
-.main-nav a:hover, .main-nav a.active { color: var(--gold-dark); }
-
-#languageSwitcher {
-    background: var(--white);
-    color: var(--ink);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 9px 10px;
-    font-size: 11px;
-    max-width: 145px;
-    outline: none;
-}
+.site-header{position:sticky;top:0;z-index:100;width:100%;background:rgba(248,247,243,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1280px;margin:auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand img{width:46px;height:46px;object-fit:contain}
+.brand-name{font-family:'Cinzel',serif;color:var(--ink);font-size:13px;font-weight:700;letter-spacing:1.8px}
+.main-nav{display:flex;align-items:center;justify-content:flex-end;gap:21px;flex-wrap:wrap}
+.main-nav a{color:#555;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;min-height:42px;display:flex;align-items:center;transition:color .2s}
+.main-nav a:hover,.main-nav a.active{color:var(--gold-dark)}
+#languageSwitcher{background:var(--white);color:var(--ink);border:1px solid var(--border);border-radius:3px;padding:9px 10px;font-size:11px;max-width:145px;outline:none}
 
 /* PAGE */
-
-.page-container {
-    max-width: 1220px;
-    margin: auto;
-    padding: 65px 26px 85px;
-}
-
-.page-heading { text-align: center; margin-bottom: 48px; }
-
-.eyebrow {
-    color: var(--gold-dark);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.page-heading h1 {
-    font-family: 'Cinzel', serif;
-    color: var(--ink);
-    font-size: clamp(36px, 6vw, 65px);
-    font-weight: 600;
-    letter-spacing: 3px;
-    line-height: 1.2;
-}
-
-.page-heading p {
-    max-width: 720px;
-    margin: 18px auto 0;
-    color: var(--muted);
-    font-size: 13px;
-}
-
-/* SECTION HEADINGS */
-
-.content-section { margin-bottom: 70px; }
-
-.section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    margin-bottom: 23px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 13px;
-}
-
-.section-heading h2 {
-    font-family: 'Cinzel', serif;
-    color: var(--ink);
-    font-size: 19px;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.section-heading span {
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-/* IMAGES */
-
-.story-image {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    background: #D9D6CE;
-}
-
-.image-frame { overflow: hidden; background: #E2DFD7; }
-.image-frame img { transition: transform .5s ease; }
-.image-frame:hover img { transform: scale(1.025); }
+.page-container{max-width:1220px;margin:auto;padding:65px 26px 85px}
+.page-heading{text-align:center;margin-bottom:48px}
+.eyebrow{color:var(--gold-dark);font-size:10px;font-weight:800;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
+.page-heading h1{font-family:'Cinzel',serif;color:var(--ink);font-size:clamp(36px,6vw,65px);font-weight:600;letter-spacing:3px;line-height:1.2}
+.page-heading p{max-width:720px;margin:18px auto 0;color:var(--muted);font-size:13px}
+.content-section{margin-bottom:70px}
+.section-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:23px;border-bottom:1px solid var(--border);padding-bottom:13px}
+.section-heading h2{font-family:'Cinzel',serif;color:var(--ink);font-size:19px;letter-spacing:1.5px;font-weight:600;text-transform:uppercase}
+.section-heading span{color:var(--muted);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
 
 /* FEATURED PRESS STATEMENT */
+.featured-card{display:grid;grid-template-columns:1.2fr 1fr;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden}
+.featured-image{min-height:390px;background:var(--soft);display:flex;align-items:center;justify-content:center}
+.featured-image img{width:100%;height:100%;min-height:390px;display:block;object-fit:contain;background:#E8E5DD}
+.featured-content{padding:42px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.story-category{color:var(--gold-dark);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:13px}
+.featured-content h2{font-family:'Cinzel',serif;font-size:clamp(24px,3vw,35px);line-height:1.4;margin-bottom:17px;color:var(--ink)}
+.featured-content p{color:var(--muted);font-size:13px;margin-bottom:24px}
+.story-date{color:#898989;font-size:10px;margin-bottom:15px;letter-spacing:.5px}
+.read-link{display:inline-flex;align-items:center;gap:10px;color:var(--gold-dark);border:none;border-bottom:1px solid var(--gold);background:transparent;padding:0 0 6px;font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;transition:color .2s}
+.read-link:hover{color:var(--ink)}
 
-.featured-card {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    background: var(--white);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-}
+/* PRESS ARCHIVE */
+.news-tools{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:25px}
+.category-list{display:flex;flex-wrap:wrap;gap:8px}
+.category-button{background:transparent;border:1px solid var(--border);color:#686868;padding:9px 13px;cursor:pointer;font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;transition:.2s}
+.category-button:hover,.category-button.active{background:var(--dark);color:var(--white);border-color:var(--dark)}
+.search-box{display:flex;align-items:center;min-width:230px;border:1px solid var(--border);background:var(--white)}
+.search-box input{width:100%;min-width:0;padding:11px 13px;border:none;outline:none;color:var(--ink);background:transparent;font-size:11px}
+.search-box input::placeholder{color:#999}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:21px}
+.news-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.news-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.news-card-image{overflow:hidden;background:#E8E5DD;display:flex;align-items:center;justify-content:center;min-height:190px}
+.news-card-image img{width:100%;height:100%;min-height:190px;aspect-ratio:16/9;display:block;object-fit:contain}
+.news-card-content{padding:23px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.news-card h3{font-family:'Cinzel',serif;font-size:17px;line-height:1.5;margin-bottom:11px;color:var(--ink)}
+.news-card p{color:var(--muted);font-size:11px;margin-bottom:20px}
+.news-card .read-link{margin-top:auto}
+.empty-state{grid-column:1/-1;padding:45px 20px;text-align:center;color:var(--muted);border:1px solid var(--border);background:var(--white);font-size:13px}
+.pagination{display:flex;justify-content:center;align-items:center;gap:7px;margin-top:32px;flex-wrap:wrap}
+.pagination button{min-width:39px;min-height:39px;padding:8px 12px;background:var(--white);border:1px solid var(--border);color:#555;cursor:pointer;font-size:10px}
+.pagination button.active,.pagination button:hover{background:var(--dark);color:var(--white)}
+.pagination button:disabled{opacity:.35;cursor:not-allowed}
+.archive-note{text-align:center;color:#888;font-size:10px;margin-top:16px}
 
-.featured-image { min-height: 390px; background: var(--soft); }
+/* MEDIA RESOURCES */
+.resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.resource-card{background:var(--dark);color:var(--white);padding:32px;border:1px solid #444;display:flex;flex-direction:column;align-items:flex-start;min-height:205px}
+.resource-card h3{font-family:'Cinzel',serif;color:#E4C36F;font-size:20px;margin-bottom:10px}
+.resource-card p{color:#C2C2C2;font-size:11px;margin-bottom:22px;max-width:500px}
+.resource-card .read-link{color:#E4C36F;border-color:#B18A2D;margin-top:auto}
 
-.featured-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 390px;
-    display: block;
-    object-fit: cover;
-}
-
-.featured-content {
-    padding: 42px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.story-category {
-    color: var(--gold-dark);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 13px;
-}
-
-.featured-content h2 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(24px, 3vw, 35px);
-    line-height: 1.4;
-    margin-bottom: 17px;
-    color: var(--ink);
-}
-
-.featured-content p { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
-
-.story-date {
-    color: #898989;
-    font-size: 10px;
-    margin-bottom: 15px;
-    letter-spacing: .5px;
-}
-
-.read-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--gold-dark);
-    border: none;
-    border-bottom: 1px solid var(--gold);
-    background: transparent;
-    padding: 0 0 6px;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    transition: color .2s ease;
-}
-
-.read-link:hover { color: var(--ink); }
-
-/* PRESS FILTERS */
-
-.news-tools {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-}
-
-.category-list { display: flex; flex-wrap: wrap; gap: 8px; }
-
-.category-button {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: #686868;
-    padding: 9px 13px;
-    cursor: pointer;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: .8px;
-    text-transform: uppercase;
-    transition: .2s ease;
-}
-
-.category-button:hover,
-.category-button.active {
-    background: var(--dark);
-    color: var(--white);
-    border-color: var(--dark);
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    min-width: 230px;
-    border: 1px solid var(--border);
-    background: var(--white);
-}
-
-.search-box input {
-    width: 100%;
-    min-width: 0;
-    padding: 11px 13px;
-    border: none;
-    outline: none;
-    color: var(--ink);
-    background: transparent;
-    font-size: 11px;
-}
-
-.search-box input::placeholder { color: #999; }
-
-/* PRESS GRID */
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 21px;
-}
-
-.news-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--white);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.news-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.08); }
-
-.news-card-image { overflow: hidden; background: var(--soft); }
-
-.news-card-image img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    display: block;
-    object-fit: cover;
-}
-
-.news-card-content {
-    padding: 23px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1;
-}
-
-.news-card h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 17px;
-    line-height: 1.5;
-    margin-bottom: 11px;
-    color: var(--ink);
-}
-
-.news-card p { color: var(--muted); font-size: 11px; margin-bottom: 20px; }
-.news-card .read-link { margin-top: auto; }
-
-.empty-state {
-    grid-column: 1 / -1;
-    padding: 45px 20px;
-    text-align: center;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    background: var(--white);
-    font-size: 13px;
-}
-
-/* PAGINATION */
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-}
-
-.pagination button {
-    min-width: 39px;
-    min-height: 39px;
-    padding: 8px 12px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    color: #555;
-    cursor: pointer;
-    font-size: 10px;
-}
-
-.pagination button.active, .pagination button:hover { background: var(--dark); color: var(--white); }
-.pagination button:disabled { opacity: .35; cursor: not-allowed; }
-
-.archive-note { text-align: center; color: #888; font-size: 10px; margin-top: 16px; }
-
-/* PUBLICATION LINKS */
-
-.publication-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-
-.publication-card {
-    background: var(--dark);
-    color: var(--white);
-    padding: 32px;
-    border: 1px solid #444;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 205px;
-}
-
-.publication-card h2 {
-    font-family: 'Cinzel', serif;
-    color: #E4C36F;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.publication-card p { color: #C2C2C2; font-size: 11px; margin-bottom: 22px; max-width: 500px; }
-
-.publication-card .read-link {
-    color: #E4C36F;
-    border-color: #B18A2D;
-    margin-top: auto;
-}
+/* MEDIA CONTACT */
+.press-contact{position:relative;overflow:hidden;background:#252525;color:white;padding:48px 35px;border-top:3px solid var(--gold);display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px}
+.press-contact::after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(228,195,111,.15);border-radius:50%;right:100px;top:-150px;pointer-events:none}
+.press-contact .eyebrow{color:#E4C36F}
+.press-contact h2{font-family:'Cinzel',serif;font-size:clamp(23px,3vw,32px);font-weight:600;line-height:1.35;margin-bottom:10px}
+.press-contact p{color:#C2C2C2;font-size:12px;max-width:650px}
+.press-contact-button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 22px;background:#E4C36F;color:#202020;border:1px solid #E4C36F;font-size:10px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;transition:.2s;white-space:nowrap}
+.press-contact-button:hover{background:transparent;color:#E4C36F}
+.press-contact-button svg{width:19px;height:19px;flex-shrink:0}
 
 /* FOOTER */
+.site-footer{background:#252525;color:var(--white);border-top:3px solid var(--gold);padding:52px 26px 24px}
+.footer-inner{max-width:1180px;margin:auto}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:40px}
+.footer-section h3{color:#E4C36F;font-size:10px;letter-spacing:1.8px;margin-bottom:17px;text-transform:uppercase}
+.footer-section ul{list-style:none}
+.footer-section li{margin-bottom:10px}
+.footer-section a{color:#BDBDBD;font-size:11px;transition:color .2s}
+.footer-section a:hover{color:#E4C36F}
+.footer-bottom{border-top:1px solid #454545;padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.footer-bottom p{color:#A0A0A0;font-size:9px;letter-spacing:.8px}
+.footer-slogan{color:#E4C36F!important;font-family:'Cinzel',serif;letter-spacing:1.5px!important}
 
-.site-footer {
-    background: #252525;
-    color: var(--white);
-    border-top: 3px solid var(--gold);
-    padding: 52px 26px 24px;
-}
-
-.footer-inner { max-width: 1180px; margin: auto; }
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    margin-bottom: 40px;
-}
-
-.footer-section h3 {
-    color: #E4C36F;
-    font-size: 10px;
-    letter-spacing: 1.8px;
-    margin-bottom: 17px;
-    text-transform: uppercase;
-}
-
-.footer-section ul { list-style: none; }
-.footer-section li { margin-bottom: 10px; }
-
-.footer-section a { color: #BDBDBD; font-size: 11px; transition: color .2s ease; }
-.footer-section a:hover { color: #E4C36F; }
-
-.footer-bottom {
-    border-top: 1px solid #454545;
-    padding-top: 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.footer-bottom p { color: #A0A0A0; font-size: 9px; letter-spacing: .8px; }
-
-.footer-slogan {
-    color: #E4C36F !important;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 1.5px !important;
-}
-
-/* ARTICLE MODAL */
-
-.article-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    background: rgba(15,15,15,.78);
-    backdrop-filter: blur(5px);
-}
-
-.article-modal.open { display: flex; }
-
-.modal-panel {
-    width: min(940px, 100%);
-    max-height: min(90vh, 950px);
-    display: flex;
-    flex-direction: column;
-    background: #F9F8F4;
-    border: 1px solid rgba(255,255,255,.35);
-    box-shadow: 0 25px 90px rgba(0,0,0,.35);
-    overflow: hidden;
-}
-
-@keyframes modalAppear {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.modal-panel { animation: modalAppear .22s ease-out; }
-
-.modal-topbar {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 15px 22px;
-    background: #252525;
-    color: white;
-}
-
-.modal-brand { font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; }
-
-.modal-close {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #666;
-    background: transparent;
-    color: white;
-    font-size: 23px;
-    line-height: 1;
-    transition: background .2s ease;
-}
-
-.modal-close:hover { background: #555; }
-
-.modal-scroll { overflow-y: auto; overscroll-behavior: contain; }
-
-.modal-article { max-width: 790px; margin: auto; padding: 30px 35px 38px; }
-
-.modal-article .story-image { margin: 16px 0 25px; max-height: 430px; }
-
-.modal-article h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(25px, 4vw, 39px);
-    line-height: 1.35;
-    margin-bottom: 13px;
-    color: var(--ink);
-}
-
-.modal-article .article-meta { color: #888; font-size: 10px; margin-bottom: 18px; letter-spacing: .7px; }
-
-.modal-article .article-intro { font-size: 15px; font-weight: 500; color: #454545; margin-bottom: 20px; }
-
-.modal-article p { color: #555; font-size: 13px; line-height: 1.9; margin-bottom: 17px; }
-
-.modal-article h2 { font-family: 'Cinzel', serif; font-size: 19px; margin: 25px 0 10px; color: var(--ink); }
-
-.modal-article ul { padding-left: 21px; margin: 0 0 20px; color: #555; font-size: 13px; }
-.modal-article li { margin-bottom: 8px; }
-
-.article-external-link {
-    display: inline-block;
-    margin-top: 8px;
-    margin-right: 14px;
-    color: var(--gold-dark);
-    font-size: 11px;
-    font-weight: 800;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 4px;
-}
-
-.modal-actions {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 20px;
-    border-top: 1px solid var(--border);
-    background: #F0EEE8;
-}
-
-.action-group { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
-
-.action-button {
-    border: 1px solid #D4D0C5;
-    background: #fff;
-    color: #444;
-    padding: 9px 12px;
-    font-size: 10px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    transition: .2s ease;
-}
-
-.action-button:hover { border-color: var(--gold); color: var(--gold-dark); }
-.action-button.primary { background: var(--dark); color: white; border-color: var(--dark); }
-.action-button.primary:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
-
-.share-menu { position: relative; }
-
-.share-options {
-    display: none;
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 0;
-    min-width: 180px;
-    padding: 8px;
-    background: white;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    z-index: 20;
-}
-
-.share-options.open { display: grid; gap: 4px; }
-
-.share-options button {
-    background: transparent;
-    border: none;
-    text-align: left;
-    padding: 9px 10px;
-    color: #444;
-    font-size: 11px;
-}
-
-.share-options button:hover { background: var(--soft); }
-.copy-status { color: #557044; font-size: 10px; min-width: 80px; }
-
-/* SEO CONTENT - AVAILABLE IN THE PAGE HTML */
-
-.seo-statements {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: normal;
-}
+/* STATEMENT READER */
+.article-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(15,15,15,.78);backdrop-filter:blur(5px)}
+.article-modal.open{display:flex}
+.modal-panel{width:min(940px,100%);max-height:min(90vh,950px);display:flex;flex-direction:column;background:#F9F8F4;border:1px solid rgba(255,255,255,.35);box-shadow:0 25px 90px rgba(0,0,0,.35);overflow:hidden;animation:modalAppear .22s ease-out}
+@keyframes modalAppear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.modal-topbar{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 22px;background:#252525;color:white}
+.modal-brand{font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:1.4px}
+.modal-close{width:38px;height:38px;display:grid;place-items:center;border:1px solid #666;background:transparent;color:white;font-size:23px;line-height:1;transition:background .2s}
+.modal-close:hover{background:#555}
+.modal-scroll{overflow-y:auto;overscroll-behavior:contain}
+.modal-article{max-width:790px;margin:auto;padding:30px 35px 38px}
+.modal-article h1{font-family:'Cinzel',serif;font-size:clamp(25px,4vw,39px);line-height:1.35;margin-bottom:13px;color:var(--ink)}
+.modal-article .article-meta{color:#888;font-size:10px;margin-bottom:18px;letter-spacing:.7px}
+.modal-article .article-intro{font-size:15px;font-weight:500;color:#454545;margin-bottom:20px}
+.modal-article p{color:#555;font-size:13px;line-height:1.9;margin-bottom:17px}
+.modal-article h2{font-family:'Cinzel',serif;font-size:19px;margin:25px 0 10px;color:var(--ink)}
+.modal-article .statement-photo{display:block;width:100%;height:auto;max-height:none;object-fit:contain;margin:20px auto 25px;background:#E8E5DD}
+.modal-article .statement-photo.trophy-photo{max-height:470px;object-fit:contain}
+.modal-article .article-signoff{margin-top:30px;padding-top:20px;border-top:1px solid var(--border);font-family:'Cinzel',serif;color:var(--ink)}
+.modal-actions{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-top:1px solid var(--border);background:#F0EEE8}
+.action-group{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.action-button{border:1px solid #D4D0C5;background:#fff;color:#444;padding:9px 12px;font-size:10px;font-weight:700;display:inline-flex;align-items:center;gap:7px;transition:.2s}
+.action-button:hover{border-color:var(--gold);color:var(--gold-dark)}
+.action-button.primary{background:var(--dark);color:white;border-color:var(--dark)}
+.action-button.primary:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+.share-menu{position:relative}
+.share-options{display:none;position:absolute;bottom:calc(100% + 10px);left:0;min-width:180px;padding:8px;background:white;border:1px solid var(--border);box-shadow:var(--shadow);z-index:20}
+.share-options.open{display:grid;gap:4px}
+.share-options button{background:transparent;border:none;text-align:left;padding:9px 10px;color:#444;font-size:11px}
+.share-options button:hover{background:var(--soft)}
+.copy-status{color:#557044;font-size:10px;min-width:80px}
 
 /* GOOGLE TRANSLATE */
-
-#google_translate_element {
-    position: fixed !important;
-    left: -10000px !important;
-    top: 0 !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-.goog-te-banner-frame,
-.goog-te-balloon-frame,
-#goog-gt-tt,
-.goog-te-gadget-icon,
-.goog-logo-link { display: none !important; }
-
-.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
-body { top: 0 !important; }
+#google_translate_element{position:fixed!important;left:-10000px!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+.goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.goog-te-gadget-icon,.goog-logo-link{display:none!important}
+.goog-text-highlight{background:transparent!important;box-shadow:none!important}
+body{top:0!important}
 
 /* RESPONSIVE */
-
-@media (max-width: 950px) {
-    .header-inner { flex-direction: column; gap: 12px; }
-    .main-nav { justify-content: center; }
-    .news-grid { grid-template-columns: repeat(2, 1fr); }
+@media(max-width:950px){
+.header-inner{flex-direction:column;gap:12px}
+.main-nav{justify-content:center}
+.news-grid{grid-template-columns:repeat(2,1fr)}
 }
-
-@media (max-width: 650px) {
-    .header-inner { padding: 13px 15px; }
-    .main-nav { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; gap: 3px 7px; }
-    .main-nav a { justify-content: center; font-size: 9px; }
-    #languageSwitcher { grid-column: 1 / -1; justify-self: center; width: 155px; margin-top: 5px; }
-    .page-container { padding: 42px 15px 60px; }
-    .page-heading { margin-bottom: 35px; }
-    .page-heading h1 { letter-spacing: 1.5px; }
-    .section-heading h2 { font-size: 16px; }
-    .section-heading span { font-size: 8px; text-align: right; }
-    .featured-card { grid-template-columns: 1fr; }
-    .featured-image, .featured-image img { min-height: 230px; height: 230px; }
-    .featured-content { padding: 25px; }
-    .news-grid { grid-template-columns: 1fr; gap: 15px; }
-    .news-tools { align-items: stretch; }
-    .category-list { display: grid; grid-template-columns: repeat(2, 1fr); }
-    .category-button { width: 100%; }
-    .search-box { width: 100%; }
-    .publication-grid { grid-template-columns: 1fr; }
-    .publication-card { padding: 25px; }
-    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 18px; }
-    .footer-bottom { flex-direction: column; text-align: center; }
-    .article-modal { padding: 0; align-items: stretch; }
-    .modal-panel { width: 100%; max-height: 100%; height: 100%; border: none; }
-    .modal-topbar { padding: 12px 15px; }
-    .modal-article { padding: 22px 18px 30px; }
-    .modal-article .story-image { max-height: 260px; }
-    .modal-actions { padding: 10px; align-items: flex-start; }
-    .action-group { gap: 5px; }
-    .action-button { padding: 9px; font-size: 9px; }
+@media(max-width:650px){
+.header-inner{padding:13px 15px}
+.main-nav{display:grid;grid-template-columns:repeat(3,1fr);width:100%;gap:3px 7px}
+.main-nav a{justify-content:center;font-size:9px}
+#languageSwitcher{grid-column:1/-1;justify-self:center;width:155px;margin-top:5px}
+.page-container{padding:42px 15px 60px}
+.page-heading{margin-bottom:35px}
+.page-heading h1{letter-spacing:1.5px}
+.section-heading h2{font-size:16px}
+.section-heading span{font-size:8px;text-align:right}
+.featured-card{grid-template-columns:1fr}
+.featured-image{min-height:230px}
+.featured-image img{min-height:230px;height:auto;max-height:330px}
+.featured-content{padding:25px}
+.news-grid{grid-template-columns:1fr;gap:15px}
+.news-tools{align-items:stretch}
+.category-list{display:grid;grid-template-columns:repeat(2,1fr)}
+.category-button{width:100%}
+.search-box{width:100%}
+.resource-grid{grid-template-columns:1fr}
+.resource-card{padding:25px}
+.footer-grid{grid-template-columns:repeat(2,1fr);gap:28px 18px}
+.footer-bottom{flex-direction:column;text-align:center}
+.press-contact{grid-template-columns:1fr;padding:32px 23px}
+.press-contact-button{justify-self:start;white-space:normal}
+.article-modal{padding:0;align-items:stretch}
+.modal-panel{width:100%;max-height:100%;height:100%;border:none}
+.modal-topbar{padding:12px 15px}
+.modal-article{padding:22px 18px 30px}
+.modal-actions{padding:10px;align-items:flex-start}
+.action-group{gap:5px}
+.action-button{padding:9px;font-size:9px}
 }
-
-@media (max-width: 380px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .modal-actions { flex-direction: column; }
+@media(max-width:380px){
+.footer-grid{grid-template-columns:1fr 1fr}
+.modal-actions{flex-direction:column}
 }
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-    }
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
 /* PRINT */
-
-@media print {
-    body { background: white !important; color: black !important; }
-    body * { visibility: hidden !important; }
-    .article-modal, .article-modal * { visibility: visible !important; }
-    .article-modal {
-        display: block !important;
-        position: absolute !important;
-        inset: 0 !important;
-        padding: 0 !important;
-        background: white !important;
-    }
-    .modal-panel {
-        width: 100% !important;
-        max-height: none !important;
-        height: auto !important;
-        border: none !important;
-        box-shadow: none !important;
-        overflow: visible !important;
-    }
-    .modal-topbar, .modal-actions, .modal-close { display: none !important; }
-    .modal-scroll { overflow: visible !important; }
-    .modal-article { max-width: 100% !important; padding: 0 !important; }
-    .modal-article p, .modal-article h1, .modal-article h2, .modal-article li { color: black !important; }
-    .modal-article .story-image { max-height: 400px; }
+@media print{
+body{background:white!important;color:black!important}
+body *{visibility:hidden!important}
+.article-modal,.article-modal *{visibility:visible!important}
+.article-modal{display:block!important;position:absolute!important;inset:0!important;padding:0!important;background:white!important}
+.modal-panel{width:100%!important;max-height:none!important;height:auto!important;border:none!important;box-shadow:none!important;overflow:visible!important}
+.modal-topbar,.modal-actions,.modal-close{display:none!important}
+.modal-scroll{overflow:visible!important}
+.modal-article{max-width:100%!important;padding:0!important}
+.modal-article p,.modal-article h1,.modal-article h2{color:black!important}
+.modal-article .statement-photo{max-height:none!important}
 }
 
-/* RESPONSIVE AND TRANSLATION PROTECTION */
-
-html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: clip !important;
+/* MOBILE AND TRANSLATION PROTECTION */
+html,body{width:100%!important;max-width:100%!important;overflow-x:clip!important}
+body{position:relative;left:auto!important;right:auto!important;margin-top:0!important;transform:none!important}
+iframe.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.goog-te-menu-frame,.goog-te-menu-frame,.goog-te-balloon-frame,#goog-gt-tt,.goog-tooltip,.goog-tooltip:hover{max-width:100vw!important}
+iframe.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate{display:none!important;visibility:hidden!important;height:0!important;width:0!important;pointer-events:none!important}
+.goog-te-menu-frame{max-width:calc(100vw - 20px)!important;max-height:calc(100vh - 30px)!important}
+.goog-te-menu2{max-width:calc(100vw - 20px)!important;max-height:calc(100vh - 40px)!important;overflow:auto!important}
+.goog-te-menu-frame.skiptranslate{z-index:99999!important}
+.goog-te-spinner-pos,.goog-te-spinner{max-width:100vw!important}
+body>.skiptranslate,body>.goog-te-spinner-pos{position:fixed!important;left:-10000px!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important}
+#google_translate_element,#google_translate_element *{max-width:100%!important}
+.site-header,.header-inner,.main-nav,.page-container,.content-section,.featured-card,.news-tools,.news-grid,.resource-grid,.footer-inner,.footer-grid{min-width:0;max-width:100%}
+.main-nav a,.brand-name,.section-heading h2,.section-heading span,.featured-content h2,.news-card h3,.resource-card h3{overflow-wrap:anywhere}
+.article-modal{width:100%;max-width:100vw;overflow:hidden;overscroll-behavior:contain}
+.modal-panel,.modal-scroll,.modal-article{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.modal-article img{max-width:100%;height:auto}
+@media(max-width:650px){
+html,body{width:100%!important;max-width:100%!important;overflow-x:clip!important}
+.header-inner,.main-nav,.page-container,.page-heading,.section-heading,.news-tools,.featured-content,.resource-card,.footer-inner{min-width:0;max-width:100%}
+.main-nav{grid-template-columns:repeat(3,minmax(0,1fr))}
+.main-nav a{min-width:0;overflow-wrap:anywhere;text-align:center}
+.category-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.category-button{min-width:0;overflow-wrap:anywhere}
+.modal-panel{width:100%;max-width:100%;min-width:0}
+.modal-actions,.action-group{min-width:0;max-width:100%}
+.share-options{max-width:calc(100vw - 30px)}
+.goog-te-menu-frame{left:10px!important;right:10px!important;width:auto!important;max-width:calc(100vw - 20px)!important}
 }
-
-body {
-    position: relative;
-    left: auto !important;
-    right: auto !important;
-    margin-top: 0 !important;
-    transform: none !important;
-}
-
-iframe.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate,
-iframe.goog-te-menu-frame,
-.goog-te-menu-frame,
-.goog-te-balloon-frame,
-#goog-gt-tt,
-.goog-tooltip,
-.goog-tooltip:hover { max-width: 100vw !important; }
-
-iframe.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    pointer-events: none !important;
-}
-
-.goog-te-menu-frame { max-width: calc(100vw - 20px) !important; max-height: calc(100vh - 30px) !important; }
-.goog-te-menu2 { max-width: calc(100vw - 20px) !important; max-height: calc(100vh - 40px) !important; overflow: auto !important; }
-.goog-te-menu-frame.skiptranslate { z-index: 99999 !important; }
-.goog-te-spinner-pos, .goog-te-spinner { max-width: 100vw !important; }
-
-body > .skiptranslate,
-body > .goog-te-spinner-pos {
-    position: fixed !important;
-    left: -10000px !important;
-    top: 0 !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important;
-}
-
-#google_translate_element, #google_translate_element * { max-width: 100% !important; }
-
-.site-header, .header-inner, .main-nav, .page-container, .content-section,
-.featured-card, .news-tools, .news-grid, .publication-grid,
-.footer-inner, .footer-grid {
-    min-width: 0;
-    max-width: 100%;
-}
-
-.main-nav a, .brand-name, .section-heading h2, .section-heading span,
-.featured-content h2, .news-card h3, .publication-card h2 {
-    overflow-wrap: anywhere;
-}
-
-.article-modal {
-    width: 100%;
-    max-width: 100vw;
-    overflow: hidden;
-    overscroll-behavior: contain;
-}
-
-.modal-panel { min-width: 0; max-width: 100%; }
-.modal-scroll, .modal-article { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
-.modal-article img { max-width: 100%; height: auto; }
-
-@media (max-width: 650px) {
-    html, body { width: 100% !important; max-width: 100% !important; overflow-x: clip !important; }
-    .header-inner, .main-nav, .page-container, .page-heading,
-    .section-heading, .news-tools, .featured-content,
-    .publication-card, .footer-inner { min-width: 0; max-width: 100%; }
-    .main-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .main-nav a { min-width: 0; overflow-wrap: anywhere; text-align: center; }
-    .category-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .category-button { min-width: 0; overflow-wrap: anywhere; }
-    .modal-panel { width: 100%; max-width: 100%; min-width: 0; }
-    .modal-actions, .action-group { min-width: 0; max-width: 100%; }
-    .share-options { max-width: calc(100vw - 30px); }
-    .goog-te-menu-frame { left: 10px !important; right: 10px !important; width: auto !important; max-width: calc(100vw - 20px) !important; }
-}
-
-@media (max-width: 380px) {
-    .brand-name { font-size: 11px; letter-spacing: 1px; }
-    .section-heading { align-items: flex-start; }
-    .section-heading h2 { font-size: 14px; }
-    .section-heading span { max-width: 42%; overflow-wrap: anywhere; }
-    .modal-article { padding-left: 15px; padding-right: 15px; }
+@media(max-width:380px){
+.brand-name{font-size:11px;letter-spacing:1px}
+.section-heading{align-items:flex-start}
+.section-heading h2{font-size:14px}
+.section-heading span{max-width:42%;overflow-wrap:anywhere}
+.modal-article{padding-left:15px;padding-right:15px}
 }
 </style>
 </head>
 
 <body>
-
 <div class="site-background"></div>
 
 <header class="site-header">
     <div class="header-inner">
-
         <a href="/" class="brand" aria-label="PHRINUSOMYIS homepage">
             <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
             <span class="brand-name">PHRINUSOMYIS™</span>
@@ -1077,7 +473,7 @@ body > .goog-te-spinner-pos {
             <a href="/">Home</a>
             <a href="/news">News</a>
             <a href="/events">Events</a>
-            <a href="/press" class="active" aria-current="page">Press</a>
+            <a href="/press" class="active" aria-current="page">Press &amp; Media</a>
             <a href="/luxury">Luxury</a>
 
             <select id="languageSwitcher" aria-label="Select language">
@@ -1104,72 +500,67 @@ body > .goog-te-spinner-pos {
                 <option value="da">Dansk (DA)</option>
             </select>
         </nav>
-
     </div>
 </header>
 
 <main class="page-container">
 
+    <!-- OFFICIAL PRESSROOM -->
     <section class="page-heading">
-        <div class="eyebrow">Official Statements &amp; Institutional Communications</div>
-        <h1>PHRINUSOMYIS PRESS</h1>
+        <div class="eyebrow">Official Communications</div>
+        <h1>PHRINUSOMYIS™ Press</h1>
         <p>
-            Official statements, sporting recognition, institutional perspectives
-            and formal communications from PHRINUSOMYIS™.
+            Official statements, institutional announcements and
+            sporting perspectives from PHRINUSOMYIS™.
+            The official source for press and media communications.
         </p>
     </section>
 
     <!-- FEATURED PRESS STATEMENT -->
-
     <section class="content-section">
         <div class="section-heading">
-            <h2>Featured Statement</h2>
-            <span>Sporting Recognition</span>
+            <h2>Featured Press Statement</h2>
+            <span>Official Recognition</span>
         </div>
 
         <article class="featured-card">
-
             <div class="featured-image">
                 <img
                     src="/ballon-dor-trophy-2026.jpg"
-                    alt="Ballon d’Or trophy 2026"
+                    alt="Ballon d’Or trophy"
                     fetchpriority="high">
             </div>
 
             <div class="featured-content">
-                <div class="story-category">Official Sporting Recognition</div>
-
+                <div class="story-category">Official Statement · Football</div>
+                <div class="story-date">26 October 2026</div>
                 <h2>Recognising Excellence at the Highest Level of Football</h2>
-
                 <p>
-                    PHRINUSOMYIS™ recognises the achievements honoured at
-                    the 2026 Ballon d’Or, celebrating excellence across
-                    men's and women's football.
+                    PHRINUSOMYIS™ recognises the achievements of the
+                    2026 Ballon d’Or winners, Harry Kane and Alexia Putellas.
+                    Two individual honours, one celebration of excellence
+                    in the world of football.
                 </p>
-
-                <button class="read-link" type="button" data-open-article="harry-kane-ballon-dor-2026">
+                <button class="read-link" type="button" data-open-article="harry-kane">
                     Read Men's Statement <span aria-hidden="true">→</span>
                 </button>
             </div>
-
         </article>
     </section>
 
-    <!-- OFFICIAL PRESS STATEMENTS -->
-
-    <section class="content-section" id="press-statements">
-
+    <!-- OFFICIAL PRESS STATEMENT ARCHIVE -->
+    <section class="content-section" id="press-archive">
         <div class="section-heading">
             <h2>Official Press Statements</h2>
             <span id="results-count">2 Statements</span>
         </div>
 
         <div class="news-tools">
-
             <div class="category-list" aria-label="Filter press statements">
                 <button class="category-button active" data-category="All">All Statements</button>
-                <button class="category-button" data-category="Sporting Recognition">Sporting Recognition</button>
-                <button class="category-button" data-category="Official Statements">Official Statements</button>
+                <button class="category-button" data-category="Football">Football</button>
+                <button class="category-button" data-category="Official Recognition">Official Recognition</button>
+                <button class="category-button" data-category="Institutional">Institutional</button>
             </div>
 
             <div class="search-box">
@@ -1179,150 +570,88 @@ body > .goog-te-spinner-pos {
                     placeholder="Search press statements..."
                     aria-label="Search press statements">
             </div>
-
         </div>
 
         <div class="news-grid" id="pressGrid"></div>
-
         <div class="pagination" id="pagination"></div>
-
         <p class="archive-note" id="archiveNote">
-            Official PHRINUSOMYIS™ press communications.
+            Browse official PHRINUSOMYIS™ press statements.
         </p>
-
     </section>
 
-    <!-- OFFICIAL PUBLICATIONS -->
-
-    <section class="content-section">
-
+    <!-- MEDIA RESOURCES AND PUBLICATIONS -->
+    <section class="content-section" id="media-resources">
         <div class="section-heading">
-            <h2>Official Publications</h2>
-            <span>Explore More</span>
+            <h2>Media Resources &amp; Publications</h2>
+            <span>Official Publications</span>
         </div>
 
-        <div class="publication-grid">
-
-            <article class="publication-card">
+        <div class="resource-grid">
+            <article class="resource-card">
                 <div class="story-category">Official Announcements</div>
-                <h2>PHRINUSOMYIS™ Newswire</h2>
+                <h3>PHRINUSOMYIS™ Newswire</h3>
                 <p>
-                    Read official organizational announcements and
-                    complete institutional publications.
+                    Access organizational announcements and complete
+                    institutional publications through the official Newswire.
                 </p>
-                <a
-                    href="https://phrinusomyis.com/newswire/news"
-                    class="read-link"
-                    target="_blank"
-                    rel="noopener">
+                <a href="https://phrinusomyis.com/newswire/news"
+                   class="read-link" target="_blank" rel="noopener">
                     Visit Newswire <span aria-hidden="true">→</span>
                 </a>
             </article>
 
-            <article class="publication-card">
+            <article class="resource-card">
                 <div class="story-category">Editorial Publication</div>
-                <h2>PHRINUSOMYIS™ Magazine</h2>
+                <h3>PHRINUSOMYIS™ Magazine</h3>
                 <p>
                     Explore editorial features, long-form stories,
                     interviews and photographic publications.
                 </p>
-                <a
-                    href="https://phrinusomyis.com/magazine/news"
-                    class="read-link"
-                    target="_blank"
-                    rel="noopener">
+                <a href="https://phrinusomyis.com/magazine/news"
+                   class="read-link" target="_blank" rel="noopener">
                     Visit Magazine <span aria-hidden="true">→</span>
                 </a>
             </article>
-
         </div>
+    </section>
 
+    <!-- PRESS AND MEDIA CONTACT -->
+    <section class="content-section" id="press-contact">
+        <div class="press-contact">
+            <div>
+                <div class="eyebrow">Official Media Contact</div>
+                <h2>Press &amp; Media Enquiries</h2>
+                <p>
+                    For press enquiries, media correspondence and
+                    official communications, contact the PHRINUSOMYIS™
+                    Press Office.
+                </p>
+            </div>
+
+            <a
+                class="press-contact-button"
+                href="mailto:pres@phrinusomyis.com?subject=Press%20and%20Media%20Enquiry"
+                aria-label="Contact the PHRINUSOMYIS Press Office by email">
+
+                <!-- Envelope icon -->
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <path d="m3 7 9 6 9-6"></path>
+                </svg>
+
+                <span>press.organization.com</span>
+            </a>
+        </div>
     </section>
 
 </main>
 
-<!-- CRAWLABLE STATEMENT CONTENT -->
-
-<div class="seo-statements" aria-hidden="true">
-
-    <article id="seo-harry-kane">
-        <h2>PHRINUSOMYIS™ Congratulates Harry Kane, 2026 Men's Ballon d’Or Winner</h2>
-        <p>26 October 2026. Official PHRINUSOMYIS™ press statement.</p>
-        <img src="/harry-kane-2026.jpg" alt="Harry Kane">
-        <p>
-            Every generation of sport produces moments that become part of its history.
-            Records are challenged, standards are raised, and achievements give the
-            world new reasons to celebrate the power of competition.
-        </p>
-        <p>
-            In football, individual excellence is often measured within a team game.
-            Behind every remarkable season are demanding contests, difficult moments,
-            consistency and the determination to deliver when expectations are highest.
-            Recognition at the highest level therefore represents more than a single
-            performance; it reflects excellence sustained across a season.
-        </p>
-        <p>
-            The Ballon d’Or holds a distinctive place in the history of football.
-            It recognises achievement at the highest level of the game and gives
-            particular recognition to performances that leave a lasting mark on
-            a season.
-        </p>
-        <p>
-            PHRINUSOMYIS™ congratulates Harry Kane on receiving the 2026 Men's
-            Ballon d’Or. The achievement represents a significant moment in his
-            sporting journey and recognises the quality, consistency and competitive
-            contribution demonstrated throughout the season.
-        </p>
-        <p>
-            The highest honours in sport are earned through performance.
-            They become part of the game's history and add another chapter
-            to the continuing story of football.
-        </p>
-    </article>
-
-    <article id="seo-alexia-putellas">
-        <h2>PHRINUSOMYIS™ Congratulates Alexia Putellas, 2026 Women's Ballon d’Or Winner</h2>
-        <p>26 October 2026. Official PHRINUSOMYIS™ press statement.</p>
-        <img src="/alexia-putellas-2026.jpg" alt="Alexia Putellas">
-        <p>
-            The history of sport is shaped by performances that move beyond
-            the result of a single contest. Across generations, the athletes
-            who reach the highest level are recognised for the standards they
-            establish, the consistency they demonstrate and the influence
-            of their achievements on the game.
-        </p>
-        <p>
-            Women's football has continued to produce remarkable competition,
-            exceptional technical quality and defining sporting moments.
-            Its development is reflected in the performances of athletes
-            who compete at the highest level and contribute to the history
-            of the game.
-        </p>
-        <p>
-            The Ballon d’Or is one of football's most distinguished individual
-            honours. Its recognition reflects achievement across a season
-            and acknowledges excellence within the wider story of the sport.
-        </p>
-        <p>
-            PHRINUSOMYIS™ congratulates Alexia Putellas on receiving the
-            2026 Women's Ballon d’Or. The honour recognises her sporting
-            achievement and the quality, commitment and competitive
-            excellence represented by her performances.
-        </p>
-        <p>
-            Every major sporting honour becomes part of a larger history.
-            This recognition adds another important moment to the continuing
-            story of women's football.
-        </p>
-    </article>
-
-</div>
-
 <!-- FOOTER -->
-
 <footer class="site-footer">
     <div class="footer-inner">
-
         <div class="footer-grid">
 
             <div class="footer-section">
@@ -1330,7 +659,7 @@ body > .goog-te-spinner-pos {
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/news">News</a></li>
-                    <li><a href="/press">Press</a></li>
+                    <li><a href="/press">Press &amp; Media</a></li>
                     <li><a href="/events">Events</a></li>
                 </ul>
             </div>
@@ -1370,30 +699,17 @@ body > .goog-te-spinner-pos {
             <p>© PHRINUSOMYIS™. All Rights Reserved.</p>
             <p class="footer-slogan">COMMANDING THE WORLD STAGE™</p>
         </div>
-
     </div>
 </footer>
 
-<!-- ARTICLE READER MODAL -->
-
+<!-- FULL STATEMENT READER -->
 <div class="article-modal" id="articleModal" aria-hidden="true">
-
-    <div
-        class="modal-panel"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalTitle">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
 
         <div class="modal-topbar">
             <div class="modal-brand">PHRINUSOMYIS™ PRESS</div>
-
-            <button
-                class="modal-close"
-                id="closeArticle"
-                type="button"
-                aria-label="Close press statement">
-                ×
-            </button>
+            <button class="modal-close" id="closeArticle" type="button"
+                    aria-label="Close statement">×</button>
         </div>
 
         <div class="modal-scroll">
@@ -1401,18 +717,12 @@ body > .goog-te-spinner-pos {
         </div>
 
         <div class="modal-actions">
-
             <div class="action-group">
-
-                <button class="action-button" id="printArticle" type="button">
-                    Print
-                </button>
+                <button class="action-button" id="printArticle" type="button">Print</button>
 
                 <div class="share-menu">
-
-                    <button class="action-button primary" id="shareToggle" type="button" aria-expanded="false">
-                        Share
-                    </button>
+                    <button class="action-button primary" id="shareToggle"
+                            type="button" aria-expanded="false">Share</button>
 
                     <div class="share-options" id="shareOptions">
                         <button type="button" data-share="whatsapp">WhatsApp</button>
@@ -1422,150 +732,143 @@ body > .goog-te-spinner-pos {
                         <button type="button" data-share="telegram">Telegram</button>
                         <button type="button" data-share="email">Email</button>
                     </div>
-
                 </div>
 
-                <button class="action-button" id="copyArticleLink" type="button">
-                    Copy Link
-                </button>
-
+                <button class="action-button" id="copyArticleLink" type="button">Copy Link</button>
                 <span class="copy-status" id="copyStatus" aria-live="polite"></span>
-
             </div>
 
-            <button class="action-button" id="closeArticleBottom" type="button">
-                Close
-            </button>
-
+            <button class="action-button" id="closeArticleBottom" type="button">Close</button>
         </div>
-
     </div>
 </div>
 
 <div id="google_translate_element"></div>
 
 <script>
-
 /*
  * PHRINUSOMYIS™ PRESS
- * Official press statements and institutional communications.
- * Each statement opens in the existing modal reader.
- * Each statement has its own shareable URL.
+ * Official press statement archive and article reader.
+ * Statements open within the existing /press page.
+ * Shareable addresses use #press=statement-id.
  */
 
-/* IMAGE PATHS */
-
-const PRESS_IMAGES = {
-    trophy: "/ballon-dor-trophy-2026.jpg",
-    harry: "/harry-kane-2026.jpg",
-    alexia: "/alexia-putellas-2026.jpg"
-};
-
-/* PUBLICATION DESTINATIONS */
+const PRESS_BASE_URL = "https://phrinusomyis.com/press";
 
 const NEWSWIRE_URL = "https://phrinusomyis.com/newswire/news";
 const MAGAZINE_URL = "https://phrinusomyis.com/magazine/news";
 
 /*
- * Each statement URL uses the /press/ path.
- * The hosting platform must serve this same Press HTML page
- * for these two nested URLs if direct path access is required.
+ * The two photographs below are loaded from the image files
+ * uploaded to the website root.
+ *
+ * The full image proportions are preserved in the statement reader.
  */
 
-const PRESS_BASE_URL = "https://phrinusomyis.com/press/";
-
 const pressArticles = [
-
     {
-        id: "harry-kane-ballon-dor-2026",
-        slug: "harry-kane-2026-mens-ballon-dor-winner",
+        id: "harry-kane",
+        slug: "harry-kane-2026-mens-ballon-dor",
         title: "PHRINUSOMYIS™ Congratulates Harry Kane, 2026 Men's Ballon d’Or Winner",
-        category: "Sporting Recognition",
+        category: "Football",
+        secondaryCategory: "Official Recognition",
         date: "26 October 2026",
-        image: PRESS_IMAGES.harry,
+        image: "/harry-kane-2026.jpg",
+        cardImage: "/ballon-dor-trophy-2026.jpg",
         imageAlt: "Harry Kane",
-        cardImage: PRESS_IMAGES.trophy,
         description:
-            "PHRINUSOMYIS™ congratulates Harry Kane on receiving the 2026 Men's Ballon d’Or, recognising his achievement at the highest level of football.",
+            "PHRINUSOMYIS™ recognises Harry Kane following his achievement as the 2026 Men's Ballon d’Or winner.",
         intro:
             "Every generation of sport produces moments that become part of its history. Records are challenged, standards are raised, and achievements give the world new reasons to celebrate the power of competition.",
         paragraphs: [
-            "In football, individual excellence is often measured within a team game. Behind every remarkable season are demanding contests, difficult moments, consistency and the determination to deliver when expectations are highest. Recognition at the highest level therefore represents more than a single performance; it reflects excellence sustained across a season.",
-            "The Ballon d’Or holds a distinctive place in the history of football. It recognises achievement at the highest level of the game and gives particular recognition to performances that leave a lasting mark on a season.",
-            "PHRINUSOMYIS™ congratulates Harry Kane on receiving the 2026 Men's Ballon d’Or. The achievement represents a significant moment in his sporting journey and recognises the quality, consistency and competitive contribution demonstrated throughout the season.",
-            "The highest honours in sport are earned through performance. They become part of the game's history and add another chapter to the continuing story of football."
-        ]
+            "In football, individual excellence is often measured within a team game. Behind every remarkable season are demanding contests, difficult moments, consistency and the determination to deliver when expectations are highest. Recognition at the highest level therefore represents more than a single performance; it reflects excellence sustained across an entire season.",
+            "The Ballon d’Or remains one of football's most recognised individual honours. Its presentation provides an occasion to acknowledge the players whose performances have made a lasting impression on the sport and its worldwide audience.",
+            "Harry Kane's recognition as the 2026 Men's Ballon d’Or winner marks a significant achievement in his football career. The honour places his season among the performances recognised at the highest level of the game.",
+            "Great sporting achievements are never defined by talent alone. They are shaped by discipline, preparation, resilience and the ability to perform when the demands of competition are at their greatest. These qualities remain central to the meaning of excellence in sport.",
+            "PHRINUSOMYIS™ congratulates Harry Kane on receiving the 2026 Men's Ballon d’Or. The organization recognizes this achievement and the dedication, commitment and competitive excellence represented by the honour.",
+            "Sport advances through remarkable performances and the individuals whose achievements become part of its continuing history. This year's recognition adds another chapter to that story."
+        ],
+        closing:
+            "PHRINUSOMYIS™ recognizes the achievement and congratulates Harry Kane on this distinguished sporting honour."
     },
 
     {
-        id: "alexia-putellas-ballon-dor-2026",
-        slug: "alexia-putellas-2026-womens-ballon-dor-winner",
+        id: "alexia-putellas",
+        slug: "alexia-putellas-2026-womens-ballon-dor",
         title: "PHRINUSOMYIS™ Congratulates Alexia Putellas, 2026 Women's Ballon d’Or Winner",
-        category: "Sporting Recognition",
+        category: "Football",
+        secondaryCategory: "Official Recognition",
         date: "26 October 2026",
-        image: PRESS_IMAGES.alexia,
+        image: "/alexia-putellas-2026.jpg",
+        cardImage: "/alexia-putellas-2026.jpg",
         imageAlt: "Alexia Putellas",
-        cardImage: PRESS_IMAGES.trophy,
         description:
-            "PHRINUSOMYIS™ congratulates Alexia Putellas on receiving the 2026 Women's Ballon d’Or, recognising her achievement and excellence in women's football.",
+            "PHRINUSOMYIS™ recognises Alexia Putellas following her achievement as the 2026 Women's Ballon d’Or winner.",
         intro:
-            "The history of sport is shaped by performances that move beyond the result of a single contest. Across generations, the athletes who reach the highest level are recognised for the standards they establish, the consistency they demonstrate and the influence of their achievements on the game.",
+            "Sporting history is written through performances that leave a mark beyond the final result. It is shaped by ability, determination, consistency and the courage to meet the demands of competition.",
         paragraphs: [
-            "Women's football has continued to produce remarkable competition, exceptional technical quality and defining sporting moments. Its development is reflected in the performances of athletes who compete at the highest level and contribute to the history of the game.",
-            "The Ballon d’Or is one of football's most distinguished individual honours. Its recognition reflects achievement across a season and acknowledges excellence within the wider story of the sport.",
-            "PHRINUSOMYIS™ congratulates Alexia Putellas on receiving the 2026 Women's Ballon d’Or. The honour recognises her sporting achievement and the quality, commitment and competitive excellence represented by her performances.",
-            "Every major sporting honour becomes part of a larger history. This recognition adds another important moment to the continuing story of women's football."
-        ]
+            "Football is a team sport, yet its history also recognises individuals whose performances distinguish an era, influence the game and set standards for those who follow. Individual recognition carries significance because it reflects the demands of an entire season and the effort required to perform at the highest level.",
+            "The Ballon d’Or is among football's most recognised individual honours. The award provides a moment to acknowledge excellence and the contribution of players whose work has helped shape the sporting conversation around the world.",
+            "Alexia Putellas's recognition as the 2026 Women's Ballon d’Or winner is a significant achievement. It represents a moment of recognition within the continuing history of women's football and the remarkable standards of performance demonstrated in the modern game.",
+            "Excellence in sport is built over time. It requires preparation, discipline, resilience and the ability to respond to pressure. The achievements recognised at the highest level are the result of sustained commitment to the demands of competition.",
+            "PHRINUSOMYIS™ congratulates Alexia Putellas on receiving the 2026 Women's Ballon d’Or. The organization recognizes this achievement and the sporting excellence represented by this distinguished honour.",
+            "Every generation contributes to the history of football. Through individual achievements and collective progress, the game continues to create new standards, new memories and new reasons for audiences around the world to celebrate."
+        ],
+        closing:
+            "PHRINUSOMYIS™ recognizes the achievement and congratulates Alexia Putellas on this distinguished sporting honour."
     }
-
 ];
 
-/* SETTINGS */
 
+/* ARCHIVE SETTINGS */
 const ARTICLES_PER_PAGE = 6;
 let currentPage = 1;
 let activeCategory = "All";
 let searchTerm = "";
 let currentArticle = null;
 
-/* PERMANENT STATEMENT LINKS */
 
+/* SAFE HTML TEXT */
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[character]);
+}
+
+
+/* PERMANENT SHAREABLE LINKS */
 function articleUrl(article) {
-    return PRESS_BASE_URL + article.slug;
+    return PRESS_BASE_URL + "#press=" + encodeURIComponent(article.id);
 }
 
-function getArticleFromPath() {
-    const path = window.location.pathname.replace(/\/+$/, "");
-    return pressArticles.find(article => {
-        return path === "/press/" + article.slug;
-    });
-}
 
-/* FILTERING */
-
+/* FILTER ARCHIVE */
 function getFilteredArticles() {
     return pressArticles.filter(article => {
-
         const categoryMatch =
             activeCategory === "All" ||
-            article.category === activeCategory;
+            article.category === activeCategory ||
+            article.secondaryCategory === activeCategory;
 
-        const searchContent = (
+        const searchable = (
             article.title + " " +
             article.description + " " +
-            article.category
+            article.category + " " +
+            article.secondaryCategory + " " +
+            article.date
         ).toLowerCase();
 
-        const searchMatch = searchContent.includes(searchTerm.toLowerCase());
-
-        return categoryMatch && searchMatch;
+        return categoryMatch && searchable.includes(searchTerm.toLowerCase());
     });
 }
 
-/* BUILD PRESS CARDS */
 
+/* RENDER PRESS STATEMENT CARDS */
 function renderPress() {
-
     const grid = document.getElementById("pressGrid");
     const pagination = document.getElementById("pagination");
     const resultsCount = document.getElementById("results-count");
@@ -1574,16 +877,13 @@ function renderPress() {
     const filtered = getFilteredArticles();
     const totalPages = Math.ceil(filtered.length / ARTICLES_PER_PAGE);
 
-    if (currentPage > totalPages) {
-        currentPage = Math.max(1, totalPages);
-    }
+    currentPage = Math.min(currentPage, Math.max(1, totalPages));
 
     const start = (currentPage - 1) * ARTICLES_PER_PAGE;
     const visible = filtered.slice(start, start + ARTICLES_PER_PAGE);
 
     grid.innerHTML = "";
     pagination.innerHTML = "";
-
     resultsCount.textContent = filtered.length + " Statements";
 
     if (!visible.length) {
@@ -1591,14 +891,12 @@ function renderPress() {
             <div class="empty-state">
                 No press statements match your search.
                 Try another keyword or category.
-            </div>
-        `;
+            </div>`;
         archiveNote.textContent = "No matching statements.";
         return;
     }
 
     visible.forEach(article => {
-
         const card = document.createElement("article");
         card.className = "news-card";
 
@@ -1607,8 +905,12 @@ function renderPress() {
 
         const image = document.createElement("img");
         image.src = article.cardImage;
-        image.alt = "Ballon d’Or trophy 2026";
+        image.alt = article.imageAlt;
         image.loading = "lazy";
+        image.onerror = () => {
+            image.onerror = null;
+            image.src = "/ballon-dor-trophy-2026.jpg";
+        };
 
         imageFrame.appendChild(image);
 
@@ -1617,7 +919,7 @@ function renderPress() {
 
         const category = document.createElement("div");
         category.className = "story-category";
-        category.textContent = article.category;
+        category.textContent = article.secondaryCategory;
 
         const date = document.createElement("div");
         date.className = "story-date";
@@ -1629,13 +931,13 @@ function renderPress() {
         const description = document.createElement("p");
         description.textContent = article.description;
 
-        const readButton = document.createElement("button");
-        readButton.type = "button";
-        readButton.className = "read-link";
-        readButton.textContent = "Read Statement →";
-        readButton.dataset.openArticle = article.id;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "read-link";
+        button.dataset.openArticle = article.id;
+        button.textContent = "Read Statement →";
 
-        content.append(category, date, title, description, readButton);
+        content.append(category, date, title, description, button);
         card.append(imageFrame, content);
         grid.appendChild(card);
     });
@@ -1643,32 +945,27 @@ function renderPress() {
     archiveNote.textContent =
         "Showing " + (start + 1) + "–" +
         (start + visible.length) + " of " +
-        filtered.length + " official statements.";
+        filtered.length + " statements.";
 
     renderPagination(totalPages);
 }
 
+
 /* PAGINATION */
-
 function renderPagination(totalPages) {
-
     const pagination = document.getElementById("pagination");
-
     if (totalPages <= 1) return;
 
     const previous = document.createElement("button");
     previous.textContent = "Previous";
     previous.disabled = currentPage === 1;
-
     previous.addEventListener("click", () => {
         currentPage--;
         renderPress();
     });
-
     pagination.appendChild(previous);
 
     for (let page = 1; page <= totalPages; page++) {
-
         const button = document.createElement("button");
         button.textContent = page;
 
@@ -1680,8 +977,7 @@ function renderPagination(totalPages) {
         button.addEventListener("click", () => {
             currentPage = page;
             renderPress();
-
-            document.getElementById("press-statements").scrollIntoView({
+            document.getElementById("press-archive").scrollIntoView({
                 behavior: "smooth"
             });
         });
@@ -1692,78 +988,77 @@ function renderPagination(totalPages) {
     const next = document.createElement("button");
     next.textContent = "Next";
     next.disabled = currentPage === totalPages;
-
     next.addEventListener("click", () => {
         currentPage++;
         renderPress();
     });
-
     pagination.appendChild(next);
 }
 
-/* FILTER BUTTONS */
 
+/* CATEGORY FILTERS */
 document.querySelectorAll(".category-button").forEach(button => {
-
     button.addEventListener("click", () => {
-
         document.querySelectorAll(".category-button").forEach(item => {
             item.classList.remove("active");
         });
 
         button.classList.add("active");
-
         activeCategory = button.dataset.category;
         currentPage = 1;
-
         renderPress();
     });
-
 });
 
-/* SEARCH */
 
+/* SEARCH */
 document.getElementById("pressSearch").addEventListener("input", event => {
     searchTerm = event.target.value.trim();
     currentPage = 1;
     renderPress();
 });
 
-/* ARTICLE MODAL */
 
+/* ARTICLE READER */
 const articleModal = document.getElementById("articleModal");
 const modalArticleContent = document.getElementById("modalArticleContent");
 const modalScroll = document.querySelector(".modal-scroll");
 
 function openArticle(id, updateAddress = true) {
-
     const article = pressArticles.find(item => item.id === id);
     if (!article) return;
 
     currentArticle = article;
 
-    let articleHTML = `
-        <div class="story-category">${article.category}</div>
-        <h1 id="modalTitle">${article.title}</h1>
+    let html = `
+        <div class="story-category">${escapeHTML(article.secondaryCategory)}</div>
+        <h1 id="modalTitle">${escapeHTML(article.title)}</h1>
         <div class="article-meta">
-            PHRINUSOMYIS™ · OFFICIAL PRESS STATEMENT · ${article.date}
+            PHRINUSOMYIS™ · OFFICIAL PRESS STATEMENT · ${escapeHTML(article.date)}
         </div>
-        <img class="story-image" src="${article.image}" alt="${article.imageAlt}">
-        <p class="article-intro">${article.intro}</p>
+        <img
+            class="statement-photo ${article.id === "harry-kane" ? "trophy-photo" : ""}"
+            src="${escapeHTML(article.image)}"
+            alt="${escapeHTML(article.imageAlt)}"
+            onerror="this.onerror=null;this.src='/ballon-dor-trophy-2026.jpg';">
+        <p class="article-intro">${escapeHTML(article.intro)}</p>
     `;
 
     article.paragraphs.forEach(paragraph => {
-        articleHTML += `<p>${paragraph}</p>`;
+        html += `<p>${escapeHTML(paragraph)}</p>`;
     });
 
-    articleHTML += `
-        <p>
-            <strong>PHRINUSOMYIS™</strong><br>
-            COMMANDING THE WORLD STAGE™
-        </p>
+    html += `
+        <div class="article-signoff">
+            <p>${escapeHTML(article.closing)}</p>
+            <p>
+                <strong>PHRINUSOMYIS™</strong><br>
+                COMMANDING THE WORLD STAGE™
+            </p>
+        </div>
     `;
 
-    modalArticleContent.innerHTML = articleHTML;
+    modalArticleContent.innerHTML = html;
 
     articleModal.classList.add("open");
     articleModal.setAttribute("aria-hidden", "false");
@@ -1774,17 +1069,17 @@ function openArticle(id, updateAddress = true) {
 
     if (updateAddress) {
         history.pushState(
-            { article: id },
+            { pressArticle: id },
             "",
-            articleUrl(article)
+            "#press=" + encodeURIComponent(id)
         );
     }
 
     document.getElementById("closeArticle").focus();
 }
 
-function closeArticle(updateAddress = true) {
 
+function closeArticle(updateAddress = true) {
     articleModal.classList.remove("open");
     articleModal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
@@ -1794,37 +1089,25 @@ function closeArticle(updateAddress = true) {
 
     currentArticle = null;
 
-    if (updateAddress && getArticleFromPath()) {
-        history.pushState({}, "", "/press");
+    if (updateAddress && window.location.hash.startsWith("#press=")) {
+        history.pushState({}, "", PRESS_BASE_URL);
     }
 }
 
-/* OPEN ARTICLE BUTTONS */
 
+/* OPEN READER */
 document.addEventListener("click", event => {
-
     const trigger = event.target.closest("[data-open-article]");
-
-    if (trigger) {
-        openArticle(trigger.dataset.openArticle);
-    }
-
+    if (trigger) openArticle(trigger.dataset.openArticle);
 });
 
-/* CLOSE CONTROLS */
 
-document.getElementById("closeArticle").addEventListener("click", () => {
-    closeArticle();
-});
-
-document.getElementById("closeArticleBottom").addEventListener("click", () => {
-    closeArticle();
-});
+/* CLOSE READER */
+document.getElementById("closeArticle").addEventListener("click", () => closeArticle());
+document.getElementById("closeArticleBottom").addEventListener("click", () => closeArticle());
 
 articleModal.addEventListener("click", event => {
-    if (event.target === articleModal) {
-        closeArticle();
-    }
+    if (event.target === articleModal) closeArticle();
 });
 
 document.addEventListener("keydown", event => {
@@ -1833,33 +1116,36 @@ document.addEventListener("keydown", event => {
     }
 });
 
-/* DEEP LINKS AND BROWSER HISTORY */
 
-function readArticleAddress() {
+/* DIRECT STATEMENT LINKS AND BROWSER BACK/FORWARD */
+function readPressHash() {
+    const match = window.location.hash.match(/^#press=(.+)$/);
 
-    const article = getArticleFromPath();
-
-    if (article) {
-        openArticle(article.id, false);
+    if (match) {
+        let id;
+        try {
+            id = decodeURIComponent(match[1]);
+        } catch (error) {
+            return;
+        }
+        openArticle(id, false);
     } else if (articleModal.classList.contains("open")) {
         closeArticle(false);
     }
 }
 
-window.addEventListener("popstate", readArticleAddress);
+window.addEventListener("popstate", readPressHash);
+window.addEventListener("hashchange", readPressHash);
+
 
 /* PRINT */
-
 document.getElementById("printArticle").addEventListener("click", () => {
-    if (currentArticle) {
-        window.print();
-    }
+    if (currentArticle) window.print();
 });
 
-/* COPY PERMANENT STATEMENT LINK */
 
+/* COPY STATEMENT LINK */
 async function copyArticleLink() {
-
     if (!currentArticle) return;
 
     const link = articleUrl(currentArticle);
@@ -1869,49 +1155,41 @@ async function copyArticleLink() {
         await navigator.clipboard.writeText(link);
         status.textContent = "Link copied";
     } catch (error) {
-
         const temporary = document.createElement("textarea");
         temporary.value = link;
         temporary.style.position = "fixed";
         temporary.style.opacity = "0";
-
         document.body.appendChild(temporary);
         temporary.select();
 
         const copied = document.execCommand("copy");
         temporary.remove();
-
         status.textContent = copied ? "Link copied" : "Copy unavailable";
     }
 }
 
 document.getElementById("copyArticleLink").addEventListener("click", copyArticleLink);
 
-/* SHARE MENU */
 
+/* SHARE MENU */
 const shareToggle = document.getElementById("shareToggle");
 const shareOptions = document.getElementById("shareOptions");
 
 shareToggle.addEventListener("click", () => {
-
     const isOpen = shareOptions.classList.toggle("open");
-
     shareToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
 document.querySelectorAll("[data-share]").forEach(button => {
-
     button.addEventListener("click", () => {
-
         if (!currentArticle) return;
 
         const url = articleUrl(currentArticle);
         const title = currentArticle.title;
-
         const encodedUrl = encodeURIComponent(url);
         const encodedTitle = encodeURIComponent(title);
 
-        const shareTargets = {
+        const targets = {
             whatsapp: "https://wa.me/?text=" + encodedTitle + "%20" + encodedUrl,
             facebook: "https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl,
             x: "https://twitter.com/intent/tweet?text=" + encodedTitle + "&url=" + encodedUrl,
@@ -1920,59 +1198,34 @@ document.querySelectorAll("[data-share]").forEach(button => {
             email: "mailto:?subject=" + encodedTitle + "&body=" + encodedUrl
         };
 
-        const target = shareTargets[button.dataset.share];
+        const target = targets[button.dataset.share];
 
         if (target) {
-            window.open(
-                target,
-                "_blank",
-                "noopener,noreferrer,width=700,height=600"
-            );
+            if (target.startsWith("mailto:")) {
+                window.location.href = target;
+            } else {
+                window.open(target, "_blank", "noopener,noreferrer,width=700,height=600");
+            }
         }
 
         shareOptions.classList.remove("open");
         shareToggle.setAttribute("aria-expanded", "false");
     });
-
 });
 
-/* WEB SHARE API */
-
-if (navigator.share) {
-    shareToggle.addEventListener("contextmenu", async event => {
-        event.preventDefault();
-
-        if (!currentArticle) return;
-
-        try {
-            await navigator.share({
-                title: currentArticle.title,
-                text: currentArticle.description,
-                url: articleUrl(currentArticle)
-            });
-        } catch (error) {
-            // Sharing cancelled by the visitor.
-        }
-    });
-}
 
 /* STRUCTURED DATA */
-
 function generateStructuredData() {
-
-    const baseUrl = "https://phrinusomyis.com";
-
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "PHRINUSOMYIS™ Press",
-        "url": baseUrl + "/press",
-        "description":
-            "Official statements, sporting recognition, institutional perspectives and formal communications from PHRINUSOMYIS™.",
+        "url": PRESS_BASE_URL,
+        "description": "Official press statements and media communications from PHRINUSOMYIS™.",
         "publisher": {
             "@type": "Organization",
             "name": "PHRINUSOMYIS™",
-            "url": baseUrl
+            "url": "https://phrinusomyis.com"
         },
         "mainEntity": {
             "@type": "ItemList",
@@ -1990,46 +1243,17 @@ function generateStructuredData() {
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(structuredData);
     document.head.appendChild(script);
-
-    pressArticles.forEach(article => {
-
-        const statementData = {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": article.title,
-            "description": article.description,
-            "image": "https://phrinusomyis.com" + article.image,
-            "datePublished": "2026-10-26",
-            "dateModified": "2026-10-26",
-            "mainEntityOfPage": articleUrl(article),
-            "author": {
-                "@type": "Organization",
-                "name": "PHRINUSOMYIS™"
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "PHRINUSOMYIS™",
-                "url": baseUrl
-            }
-        };
-
-        const articleScript = document.createElement("script");
-        articleScript.type = "application/ld+json";
-        articleScript.textContent = JSON.stringify(statementData);
-        document.head.appendChild(articleScript);
-    });
 }
 
-/* INITIALIZE */
 
+/* INITIALIZE PAGE */
 renderPress();
 generateStructuredData();
-readArticleAddress();
+readPressHash();
+
 
 /* GOOGLE TRANSLATE */
-
 function googleTranslateElementInit() {
-
     new google.translate.TranslateElement(
         {
             pageLanguage: "en",
@@ -2046,14 +1270,12 @@ function googleTranslateElementInit() {
         const selector = document.getElementById("languageSwitcher");
         selector.value = savedLanguage;
 
-        setTimeout(() => {
-            changeLanguage(savedLanguage);
-        }, 1200);
+        setTimeout(() => changeLanguage(savedLanguage), 1200);
     }
 }
 
-function changeLanguage(language) {
 
+function changeLanguage(language) {
     if (language === "en") {
         localStorage.setItem("site_lang", "en");
         location.reload();
@@ -2069,10 +1291,10 @@ function changeLanguage(language) {
     }
 }
 
+
 document.getElementById("languageSwitcher").addEventListener("change", function() {
     changeLanguage(this.value);
 });
-
 </script>
 
 <script
