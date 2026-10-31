@@ -162,10 +162,31 @@
     #google_translate_element .goog-logo-link,
     #google_translate_element .goog-te-gadget span {
         display: none !important;
-    }
+    }  
+    /* Hide the unwanted Google Translate banner */
+      .goog-te-banner-frame,
+      iframe.skiptranslate,
+      body > .skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+  /* Keep the Google Translate engine initialized */
+    #google_translate_element {
+     position: absolute !important;
+     left: -9999px !important;
+     width: 1px !important;
+     height: 1px !important;
+     overflow: hidden !important;
+  }
+
+    /* Keep the webpage at the top */
+       body {
+         top: 0 !important;
+   }
     /* LANGUAGE SELECTOR */
 
-    .language-bar {
+     .language-bar {
         position: absolute;
         top: 25px;
         right: 25px;
