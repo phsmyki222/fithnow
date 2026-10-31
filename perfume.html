@@ -119,9 +119,7 @@ nav{
 
 .nav-menu a:hover{color:var(--gold)}
 
-.nav-edition{
-    color:var(--gold)!important;
-}
+.nav-edition{color:var(--gold)!important}
 
 .menu-toggle{
     display:none;
@@ -133,7 +131,7 @@ nav{
     font-size:19px;
 }
 
-/* HERO AND VIDEO */
+/* HERO AND FIRST VIDEO */
 
 .hero-section{
     position:relative;
@@ -531,6 +529,41 @@ nav{
     top:3px;
 }
 
+/* SECOND VIDEO SCENE */
+
+.video-scene{
+    position:relative;
+    width:100%;
+    height:65vh;
+    min-height:400px;
+    max-height:800px;
+    overflow:hidden;
+    background:#000;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+}
+
+.scene-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.42);
+}
+
+.scene-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.65)
+    );
+    pointer-events:none;
+}
+
 /* ORDER */
 
 .order-section{
@@ -596,9 +629,7 @@ nav{
     outline:none;
 }
 
-.size-select:focus{
-    border-color:var(--gold);
-}
+.size-select:focus{border-color:var(--gold)}
 
 .order-price{
     color:var(--gold);
@@ -726,7 +757,6 @@ footer{
 }
 
 .footer-section ul{list-style:none}
-
 .footer-section li{margin-bottom:14px}
 
 .footer-section a{
@@ -776,7 +806,6 @@ footer{
 
     .brand img{max-width:145px;max-height:40px}
     .logo-fallback{font-size:10px;letter-spacing:3px}
-
     .menu-toggle{display:block}
 
     .nav-menu{
@@ -828,6 +857,10 @@ footer{
     .experience-content{text-align:center}
     .experience-content h2{font-size:26px;letter-spacing:5px}
     .detail-list{text-align:left}
+    .video-scene{
+        height:48vh;
+        min-height:280px;
+    }
     .order-box{padding:45px 22px}
     .order-box h2{letter-spacing:4px}
     .order-buttons{flex-direction:column}
@@ -846,7 +879,6 @@ footer{
 <!-- NAVIGATION -->
 <nav>
     <a href="/" class="brand" aria-label="PHRINUSOMYIS Home">
-        <!-- Replace this filename with the exact company logo image filename. -->
         <img
             src="phrinusomyis-logo.png"
             alt="PHRINUSOMYIS"
@@ -869,10 +901,17 @@ footer{
     </div>
 </nav>
 
-<!-- HERO VIDEO -->
+<!-- FIRST VIDEO: HERO -->
 <section class="hero-section" id="home">
 
-    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <video
+        class="hero-video"
+        id="firstVideo"
+        autoplay
+        muted
+        playsinline
+        preload="auto"
+    >
         <source src="perfume-series-luxury.mp4" type="video/mp4">
     </video>
 
@@ -1082,6 +1121,23 @@ footer{
     </div>
 </section>
 
+<!-- SECOND VIDEO: PLAYS AFTER THE FIRST VIDEO -->
+<section class="video-scene" id="secondVideoScene" aria-label="PHRINUSOMYIS Fragrance video presentation">
+
+    <video
+        class="scene-video"
+        id="secondVideo"
+        muted
+        playsinline
+        preload="auto"
+    >
+        <source src="perfume-series-luxury.mp4" type="video/mp4">
+    </video>
+
+    <div class="scene-overlay"></div>
+
+</section>
+
 <!-- ORDER SECTION -->
 <section class="order-section" id="order">
 
@@ -1283,6 +1339,62 @@ function updateOrderLinks(){
 
 bottleSize.addEventListener("change", updateOrderLinks);
 updateOrderLinks();
+
+/* SEQUENTIAL VIDEO PLAYBACK */
+
+const firstVideo = document.getElementById("firstVideo");
+const secondVideo = document.getElementById("secondVideo");
+const secondVideoScene = document.getElementById("secondVideoScene");
+
+let firstVideoFinished = false;
+let secondVideoStarted = false;
+let secondSceneVisible = false;
+
+/* Start the second video only after the first has ended
+   and the second video section is visible. */
+
+function tryStartSecondVideo(){
+    if(
+        firstVideoFinished &&
+        secondSceneVisible &&
+        !secondVideoStarted
+    ){
+        secondVideoStarted = true;
+        secondVideo.currentTime = 0;
+
+        secondVideo.play().catch(error => {
+            console.warn("Second video autoplay was blocked:", error);
+        });
+    }
+}
+
+/* First video plays once. */
+
+firstVideo.addEventListener("ended", function(){
+    firstVideoFinished = true;
+    tryStartSecondVideo();
+});
+
+/* Detect when the lower video section enters the screen. */
+
+const videoObserver = new IntersectionObserver(function(entries){
+    entries.forEach(entry => {
+        secondSceneVisible = entry.isIntersecting;
+        tryStartSecondVideo();
+    });
+},{
+    threshold:0.15
+});
+
+videoObserver.observe(secondVideoScene);
+
+/* Attempt to start the opening video on page load. */
+
+window.addEventListener("load", function(){
+    firstVideo.play().catch(error => {
+        console.warn("First video autoplay was blocked:", error);
+    });
+});
 
 /* MOBILE NAVIGATION */
 
