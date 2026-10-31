@@ -99,7 +99,17 @@
         pointer-events: none !important;
     }
 
-    
+     /* PREVENT TOP SPACING AND PAGE PUSH-DOWN */
+    html,
+    body,
+    html.translated-ltr,
+    html.translated-rtl,
+    body.translated-ltr,
+    body.translated-rtl {
+        top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
 
     /* HIDE THE BANNER CONTAINER, NOT THE LANGUAGE SELECTOR */
     body > .skiptranslate,
@@ -586,8 +596,6 @@
 
 <body>
 
-    <!-- GOOGLE TRANSLATE -->
-    <div id="google_translate_element"></div>
 
         <!-- LANGUAGE SELECTOR -->
     <div class="language-bar">
