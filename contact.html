@@ -65,364 +65,627 @@
   }
 }
 </script>
+<script>
+/* ==========================================
+   PHRINUSOMYIS™ CONTACT PAGE
+   GOOGLE TRANSLATE — 21 LANGUAGES
+========================================== */
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const languageSelector = document.getElementById('siteLanguage');
+    const languageStorageKey = 'site_lang';
+
+    function applyLanguage(language) {
+        if (!language) return;
+
+        const googleCombo = document.querySelector('.goog-te-combo');
+
+        if (googleCombo) {
+            googleCombo.value = language;
+            googleCombo.dispatchEvent(new Event('change'));
+        }
+    }
+
+    if (languageSelector) {
+        const savedLanguage = localStorage.getItem(languageStorageKey);
+
+        if (savedLanguage) {
+            languageSelector.value = savedLanguage;
+        }
+
+        languageSelector.addEventListener('change', function () {
+            const selectedLanguage = this.value;
+
+            localStorage.setItem(languageStorageKey, selectedLanguage);
+            applyLanguage(selectedLanguage);
+        });
+    }
+
+    const menuButton = document.querySelector('.mobile-menu-button');
+    const navigation = document.querySelector('.main-navigation');
+
+    if (menuButton && navigation) {
+        menuButton.addEventListener('click', function () {
+            const isOpen = navigation.classList.toggle('navigation-open');
+            this.setAttribute('aria-expanded', isOpen);
+        });
+    }
+
+});
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async>
+</script>
+
 <style>
+/* ==========================================
+   PHRINUSOMYIS™ CONTACT PAGE DESIGN
+========================================== */
+
 :root {
-    --background: #151d29;
-    --surface: #202c3b;
-    --surface-light: #293849;
-    --border: #3b4b5e;
-    --white: #ffffff;
-    --muted: #c3ccd7;
-    --accent: #91a9c3;
+    --contact-bg: #303943;
+    --contact-panel: #3b4652;
+    --contact-panel-light: #465361;
+    --contact-dark: #27313b;
+    --contact-white: #ffffff;
+    --contact-muted: #d3dae1;
+    --contact-accent: #a9bdcf;
+    --contact-border: rgba(255,255,255,.13);
 }
 
-* {
+.contact-page,
+.contact-page * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background:
-        radial-gradient(ellipse at top, #29394b 0%, transparent 55%),
-        linear-gradient(135deg, #1c2735, #111923 70%);
-    color: var(--white);
+.contact-page {
+    width: 100%;
+    overflow: hidden;
+    background: var(--contact-bg);
+    color: var(--contact-white);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
-    line-height: 1.7;
 }
 
-a {
+.contact-page a {
     color: inherit;
-    font-weight: 700;
     text-decoration: none;
 }
 
-.container {
-    width: min(1120px, 90%);
-    margin: auto;
+.contact-page a:hover {
+    color: var(--contact-accent);
 }
 
 /* HEADER */
 
-.site-header {
-    padding: 24px 5%;
-    border-bottom: 1px solid var(--border);
-    background: rgba(17, 25, 35, 0.85);
+.contact-header {
+    width: 100%;
+    background: var(--contact-dark);
+    border-bottom: 1px solid var(--contact-border);
+    position: relative;
+    z-index: 1000;
 }
 
 .header-inner {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
+    padding: 17px 25px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 25px;
-    flex-wrap: wrap;
 }
 
-.brand {
-    font-size: 16px;
-    letter-spacing: 2px;
-    font-weight: 900;
+.company-logo img {
+    width: 165px;
+    height: auto;
+    max-height: 65px;
+    object-fit: contain;
+    display: block;
 }
 
-.header-nav {
+.main-navigation {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
     flex-wrap: wrap;
-    gap: 25px;
 }
 
-.header-nav a {
-    color: var(--muted);
+.main-navigation a {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    transition: color .2s ease;
+}
+
+.main-navigation a:hover {
+    color: var(--contact-accent);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* LANGUAGE SELECTOR */
+
+.language-control {
+    position: relative;
+    z-index: 2000;
+}
+
+.language-control select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #465361;
+    border: 1px solid rgba(255,255,255,.25);
+    color: #ffffff;
+    padding: 11px 35px 11px 13px;
+    border-radius: 5px;
     font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color .25s ease;
+    font-weight: 800;
+    cursor: pointer;
+    outline: none;
+    max-width: 150px;
 }
 
-.header-nav a:hover {
-    color: var(--white);
+.language-control::after {
+    content: "⌄";
+    position: absolute;
+    right: 12px;
+    top: 7px;
+    color: #ffffff;
+    pointer-events: none;
+    font-size: 17px;
+}
+
+.language-control select option {
+    background: #303943;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* GOOGLE TRANSLATE INTERFACE */
+
+#google_translate_element {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.goog-te-gadget {
+    font-size: 0 !important;
+}
+
+.goog-te-gadget span,
+.goog-te-gadget img {
+    display: none !important;
+}
+
+.skiptranslate {
+    font-size: 0 !important;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu-button {
+    display: none;
+    border: 1px solid var(--contact-border);
+    background: var(--contact-panel);
+    color: white;
+    padding: 9px 13px;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
 }
 
 /* HERO */
 
-.hero {
+.contact-hero {
+    max-width: 1150px;
+    margin: auto;
+    padding: 85px 25px 55px;
     text-align: center;
-    padding: 105px 20px 85px;
-    border-bottom: 1px solid var(--border);
 }
 
-.hero h1 {
-    font-size: clamp(34px, 6vw, 58px);
-    font-weight: 900;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-
-.hero p {
-    color: var(--accent);
+.contact-hero .eyebrow {
+    color: var(--contact-accent);
     font-size: 12px;
+    font-weight: 900;
     letter-spacing: 4px;
     text-transform: uppercase;
-    margin-top: 17px;
+    margin-bottom: 17px;
 }
 
-/* SECTION HEADINGS */
-
-.section {
-    padding: 75px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.section-heading {
-    margin-bottom: 32px;
-}
-
-.section-heading h2 {
-    font-size: 22px;
+.contact-hero h1 {
+    font-size: clamp(38px, 6vw, 66px);
+    line-height: 1.05;
     font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    margin: 0 0 20px;
+    letter-spacing: -1.5px;
 }
 
-.section-heading p {
-    color: var(--muted);
-    font-size: 13px;
-    margin-top: 8px;
+.contact-hero p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--contact-muted);
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 700;
 }
 
-/* GENERAL CONTACT */
+/* MAIN CONTENT */
+
+.contact-container {
+    max-width: 1120px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+/* GENERAL CORRESPONDENCE */
 
 .general-contact {
-    background: linear-gradient(120deg, #263649, #202c3b);
-    border: 1px solid var(--border);
+    background: var(--contact-panel);
+    border: 1px solid var(--contact-border);
+    border-radius: 10px;
     padding: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 65px;
 }
 
-.general-contact h3 {
-    font-size: 17px;
+.section-label {
+    color: var(--contact-accent);
+    font-size: 11px;
     font-weight: 900;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+.general-contact h2 {
+    font-size: 27px;
+    font-weight: 900;
+    margin: 0 0 12px;
 }
 
 .general-contact p {
-    color: var(--muted);
-    font-size: 13px;
-    margin-top: 5px;
+    color: var(--contact-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 700;
+    max-width: 650px;
+    margin: 0 auto 20px;
 }
 
-.email-link {
-    color: var(--white);
-    font-size: clamp(15px, 3vw, 20px);
+.general-email {
+    display: inline-block;
+    font-size: clamp(18px, 3vw, 25px);
     font-weight: 900;
-    border-bottom: 2px solid var(--accent);
+    color: #ffffff !important;
+    border-bottom: 2px solid var(--contact-accent);
     padding-bottom: 5px;
     overflow-wrap: anywhere;
 }
 
-.email-link:hover {
-    color: var(--accent);
+/* DEPARTMENT DIRECTORY */
+
+.contact-section {
+    margin-bottom: 75px;
 }
 
-/* DEPARTMENT CONTACTS */
+.contact-section-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.contact-section-heading h2 {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 0 0 12px;
+}
+
+.contact-section-heading p {
+    color: var(--contact-muted);
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 700;
+}
 
 .department-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
 .department-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 25px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    transition: background .25s, transform .25s;
+    background: var(--contact-panel);
+    border: 1px solid var(--contact-border);
+    border-radius: 9px;
+    padding: 27px;
+    min-height: 210px;
+    transition: background .2s ease, transform .2s ease;
 }
 
 .department-card:hover {
-    background: var(--surface-light);
+    background: var(--contact-panel-light);
     transform: translateY(-3px);
 }
 
+.department-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background: #536170;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 19px;
+    color: #ffffff;
+}
+
+.department-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
 .department-card h3 {
-    font-size: 14px;
+    font-size: 19px;
     font-weight: 900;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    margin: 0 0 12px;
 }
 
 .department-card p {
-    color: var(--muted);
-    font-size: 12px;
-    margin-top: 5px;
+    color: var(--contact-muted);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.8;
+    margin: 0 0 19px;
 }
 
-.department-arrow {
-    font-size: 22px;
-    color: var(--accent);
+.department-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 900;
+    color: #ffffff !important;
+    border-bottom: 1px solid var(--contact-accent);
+    padding-bottom: 5px;
 }
 
 /* NEWSWIRE AND MAGAZINE */
 
+.platform-section {
+    margin-bottom: 75px;
+}
+
 .platform-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .platform-card {
-    min-height: 210px;
+    background: var(--contact-panel);
+    border: 1px solid var(--contact-border);
+    border-radius: 9px;
     padding: 35px;
-    background: linear-gradient(145deg, #30445a, #202c3b);
-    border: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform .25s, background .25s;
+    transition: background .2s ease;
 }
 
 .platform-card:hover {
-    transform: translateY(-5px);
-    background: linear-gradient(145deg, #3b536c, #263649);
+    background: var(--contact-panel-light);
 }
 
-.platform-card .platform-label {
-    color: var(--accent);
-    font-size: 10px;
+.platform-number {
+    color: var(--contact-accent);
+    font-size: 11px;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 20px;
 }
 
 .platform-card h3 {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 900;
-    letter-spacing: 2px;
-    margin: 15px 0;
-    text-transform: uppercase;
+    margin: 0 0 13px;
 }
 
 .platform-card p {
-    color: var(--muted);
-    font-size: 13px;
+    color: var(--contact-muted);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+    min-height: 55px;
+    margin: 0 0 25px;
 }
 
-.platform-action {
-    margin-top: 25px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.platform-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #d9e1e9;
+    color: #27313b !important;
+    padding: 13px 19px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    transition: background .2s ease;
+}
+
+.platform-button:hover {
+    background: #ffffff;
+    color: #27313b !important;
 }
 
 /* SOCIAL MEDIA */
 
-.social-panel {
+.social-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #394550;
+    border-top: 1px solid var(--contact-border);
+    border-bottom: 1px solid var(--contact-border);
+    margin-bottom: 65px;
+}
+
+.social-section h2 {
+    font-size: 26px;
+    font-weight: 900;
+    margin: 0 0 12px;
+}
+
+.social-section p {
+    color: var(--contact-muted);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 30px;
+}
+
+.social-icons {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 15px;
 }
 
 .social-link {
-    border: 1px solid var(--border);
-    background: var(--surface);
-    padding: 13px 22px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    transition: background .25s;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4b5865;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 50%;
+    color: #ffffff !important;
+    transition: background .2s ease, transform .2s ease;
 }
 
 .social-link:hover {
-    background: var(--surface-light);
+    background: #647586;
+    transform: translateY(-4px);
 }
 
-/* HEADQUARTERS */
-
-.address-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
+.social-link svg {
+    width: 23px;
+    height: 23px;
 }
 
-.address-card h3 {
-    font-size: 19px;
+/* OFFICE ADDRESS */
+
+.office-section {
+    max-width: 1120px;
+    margin: 0 auto 75px;
+    padding: 0 25px;
+}
+
+.office-section h2 {
+    font-size: 26px;
     font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    margin: 0 0 20px;
 }
 
-.address-card p {
-    color: var(--muted);
-    font-size: 13px;
-    margin-top: 8px;
+.office-address {
+    color: var(--contact-muted);
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 800;
 }
 
-.map-link {
-    display: inline-block;
-    padding: 13px 22px;
-    border: 1px solid var(--accent);
-    color: var(--white);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: background .25s;
+.office-address strong {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 900;
 }
 
-.map-link:hover {
-    background: var(--surface-light);
-}
+/* FOOTER NAVIGATION */
 
-/* FOOTER */
-
-.footer {
-    background: #111923;
-    padding: 55px 5% 30px;
-    border-top: 1px solid var(--border);
+.contact-bottom-navigation {
+    background: #27313b;
+    border-top: 1px solid var(--contact-border);
+    padding: 55px 25px 35px;
 }
 
 .footer-inner {
-    max-width: 1120px;
+    max-width: 1150px;
     margin: auto;
 }
 
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--border);
+.footer-logo {
+    margin-bottom: 35px;
 }
 
-.footer-links a {
-    color: var(--muted);
+.footer-logo img {
+    width: 155px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.footer-groups {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.footer-group h3 {
+    color: var(--contact-accent);
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0 0 18px;
 }
 
-.footer-links a:hover {
-    color: var(--white);
+.footer-group a {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 13px;
+    transition: color .2s ease;
+}
+
+.footer-group a:hover {
+    color: var(--contact-accent);
 }
 
 .footer-bottom {
+    border-top: 1px solid var(--contact-border);
+    margin-top: 40px;
     padding-top: 25px;
     display: flex;
     justify-content: space-between;
@@ -431,31 +694,93 @@ a {
     gap: 15px;
 }
 
-.footer-bottom p {
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.footer-slogan {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
-/* RESPONSIVE */
+.footer-copyright {
+    color: var(--contact-muted);
+    font-size: 11px;
+    font-weight: 800;
+}
 
-@media (max-width: 700px) {
-    .hero {
-        padding: 75px 18px 65px;
-    }
+/* RESPONSIVE DESIGN */
 
-    .hero h1 {
-        letter-spacing: 3px;
-    }
-
+@media (max-width: 950px) {
     .header-inner {
+        flex-wrap: wrap;
+    }
+
+    .main-navigation {
+        order: 3;
+        width: 100%;
+        gap: 17px;
+    }
+
+    .footer-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .header-inner {
+        padding: 15px;
+    }
+
+    .company-logo img {
+        width: 135px;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .main-navigation {
+        display: none;
         flex-direction: column;
         align-items: flex-start;
+        gap: 0;
+        background: #27313b;
+        padding: 12px;
+        border-radius: 7px;
     }
 
-    .header-nav {
-        gap: 15px;
+    .main-navigation.navigation-open {
+        display: flex;
+    }
+
+    .main-navigation a {
+        width: 100%;
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--contact-border);
+    }
+
+    .header-right {
+        margin-left: auto;
+    }
+
+    .language-control select {
+        max-width: 125px;
+        font-size: 11px;
+    }
+
+    .contact-hero {
+        padding: 65px 20px 40px;
+    }
+
+    .contact-hero p {
+        font-size: 14px;
+    }
+
+    .contact-container {
+        padding: 0 17px;
+    }
+
+    .general-contact {
+        padding: 27px 18px;
+        margin-bottom: 50px;
     }
 
     .department-grid,
@@ -463,210 +788,508 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        padding: 55px 0;
+    .department-card {
+        min-height: auto;
     }
 
-    .general-contact,
-    .address-card {
-        padding: 25px;
+    .platform-card p {
+        min-height: auto;
+    }
+
+    .social-section {
+        padding: 40px 15px;
+    }
+
+    .social-icons {
+        gap: 11px;
+    }
+
+    .social-link {
+        width: 47px;
+        height: 47px;
+    }
+
+    .office-section {
+        padding: 0 20px;
+    }
+
+    .footer-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 380px) {
+    .footer-groups {
+        grid-template-columns: 1fr;
     }
 }
 </style>
-</head>
 
-<body>
+<div class="contact-page">
 
-<header class="site-header">
-    <div class="header-inner">
-        <a href="/" class="brand">PHRINUSOMYIS™</a>
+    <!-- HEADER -->
 
-        <nav class="header-nav">
-            <a href="/">Home</a>
-            <a href="/news">News</a>
-            <a href="/events">Events</a>
-            <a href="/press">Press</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </div>
-</header>
+    <header class="contact-header">
+        <div class="header-inner">
 
-<main>
+            <a href="/" class="company-logo" aria-label="PHRINUSOMYIS Home">
+                <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS">
+            </a>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Contact</h1>
-        <p>Official Correspondence & Institutional Enquiries</p>
-    </section>
+            <nav class="main-navigation" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/news">News</a>
+                <a href="/events">Events</a>
+                <a href="/press">Press</a>
+                <a href="/sports">Sports</a>
+                <a href="/sports-theater">Sports Theater</a>
+                <a href="/competitions">Competitions</a>
+                <a href="/media">Media</a>
+                <a href="/contact">Contact</a>
+            </nav>
 
-    <div class="container">
+            <div class="header-right">
 
-        <!-- GENERAL CORRESPONDENCE -->
-        <section class="section">
-            <div class="section-heading">
-                <h2>General Correspondence</h2>
-                <p>For official correspondence with PHRINUSOMYIS™.</p>
-            </div>
-
-            <div class="general-contact">
-                <div>
-                    <h3>Official Email</h3>
-                    <p>General enquiries and institutional correspondence</p>
+                <div class="language-control">
+                    <select id="siteLanguage" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                        <option value="ar">العربية</option>
+                        <option value="zh-CN">中文</option>
+                        <option value="ru">Русский</option>
+                        <option value="pt">Português</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                        <option value="it">Italiano</option>
+                        <option value="nl">Nederlands</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="th">ไทย</option>
+                        <option value="pl">Polski</option>
+                        <option value="sv">Svenska</option>
+                        <option value="fi">Suomi</option>
+                        <option value="da">Dansk</option>
+                    </select>
                 </div>
 
-                <a class="email-link"
+                <button class="mobile-menu-button"
+                        type="button"
+                        aria-expanded="false">
+                    MENU
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <div id="google_translate_element"></div>
+
+    <!-- CONTACT INTRODUCTION -->
+
+    <section class="contact-hero">
+        <div class="eyebrow">PHRINUSOMYIS™</div>
+        <h1>CONTACT</h1>
+        <p>
+            Official contact information and communication channels
+            for PHRINUSOMYIS™.
+        </p>
+    </section>
+
+    <main>
+
+        <div class="contact-container">
+
+            <!-- GENERAL CORRESPONDENCE -->
+
+            <section class="general-contact">
+                <div class="section-label">OFFICIAL COMMUNICATION</div>
+
+                <h2>General Correspondence</h2>
+
+                <p>
+                    For general enquiries, official communications
+                    and correspondence concerning PHRINUSOMYIS™.
+                </p>
+
+                <a class="general-email"
                    href="mailto:info@phrinusomyis.com">
                     info@phrinusomyis.com
                 </a>
-            </div>
-        </section>
+            </section>
 
-        <!-- DEPARTMENT CONTACTS -->
-        <section class="section">
-            <div class="section-heading">
-                <h2>Department Contacts</h2>
-                <p>Select the appropriate department to begin your correspondence.</p>
-            </div>
+            <!-- DEPARTMENT CONTACTS -->
 
-            <div class="department-grid">
+            <section class="contact-section">
 
-                <a class="department-card"
-                   href="mailto:press@phrinusomyis.com">
-                    <div>
-                        <h3>Press & Media</h3>
-                        <p>Media enquiries and press correspondence</p>
-                    </div>
-                    <span class="department-arrow">→</span>
-                </a>
-
-                <a class="department-card"
-                   href="mailto:events@phrinusomyis.com">
-                    <div>
-                        <h3>Events & Competitions</h3>
-                        <p>Events, competitions and participation enquiries</p>
-                    </div>
-                    <span class="department-arrow">→</span>
-                </a>
-
-                <a class="department-card"
-                   href="mailto:partnership@phrinusomyis.com">
-                    <div>
-                        <h3>Partnerships</h3>
-                        <p>Institutional and commercial partnership enquiries</p>
-                    </div>
-                    <span class="department-arrow">→</span>
-                </a>
-
-                <a class="department-card"
-                   href="mailto:job@phrinusomyis.com">
-                    <div>
-                        <h3>Careers & Employment</h3>
-                        <p>Employment and professional opportunities</p>
-                    </div>
-                    <span class="department-arrow">→</span>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- NEWSWIRE AND MAGAZINE -->
-        <section class="section">
-            <div class="section-heading">
-                <h2>PHRINUSOMYIS Platforms</h2>
-                <p>Explore the organization's official publishing platforms.</p>
-            </div>
-
-            <div class="platform-grid">
-
-                <a class="platform-card"
-                   href="https://phrinusomyis.com/newswire/news">
-                    <span class="platform-label">Official Publishing Platform</span>
-                    <div>
-                        <h3>Newswire</h3>
-                        <p>Official news, announcements and organizational updates.</p>
-                    </div>
-                    <span class="platform-action">Visit Newswire →</span>
-                </a>
-
-                <a class="platform-card"
-                   href="https://phrinusomyis.com/magazine/news">
-                    <span class="platform-label">Official Editorial Platform</span>
-                    <div>
-                        <h3>Magazine</h3>
-                        <p>Features, stories, photography and editorial coverage.</p>
-                    </div>
-                    <span class="platform-action">Visit Magazine →</span>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- OFFICIAL SOCIAL MEDIA -->
-        <section class="section">
-            <div class="section-heading">
-                <h2>Official Social Media</h2>
-                <p>Follow PHRINUSOMYIS™ through its official social media channels.</p>
-            </div>
-
-            <div class="social-panel">
-                <!-- Insert verified official account URLs here. -->
-                <!-- Do not publish unverified account links. -->
-            </div>
-        </section>
-
-        <!-- HEADQUARTERS -->
-        <section class="section">
-            <div class="section-heading">
-                <h2>Headquarters</h2>
-                <p>PHRINUSOMYIS™ — United States.</p>
-            </div>
-
-            <div class="address-card">
-                <div>
-                    <h3>Brooklyn</h3>
-                    <p>Brooklyn, New York, United States</p>
-                    <p>Global Headquarters</p>
+                <div class="contact-section-heading">
+                    <div class="section-label">DIRECTORY</div>
+                    <h2>Department Contacts</h2>
+                    <p>
+                        Direct communication with the relevant
+                        departments of PHRINUSOMYIS™.
+                    </p>
                 </div>
 
-                <a class="map-link"
-                   href="https://www.google.com/maps/search/?api=1&query=Brooklyn%2C+New+York%2C+USA"
+                <div class="department-grid">
+
+                    <article class="department-card">
+
+                        <div class="department-icon">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16v16H4z"/>
+                                <path d="M8 8h8M8 12h8M8 16h5"/>
+                            </svg>
+                        </div>
+
+                        <h3>Press &amp; Media</h3>
+
+                        <p>
+                            For journalists, editors, publishers and
+                            media representatives seeking official
+                            information, interviews or press-related
+                            communication.
+                        </p>
+
+                        <a class="department-link"
+                           href="mailto:press@phrinusomyis.com">
+                            Contact Press &amp; Media →
+                        </a>
+
+                    </article>
+
+                    <article class="department-card">
+
+                        <div class="department-icon">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>
+                            </svg>
+                        </div>
+
+                        <h3>Events &amp; Competitions</h3>
+
+                        <p>
+                            For enquiries concerning PHRINUSOMYIS™
+                            competitions, Sports Theater™, event
+                            participation and event-related matters.
+                        </p>
+
+                        <a class="department-link"
+                           href="mailto:events@phrinusomyis.com">
+                            Contact Events &amp; Competitions →
+                        </a>
+
+                    </article>
+
+                    <article class="department-card">
+
+                        <div class="department-icon">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 11a4 4 0 1 0-8 0"/>
+                                <path d="M2 20c0-4 4-6 8-6"/>
+                                <path d="M16 14l2 2 4-4"/>
+                                <path d="M14 20h8"/>
+                            </svg>
+                        </div>
+
+                        <h3>Partnerships</h3>
+
+                        <p>
+                            For organizations, institutions and
+                            commercial entities interested in
+                            establishing partnerships with
+                            PHRINUSOMYIS™.
+                        </p>
+
+                        <a class="department-link"
+                           href="mailto:partnership@phrinusomyis.com">
+                            Contact Partnerships →
+                        </a>
+
+                    </article>
+
+                    <article class="department-card">
+
+                        <div class="department-icon">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="7" width="18" height="14" rx="2"/>
+                                <path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/>
+                            </svg>
+                        </div>
+
+                        <h3>Careers &amp; Employment</h3>
+
+                        <p>
+                            For individuals interested in employment
+                            opportunities, professional roles and
+                            recruitment-related enquiries.
+                        </p>
+
+                        <a class="department-link"
+                           href="mailto:job@phrinusomyis.com">
+                            Contact Careers &amp; Employment →
+                        </a>
+
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- NEWSWIRE AND MAGAZINE -->
+
+            <section class="platform-section">
+
+                <div class="contact-section-heading">
+                    <div class="section-label">OFFICIAL PUBLICATIONS</div>
+                    <h2>Explore Our Platforms</h2>
+                    <p>
+                        Discover official announcements, publications
+                        and editorial coverage from PHRINUSOMYIS™.
+                    </p>
+                </div>
+
+                <div class="platform-grid">
+
+                    <article class="platform-card">
+
+                        <div class="platform-number">01 / NEWS</div>
+
+                        <h3>PHRINUSOMYIS™ NEWSWIRE</h3>
+
+                        <p>
+                            Official organizational announcements,
+                            news releases and statements from
+                            PHRINUSOMYIS™.
+                        </p>
+
+                        <a class="platform-button"
+                           href="https://phrinusomyis.com/newswire/news"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit Newswire <span>→</span>
+                        </a>
+
+                    </article>
+
+                    <article class="platform-card">
+
+                        <div class="platform-number">02 / EDITORIAL</div>
+
+                        <h3>PHRINUSOMYIS™ MAGAZINE</h3>
+
+                        <p>
+                            Editorial features, photography, stories
+                            and publications covering PHRINUSOMYIS™.
+                        </p>
+
+                        <a class="platform-button"
+                           href="https://phrinusomyis.com/magazine/news"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Explore Magazine <span>→</span>
+                        </a>
+
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- OFFICIAL SOCIAL MEDIA -->
+
+        <section class="social-section">
+
+            <div class="section-label">CONNECT WITH US</div>
+
+            <h2>FOLLOW PHRINUSOMYIS™</h2>
+
+            <p>
+                Follow the official channels of PHRINUSOMYIS™.
+            </p>
+
+            <div class="social-icons">
+
+                <a class="social-link"
+                   href="https://www.facebook.com/PHRINUSOMYIS"
                    target="_blank"
-                   rel="noopener noreferrer">
-                    <span aria-hidden="true">📍</span> View Map
+                   rel="noopener noreferrer"
+                   aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                              d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.2H7.6V13h2.7v8h3.2z"/>
+                    </svg>
                 </a>
+
+                <a class="social-link"
+                   href="https://www.instagram.com/PHRINUSOMYIS0"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                    </svg>
+                </a>
+
+                <a class="social-link"
+                   href="https://www.linkedin.com/company/phrinusomyis/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                              d="M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4zM3.3 9h3.8v12H3.3zM9.5 9h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7V21h-3.8v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.5z"/>
+                    </svg>
+                </a>
+
+                <a class="social-link"
+                   href="https://x.com/PHRINUSOMYIS"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                              d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.3-8.4L1.8 2h6.4l4.5 6.8L18.9 2zm-1.1 18h1.7L7.3 3.9H5.5z"/>
+                    </svg>
+                </a>
+
+                <a class="social-link"
+                   href="https://www.youtube.com/@PHRINUSOMYIS"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                              d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.6V8.4l6.2 3.6z"/>
+                    </svg>
+                </a>
+
+                <a class="social-link"
+                   href="https://www.tiktok.com/@PHRINUSOMYIS"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                              d="M19.6 7.2a5.5 5.5 0 0 1-3.4-1.2V15a6.1 6.1 0 1 1-6.1-6.1c.4 0 .8 0 1.2.1v3.4a2.8 2.8 0 1 0 1.9 2.6V2h3.2c.2 2.2 1.6 4 3.6 4.6v.6z"/>
+                    </svg>
+                </a>
+
             </div>
         </section>
 
-    </div>
-</main>
+        <!-- OFFICE ADDRESS -->
 
-<footer class="footer">
-    <div class="footer-inner">
+        <section class="office-section">
 
-        <nav class="footer-links">
-            <a href="/">Home</a>
-            <a href="/news">News</a>
-            <a href="/press">Press</a>
-            <a href="/events">Events</a>
-            <a href="/sports">Sports</a>
-            <a href="/sports-theater">Sports Theater</a>
-            <a href="/competitions">Competitions</a>
-            <a href="/media">Media</a>
-            <a href="https://phrinusomyis.com/newswire/news">Newswire</a>
-            <a href="https://phrinusomyis.com/magazine/news">Magazine</a>
-            <a href="/contact">Contact</a>
-            <a href="/policy">Privacy Policy</a>
-            <a href="/terms">Terms of Use</a>
-            <a href="/copyright">Copyright</a>
-        </nav>
+            <div class="section-label">UNITED STATES</div>
 
-        <div class="footer-bottom">
-            <p>©2026 PHRINUSOMYIS™. All Rights Reserved.</p>
-            <p>COMMANDING THE WORLD STAGE™</p>
+            <h2>Office Address</h2>
+
+            <div class="office-address">
+                <strong>PHRINUSOMYIS™</strong><br>
+                123 Example Street<br>
+                Brooklyn, NY 11201<br>
+                United States
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- BOTTOM NAVIGATION AND FOOTER -->
+
+    <footer class="contact-bottom-navigation">
+
+        <div class="footer-inner">
+
+            <div class="footer-logo">
+                <a href="/">
+                    <img src="/phrinusomyis_logo.png"
+                         alt="PHRINUSOMYIS">
+                </a>
+            </div>
+
+            <div class="footer-groups">
+
+                <div class="footer-group">
+                    <h3>MAIN</h3>
+                    <a href="/">Home</a>
+                    <a href="/news">News</a>
+                    <a href="/press">Press</a>
+                    <a href="/events">Events</a>
+                </div>
+
+                <div class="footer-group">
+                    <h3>SPORTS</h3>
+                    <a href="/sports">Sports</a>
+                    <a href="/sports-theater">Sports Theater™</a>
+                    <a href="/competitions">Competitions</a>
+                    <a href="/media">Media</a>
+                </div>
+
+                <div class="footer-group">
+                    <h3>PUBLICATIONS</h3>
+                    <a href="https://phrinusomyis.com/newswire/news">
+                        Newswire
+                    </a>
+                    <a href="https://phrinusomyis.com/magazine/news">
+                        Magazine
+                    </a>
+                </div>
+
+                <div class="footer-group">
+                    <h3>ORGANIZATION</h3>
+                    <a href="/contact">Contact</a>
+                    <a href="/policy">Policy</a>
+                    <a href="/terms">Terms</a>
+                    <a href="/copyright">Copyright</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/security">Security</a>
+                    <a href="/help">Help</a>
+                    <a href="/cookies">Cookies</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <div class="footer-slogan">
+                    COMMANDING THE WORLD STAGE™
+                </div>
+
+                <div class="footer-copyright">
+                    ©2026 PHRINUSOMYIS™. All Rights Reserved.
+                </div>
+
+            </div>
+
         </div>
 
-    </div>
-</footer>
+    </footer>
+
+</div>
 
 </body>
 </html>
