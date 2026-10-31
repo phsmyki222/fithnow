@@ -1250,10 +1250,31 @@ select:focus-visible {
 
     <div class="topbar-actions">
 
-        <div class="translate-area">
-            <span class="translate-label">Language</span>
-            <div id="google_translate_element"></div>
-        </div>
+   <div id="google_translate_element"></div>
+
+<select id="language-selector" onchange="changeLanguage(this.value)">
+    <option value="en" selected>English</option>
+    <option value="fr">French</option>
+    <option value="es">Spanish</option>
+    <option value="de">German</option>
+    <option value="ar">Arabic</option>
+    <option value="zh-CN">Chinese</option>
+    <option value="ru">Russian</option>
+    <option value="pt">Portuguese</option>
+    <option value="ja">Japanese</option>
+    <option value="ko">Korean</option>
+    <option value="it">Italian</option>
+    <option value="nl">Dutch</option>
+    <option value="tr">Turkish</option>
+    <option value="hi">Hindi</option>
+    <option value="id">Indonesian</option>
+    <option value="vi">Vietnamese</option>
+    <option value="th">Thai</option>
+    <option value="pl">Polish</option>
+    <option value="sv">Swedish</option>
+    <option value="fi">Finnish</option>
+    <option value="da">Danish</option>
+</select>
 
         <details class="top-menu">
             <summary>Explore</summary>
