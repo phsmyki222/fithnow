@@ -2490,7 +2490,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-
 <!-- GOOGLE TRANSLATE -->
 
 <script type="text/javascript">
@@ -2501,11 +2500,76 @@ function googleTranslateElementInit() {
         {
             pageLanguage: "en",
             includedLanguages:
-                "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+                "fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
             autoDisplay: false
         },
         "google_translate_element"
     );
+
+    addEnglishOption();
+
+}
+
+function addEnglishOption() {
+
+    var attempts = 0;
+
+    var timer = setInterval(function () {
+
+        var select = document.querySelector(
+            "#google_translate_element select.goog-te-combo"
+        );
+
+        attempts++;
+
+        if (select) {
+
+            clearInterval(timer);
+
+            var englishOption = document.createElement("option");
+
+            englishOption.value = "en";
+            englishOption.textContent = "English";
+
+            select.insertBefore(
+                englishOption,
+                select.firstChild
+            );
+
+            select.addEventListener("change", function () {
+
+                if (this.value === "en") {
+                    resetToEnglish();
+                }
+
+            });
+
+        }
+
+        if (attempts >= 30) {
+            clearInterval(timer);
+        }
+
+    }, 500);
+
+}
+
+function resetToEnglish() {
+
+    document.cookie =
+        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+    var hostname = window.location.hostname;
+
+    document.cookie =
+        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" +
+        hostname;
+
+    document.cookie =
+        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." +
+        hostname;
+
+    window.location.reload();
 
 }
 
