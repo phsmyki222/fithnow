@@ -37,6 +37,16 @@
   }
 }
     </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PHRINUSOMYIS™ Fragrance. Release of Edition 001. An exclusive fragrance release available directly through PHRINUSOMYIS™.">
+<meta name="theme-color" content="#000000">
+<title>PHRINUSOMYIS™ FRAGRANCE | EDITION 001</title>
+
 <style>
 :root{
     --gold:#D4AF37;
@@ -44,47 +54,20 @@
     --obsidian:#080808;
     --gray:#888;
     --light:#d6d6d6;
-    --border:rgba(212,175,55,.22);
+    --border:rgba(212,175,55,.25);
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
 
 body{
-    background:var(--black);
+    background:#000;
     color:#fff;
     overflow-x:hidden;
     font-family:Arial,sans-serif;
 }
 
 a{color:inherit}
-
-/* VIDEO BACKGROUND */
-
-.video-container{
-    position:fixed;
-    inset:0;
-    z-index:-2;
-    overflow:hidden;
-    background:#000;
-}
-
-.video-container::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(to bottom,rgba(0,0,0,.65),rgba(0,0,0,.94)),
-        radial-gradient(circle at top,rgba(212,175,55,.08),transparent 45%);
-}
-
-.video-container video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:brightness(.42);
-}
 
 /* NAVIGATION */
 
@@ -93,59 +76,113 @@ nav{
     top:0;
     left:0;
     width:100%;
-    padding:28px 6%;
+    min-height:82px;
+    padding:15px 5%;
     display:flex;
+    align-items:center;
     justify-content:space-between;
-    align-items:center;
-    z-index:999;
-    background:linear-gradient(to bottom,rgba(0,0,0,.9),transparent);
-    backdrop-filter:blur(5px);
+    gap:25px;
+    z-index:1000;
+    background:rgba(0,0,0,.94);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(12px);
 }
 
-.logo-text{
-    letter-spacing:7px;
-    font-size:12px;
-    text-transform:uppercase;
-    font-weight:900;
-}
-
-.nav-right{
+.brand{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:12px;
+    text-decoration:none;
+    flex-shrink:0;
 }
 
-.status-dot{
-    width:8px;
-    height:8px;
-    background:var(--gold);
-    border-radius:50%;
-    box-shadow:0 0 15px var(--gold);
+.brand img{
+    display:block;
+    width:auto;
+    max-width:190px;
+    max-height:48px;
+    object-fit:contain;
 }
 
-.edition-label{
-    color:var(--gold);
-    font-size:10px;
-    letter-spacing:3px;
+.logo-fallback{
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:5px;
     text-transform:uppercase;
 }
 
-/* HERO */
+.nav-menu{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:27px;
+}
+
+.nav-menu a{
+    color:#ccc;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:10px;
+    transition:.3s;
+}
+
+.nav-menu a:hover{color:var(--gold)}
+
+.nav-edition{
+    color:var(--gold)!important;
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--border);
+    color:var(--gold);
+    padding:10px 13px;
+    cursor:pointer;
+    font-size:19px;
+}
+
+/* HERO AND VIDEO */
 
 .hero-section{
+    position:relative;
     min-height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
-    padding:150px 8% 100px;
+    padding:145px 8% 90px;
+    overflow:hidden;
+    background:#050505;
+}
+
+.hero-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+    filter:brightness(.35);
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.87),rgba(0,0,0,.52),rgba(0,0,0,.86)),
+        linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.88));
 }
 
 .hero-grid{
+    position:relative;
+    z-index:2;
     width:100%;
     max-width:1400px;
+    margin:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:80px;
+    gap:75px;
     align-items:center;
 }
 
@@ -154,15 +191,15 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:500px;
+    min-height:520px;
 }
 
 .glow-ring{
     position:absolute;
-    width:min(500px,90vw);
-    height:min(500px,90vw);
+    width:min(480px,85vw);
+    height:min(480px,85vw);
     border-radius:50%;
-    border:1px solid rgba(212,175,55,.2);
+    border:1px solid rgba(212,175,55,.25);
     animation:spin 25s linear infinite;
 }
 
@@ -171,7 +208,7 @@ nav{
     position:absolute;
     inset:35px;
     border-radius:50%;
-    border:1px solid rgba(212,175,55,.08);
+    border:1px solid rgba(212,175,55,.1);
 }
 
 @keyframes spin{
@@ -179,18 +216,44 @@ nav{
     to{transform:rotate(360deg)}
 }
 
-.hero-img{
+.product-image-wrap{
     position:relative;
     z-index:2;
     width:100%;
     max-width:430px;
+}
+
+.hero-img{
+    display:block;
+    width:100%;
     height:auto;
     filter:drop-shadow(0 20px 80px rgba(0,0,0,.9));
     transition:.6s;
 }
 
 .hero-img:hover{
-    transform:translateY(-10px) scale(1.02);
+    transform:translateY(-8px) scale(1.02);
+}
+
+.image-price-tag{
+    position:absolute;
+    right:-12px;
+    bottom:35px;
+    background:var(--gold);
+    color:#000;
+    padding:15px 19px;
+    font-size:15px;
+    font-weight:900;
+    letter-spacing:1px;
+    box-shadow:0 8px 30px rgba(0,0,0,.5);
+}
+
+.image-price-tag small{
+    display:block;
+    font-size:8px;
+    letter-spacing:2px;
+    margin-bottom:5px;
+    text-transform:uppercase;
 }
 
 .hero-content small{
@@ -198,56 +261,55 @@ nav{
     letter-spacing:5px;
     text-transform:uppercase;
     display:block;
-    margin-bottom:25px;
+    margin-bottom:24px;
     font-size:11px;
 }
 
 .hero-content h1{
-    font-size:clamp(42px,7vw,92px);
+    font-size:clamp(42px,7vw,90px);
     text-transform:uppercase;
-    letter-spacing:12px;
+    letter-spacing:10px;
     line-height:1.05;
     margin-bottom:25px;
     font-weight:900;
-}
-
-.hero-content p{
-    max-width:620px;
-    color:#bdbdbd;
-    font-size:16px;
-    line-height:2;
-    margin-bottom:30px;
 }
 
 .hero-edition{
     color:var(--gold);
     font-size:12px;
     letter-spacing:4px;
-    margin-bottom:18px;
+    margin-bottom:23px;
     text-transform:uppercase;
+}
+
+.hero-content p{
+    max-width:620px;
+    color:#c0c0c0;
+    font-size:15px;
+    line-height:2;
+    margin-bottom:27px;
 }
 
 .hero-price{
     font-size:27px;
     letter-spacing:2px;
-    margin-bottom:30px;
+    margin-bottom:28px;
     font-weight:700;
 }
 
 .hero-buttons{
     display:flex;
-    gap:15px;
+    gap:14px;
     flex-wrap:wrap;
 }
 
 .hero-btn{
     display:inline-block;
-    padding:18px 30px;
+    padding:18px 27px;
     text-transform:uppercase;
     letter-spacing:2px;
     font-size:10px;
     font-weight:bold;
-    cursor:pointer;
     transition:.4s;
     text-decoration:none;
     text-align:center;
@@ -277,7 +339,7 @@ nav{
 /* EDITION STRIP */
 
 .edition-strip{
-    background:rgba(0,0,0,.94);
+    background:#050505;
     border-top:1px solid var(--border);
     border-bottom:1px solid var(--border);
     padding:35px 8%;
@@ -292,14 +354,10 @@ nav{
     text-align:center;
 }
 
-.edition-item{
-    padding:12px;
-}
-
 .edition-item strong{
     display:block;
     color:var(--gold);
-    font-size:23px;
+    font-size:24px;
     letter-spacing:2px;
     margin-bottom:10px;
 }
@@ -311,11 +369,56 @@ nav{
     text-transform:uppercase;
 }
 
+/* STORY */
+
+.story-section{
+    padding:115px 8%;
+    background:#080808;
+}
+
+.story-wrap{
+    max-width:950px;
+    margin:auto;
+    text-align:center;
+}
+
+.section-label{
+    display:block;
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.story-section h2{
+    font-size:clamp(27px,4vw,43px);
+    letter-spacing:5px;
+    line-height:1.4;
+    text-transform:uppercase;
+    margin-bottom:35px;
+}
+
+.story-section p{
+    color:#aaa;
+    font-size:15px;
+    line-height:2.1;
+    margin-bottom:23px;
+}
+
+.story-highlight{
+    color:var(--gold)!important;
+    font-size:17px!important;
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-top:35px;
+}
+
 /* FEATURES */
 
 .features{
-    background:rgba(0,0,0,.9);
-    padding:110px 8%;
+    background:#030303;
+    padding:105px 8%;
 }
 
 .section-heading{
@@ -349,7 +452,7 @@ nav{
 .feature-card{
     background:linear-gradient(to bottom,#0b0b0b,#000);
     border:1px solid var(--border);
-    padding:42px 30px;
+    padding:40px 30px;
     transition:.4s;
 }
 
@@ -375,7 +478,8 @@ nav{
 /* EXPERIENCE */
 
 .experience{
-    padding:130px 8%;
+    padding:120px 8%;
+    background:#080808;
 }
 
 .experience-wrap{
@@ -385,6 +489,10 @@ nav{
     grid-template-columns:1fr 1fr;
     gap:75px;
     align-items:center;
+}
+
+.experience-image{
+    position:relative;
 }
 
 .experience-image img{
@@ -433,11 +541,11 @@ nav{
     top:3px;
 }
 
-/* ORDER SECTION */
+/* ORDER */
 
 .order-section{
-    padding:120px 8%;
-    background:rgba(0,0,0,.94);
+    padding:115px 8%;
+    background:#030303;
     border-top:1px solid var(--border);
     border-bottom:1px solid var(--border);
 }
@@ -446,15 +554,15 @@ nav{
     max-width:950px;
     margin:auto;
     border:1px solid var(--gold);
-    padding:70px 50px;
-    background:rgba(5,5,5,.96);
+    padding:65px 45px;
+    background:#070707;
     text-align:center;
 }
 
 .order-header{
     color:var(--gold);
     text-transform:uppercase;
-    letter-spacing:6px;
+    letter-spacing:5px;
     font-size:11px;
     display:block;
     margin-bottom:25px;
@@ -462,7 +570,7 @@ nav{
 
 .order-box h2{
     font-size:clamp(28px,5vw,43px);
-    letter-spacing:7px;
+    letter-spacing:6px;
     text-transform:uppercase;
     margin-bottom:22px;
 }
@@ -473,6 +581,33 @@ nav{
     color:#999;
     line-height:2;
     font-size:14px;
+}
+
+.size-label{
+    display:block;
+    color:#aaa;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+
+.size-select{
+    display:block;
+    width:100%;
+    max-width:300px;
+    margin:0 auto 25px;
+    padding:15px;
+    background:#111;
+    border:1px solid var(--border);
+    color:#fff;
+    font-size:14px;
+    text-align:center;
+    outline:none;
+}
+
+.size-select:focus{
+    border-color:var(--gold);
 }
 
 .order-price{
@@ -488,24 +623,40 @@ nav{
     font-size:11px;
     letter-spacing:3px;
     text-transform:uppercase;
-    margin-bottom:35px;
+    margin-bottom:30px;
+}
+
+.order-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
 .order-btn{
     display:inline-block;
     background:var(--gold);
     color:#000;
-    padding:21px 45px;
+    padding:20px 28px;
     text-decoration:none;
     text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:11px;
+    letter-spacing:2px;
+    font-size:10px;
     font-weight:900;
     transition:.4s;
 }
 
-.order-btn:hover{
-    background:#fff;
+.order-btn:hover{background:#fff}
+
+.order-btn.email{
+    background:transparent;
+    border:1px solid var(--gold);
+    color:var(--gold);
+}
+
+.order-btn.email:hover{
+    background:var(--gold);
+    color:#000;
 }
 
 .order-note{
@@ -518,8 +669,9 @@ nav{
 /* BRAND STATEMENT */
 
 .quote-section{
-    padding:110px 8%;
+    padding:105px 8%;
     text-align:center;
+    background:#080808;
 }
 
 .quote-section h2{
@@ -551,18 +703,19 @@ nav{
 
 footer{
     border-top:1px solid var(--border);
-    padding:65px 7% 35px;
+    padding:60px 7% 30px;
     background:#000;
 }
 
 .footer-logo{
     display:block;
     text-align:center;
-    letter-spacing:7px;
-    font-size:15px;
+    letter-spacing:5px;
+    font-size:13px;
     text-transform:uppercase;
-    margin-bottom:45px;
+    margin-bottom:40px;
     font-weight:900;
+    color:#fff;
 }
 
 .footer-grid{
@@ -582,13 +735,9 @@ footer{
     text-transform:uppercase;
 }
 
-.footer-section ul{
-    list-style:none;
-}
+.footer-section ul{list-style:none}
 
-.footer-section li{
-    margin-bottom:14px;
-}
+.footer-section li{margin-bottom:14px}
 
 .footer-section a{
     color:#888;
@@ -597,9 +746,7 @@ footer{
     transition:.3s;
 }
 
-.footer-section a:hover{
-    color:var(--gold);
-}
+.footer-section a:hover{color:var(--gold)}
 
 .footer-bottom{
     max-width:1050px;
@@ -616,47 +763,85 @@ footer{
     text-transform:uppercase;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
 @media(max-width:950px){
-    .hero-grid,
-    .experience-wrap{
+    .hero-grid,.experience-wrap{
         grid-template-columns:1fr;
-        gap:45px;
+        gap:40px;
     }
 
     .hero-content{text-align:center}
     .hero-content p{margin-left:auto;margin-right:auto}
     .hero-buttons{justify-content:center}
-    .product-frame{min-height:400px}
+    .product-frame{min-height:420px}
     .features-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-@media(max-width:650px){
-    nav{padding:22px 5%}
-    .logo-text{font-size:10px;letter-spacing:4px}
-    .edition-label{font-size:8px;letter-spacing:1px}
-    .nav-right{gap:8px}
-    .hero-section{padding:125px 7% 75px}
-    .product-frame{min-height:320px}
-    .hero-content h1{letter-spacing:7px}
+@media(max-width:700px){
+    nav{
+        min-height:72px;
+        padding:12px 5%;
+    }
+
+    .brand img{max-width:145px;max-height:40px}
+    .logo-fallback{font-size:10px;letter-spacing:3px}
+
+    .menu-toggle{display:block}
+
+    .nav-menu{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        padding:25px 7%;
+        background:rgba(0,0,0,.98);
+        border-bottom:1px solid var(--border);
+        flex-direction:column;
+        align-items:flex-start;
+        gap:23px;
+    }
+
+    .nav-menu.open{display:flex}
+
+    .nav-menu a{
+        font-size:11px;
+        width:100%;
+    }
+
+    .hero-section{padding:115px 7% 75px}
+    .product-frame{min-height:340px}
+    .hero-content h1{letter-spacing:6px}
     .hero-content p{font-size:14px}
     .hero-buttons{flex-direction:column}
     .hero-btn{width:100%}
-    .edition-strip-inner{grid-template-columns:1fr;gap:10px}
-    .features{padding:80px 7%}
+
+    .image-price-tag{
+        right:0;
+        bottom:20px;
+        padding:12px 14px;
+        font-size:13px;
+    }
+
+    .edition-strip-inner{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .story-section,.features,.experience,.order-section,.quote-section{
+        padding:80px 7%;
+    }
+
     .features-grid{grid-template-columns:1fr}
     .feature-card{padding:32px 25px}
-    .experience{padding:85px 7%}
     .experience-content{text-align:center}
     .experience-content h2{font-size:26px;letter-spacing:5px}
     .detail-list{text-align:left}
-    .order-section{padding:80px 6%}
-    .order-box{padding:50px 23px}
+    .order-box{padding:45px 22px}
     .order-box h2{letter-spacing:4px}
-    .order-btn{width:100%;padding:20px 15px}
-    .quote-section{padding:80px 7%}
-    footer{padding:55px 7% 30px}
+    .order-buttons{flex-direction:column}
+    .order-btn{width:100%}
     .footer-grid{grid-template-columns:1fr 1fr;gap:30px 20px}
 }
 
@@ -668,34 +853,58 @@ footer{
 
 <body>
 
-<!-- EXISTING VIDEO BACKGROUND -->
-<div class="video-container">
-    <video autoplay muted loop playsinline>
-        <source src="perfume-series-luxury.mp4" type="video/mp4">
-    </video>
-</div>
-
 <!-- NAVIGATION -->
 <nav>
-    <span class="logo-text">PHRINUSOMYIS™</span>
+    <a href="/" class="brand" aria-label="PHRINUSOMYIS Home">
+        <!-- Replace this filename with the exact company logo image filename. -->
+        <img
+            src="phrinusomyis-logo.png"
+            alt="PHRINUSOMYIS"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+        >
+        <span class="logo-fallback" style="display:none;">PHRINUSOMYIS™</span>
+    </a>
 
-    <div class="nav-right">
-        <span class="status-dot"></span>
-        <span class="edition-label">FRAGRANCE · EDITION 001</span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+        <a href="/">Home</a>
+        <a href="/events">Events</a>
+        <a href="/news">News</a>
+        <a href="/press">Press</a>
+        <a href="#experience">The Fragrance</a>
+        <a href="#order" class="nav-edition">Edition 001</a>
     </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero-section">
+<!-- HERO VIDEO -->
+<section class="hero-section" id="home">
+
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="perfume-series-luxury.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
     <div class="hero-grid">
 
         <div class="product-frame">
             <div class="glow-ring"></div>
-            <img
-                src="phrinusomyis_perfume_front.png"
-                alt="PHRINUSOMYIS Fragrance Edition 001"
-                class="hero-img"
-            >
+
+            <div class="product-image-wrap">
+                <img
+                    src="phrinusomyis_perfume_front.png"
+                    alt="PHRINUSOMYIS Fragrance Edition 001"
+                    class="hero-img"
+                >
+
+                <div class="image-price-tag">
+                    <small>Price per bottle</small>
+                    US$5,000
+                </div>
+            </div>
         </div>
 
         <div class="hero-content">
@@ -703,24 +912,27 @@ footer{
 
             <h1>FRAGRANCE</h1>
 
-            <div class="hero-edition">EDITION 001 · FIRST EDITION</div>
+            <div class="hero-edition">RELEASE OF EDITION 001</div>
 
             <p>
-                An exclusive fragrance release from PHRINUSOMYIS™.
-                Presented as part of the organization's merchandise
-                collection, Edition 001 carries its own distinct identity
-                and premium presentation.
+                For generations, fragrance has been part of how people
+                express themselves. It accompanies memories, marks
+                occasions and leaves impressions that can remain long
+                after a moment has passed.
+
+                PHRINUSOMYIS™ brings this enduring tradition into its
+                merchandise collection with the release of Edition 001.
             </p>
 
             <div class="hero-price">US$5,000</div>
 
             <div class="hero-buttons">
                 <a href="#order" class="hero-btn primary">
-                    Request Your Edition
+                    Request Edition 001
                 </a>
 
-                <a href="#experience" class="hero-btn secondary">
-                    Explore the Fragrance
+                <a href="#story" class="hero-btn secondary">
+                    Discover the Story
                 </a>
             </div>
         </div>
@@ -734,18 +946,69 @@ footer{
 
         <div class="edition-item">
             <strong>001</strong>
-            <span>First Edition</span>
+            <span>Release of Edition 001</span>
         </div>
 
         <div class="edition-item">
             <strong>1,000</strong>
-            <span>Edition Production Allocation</span>
+            <span>Total Production Allocation</span>
         </div>
 
         <div class="edition-item">
-            <strong>US$5,000</strong>
-            <span>Price Per Bottle</span>
+            <strong>50 ml · 100 ml</strong>
+            <span>Available Bottle Sizes</span>
         </div>
+
+    </div>
+</section>
+
+<!-- FRAGRANCE STORY -->
+<section class="story-section" id="story">
+    <div class="story-wrap">
+
+        <span class="section-label">The Story</span>
+
+        <h2>Fragrance Is More Than a Scent</h2>
+
+        <p>
+            For generations, fragrance has been more than something
+            people wear. It has been a personal signature — an expression
+            of character, memory, presence and identity.
+        </p>
+
+        <p>
+            Across cultures and generations, a fragrance has carried
+            the ability to leave an impression long after someone
+            has departed.
+        </p>
+
+        <p>
+            A fragrance is personal. It becomes part of how someone
+            is remembered.
+        </p>
+
+        <p>
+            PHRINUSOMYIS™ brings this enduring tradition into its
+            merchandise collection with the release of its first
+            fragrance edition.
+        </p>
+
+        <p>
+            Edition 001 carries a defined production allocation of
+            1,000 bottles, presented in two selected sizes.
+            This first release establishes the opening chapter of
+            the PHRINUSOMYIS™ fragrance collection.
+        </p>
+
+        <p>
+            Whether another edition follows will be determined by
+            the direction of the collection and the response to
+            this release.
+        </p>
+
+        <p class="story-highlight">
+            PHRINUSOMYIS™ FRAGRANCE. RELEASE OF EDITION 001.
+        </p>
 
     </div>
 </section>
@@ -761,38 +1024,40 @@ footer{
     <div class="features-grid">
 
         <div class="feature-card">
-            <h3>First Edition</h3>
+            <h3>Release of Edition 001</h3>
             <p>
-                The opening fragrance release within the PHRINUSOMYIS™
-                merchandise collection.
+                The first fragrance release within the
+                PHRINUSOMYIS™ merchandise collection.
             </p>
         </div>
 
         <div class="feature-card">
-            <h3>Controlled Release</h3>
+            <h3>Defined Allocation</h3>
             <p>
-                Available exclusively through the official
-                PHRINUSOMYIS™ order channel.
+                A total production allocation of 1,000 bottles
+                across the available bottle sizes.
             </p>
         </div>
 
         <div class="feature-card">
-            <h3>Luxury Presentation</h3>
+            <h3>Direct Distribution</h3>
             <p>
-                A dedicated fragrance presentation, complete with
-                its own product packaging and edition identity.
+                Orders are handled directly through the official
+                PHRINUSOMYIS™ ordering channels.
             </p>
         </div>
 
     </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- PRODUCT EXPERIENCE -->
 <section class="experience" id="experience">
 
     <div class="experience-wrap">
 
         <div class="experience-content">
+            <span class="section-label">The Product</span>
+
             <h2>The Experience</h2>
 
             <p>
@@ -803,23 +1068,24 @@ footer{
             </p>
 
             <p>
-                Edition 001 stands as the first release in a fragrance
-                collection that will have its own continuing editions.
+                Edition 001 stands as the first release in the
+                PHRINUSOMYIS™ fragrance collection.
             </p>
 
             <ul class="detail-list">
                 <li>PHRINUSOMYIS™ merchandise</li>
-                <li>Edition 001 first release</li>
-                <li>Dedicated product packaging</li>
-                <li>Direct company order channel</li>
-                <li>Delivery arranged with the customer</li>
+                <li>Release of Edition 001</li>
+                <li>1,000-bottle production allocation</li>
+                <li>50 ml and 100 ml bottle sizes</li>
+                <li>Direct company ordering channel</li>
+                <li>Delivery arrangements confirmed with customers</li>
             </ul>
         </div>
 
         <div class="experience-image">
             <img
                 src="perfume-luxury-detail.png"
-                alt="PHRINUSOMYIS Fragrance luxury presentation"
+                alt="PHRINUSOMYIS Fragrance Edition 001 product presentation"
             >
         </div>
 
@@ -835,28 +1101,48 @@ footer{
             Official PHRINUSOMYIS™ Order Channel
         </span>
 
-        <h2>Request Your Edition</h2>
+        <h2>Request Edition 001</h2>
 
         <p class="order-description">
-            Submit an order request directly to PHRINUSOMYIS™.
-            Our team will contact you to confirm availability,
-            customer details, payment arrangements and delivery.
+            Select your preferred bottle size and submit an order
+            request directly to PHRINUSOMYIS™. Our team will contact
+            you to confirm the order, payment arrangements and delivery.
         </p>
+
+        <label class="size-label" for="bottleSize">
+            Select Your Bottle Size
+        </label>
+
+        <select class="size-select" id="bottleSize">
+            <option value="50 ml">50 ml</option>
+            <option value="100 ml">100 ml</option>
+        </select>
 
         <div class="order-price">US$5,000</div>
 
         <div class="order-edition">
-            Edition 001 · 1,000-Bottle Production Allocation
+            Release of Edition 001 · 1,000-Bottle Production Allocation
         </div>
 
-        <a
-            href="#"
-            class="order-btn whatsapp-order"
-            target="_blank"
-            rel="noopener"
-        >
-            Request Your Edition on WhatsApp
-        </a>
+        <div class="order-buttons">
+
+            <a
+                href="https://wa.me/16028423713"
+                class="order-btn whatsapp-order"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Request on WhatsApp
+            </a>
+
+            <a
+                href="mailto:info@phrinusomyis.com"
+                class="order-btn email-order"
+            >
+                Order by Email
+            </a>
+
+        </div>
 
         <p class="order-note">
             Orders are subject to confirmation by PHRINUSOMYIS™.
@@ -874,12 +1160,12 @@ footer{
     <h2>PHRINUSOMYIS™ Fragrance</h2>
 
     <p class="quote">
-        Luxury is not only what you wear. It is the atmosphere
-        around your name, your presence, and your identity.
+        A fragrance is personal. Its impression can remain
+        long after the moment has passed.
     </p>
 
     <div class="quote-author">
-        PHRINUSOMYIS™
+        Release of Edition 001
     </div>
 
 </section>
@@ -894,6 +1180,7 @@ footer{
         <div class="footer-section">
             <h3>Collection</h3>
             <ul>
+                <li><a href="#story">The Story</a></li>
                 <li><a href="#experience">The Experience</a></li>
                 <li><a href="#order">Edition 001</a></li>
                 <li><a href="#order">Request Your Edition</a></li>
@@ -905,6 +1192,9 @@ footer{
             <ul>
                 <li><a href="/">Main Website</a></li>
                 <li><a href="/luxury">Luxury</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/press">Press</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
@@ -916,6 +1206,7 @@ footer{
                 <li><a href="/terms">Terms of Use</a></li>
                 <li><a href="/cookies">Cookie Policy</a></li>
                 <li><a href="/security">Security</a></li>
+                <li><a href="mailto:info@phrinusomyis.com">Email Us</a></li>
             </ul>
         </div>
 
@@ -930,41 +1221,97 @@ footer{
 </footer>
 
 <script>
-/*
-  IMPORTANT:
-  Replace the number below with the official company WhatsApp Business
-  number. Include the country code, without +, spaces or brackets.
+/* COMPANY CONTACT DETAILS */
 
-  Example format: 2348012345678
-*/
+const PHRINUSOMYIS_WHATSAPP = "16028423713";
+const PHRINUSOMYIS_EMAIL = "info@phrinusomyis.com";
 
-const PHRINUSOMYIS_WHATSAPP = "234XXXXXXXXXX";
+/* ORDER FORM ELEMENTS */
 
-const orderMessage =
-`Hello PHRINUSOMYIS™,
+const bottleSize = document.getElementById("bottleSize");
+const whatsappButton = document.querySelector(".whatsapp-order");
+const emailButton = document.querySelector(".email-order");
 
-I would like to request PHRINUSOMYIS™ Fragrance — Edition 001.
+/* PRE-WRITTEN ORDER MESSAGE */
 
+function getOrderMessage(){
+    const size = bottleSize.value;
+
+    return `Hello PHRINUSOMYIS™,
+
+I would like to place an order request for PHRINUSOMYIS™ Fragrance — Release of Edition 001.
+
+Selected bottle size: ${size}
 Price per bottle: US$5,000
-Edition production allocation: 1,000 bottles
-
-Please provide the order confirmation process and delivery details.
-
-Name:
-Country:
 Quantity requested:
+
+Full name:
+Country:
 Delivery address:
+Contact number:
+
+Kindly provide the order confirmation, payment and delivery details.
 
 Thank you.`;
+}
 
-const whatsappLink =
-    "https://wa.me/" +
-    PHRINUSOMYIS_WHATSAPP +
-    "?text=" +
-    encodeURIComponent(orderMessage);
+/* WHATSAPP ORDER LINK */
 
-document.querySelectorAll(".whatsapp-order").forEach(button => {
-    button.href = whatsappLink;
+function updateWhatsAppLink(){
+    const message = getOrderMessage();
+
+    whatsappButton.href =
+        "https://wa.me/" +
+        PHRINUSOMYIS_WHATSAPP +
+        "?text=" +
+        encodeURIComponent(message);
+}
+
+/* EMAIL ORDER LINK */
+
+function updateEmailLink(){
+    const subject =
+        "Order Request — PHRINUSOMYIS™ Fragrance Edition 001";
+
+    const body = getOrderMessage();
+
+    emailButton.href =
+        "mailto:" +
+        PHRINUSOMYIS_EMAIL +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+}
+
+/* UPDATE BOTH CHANNELS WHEN SIZE CHANGES */
+
+function updateOrderLinks(){
+    updateWhatsAppLink();
+    updateEmailLink();
+}
+
+bottleSize.addEventListener("change", updateOrderLinks);
+updateOrderLinks();
+
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", function(){
+    const isOpen = navMenu.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(){
+        navMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+    });
 });
 </script>
 
