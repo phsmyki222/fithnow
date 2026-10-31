@@ -128,714 +128,795 @@
 </script>
 
 
-<style>
 
+<style>
 /* =========================================================
-   GLOBAL
+   PHRINUSOMYIS™ — HELP CENTRE
+   CHARCOAL / WHITE EDITION
 ========================================================= */
 
 :root {
-    --gold: #D4AF37;
-    --obsidian: #050505;
-    --border: #1a1a1a;
+    --background: #292d32;
+    --surface: #22262b;
+    --surface-light: #30353b;
+    --border: #454b52;
+    --white: #ffffff;
+    --muted-white: #e2e5e8;
+    --accent: #aebdca;
 }
 
-html,
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--background);
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background: var(--background);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 1.7;
     overflow-x: hidden;
 }
 
+body, p, span, a, li, h1, h2, h3, h4,
+button, input, summary, label {
+    font-weight: 700;
+}
+
+a {
+    color: var(--white);
+}
+
+button, input {
+    font-family: inherit;
+}
 
 /* =========================================================
    HEADER
 ========================================================= */
 
 .help-header {
-    padding: 120px 20px 80px;
+    padding: 90px 20px 55px;
     text-align: center;
+    background: linear-gradient(
+        180deg,
+        #353b42 0%,
+        #292d32 100%
+    );
     border-bottom: 1px solid var(--border);
-    background: linear-gradient(to bottom, #0a0a0a, #000);
 }
 
 .help-logo {
-    width: 80px;
-    margin-bottom: 25px;
-    opacity: 0.95;
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 24px;
 }
 
 .help-header h1 {
-    font-size: 24px;
-    letter-spacing: 15px;
+    margin: 0;
+    color: var(--white);
+    font-size: 30px;
+    letter-spacing: 9px;
     font-weight: 900;
     text-transform: uppercase;
-    margin: 0;
 }
 
-.help-status {
-    color: var(--gold);
-    font-size: 10px;
+.help-header p {
+    max-width: 720px;
+    margin: 20px auto 0;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.help-kicker {
+    display: block;
+    margin-top: 17px;
+    color: var(--accent);
+    font-size: 11px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    margin-top: 25px;
-    display: block;
 }
-
 
 /* =========================================================
-   LANGUAGE
+   HERO IMAGE
 ========================================================= */
 
-.language-bar {
-    margin-top: 30px;
+.help-hero {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 35px 30px 0;
 }
 
-#languageSwitcher {
-    background: transparent;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    outline: none;
-    cursor: pointer;
+.help-hero-frame {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #171a1e;
 }
 
-#languageSwitcher option {
-    background: #000;
+.help-hero-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+}
+
+.help-hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 45px;
+    background: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.78) 0%,
+        rgba(0,0,0,0.12) 65%,
+        transparent 100%
+    );
+}
+
+.help-hero-overlay h2 {
+    max-width: 700px;
+    margin: 0;
     color: #fff;
+    font-size: clamp(22px, 4vw, 38px);
+    line-height: 1.25;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.help-intro {
+    max-width: 900px;
+    margin: 70px auto 45px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.help-intro h2 {
+    margin: 0 0 15px;
+    color: var(--white);
+    font-size: 21px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.help-intro p {
+    margin: 0;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 1.9;
+}
 
 /* =========================================================
    SEARCH
 ========================================================= */
 
 .search-wrap {
-    max-width: 600px;
-    margin: -30px auto 0;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 25px;
     padding: 0 20px;
 }
 
-.search-bar {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: var(--obsidian);
-    border: 1px solid var(--gold);
-    padding: 20px 30px;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 2px;
-    outline: none;
+.search-label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
-.search-bar::placeholder {
-    color: #666;
+.search-control {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #68727d;
+    background: #1e2227;
 }
 
-
-/* =========================================================
-   SEARCH RESULTS
-========================================================= */
-
-#searchResults {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: none;
+.search-control input {
+    flex: 1;
+    min-width: 0;
+    padding: 19px 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
 }
 
-#resultBox {
-    border: 1px solid #1a1a1a;
-    background: #050505;
-    padding: 35px;
-    color: #777;
-    font-size: 13px;
-    line-height: 1.8;
+.search-control input::placeholder {
+    color: #d0d5da;
+    opacity: 1;
 }
 
+.search-control button {
+    align-self: stretch;
+    padding: 0 24px;
+    border: none;
+    border-left: 1px solid #68727d;
+    background: #39414a;
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.search-control button:hover {
+    background: #4a5662;
+}
+
+.search-note {
+    margin-top: 12px;
+    color: var(--white);
+    font-size: 11px;
+}
+
+#searchStatus {
+    min-height: 24px;
+    margin: 20px auto 0;
+    text-align: center;
+    color: var(--white);
+    font-size: 12px;
+}
 
 /* =========================================================
    MAIN
 ========================================================= */
 
 .help-container {
-    max-width: 1100px;
-    margin: 100px auto;
-    padding: 0 20px 150px;
+    width: 100%;
+    max-width: 1180px;
+    margin: 75px auto 120px;
+    padding: 0 25px;
 }
 
+.section-heading {
+    margin: 0 0 14px;
+    color: var(--white);
+    font-size: 21px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-description {
+    margin: 0 0 35px;
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.8;
+}
 
 /* =========================================================
-   GRID
+   CATEGORY NAVIGATION
 ========================================================= */
 
-.help-grid {
+.help-category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 85px;
 }
 
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.help-card {
-    background-color: #050505;
+.help-category {
+    display: flex;
+    flex-direction: column;
+    min-height: 155px;
+    padding: 25px 20px;
+    background: var(--surface);
     border: 1px solid var(--border);
-    padding: 50px 40px;
-    transition: all 0.4s ease;
-    cursor: pointer;
+    text-decoration: none;
+    transition: 0.25s ease;
 }
 
-.help-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-5px);
+.help-category:hover {
+    background: var(--surface-light);
+    border-color: var(--accent);
+    transform: translateY(-3px);
 }
 
-.help-card h3 {
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 20px;
+.category-number {
+    margin-bottom: 16px;
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 2px;
 }
 
-.help-card p {
-    color: #555;
+.help-category h3 {
+    margin: 0 0 8px;
+    color: var(--white);
     font-size: 13px;
-    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
+.help-category p {
+    margin: 0;
+    color: var(--white);
+    font-size: 11px;
+    line-height: 1.7;
+}
 
 /* =========================================================
-   SUPPORT
+   FAQ SECTIONS
 ========================================================= */
 
-.escalation-zone {
-    margin-top: 100px;
-    padding: 60px;
-    border: 1px solid #111;
-    text-align: center;
-    background: radial-gradient(
-        circle at center,
-        #0a0a0a 0%,
-        #000 100%
-    );
+.faq-section {
+    margin-top: 70px;
+    scroll-margin-top: 35px;
 }
 
-.escalation-zone h2 {
-    font-size: 16px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
+.faq-section-heading {
+    padding-bottom: 18px;
     margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
 }
 
-.escalation-zone p {
-    color: #444;
-    font-size: 13px;
-}
-
-.contact-btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 40px;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    text-decoration: none;
-    font-size: 11px;
+.faq-section-heading h2 {
+    margin: 0;
+    color: var(--white);
+    font-size: 18px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    transition: all 0.3s;
 }
 
-.contact-btn:hover {
-    background-color: var(--gold);
-    color: #000;
+.faq-section-heading p {
+    margin: 8px 0 0;
+    color: var(--white);
+    font-size: 12px;
 }
 
+.faq-item {
+    margin-bottom: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.faq-item[hidden] {
+    display: none !important;
+}
+
+.faq-item summary {
+    position: relative;
+    display: block;
+    padding: 20px 55px 20px 22px;
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.7;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-answer {
+    padding: 0 22px 22px;
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.faq-answer a {
+    color: var(--white);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.faq-answer p {
+    margin: 0 0 12px;
+}
+
+.faq-answer ul {
+    margin: 8px 0;
+    padding-left: 22px;
+}
+
+.no-results {
+    display: none;
+    margin-top: 25px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--white);
+    text-align: center;
+}
+
+.no-results.visible {
+    display: block;
+}
+
+/* =========================================================
+   RESOURCE LINKS
+========================================================= */
+
+.resource-section {
+    margin-top: 100px;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.resource-card:hover {
+    background: var(--surface-light);
+    border-color: var(--accent);
+}
+
+.resource-card span {
+    margin-bottom: 16px;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.resource-card h3 {
+    margin: 0 0 12px;
+    color: var(--white);
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.resource-card p {
+    margin: 0;
+    color: var(--white);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.resource-arrow {
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   CONTACT SUPPORT
+========================================================= */
+
+.contact-support {
+    margin-top: 100px;
+    padding: 65px 35px;
+    border: 1px solid var(--border);
+    background: linear-gradient(
+        135deg,
+        #353b42,
+        #22262b
+    );
+    text-align: center;
+}
+
+.contact-support h2 {
+    margin: 0 0 18px;
+    color: var(--white);
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.contact-support p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.support-email {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--white);
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.support-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 28px;
+    border: 1px solid var(--accent);
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.25s ease;
+}
+
+.support-link:hover {
+    background: var(--accent);
+    color: #20252a;
+}
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .phr-main-footer {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 80px 20px 40px;
-    border-top: 1px solid #1a1a1a;
-    font-family: Arial, sans-serif;
+    padding: 75px 25px 35px;
+    background: #202429;
+    border-top: 1px solid var(--border);
+    color: var(--white);
 }
 
 .phr-footer-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 20px;
-    max-width: 1100px;
-    margin: 0 auto 60px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto 55px;
 }
 
 .phr-footer-section h3 {
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 900;
+    margin: 0 0 20px;
+    color: var(--white);
+    font-size: 13px;
     letter-spacing: 2px;
-    margin-bottom: 25px;
     text-transform: uppercase;
 }
 
 .phr-footer-section ul {
-    list-style: none;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 .phr-footer-section li {
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 }
 
 .phr-footer-section a {
-    color: #888;
+    color: var(--white);
+    font-size: 12px;
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
 }
 
 .phr-footer-section a:hover {
-    color: #D4AF37;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
-.phr-global-bar {
-    max-width: 1100px;
+.phr-footer-motto {
+    max-width: 1150px;
     margin: 0 auto;
-    padding-top: 40px;
-    border-top: 1px solid #1a1a1a;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
     text-align: center;
-}
-
-.phr-global-bar h3 {
-    font-size: 15px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    font-weight: 900;
-}
-
-.phr-hq-label {
-    color: #D4AF37;
-    font-weight: bold;
+    color: var(--white);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .phr-footer-bottom {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    max-width: 1150px;
+    margin: 0 auto;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
     text-align: center;
-    color: #777;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   DYLAN CHAT BUTTON
-========================================================= */
-
-#dylanOpenButton {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    z-index: 9998;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background: #050505;
-    color: #D4AF37;
-
-    border: 1px solid #D4AF37;
-    border-radius: 3px;
-
-    padding: 14px 18px;
-
+    color: var(--white);
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-    box-shadow: 0 10px 35px rgba(0,0,0,0.55);
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-#dylanOpenButton:hover {
-    background: #D4AF37;
-    color: #000;
-    transform: translateY(-2px);
-}
-
-.dylan-button-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #D4AF37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.7);
-}
-
-
-/* =========================================================
-   DYLAN CHAT WINDOW
-========================================================= */
-
-#dylanChat {
-    position: fixed;
-    right: 25px;
-    bottom: 85px;
-    z-index: 9999;
-
-    width: 390px;
-    max-width: calc(100vw - 30px);
-    height: 570px;
-    max-height: calc(100vh - 110px);
-
-    display: none;
-    flex-direction: column;
-
-    background: #050505;
-    border: 1px solid #252525;
-
-    box-shadow:
-        0 25px 80px rgba(0,0,0,0.8);
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   DYLAN HEADER
-========================================================= */
-
-.dylan-header {
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 16px 17px;
-
-    border-bottom: 1px solid #1b1b1b;
-    background: #080808;
-}
-
-.dylan-identity {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-}
-
-.dylan-header-logo {
-    width: 31px;
-    height: 31px;
-    object-fit: contain;
-}
-
-.dylan-name {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.dylan-role {
-    margin-top: 2px;
-    font-size: 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #777;
-}
-
-#dylanCloseButton {
-    width: 32px;
-    height: 32px;
-
-    background: transparent;
-    border: 1px solid #222;
-
-    color: #777;
-    font-size: 18px;
-
-    cursor: pointer;
-}
-
-#dylanCloseButton:hover {
-    border-color: #D4AF37;
-    color: #D4AF37;
-}
-
-
-/* =========================================================
-   CHAT MESSAGES
-========================================================= */
-
-#dylanMessages {
-    flex: 1;
-
-    overflow-y: auto;
-
-    padding: 20px;
-
-    background:
-        radial-gradient(
-            circle at top,
-            rgba(212,175,55,0.035),
-            transparent 45%
-        ),
-        #030303;
-}
-
-.dylan-message-row {
-    display: flex;
-    margin-bottom: 17px;
-}
-
-.dylan-message-row.user {
-    justify-content: flex-end;
-}
-
-.dylan-message {
-    max-width: 84%;
-
-    padding: 12px 14px;
-
-    border: 1px solid #191919;
-
-    font-size: 13px;
-    line-height: 1.6;
-
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-.dylan-message.assistant {
-    background: #080808;
-    color: #ddd;
-}
-
-.dylan-message.user {
-    background: #D4AF37;
-    color: #000;
-    border-color: #D4AF37;
-}
-
-
-/* =========================================================
-   TYPING INDICATOR
-========================================================= */
-
-.dylan-typing {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.dylan-typing span {
-    width: 5px;
-    height: 5px;
-
-    background: #777;
-    border-radius: 50%;
-
-    animation: dylanTyping 1.2s infinite ease-in-out;
-}
-
-.dylan-typing span:nth-child(2) {
-    animation-delay: 0.15s;
-}
-
-.dylan-typing span:nth-child(3) {
-    animation-delay: 0.30s;
-}
-
-@keyframes dylanTyping {
-
-    0%, 60%, 100% {
-        opacity: 0.25;
-        transform: translateY(0);
-    }
-
-    30% {
-        opacity: 1;
-        transform: translateY(-3px);
-    }
-
-}
-
-
-/* =========================================================
-   CHAT INPUT
-========================================================= */
-
-.dylan-input-area {
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 12px;
-
-    border-top: 1px solid #1b1b1b;
-    background: #070707;
-}
-
-#dylanInput {
-    flex: 1;
-
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    background: #000;
-    color: #fff;
-
-    border: 1px solid #242424;
-
-    padding: 13px 12px;
-
-    outline: none;
-
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-}
-
-#dylanInput:focus {
-    border-color: #D4AF37;
-}
-
-#dylanInput::placeholder {
-    color: #555;
-}
-
-#dylanSend {
-    flex-shrink: 0;
-
-    background: #D4AF37;
-    color: #000;
-
-    border: 1px solid #D4AF37;
-
-    padding: 13px 15px;
-
-    font-size: 10px;
-    font-weight: 700;
     letter-spacing: 1px;
-    text-transform: uppercase;
-
-    cursor: pointer;
 }
-
-#dylanSend:hover {
-    background: #fff;
-    border-color: #fff;
-}
-
-#dylanSend:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-}
-
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 767px) {
-
-    .help-header {
-        padding: 80px 20px 65px;
-    }
-
-    .help-header h1 {
-        font-size: 19px;
-        letter-spacing: 8px;
-    }
-
-    .help-container {
-        margin-top: 70px;
-    }
-
-    .help-card {
-        padding: 35px 25px;
-    }
-
-    .escalation-zone {
-        padding: 40px 25px;
+@media (max-width: 900px) {
+    .help-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .phr-footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    #dylanOpenButton {
-        right: 15px;
-        bottom: 15px;
-        padding: 13px 15px;
-    }
-
-    #dylanChat {
-        right: 10px;
-        bottom: 75px;
-
-        width: calc(100vw - 20px);
-        max-width: none;
-
-        height: calc(100vh - 100px);
-        max-height: 650px;
-    }
-
 }
 
+@media (max-width: 767px) {
+    .help-header {
+        padding: 65px 20px 45px;
+    }
+
+    .help-header h1 {
+        font-size: 21px;
+        letter-spacing: 5px;
+    }
+
+    .help-header p {
+        font-size: 12px;
+    }
+
+    .help-hero {
+        padding: 20px 15px 0;
+    }
+
+    .help-hero-frame {
+        height: 270px;
+    }
+
+    .help-hero-overlay {
+        padding: 23px;
+    }
+
+    .help-hero-overlay h2 {
+        font-size: 22px;
+    }
+
+    .help-intro {
+        margin: 50px auto 35px;
+    }
+
+    .help-intro h2 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    .help-container {
+        margin-top: 50px;
+        padding: 0 16px;
+    }
+
+    .help-category-grid {
+        gap: 10px;
+    }
+
+    .help-category {
+        min-height: 145px;
+        padding: 18px 14px;
+    }
+
+    .help-category h3 {
+        font-size: 11px;
+    }
+
+    .help-category p {
+        font-size: 10px;
+    }
+
+    .section-heading {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    .faq-item summary {
+        padding: 17px 45px 17px 15px;
+        font-size: 12px;
+    }
+
+    .faq-answer {
+        padding: 0 15px 18px;
+        font-size: 12px;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-support {
+        padding: 45px 20px;
+    }
+
+    .phr-footer-grid {
+        gap: 30px 18px;
+    }
+
+    .phr-footer-section h3 {
+        font-size: 11px;
+    }
+
+    .phr-footer-section a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 390px) {
+    .help-header h1 {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .search-control input {
+        padding: 16px 12px;
+        font-size: 12px;
+    }
+
+    .search-control button {
+        padding: 0 13px;
+        font-size: 9px;
+    }
+
+    .help-category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .phr-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 /* =========================================================
-   SCROLLBAR
+   ACCESSIBILITY
 ========================================================= */
 
-::-webkit-scrollbar {
-    width: 4px;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
 }
 
-::-webkit-scrollbar-track {
-    background: #000;
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
-
-::-webkit-scrollbar-thumb {
-    background: var(--gold);
-}
-
 </style>
 
 </head>
 
-
 <body>
-
 
 <!-- =========================================================
      HEADER
@@ -846,43 +927,109 @@ body {
     <img
         src="phrinusomyis_logo.png"
         class="help-logo"
-        alt="PHRINUSOMYIS"
+        alt="PHRINUSOMYIS logo"
     >
 
-    <h1>Help Center</h1>
+    <h1>Help Centre</h1>
 
-    <span class="help-status">
-        Global Support Services — Active
+    <span class="help-kicker">
+        Information &amp; Frequently Asked Questions
     </span>
 
-    <div class="language-bar">
-        <!-- Language switcher can be added here later if needed -->
-    </div>
+    <p>
+        Find information about PHRINUSOMYIS™, its sports
+        competitions, Sports Theater™, official publications,
+        events, partnerships and organizational information.
+    </p>
 
 </header>
+
+
+<!-- =========================================================
+     HERO IMAGE
+========================================================= -->
+
+<section class="help-hero" aria-label="Sports venue feature">
+
+    <div class="help-hero-frame">
+
+        <img
+            src="https://images.squarespace-cdn.com/content/v1/5924885d27d4bd832d95028e/1591454136768-F91ZF5JSXP7HQRDW6M97/THFC_01_BHE.jpg"
+            alt="Wide interior view of a modern international sports stadium"
+            loading="eager"
+        >
+
+        <div class="help-hero-overlay">
+
+            <h2>
+                Information. Understanding.
+                The World of PHRINUSOMYIS™.
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRODUCTION
+========================================================= -->
+
+<section class="help-intro">
+
+    <h2>How Can We Help?</h2>
+
+    <p>
+        This page provides answers to common questions about
+        the organization, its competitions, Sports Theater™,
+        official announcements, publications and ways to
+        engage with PHRINUSOMYIS™.
+        Browse the topics below or use the search field to
+        find a specific question.
+    </p>
+
+</section>
 
 
 <!-- =========================================================
      SEARCH
 ========================================================= -->
 
-<div class="search-wrap">
+<section class="search-wrap" aria-label="Search frequently asked questions">
 
-    <input
-        type="text"
-        class="search-bar"
-        placeholder="Search Help Topics"
-        aria-label="Search Help Topics"
-    >
+    <label class="search-label" for="helpSearch">
+        Search Help Topics
+    </label>
 
-</div>
+    <div class="search-control">
 
+        <input
+            type="search"
+            id="helpSearch"
+            placeholder="Enter a question or keyword..."
+            autocomplete="off"
+            aria-label="Search questions and answers"
+        >
 
-<div id="searchResults">
+        <button type="button" id="clearSearch">
+            Clear
+        </button>
 
-    <div id="resultBox"></div>
+    </div>
 
-</div>
+    <p class="search-note">
+        Search the questions and answers published on this page.
+    </p>
+
+    <div
+        id="searchStatus"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+</section>
 
 
 <!-- =========================================================
@@ -891,125 +1038,633 @@ body {
 
 <main class="help-container">
 
-    <div class="help-grid">
 
+    <!-- =====================================================
+         CATEGORY NAVIGATION
+    ====================================================== -->
 
-        <div class="help-card">
+    <section aria-labelledby="categoryHeading">
 
-            <h3>Account Access</h3>
+        <h2 class="section-heading" id="categoryHeading">
+            Browse Help Topics
+        </h2>
 
-            <p>
-                Help with login, recovery, identity verification,
-                and account control systems.
-            </p>
+        <p class="section-description">
+            Select a subject to view its related questions and answers.
+        </p>
 
-        </div>
+        <div class="help-category-grid">
 
+            <a href="#organization" class="help-category">
+                <span class="category-number">01 / ORGANIZATION</span>
+                <h3>About PHRINUSOMYIS™</h3>
+                <p>Organizational identity and general information.</p>
+            </a>
 
-        <div class="help-card">
+            <a href="#competitions" class="help-category">
+                <span class="category-number">02 / SPORT</span>
+                <h3>Sports &amp; Competitions</h3>
+                <p>Competition information and participation enquiries.</p>
+            </a>
 
-            <h3>Product Verification</h3>
+            <a href="#sports-theater" class="help-category">
+                <span class="category-number">03 / CONCEPT</span>
+                <h3>Sports Theater™</h3>
+                <p>Information about the Sports Theater™ concept.</p>
+            </a>
 
-            <p>
-                Verify registered products, authenticity systems,
-                and operational purchase records.
-            </p>
+            <a href="#events" class="help-category">
+                <span class="category-number">04 / EVENTS</span>
+                <h3>Events</h3>
+                <p>Event announcements and published information.</p>
+            </a>
 
-        </div>
+            <a href="#publications" class="help-category">
+                <span class="category-number">05 / PUBLICATIONS</span>
+                <h3>Newswire &amp; Magazine</h3>
+                <p>Official news and editorial publications.</p>
+            </a>
 
+            <a href="#partnerships" class="help-category">
+                <span class="category-number">06 / BUSINESS</span>
+                <h3>Partnerships</h3>
+                <p>Organizational and commercial enquiries.</p>
+            </a>
 
-        <div class="help-card">
+            <a href="#careers" class="help-category">
+                <span class="category-number">07 / OPPORTUNITIES</span>
+                <h3>Careers</h3>
+                <p>Employment and recruitment information.</p>
+            </a>
 
-            <h3>Global Venue Access</h3>
-
-            <p>
-                International stadium entry systems, venue authorization,
-                seating guidance, and operational access support.
-            </p>
-
-        </div>
-
-
-        <div class="help-card">
-
-            <h3>International Tour Operations</h3>
-
-            <p>
-                Support for global tour schedules, regional event coordination,
-                live production logistics, and international operations.
-            </p>
-
-        </div>
-
-
-        <div class="help-card">
-
-            <h3>Security Operations</h3>
-
-            <p>
-                Access platform security systems, operational monitoring,
-                verification layers, and protection protocols.
-            </p>
-
-        </div>
-
-
-        <div class="help-card">
-
-            <h3>Privacy &amp; Data Control</h3>
-
-            <p>
-                Manage privacy settings, operational cookies,
-                user rights, and data protection preferences.
-            </p>
+            <a href="#website" class="help-category">
+                <span class="category-number">08 / WEBSITE</span>
+                <h3>Website &amp; Privacy</h3>
+                <p>Website navigation, privacy and accessibility.</p>
+            </a>
 
         </div>
 
+    </section>
 
-        <div class="help-card">
 
-            <h3>Media &amp; Broadcast Network</h3>
+    <!-- =====================================================
+         FAQ 01 — ORGANIZATION
+    ====================================================== -->
 
-            <p>
-                Assistance for media teams, press systems,
-                broadcasting operations, and production coordination.
-            </p>
+    <section class="faq-section" id="organization">
 
+        <div class="faq-section-heading">
+            <h2>About PHRINUSOMYIS™</h2>
+            <p>General information about the organization.</p>
         </div>
 
+        <details class="faq-item">
+            <summary>What is PHRINUSOMYIS™?</summary>
+            <div class="faq-answer">
+                <p>
+                    PHRINUSOMYIS™ is an international sports organization
+                    that develops, owns and administers sports competitions
+                    and Sports Theater™ worldwide.
+                </p>
+                <p>
+                    The organization creates original sports formats
+                    that break away from traditional sports structures.
+                </p>
+            </div>
+        </details>
 
-        <div class="help-card">
+        <details class="faq-item">
+            <summary>What does PHRINUSOMYIS™ do?</summary>
+            <div class="faq-answer">
+                <p>
+                    PHRINUSOMYIS™ develops and administers sports
+                    competitions, creates original sports formats
+                    and leads its Sports Theater™ concept.
+                </p>
+            </div>
+        </details>
 
-            <h3>Hospitality &amp; VIP Services</h3>
+        <details class="faq-item">
+            <summary>Where can I find official information about the organization?</summary>
+            <div class="faq-answer">
+                <p>
+                    Visit the official website and its published
+                    organizational, news, press and media sections.
+                </p>
+                <p>
+                    <a href="/">Visit the PHRINUSOMYIS™ homepage</a>
+                </p>
+            </div>
+        </details>
 
-            <p>
-                Premium guest support, executive hospitality systems,
-                VIP access, and international experience services.
-            </p>
+        <details class="faq-item">
+            <summary>How can I contact PHRINUSOMYIS™?</summary>
+            <div class="faq-answer">
+                <p>
+                    General enquiries can be directed to the
+                    organization's official contact address.
+                </p>
+                <p>
+                    <a href="/contact">Visit the Contact page</a>
+                </p>
+            </div>
+        </details>
 
+    </section>
+
+
+    <!-- =====================================================
+         FAQ 02 — COMPETITIONS
+    ====================================================== -->
+
+    <section class="faq-section" id="competitions">
+
+        <div class="faq-section-heading">
+            <h2>Sports &amp; Competitions</h2>
+            <p>Information about the organization's sporting activities.</p>
         </div>
 
+        <details class="faq-item">
+            <summary>What types of sports competitions does PHRINUSOMYIS™ develop?</summary>
+            <div class="faq-answer">
+                <p>
+                    PHRINUSOMYIS™ develops and administers original
+                    sports competitions and formats. Information
+                    about specific competitions is published through
+                    the organization's official channels.
+                </p>
+            </div>
+        </details>
 
+        <details class="faq-item">
+            <summary>Where can I find information about competitions?</summary>
+            <div class="faq-answer">
+                <p>
+                    Competition information and related announcements
+                    are made available through the official Sports,
+                    Events and News sections of the website.
+                </p>
+                <p>
+                    <a href="/sports">Explore Sports</a>
+                    &nbsp; | &nbsp;
+                    <a href="/competitions">Explore Competitions</a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How can I find out about participation opportunities?</summary>
+            <div class="faq-answer">
+                <p>
+                    Participation information is communicated through
+                    the relevant competition or event announcements.
+                    Review the published requirements and instructions
+                    for each opportunity.
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Where can I find competition announcements?</summary>
+            <div class="faq-answer">
+                <p>
+                    Official announcements are published through
+                    the PHRINUSOMYIS™ Newswire and relevant
+                    organizational channels.
+                </p>
+                <p>
+                    <a href="/newswire/news">Visit Newswire</a>
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ 03 — SPORTS THEATER
+    ====================================================== -->
+
+    <section class="faq-section" id="sports-theater">
+
+        <div class="faq-section-heading">
+            <h2>Sports Theater™</h2>
+            <p>Understanding the organization's Sports Theater™ concept.</p>
+        </div>
+
+        <details class="faq-item">
+            <summary>What is Sports Theater™?</summary>
+            <div class="faq-answer">
+                <p>
+                    Sports Theater™ is a PHRINUSOMYIS™ sports concept
+                    built around original competitive formats and
+                    distinctive sporting experiences.
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Is Sports Theater™ part of PHRINUSOMYIS™?</summary>
+            <div class="faq-answer">
+                <p>
+                    Yes. Sports Theater™ is part of the sports
+                    identity and activities of PHRINUSOMYIS™.
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Where can I find more information about Sports Theater™?</summary>
+            <div class="faq-answer">
+                <p>
+                    Visit the dedicated Sports Theater™ section
+                    of the official website.
+                </p>
+                <p>
+                    <a href="/sports-theater">Explore Sports Theater™</a>
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ 04 — EVENTS
+    ====================================================== -->
+
+    <section class="faq-section" id="events">
+
+        <div class="faq-section-heading">
+            <h2>Events &amp; Activities</h2>
+            <p>Information about published events and announcements.</p>
+        </div>
+
+        <details class="faq-item">
+            <summary>Where can I find upcoming event information?</summary>
+            <div class="faq-answer">
+                <p>
+                    Published event information is available
+                    through the official Events section.
+                </p>
+                <p>
+                    <a href="/events">Visit Events</a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Where can I find event dates and locations?</summary>
+            <div class="faq-answer">
+                <p>
+                    Event dates, locations and other confirmed
+                    details should be taken from the relevant
+                    official event announcement.
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How can I make an enquiry about an event?</summary>
+            <div class="faq-answer">
+                <p>
+                    Event-related enquiries can be directed to
+                    the Events &amp; Competitions department.
+                </p>
+                <p>
+                    <a href="mailto:events@phrinusomyis.com">
+                        Contact Events &amp; Competitions
+                    </a>
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ 05 — PUBLICATIONS
+    ====================================================== -->
+
+    <section class="faq-section" id="publications">
+
+        <div class="faq-section-heading">
+            <h2>Newswire &amp; Magazine</h2>
+            <p>Official organizational news and editorial publications.</p>
+        </div>
+
+        <details class="faq-item">
+            <summary>What is the PHRINUSOMYIS™ Newswire?</summary>
+            <div class="faq-answer">
+                <p>
+                    The Newswire is the organization's publication
+                    channel for official announcements, news releases
+                    and organizational statements.
+                </p>
+                <p>
+                    <a href="/newswire/news">Visit Newswire</a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>What is the PHRINUSOMYIS™ Magazine?</summary>
+            <div class="faq-answer">
+                <p>
+                    The Magazine presents editorial features,
+                    photography, stories and publications covering
+                    PHRINUSOMYIS™ and its activities.
+                </p>
+                <p>
+                    <a href="/magazine/news">Visit Magazine</a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>What is the difference between Newswire and Magazine?</summary>
+            <div class="faq-answer">
+                <p>
+                    Newswire is dedicated to official announcements,
+                    news releases and statements. Magazine is dedicated
+                    to editorial features, photography and stories.
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How can journalists contact the organization?</summary>
+            <div class="faq-answer">
+                <p>
+                    Press and media enquiries can be directed to
+                    the Press &amp; Media department.
+                </p>
+                <p>
+                    <a href="mailto:press@phrinusomyis.com">
+                        Contact Press &amp; Media
+                    </a>
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ 06 — PARTNERSHIPS
+    ====================================================== -->
+
+    <section class="faq-section" id="partnerships">
+
+        <div class="faq-section-heading">
+            <h2>Partnerships</h2>
+            <p>Information for organizations and prospective partners.</p>
+        </div>
+
+        <details class="faq-item">
+            <summary>Can organizations approach PHRINUSOMYIS™ for partnerships?</summary>
+            <div class="faq-answer">
+                <p>
+                    Yes. Organizations interested in exploring
+                    partnership opportunities may contact the
+                    Partnerships department with relevant
+                    organizational information and a clear outline
+                    of their proposal.
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How should a partnership enquiry be submitted?</summary>
+            <div class="faq-answer">
+                <p>
+                    Partnership enquiries should identify the
+                    organization, explain the proposed area of
+                    cooperation and provide the relevant contact
+                    information.
+                </p>
+                <p>
+                    <a href="mailto:partnership@phrinusomyis.com">
+                        Contact Partnerships
+                    </a>
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ 07 — CAREERS
+    ====================================================== -->
+
+    <section class="faq-section" id="careers">
+
+        <div class="faq-section-heading">
+            <h2>Careers &amp; Employment</h2>
+            <p>Information about employment and recruitment enquiries.</p>
+        </div>
+
+        <details class="faq-item">
+            <summary>Where can I make an employment enquiry?</summary>
+            <div class="faq-answer">
+                <p>
+                    Employment enquiries and relevant applications
+                    may be directed to the Careers &amp; Employment
+                    department.
+                </p>
+                <p>
+                    <a href="mailto:job@phrinusomyis.com">
+                        Contact Careers &amp; Employment
+                    </a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>What should I include in an employment enquiry?</summary>
+            <div class="faq-answer">
+                <p>
+                    Include your name, professional background,
+                    relevant experience and the position or area
+                    of work you are enquiring about. Attach a CV
+                    where appropriate.
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ 08 — WEBSITE AND PRIVACY
+    ====================================================== -->
+
+    <section class="faq-section" id="website">
+
+        <div class="faq-section-heading">
+            <h2>Website, Privacy &amp; Security</h2>
+            <p>Information about using the official website.</p>
+        </div>
+
+        <details class="faq-item">
+            <summary>Where can I read the website's privacy policy?</summary>
+            <div class="faq-answer">
+                <p>
+                    The organization's privacy information is
+                    available through its published privacy pages.
+                </p>
+                <p>
+                    <a href="/privacy">Privacy Information</a>
+                    &nbsp; | &nbsp;
+                    <a href="/policy">Privacy Policy</a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Where can I find information about cookies?</summary>
+            <div class="faq-answer">
+                <p>
+                    Visit the Cookie Policy for information about
+                    cookies and related website preferences.
+                </p>
+                <p>
+                    <a href="/cookies">Cookie Policy</a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Where can I find the website's terms of use?</summary>
+            <div class="faq-answer">
+                <p>
+                    The website's terms of use are available
+                    through the Terms page.
+                </p>
+                <p>
+                    <a href="/terms">Terms of Use</a>
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How do I report a website-related problem?</summary>
+            <div class="faq-answer">
+                <p>
+                    For website-related enquiries, provide a
+                    description of the issue and the page
+                    where it occurred when contacting the
+                    organization.
+                </p>
+                <p>
+                    <a href="/contact">Visit Contact</a>
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         NO SEARCH RESULTS
+    ====================================================== -->
+
+    <div class="no-results" id="noResults">
+        <p>No matching questions were found.</p>
+        <p>Try another keyword or browse the help topics above.</p>
     </div>
 
 
     <!-- =====================================================
-         PRIORITY SUPPORT
+         POPULAR RESOURCES
     ====================================================== -->
 
-    <section class="escalation-zone">
+    <section class="resource-section">
 
-        <h2>Priority Support</h2>
+        <h2 class="section-heading">
+            Official Resources
+        </h2>
+
+        <p class="section-description">
+            Go directly to the relevant PHRINUSOMYIS™
+            information and publication sections.
+        </p>
+
+        <div class="resource-grid">
+
+            <a href="/newswire/news" class="resource-card">
+                <span>Official Publications</span>
+                <h3>PHRINUSOMYIS™ Newswire</h3>
+                <p>
+                    Official announcements, news releases
+                    and organizational statements.
+                </p>
+                <div class="resource-arrow">Explore Newswire →</div>
+            </a>
+
+            <a href="/magazine/news" class="resource-card">
+                <span>Editorial Publications</span>
+                <h3>PHRINUSOMYIS™ Magazine</h3>
+                <p>
+                    Editorial features, photography,
+                    stories and publications.
+                </p>
+                <div class="resource-arrow">Explore Magazine →</div>
+            </a>
+
+            <a href="/sports" class="resource-card">
+                <span>Sports</span>
+                <h3>Sports &amp; Competitions</h3>
+                <p>
+                    Explore the organization's sporting
+                    activities and competition information.
+                </p>
+                <div class="resource-arrow">Explore Sports →</div>
+            </a>
+
+            <a href="/sports-theater" class="resource-card">
+                <span>Sports Concept</span>
+                <h3>Sports Theater™</h3>
+                <p>
+                    Discover the Sports Theater™ concept
+                    and its place within PHRINUSOMYIS™.
+                </p>
+                <div class="resource-arrow">Explore Sports Theater →</div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT SUPPORT
+    ====================================================== -->
+
+    <section class="contact-support">
+
+        <h2>Further Assistance</h2>
 
         <p>
-            For urgent operational support from HQ team.
+            If your question is not covered on this page,
+            contact PHRINUSOMYIS™ directly. For a faster
+            response, include the subject of your enquiry
+            and any relevant details.
         </p>
 
         <a
+            class="support-email"
             href="mailto:info@phrinusomyis.com"
-            class="contact-btn"
         >
-            Contact Support
+            info@phrinusomyis.com
+        </a>
+
+        <br>
+
+        <a href="/contact" class="support-link">
+            Visit Contact Page
         </a>
 
     </section>
@@ -1025,984 +1680,199 @@ body {
 
     <div class="phr-footer-grid">
 
-
-        <!-- LUXURY -->
-
         <div class="phr-footer-section">
-
-            <h3>LUXURY</h3>
-
+            <h3>Main</h3>
             <ul>
-
-                <li>
-                    <a href="luxury">
-                        Luxury Identity
-                    </a>
-                </li>
-
-                <li>
-                    <a href="circle">
-                        Private Access
-                    </a>
-                </li>
-
-                <li>
-                    <a href="perfume">
-                        Perfumes
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact">
-                        Contact
-                    </a>
-                </li>
-
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/press">Press</a></li>
+                <li><a href="/events">Events</a></li>
             </ul>
-
         </div>
 
-
-        <!-- M3AN -->
-
         <div class="phr-footer-section">
-
-            <h3>M3AN</h3>
-
+            <h3>Sports</h3>
             <ul>
-
-                <li>
-                    <a href="news">
-                        Latest News
-                    </a>
-                </li>
-
-                <li>
-                    <a href="press">
-                        Press Release
-                    </a>
-                </li>
-
-                <li>
-                    <a href="events">
-                        Events
-                    </a>
-                </li>
-
-                <li>
-                    <a href="luxury">
-                        PHRINUSOMYIS Luxury
-                    </a>
-                </li>
-
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/sports-theater">Sports Theater™</a></li>
+                <li><a href="/competitions">Competitions</a></li>
+                <li><a href="/media">Media</a></li>
             </ul>
-
         </div>
 
-
-        <!-- ABOUT -->
-
         <div class="phr-footer-section">
-
-            <h3>ABOUT</h3>
-
+            <h3>Publications</h3>
             <ul>
-
-                <li>
-                    <a href="policy">
-                        Privacy Policy
-                    </a>
-                </li>
-
-                <li>
-                    <a href="copyright">
-                        Copyright
-                    </a>
-                </li>
-
-                <li>
-                    <a href="terms">
-                        Terms of Use
-                    </a>
-                </li>
-
-                <li>
-                    <a href="privacy">
-                        Privacy Choices
-                    </a>
-                </li>
-
+                <li><a href="/newswire/news">Newswire</a></li>
+                <li><a href="/magazine/news">Magazine</a></li>
             </ul>
-
         </div>
 
-
-        <!-- HELP -->
-
         <div class="phr-footer-section">
-
-            <h3>HELP</h3>
-
+            <h3>Organization</h3>
             <ul>
-
-                <li>
-                    <a href="security">
-                        Security
-                    </a>
-                </li>
-
-                <li>
-                    <a href="help">
-                        Help Center
-                    </a>
-                </li>
-
-                <li>
-                    <a href="cookies">
-                        Cookie Policy
-                    </a>
-                </li>
-
-                <li>
-                    <a href="close">
-                        Closed Captions
-                    </a>
-                </li>
-
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/policy">Policy</a></li>
+                <li><a href="/terms">Terms of Use</a></li>
+                <li><a href="/copyright">Copyright</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+                <li><a href="/security">Security</a></li>
+                <li><a href="/help">Help Centre</a></li>
+                <li><a href="/cookies">Cookies</a></li>
             </ul>
-
         </div>
-
 
     </div>
 
+    <div class="phr-footer-motto">
+        COMMANDING THE WORLD STAGE™
+    </div>
 
     <div class="phr-footer-bottom">
-
-        © 2026 PHRINUSOMYIS — Official Global Support Division.
-        All Rights Reserved.
-
+        © PHRINUSOMYIS™. All Rights Reserved.
     </div>
 
 </footer>
 
 
 <!-- =========================================================
-     DYLAN CHAT BUTTON
+     WORKING HELP CENTRE SEARCH
 ========================================================= -->
-
-<button
-    id="dylanOpenButton"
-    type="button"
-    aria-label="Open Dylan AI Assistant"
->
-
-    <span class="dylan-button-dot"></span>
-
-    <span>
-        ASK DYLAN
-    </span>
-
-</button>
-
-
-<!-- =========================================================
-     DYLAN CHAT
-========================================================= -->
-
-<div
-    id="dylanChat"
-    aria-label="Dylan AI Assistant"
->
-
-
-    <div class="dylan-header">
-
-        <div class="dylan-identity">
-
-            <img
-                src="phrinusomyis_logo.png"
-                class="dylan-header-logo"
-                alt="PHRINUSOMYIS"
-            >
-
-            <div>
-
-                <div class="dylan-name">
-                    Dylan
-                </div>
-
-                <div class="dylan-role">
-                    PHRINUSOMYIS AI Assist
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <button
-            id="dylanCloseButton"
-            type="button"
-            aria-label="Close Dylan"
-        >
-            ×
-        </button>
-
-    </div>
-
-
-    <div
-        id="dylanMessages"
-        aria-live="polite"
-    ></div>
-
-
-    <div class="dylan-input-area">
-
-        <input
-            type="text"
-            id="dylanInput"
-            placeholder="Ask Dylan anything..."
-            autocomplete="off"
-            maxlength="2000"
-            aria-label="Message Dylan"
-        >
-
-        <button
-            id="dylanSend"
-            type="button"
-        >
-            Send
-        </button>
-
-    </div>
-
-
-</div>
-
 
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
 
-
-    /* =========================================================
-       1. LANGUAGE SYSTEM
-    ========================================================== */
-
-    const switcher =
-        document.getElementById("languageSwitcher");
-
-    if (switcher) {
-
-        switcher.addEventListener("change", function () {
-
-            localStorage.setItem(
-                "site_lang",
-                this.value
-            );
-
-        });
-
-    }
-
-
-    /* =========================================================
-       2. SEARCH SYSTEM
-    ========================================================== */
-
-    const sitePages = [
-
-        "index.html",
-        "events.html",
-        "news.html",
-        "press.html",
-        "luxury.html",
-        "circle.html",
-        "id.html",
-        "it.html",
-        "ja.html",
-        "de.html",
-        "perfume.html",
-        "contact.html",
-        "policy.html",
-        "copyright.html",
-        "terms.html",
-        "privacy.html",
-        "security.html",
-        "fr.html",
-        "cookies.html",
-        "close.html",
-        "zh.html",
-        "hi.html",
-        "ko.html",
-        "ru.html",
-        "es.html"
-
-    ];
-
-
-    let globalKnowledgeBase = [
-
-        {
-            text: "security protocols protection",
-            original:
-                "Security protocols and protection systems.",
-            source: "SYSTEM"
-        },
-
-        {
-            text: "privacy settings data control",
-            original:
-                "Privacy settings and data control.",
-            source: "SYSTEM"
-        },
-
-        {
-            text: "ticket support events",
-            original:
-                "Ticket support and events.",
-            source: "SYSTEM"
-        }
-
-    ];
-
-
-    const searchInput =
-        document.querySelector(".search-bar");
-
-    const resultsContainer =
-        document.getElementById("searchResults");
-
-    const resultBox =
-        document.getElementById("resultBox");
-
-
-    async function crawlSite() {
-
-        for (let url of sitePages) {
-
-            try {
-
-                const response =
-                    await fetch(url);
-
-                if (!response.ok) {
-                    continue;
-                }
-
-                const text =
-                    await response.text();
-
-                const parser =
-                    new DOMParser();
-
-                const doc =
-                    parser.parseFromString(
-                        text,
-                        "text/html"
-                    );
-
-                const content =
-                    doc.querySelectorAll(
-                        "h1, h2, h3, p, .support-text"
-                    );
-
-
-                content.forEach(function (el) {
-
-                    const cleanText =
-                        el.innerText.trim();
-
-                    if (cleanText.length > 5) {
-
-                        globalKnowledgeBase.push({
-
-                            text:
-                                cleanText.toLowerCase(),
-
-                            original:
-                                cleanText,
-
-                            source:
-                                url
-                                    .replace(".html", "")
-                                    .toUpperCase()
-
-                        });
-
-                    }
-
-                });
-
-
-            } catch (e) {
-
-                console.warn(
-                    "Could not index: " + url
-                );
-
-            }
-
-        }
-
-    }
-
-
-    crawlSite();
-
-
-    if (
-        searchInput &&
-        resultBox &&
-        resultsContainer
-    ) {
-
-        searchInput.addEventListener(
-            "input",
-            function () {
-
-                const query =
-                    this.value
-                        .toLowerCase()
-                        .trim();
-
-
-                if (query.length < 2) {
-
-                    resultsContainer.style.display =
-                        "none";
-
-                    return;
-
-                }
-
-
-                let matches =
-                    globalKnowledgeBase.filter(
-                        function (item) {
-
-                            return item.text.includes(
-                                query
-                            );
-
-                        }
-                    );
-
-
-                if (matches.length > 0) {
-
-
-                    const uniqueResults =
-                        [
-                            ...new Map(
-                                matches.map(
-                                    function (m) {
-
-                                        return [
-                                            m.original,
-                                            m
-                                        ];
-
-                                    }
-                                )
-                            ).values()
-                        ];
-                     ResultBox.innerHTML =
-                        uniqueResults
-                            .slice(0, 6)
-                            .map(function (match) {
-
-                                return `
-
-                                    <div style="
-                                        margin-bottom:15px;
-                                        padding:15px;
-                                        border-left:2px solid #D4AF37;
-                                        background:rgba(255,255,255,0.03);
-                                    ">
-
-                                        <span style="
-                                            display:block;
-                                            font-size:9px;
-                                            color:#D4AF37;
-                                            letter-spacing:2px;
-                                            text-transform:uppercase;
-                                            margin-bottom:8px;
-                                        ">
-
-                                            ARCHIVE:
-                                            ${escapeHtml(match.source)}
-
-                                        </span>
-
-
-                                        <p style="
-                                            color:#ffffff;
-                                            margin:0;
-                                            font-size:14px;
-                                            line-height:1.5;
-                                        ">
-
-                                            ${escapeHtml(match.original)}
-
-                                        </p>
-
-                                    </div>
-
-                                `;
-
-                            })
-                            .join("");
-
-
-                } else {
-
-
-                    resultBox.innerHTML = `
-
-                        <div style="
-                            padding:20px;
-                            color:#444;
-                            text-align:center;
-                        ">
-
-                            NO DATA MATCHES IN
-                            BROOKLYN ARCHIVES
-
-                        </div>
-
-                    `;
-
-                }
-
-
-                resultsContainer.style.display =
-                    "block";
-
-            }
-        );
-
-    }
-
-
-    /* =========================================================
-       SEARCH HTML PROTECTION
-    ========================================================== */
-
-    function escapeHtml(value) {
-
-        return String(value)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    /* =========================================================
-       3. DYLAN AI ASSISTANT
-    ========================================================== */
-
-
-    /*
-       IMPORTANT:
-
-       Replace this URL with your Cloudflare Worker URL.
-    */
-
-    const DYLAN_API_URL = "https://phrinusomyis-dylan-api.phrinusomyis-53d.workers.dev";
-
-    const dylanOpenButton =
-        document.getElementById("dylanOpenButton");
-
-    const dylanCloseButton =
-        document.getElementById("dylanCloseButton");
-
-    const dylanChat =
-        document.getElementById("dylanChat");
-
-    const dylanMessages =
-        document.getElementById("dylanMessages");
-
-    const dylanInput =
-        document.getElementById("dylanInput");
-
-    const dylanSend =
-        document.getElementById("dylanSend");
-
-
-    /*
-       Conversation memory for the current
-       browser session.
-    */
-
-    let dylanConversation = [];
-
-    let dylanBusy = false;
-
-
-    /* =========================================================
-       OPEN CHAT
-    ========================================================== */
-
-    function openDylan() {
-
-        dylanChat.style.display =
-            "flex";
-
-        dylanInput.focus();
-
-
-        if (
-            dylanMessages.children.length === 0
-        ) {
-
-            addDylanMessage(
-
-                "assistant",
-
-                "Welcome to PHRINUSOMYIS. I'm Dylan. How can I help you today?"
-
-            );
-
-        }
-
-    }
-
-
-    /* =========================================================
-       CLOSE CHAT
-    ========================================================== */
-
-    function closeDylan() {
-
-        dylanChat.style.display =
-            "none";
-
-    }
-
-
-    dylanOpenButton.addEventListener(
-        "click",
-        openDylan
+    const searchInput = document.getElementById("helpSearch");
+    const clearButton = document.getElementById("clearSearch");
+    const searchStatus = document.getElementById("searchStatus");
+    const noResults = document.getElementById("noResults");
+
+    const faqItems = Array.from(
+        document.querySelectorAll(".faq-item")
     );
 
-
-    dylanCloseButton.addEventListener(
-        "click",
-        closeDylan
+    const faqSections = Array.from(
+        document.querySelectorAll(".faq-section")
     );
 
-
-    /* =========================================================
-       ADD MESSAGE
-    ========================================================== */
-
-    function addDylanMessage(
-        role,
-        text
-    ) {
-
-        const row =
-            document.createElement("div");
-
-        row.className =
-            "dylan-message-row " +
-            role;
-
-
-        const message =
-            document.createElement("div");
-
-        message.className =
-            "dylan-message " +
-            role;
-
-
-        /*
-           textContent is intentional.
-           It prevents HTML/script injection.
-        */
-
-        message.textContent =
-            text;
-
-
-        row.appendChild(message);
-
-        dylanMessages.appendChild(row);
-
-
-        dylanMessages.scrollTop =
-            dylanMessages.scrollHeight;
-
-
-        return row;
-
+    function normalizeText(value) {
+        return String(value || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^\p{L}\p{N}\s]/gu, " ")
+            .replace(/\s+/g, " ")
+            .trim();
     }
 
+    function searchFAQs() {
 
-    /* =========================================================
-       TYPING INDICATOR
-    ========================================================== */
+        const query = normalizeText(searchInput.value);
 
-    function addTypingIndicator() {
+        const terms = query.split(" ").filter(Boolean);
 
-        const row =
-            document.createElement("div");
+        let matchCount = 0;
 
-        row.className =
-            "dylan-message-row assistant";
+        faqItems.forEach(function (item) {
 
+            const searchableText = normalizeText(item.textContent);
 
-        const message =
-            document.createElement("div");
-
-        message.className =
-            "dylan-message assistant";
-
-
-        message.innerHTML = `
-
-            <div class="dylan-typing">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </div>
-
-        `;
-
-
-        row.appendChild(message);
-
-        dylanMessages.appendChild(row);
-
-
-        dylanMessages.scrollTop =
-            dylanMessages.scrollHeight;
-
-
-        return row;
-
-    }
-
-
-    /* =========================================================
-       SEND MESSAGE
-    ========================================================== */
-
-    async function sendDylanMessage() {
-
-
-        if (dylanBusy) {
-            return;
-        }
-
-
-        const message =
-            dylanInput.value.trim();
-
-
-        if (!message) {
-            return;
-        }
-
-
-        dylanBusy = true;
-
-        dylanSend.disabled = true;
-
-        dylanInput.disabled = true;
-
-
-        addDylanMessage(
-            "user",
-            message
-        );
-
-
-        dylanConversation.push({
-
-            role: "user",
-
-            content: message
-
-        });
-
-
-        dylanInput.value = "";
-
-
-        const typing =
-            addTypingIndicator();
-
-
-        try {
-
-
-            const response =
-                await fetch(
-                    DYLAN_API_URL,
-                    {
-
-                        method: "POST",
-
-                        headers: {
-
-                            "Content-Type":
-                                "application/json"
-
-                        },
-
-                        body: JSON.stringify({
-
-                            messages:
-                                dylanConversation.slice(-30)
-
-                        })
-
-                    }
-                );
-
-
-            let data = null;
-
-
-            try {
-
-                data =
-                    await response.json();
-
-            } catch (jsonError) {
-
-                data = null;
-
-            }
-
-
-            typing.remove();
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    data &&
-                    data.error
-                        ? data.error
-                        : "Dylan could not connect."
-                );
-
-            }
-
-
-            const answer =
-                data &&
-                typeof data.answer === "string"
-                    ? data.answer.trim()
-                    : "";
-
-
-            if (!answer) {
-
-                throw new Error(
-                    "No response received."
-                );
-
-            }
-
-
-            addDylanMessage(
-                "assistant",
-                answer
-            );
-
-
-            dylanConversation.push({
-
-                role: "assistant",
-
-                content: answer
-
+            const matches = terms.every(function (term) {
+                return searchableText.includes(term);
             });
 
+            item.hidden = !matches;
 
-        } catch (error) {
+            if (matches) {
+                matchCount++;
+            }
 
+            if (query && matches) {
+                item.open = true;
+            } else if (query) {
+                item.open = false;
+            }
 
-            typing.remove();
+        });
 
+        faqSections.forEach(function (section) {
 
-            console.error(
-                "Dylan error:",
-                error
+            const visibleItems = section.querySelectorAll(
+                ".faq-item:not([hidden])"
             );
 
+            section.style.display =
+                visibleItems.length > 0 || !query
+                    ? ""
+                    : "none";
 
-            addDylanMessage(
+        });
 
-                "assistant",
+        if (!query) {
 
-                "I'm having trouble connecting right now. Please try again in a moment. If you need to contact the PHRINUSOMYIS team directly, email info@phrinusomyis.com with your name, phone number, and message."
+            noResults.classList.remove("visible");
 
-            );
+            searchStatus.textContent =
+                "Showing all " + faqItems.length + " questions.";
 
+            faqItems.forEach(function (item) {
+                item.open = false;
+            });
+
+            faqSections.forEach(function (section) {
+                section.style.display = "";
+            });
+
+            return;
         }
 
+        if (matchCount === 0) {
 
-        dylanBusy = false;
+            noResults.classList.add("visible");
 
-        dylanSend.disabled = false;
+            searchStatus.textContent =
+                "No matching questions found.";
 
-        dylanInput.disabled = false;
+        } else {
 
-        dylanInput.focus();
+            noResults.classList.remove("visible");
+
+            searchStatus.textContent =
+                matchCount + " matching question(s) found.";
+
+        }
 
     }
 
+    searchInput.addEventListener("input", searchFAQs);
 
-    /* =========================================================
-       SEND BUTTON
-    ========================================================== */
+    clearButton.addEventListener("click", function () {
 
-    dylanSend.addEventListener(
-        "click",
-        sendDylanMessage
-    );
+        searchInput.value = "";
 
+        searchFAQs();
 
-    /* =========================================================
-       ENTER KEY
-    ========================================================== */
+        searchInput.focus();
 
-    dylanInput.addEventListener(
-        "keydown",
-        function (event) {
+    });
 
-            if (
-                event.key === "Enter" &&
-                !event.shiftKey
-            ) {
+    searchInput.addEventListener("keydown", function (event) {
 
-                event.preventDefault();
+        if (event.key === "Escape") {
 
-                sendDylanMessage();
+            searchInput.value = "";
 
-            }
+            searchFAQs();
 
         }
-    );
 
+    });
+
+    searchStatus.textContent =
+        "Showing all " + faqItems.length + " questions.";
 
 });
-
 </script>
 
 </body>
-
 </html>
