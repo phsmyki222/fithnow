@@ -153,741 +153,344 @@
   }
   </script>
 </head>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap');
 
 :root{
-  --bg:#f6f5f0;
-  --surface:#fff;
-  --surface-2:#eeece5;
-  --ink:#191919;
-  --muted:#625f57;
-  --gold:#b18a2d;
-  --gold-dark:#89691d;
-  --line:#dedbd1;
-  --footer:#20201e;
-  --footer-muted:#c3c0b8;
-  --shadow:0 15px 40px rgba(30,25,15,.08);
+  --bg:#101b2d;
+  --bg-deep:#091321;
+  --surface:#17263b;
+  --surface-2:#1d3049;
+  --surface-3:#223750;
+  --ink:#fff;
+  --muted:#c0cad6;
+  --gold:#c5a15b;
+  --gold-dark:#a9843d;
+  --line:rgba(197,161,91,.28);
+  --footer:#07111e;
+  --footer-muted:#b7c1ce;
+  --shadow:0 18px 45px rgba(0,0,0,.23);
 }
 
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:100px;
-  margin-top:0!important;
-}
-
+html{scroll-behavior:smooth;scroll-padding-top:100px;margin-top:0!important}
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:'Montserrat',sans-serif;
-  font-weight:600;
-  line-height:1.75;
-  overflow-x:hidden;
-  top:0!important;
-  position:static!important;
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Montserrat',sans-serif;font-weight:600;
+  line-height:1.75;overflow-x:hidden;top:0!important;position:static!important
 }
-
 body.modal-open{overflow:hidden}
-
 a{color:inherit}
 button,select{font:inherit}
 img{max-width:100%}
 
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  width:100%;
-  background:rgba(250,249,245,.97);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-  padding:13px 20px;
+  position:sticky;top:0;z-index:1000;width:100%;
+  background:rgba(9,19,33,.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding:13px 20px
 }
-
 .menu{
-  max-width:1250px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:25px;
-  flex-wrap:wrap;
+  max-width:1250px;margin:auto;display:flex;align-items:center;
+  justify-content:center;gap:25px;flex-wrap:wrap
 }
-
 .menu a{
-  color:var(--ink);
-  text-decoration:none;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1px;
-  transition:.2s;
+  color:#fff;text-decoration:none;font-size:11px;font-weight:900;
+  letter-spacing:1px;transition:.2s
 }
-
-.menu a:hover,
-.menu a[aria-current="page"]{color:var(--gold-dark)}
-
+.menu a:hover,.menu a[aria-current="page"]{color:var(--gold)}
 #languageSwitcher{
-  background:var(--surface);
-  color:var(--ink);
-  border:1px solid var(--line);
-  border-radius:3px;
-  padding:8px 10px;
-  font-family:'Montserrat',sans-serif;
-  font-size:11px;
-  font-weight:800;
-  cursor:pointer;
+  background:var(--surface);color:#fff;border:1px solid var(--line);
+  border-radius:3px;padding:8px 10px;font-family:'Montserrat',sans-serif;
+  font-size:11px;font-weight:800;cursor:pointer
 }
+#languageSwitcher option{background:var(--surface);color:#fff}
 
-.page-container{
-  width:min(1200px,100%);
-  margin:0 auto;
-  padding:45px 22px 75px;
-}
-
-.hero{
-  text-align:center;
-  padding:45px 0 65px;
-}
-
+.page-container{width:min(1200px,100%);margin:0 auto;padding:45px 22px 75px}
+.hero{text-align:center;padding:45px 0 65px}
 .brand-seal{
-  display:block;
-  width:125px;
-  height:auto;
-  max-height:150px;
-  object-fit:contain;
-  margin:0 auto 22px;
+  display:block;width:125px;height:auto;max-height:150px;
+  object-fit:contain;margin:0 auto 22px
 }
-
 .eyebrow{
-  color:var(--gold-dark);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:3px;
-  text-transform:uppercase;
+  color:var(--gold);font-size:10px;font-weight:900;
+  letter-spacing:3px;text-transform:uppercase
 }
-
-h1,h2,h3{
-  font-family:'Cinzel',serif;
-  font-weight:800;
-}
-
+h1,h2,h3{font-family:'Cinzel',serif;font-weight:800}
 .hero h1{
-  margin:12px 0;
-  color:var(--ink);
-  font-size:clamp(2.5rem,7vw,5rem);
-  letter-spacing:clamp(3px,1vw,10px);
-  line-height:1.2;
+  margin:12px 0;color:#fff;font-size:clamp(2.5rem,7vw,5rem);
+  letter-spacing:clamp(3px,1vw,10px);line-height:1.2
 }
-
 .hero-subtitle{
-  max-width:760px;
-  margin:15px auto 0;
-  color:var(--muted);
-  font-size:14px;
-  font-weight:700;
+  max-width:780px;margin:15px auto 0;color:var(--muted);
+  font-size:14px;font-weight:700
 }
+.hero-line{width:85px;height:3px;margin:25px auto;background:var(--gold)}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
 
-.hero-line{
-  width:85px;
-  height:3px;
-  margin:25px auto;
-  background:var(--gold);
-}
-
-.section{margin:45px 0 75px}
-
-.section-heading{
-  text-align:center;
-  margin-bottom:30px;
-}
-
+.section{margin:55px 0 80px}
+.section-heading{text-align:center;margin-bottom:30px}
 .section-heading h2{
-  color:var(--ink);
-  font-size:clamp(1.5rem,4vw,2.5rem);
-  letter-spacing:2px;
-  line-height:1.35;
-  margin:8px 0;
+  color:#fff;font-size:clamp(1.5rem,4vw,2.5rem);
+  letter-spacing:2px;line-height:1.35;margin:8px 0
 }
-
 .section-heading p{
-  max-width:740px;
-  margin:0 auto;
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
+  max-width:760px;margin:0 auto;color:var(--muted);
+  font-size:13px;font-weight:700
 }
-
 .image-frame{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  min-height:260px;
-  padding:25px;
-  background:var(--surface-2);
-  border:1px solid var(--line);
-  overflow:hidden;
+  display:flex;justify-content:center;align-items:center;width:100%;
+  min-height:260px;padding:25px;background:var(--surface-2);
+  border:1px solid var(--line);overflow:hidden
 }
-
 .image-frame img{
-  display:block;
-  width:100%;
-  height:auto;
-  max-height:560px;
-  object-fit:contain;
-  object-position:center;
+  display:block;width:100%;height:auto;max-height:560px;
+  object-fit:contain;object-position:center
 }
 
 .featured-event{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:10px;overflow:hidden;box-shadow:var(--shadow)
 }
-
 .featured-visual{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:25px;
-  min-width:0;
-  background:var(--surface-2);
-  border-right:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  padding:25px;min-width:0;background:var(--surface-2);
+  border-right:1px solid var(--line)
 }
-
 .featured-visual img{
-  display:block;
-  width:100%;
-  height:auto;
-  max-height:480px;
-  object-fit:contain;
+  display:block;width:100%;height:auto;max-height:480px;object-fit:contain
 }
-
 .featured-copy{
-  padding:clamp(25px,4vw,48px);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  padding:clamp(25px,4vw,48px);display:flex;flex-direction:column;justify-content:center
 }
-
 .event-tag{
-  display:inline-block;
-  width:max-content;
-  max-width:100%;
-  padding:6px 12px;
-  border:1px solid rgba(177,138,45,.45);
-  color:var(--gold-dark);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
+  display:inline-block;width:max-content;max-width:100%;padding:6px 12px;
+  border:1px solid var(--gold);color:var(--gold);
+  font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase
 }
-
 .featured-copy h2{
-  color:var(--ink);
-  font-size:clamp(1.7rem,3vw,2.5rem);
-  line-height:1.3;
-  margin:18px 0 10px;
+  color:#fff;font-size:clamp(1.7rem,3vw,2.5rem);
+  line-height:1.3;margin:18px 0 10px
 }
+.featured-copy p{color:var(--muted);font-size:13px;font-weight:700}
 
-.featured-copy p{
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
+.gold-button,.outline-button{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:max-content;max-width:100%;min-height:45px;margin-top:15px;
+  padding:11px 19px;border:1px solid var(--gold);border-radius:3px;
+  font-size:10px;font-weight:900;letter-spacing:1.3px;
+  text-decoration:none;text-transform:uppercase;cursor:pointer;transition:.2s
 }
+.gold-button{background:var(--gold);color:#101b2d}
+.gold-button:hover{background:#dfbd7a;border-color:#dfbd7a}
+.outline-button{background:transparent;color:var(--gold)}
+.outline-button:hover{background:var(--gold);color:#101b2d}
 
-.gold-button,
-.outline-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:max-content;
-  max-width:100%;
-  min-height:45px;
-  margin-top:15px;
-  padding:11px 19px;
-  border:1px solid var(--gold);
-  border-radius:3px;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.3px;
-  text-decoration:none;
-  text-transform:uppercase;
-  cursor:pointer;
-  transition:.2s;
+.explore-grid,.feature-grid,.ticket-grid,.announcement-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px
 }
-
-.gold-button{
-  background:var(--gold);
-  color:#fff;
+.explore-card,.feature-card{
+  min-width:0;display:flex;flex-direction:column;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:9px;overflow:hidden;box-shadow:var(--shadow);
+  transition:transform .2s,border-color .2s
 }
-
-.gold-button:hover{
-  background:var(--gold-dark);
-  border-color:var(--gold-dark);
+.explore-card:hover,.feature-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.explore-card .image-frame,.feature-card .image-frame{
+  min-height:220px;border:0;border-bottom:1px solid var(--line)
 }
-
-.outline-button{
-  background:transparent;
-  color:var(--gold-dark);
+.explore-copy,.feature-copy{
+  padding:24px;display:flex;flex-direction:column;flex:1
 }
-
-.outline-button:hover{
-  background:var(--gold);
-  color:#fff;
+.explore-copy h3,.feature-copy h3{margin:8px 0;color:#fff;font-size:21px}
+.explore-copy p,.feature-copy p{
+  color:var(--muted);font-size:12px;font-weight:700;margin:0 0 10px;flex:1
 }
-
-.explore-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-
-.explore-card{
-  min-width:0;
-  display:flex;
-  flex-direction:column;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:9px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:transform .2s,border-color .2s;
-}
-
-.explore-card:hover{
-  transform:translateY(-4px);
-  border-color:var(--gold);
-}
-
-.explore-card .image-frame{
-  min-height:220px;
-  border:0;
-  border-bottom:1px solid var(--line);
-}
-
-.explore-copy{
-  padding:24px;
-  display:flex;
-  flex-direction:column;
-  flex:1;
-}
-
-.explore-copy h3{
-  margin:8px 0;
-  font-size:21px;
-  color:var(--ink);
-}
-
-.explore-copy p{
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-  margin:0 0 10px;
-  flex:1;
-}
-
 .text-button{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  width:max-content;
-  margin-top:12px;
-  padding:0;
-  border:0;
-  background:none;
-  color:var(--gold-dark);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.3px;
-  cursor:pointer;
-  text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;width:max-content;
+  margin-top:12px;padding:0;border:0;background:none;color:var(--gold);
+  font-size:10px;font-weight:900;letter-spacing:1.3px;cursor:pointer;text-transform:uppercase
 }
-
-.text-button:hover{color:var(--ink)}
+.text-button:hover{color:#fff}
 
 .gallery-panel{
-  display:none;
-  margin:35px 0;
-  padding:clamp(18px,3vw,35px);
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:10px;
-  box-shadow:var(--shadow);
-  scroll-margin-top:100px;
+  display:none;margin:35px 0;padding:clamp(18px,3vw,35px);
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:10px;box-shadow:var(--shadow);scroll-margin-top:100px
 }
-
 .gallery-panel.open{display:block}
-
 .gallery-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-bottom:25px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;margin-bottom:25px
 }
-
-.gallery-header h2{
-  margin:5px 0;
-  font-size:clamp(1.4rem,3vw,2.2rem);
-}
-
-.gallery-header p{
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-  margin:0;
-}
-
+.gallery-header h2{margin:5px 0;color:#fff;font-size:clamp(1.4rem,3vw,2.2rem)}
+.gallery-header p{color:var(--muted);font-size:12px;font-weight:700;margin:0}
 .close-gallery{
-  min-height:40px;
-  padding:9px 15px;
-  border:1px solid var(--line);
-  border-radius:3px;
-  background:var(--bg);
-  color:var(--ink);
-  font-size:10px;
-  font-weight:900;
-  cursor:pointer;
+  min-height:40px;padding:9px 15px;border:1px solid var(--line);
+  border-radius:3px;background:var(--bg-deep);color:#fff;
+  font-size:10px;font-weight:900;cursor:pointer
 }
-
-.close-gallery:hover{
-  border-color:var(--gold);
-  color:var(--gold-dark);
-}
-
+.close-gallery:hover{border-color:var(--gold);color:var(--gold)}
 .gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:17px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px
 }
-
 .gallery-item{
-  min-width:0;
-  background:var(--bg);
-  border:1px solid var(--line);
-  overflow:hidden;
+  min-width:0;background:var(--bg-deep);border:1px solid var(--line);overflow:hidden
 }
-
 .gallery-item .image-frame{
-  min-height:170px;
-  padding:15px;
-  border:0;
-  border-bottom:1px solid var(--line);
+  min-height:170px;padding:15px;border:0;border-bottom:1px solid var(--line)
 }
-
-.gallery-item .image-frame img{
-  max-height:300px;
-}
-
+.gallery-item .image-frame img{max-height:300px}
 .gallery-item-copy{padding:15px}
-
-.gallery-item-copy h3{
-  margin:0 0 5px;
-  font-size:14px;
-}
-
-.gallery-item-copy p{
-  margin:0;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:700;
-}
+.gallery-item-copy h3{margin:0 0 5px;color:#fff;font-size:14px}
+.gallery-item-copy p{margin:0;color:var(--muted);font-size:11px;font-weight:700}
 
 .theater-sections{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px
 }
-
 .theater-item{
-  display:grid;
-  grid-template-columns:105px 1fr;
-  gap:15px;
-  align-items:center;
-  padding:13px;
-  background:var(--bg);
-  border:1px solid var(--line);
-  min-width:0;
+  display:grid;grid-template-columns:105px 1fr;gap:15px;align-items:center;
+  padding:13px;background:var(--bg-deep);border:1px solid var(--line);min-width:0
 }
-
-.theater-item .image-frame{
-  min-height:90px;
-  padding:8px;
-}
-
+.theater-item .image-frame{min-height:90px;padding:8px}
 .theater-item .image-frame img{max-height:130px}
-
-.theater-item h3{
-  font-size:13px;
-  margin:0 0 4px;
-}
-
-.theater-item p{
-  color:var(--muted);
-  font-size:10px;
-  font-weight:700;
-  line-height:1.6;
-  margin:0;
-}
+.theater-item h3{font-size:13px;color:#fff;margin:0 0 4px}
+.theater-item p{color:var(--muted);font-size:10px;font-weight:700;line-height:1.6;margin:0}
 
 .announcement{
-  padding:clamp(30px,5vw,60px);
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:10px;
-  text-align:center;
-  box-shadow:var(--shadow);
+  padding:clamp(30px,5vw,60px);background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;text-align:center;box-shadow:var(--shadow)
 }
-
 .announcement h2{
-  color:var(--ink);
-  font-size:clamp(1.6rem,4vw,2.6rem);
-  margin:10px 0;
-  letter-spacing:2px;
+  color:#fff;font-size:clamp(1.6rem,4vw,2.6rem);
+  margin:10px 0;letter-spacing:2px
 }
-
 .announcement p{
-  max-width:720px;
-  margin:0 auto;
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
+  max-width:740px;margin:0 auto;color:var(--muted);font-size:13px;font-weight:700
 }
+.announcement-grid{margin-top:22px}
+.announcement-tile{
+  padding:25px;background:var(--bg-deep);border:1px solid var(--line);text-align:left
+}
+.announcement-tile h3{font-size:17px;color:#fff;margin:0 0 8px}
+.announcement-tile p{font-size:11px;color:var(--muted);margin:0}
 
-.ticket-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px;
+.feature-strip{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;margin-top:25px
 }
+.feature-point{
+  padding:22px 15px;background:var(--surface);border:1px solid var(--line);text-align:center
+}
+.feature-point strong{
+  display:block;color:var(--gold);font-family:'Cinzel',serif;
+  font-size:14px;letter-spacing:1px
+}
+.feature-point span{display:block;color:var(--muted);font-size:10px;font-weight:800;margin-top:5px}
 
 .ticket-card{
-  padding:28px;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:8px;
-  box-shadow:var(--shadow);
+  padding:28px;background:var(--surface);border:1px solid var(--line);
+  border-radius:8px;box-shadow:var(--shadow)
 }
-
-.ticket-card h3{
-  margin:0 0 10px;
-  font-size:19px;
-}
-
-.ticket-card p{
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-}
-
-.ticket-card ul{
-  padding-left:19px;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-}
-
+.ticket-card h3{margin:10px 0;color:#fff;font-size:19px}
+.ticket-card p,.ticket-card ul{color:var(--muted);font-size:12px;font-weight:700}
+.ticket-card ul{padding-left:19px}
 .ticket-card li{margin:7px 0}
-
 .ticket-status{
-  display:inline-block;
-  padding:6px 10px;
-  border:1px solid var(--line);
-  color:var(--gold-dark);
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase;
+  display:inline-block;padding:6px 10px;border:1px solid var(--line);
+  color:var(--gold);font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase
 }
 
 .event-contact{
-  padding:45px 20px;
-  text-align:center;
-  border-top:1px solid var(--line);
+  padding:55px 20px;text-align:center;border-top:1px solid var(--line)
 }
-
-.event-contact h2{
-  margin:0 0 8px;
-  font-size:clamp(1.4rem,3vw,2rem);
-}
-
+.event-contact h2{margin:0 0 8px;color:#fff;font-size:clamp(1.4rem,3vw,2rem)}
 .event-contact p{
-  max-width:650px;
-  margin:0 auto;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
+  max-width:680px;margin:0 auto;color:var(--muted);font-size:12px;font-weight:700
 }
-
-.contact-actions{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:20px;
-}
-
+.contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:20px}
 .contact-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  min-height:46px;
-  padding:12px 20px;
-  border:1px solid var(--gold);
-  background:var(--gold);
-  color:#fff;
-  border-radius:3px;
-  text-decoration:none;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  transition:.2s;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:46px;padding:12px 20px;border:1px solid var(--gold);
+  background:var(--gold);color:#101b2d;border-radius:3px;
+  text-decoration:none;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase
 }
-
-.contact-button:hover{
-  background:var(--gold-dark);
-  border-color:var(--gold-dark);
-}
-
-.contact-button.secondary{
-  background:transparent;
-  color:var(--gold-dark);
-}
-
-.contact-button.secondary:hover{
-  background:var(--gold);
-  color:#fff;
-}
-
-.contact-button svg{
-  width:17px;
-  height:17px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.8;
-}
+.contact-button:hover{background:#dfbd7a}
+.contact-button.secondary{background:transparent;color:var(--gold)}
+.contact-button.secondary:hover{background:var(--gold);color:#101b2d}
+.contact-button svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8}
 
 /* Footer */
-
 .phr-main-footer{
-  background:var(--footer);
-  color:#fff;
-  padding:65px 22px 30px;
-  font-family:'Montserrat',sans-serif;
+  background:var(--footer);color:#fff;padding:65px 22px 30px;
+  font-family:'Montserrat',sans-serif;border-top:1px solid var(--line)
 }
-
 .phr-footer-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:35px 25px;
-  max-width:1120px;
-  margin:0 auto 45px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:35px 25px;max-width:1120px;margin:0 auto 45px
 }
-
 .phr-footer-section h3{
-  color:#fff;
-  font-family:'Montserrat',sans-serif;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1.8px;
-  margin:0 0 18px;
+  color:#fff;font-family:'Montserrat',sans-serif;font-size:11px;
+  font-weight:900;letter-spacing:1.8px;margin:0 0 18px
 }
-
-.phr-footer-section ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-
+.phr-footer-section ul{list-style:none;padding:0;margin:0}
 .phr-footer-section li{margin-bottom:11px}
-
 .phr-footer-section a{
-  color:var(--footer-muted);
-  text-decoration:none;
-  font-size:11px;
-  font-weight:700;
-  transition:color .2s;
+  color:var(--footer-muted);text-decoration:none;font-size:11px;
+  font-weight:700;transition:color .2s
 }
-
-.phr-footer-section a:hover{color:var(--gold-light)}
-
+.phr-footer-section a:hover{color:var(--gold)}
 .phr-footer-brand{
-  max-width:1120px;
-  margin:auto;
-  padding-top:28px;
-  border-top:1px solid rgba(255,255,255,.13);
-  text-align:center;
+  max-width:1120px;margin:auto;padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.13);text-align:center
 }
-
-.phr-footer-brand h3{
-  color:var(--gold-light);
-  font-size:15px;
-  letter-spacing:2px;
-  margin:0 0 7px;
-}
-
-.phr-footer-brand p{
-  margin:0;
-  color:var(--footer-muted);
-  font-size:10px;
-  font-weight:700;
-}
-
+.phr-footer-brand h3{color:var(--gold);font-size:15px;letter-spacing:2px;margin:0 0 7px}
+.phr-footer-brand p{margin:0;color:var(--footer-muted);font-size:10px;font-weight:700}
 .phr-footer-legal{
-  margin-top:25px!important;
-  color:#aaa!important;
-  font-size:9px!important;
-  letter-spacing:1px;
-  text-transform:uppercase;
+  margin-top:25px!important;color:#929eac!important;
+  font-size:9px!important;letter-spacing:1px;text-transform:uppercase
 }
 
-/* Google Translate */
-
-.goog-te-banner-frame,
-.goog-te-banner,
-.goog-te-menu-frame,
-.skiptranslate,
-.goog-te-gadget,
-#google_translate_element,
-.goog-te-balloon-frame,
-.goog-tooltip{
-  display:none!important;
-  visibility:hidden!important;
+/* Modal */
+.event-modal{
+  display:none;position:fixed;inset:0;z-index:10000;
+  background:rgba(0,0,0,.82);overflow-y:auto;padding:20px
 }
-
-.goog-text-highlight{
-  background:none!important;
-  box-shadow:none!important;
+.modal-panel{
+  position:relative;max-width:760px;margin:35px auto;padding:clamp(22px,4vw,40px);
+  background:var(--surface);border:1px solid var(--gold);border-radius:9px;color:#fff
 }
+.modal-close{
+  position:absolute;right:13px;top:13px;width:40px;height:40px;
+  background:var(--bg-deep);color:#fff;border:1px solid var(--line);
+  font-size:24px;cursor:pointer
+}
+.modal-panel h2{
+  font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.5rem);
+  margin:20px 45px 15px 0;color:#fff
+}
+.modal-panel p{font-size:13px;font-weight:700;color:var(--muted);line-height:2}
+.modal-panel .image-frame{margin:20px 0}
+
+/* Translation */
+.goog-te-banner-frame,.goog-te-banner,.goog-te-menu-frame,.skiptranslate,
+.goog-te-gadget,#google_translate_element,.goog-te-balloon-frame,.goog-tooltip{
+  display:none!important;visibility:hidden!important
+}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
 
 @media(min-width:768px){
   .phr-footer-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
-
 @media(max-width:850px){
   .featured-event{grid-template-columns:1fr}
-  .featured-visual{
-    border-right:0;
-    border-bottom:1px solid var(--line);
-  }
+  .featured-visual{border-right:0;border-bottom:1px solid var(--line)}
   .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .feature-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
 @media(max-width:600px){
-  .site-header{
-    position:relative;
-    padding:12px 8px;
-  }
+  .site-header{position:relative;padding:12px 8px}
   .menu{gap:10px 14px}
   .menu a{font-size:9px}
   #languageSwitcher{font-size:9px;padding:7px}
@@ -896,9 +499,7 @@ h1,h2,h3{
   .brand-seal{width:100px}
   .hero-subtitle{font-size:12px}
   .section{margin:35px 0 55px}
-  .explore-grid,
-  .ticket-grid,
-  .theater-sections{grid-template-columns:1fr}
+  .explore-grid,.ticket-grid,.theater-sections,.announcement-grid{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:1fr}
   .gallery-item .image-frame{min-height:210px}
   .theater-item{grid-template-columns:90px 1fr}
@@ -906,16 +507,13 @@ h1,h2,h3{
   .featured-visual{padding:15px}
   .featured-visual img{max-height:360px}
   .announcement{padding:30px 20px}
+  .feature-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
   .phr-footer-grid{gap:28px 16px}
   .phr-main-footer{padding:45px 18px 25px}
 }
-
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{
-    transition:none!important;
-    animation:none!important;
-  }
+  *,*::before,*::after{transition:none!important;animation:none!important}
 }
 </style>
 </head>
@@ -928,7 +526,6 @@ h1,h2,h3{
     <a href="/events" aria-current="page">EVENTS</a>
     <a href="/press">PRESS &amp; MEDIA</a>
     <a href="/luxury">LUXURY</a>
-
     <select id="languageSwitcher" aria-label="Select language">
       <option value="en">English (EN)</option>
       <option value="fr">Français (FR)</option>
@@ -957,430 +554,295 @@ h1,h2,h3{
 
 <main class="page-container">
 
-  <!-- MAIN INTRODUCTION -->
-
+  <!-- INTRODUCTION -->
   <section class="hero">
-    <img
-      src="/phrinusomyis_logo.png"
-      alt="PHRINUSOMYIS"
-      class="brand-seal"
-    >
-
+    <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS" class="brand-seal">
     <div class="eyebrow">PHRINUSOMYIS™</div>
     <h1>EVENTS</h1>
     <div class="hero-line"></div>
-
     <p class="hero-subtitle">
-      Discover the competitions, sporting experiences and original
-      formats developed and administered by PHRINUSOMYIS™.
-      Explore Sports Theater™, its competitions and the world of
-      competitive sport presented by the organization.
+      Discover the competitions, sporting experiences and original formats
+      developed, owned and administered by PHRINUSOMYIS™. Explore Sports
+      Theater™, its competitions and the world of competitive sport
+      presented by the organization.
     </p>
+    <div class="hero-actions">
+      <a class="gold-button" href="#featured">FEATURED COMPETITION</a>
+      <a class="outline-button" href="#explore">EXPLORE EVENTS</a>
+    </div>
   </section>
 
   <!-- FEATURED COMPETITION -->
-
-  <section class="section" id="featured" aria-labelledby="featured-heading">
+  <section class="section" id="featured">
     <div class="section-heading">
       <div class="eyebrow">Featured Competition</div>
-      <h2 id="featured-heading">THE COMPETITIVE STAGE</h2>
-      <p>
-        An introduction to an original competition within the
-        PHRINUSOMYIS™ sporting portfolio.
-      </p>
+      <h2>THE COMPETITIVE STAGE</h2>
+      <p>An introduction to an original competition within the PHRINUSOMYIS™ sporting portfolio.</p>
     </div>
 
     <div class="featured-event">
       <div class="featured-visual">
-        <img
-          src="/phrinusomyis_logo.png"
-          alt="PHRINUSOMYIS featured competition"
-        >
+        <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS featured competition">
       </div>
-
       <div class="featured-copy">
         <span class="event-tag">Sports Theater™</span>
         <h2>SOUL SURVIVE™</h2>
-
         <p>
-          SOUL SURVIVE™ is a structured live competition within
-          the Sports Theater™ concept. Its identity centres on
-          will, endurance, resolve, discipline and performance
-          under pressure.
+          SOUL SURVIVE™ is a structured live competition within the Sports
+          Theater™ concept. Its identity centres on will, endurance, resolve,
+          discipline and performance under pressure.
         </p>
-
         <p>
-          It represents an original approach to competitive sport,
-          built around the human qualities revealed when individuals
-          face demanding conditions.
+          It represents an original approach to competitive sport, built
+          around the human qualities revealed when individuals face demanding
+          conditions.
         </p>
-
-        <button class="gold-button" type="button"
-          onclick="openEventDetails('soul-survive')">
+        <button class="gold-button" type="button" onclick="openEventDetails('soul-survive')">
           EXPLORE SOUL SURVIVE™
         </button>
       </div>
     </div>
   </section>
 
-  <!-- EXPLORE THE ORGANIZATION'S SPORTING WORLD -->
+  <!-- EVENT EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-heading">
+      <div class="eyebrow">The Event Experience</div>
+      <h2>MORE THAN A COMPETITION</h2>
+      <p>
+        Explore the different dimensions of a PHRINUSOMYIS™ sporting event,
+        from the competition itself to the experience surrounding it.
+      </p>
+    </div>
 
+    <div class="feature-strip">
+      <div class="feature-point"><strong>COMPETITION</strong><span>Original sporting formats</span></div>
+      <div class="feature-point"><strong>PARTICIPATION</strong><span>Competitors and audiences</span></div>
+      <div class="feature-point"><strong>PRESENTATION</strong><span>The sporting stage</span></div>
+      <div class="feature-point"><strong>EXPERIENCE</strong><span>The atmosphere of sport</span></div>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
   <section class="section" id="explore">
     <div class="section-heading">
       <div class="eyebrow">Discover PHRINUSOMYIS™</div>
       <h2>EXPLORE THE SPORTING WORLD</h2>
-      <p>
-        Explore the concepts, competitions and sporting experiences
-        that define the PHRINUSOMYIS™ approach to competition.
-      </p>
+      <p>Explore the concepts, competitions and sporting experiences that define the PHRINUSOMYIS™ approach to competition.</p>
     </div>
 
     <div class="explore-grid">
-
       <article class="explore-card">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png"
-            alt="Sports Theater™">
-        </div>
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports Theater™"></div>
         <div class="explore-copy">
           <span class="eyebrow">Original Sporting Concept</span>
           <h3>SPORTS THEATER™</h3>
-          <p>
-            Discover the concept, sporting identity, competitive
-            experience and presentation behind Sports Theater™.
-          </p>
-          <button class="text-button" type="button"
-            onclick="openGallery('theaterGallery')">
-            EXPLORE SPORTS THEATER™ →
-          </button>
+          <p>Discover the concept, sporting identity, competitive experience and presentation behind Sports Theater™.</p>
+          <button class="text-button" type="button" onclick="openGallery('theaterGallery')">EXPLORE SPORTS THEATER™ →</button>
         </div>
       </article>
 
       <article class="explore-card">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png"
-            alt="PHRINUSOMYIS competitions">
-        </div>
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS competitions"></div>
         <div class="explore-copy">
           <span class="eyebrow">Competitive Portfolio</span>
           <h3>COMPETITIONS</h3>
-          <p>
-            Explore the competitions and original sporting formats
-            developed, owned and administered by PHRINUSOMYIS™.
-          </p>
-          <button class="text-button" type="button"
-            onclick="openGallery('competitionGallery')">
-            EXPLORE COMPETITIONS →
-          </button>
+          <p>Explore the competitions and original sporting formats developed, owned and administered by PHRINUSOMYIS™.</p>
+          <button class="text-button" type="button" onclick="openGallery('competitionGallery')">EXPLORE COMPETITIONS →</button>
         </div>
       </article>
 
+      <article class="explore-card">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Event highlights"></div>
+        <div class="explore-copy">
+          <span class="eyebrow">Visual Features</span>
+          <h3>EVENT HIGHLIGHTS</h3>
+          <p>Explore visual features and selected content connected with PHRINUSOMYIS™ sporting experiences.</p>
+          <button class="text-button" type="button" onclick="openGallery('highlightsGallery')">EXPLORE HIGHLIGHTS →</button>
+        </div>
+      </article>
+
+      <article class="explore-card">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Media and videos"></div>
+        <div class="explore-copy">
+          <span class="eyebrow">Official Content</span>
+          <h3>MEDIA &amp; VIDEO</h3>
+          <p>A dedicated space for visual material, official media content and video presentations.</p>
+          <button class="text-button" type="button" onclick="openGallery('mediaGallery')">EXPLORE MEDIA →</button>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- SPORTS THEATER CONTENT -->
-
-  <section class="gallery-panel" id="theaterGallery"
-    aria-labelledby="theater-gallery-heading">
-
+  <!-- SPORTS THEATER -->
+  <section class="gallery-panel" id="theaterGallery">
     <div class="gallery-header">
       <div>
         <div class="eyebrow">Explore the Concept</div>
-        <h2 id="theater-gallery-heading">SPORTS THEATER™</h2>
-        <p>
-          Ten perspectives introducing the Sports Theater™ concept.
-        </p>
+        <h2>SPORTS THEATER™</h2>
+        <p>Ten perspectives introducing the Sports Theater™ concept.</p>
       </div>
-      <button class="close-gallery" type="button"
-        onclick="closeGallery('theaterGallery')">
-        CLOSE ✕
-      </button>
+      <button class="close-gallery" type="button" onclick="closeGallery('theaterGallery')">CLOSE ✕</button>
     </div>
 
     <div class="theater-sections">
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Sports Theater overview">
-        </div>
-        <div>
-          <h3>01. OVERVIEW</h3>
-          <p>An introduction to Sports Theater™ and its place within PHRINUSOMYIS™.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="The concept">
-        </div>
-        <div>
-          <h3>02. THE CONCEPT</h3>
-          <p>The central vision behind a distinctive approach to competitive sport.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Sporting identity">
-        </div>
-        <div>
-          <h3>03. SPORTING IDENTITY</h3>
-          <p>The identity, character and principles that shape the concept.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Competitions">
-        </div>
-        <div>
-          <h3>04. COMPETITIONS</h3>
-          <p>Original competitions presented within the Sports Theater™ concept.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Participants">
-        </div>
-        <div>
-          <h3>05. PARTICIPANTS</h3>
-          <p>The individuals and competitors who take part in the sporting experience.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Competitive experience">
-        </div>
-        <div>
-          <h3>06. THE COMPETITIVE EXPERIENCE</h3>
-          <p>The atmosphere, intensity and human qualities associated with competition.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Presentation and production">
-        </div>
-        <div>
-          <h3>07. PRESENTATION &amp; PRODUCTION</h3>
-          <p>The presentation of sporting experiences to audiences.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Global participation">
-        </div>
-        <div>
-          <h3>08. GLOBAL PARTICIPATION</h3>
-          <p>The international sporting reach and participation opportunities.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Event highlights">
-        </div>
-        <div>
-          <h3>09. EVENT HIGHLIGHTS</h3>
-          <p>Selected moments and features from the Sports Theater™ experience.</p>
-        </div>
-      </article>
-
-      <article class="theater-item">
-        <div class="image-frame">
-          <img src="/phrinusomyis_logo.png" alt="Media gallery">
-        </div>
-        <div>
-          <h3>10. MEDIA GALLERY</h3>
-          <p>Visual content, media features and official sporting materials.</p>
-        </div>
-      </article>
-
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Overview"></div><div><h3>01. OVERVIEW</h3><p>An introduction to Sports Theater™ and its place within PHRINUSOMYIS™.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="The concept"></div><div><h3>02. THE CONCEPT</h3><p>The central vision behind a distinctive approach to competitive sport.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sporting identity"></div><div><h3>03. SPORTING IDENTITY</h3><p>The identity, character and principles that shape the concept.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitions"></div><div><h3>04. COMPETITIONS</h3><p>Original competitions presented within the Sports Theater™ concept.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Participants"></div><div><h3>05. PARTICIPANTS</h3><p>The individuals and competitors who take part in the sporting experience.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitive experience"></div><div><h3>06. THE COMPETITIVE EXPERIENCE</h3><p>The atmosphere, intensity and human qualities associated with competition.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Presentation and production"></div><div><h3>07. PRESENTATION &amp; PRODUCTION</h3><p>The presentation of sporting experiences to audiences.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Global participation"></div><div><h3>08. GLOBAL PARTICIPATION</h3><p>The international sporting reach and participation opportunities.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Event highlights"></div><div><h3>09. EVENT HIGHLIGHTS</h3><p>Selected moments and features from the Sports Theater™ experience.</p></div></article>
+      <article class="theater-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Media gallery"></div><div><h3>10. MEDIA GALLERY</h3><p>Visual content, media features and official sporting materials.</p></div></article>
     </div>
 
     <div style="text-align:center;margin-top:25px">
-      <a class="outline-button" href="/sports-theater">
-        SPORTS THEATER™ PAGE
-      </a>
+      <a class="outline-button" href="/sports-theater">SPORTS THEATER™ PAGE</a>
     </div>
   </section>
 
   <!-- COMPETITION GALLERY -->
-
-  <section class="gallery-panel" id="competitionGallery"
-    aria-labelledby="competition-gallery-heading">
-
+  <section class="gallery-panel" id="competitionGallery">
     <div class="gallery-header">
       <div>
         <div class="eyebrow">PHRINUSOMYIS™ Sporting Portfolio</div>
-        <h2 id="competition-gallery-heading">COMPETITIONS</h2>
-        <p>
-          A visual presentation of competitions and sporting formats.
-        </p>
+        <h2>COMPETITIONS</h2>
+        <p>A visual presentation of competitions and sporting formats.</p>
       </div>
-      <button class="close-gallery" type="button"
-        onclick="closeGallery('competitionGallery')">
-        CLOSE ✕
-      </button>
+      <button class="close-gallery" type="button" onclick="closeGallery('competitionGallery')">CLOSE ✕</button>
     </div>
 
     <div class="gallery-grid">
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="SOUL SURVIVE competition"></div>
-        <div class="gallery-item-copy">
-          <h3>SOUL SURVIVE™</h3>
-          <p>A Sports Theater™ competition.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS competition"></div>
-        <div class="gallery-item-copy">
-          <h3>COMPETITIVE FORMATS</h3>
-          <p>Original sporting formats by PHRINUSOMYIS™.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports Theater experience"></div>
-        <div class="gallery-item-copy">
-          <h3>SPORTS THEATER™</h3>
-          <p>Sporting experiences and competition.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="International competition"></div>
-        <div class="gallery-item-copy">
-          <h3>INTERNATIONAL COMPETITION</h3>
-          <p>Sporting competition across markets.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitive performance"></div>
-        <div class="gallery-item-copy">
-          <h3>PERFORMANCE</h3>
-          <p>Discipline, preparation and competitive performance.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sporting presentation"></div>
-        <div class="gallery-item-copy">
-          <h3>THE SPORTING STAGE</h3>
-          <p>The presentation of original sporting experiences.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competition highlights"></div>
-        <div class="gallery-item-copy">
-          <h3>COMPETITION HIGHLIGHTS</h3>
-          <p>Selected competition features and moments.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports media"></div>
-        <div class="gallery-item-copy">
-          <h3>SPORTS MEDIA</h3>
-          <p>Official visual and media content.</p>
-        </div>
-      </article>
-
-      <article class="gallery-item">
-        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS sporting programme"></div>
-        <div class="gallery-item-copy">
-          <h3>SPORTING PROGRAMMES</h3>
-          <p>Programmes within the PHRINUSOMYIS™ portfolio.</p>
-        </div>
-      </article>
-
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="SOUL SURVIVE"></div><div class="gallery-item-copy"><h3>SOUL SURVIVE™</h3><p>A Sports Theater™ competition.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitive formats"></div><div class="gallery-item-copy"><h3>COMPETITIVE FORMATS</h3><p>Original sporting formats by PHRINUSOMYIS™.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports Theater"></div><div class="gallery-item-copy"><h3>SPORTS THEATER™</h3><p>Sporting experiences and competition.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="International competition"></div><div class="gallery-item-copy"><h3>INTERNATIONAL COMPETITION</h3><p>Sporting competition across markets.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitive performance"></div><div class="gallery-item-copy"><h3>PERFORMANCE</h3><p>Discipline, preparation and competitive performance.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sporting stage"></div><div class="gallery-item-copy"><h3>THE SPORTING STAGE</h3><p>The presentation of original sporting experiences.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competition highlights"></div><div class="gallery-item-copy"><h3>COMPETITION HIGHLIGHTS</h3><p>Selected competition features and moments.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports media"></div><div class="gallery-item-copy"><h3>SPORTS MEDIA</h3><p>Official visual and media content.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sporting programmes"></div><div class="gallery-item-copy"><h3>SPORTING PROGRAMMES</h3><p>Programmes within the PHRINUSOMYIS™ portfolio.</p></div></article>
     </div>
 
     <div style="text-align:center;margin-top:25px">
-      <a class="outline-button" href="/competitions">
-        COMPETITIONS PAGE
-      </a>
+      <a class="outline-button" href="/competitions">COMPETITIONS PAGE</a>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS GALLERY -->
+  <section class="gallery-panel" id="highlightsGallery">
+    <div class="gallery-header">
+      <div><div class="eyebrow">Event Features</div><h2>EVENT HIGHLIGHTS</h2><p>Explore the different elements of the sporting event experience.</p></div>
+      <button class="close-gallery" type="button" onclick="closeGallery('highlightsGallery')">CLOSE ✕</button>
+    </div>
+    <div class="gallery-grid">
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="The competition"></div><div class="gallery-item-copy"><h3>THE COMPETITION</h3><p>The central sporting contest.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="The competitors"></div><div class="gallery-item-copy"><h3>THE COMPETITORS</h3><p>The individuals at the centre of competition.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="The audience"></div><div class="gallery-item-copy"><h3>THE AUDIENCE</h3><p>The spectator experience.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="The atmosphere"></div><div class="gallery-item-copy"><h3>THE ATMOSPHERE</h3><p>The energy surrounding the sporting stage.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="The presentation"></div><div class="gallery-item-copy"><h3>THE PRESENTATION</h3><p>The visual presentation of competition.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="The experience"></div><div class="gallery-item-copy"><h3>THE EXPERIENCE</h3><p>The wider sporting experience.</p></div></article>
+    </div>
+  </section>
+
+  <!-- MEDIA GALLERY -->
+  <section class="gallery-panel" id="mediaGallery">
+    <div class="gallery-header">
+      <div><div class="eyebrow">Official Media</div><h2>MEDIA &amp; VIDEO</h2><p>A dedicated presentation area for official visual and media content.</p></div>
+      <button class="close-gallery" type="button" onclick="closeGallery('mediaGallery')">CLOSE ✕</button>
+    </div>
+    <div class="gallery-grid">
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Official photography"></div><div class="gallery-item-copy"><h3>OFFICIAL PHOTOGRAPHY</h3><p>Official event photography and images.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Video presentations"></div><div class="gallery-item-copy"><h3>VIDEO PRESENTATIONS</h3><p>Official video content and presentations.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Media features"></div><div class="gallery-item-copy"><h3>MEDIA FEATURES</h3><p>Selected media material and features.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competition visuals"></div><div class="gallery-item-copy"><h3>COMPETITION VISUALS</h3><p>Visual material connected with competitions.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Sports Theater media"></div><div class="gallery-item-copy"><h3>SPORTS THEATER™ MEDIA</h3><p>Visual content from the Sports Theater™ concept.</p></div></article>
+      <article class="gallery-item"><div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Press material"></div><div class="gallery-item-copy"><h3>PRESS MATERIAL</h3><p>Official media resources and publications.</p></div></article>
+    </div>
+    <div style="text-align:center;margin-top:25px">
+      <a class="outline-button" href="/press">VISIT PRESS &amp; MEDIA</a>
+    </div>
+  </section>
+
+  <!-- PARTICIPANTS -->
+  <section class="section" id="participants">
+    <div class="section-heading">
+      <div class="eyebrow">The People of Competition</div>
+      <h2>PARTICIPANTS &amp; COMPETITORS</h2>
+      <p>
+        Competition places individuals at the centre of the sporting stage.
+        Explore the participant experience and the qualities represented
+        through competitive sport.
+      </p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitors"></div>
+        <div class="feature-copy"><h3>THE COMPETITORS</h3><p>Individuals who take part in PHRINUSOMYIS™ competitions.</p></div>
+      </article>
+      <article class="feature-card">
+        <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="Competitive qualities"></div>
+        <div class="feature-copy"><h3>THE QUALITIES</h3><p>Discipline, preparation, determination and performance under pressure.</p></div>
+      </article>
     </div>
   </section>
 
   <!-- EVENT ANNOUNCEMENTS -->
-
   <section class="section" id="announcements">
     <div class="announcement">
       <div class="eyebrow">PHRINUSOMYIS™ Announcements</div>
-      <h2>THE NEXT STAGE</h2>
+      <h2>OFFICIAL EVENT ANNOUNCEMENTS</h2>
       <p>
         Official announcements concerning PHRINUSOMYIS™ competitions,
-        sporting experiences and event participation will be presented
-        through this page. Follow the organization's official channels
-        for published announcements and event information.
+        sporting experiences and event participation are presented through
+        the organization's communication channels.
       </p>
+      <div class="announcement-grid">
+        <div class="announcement-tile"><h3>COMPETITION ANNOUNCEMENTS</h3><p>Official information concerning competitions and sporting presentations.</p></div>
+        <div class="announcement-tile"><h3>PARTICIPATION INFORMATION</h3><p>Information for competitors, participants and interested audiences.</p></div>
+        <div class="announcement-tile"><h3>EVENT UPDATES</h3><p>Official updates and announcements from PHRINUSOMYIS™.</p></div>
+        <div class="announcement-tile"><h3>ORGANIZATION NEWS</h3><p>News and communications from the organization.</p></div>
+      </div>
       <a class="gold-button" href="/news">VIEW OFFICIAL NEWS</a>
     </div>
   </section>
 
   <!-- TICKETING -->
-
   <section class="section" id="tickets">
     <div class="section-heading">
       <div class="eyebrow">Attend a Competition</div>
       <h2>TICKETS &amp; EVENT INFORMATION</h2>
-      <p>
-        Information for spectators, attendees and those interested
-        in experiencing PHRINUSOMYIS™ competitions.
-      </p>
+      <p>Information for spectators, attendees and those interested in experiencing PHRINUSOMYIS™ competitions.</p>
     </div>
-
     <div class="ticket-grid">
-
       <article class="ticket-card">
         <span class="ticket-status">Official Information</span>
         <h3>Ticket Information</h3>
-        <p>
-          Ticket announcements and official purchasing information
-          will be communicated through PHRINUSOMYIS™ channels.
-        </p>
+        <p>Ticket announcements and official purchasing information will be communicated through PHRINUSOMYIS™ channels.</p>
         <ul>
           <li>Official ticket announcements</li>
           <li>Ticket categories and access information</li>
           <li>Authorized ticket purchasing information</li>
           <li>Event attendance guidance</li>
         </ul>
-        <a class="outline-button" href="/news">
-          FOLLOW ANNOUNCEMENTS
-        </a>
+        <a class="outline-button" href="/news">FOLLOW ANNOUNCEMENTS</a>
       </article>
-
       <article class="ticket-card">
         <span class="ticket-status">Spectator Enquiries</span>
         <h3>Attending an Event</h3>
         <p>
-          For enquiries concerning attendance, ticketing, event
-          information and spectator arrangements, contact the
-          PHRINUSOMYIS™ events team.
+          For enquiries concerning attendance, ticketing, event information
+          and spectator arrangements, contact the PHRINUSOMYIS™ events team.
         </p>
-        <p>
-          Official information will be provided through the
-          organization's communication channels.
-        </p>
-        <a class="gold-button"
-          href="mailto:events@phrinusomyis.com?subject=Ticketing%20and%20Event%20Enquiry">
-          TICKET ENQUIRY
-        </a>
+        <p>Official information will be provided through the organization's communication channels.</p>
+        <a class="gold-button" href="mailto:events@phrinusomyis.com?subject=Ticketing%20and%20Event%20Enquiry">TICKET ENQUIRY</a>
       </article>
-
     </div>
   </section>
 
-  <!-- CONTACT -->
-
+  <!-- EVENT ENQUIRIES -->
   <section class="event-contact" id="event-enquiries">
     <div class="eyebrow">Connect With the Organization</div>
     <h2>CONTACT FOR MORE DETAILS</h2>
@@ -1389,83 +851,42 @@ h1,h2,h3{
       event participation, ticketing, media and sporting programmes,
       contact PHRINUSOMYIS™.
     </p>
-
     <div class="contact-actions">
-      <a class="contact-button"
-        href="mailto:events@phrinusomyis.com?subject=PHRINUSOMYIS%20Events%20Enquiry">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-          <path d="m3 7 9 6 9-6"></path>
-        </svg>
+      <a class="contact-button" href="mailto:events@phrinusomyis.com?subject=PHRINUSOMYIS%20Events%20Enquiry">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
         CONTACT EVENTS
       </a>
-
-      <a class="contact-button secondary" href="/contact">
-        ORGANIZATION CONTACT
-      </a>
+      <a class="contact-button secondary" href="/contact">ORGANIZATION CONTACT</a>
     </div>
   </section>
 
 </main>
 
 <!-- EVENT DETAIL MODAL -->
-
-<div class="event-modal" id="eventModal"
-  role="dialog" aria-modal="true"
-  aria-labelledby="modalTitle"
-  style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(20,20,18,.78);overflow-y:auto;padding:20px">
-
-  <div class="modal-panel"
-    style="position:relative;max-width:760px;margin:35px auto;padding:clamp(22px,4vw,40px);background:#fff;border:1px solid #dedbd1;border-radius:9px;color:#191919">
-
-    <button type="button" onclick="closeEventDetails()"
-      aria-label="Close"
-      style="position:absolute;right:13px;top:13px;width:40px;height:40px;background:#f6f5f0;border:1px solid #dedbd1;font-size:24px;cursor:pointer">
-      &times;
-    </button>
-
+<div class="event-modal" id="eventModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-panel">
+    <button type="button" class="modal-close" onclick="closeEventDetails()" aria-label="Close">&times;</button>
     <span class="event-tag">Sports Theater™</span>
-    <h2 id="modalTitle"
-      style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.5rem);margin:20px 45px 15px 0">
-      SOUL SURVIVE™
-    </h2>
-
-    <div class="image-frame" style="margin:20px 0">
-      <img src="/phrinusomyis_logo.png" alt="SOUL SURVIVE™">
-    </div>
-
-    <div id="modalBody"
-      style="font-size:13px;font-weight:700;color:#625f57;line-height:2">
+    <h2 id="modalTitle">SOUL SURVIVE™</h2>
+    <div class="image-frame"><img src="/phrinusomyis_logo.png" alt="SOUL SURVIVE™"></div>
+    <div id="modalBody">
+      <p>SOUL SURVIVE™ is a structured live competition within the Sports Theater™ concept.</p>
       <p>
-        SOUL SURVIVE™ is a structured live competition within
-        the Sports Theater™ concept.
-      </p>
-      <p>
-        Its central themes include will, endurance, resolve,
-        discipline and performance under pressure. The competition
-        forms part of the original sporting formats developed
-        and administered by PHRINUSOMYIS™.
+        Its central themes include will, endurance, resolve, discipline and
+        performance under pressure. The competition forms part of the
+        original sporting formats developed and administered by PHRINUSOMYIS™.
       </p>
     </div>
-
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
-      <a class="gold-button"
-        href="mailto:events@phrinusomyis.com?subject=SOUL%20SURVIVE%20Enquiry">
-        MAKE AN ENQUIRY
-      </a>
-      <button class="outline-button" type="button"
-        onclick="shareFeaturedEvent()">
-        SHARE
-      </button>
+      <a class="gold-button" href="mailto:events@phrinusomyis.com?subject=SOUL%20SURVIVE%20Enquiry">MAKE AN ENQUIRY</a>
+      <button class="outline-button" type="button" onclick="shareFeaturedEvent()">SHARE</button>
     </div>
   </div>
 </div>
 
 <!-- FOOTER -->
-
 <footer class="phr-main-footer">
   <div class="phr-footer-grid">
-
     <div class="phr-footer-section">
       <h3>ORGANIZATION</h3>
       <ul>
@@ -1476,7 +897,6 @@ h1,h2,h3{
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
-
     <div class="phr-footer-section">
       <h3>SPORTS</h3>
       <ul>
@@ -1486,7 +906,6 @@ h1,h2,h3{
         <li><a href="/media">Media</a></li>
       </ul>
     </div>
-
     <div class="phr-footer-section">
       <h3>PUBLICATIONS</h3>
       <ul>
@@ -1495,7 +914,6 @@ h1,h2,h3{
         <li><a href="/luxury">Luxury</a></li>
       </ul>
     </div>
-
     <div class="phr-footer-section">
       <h3>INFORMATION</h3>
       <ul>
@@ -1504,15 +922,11 @@ h1,h2,h3{
         <li><a href="/copyright">Copyright</a></li>
       </ul>
     </div>
-
   </div>
-
   <div class="phr-footer-brand">
     <h3>PHRINUSOMYIS™</h3>
     <p>COMMANDING THE WORLD STAGE™</p>
-    <p class="phr-footer-legal">
-      © PHRINUSOMYIS™. All Rights Reserved.
-    </p>
+    <p class="phr-footer-legal">© PHRINUSOMYIS™. All Rights Reserved.</p>
   </div>
 </footer>
 
@@ -1530,7 +944,6 @@ function openGallery(id){
   });
 
   target.classList.add('open');
-
   requestAnimationFrame(()=>{
     target.scrollIntoView({behavior:'smooth',block:'start'});
   });
@@ -1543,18 +956,16 @@ function closeGallery(id){
 
 function openEventDetails(id){
   if(id!=='soul-survive')return;
-
   const modal=document.getElementById('eventModal');
   modal.style.display='block';
   document.body.classList.add('modal-open');
   document.getElementById('modalTitle').textContent='SOUL SURVIVE™';
-  history.replaceState({event:'soul-survive'},'', '#event=soul-survive');
+  history.replaceState({event:'soul-survive'},'','#event=soul-survive');
 }
 
 function closeEventDetails(){
   document.getElementById('eventModal').style.display='none';
   document.body.classList.remove('modal-open');
-
   if(location.hash==='#event=soul-survive'){
     history.replaceState({},'',location.pathname+location.search);
   }
@@ -1567,9 +978,7 @@ document.getElementById('eventModal').addEventListener('click',function(event){
 document.addEventListener('keydown',function(event){
   if(event.key==='Escape'){
     closeEventDetails();
-    document.querySelectorAll('.gallery-panel').forEach(panel=>{
-      panel.classList.remove('open');
-    });
+    document.querySelectorAll('.gallery-panel').forEach(panel=>panel.classList.remove('open'));
   }
 });
 
@@ -1591,25 +1000,21 @@ function shareFeaturedEvent(){
   }
 }
 
-/* Direct links to the featured competition */
-
 function handleEventHash(){
   if(location.hash==='#event=soul-survive'){
-    openEventDetails('soul-survive');
+    const modal=document.getElementById('eventModal');
+    if(modal.style.display!=='block')openEventDetails('soul-survive');
   }
 }
-
 window.addEventListener('hashchange',handleEventHash);
 handleEventHash();
 
-/* Google Translate */
-
+/* Google Translate and saved language */
 function googleTranslateElementInit(){
   new google.translate.TranslateElement({
     pageLanguage:'en',
     autoDisplay:false
   },'google_translate_element');
-
   restoreLanguage();
 }
 
@@ -1624,13 +1029,9 @@ function restoreLanguage(){
 
 languageSwitcher.addEventListener('change',function(){
   const selected=this.value;
-
-  try{
-    localStorage.setItem('site_lang',selected);
-  }catch(error){}
+  try{localStorage.setItem('site_lang',selected)}catch(error){}
 
   const translateSelect=document.querySelector('.goog-te-combo');
-
   if(translateSelect){
     translateSelect.value=selected;
     translateSelect.dispatchEvent(new Event('change'));
