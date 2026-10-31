@@ -604,7 +604,7 @@
 </style>
 </head>
 <body>    
-         <div id="google_translate_element"></div>
+        
     <div class="language-bar">
         <label for="languageSwitcher"
                style="position:absolute;left:-9999px;">
@@ -1034,76 +1034,82 @@
 
     <!-- GOOGLE TRANSLATE FUNCTION -->
 
-    <script type="text/javascript">
+ 
+<script type="text/javascript">
 
-        function googleTranslateElementInit() {
+    function googleTranslateElementInit() {
 
-            new google.translate.TranslateElement(
-                {
-                    pageLanguage: 'en',
-                    includedLanguages:
-                        'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-                    autoDisplay: false
-                },
-                'google_translate_element'
-            );
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: 'en',
+                includedLanguages:
+                    'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+                autoDisplay: false
+            },
+            'google_translate_element'
+        );
 
-            let savedLanguage = 'en';
+        let savedLanguage = 'en';
 
-            try {
-                savedLanguage = localStorage.getItem('site_lang') || 'en';
-            } catch (error) {
-                savedLanguage = 'en';
-            }
-
-            document.getElementById('languageSwitcher').value =
-                savedLanguage;
-
-            if (savedLanguage !== 'en') {
-                setTimeout(function () {
-                    applyGoogleLanguage(savedLanguage);
-                }, 1000);
-            }
+        try {
+            savedLanguage = localStorage.getItem('site_lang') || 'en';
+        } catch (error) {
+            savedLanguage = 'en';
         }
 
-        function applyGoogleLanguage(language) {
+        const languageSwitcher =
+            document.getElementById('languageSwitcher');
 
-            const googleSelect =
-                document.querySelector('.goog-te-combo');
+        if (languageSwitcher) {
+            languageSwitcher.value = savedLanguage;
+        }
 
-            if (googleSelect) {
+        if (savedLanguage !== 'en') {
+            setTimeout(function () {
+                applyGoogleLanguage(savedLanguage);
+            }, 1000);
+        }
+    }
 
-                googleSelect.value = language;
+    function applyGoogleLanguage(language) {
 
-                googleSelect.dispatchEvent(
-                    new Event('change', { bubbles: true })
-                );
+        const googleSelect =
+            document.querySelector('#google_translate_element select.goog-te-combo');
 
-                return true;
-            }
-
+        if (!googleSelect) {
             return false;
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        googleSelect.value = language;
 
-            const languageSwitcher =
-                document.getElementById('languageSwitcher');
+        googleSelect.dispatchEvent(
+            new Event('change', { bubbles: true })
+        );
 
-            languageSwitcher.addEventListener('change', function () {
+        return true;
+    }
 
-                const selectedLanguage = this.value;
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const languageSwitcher =
+            document.getElementById('languageSwitcher');
+
+        if (!languageSwitcher) return;
+
+        languageSwitcher.addEventListener('change', function () {
+
+            const selectedLanguage = this.value;
+
+            try {
+                localStorage.setItem('site_lang', selectedLanguage);
+            } catch (error) {
+                // Translation remains available for this session.
+            }
+
+            if (selectedLanguage === 'en') {
 
                 try {
-                    localStorage.setItem(
-                        'site_lang',
-                        selectedLanguage
-                    );
-                } catch (error) {
-                    // Translation can still work for the current session.
-                }
-
-                if (selectedLanguage === 'en') {
+                    localStorage.setItem('site_lang', 'en');
 
                     document.cookie =
                         'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
@@ -1111,37 +1117,47 @@
                     document.cookie =
                         'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' +
                         location.hostname;
-
-                    location.reload();
-
-                    return;
+                } catch (error) {
+                    // Continue with page reload.
                 }
 
-                if (!applyGoogleLanguage(selectedLanguage)) {
+                location.reload();
+                return;
+            }
 
-                    setTimeout(function () {
-                        applyGoogleLanguage(selectedLanguage);
-                    }, 1000);
+            if (!applyGoogleLanguage(selectedLanguage)) {
 
-                    setTimeout(function () {
-                        applyGoogleLanguage(selectedLanguage);
-                    }, 2000);
-                }
+                setTimeout(function () {
+                    applyGoogleLanguage(selectedLanguage);
+                }, 500);
 
-            });
+                setTimeout(function () {
+                    applyGoogleLanguage(selectedLanguage);
+                }, 1500);
 
-            document.getElementById('copyrightYear').textContent =
-                new Date().getFullYear();
+                setTimeout(function () {
+                    applyGoogleLanguage(selectedLanguage);
+                }, 2500);
+            }
 
         });
 
-    </script>
+        const copyrightYear =
+            document.getElementById('copyrightYear');
 
-    <script
-        type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        async
-    ></script>
+        if (copyrightYear) {
+            copyrightYear.textContent = new Date().getFullYear();
+        }
+
+    });
+
+</script>
+
+<script
+    type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async
+></script>
 
 </body>
 </html>
