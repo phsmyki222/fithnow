@@ -2,46 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-      <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#F3F1EA">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
-    <title>CLOSED CAPTIONS | PHRINUSOMYIS ACCESSIBILITY</title>
-    <meta name="description" content="PHRINUSOMYIS accessibility support and closed caption services for global audiences.">
+    <title>ACCESSIBILITY & CAPTIONS | PHRINUSOMYIS™</title>
+    <meta name="description" content="Explore PHRINUSOMYIS™ accessibility information, closed captions, subtitles and language access for audiences worldwide.">
     <meta name="robots" content="index, follow">
-
-    <!-- MULTI LANGUAGE -->
-    <link rel="alternate" hreflang="en" href="https://phrinusomyis.com/closed-captions">
-    <link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr/closed-captions">
-    <link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es/closed-captions">
-    <link rel="alternate" hreflang="de" href="https://phrinusomyis.com/de/closed-captions">
-    <link rel="alternate" hreflang="ar" href="https://phrinusomyis.com/ar/closed-captions">
-    <link rel="alternate" hreflang="x-default" href="https://phrinusomyis.com/closed-captions">
-
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="CLOSED CAPTIONS | PHRINUSOMYIS ACCESSIBILITY">
-    <meta property="og:description" content="Accessibility and subtitle support for global PHRINUSOMYIS experiences.">
+    <link rel="canonical" href="https://phrinusomyis.com/accessibility">
+    <link rel="alternate" hreflang="en" href="https://phrinusomyis.com/accessibility">
+    <link rel="alternate" hreflang="fr" href="https://phrinusomyis.com/fr/accessibility">
+    <link rel="alternate" hreflang="es" href="https://phrinusomyis.com/es/accessibility">
+    <link rel="alternate" hreflang="de" href="https://phrinusomyis.com/de/accessibility">
+    <link rel="alternate" hreflang="ar" href="https://phrinusomyis.com/ar/accessibility">
+    <link rel="alternate" hreflang="x-default" href="https://phrinusomyis.com/accessibility">
+    <meta property="og:title" content="ACCESSIBILITY & CAPTIONS | PHRINUSOMYIS™">
+    <meta property="og:description" content="Accessibility information, closed captions, subtitles and language access for PHRINUSOMYIS™ audiences.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="phrinusomyis_logo.png">
-
-    <!-- TWITTER -->
+    <meta property="og:url" content="https://phrinusomyis.com/accessibility">
+    <meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
+    <meta property="og:image:alt" content="PHRINUSOMYIS™ logo">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CLOSED CAPTIONS | PHRINUSOMYIS ACCESSIBILITY">
-    <meta name="twitter:description" content="Accessibility and subtitle support for global PHRINUSOMYIS experiences.">
-    <meta name="twitter:image" content="phrinusomyis_logo.png">
-
-    <!-- SCHEMA -->
+    <meta name="twitter:title" content="ACCESSIBILITY & CAPTIONS | PHRINUSOMYIS™">
+    <meta name="twitter:description" content="Accessibility information, closed captions, subtitles and language access for PHRINUSOMYIS™ audiences.">
+    <meta name="twitter:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
     <script type="application/ld+json">
     {
-      "@context":"https://schema.org",
-      "@type":"Organization",
-      "name":"PHRINUSOMYIS",
-      "url":"https://phrinusomyis.com",
-      "logo":"https://phrinusomyis.com/phrinusomyis_logo.png"
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PHRINUSOMYIS™",
+      "url": "https://phrinusomyis.com",
+      "logo": "https://phrinusomyis.com/phrinusomyis_logo.png"
     }
     </script>
+
 <style>
     :root {
         --gold: #B28B28;
@@ -59,56 +52,107 @@
         font-weight: 700 !important;
     }
 
-    html, body {
-        margin: 0;
-        padding: 0;
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
         background: var(--background);
         color: var(--text);
         font-family: Arial, sans-serif;
         line-height: 1.8;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         font-weight: 700 !important;
     }
 
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 30px;
-    }  
+    }
 
-    /* Hide the Google Translate top banner */
-.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate,
-iframe.goog-te-banner-frame {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-  border: 0 !important;
-}
+    /* GOOGLE TRANSLATE: HIDE TOP BANNER */
+    .goog-te-banner-frame,
+    .goog-te-banner-frame.skiptranslate,
+    iframe.goog-te-banner-frame,
+    iframe.skiptranslate {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
+        width: 0 !important;
+        border: 0 !important;
+    }
 
-/* Remove the space Google Translate adds above the page */
-html,
-body {
-  top: 0 !important;
-  margin-top: 0 !important;
-  position: static !important;
-}
+    /* GOOGLE TRANSLATE: HIDE SIDE POP-OUTS AND TOOLTIPS */
+    .goog-te-balloon-frame,
+    #goog-gt-tt,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-text-highlight,
+    .goog-te-menu-frame,
+    .goog-te-ftab-frame {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
 
-/* Hide Google Translate side pop-out elements */
-.goog-te-balloon-frame,
-#goog-gt-tt,
-.goog-tooltip,
-.goog-tooltip:hover,
-.goog-text-highlight {
-  display: none !important;
-  visibility: hidden !important;
-}
+    /* PREVENT TOP SPACING AND PAGE PUSH-DOWN */
+    html,
+    body,
+    html.translated-ltr,
+    html.translated-rtl,
+    body.translated-ltr,
+    body.translated-rtl {
+        top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
 
-/* Keep the language selector available */
-#google_translate_element {
-  display: block !important;
-}
+    /* HIDE THE BANNER CONTAINER, NOT THE LANGUAGE SELECTOR */
+    body > .skiptranslate,
+    body > div.skiptranslate {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+    }
 
+    /* KEEP YOUR GOOGLE TRANSLATE LANGUAGE SELECTOR */
+    #google_translate_element {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 999 !important;
+        width: auto;
+        height: auto;
+        overflow: visible !important;
+    }
+
+    #google_translate_element .goog-te-gadget {
+        display: block !important;
+        visibility: visible !important;
+        font-weight: 700 !important;
+    }
+
+    #google_translate_element select,
+    #google_translate_element .goog-te-combo {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-width: 100%;
+        font-weight: 700 !important;
+    }
+
+    #google_translate_element .goog-logo-link,
+    #google_translate_element .goog-te-gadget span {
+        display: none !important;
+    }
     /* LANGUAGE SELECTOR */
 
     .language-bar {
