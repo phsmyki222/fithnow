@@ -37,34 +37,28 @@
   }
 }
     </script>
-
 <style>
-
 :root{
     --gold:#D4AF37;
-    --black:#000000;
-    --obsidian:#050505;
-    --gray:#777;
+    --black:#000;
+    --obsidian:#080808;
+    --gray:#888;
     --light:#d6d6d6;
-    --border:rgba(212,175,55,0.18);
+    --border:rgba(212,175,55,.22);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
-    background:#000;
+    background:var(--black);
     color:#fff;
     overflow-x:hidden;
     font-family:Arial,sans-serif;
 }
+
+a{color:inherit}
 
 /* VIDEO BACKGROUND */
 
@@ -73,6 +67,7 @@ body{
     inset:0;
     z-index:-2;
     overflow:hidden;
+    background:#000;
 }
 
 .video-container::after{
@@ -80,15 +75,15 @@ body{
     position:absolute;
     inset:0;
     background:
-    linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)),
-    radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 40%);
+        linear-gradient(to bottom,rgba(0,0,0,.65),rgba(0,0,0,.94)),
+        radial-gradient(circle at top,rgba(212,175,55,.08),transparent 45%);
 }
 
-video{
+.video-container video{
     width:100%;
     height:100%;
     object-fit:cover;
-    filter:brightness(0.45);
+    filter:brightness(.42);
 }
 
 /* NAVIGATION */
@@ -98,16 +93,17 @@ nav{
     top:0;
     left:0;
     width:100%;
-    padding:35px 50px;
+    padding:28px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     z-index:999;
-    background:linear-gradient(to bottom, rgba(0,0,0,0.75), transparent);
+    background:linear-gradient(to bottom,rgba(0,0,0,.9),transparent);
+    backdrop-filter:blur(5px);
 }
 
 .logo-text{
-    letter-spacing:10px;
+    letter-spacing:7px;
     font-size:12px;
     text-transform:uppercase;
     font-weight:900;
@@ -116,7 +112,7 @@ nav{
 .nav-right{
     display:flex;
     align-items:center;
-    gap:20px;
+    gap:14px;
 }
 
 .status-dot{
@@ -127,14 +123,21 @@ nav{
     box-shadow:0 0 15px var(--gold);
 }
 
-/* HERO SECTION */
+.edition-label{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* HERO */
 
 .hero-section{
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:140px 8%;
+    padding:150px 8% 100px;
 }
 
 .hero-grid{
@@ -146,28 +149,21 @@ nav{
     align-items:center;
 }
 
-@media(max-width:950px){
-
-    .hero-grid{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-}
-
 .product-frame{
     position:relative;
     display:flex;
     justify-content:center;
+    align-items:center;
+    min-height:500px;
 }
 
 .glow-ring{
     position:absolute;
-    width:500px;
-    height:500px;
+    width:min(500px,90vw);
+    height:min(500px,90vw);
     border-radius:50%;
-    border:1px solid rgba(212,175,55,0.2);
-    animation:spin 20s linear infinite;
+    border:1px solid rgba(212,175,55,.2);
+    animation:spin 25s linear infinite;
 }
 
 .glow-ring::after{
@@ -175,17 +171,12 @@ nav{
     position:absolute;
     inset:35px;
     border-radius:50%;
-    border:1px solid rgba(212,175,55,0.08);
+    border:1px solid rgba(212,175,55,.08);
 }
 
 @keyframes spin{
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
 }
 
 .hero-img{
@@ -193,8 +184,9 @@ nav{
     z-index:2;
     width:100%;
     max-width:430px;
-    filter:drop-shadow(0 20px 80px rgba(0,0,0,0.9));
-    transition:0.6s;
+    height:auto;
+    filter:drop-shadow(0 20px 80px rgba(0,0,0,.9));
+    transition:.6s;
 }
 
 .hero-img:hover{
@@ -211,51 +203,70 @@ nav{
 }
 
 .hero-content h1{
-    font-size:clamp(45px,8vw,100px);
+    font-size:clamp(42px,7vw,92px);
     text-transform:uppercase;
-    letter-spacing:18px;
-    line-height:1;
-    margin-bottom:30px;
+    letter-spacing:12px;
+    line-height:1.05;
+    margin-bottom:25px;
     font-weight:900;
 }
 
 .hero-content p{
     max-width:620px;
     color:#bdbdbd;
-    font-size:17px;
+    font-size:16px;
     line-height:2;
-    margin-bottom:40px;
+    margin-bottom:30px;
+}
+
+.hero-edition{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:4px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+.hero-price{
+    font-size:27px;
+    letter-spacing:2px;
+    margin-bottom:30px;
+    font-weight:700;
 }
 
 .hero-buttons{
     display:flex;
-    gap:20px;
+    gap:15px;
     flex-wrap:wrap;
 }
 
 .hero-btn{
-    padding:18px 45px;
+    display:inline-block;
+    padding:18px 30px;
     text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:11px;
+    letter-spacing:2px;
+    font-size:10px;
+    font-weight:bold;
     cursor:pointer;
-    transition:0.4s;
+    transition:.4s;
     text-decoration:none;
+    text-align:center;
 }
 
 .hero-btn.primary{
     background:var(--gold);
     color:#000;
+    border:1px solid var(--gold);
 }
 
 .hero-btn.primary:hover{
     background:#fff;
+    border-color:#fff;
 }
 
 .hero-btn.secondary{
     border:1px solid var(--border);
     color:#fff;
-    backdrop-filter:blur(10px);
 }
 
 .hero-btn.secondary:hover{
@@ -263,69 +274,108 @@ nav{
     color:var(--gold);
 }
 
+/* EDITION STRIP */
+
+.edition-strip{
+    background:rgba(0,0,0,.94);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:35px 8%;
+}
+
+.edition-strip-inner{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    text-align:center;
+}
+
+.edition-item{
+    padding:12px;
+}
+
+.edition-item strong{
+    display:block;
+    color:var(--gold);
+    font-size:23px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.edition-item span{
+    color:#888;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
 /* FEATURES */
 
 .features{
-    background:rgba(0,0,0,0.88);
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-    padding:120px 8%;
+    background:rgba(0,0,0,.9);
+    padding:110px 8%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-heading small{
+    display:block;
+    color:var(--gold);
+    letter-spacing:5px;
+    font-size:10px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.section-heading h2{
+    font-size:clamp(25px,4vw,38px);
+    letter-spacing:6px;
+    text-transform:uppercase;
 }
 
 .features-grid{
     max-width:1300px;
     margin:auto;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:25px;
 }
 
-@media(max-width:1000px){
-
-    .features-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:650px){
-
-    .features-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
 .feature-card{
-    background:linear-gradient(to bottom,#080808,#000);
+    background:linear-gradient(to bottom,#0b0b0b,#000);
     border:1px solid var(--border);
-    padding:50px 30px;
-    transition:0.4s;
+    padding:42px 30px;
+    transition:.4s;
 }
 
 .feature-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-7px);
     border-color:var(--gold);
 }
 
 .feature-card h3{
     color:var(--gold);
-    font-size:14px;
+    font-size:13px;
     letter-spacing:3px;
     text-transform:uppercase;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .feature-card p{
-    color:#8f8f8f;
+    color:#929292;
     line-height:1.9;
-    font-size:14px;
+    font-size:13px;
 }
 
 /* EXPERIENCE */
 
 .experience{
-    padding:140px 8%;
+    padding:130px 8%;
 }
 
 .experience-wrap{
@@ -333,403 +383,408 @@ nav{
     margin:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:80px;
+    gap:75px;
     align-items:center;
-}
-
-@media(max-width:950px){
-
-    .experience-wrap{
-        grid-template-columns:1fr;
-    }
-
 }
 
 .experience-image img{
     width:100%;
+    height:auto;
+    display:block;
     border:1px solid var(--border);
+    box-shadow:0 20px 70px rgba(0,0,0,.5);
 }
 
 .experience-content h2{
     font-size:32px;
-    letter-spacing:8px;
+    letter-spacing:7px;
     text-transform:uppercase;
-    margin-bottom:30px;
+    margin-bottom:28px;
     color:var(--gold);
 }
 
 .experience-content p{
     color:#b1b1b1;
     line-height:2;
-    margin-bottom:25px;
+    margin-bottom:22px;
+    font-size:14px;
 }
 
 .detail-list{
     list-style:none;
-    margin-top:35px;
+    margin-top:30px;
 }
 
 .detail-list li{
-    margin-bottom:15px;
-    color:#8a8a8a;
+    margin-bottom:16px;
+    color:#aaa;
     letter-spacing:1px;
+    font-size:13px;
     position:relative;
-    padding-left:25px;
+    padding-left:24px;
 }
 
 .detail-list li::before{
-    content:"●";
+    content:"◆";
     position:absolute;
     left:0;
     color:var(--gold);
+    font-size:9px;
+    top:3px;
 }
 
-/* LEDGER */
+/* ORDER SECTION */
 
-.ledger-section{
-    padding:140px 8%;
-    background:rgba(0,0,0,0.92);
+.order-section{
+    padding:120px 8%;
+    background:rgba(0,0,0,.94);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
 }
 
-.ledger-box{
-    max-width:900px;
+.order-box{
+    max-width:950px;
     margin:auto;
     border:1px solid var(--gold);
     padding:70px 50px;
-    background:rgba(5,5,5,0.95);
-    backdrop-filter:blur(15px);
+    background:rgba(5,5,5,.96);
     text-align:center;
 }
 
-.ledger-header{
+.order-header{
     color:var(--gold);
     text-transform:uppercase;
     letter-spacing:6px;
-    font-size:12px;
+    font-size:11px;
     display:block;
     margin-bottom:25px;
 }
 
-.ledger-box h2{
-    font-size:40px;
-    letter-spacing:10px;
+.order-box h2{
+    font-size:clamp(28px,5vw,43px);
+    letter-spacing:7px;
     text-transform:uppercase;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
-.ledger-text{
-    color:#777;
-    margin-bottom:50px;
+.order-description{
+    max-width:650px;
+    margin:0 auto 30px;
+    color:#999;
     line-height:2;
+    font-size:14px;
 }
 
-.input-line{
-    width:100%;
-    background:transparent;
-    border:none;
-    border-bottom:1px solid var(--border);
-    color:#fff;
-    padding:22px 0;
-    margin-bottom:30px;
-    text-align:center;
-    letter-spacing:4px;
-    font-size:13px;
-    outline:none;
+.order-price{
+    color:var(--gold);
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:12px;
 }
 
-.input-line:focus{
-    border-bottom-color:var(--gold);
-}
-
-.procure-btn{
-    width:100%;
-    background:var(--gold);
-    color:#000;
-    border:none;
-    padding:24px;
-    text-transform:uppercase;
-    letter-spacing:5px;
-    font-weight:900;
-    cursor:pointer;
-    transition:0.5s;
-    margin-top:20px;
-}
-
-.procure-btn:hover{
-    background:#fff;
-    letter-spacing:8px;
-}
-
-.allocation{
-    margin-top:30px;
-    color:#555;
-    text-transform:uppercase;
+.order-edition{
+    color:#777;
     font-size:11px;
     letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:35px;
 }
 
-/* TESTIMONIAL */
+.order-btn{
+    display:inline-block;
+    background:var(--gold);
+    color:#000;
+    padding:21px 45px;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:11px;
+    font-weight:900;
+    transition:.4s;
+}
+
+.order-btn:hover{
+    background:#fff;
+}
+
+.order-note{
+    margin-top:25px;
+    color:#666;
+    font-size:11px;
+    line-height:1.8;
+}
+
+/* BRAND STATEMENT */
 
 .quote-section{
-    padding:120px 8%;
+    padding:110px 8%;
     text-align:center;
 }
 
 .quote-section h2{
     color:var(--gold);
-    letter-spacing:8px;
+    letter-spacing:6px;
     text-transform:uppercase;
+    font-size:clamp(19px,3vw,27px);
     margin-bottom:35px;
 }
 
 .quote{
     max-width:850px;
     margin:auto;
-    font-size:26px;
-    line-height:2;
+    font-size:clamp(18px,3vw,25px);
+    line-height:1.9;
     color:#d0d0d0;
     font-weight:300;
 }
 
 .quote-author{
-    margin-top:40px;
-    color:#666;
+    margin-top:35px;
+    color:#777;
     letter-spacing:5px;
     text-transform:uppercase;
-    font-size:11px;
+    font-size:10px;
 }
 
 /* FOOTER */
 
 footer{
     border-top:1px solid var(--border);
-    padding:80px 20px 60px;
+    padding:65px 7% 35px;
     background:#000;
-    text-align:center;
 }
 
 .footer-logo{
-    letter-spacing:10px;
-    font-size:18px;
-    text-transform:uppercase;
-    margin-bottom:35px;
     display:block;
+    text-align:center;
+    letter-spacing:7px;
+    font-size:15px;
+    text-transform:uppercase;
+    margin-bottom:45px;
     font-weight:900;
 }
 
-.footer-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-    margin-bottom:35px;
+.footer-grid{
+    max-width:1050px;
+    margin:0 auto 45px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
 }
 
-.footer-links a{
-    color:#777;
+.footer-section h3{
+    color:#fff;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:2px;
+    margin-bottom:22px;
+    text-transform:uppercase;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section li{
+    margin-bottom:14px;
+}
+
+.footer-section a{
+    color:#888;
     text-decoration:none;
     font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    transition:0.3s;
+    transition:.3s;
 }
 
-.footer-links a:hover{
+.footer-section a:hover{
     color:var(--gold);
 }
 
+.footer-bottom{
+    max-width:1050px;
+    margin:auto;
+    padding-top:28px;
+    border-top:1px solid #1a1a1a;
+    text-align:center;
+}
+
 .footer-copy{
-    color:#333;
+    color:#555;
     font-size:10px;
-    letter-spacing:3px;
+    letter-spacing:2px;
     text-transform:uppercase;
-} 
-    /* MOBILE OPTIMIZATION */
-@media screen and (max-width: 768px) {
-    
-    /* Stack the 4 info boxes vertically */
-    .info-grid, 
-    .container-section { 
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 15px !important;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+    .hero-grid,
+    .experience-wrap{
+        grid-template-columns:1fr;
+        gap:45px;
     }
 
-    /* Adjust the text boxes to take full width */
-    .info-box, 
-    .limited-allocation,
-    .verified-identity {
-        width: 100% !important;
-        margin-bottom: 10px !important;
-        box-sizing: border-box !important;
-    }
+    .hero-content{text-align:center}
+    .hero-content p{margin-left:auto;margin-right:auto}
+    .hero-buttons{justify-content:center}
+    .product-frame{min-height:400px}
+    .features-grid{grid-template-columns:repeat(2,1fr)}
+}
 
-    /* Scale the Experience image to fit the screen width */
-    .experience-image-container img, 
-    .bottle-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-    }
+@media(max-width:650px){
+    nav{padding:22px 5%}
+    .logo-text{font-size:10px;letter-spacing:4px}
+    .edition-label{font-size:8px;letter-spacing:1px}
+    .nav-right{gap:8px}
+    .hero-section{padding:125px 7% 75px}
+    .product-frame{min-height:320px}
+    .hero-content h1{letter-spacing:7px}
+    .hero-content p{font-size:14px}
+    .hero-buttons{flex-direction:column}
+    .hero-btn{width:100%}
+    .edition-strip-inner{grid-template-columns:1fr;gap:10px}
+    .features{padding:80px 7%}
+    .features-grid{grid-template-columns:1fr}
+    .feature-card{padding:32px 25px}
+    .experience{padding:85px 7%}
+    .experience-content{text-align:center}
+    .experience-content h2{font-size:26px;letter-spacing:5px}
+    .detail-list{text-align:left}
+    .order-section{padding:80px 6%}
+    .order-box{padding:50px 23px}
+    .order-box h2{letter-spacing:4px}
+    .order-btn{width:100%;padding:20px 15px}
+    .quote-section{padding:80px 7%}
+    footer{padding:55px 7% 30px}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
 
-    /* Center headers and text for better mobile readability */
-    .experience-text {
-        text-align: center !important;
-        width: 100% !important;
-        padding: 0 !important;
-    }
-
-    h2, h3 {
-        font-size: 1.2rem !important;
-        text-align: center !important;
-    }
-
-    p, li {
-        font-size: 0.9rem !important;
-        line-height: 1.6 !important;
-    }
-
-    /* Ensure the button stays full width and easy to tap */
-    .procure-btn {
-        width: 100% !important;
-        padding: 20px !important;
-        font-size: 14px !important;
- 
-    }
+@media(max-width:380px){
+    .footer-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO -->
+<!-- EXISTING VIDEO BACKGROUND -->
 <div class="video-container">
-
     <video autoplay muted loop playsinline>
         <source src="perfume-series-luxury.mp4" type="video/mp4">
     </video>
-
 </div>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
-
-    <span class="logo-text">
-        PHRINUSOMYIS
-    </span>
+    <span class="logo-text">PHRINUSOMYIS™</span>
 
     <div class="nav-right">
-
-        <div class="status-dot"></div>
-
-        <span class="logo-text" style="color:var(--gold)">
-           FRAGRANCES EDITION 001 / 500
-        </span>
-
+        <span class="status-dot"></span>
+        <span class="edition-label">FRAGRANCE · EDITION 001</span>
     </div>
-
 </nav>
 
 <!-- HERO -->
 <section class="hero-section">
-
     <div class="hero-grid">
 
         <div class="product-frame">
-
             <div class="glow-ring"></div>
-
-            <img src="phrinusomyis_perfume_front.png" alt="PHRINUSOMYIS Perfume" class="hero-img">
-
+            <img
+                src="phrinusomyis_perfume_front.png"
+                alt="PHRINUSOMYIS Fragrance Edition 001"
+                class="hero-img"
+            >
         </div>
 
         <div class="hero-content">
+            <small>PHRINUSOMYIS™ Merchandise</small>
 
-            <small>
-                The PHRINUSOMYIS Circle Collection
-            </small>
+            <h1>FRAGRANCE</h1>
 
-            <h1>
-              FRAGRANCE
-            </h1>
+            <div class="hero-edition">EDITION 001 · FIRST EDITION</div>
 
             <p>
-                Created for the PHRINUSOMYIS Circle, Luxury fragrance connected to identity, status, and modern international culture. Each bottle carries its own verification allocation within the official collection.
+                An exclusive fragrance release from PHRINUSOMYIS™.
+                Presented as part of the organization's merchandise
+                collection, Edition 001 carries its own distinct identity
+                and premium presentation.
             </p>
 
-            <div class="hero-buttons">
+            <div class="hero-price">US$5,000</div>
 
-                <a href="#ledger" class="hero-btn primary">
-                    Verify Allocation
+            <div class="hero-buttons">
+                <a href="#order" class="hero-btn primary">
+                    Request Your Edition
                 </a>
 
                 <a href="#experience" class="hero-btn secondary">
-                    Explore Experience
+                    Explore the Fragrance
                 </a>
-
             </div>
-
         </div>
 
     </div>
-
 </section>
 
-<!-- FEATURES -->
+<!-- EDITION DETAILS -->
+<section class="edition-strip">
+    <div class="edition-strip-inner">
+
+        <div class="edition-item">
+            <strong>001</strong>
+            <span>First Edition</span>
+        </div>
+
+        <div class="edition-item">
+            <strong>1,000</strong>
+            <span>Edition Production Allocation</span>
+        </div>
+
+        <div class="edition-item">
+            <strong>US$5,000</strong>
+            <span>Price Per Bottle</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRODUCT FEATURES -->
 <section class="features">
+
+    <div class="section-heading">
+        <small>The Collection</small>
+        <h2>Edition 001</h2>
+    </div>
 
     <div class="features-grid">
 
         <div class="feature-card">
-
-            <h3>
-                Limited Allocation
-            </h3>
-
+            <h3>First Edition</h3>
             <p>
-                Only 500 official bottles released worldwide as part of the PHRINUSOMYIS Circle collection.
+                The opening fragrance release within the PHRINUSOMYIS™
+                merchandise collection.
             </p>
-
         </div>
 
         <div class="feature-card">
-
-            <h3>
-                Verified Identity
-            </h3>
-
+            <h3>Controlled Release</h3>
             <p>
-                Each bottle includes an official allocation code connected to the PHRINUSOMYIS ledger system.
+                Available exclusively through the official
+                PHRINUSOMYIS™ order channel.
             </p>
-
         </div>
 
         <div class="feature-card">
-
-            <h3>
-                Luxury Packaging
-            </h3>
-
+            <h3>Luxury Presentation</h3>
             <p>
-                Designed with premium presentation materials inspired by modern international fashion houses.
+                A dedicated fragrance presentation, complete with
+                its own product packaging and edition identity.
             </p>
-
-        </div>
-
-        <div class="feature-card">
-
-            <h3>
-                Global Delivery
-            </h3>
-
-            <p>
-                International distribution support for approved regions and verified Circle members.
-            </p>
-
         </div>
 
     </div>
-
 </section>
 
 <!-- EXPERIENCE -->
@@ -738,91 +793,93 @@ footer{
     <div class="experience-wrap">
 
         <div class="experience-content">
-
-            <h2>
-                The Experience
-            </h2>
+            <h2>The Experience</h2>
 
             <p>
-                 PHRINUSOMYIS FRAGRANCE was designed to feel cinematic, modern, and exclusive. The experience combines luxury presentation, collectible identity systems, and high-end visual.
+                PHRINUSOMYIS™ Fragrance is presented as an exclusive
+                merchandise release. Its identity is expressed through
+                the fragrance, its bottle, its packaging and the
+                experience of receiving the product.
             </p>
 
             <p>
-                From the packaging to the verification process, every detail is structured to create a premium international product experience.
+                Edition 001 stands as the first release in a fragrance
+                collection that will have its own continuing editions.
             </p>
 
             <ul class="detail-list">
-
-                <li>Luxury collector presentation</li>
-
-                <li>Official verification allocation</li>
-
-                <li>PHRINUSOMYIS Circle access system</li>
-
-                <li>Modern cinematic campaign design</li>
-
-                <li>Premium fragrance identity</li>
-
+                <li>PHRINUSOMYIS™ merchandise</li>
+                <li>Edition 001 first release</li>
+                <li>Dedicated product packaging</li>
+                <li>Direct company order channel</li>
+                <li>Delivery arranged with the customer</li>
             </ul>
-
         </div>
 
         <div class="experience-image">
-
-            <img src="perfume-luxury-detail.png" alt="Luxury Perfume">
-
+            <img
+                src="perfume-luxury-detail.png"
+                alt="PHRINUSOMYIS Fragrance luxury presentation"
+            >
         </div>
 
     </div>
-
 </section>
 
-<!-- LEDGER -->
-<section class="ledger-section" id="ledger">
+<!-- ORDER SECTION -->
+<section class="order-section" id="order">
 
-    <div class="ledger-box">
+    <div class="order-box">
 
-        <span class="ledger-header">
-            Official Verification System
+        <span class="order-header">
+            Official PHRINUSOMYIS™ Order Channel
         </span>
 
-        <h2>
-            Verify Allocation
-        </h2>
+        <h2>Request Your Edition</h2>
 
-        <p class="ledger-text">
-            To confirm your fragrance, please enter the Unique Production Serial and Holographic Security Code found on your packaging. This system will verify your FRAGRANCE against our official registry to confirm its authenticity and origin.
+        <p class="order-description">
+            Submit an order request directly to PHRINUSOMYIS™.
+            Our team will contact you to confirm availability,
+            customer details, payment arrangements and delivery.
         </p>
 
-        <input type="text" class="input-line" placeholder="MEMBER NAME / ID">
+        <div class="order-price">US$5,000</div>
 
-        <input type="text" class="input-line" placeholder="ALLOCATION CODE">
-
-        <button class="procure-btn" onclick="initiateVault()">
-            Continue Verification
-        </button>
-
-        <div class="allocation">
-            FRAGRANCES Allocation: 001 / 500 Remaining
+        <div class="order-edition">
+            Edition 001 · 1,000-Bottle Production Allocation
         </div>
+
+        <a
+            href="#"
+            class="order-btn whatsapp-order"
+            target="_blank"
+            rel="noopener"
+        >
+            Request Your Edition on WhatsApp
+        </a>
+
+        <p class="order-note">
+            Orders are subject to confirmation by PHRINUSOMYIS™.
+            Delivery arrangements and applicable shipping costs
+            will be confirmed directly with the customer.
+        </p>
 
     </div>
 
 </section>
 
-<!-- QUOTE -->
+<!-- BRAND STATEMENT -->
 <section class="quote-section">
 
-    <h2>
-        The PHRINUSOMYIS FRAGRANCE Circle
-    </h2>
+    <h2>PHRINUSOMYIS™ Fragrance</h2>
 
     <p class="quote">
-        Luxury is not only what you wear. It is the atmosphere around your name, your presence, and your identity.
+        Luxury is not only what you wear. It is the atmosphere
+        around your name, your presence, and your identity.
     </p>
 
     <div class="quote-author">
-        PHRINUSOMYIS
+        PHRINUSOMYIS™
     </div>
 
 </section>
@@ -830,215 +887,86 @@ footer{
 <!-- FOOTER -->
 <footer>
 
-    <span class="footer-logo">
-        PHRINUSOMYIS FRAGRANCE 
-    </span>
+    <span class="footer-logo">PHRINUSOMYIS™ FRAGRANCE</span>
 
-    </div>. 
+    <div class="footer-grid">
 
-          <style>
-    /* GLOBAL CORPORATE FOOTER STYLES */
-    .phr-main-footer {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 80px 20px 40px;
-        border-top: 1px solid #1a1a1a;
-        font-family: 'Arial', sans-serif;
-    }
-
-    .phr-footer-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px 20px;
-        max-width: 1100px;
-        margin: 0 auto 60px;
-    }
-
-    @media (min-width: 768px) {
-        .phr-footer-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    .phr-footer-section h3 {
-        color: #ffffff;
-        font-size: 15px;
-        font-weight: 900;
-        letter-spacing: 2px;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-    }
-
-    .phr-footer-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .phr-footer-section li {
-        margin-bottom: 15px;
-    }
-
-    .phr-footer-section a {
-        color: #888;
-        text-decoration: none;
-        font-size: 14px;
-        transition: color 0.3s;
-    }
-
-    .phr-footer-section a:hover {
-        color: #D4AF37;
-    }
-
-    /* THE FIX IS HERE */
-    .phr-global-bar {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding-top: 40px;
-        border-top: 1px solid #1a1a1a;
-        text-align: center; /* This centers the HQ text and heading */
-    }
-
-    .phr-global-bar h3 {
-        font-size: 15px;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        font-weight: 900;
-    }
-
-    .phr-hq-label {
-        color: #D4AF37;
-        font-weight: bold;
-    }
-
-    .phr-footer-legal {
-        margin-top: 50px;
-        text-align: center;
-        color: #444;
-        font-size: 11px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-</style>
-
-<footer class="phr-main-footer">
-    <div class="phr-footer-grid">
-        <!-- Section 1 -->
-        <div class="phr-footer-section">
-            <h3>LUXURY</h3>
+        <div class="footer-section">
+            <h3>Collection</h3>
             <ul>
-                <li><a href="luxury">Luxury Identity</a></li>
-                <li><a href="circle">Private Access</a></li>
-                <li><a href="perfume">Perfumes</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="#experience">The Experience</a></li>
+                <li><a href="#order">Edition 001</a></li>
+                <li><a href="#order">Request Your Edition</a></li>
             </ul>
         </div>
 
-        <!-- Section 2 -->
-        <div class="phr-footer-section">
-            <h3>M3AN</h3>
+        <div class="footer-section">
+            <h3>PHRINUSOMYIS™</h3>
             <ul>
-                <li><a href="news">Latest News</a></li>
-                <li><a href="press">Press Release</a></li>
-                <li><a href="events">Events</a></li>
-                <li><a href="/">Main</a></li>
+                <li><a href="/">Main Website</a></li>
+                <li><a href="/luxury">Luxury</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
 
-        <!-- Section 3 -->
-        <div class="phr-footer-section">
-            <h3>ABOUT</h3>
+        <div class="footer-section">
+            <h3>Information</h3>
             <ul>
-                <li><a href="policy">Privacy Policy</a></li>
-                <li><a href="copyright">Copyright</a></li>
-                <li><a href="terms">Terms of Use</a></li>
-                <li><a href="privacy">Privacy Choices</a></li>
+                <li><a href="/policy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Use</a></li>
+                <li><a href="/cookies">Cookie Policy</a></li>
+                <li><a href="/security">Security</a></li>
             </ul>
         </div>
 
-        <!-- Section 4 -->
-        <div class="phr-footer-section">
-            <h3>HELP</h3>
-            <ul>
-                <li><a href="security">Security</a></li>
-                <li><a href="help">Help Center</a></li>
-                <li><a href="cookies">Cookie Policy</a></li>
-                <li><a href="close">Closed Captions</a></li>
-            </ul>
-        </div>
+    </div>
 
-        
-
-    <p class="footer-copy">
-        © 2026 PHRINUSOMYIS GLOBAL CIRCUIT
-    </p>
+    <div class="footer-bottom">
+        <p class="footer-copy">
+            © PHRINUSOMYIS™ · All Rights Reserved
+        </p>
+    </div>
 
 </footer>
 
 <script>
+/*
+  IMPORTANT:
+  Replace the number below with the official company WhatsApp Business
+  number. Include the country code, without +, spaces or brackets.
 
-function initiateVault(){
-    const btn = document.querySelector('.procure-btn');
-    
-    // 1. Start the Verify sequence
-    btn.innerHTML = "VERIFYING ALLOCATION...";
+  Example format: 2348012345678
+*/
 
-    setTimeout(() => {
-        // 2. Trigger the heavy 5-second vibration
-        if (navigator.vibrate) {
-            navigator.vibrate(5000);
-        }
+const PHRINUSOMYIS_WHATSAPP = "234XXXXXXXXXX";
 
-        // 3. Update Button to Denied
-        btn.innerHTML = "ACCESS DENIED";
-        btn.style.color = "#ff0000"; // Red text
-        btn.style.border = "1px solid #ff0000";
+const orderMessage =
+`Hello PHRINUSOMYIS™,
 
-        // 4. Create the RED Security Box (matches your image style)
-        const alertBox = document.createElement('div');
-        alertBox.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #000;
-            border: 2px solid #ff0000; /* Sharp Red Border */
-            color: #fff;
-            padding: 30px;
-            z-index: 10000;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6); /* Red Glow */
-            width: 85%;
-            font-family: serif;
-        `;
+I would like to request PHRINUSOMYIS™ Fragrance — Edition 001.
 
-        alertBox.innerHTML = `
-            <h2 style="color: #ff0000; margin-bottom: 10px; letter-spacing: 2px;">PHRINUSOMYIS FRAGRANCE</h2>
-            <p style="font-size: 13px; line-height: 1.6; border-top: 1px solid #333; padding-top: 15px;">
-                <span style="color: #ff0000; font-weight: bold;">SECURITY ALERT:</span><br>
-                Allocation code not yet active in this region.<br>
-                The Vault remains sealed for official verification.
-            </p>
-            <button onclick="this.parentElement.remove()" style="margin-top: 20px; background: none; border: 1px solid #ff0000; color: #ff0000; padding: 10px 25px; cursor: pointer; text-transform: uppercase; font-size: 10px;">
-                CLOSE TERMINAL
-            </button>
-        `;
+Price per bottle: US$5,000
+Edition production allocation: 1,000 bottles
 
-        document.body.appendChild(alertBox);
+Please provide the order confirmation process and delivery details.
 
-    }, 2200);
-}
+Name:
+Country:
+Quantity requested:
+Delivery address:
 
+Thank you.`;
 
-const video = document.querySelector('video');
+const whatsappLink =
+    "https://wa.me/" +
+    PHRINUSOMYIS_WHATSAPP +
+    "?text=" +
+    encodeURIComponent(orderMessage);
 
-video.addEventListener('ended', function(){
-
-    video.play();
-
+document.querySelectorAll(".whatsapp-order").forEach(button => {
+    button.href = whatsappLink;
 });
-
 </script>
 
 </body>
-    </html>
+</html>
