@@ -67,7 +67,17 @@
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 30px;
-    }
+    }   
+          /* HIDE GOOGLE'S OWN LANGUAGE MENU */
+         #google_translate_element,
+         #google_translate_element .goog-te-gadget,
+         #google_translate_element .goog-te-gadget-simple,
+         #google_translate_element .goog-te-combo,
+         #google_translate_element .goog-te-menu-value,
+         #google_translate_element .goog-te-menu-frame {
+           display: none !important;
+           visibility: hidden !important;
+ }
 
     /* GOOGLE TRANSLATE: HIDE TOP BANNER */
     .goog-te-banner-frame,
