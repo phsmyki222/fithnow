@@ -77,23 +77,42 @@ function googleTranslateElementInit() {
         includedLanguages: 'en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
         autoDisplay: false
     }, 'google_translate_element');
+
+    const savedLanguage = localStorage.getItem('site_lang');
+
+    if (savedLanguage && savedLanguage !== 'en') {
+        setTimeout(function () {
+            applyGoogleLanguage(savedLanguage);
+        }, 1000);
+    }
+}
+
+function applyGoogleLanguage(language) {
+    if (!language) return;
+
+    let attempts = 0;
+
+    const languageInterval = setInterval(function () {
+        const googleCombo = document.querySelector('.goog-te-combo');
+
+        if (googleCombo) {
+            googleCombo.value = language;
+            googleCombo.dispatchEvent(new Event('change'));
+            clearInterval(languageInterval);
+        }
+
+        attempts++;
+
+        if (attempts >= 20) {
+            clearInterval(languageInterval);
+        }
+    }, 300);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
 
     const languageSelector = document.getElementById('siteLanguage');
     const languageStorageKey = 'site_lang';
-
-    function applyLanguage(language) {
-        if (!language) return;
-
-        const googleCombo = document.querySelector('.goog-te-combo');
-
-        if (googleCombo) {
-            googleCombo.value = language;
-            googleCombo.dispatchEvent(new Event('change'));
-        }
-    }
 
     if (languageSelector) {
         const savedLanguage = localStorage.getItem(languageStorageKey);
@@ -106,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const selectedLanguage = this.value;
 
             localStorage.setItem(languageStorageKey, selectedLanguage);
-            applyLanguage(selectedLanguage);
+            applyGoogleLanguage(selectedLanguage);
         });
     }
 
@@ -130,7 +149,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <style>
 /* ==========================================
-   PHRINUSOMYIS™ CONTACT PAGE DESIGN
+   PHRINUSOMYIS™ CONTACT PAGE
+   CHARCOAL DESIGN
 ========================================== */
 
 :root {
@@ -165,6 +185,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 .contact-page a:hover {
     color: var(--contact-accent);
+}
+
+.contact-page p {
+    margin-top: 0;
 }
 
 /* HEADER */
@@ -258,15 +282,15 @@ document.addEventListener('DOMContentLoaded', function () {
     font-weight: 700;
 }
 
-/* GOOGLE TRANSLATE INTERFACE */
+/* GOOGLE TRANSLATE */
 
 #google_translate_element {
     position: absolute;
+    left: -10000px;
+    top: 0;
     width: 1px;
     height: 1px;
     overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
 }
 
 .goog-te-banner-frame,
@@ -294,10 +318,6 @@ body {
     display: none !important;
 }
 
-.skiptranslate {
-    font-size: 0 !important;
-}
-
 /* MOBILE MENU */
 
 .mobile-menu-button {
@@ -311,12 +331,12 @@ body {
     cursor: pointer;
 }
 
-/* HERO */
+/* CONTACT HERO */
 
 .contact-hero {
     max-width: 1150px;
     margin: auto;
-    padding: 85px 25px 55px;
+    padding: 85px 25px 45px;
     text-align: center;
 }
 
@@ -330,20 +350,69 @@ body {
 }
 
 .contact-hero h1 {
-    font-size: clamp(38px, 6vw, 66px);
+    font-size: clamp(40px, 6vw, 68px);
     line-height: 1.05;
     font-weight: 900;
-    margin: 0 0 20px;
+    margin: 0 0 23px;
     letter-spacing: -1.5px;
 }
 
 .contact-hero p {
-    max-width: 650px;
+    max-width: 790px;
     margin: auto;
     color: var(--contact-muted);
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.9;
     font-weight: 700;
+}
+
+/* LARGE HERO IMAGE */
+
+.contact-image-section {
+    width: 100%;
+    padding: 15px 25px 75px;
+}
+
+.contact-image-frame {
+    max-width: 1250px;
+    min-height: 400px;
+    margin: auto;
+    background: #394550;
+    border: 1px solid var(--contact-border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contact-image-frame img {
+    display: block;
+    width: 100%;
+    height: 560px;
+    max-height: 65vw;
+    min-height: 350px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.contact-image-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 25px 30px;
+    background: linear-gradient(
+        to top,
+        rgba(25,34,43,.92),
+        rgba(25,34,43,0)
+    );
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 /* MAIN CONTENT */
@@ -360,9 +429,9 @@ body {
     background: var(--contact-panel);
     border: 1px solid var(--contact-border);
     border-radius: 10px;
-    padding: 35px;
+    padding: 42px 35px;
     text-align: center;
-    margin-bottom: 65px;
+    margin-bottom: 75px;
 }
 
 .section-label {
@@ -371,22 +440,22 @@ body {
     font-weight: 900;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 13px;
+    margin-bottom: 15px;
 }
 
 .general-contact h2 {
-    font-size: 27px;
+    font-size: 29px;
     font-weight: 900;
-    margin: 0 0 12px;
+    margin: 0 0 17px;
 }
 
 .general-contact p {
     color: var(--contact-muted);
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.9;
     font-weight: 700;
-    max-width: 650px;
-    margin: 0 auto 20px;
+    max-width: 760px;
+    margin: 0 auto 25px;
 }
 
 .general-email {
@@ -395,46 +464,50 @@ body {
     font-weight: 900;
     color: #ffffff !important;
     border-bottom: 2px solid var(--contact-accent);
-    padding-bottom: 5px;
+    padding-bottom: 7px;
     overflow-wrap: anywhere;
 }
 
-/* DEPARTMENT DIRECTORY */
+/* SECTION HEADINGS */
 
 .contact-section {
-    margin-bottom: 75px;
+    margin-bottom: 85px;
 }
 
 .contact-section-heading {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 38px;
 }
 
 .contact-section-heading h2 {
-    font-size: 30px;
+    font-size: 31px;
     font-weight: 900;
-    margin: 0 0 12px;
+    margin: 0 0 15px;
 }
 
 .contact-section-heading p {
     color: var(--contact-muted);
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.9;
     font-weight: 700;
+    max-width: 760px;
+    margin: auto;
 }
+
+/* DEPARTMENT DIRECTORY */
 
 .department-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 20px;
 }
 
 .department-card {
     background: var(--contact-panel);
     border: 1px solid var(--contact-border);
     border-radius: 9px;
-    padding: 27px;
-    min-height: 210px;
+    padding: 32px;
+    min-height: 255px;
     transition: background .2s ease, transform .2s ease;
 }
 
@@ -444,34 +517,34 @@ body {
 }
 
 .department-icon {
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
     border-radius: 8px;
     background: #536170;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 19px;
+    margin-bottom: 21px;
     color: #ffffff;
 }
 
 .department-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 23px;
+    height: 23px;
 }
 
 .department-card h3 {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 900;
-    margin: 0 0 12px;
+    margin: 0 0 14px;
 }
 
 .department-card p {
     color: var(--contact-muted);
     font-size: 13px;
     font-weight: 700;
-    line-height: 1.8;
-    margin: 0 0 19px;
+    line-height: 1.9;
+    margin: 0 0 22px;
 }
 
 .department-link {
@@ -482,31 +555,60 @@ body {
     font-weight: 900;
     color: #ffffff !important;
     border-bottom: 1px solid var(--contact-accent);
-    padding-bottom: 5px;
+    padding-bottom: 6px;
+}
+
+/* ADDITIONAL CONTACT INFORMATION */
+
+.contact-information {
+    background: #394550;
+    border: 1px solid var(--contact-border);
+    border-radius: 9px;
+    padding: 38px;
+    margin-bottom: 85px;
+}
+
+.contact-information h2 {
+    font-size: 25px;
+    font-weight: 900;
+    margin: 0 0 17px;
+}
+
+.contact-information p {
+    color: var(--contact-muted);
+    font-size: 14px;
+    line-height: 1.95;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
+.contact-information p:last-child {
+    margin-bottom: 0;
 }
 
 /* NEWSWIRE AND MAGAZINE */
 
 .platform-section {
-    margin-bottom: 75px;
+    margin-bottom: 85px;
 }
 
 .platform-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
 .platform-card {
     background: var(--contact-panel);
     border: 1px solid var(--contact-border);
     border-radius: 9px;
-    padding: 35px;
-    transition: background .2s ease;
+    padding: 38px;
+    transition: background .2s ease, transform .2s ease;
 }
 
 .platform-card:hover {
     background: var(--contact-panel-light);
+    transform: translateY(-3px);
 }
 
 .platform-number {
@@ -514,22 +616,23 @@ body {
     font-size: 11px;
     letter-spacing: 3px;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .platform-card h3 {
     font-size: 23px;
     font-weight: 900;
-    margin: 0 0 13px;
+    line-height: 1.4;
+    margin: 0 0 16px;
 }
 
 .platform-card p {
     color: var(--contact-muted);
     font-size: 14px;
     font-weight: 700;
-    line-height: 1.8;
-    min-height: 55px;
-    margin: 0 0 25px;
+    line-height: 1.9;
+    min-height: 85px;
+    margin: 0 0 27px;
 }
 
 .platform-button {
@@ -539,7 +642,7 @@ body {
     gap: 12px;
     background: #d9e1e9;
     color: #27313b !important;
-    padding: 13px 19px;
+    padding: 14px 20px;
     border-radius: 5px;
     font-size: 12px;
     font-weight: 900;
@@ -555,24 +658,25 @@ body {
 
 .social-section {
     text-align: center;
-    padding: 50px 20px;
+    padding: 65px 20px;
     background: #394550;
     border-top: 1px solid var(--contact-border);
     border-bottom: 1px solid var(--contact-border);
-    margin-bottom: 65px;
+    margin-bottom: 80px;
 }
 
 .social-section h2 {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 900;
-    margin: 0 0 12px;
+    margin: 0 0 15px;
 }
 
 .social-section p {
     color: var(--contact-muted);
     font-size: 14px;
     font-weight: 700;
-    margin: 0 0 30px;
+    line-height: 1.8;
+    margin: 0 auto 32px;
 }
 
 .social-icons {
@@ -580,12 +684,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 16px;
 }
 
 .social-link {
-    width: 53px;
-    height: 53px;
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -602,20 +706,20 @@ body {
 }
 
 .social-link svg {
-    width: 23px;
-    height: 23px;
+    width: 24px;
+    height: 24px;
 }
 
 /* OFFICE ADDRESS */
 
 .office-section {
     max-width: 1120px;
-    margin: 0 auto 75px;
+    margin: 0 auto 85px;
     padding: 0 25px;
 }
 
 .office-section h2 {
-    font-size: 26px;
+    font-size: 27px;
     font-weight: 900;
     margin: 0 0 20px;
 }
@@ -633,12 +737,12 @@ body {
     font-weight: 900;
 }
 
-/* FOOTER NAVIGATION */
+/* FOOTER */
 
 .contact-bottom-navigation {
     background: #27313b;
     border-top: 1px solid var(--contact-border);
-    padding: 55px 25px 35px;
+    padding: 60px 25px 38px;
 }
 
 .footer-inner {
@@ -647,7 +751,7 @@ body {
 }
 
 .footer-logo {
-    margin-bottom: 35px;
+    margin-bottom: 38px;
 }
 
 .footer-logo img {
@@ -667,7 +771,7 @@ body {
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 2px;
-    margin: 0 0 18px;
+    margin: 0 0 20px;
 }
 
 .footer-group a {
@@ -675,7 +779,7 @@ body {
     color: #ffffff;
     font-size: 13px;
     font-weight: 800;
-    margin-bottom: 13px;
+    margin-bottom: 14px;
     transition: color .2s ease;
 }
 
@@ -685,8 +789,8 @@ body {
 
 .footer-bottom {
     border-top: 1px solid var(--contact-border);
-    margin-top: 40px;
-    padding-top: 25px;
+    margin-top: 45px;
+    padding-top: 27px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -721,6 +825,10 @@ body {
 
     .footer-groups {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-image-frame img {
+        height: 460px;
     }
 }
 
@@ -767,11 +875,30 @@ body {
     }
 
     .contact-hero {
-        padding: 65px 20px 40px;
+        padding: 65px 20px 35px;
     }
 
     .contact-hero p {
         font-size: 14px;
+    }
+
+    .contact-image-section {
+        padding: 10px 15px 55px;
+    }
+
+    .contact-image-frame {
+        min-height: 270px;
+    }
+
+    .contact-image-frame img {
+        height: 340px;
+        max-height: none;
+        min-height: 270px;
+    }
+
+    .contact-image-caption {
+        padding: 20px;
+        font-size: 10px;
     }
 
     .contact-container {
@@ -779,8 +906,8 @@ body {
     }
 
     .general-contact {
-        padding: 27px 18px;
-        margin-bottom: 50px;
+        padding: 30px 19px;
+        margin-bottom: 55px;
     }
 
     .department-grid,
@@ -790,14 +917,25 @@ body {
 
     .department-card {
         min-height: auto;
+        padding: 27px;
+    }
+
+    .platform-card {
+        padding: 29px;
     }
 
     .platform-card p {
         min-height: auto;
     }
 
+    .contact-information {
+        padding: 27px 22px;
+        margin-bottom: 60px;
+    }
+
     .social-section {
-        padding: 40px 15px;
+        padding: 48px 15px;
+        margin-bottom: 60px;
     }
 
     .social-icons {
@@ -815,7 +953,7 @@ body {
 
     .footer-groups {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 25px 15px;
+        gap: 27px 15px;
     }
 
     .footer-bottom {
@@ -897,12 +1035,45 @@ body {
     <!-- CONTACT INTRODUCTION -->
 
     <section class="contact-hero">
+
         <div class="eyebrow">PHRINUSOMYIS™</div>
+
         <h1>CONTACT</h1>
+
         <p>
-            Official contact information and communication channels
-            for PHRINUSOMYIS™.
+            Every important conversation begins with a point of contact.
+            PHRINUSOMYIS™ welcomes communication from individuals,
+            organizations, institutions, media representatives and
+            commercial entities around the world. This page provides
+            access to the appropriate communication channels for
+            official enquiries, professional correspondence,
+            partnerships, competitions and organizational matters.
+            Select the department that corresponds with your enquiry
+            to reach the relevant team.
         </p>
+
+    </section>
+
+    <!-- LARGE FEATURE IMAGE -->
+
+    <section class="contact-image-section">
+
+        <div class="contact-image-frame">
+
+            <!-- Replace this image URL with your preferred large image.
+                 This is separate from the company logo in the header. -->
+
+            <img
+                src="/phrinusomyis_logo.png"
+                alt="PHRINUSOMYIS visual identity"
+            >
+
+            <div class="contact-image-caption">
+                PHRINUSOMYIS™ — COMMANDING THE WORLD STAGE™
+            </div>
+
+        </div>
+
     </section>
 
     <main>
@@ -912,19 +1083,28 @@ body {
             <!-- GENERAL CORRESPONDENCE -->
 
             <section class="general-contact">
+
                 <div class="section-label">OFFICIAL COMMUNICATION</div>
 
                 <h2>General Correspondence</h2>
 
                 <p>
-                    For general enquiries, official communications
-                    and correspondence concerning PHRINUSOMYIS™.
+                    For general enquiries, official communications,
+                    organizational information and correspondence
+                    concerning PHRINUSOMYIS™, use the central contact
+                    address below. This channel is available for
+                    enquiries that do not fall under one of the
+                    specialized departments listed on this page.
+                    For a faster and more direct response, enquiries
+                    concerning a particular area should be sent to
+                    the corresponding department.
                 </p>
 
                 <a class="general-email"
                    href="mailto:info@phrinusomyis.com">
                     info@phrinusomyis.com
                 </a>
+
             </section>
 
             <!-- DEPARTMENT CONTACTS -->
@@ -932,15 +1112,25 @@ body {
             <section class="contact-section">
 
                 <div class="contact-section-heading">
+
                     <div class="section-label">DIRECTORY</div>
+
                     <h2>Department Contacts</h2>
+
                     <p>
-                        Direct communication with the relevant
-                        departments of PHRINUSOMYIS™.
+                        PHRINUSOMYIS™ maintains dedicated communication
+                        channels for different areas of its organization.
+                        These contacts help direct enquiries to the
+                        appropriate department, whether the matter
+                        concerns media relations, sporting competitions,
+                        commercial partnerships or employment.
                     </p>
+
                 </div>
 
                 <div class="department-grid">
+
+                    <!-- PRESS AND MEDIA -->
 
                     <article class="department-card">
 
@@ -956,10 +1146,13 @@ body {
                         <h3>Press &amp; Media</h3>
 
                         <p>
-                            For journalists, editors, publishers and
-                            media representatives seeking official
-                            information, interviews or press-related
-                            communication.
+                            This channel is designated for journalists,
+                            editors, publishers, broadcasters and media
+                            representatives seeking official information
+                            about PHRINUSOMYIS™. Enquiries may include
+                            requests for statements, interviews,
+                            organizational information, media materials
+                            and press-related communication.
                         </p>
 
                         <a class="department-link"
@@ -968,6 +1161,8 @@ body {
                         </a>
 
                     </article>
+
+                    <!-- EVENTS AND COMPETITIONS -->
 
                     <article class="department-card">
 
@@ -984,7 +1179,11 @@ body {
                         <p>
                             For enquiries concerning PHRINUSOMYIS™
                             competitions, Sports Theater™, event
-                            participation and event-related matters.
+                            participation and competition-related matters.
+                            This department is the appropriate point
+                            of contact for questions about sporting
+                            programmes, participation requirements
+                            and event information.
                         </p>
 
                         <a class="department-link"
@@ -993,6 +1192,8 @@ body {
                         </a>
 
                     </article>
+
+                    <!-- PARTNERSHIPS -->
 
                     <article class="department-card">
 
@@ -1010,10 +1211,13 @@ body {
                         <h3>Partnerships</h3>
 
                         <p>
-                            For organizations, institutions and
-                            commercial entities interested in
-                            establishing partnerships with
-                            PHRINUSOMYIS™.
+                            This channel is intended for organizations,
+                            institutions and commercial entities
+                            interested in exploring or establishing
+                            partnerships with PHRINUSOMYIS™. Correspondence
+                            may concern institutional cooperation,
+                            commercial opportunities, joint initiatives
+                            and proposals for collaboration.
                         </p>
 
                         <a class="department-link"
@@ -1022,6 +1226,8 @@ body {
                         </a>
 
                     </article>
+
+                    <!-- CAREERS AND EMPLOYMENT -->
 
                     <article class="department-card">
 
@@ -1037,9 +1243,13 @@ body {
                         <h3>Careers &amp; Employment</h3>
 
                         <p>
-                            For individuals interested in employment
-                            opportunities, professional roles and
-                            recruitment-related enquiries.
+                            For individuals interested in professional
+                            opportunities, employment, recruitment
+                            and working with PHRINUSOMYIS™. Applicants
+                            and professionals may use this channel
+                            to introduce their experience, submit
+                            professional enquiries and communicate
+                            with the relevant recruitment team.
                         </p>
 
                         <a class="department-link"
@@ -1050,6 +1260,45 @@ body {
                     </article>
 
                 </div>
+
+            </section>
+
+            <!-- CONTACT GUIDANCE -->
+
+            <section class="contact-information">
+
+                <div class="section-label">COMMUNICATION GUIDELINES</div>
+
+                <h2>Reaching the Right Department</h2>
+
+                <p>
+                    To help direct your correspondence appropriately,
+                    identify the subject of your enquiry clearly in
+                    your email. Include relevant organizational details,
+                    the purpose of your communication and any supporting
+                    information necessary for the department to
+                    understand your message.
+                </p>
+
+                <p>
+                    Media representatives should use the Press &amp;
+                    Media channel. Individuals and organizations
+                    contacting PHRINUSOMYIS™ about competitions and
+                    events should use Events &amp; Competitions.
+                    Partnership proposals should be directed to
+                    Partnerships, while professional applications
+                    and employment enquiries should be sent to
+                    Careers &amp; Employment.
+                </p>
+
+                <p>
+                    For matters that do not correspond with these
+                    departments, the general correspondence address
+                    remains available. Please use the official
+                    communication channels displayed on this page
+                    when contacting PHRINUSOMYIS™.
+                </p>
+
             </section>
 
             <!-- NEWSWIRE AND MAGAZINE -->
@@ -1057,12 +1306,19 @@ body {
             <section class="platform-section">
 
                 <div class="contact-section-heading">
+
                     <div class="section-label">OFFICIAL PUBLICATIONS</div>
+
                     <h2>Explore Our Platforms</h2>
+
                     <p>
-                        Discover official announcements, publications
-                        and editorial coverage from PHRINUSOMYIS™.
+                        Stay connected with the official publications
+                        and communication platforms of PHRINUSOMYIS™.
+                        The Newswire and Magazine provide different
+                        ways to follow organizational announcements,
+                        editorial coverage, photography and stories.
                     </p>
+
                 </div>
 
                 <div class="platform-grid">
@@ -1074,9 +1330,11 @@ body {
                         <h3>PHRINUSOMYIS™ NEWSWIRE</h3>
 
                         <p>
-                            Official organizational announcements,
-                            news releases and statements from
-                            PHRINUSOMYIS™.
+                            The official source for organizational
+                            announcements, news releases and statements
+                            from PHRINUSOMYIS™. Visit the Newswire for
+                            published updates and official organizational
+                            communications.
                         </p>
 
                         <a class="platform-button"
@@ -1095,8 +1353,11 @@ body {
                         <h3>PHRINUSOMYIS™ MAGAZINE</h3>
 
                         <p>
-                            Editorial features, photography, stories
-                            and publications covering PHRINUSOMYIS™.
+                            An editorial platform featuring photography,
+                            stories, features and publications covering
+                            PHRINUSOMYIS™. Explore its visual and editorial
+                            coverage of the organization and its sporting
+                            world.
                         </p>
 
                         <a class="platform-button"
@@ -1109,6 +1370,7 @@ body {
                     </article>
 
                 </div>
+
             </section>
 
         </div>
@@ -1122,7 +1384,9 @@ body {
             <h2>FOLLOW PHRINUSOMYIS™</h2>
 
             <p>
-                Follow the official channels of PHRINUSOMYIS™.
+                Follow the official channels of PHRINUSOMYIS™
+                for organizational updates, announcements,
+                publications and selected media content.
             </p>
 
             <div class="social-icons">
@@ -1132,10 +1396,12 @@ body {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label="Facebook">
+
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path fill="currentColor"
                               d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.2H7.6V13h2.7v8h3.2z"/>
                     </svg>
+
                 </a>
 
                 <a class="social-link"
@@ -1143,6 +1409,7 @@ body {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label="Instagram">
+
                     <svg viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2"
                          stroke-linecap="round" stroke-linejoin="round">
@@ -1150,6 +1417,7 @@ body {
                         <circle cx="12" cy="12" r="4"/>
                         <circle cx="18" cy="6" r="1" fill="currentColor"/>
                     </svg>
+
                 </a>
 
                 <a class="social-link"
@@ -1157,10 +1425,12 @@ body {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label="LinkedIn">
+
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path fill="currentColor"
                               d="M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4zM3.3 9h3.8v12H3.3zM9.5 9h3.6v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7V21h-3.8v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.5z"/>
                     </svg>
+
                 </a>
 
                 <a class="social-link"
@@ -1168,10 +1438,12 @@ body {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label="X">
+
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path fill="currentColor"
                               d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.3-8.4L1.8 2h6.4l4.5 6.8L18.9 2zm-1.1 18h1.7L7.3 3.9H5.5z"/>
                     </svg>
+
                 </a>
 
                 <a class="social-link"
@@ -1179,10 +1451,12 @@ body {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label="YouTube">
+
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path fill="currentColor"
                               d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.6V8.4l6.2 3.6z"/>
                     </svg>
+
                 </a>
 
                 <a class="social-link"
@@ -1190,13 +1464,16 @@ body {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label="TikTok">
+
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path fill="currentColor"
                               d="M19.6 7.2a5.5 5.5 0 0 1-3.4-1.2V15a6.1 6.1 0 1 1-6.1-6.1c.4 0 .8 0 1.2.1v3.4a2.8 2.8 0 1 0 1.9 2.6V2h3.2c.2 2.2 1.6 4 3.6 4.6v.6z"/>
                     </svg>
+
                 </a>
 
             </div>
+
         </section>
 
         <!-- OFFICE ADDRESS -->
@@ -1218,7 +1495,7 @@ body {
 
     </main>
 
-    <!-- BOTTOM NAVIGATION AND FOOTER -->
+    <!-- FOOTER -->
 
     <footer class="contact-bottom-navigation">
 
@@ -1280,7 +1557,7 @@ body {
                 </div>
 
                 <div class="footer-copyright">
-                    ©2026 PHRINUSOMYIS™. All Rights Reserved.
+                    © PHRINUSOMYIS™. All Rights Reserved.
                 </div>
 
             </div>
