@@ -1250,9 +1250,10 @@ select:focus-visible {
 
     <div class="topbar-actions">
 
-   <div id="google_translate_element"></div>
-
-<select id="language-selector" onchange="changeLanguage(this.value)">
+        <div class="translate-area">
+            <span class="translate-label">Language</span>
+            <div id="google_translate_element"></div>
+        </div>
 
         <details class="top-menu">
             <summary>Explore</summary>
@@ -2500,7 +2501,7 @@ function googleTranslateElementInit() {
         {
             pageLanguage: "en",
             includedLanguages:
-                "fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+                "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
             autoDisplay: false
         },
         "google_translate_element"
