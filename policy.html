@@ -103,8 +103,131 @@
       font-size: 13px;
       font-weight: 700;
       cursor: pointer;
-    }
+    } 
+     
+/* =========================================
+   GOOGLE TRANSLATE — OVERLAY & PAGE SHIFT FIX
+   ========================================= */
 
+/* Stop Google from pushing the page downward */
+html,
+body {
+  top: 0 !important;
+  margin-top: 0 !important;
+  position: relative !important;
+}
+
+/* Hide the top translation banner */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  border: 0 !important;
+}
+
+/* Hide Google translation pop-outs and tooltips */
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-te-balloon-frame,
+.goog-te-menu-frame,
+.goog-te-menu2,
+.goog-te-spinner-pos,
+.goog-te-ftab,
+.goog-te-gadget-icon {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Prevent Google injected elements from changing layout */
+body > .skiptranslate,
+body > iframe.skiptranslate,
+.goog-te-spinner-pos {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Keep the original Google Translate widget off-screen */
+#google_translate_element {
+  position: absolute !important;
+  left: -10000px !important;
+  top: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Prevent horizontal page shifting */
+html,
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Keep the main site layout within the viewport */
+.site-header,
+.page-intro,
+main,
+.content-wrap,
+.site-footer,
+.footer-inner {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Prevent Google translation from adding unwanted top spacing */
+body {
+  padding-top: 0 !important;
+  transform: none !important;
+}
+
+/* Keep the custom language selector visible and usable */
+#siteLanguage {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 99999 !important;
+}
+
+/* Keep the language selector area above other page elements */
+.language-area {
+  position: relative !important;
+  z-index: 99999 !important;
+}
+
+/* Prevent translated text from creating unwanted horizontal overflow */
+* {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Mobile protection */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .site-header,
+  .page-intro,
+  main,
+  .content-wrap,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+  }
     #google_translate_element {
       position: absolute;
       left: -9999px;
