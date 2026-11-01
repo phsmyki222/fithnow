@@ -528,11 +528,90 @@ header,.site-header,.main-header{transform:none!important}
 .presentation-card img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;aspect-ratio:auto;background:transparent;transition:filter .35s ease}
 .presentation-card:hover img{filter:brightness(1.035)}
 
+/* LARGE DUAL IMAGE PRESENTATIONS */
+.dual-presentation{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:42px;
+  align-items:stretch;
+}
+.dual-panel{
+  position:relative;
+  width:100%;
+  height:clamp(390px,43vw,620px);
+  min-width:0;
+  overflow:hidden;
+  background:#171715;
+}
+.dual-panel img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.dual-fade img{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity 1.35s ease;
+}
+.dual-fade img.is-active{opacity:1}
+.dual-slide-track{
+  display:flex;
+  width:100%;
+  height:100%;
+  transition:transform 1s cubic-bezier(.22,.7,.2,1);
+  will-change:transform;
+}
+.dual-slide-track img{
+  flex:0 0 100%;
+  width:100%;
+  height:100%;
+}
+.dual-dissolve img{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:scale(1.035);
+  transition:opacity 2s ease,transform 3.8s ease;
+}
+.dual-dissolve img.is-active{
+  opacity:1;
+  transform:scale(1);
+}
+.dual-editorial img{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:scale(1.075);
+  transition:opacity 1.6s ease,transform 5s ease;
+}
+.dual-editorial img.is-active{
+  opacity:1;
+  transform:scale(1);
+}
+.dual-perfume img{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:scale(1.045);
+  transition:opacity 1.8s ease,transform 5.5s ease;
+}
+.dual-perfume img.is-active{
+  opacity:1;
+  transform:scale(1);
+}
+
 /* ZEAVIQ SPORTS */
 .sports-section{background:radial-gradient(ellipse at 15% 10%,rgba(169,130,77,.12),transparent 45%),linear-gradient(135deg,#22221e,#181816 70%);color:var(--ivory);padding:94px 0}
 .sports-section .section-heading{max-width:1050px}
 .theater-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.theater-image{min-height:440px;background:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.28)),url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1400&q=85");background-position:center;background-size:cover}
+.theater-image{min-height:440px;position:relative;overflow:hidden;background:#171715}
+.theater-image .dual-presentation{margin-top:0;gap:0;grid-template-columns:1fr 1fr}
+.theater-image .dual-panel{height:clamp(390px,40vw,570px)}
 .theater-copy p:not(.section-label){color:#c7c0b5;margin:21px 0;font-size:16px;line-height:1.85}
 
 /* ORIGINAL FORMATS */
@@ -562,30 +641,6 @@ header,.site-header,.main-header{transform:none!important}
 .luxury-heading-row{display:flex;justify-content:space-between;align-items:flex-end;gap:25px}
 .luxury-intro{max-width:690px;color:#5f5a51;margin-top:17px;font-size:17px;line-height:1.8}
 .luxury-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-
-/* TWO-PANEL IMAGE PRESENTATIONS */
-.dual-presentation{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;min-width:0}
-.dual-panel{position:relative;overflow:hidden;width:100%;height:440px;background:#171715}
-.dual-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.dual-fade img{opacity:0;transition:opacity 1.2s ease}
-.dual-fade img.is-active{opacity:1}
-.dual-slide{overflow:hidden}
-.dual-slide-track{display:flex;width:200%;height:100%;transition:transform 1s cubic-bezier(.22,.7,.2,1)}
-.dual-slide-track img{position:relative;inset:auto;flex:0 0 50%;width:50%;height:100%;object-fit:cover}
-.dual-presentation a{display:block;min-width:0}
-.dual-presentation a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-
-/* MAGAZINE EDITORIAL REVEAL */
-.magazine-section .presentation-card img{transform:scale(1.035);transition:opacity 1.1s ease,transform 8s ease}
-.magazine-section .presentation-card.is-active img{transform:scale(1);}
-
-/* PERFUME CROSSFADE AND GENTLE ZOOM */
-.perfume-presentation{height:auto;min-height:250px}
-.perfume-presentation .presentation-track{display:grid;grid-template-columns:1fr;gap:0;position:relative}
-.perfume-presentation .presentation-card{grid-area:1/1;opacity:0;pointer-events:none;transition:opacity 1.4s ease}
-.perfume-presentation .presentation-card.is-active{opacity:1;pointer-events:auto}
-.perfume-presentation .presentation-card img{transform:scale(1.035);transition:transform 8s ease,filter .35s ease}
-.perfume-presentation .presentation-card.is-active img{transform:scale(1)}
 
 /* ANDROID */
 .download-section{background:linear-gradient(90deg,rgba(19,19,17,.96),rgba(19,19,17,.79)),url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85");background-position:center;background-size:cover;color:var(--ivory)}
@@ -641,9 +696,10 @@ header,.site-header,.main-header{transform:none!important}
 .footer-grid{grid-template-columns:1fr 1fr}
 .luxury-heading-row{display:block}
 .luxury-heading-row>.btn{margin-top:22px}
-.dual-panel{height:360px}
+.dual-panel{height:clamp(330px,48vw,500px)}
 }
 
+/* MOBILE */
 @media(max-width:600px){
 .container{width:min(100% - 34px,var(--max-width))}
 .section{padding:70px 0}
@@ -667,7 +723,10 @@ header,.site-header,.main-header{transform:none!important}
 .presentation-card{flex:0 0 100%}
 .presentation-card img{width:100%;height:auto;object-fit:contain}
 .sports-section{padding:72px 0}
-.theater-image{min-height:300px}
+.theater-image{min-height:0}
+.theater-image .dual-panel{height:340px}
+.dual-presentation{grid-template-columns:1fr;gap:15px;margin-top:30px}
+.dual-panel{height:390px}
 .formats-grid{grid-template-columns:1fr;margin-top:35px}
 .format-card{min-height:0;padding:28px 23px}
 .soul-content h2{font-size:48px}
@@ -680,18 +739,11 @@ header,.site-header,.main-header{transform:none!important}
 .faq-item summary{font-size:18px}
 .footer-social{gap:10px}
 .footer-social a{width:38px;height:38px}
-.dual-presentation{gap:9px}
-.dual-panel{height:245px}
 }
-
-@media(max-width:380px){
-.dual-panel{height:205px}
-}
-
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .presentation-track{transition:none!important}
-.dual-fade img,.dual-slide-track,.magazine-section .presentation-card img,.perfume-presentation .presentation-card,.perfume-presentation .presentation-card img{transition:none!important}
+.dual-panel img,.dual-slide-track{transition:none!important}
 }
 </style>
 </head>
@@ -830,23 +882,20 @@ html{scroll-behavior:auto}
 
 <section class="section section-dark" id="sports-theater">
   <div class="container theater-grid">
-
-    <div class="dual-presentation" aria-label="ZEAVIQ SPORTS image presentation">
-
-      <a href="#sports-theater" class="dual-panel dual-fade" data-image-rotation="zeaviq-fade" aria-label="ZEAVIQ SPORTS presentation">
-        <img src="/PHRINUSOMYIS%20SOUL%20SURVIVE%202026%2001%20.png" alt="ZEAVIQ SPORTS presentation image one" class="is-active">
-        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1400&q=85" alt="ZEAVIQ SPORTS presentation image two">
-      </a>
-
-      <a href="#sports-theater" class="dual-panel dual-slide" data-image-rotation="zeaviq-slide" aria-label="ZEAVIQ SPORTS presentation">
-        <div class="dual-slide-track">
-          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=85" alt="ZEAVIQ SPORTS sporting image one">
-          <img src="/PHRINUSOMYIS%20SOUL%20SURVIVE%202026%2001%20.png" alt="ZEAVIQ SPORTS sporting image two">
+    <div class="theater-image" role="group" aria-label="ZEAVIQ SPORTS sporting presentation">
+      <div class="dual-presentation">
+        <div class="dual-panel dual-fade" data-dual-effect="fade" data-interval="6000">
+          <img data-shared-image class="is-active" alt="ZEAVIQ SPORTS presentation image one">
+          <img data-shared-image alt="ZEAVIQ SPORTS presentation image two">
         </div>
-      </a>
-
+        <div class="dual-panel" data-dual-effect="slide" data-interval="6500">
+          <div class="dual-slide-track">
+            <img data-shared-image alt="ZEAVIQ SPORTS presentation image one">
+            <img data-shared-image alt="ZEAVIQ SPORTS presentation image two">
+          </div>
+        </div>
+      </div>
     </div>
-
     <div class="theater-copy">
       <p class="section-label">A PHRINUSOMYIS™ Concept</p>
       <h2 class="section-heading">ZEAVIQ SPORTS™</h2>
@@ -919,20 +968,17 @@ html{scroll-behavior:auto}
       developed under PHRINUSOMYIS™.
     </p>
 
-    <div class="dual-presentation" aria-label="VIKQUATHEL competition image presentation">
-
-      <a href="#competitions" class="dual-panel dual-slide" data-image-rotation="vikquathel-slide" aria-label="VIKQUATHEL competition presentation">
+    <div class="dual-presentation" aria-label="VIKQUATHEL competition presentation">
+      <div class="dual-panel" data-dual-effect="slide" data-interval="6200">
         <div class="dual-slide-track">
-          <img src="/PHRINUSOMYIS%20SOUL%20SURVIVE%202026%2001%20.png" alt="VIKQUATHEL competition image one">
-          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=85" alt="VIKQUATHEL competition image two">
+          <img data-shared-image alt="VIKQUATHEL competition image one" loading="lazy">
+          <img data-shared-image alt="VIKQUATHEL competition image two" loading="lazy">
         </div>
-      </a>
-
-      <a href="#competitions" class="dual-panel dual-fade" data-image-rotation="vikquathel-fade" aria-label="VIKQUATHEL competition presentation">
-        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=85" alt="VIKQUATHEL sporting image one" class="is-active">
-        <img src="/PHRINUSOMYIS%20SOUL%20SURVIVE%202026%2001%20.png" alt="VIKQUATHEL sporting image two">
-      </a>
-
+      </div>
+      <div class="dual-panel dual-dissolve" data-dual-effect="dissolve" data-interval="7200">
+        <img data-shared-image class="is-active" alt="VIKQUATHEL competition image one" loading="lazy">
+        <img data-shared-image alt="VIKQUATHEL competition image two" loading="lazy">
+      </div>
     </div>
 
     <p class="section-intro">One contest. One winner. A stage defined by performance.</p>
@@ -974,10 +1020,14 @@ html{scroll-behavior:auto}
     <div class="section-action">
       <a href="/magazine/news" class="btn btn-dark">Enter Magazine</a>
     </div>
-    <div class="presentation" data-presentation="magazine" data-effect="editorial">
-      <div class="presentation-track">
-        <a href="/magazine/news" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
-        <a href="/magazine/news" class="presentation-card" aria-label="Read PHRINUSOMYIS Magazine"><img data-shared-image alt="PHRINUSOMYIS Magazine cover" loading="lazy"></a>
+    <div class="dual-presentation" aria-label="PHRINUSOMYIS Magazine editorial presentation">
+      <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="6500">
+        <img data-shared-image class="is-active" alt="PHRINUSOMYIS Magazine cover one" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine cover two" loading="lazy">
+      </div>
+      <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="7800">
+        <img data-shared-image class="is-active" alt="PHRINUSOMYIS Magazine editorial image one" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine editorial image two" loading="lazy">
       </div>
     </div>
     <p class="section-intro">A publication with its own visual identity and editorial voice.</p>
@@ -995,14 +1045,14 @@ html{scroll-behavior:auto}
       <a href="/perfume" class="btn btn-dark">Explore Luxury</a>
     </div>
 
-    <div class="presentation perfume-presentation" data-presentation="perfume" data-effect="fade-zoom">
-      <div class="presentation-track">
-        <a href="/perfume" class="presentation-card is-active" aria-label="Explore the perfume collection">
-          <img src="/perfume-luxury-detail.png" alt="Perfume collection presentation" loading="lazy">
-        </a>
-        <a href="/perfume" class="presentation-card" aria-label="Explore the perfume collection">
-          <img src="/perfume-luxury-detail.png" alt="Perfume collection presentation" loading="lazy">
-        </a>
+    <div class="dual-presentation" aria-label="Perfume collection presentation">
+      <div class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="7000">
+        <img data-shared-image class="is-active" alt="Perfume collection presentation one" loading="lazy">
+        <img data-shared-image alt="Perfume collection presentation two" loading="lazy">
+      </div>
+      <div class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="8500">
+        <img data-shared-image class="is-active" alt="Perfume collection presentation one" loading="lazy">
+        <img data-shared-image alt="Perfume collection presentation two" loading="lazy">
       </div>
     </div>
 
@@ -1148,10 +1198,9 @@ html{scroll-behavior:auto}
       <div class="footer-column">
         <h4>Organization</h4>
         <a href="/copyright">CopyRight</a>
-        <a href="/circle">private Access</a>
         <a href="/terms">Terms Of Used</a>
         <a href="/contact">Contact</a>
-        <a href="/close">Close</a>
+        <a href="/accessibility">Accessibility &amp; Captions</a>
       </div>
 
       <div class="footer-column">
@@ -1167,8 +1216,7 @@ html{scroll-behavior:auto}
         <a href="/perfume">Perfume</a>
         <a href="/#download">Android Application</a>
         <a href="/help">Help</a>
-        <a href="/circle">Circle</a>
-        <a href="/privacy">Privacy Choices</a>
+        <a href="/cookies">Cookies</a>
       </div>
 
     </div>
@@ -1176,11 +1224,11 @@ html{scroll-behavior:auto}
     <div class="footer-bottom">
       <span>©2026 <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.</span>
       <span>
-        <a href="/privacy">Privacy</a> &nbsp; | &nbsp;
+        <a href="/policy">Privacy</a> &nbsp; | &nbsp;
         <a href="/terms">Terms</a> &nbsp; | &nbsp;
         <a href="/policy">Policies</a> &nbsp; | &nbsp;
         <a href="/copyright">Copyright</a> &nbsp; | &nbsp;
-        <a href="/security">Security</a> &nbsp; | &nbsp;
+        <a href="/accessibility">Accessibility</a> &nbsp; | &nbsp;
         <a href="/cookies">Cookies</a>
       </span>
       <strong>COMMANDING THE WORLD STAGE™</strong>
@@ -1225,15 +1273,17 @@ if(yearElement){
   yearElement.textContent=new Date().getFullYear();
 }
 
-/* CONTINUOUS CAROUSEL SETTINGS */
+/* CONTINUOUS CAROUSEL: ONE LARGE IMAGE AT A TIME */
 const presentationSettings={
   sports:{interval:5000,initialDelay:900},
-  newswire:{interval:5000,initialDelay:3300},
-  magazine:{interval:8000,initialDelay:2700},
-  perfume:{interval:8000,initialDelay:1800}
+  newswire:{interval:5000,initialDelay:3300}
 };
 
 const carousels=[];
+
+function getVisibleCount(){
+  return 1;
+}
 
 function createCarousel(viewport){
   const track=viewport.querySelector(".presentation-track");
@@ -1244,7 +1294,6 @@ function createCarousel(viewport){
 
   const name=viewport.dataset.presentation;
   const settings=presentationSettings[name]||{interval:5000,initialDelay:2000};
-  const effect=viewport.dataset.effect||"slide";
 
   const carousel={
     viewport:viewport,
@@ -1254,31 +1303,72 @@ function createCarousel(viewport){
     timer:null,
     delayTimer:null,
     paused:false,
+    visible:getVisibleCount(),
+    step:0,
+    rebuild:null,
+    advance:null,
     update:null
   };
 
-  function update(){
-    if(effect==="fade-zoom"||effect==="editorial"){
-      originalCards.forEach(function(card,index){
-        card.classList.toggle("is-active",index===carousel.index);
-      });
-      return;
-    }
+  function removeClones(){
+    track.querySelectorAll("[data-carousel-clone]").forEach(function(clone){
+      clone.remove();
+    });
+  }
 
-    const firstCard=originalCards[0];
+  function buildCarousel(){
+    removeClones();
+    carousel.visible=getVisibleCount();
+    carousel.index=0;
+
+    const cloneCount=Math.min(carousel.visible,originalCards.length);
+
+    originalCards.slice(0,cloneCount).forEach(function(card){
+      const clone=card.cloneNode(true);
+      clone.setAttribute("data-carousel-clone","true");
+      clone.setAttribute("aria-hidden","true");
+
+      clone.querySelectorAll("a,img").forEach(function(element){
+        if(element.tagName==="A"){
+          element.setAttribute("tabindex","-1");
+        }
+      });
+
+      track.appendChild(clone);
+    });
+
+    carousel.update();
+  }
+
+  function update(){
+    const firstCard=track.querySelector(".presentation-card");
     if(!firstCard)return;
 
     const cardWidth=firstCard.getBoundingClientRect().width;
     const computedStyle=window.getComputedStyle(track);
     const gap=parseFloat(computedStyle.columnGap||computedStyle.gap)||0;
 
-    track.style.transform="translate3d(-"+(carousel.index*(cardWidth+gap))+"px, 0, 0)";
+    carousel.step=cardWidth+gap;
+    const distance=carousel.index*carousel.step;
+
+    track.style.transform="translate3d(-"+distance+"px, 0, 0)";
   }
 
   function advance(){
-    if(carousel.paused)return;
-    carousel.index=(carousel.index+1)%originalCards.length;
+    if(carousel.paused||originalCards.length<=1)return;
+
+    carousel.index+=1;
     update();
+
+    if(carousel.index>=originalCards.length){
+      window.setTimeout(function(){
+        track.style.transition="none";
+        carousel.index=0;
+        update();
+        track.offsetHeight;
+        track.style.transition="";
+      },900);
+    }
   }
 
   function stop(){
@@ -1294,6 +1384,7 @@ function createCarousel(viewport){
 
   function start(){
     stop();
+    if(originalCards.length<=1)return;
     carousel.timer=window.setInterval(advance,settings.interval);
   }
 
@@ -1308,7 +1399,10 @@ function createCarousel(viewport){
   }
 
   carousel.update=update;
-  update();
+  carousel.rebuild=buildCarousel;
+  carousel.advance=advance;
+
+  buildCarousel();
 
   viewport.addEventListener("mouseenter",pause);
   viewport.addEventListener("mouseleave",resume);
@@ -1324,75 +1418,69 @@ function createCarousel(viewport){
 
 document.querySelectorAll("[data-presentation]").forEach(createCarousel);
 
-/* INDEPENDENT ZEAVIQ SPORTS AND VIKQUATHEL IMAGE PRESENTATIONS */
-const imageRotationSettings={
-  "zeaviq-fade":{interval:6000,initialDelay:1200},
-  "zeaviq-slide":{interval:6000,initialDelay:2600},
-  "vikquathel-slide":{interval:7000,initialDelay:1700},
-  "vikquathel-fade":{interval:7000,initialDelay:3200}
-};
+/* INDEPENDENT DUAL IMAGE PRESENTATIONS */
+const dualPresentations=[];
 
-const imageRotations=[];
+function createDualPresentation(panel){
+  const effect=panel.dataset.dualEffect;
+  const interval=Number(panel.dataset.interval)||6000;
 
-function createImageRotation(panel){
-  const name=panel.dataset.imageRotation;
-  const settings=imageRotationSettings[name];
-  if(!settings)return;
-
-  const images=panel.querySelectorAll(":scope > img");
-  const slideTrack=panel.querySelector(".dual-slide-track");
-  const isSlide=!!slideTrack;
-  const imageCount=isSlide?slideTrack.querySelectorAll("img").length:images.length;
-
-  if(imageCount<2)return;
-
-  const rotation={
+  const state={
     panel:panel,
+    effect:effect,
+    interval:interval,
     index:0,
     timer:null,
-    delayTimer:null,
-    paused:false
+    paused:false,
+    images:[],
+    track:null
   };
 
-  function update(){
-    if(isSlide){
-      slideTrack.style.transform="translate3d(-"+(rotation.index*50)+"%,0,0)";
-    }else{
-      images.forEach(function(img,index){
-        img.classList.toggle("is-active",index===rotation.index);
-      });
-    }
+  if(effect==="slide"){
+    state.track=panel.querySelector(".dual-slide-track");
+    if(!state.track)return;
+    state.images=Array.from(state.track.querySelectorAll("img"));
+  }else{
+    state.images=Array.from(panel.querySelectorAll("img"));
   }
+
+  if(state.images.length<2)return;
 
   function advance(){
-    if(rotation.paused)return;
-    rotation.index=(rotation.index+1)%imageCount;
-    update();
-  }
+    if(state.paused)return;
 
-  function stop(){
-    if(rotation.timer){
-      clearInterval(rotation.timer);
-      rotation.timer=null;
-    }
-    if(rotation.delayTimer){
-      clearTimeout(rotation.delayTimer);
-      rotation.delayTimer=null;
+    state.index=(state.index+1)%state.images.length;
+
+    if(effect==="slide"){
+      state.track.style.transform="translate3d(-"+(state.index*100)+"%,0,0)";
+    }else{
+      state.images.forEach(function(img,index){
+        img.classList.toggle("is-active",index===state.index);
+      });
     }
   }
 
   function start(){
     stop();
-    rotation.timer=window.setInterval(advance,settings.interval);
+    if(!state.paused){
+      state.timer=window.setInterval(advance,interval);
+    }
+  }
+
+  function stop(){
+    if(state.timer){
+      clearInterval(state.timer);
+      state.timer=null;
+    }
   }
 
   function pause(){
-    rotation.paused=true;
+    state.paused=true;
     stop();
   }
 
   function resume(){
-    rotation.paused=false;
+    state.paused=false;
     start();
   }
 
@@ -1401,16 +1489,21 @@ function createImageRotation(panel){
   panel.addEventListener("focusin",pause);
   panel.addEventListener("focusout",resume);
 
-  imageRotations.push(rotation);
+  state.start=start;
+  state.stop=stop;
+  state.pause=pause;
+  state.resume=resume;
 
-  rotation.delayTimer=window.setTimeout(function(){
-    if(!rotation.paused)start();
-  },settings.initialDelay);
+  dualPresentations.push(state);
+
+  window.setTimeout(function(){
+    if(!state.paused)start();
+  },interval);
 }
 
-document.querySelectorAll("[data-image-rotation]").forEach(createImageRotation);
+document.querySelectorAll("[data-dual-effect]").forEach(createDualPresentation);
 
-/* RESPONSIVE PRESENTATION UPDATE */
+/* RESIZE HANDLING */
 let resizeTimer=null;
 
 window.addEventListener("resize",function(){
@@ -1418,7 +1511,13 @@ window.addEventListener("resize",function(){
 
   resizeTimer=window.setTimeout(function(){
     carousels.forEach(function(carousel){
-      carousel.update();
+      carousel.rebuild();
+    });
+
+    dualPresentations.forEach(function(state){
+      if(state.effect==="slide"&&state.track){
+        state.track.style.transform="translate3d(-"+(state.index*100)+"%,0,0)";
+      }
     });
   },200);
 });
