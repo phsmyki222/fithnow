@@ -521,14 +521,24 @@ header,.site-header,.main-header{transform:none!important}
 .statement-band p{color:var(--gold);font-size:12px;font-weight:850;letter-spacing:4px;margin-bottom:12px}
 .statement-band h2{font-family:var(--heading-font);font-weight:800;font-size:clamp(27px,3.8vw,48px);letter-spacing:-1px;line-height:1.2}
 
-/* LARGER IMAGE PRESENTATIONS */
+/* AUTOMATIC IMAGE PRESENTATIONS */
 .presentation{width:100%;overflow:hidden;margin-top:40px;position:relative}
 .presentation-track{display:flex;align-items:flex-start;gap:24px;width:100%;transition:transform .85s cubic-bezier(.22,.7,.2,1);will-change:transform}
 .presentation-card{display:block;flex:0 0 100%;min-width:0;overflow:hidden;background:transparent;border:0;outline:none}
 .presentation-card img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;aspect-ratio:auto;background:transparent;transition:filter .35s ease}
 .presentation-card:hover img{filter:brightness(1.035)}
 
-/* LARGE DUAL IMAGE PRESENTATIONS */
+/* NEWSWIRE: TWO TALL IMAGES AT A TIME */
+.presentation[data-presentation="newswire"] .presentation-track{gap:22px}
+.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 calc(50% - 11px)}
+.presentation[data-presentation="newswire"] .presentation-card img{
+  width:100%;
+  height:640px;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* TWO-PANEL AUTOMATIC PRESENTATIONS */
 .dual-presentation{
   width:100%;
   display:grid;
@@ -540,7 +550,7 @@ header,.site-header,.main-header{transform:none!important}
 .dual-panel{
   position:relative;
   width:100%;
-  height:clamp(390px,43vw,620px);
+  height:640px;
   min-width:0;
   overflow:hidden;
   background:#171715;
@@ -552,13 +562,8 @@ header,.site-header,.main-header{transform:none!important}
   object-fit:cover;
   object-position:center;
 }
-.dual-fade img{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transition:opacity 1.35s ease;
-}
-.dual-fade img.is-active{opacity:1}
+
+/* VIKQUATHEL: HORIZONTAL SLIDE */
 .dual-slide-track{
   display:flex;
   width:100%;
@@ -571,17 +576,21 @@ header,.site-header,.main-header{transform:none!important}
   width:100%;
   height:100%;
 }
+
+/* VIKQUATHEL: DRAMATIC DISSOLVE */
 .dual-dissolve img{
   position:absolute;
   inset:0;
   opacity:0;
-  transform:scale(1.035);
+  transform:scale(1.045);
   transition:opacity 2s ease,transform 3.8s ease;
 }
 .dual-dissolve img.is-active{
   opacity:1;
   transform:scale(1);
 }
+
+/* MAGAZINE: EDITORIAL REVEAL */
 .dual-editorial img{
   position:absolute;
   inset:0;
@@ -592,6 +601,11 @@ header,.site-header,.main-header{transform:none!important}
 .dual-editorial img.is-active{
   opacity:1;
   transform:scale(1);
+}
+
+/* PERFUME: GENTLE CROSSFADE */
+.dual-perfume{
+  height:490px;
 }
 .dual-perfume img{
   position:absolute;
@@ -608,10 +622,8 @@ header,.site-header,.main-header{transform:none!important}
 /* ZEAVIQ SPORTS */
 .sports-section{background:radial-gradient(ellipse at 15% 10%,rgba(169,130,77,.12),transparent 45%),linear-gradient(135deg,#22221e,#181816 70%);color:var(--ivory);padding:94px 0}
 .sports-section .section-heading{max-width:1050px}
-.theater-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.theater-image{min-height:440px;position:relative;overflow:hidden;background:#171715}
-.theater-image .dual-presentation{margin-top:0;gap:0;grid-template-columns:1fr 1fr}
-.theater-image .dual-panel{height:clamp(390px,40vw,570px)}
+.theater-grid{display:block}
+.theater-copy{max-width:900px}
 .theater-copy p:not(.section-label){color:#c7c0b5;margin:21px 0;font-size:16px;line-height:1.85}
 
 /* ORIGINAL FORMATS */
@@ -681,6 +693,9 @@ header,.site-header,.main-header{transform:none!important}
 @media(max-width:1100px){
 .main-nav{gap:11px}.main-nav a{font-size:9px}
 .header-logo img{width:140px}.language-select{max-width:105px}
+.dual-panel{height:570px}
+.dual-perfume{height:440px}
+.presentation[data-presentation="newswire"] .presentation-card img{height:570px}
 }
 @media(max-width:900px){
 .header-inner{min-height:76px}
@@ -689,14 +704,16 @@ header,.site-header,.main-header{transform:none!important}
 .main-nav.open{display:flex}
 .main-nav a{font-size:12px;padding:5px 0}
 .header-contact{display:none}
-.identity-grid,.theater-grid,.download-grid{grid-template-columns:1fr;gap:35px}
+.identity-grid,.download-grid{grid-template-columns:1fr;gap:35px}
 .formats-grid{grid-template-columns:1fr 1fr}
 .presentation-card{flex-basis:100%}
 .presentation-track{gap:20px}
 .footer-grid{grid-template-columns:1fr 1fr}
 .luxury-heading-row{display:block}
 .luxury-heading-row>.btn{margin-top:22px}
-.dual-panel{height:clamp(330px,48vw,500px)}
+.dual-panel{height:540px}
+.dual-perfume{height:420px}
+.presentation[data-presentation="newswire"] .presentation-card img{height:540px}
 }
 
 /* MOBILE */
@@ -719,17 +736,19 @@ header,.site-header,.main-header{transform:none!important}
 .statement-band{padding:42px 0}
 .statement-band h2{font-size:27px}
 .presentation{margin-top:30px}
-.presentation-track{gap:0}
+.presentation-track{gap:10px}
 .presentation-card{flex:0 0 100%}
 .presentation-card img{width:100%;height:auto;object-fit:contain}
+.presentation[data-presentation="newswire"] .presentation-track{gap:10px}
+.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 calc(50% - 5px)}
+.presentation[data-presentation="newswire"] .presentation-card img{height:500px;object-fit:cover}
 .sports-section{padding:72px 0}
-.theater-image{min-height:0}
-.theater-image .dual-panel{height:340px}
-.dual-presentation{grid-template-columns:1fr;gap:15px;margin-top:30px}
-.dual-panel{height:390px}
 .formats-grid{grid-template-columns:1fr;margin-top:35px}
 .format-card{min-height:0;padding:28px 23px}
 .soul-content h2{font-size:48px}
+.dual-presentation{grid-template-columns:1fr;gap:15px;margin-top:30px}
+.dual-panel{height:540px}
+.dual-perfume{height:410px}
 .luxury-actions{flex-direction:column}
 .luxury-actions .btn{width:100%}
 .download-panel{padding:27px 23px}
@@ -742,8 +761,7 @@ header,.site-header,.main-header{transform:none!important}
 }
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
-.presentation-track{transition:none!important}
-.dual-panel img,.dual-slide-track{transition:none!important}
+.presentation-track,.dual-panel img,.dual-slide-track{transition:none!important}
 }
 </style>
 </head>
@@ -863,6 +881,9 @@ html{scroll-behavior:auto}
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img data-shared-image alt="Sporting presentation"></a>
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img data-shared-image alt="Sporting presentation"></a>
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img data-shared-image alt="Sporting presentation"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img data-shared-image alt="Sporting presentation"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img data-shared-image alt="Sporting presentation"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img data-shared-image alt="Sporting presentation"></a>
       </div>
     </div>
 
@@ -882,20 +903,6 @@ html{scroll-behavior:auto}
 
 <section class="section section-dark" id="sports-theater">
   <div class="container theater-grid">
-    <div class="theater-image" role="group" aria-label="ZEAVIQ SPORTS sporting presentation">
-      <div class="dual-presentation">
-        <div class="dual-panel dual-fade" data-dual-effect="fade" data-interval="6000">
-          <img data-shared-image class="is-active" alt="ZEAVIQ SPORTS presentation image one">
-          <img data-shared-image alt="ZEAVIQ SPORTS presentation image two">
-        </div>
-        <div class="dual-panel" data-dual-effect="slide" data-interval="6500">
-          <div class="dual-slide-track">
-            <img data-shared-image alt="ZEAVIQ SPORTS presentation image one">
-            <img data-shared-image alt="ZEAVIQ SPORTS presentation image two">
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="theater-copy">
       <p class="section-label">A PHRINUSOMYIS™ Concept</p>
       <h2 class="section-heading">ZEAVIQ SPORTS™</h2>
@@ -969,16 +976,27 @@ html{scroll-behavior:auto}
     </p>
 
     <div class="dual-presentation" aria-label="VIKQUATHEL competition presentation">
+
       <div class="dual-panel" data-dual-effect="slide" data-interval="6200">
         <div class="dual-slide-track">
-          <img data-shared-image alt="VIKQUATHEL competition image one" loading="lazy">
-          <img data-shared-image alt="VIKQUATHEL competition image two" loading="lazy">
+          <img data-shared-image alt="VIKQUATHEL competition image 1" loading="lazy">
+          <img data-shared-image alt="VIKQUATHEL competition image 2" loading="lazy">
+          <img data-shared-image alt="VIKQUATHEL competition image 3" loading="lazy">
+          <img data-shared-image alt="VIKQUATHEL competition image 4" loading="lazy">
+          <img data-shared-image alt="VIKQUATHEL competition image 5" loading="lazy">
+          <img data-shared-image alt="VIKQUATHEL competition image 6" loading="lazy">
         </div>
       </div>
+
       <div class="dual-panel dual-dissolve" data-dual-effect="dissolve" data-interval="7200">
-        <img data-shared-image class="is-active" alt="VIKQUATHEL competition image one" loading="lazy">
-        <img data-shared-image alt="VIKQUATHEL competition image two" loading="lazy">
+        <img data-shared-image class="is-active" alt="VIKQUATHEL competition image 7" loading="lazy">
+        <img data-shared-image alt="VIKQUATHEL competition image 8" loading="lazy">
+        <img data-shared-image alt="VIKQUATHEL competition image 9" loading="lazy">
+        <img data-shared-image alt="VIKQUATHEL competition image 10" loading="lazy">
+        <img data-shared-image alt="VIKQUATHEL competition image 11" loading="lazy">
+        <img data-shared-image alt="VIKQUATHEL competition image 12" loading="lazy">
       </div>
+
     </div>
 
     <p class="section-intro">One contest. One winner. A stage defined by performance.</p>
@@ -996,12 +1014,24 @@ html{scroll-behavior:auto}
     <div class="section-action">
       <a href="/newswire/news" class="btn">Enter Official Newswire</a>
     </div>
+
     <div class="presentation" data-presentation="newswire">
       <div class="presentation-track">
-        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
-        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 1" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 2" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 3" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 4" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 5" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 6" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 7" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 8" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 9" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 10" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 11" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img data-shared-image alt="Official Newswire presentation 12" loading="lazy"></a>
       </div>
     </div>
+
     <p class="section-intro">Official communication. Direct from the organization.</p>
   </div>
 </section>
@@ -1020,16 +1050,29 @@ html{scroll-behavior:auto}
     <div class="section-action">
       <a href="/magazine/news" class="btn btn-dark">Enter Magazine</a>
     </div>
+
     <div class="dual-presentation" aria-label="PHRINUSOMYIS Magazine editorial presentation">
+
       <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="6500">
-        <img data-shared-image class="is-active" alt="PHRINUSOMYIS Magazine cover one" loading="lazy">
-        <img data-shared-image alt="PHRINUSOMYIS Magazine cover two" loading="lazy">
+        <img data-shared-image class="is-active" alt="PHRINUSOMYIS Magazine image 1" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 2" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 3" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 4" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 5" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 6" loading="lazy">
       </div>
+
       <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="7800">
-        <img data-shared-image class="is-active" alt="PHRINUSOMYIS Magazine editorial image one" loading="lazy">
-        <img data-shared-image alt="PHRINUSOMYIS Magazine editorial image two" loading="lazy">
+        <img data-shared-image class="is-active" alt="PHRINUSOMYIS Magazine image 7" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 8" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 9" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 10" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 11" loading="lazy">
+        <img data-shared-image alt="PHRINUSOMYIS Magazine image 12" loading="lazy">
       </div>
+
     </div>
+
     <p class="section-intro">A publication with its own visual identity and editorial voice.</p>
   </div>
 </section>
@@ -1046,14 +1089,25 @@ html{scroll-behavior:auto}
     </div>
 
     <div class="dual-presentation" aria-label="Perfume collection presentation">
+
       <div class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="7000">
-        <img data-shared-image class="is-active" alt="Perfume collection presentation one" loading="lazy">
-        <img data-shared-image alt="Perfume collection presentation two" loading="lazy">
+        <img data-shared-image class="is-active" alt="Perfume collection image 1" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 2" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 3" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 4" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 5" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 6" loading="lazy">
       </div>
+
       <div class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="8500">
-        <img data-shared-image class="is-active" alt="Perfume collection presentation one" loading="lazy">
-        <img data-shared-image alt="Perfume collection presentation two" loading="lazy">
+        <img data-shared-image class="is-active" alt="Perfume collection image 7" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 8" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 9" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 10" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 11" loading="lazy">
+        <img data-shared-image alt="Perfume collection image 12" loading="lazy">
       </div>
+
     </div>
 
     <p class="section-intro">A considered presentation of the collection.</p>
@@ -1197,26 +1251,25 @@ html{scroll-behavior:auto}
 
       <div class="footer-column">
         <h4>Organization</h4>
-        <a href="/copyright">CopyRight</a>
-        <a href="/terms">Terms Of Used</a>
-        <a href="/contact">Contact</a>
-        <a href="/accessibility">Accessibility &amp; Captions</a>
+        <a href="/copyright">COPYRIGHT & INTELLECTUAL PROPERTY</a>
+        <a href="/terms">TERMS OF USE</a>
+        <a href="/contact">CONTACT</a>
+        <a href="/accessibility">ACCESSIBILITY &amp; CAPTIONS</a>
       </div>
 
       <div class="footer-column">
         <h4>Publications</h4>
         <a href="/newswire/news">Newswire / News</a>
         <a href="/magazine/news">Magazine / News</a>
-        <a href="/policy">Privacy Policy</a>
+        <a href="/policy">PRIVACY POLICY</a>
       </div>
 
       <div class="footer-column">
         <h4>More</h4>
-        <a href="/perfume">Luxury</a>
-        <a href="/perfume">Perfume</a>
+        <a href="/perfume">PERFUME</a>
         <a href="/#download">Android Application</a>
-        <a href="/help">Help</a>
-        <a href="/cookies">Cookies</a>
+        <a href="/help">HELP</a>
+        <a href="/cookies">COOKIES</a>
       </div>
 
     </div>
@@ -1224,12 +1277,12 @@ html{scroll-behavior:auto}
     <div class="footer-bottom">
       <span>©2026 <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.</span>
       <span>
-        <a href="/policy">Privacy</a> &nbsp; | &nbsp;
-        <a href="/terms">Terms</a> &nbsp; | &nbsp;
-        <a href="/policy">Policies</a> &nbsp; | &nbsp;
-        <a href="/copyright">Copyright</a> &nbsp; | &nbsp;
-        <a href="/accessibility">Accessibility</a> &nbsp; | &nbsp;
-        <a href="/cookies">Cookies</a>
+        <a href="/help">HELP</a> &nbsp; | &nbsp;
+        <a href="/terms">TERMS OF USE</a> &nbsp; | &nbsp;
+        <a href="/policy">PRIVACY POLICY</a> &nbsp; | &nbsp;
+        <a href="/copyright">COPYRIGHT & INTELLECTUAL PROPERTY</a> &nbsp; | &nbsp;
+        <a href="/accessibility">ACCESSIBILITY & CAPTIONS</a> &nbsp; | &nbsp;
+        <a href="/cookies">COOKIES</a>
       </span>
       <strong>COMMANDING THE WORLD STAGE™</strong>
     </div>
@@ -1273,17 +1326,13 @@ if(yearElement){
   yearElement.textContent=new Date().getFullYear();
 }
 
-/* CONTINUOUS CAROUSEL: ONE LARGE IMAGE AT A TIME */
+/* AUTOMATIC CAROUSELS */
 const presentationSettings={
-  sports:{interval:5000,initialDelay:900},
-  newswire:{interval:5000,initialDelay:3300}
+  sports:{interval:5000,initialDelay:900,visible:1},
+  newswire:{interval:5500,initialDelay:1800,visible:2}
 };
 
 const carousels=[];
-
-function getVisibleCount(){
-  return 1;
-}
 
 function createCarousel(viewport){
   const track=viewport.querySelector(".presentation-track");
@@ -1293,7 +1342,7 @@ function createCarousel(viewport){
   if(originalCards.length<=1)return;
 
   const name=viewport.dataset.presentation;
-  const settings=presentationSettings[name]||{interval:5000,initialDelay:2000};
+  const settings=presentationSettings[name]||{interval:5000,initialDelay:2000,visible:1};
 
   const carousel={
     viewport:viewport,
@@ -1303,41 +1352,14 @@ function createCarousel(viewport){
     timer:null,
     delayTimer:null,
     paused:false,
-    visible:getVisibleCount(),
-    step:0,
-    rebuild:null,
-    advance:null,
-    update:null
+    visible:settings.visible,
+    step:0
   };
 
   function removeClones(){
     track.querySelectorAll("[data-carousel-clone]").forEach(function(clone){
       clone.remove();
     });
-  }
-
-  function buildCarousel(){
-    removeClones();
-    carousel.visible=getVisibleCount();
-    carousel.index=0;
-
-    const cloneCount=Math.min(carousel.visible,originalCards.length);
-
-    originalCards.slice(0,cloneCount).forEach(function(card){
-      const clone=card.cloneNode(true);
-      clone.setAttribute("data-carousel-clone","true");
-      clone.setAttribute("aria-hidden","true");
-
-      clone.querySelectorAll("a,img").forEach(function(element){
-        if(element.tagName==="A"){
-          element.setAttribute("tabindex","-1");
-        }
-      });
-
-      track.appendChild(clone);
-    });
-
-    carousel.update();
   }
 
   function update(){
@@ -1349,26 +1371,26 @@ function createCarousel(viewport){
     const gap=parseFloat(computedStyle.columnGap||computedStyle.gap)||0;
 
     carousel.step=cardWidth+gap;
-    const distance=carousel.index*carousel.step;
-
-    track.style.transform="translate3d(-"+distance+"px, 0, 0)";
+    track.style.transform="translate3d(-"+(carousel.index*carousel.step)+"px,0,0)";
   }
 
-  function advance(){
-    if(carousel.paused||originalCards.length<=1)return;
+  function buildCarousel(){
+    removeClones();
+    carousel.index=0;
 
-    carousel.index+=1;
+    originalCards.slice(0,carousel.visible).forEach(function(card){
+      const clone=card.cloneNode(true);
+      clone.setAttribute("data-carousel-clone","true");
+      clone.setAttribute("aria-hidden","true");
+
+      clone.querySelectorAll("a").forEach(function(link){
+        link.setAttribute("tabindex","-1");
+      });
+
+      track.appendChild(clone);
+    });
+
     update();
-
-    if(carousel.index>=originalCards.length){
-      window.setTimeout(function(){
-        track.style.transition="none";
-        carousel.index=0;
-        update();
-        track.offsetHeight;
-        track.style.transition="";
-      },900);
-    }
   }
 
   function stop(){
@@ -1382,10 +1404,28 @@ function createCarousel(viewport){
     }
   }
 
+  function advance(){
+    if(carousel.paused)return;
+
+    carousel.index+=carousel.visible;
+    update();
+
+    if(carousel.index>=originalCards.length){
+      window.setTimeout(function(){
+        track.style.transition="none";
+        carousel.index=0;
+        update();
+        track.offsetHeight;
+        track.style.transition="";
+      },900);
+    }
+  }
+
   function start(){
     stop();
-    if(originalCards.length<=1)return;
-    carousel.timer=window.setInterval(advance,settings.interval);
+    if(!carousel.paused){
+      carousel.timer=window.setInterval(advance,settings.interval);
+    }
   }
 
   function pause(){
@@ -1397,10 +1437,6 @@ function createCarousel(viewport){
     carousel.paused=false;
     start();
   }
-
-  carousel.update=update;
-  carousel.rebuild=buildCarousel;
-  carousel.advance=advance;
 
   buildCarousel();
 
@@ -1418,7 +1454,7 @@ function createCarousel(viewport){
 
 document.querySelectorAll("[data-presentation]").forEach(createCarousel);
 
-/* INDEPENDENT DUAL IMAGE PRESENTATIONS */
+/* INDEPENDENT TWO-PANEL SLIDESHOWS */
 const dualPresentations=[];
 
 function createDualPresentation(panel){
@@ -1460,17 +1496,17 @@ function createDualPresentation(panel){
     }
   }
 
-  function start(){
-    stop();
-    if(!state.paused){
-      state.timer=window.setInterval(advance,interval);
-    }
-  }
-
   function stop(){
     if(state.timer){
       clearInterval(state.timer);
       state.timer=null;
+    }
+  }
+
+  function start(){
+    stop();
+    if(!state.paused){
+      state.timer=window.setInterval(advance,interval);
     }
   }
 
@@ -1511,7 +1547,10 @@ window.addEventListener("resize",function(){
 
   resizeTimer=window.setTimeout(function(){
     carousels.forEach(function(carousel){
-      carousel.rebuild();
+      carousel.track.style.transition="none";
+      carousel.update();
+      carousel.track.offsetHeight;
+      carousel.track.style.transition="";
     });
 
     dualPresentations.forEach(function(state){
