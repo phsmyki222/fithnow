@@ -67,17 +67,18 @@
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 30px;
-    }   
-          /* HIDE GOOGLE'S OWN LANGUAGE MENU */
-         #google_translate_element,
-         #google_translate_element .goog-te-gadget,
-         #google_translate_element .goog-te-gadget-simple,
-         #google_translate_element .goog-te-combo,
-         #google_translate_element .goog-te-menu-value,
-         #google_translate_element .goog-te-menu-frame {
-           display: none !important;
-           visibility: hidden !important;
- }
+    }
+
+    /* HIDE GOOGLE'S OWN LANGUAGE MENU */
+    #google_translate_element,
+    #google_translate_element .goog-te-gadget,
+    #google_translate_element .goog-te-gadget-simple,
+    #google_translate_element .goog-te-combo,
+    #google_translate_element .goog-te-menu-value,
+    #google_translate_element .goog-te-menu-frame {
+        display: none !important;
+        visibility: hidden !important;
+    }
 
     /* GOOGLE TRANSLATE: HIDE TOP BANNER */
     .goog-te-banner-frame,
@@ -109,7 +110,7 @@
         pointer-events: none !important;
     }
 
-     /* PREVENT TOP SPACING AND PAGE PUSH-DOWN */
+    /* PREVENT TOP SPACING AND PAGE PUSH-DOWN */
     html,
     body,
     html.translated-ltr,
@@ -121,7 +122,7 @@
         padding-top: 0 !important;
     }
 
-    /* HIDE THE BANNER CONTAINER, NOT THE LANGUAGE SELECTOR */
+    /* HIDE THE BANNER CONTAINER */
     body > .skiptranslate,
     body > div.skiptranslate {
         display: none !important;
@@ -132,7 +133,7 @@
         overflow: hidden !important;
     }
 
-    /* KEEP YOUR GOOGLE TRANSLATE LANGUAGE SELECTOR */
+    /* KEEP GOOGLE TRANSLATE ENGINE INITIALIZED */
     #google_translate_element {
         display: block !important;
         visibility: visible !important;
@@ -162,31 +163,31 @@
     #google_translate_element .goog-logo-link,
     #google_translate_element .goog-te-gadget span {
         display: none !important;
-    }  
-    /* Hide the unwanted Google Translate banner */
-      .goog-te-banner-frame,
-      iframe.skiptranslate,
-      body > .skiptranslate {
-    display: none !important;
-    visibility: hidden !important;
-}
+    }
 
-  /* Keep the Google Translate engine initialized */
+    /* HIDE UNWANTED GOOGLE TRANSLATE BANNER */
+    .goog-te-banner-frame,
+    iframe.skiptranslate,
+    body > .skiptranslate {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* KEEP GOOGLE TRANSLATE ENGINE INITIALIZED OFF-SCREEN */
     #google_translate_element {
-     position: absolute !important;
-     left: -9999px !important;
-     width: 1px !important;
-     height: 1px !important;
-     overflow: hidden !important;
-  }
+        position: absolute !important;
+        left: -9999px !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+    }
 
-    /* Keep the webpage at the top */
-       body {
-         top: 0 !important;
-   }
+    body {
+        top: 0 !important;
+    }
+
     /* LANGUAGE SELECTOR */
-
-     .language-bar {
+    .language-bar {
         position: absolute;
         top: 25px;
         right: 25px;
@@ -213,7 +214,6 @@
     }
 
     /* HEADER */
-
     .cc-header {
         padding: 115px 20px 65px;
         text-align: center;
@@ -259,7 +259,6 @@
     }
 
     /* MAIN CONTENT */
-
     .cc-container {
         max-width: 1050px;
         margin: 0 auto;
@@ -309,7 +308,6 @@
     }
 
     /* HUMAN-CENTRED IMAGE SECTION */
-
     .cc-image-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -351,7 +349,6 @@
     }
 
     /* INFORMATION GRID */
-
     .spec-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -382,7 +379,6 @@
     }
 
     /* NOTICE */
-
     .cc-notice {
         border: 1px solid rgba(178, 139, 40, 0.45);
         background: #EBE6D8;
@@ -407,7 +403,6 @@
     }
 
     /* CONTACT */
-
     .cc-contact {
         margin-top: 80px;
         padding: 45px 20px;
@@ -450,7 +445,6 @@
     }
 
     /* FOOTER */
-
     .phr-main-footer {
         background: #E8E5DC;
         color: var(--text);
@@ -539,7 +533,6 @@
     }
 
     /* MOBILE */
-
     @media (min-width: 768px) {
         .phr-footer-grid {
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -624,15 +617,18 @@
     }
 </style>
 </head>
-<body>    
-        <div id="google_translate_element">
-        </div>
+
+<body>
+
+    <div id="google_translate_element"></div>
+
     <div class="language-bar">
         <label for="languageSwitcher"
                style="position:absolute;left:-9999px;">
-            Select website language
+            Select language
         </label>
-        <select id="languageSwitcher" aria-label="Select website language">
+
+        <select id="languageSwitcher" aria-label="Select language">
             <option value="en">English (EN)</option>
             <option value="fr">Français (FR)</option>
             <option value="es">Español (ES)</option>
@@ -662,7 +658,7 @@
     <header class="cc-header">
 
         <img
-            src="phrinusomyis_logo.png"
+            src="/phrinusomyis_logo.png"
             alt="PHRINUSOMYIS organization logo"
             class="company-logo"
         >
@@ -675,9 +671,10 @@
 
         <p class="cc-intro">
             PHRINUSOMYIS™ recognizes the importance of accessible
-            digital information and media. This page explains our
-            approach to captions, subtitles and accessible viewing
-            across supported website and media experiences.
+            information and media. This page outlines the organization's
+            approach to captions, subtitles, language access and
+            accessibility across its official information and supported
+            media experiences.
         </p>
 
     </header>
@@ -691,24 +688,24 @@
             <h2>01. ACCESSIBILITY COMMITMENT</h2>
 
             <p>
-                PHRINUSOMYIS™ aims to make its digital information
-                and supported media experiences easier to access and
-                understand for audiences with different communication
-                and viewing needs.
+                PHRINUSOMYIS™ recognizes accessibility as an important
+                part of how the organization communicates information
+                and presents its activities to audiences with different
+                communication and viewing needs.
             </p>
 
             <p>
                 Accessibility is considered in the presentation of
-                website content, digital information and audiovisual
-                material. This includes attention to readable text,
-                clear navigation, caption availability and compatibility
-                with commonly used viewing devices.
+                organizational information, official publications and
+                audiovisual material. This includes attention to
+                readable text, clear navigation, caption availability
+                and compatibility with commonly used viewing devices.
             </p>
 
             <p>
                 The availability of a particular accessibility feature
                 may depend on the content, media format, device or
-                platform through which it is accessed.
+                external platform through which it is accessed.
             </p>
 
         </section>
@@ -731,7 +728,7 @@
 
                     <figcaption>
                         <strong>Accessible Digital Experiences</strong>
-                        Digital information and media should be presented
+                        Information and media should be presented
                         with different audience needs in mind.
                     </figcaption>
 
@@ -756,9 +753,9 @@
             </div>
 
             <p>
-                These photographs illustrate human-centred digital
-                communication. They are illustrative images and do not
-                represent a specific PHRINUSOMYIS™ event or production.
+                These photographs illustrate human-centred communication.
+                They are illustrative images and do not represent a
+                specific PHRINUSOMYIS™ event or production.
             </p>
 
         </section>
@@ -838,24 +835,24 @@
             <h2>03. LANGUAGE ACCESS</h2>
 
             <p>
-                PHRINUSOMYIS™ serves audiences across different language
-                communities. Language access may be supported through
-                translated website content, subtitles or other language
-                resources where available.
+                PHRINUSOMYIS™ communicates with audiences across
+                different language communities. Language access may be
+                supported through translated organizational information,
+                subtitles or other language resources where available.
             </p>
 
             <p>
-                The website language selector provides machine-assisted
-                translation of website text through Google Translate.
-                This function is separate from video captions and does
-                not automatically translate the audio or subtitle tracks
-                of every video.
+                The language selector provides machine-assisted
+                translation of displayed information through Google
+                Translate. This function is separate from video captions
+                and does not automatically translate the audio or
+                subtitle tracks of every video.
             </p>
 
             <p>
                 The languages available in a particular video depend on
                 the subtitle or caption tracks supplied for that media.
-                Visitors should check the media player's language settings
+                Viewers should check the media player's language settings
                 where those controls are provided.
             </p>
 
@@ -893,27 +890,27 @@
 
         <section class="cc-section" id="digital-accessibility">
 
-            <h2>05. WEBSITE ACCESSIBILITY</h2>
+            <h2>05. ACCESSIBILITY OF ORGANIZATIONAL INFORMATION</h2>
 
             <p>
-                PHRINUSOMYIS™ aims to improve the usability of its website
-                through clear page structure, readable content, descriptive
-                image text, accessible navigation and consideration of
-                different screen sizes.
+                PHRINUSOMYIS™ considers the accessibility of its
+                published information through clear content structure,
+                readable text, descriptive image text, accessible
+                navigation and consideration of different screen sizes.
             </p>
 
             <p>
-                Some website features or third-party services may not
-                provide the same experience across every browser,
-                assistive technology or device. We welcome reports
-                identifying barriers that prevent visitors from accessing
-                information or using website features.
+                Some features or third-party services may not provide
+                the same experience across every browser, assistive
+                technology or device. The organization welcomes reports
+                identifying barriers that prevent audiences from
+                accessing information or using supported features.
             </p>
 
             <p>
                 If you encounter a difficulty, contact the accessibility
-                address below and identify the page, feature or media
-                involved. Where possible, include the device and browser
+                address below and identify the relevant page, feature
+                or media. Where possible, include the device and browser
                 being used so the issue can be reviewed.
             </p>
 
@@ -926,10 +923,11 @@
             <h2>06. ACCESSIBILITY REQUESTS &amp; FEEDBACK</h2>
 
             <p>
-                Visitors may contact PHRINUSOMYIS™ to report an
+                Audiences may contact PHRINUSOMYIS™ to report an
                 accessibility issue, request information about available
                 captions or subtitles, or provide feedback about the
-                accessibility of a digital experience.
+                accessibility of an organizational information or
+                media experience.
             </p>
 
             <p>
@@ -944,9 +942,10 @@
                 <h3>ACCESSIBILITY SUPPORT</h3>
 
                 <p>
-                    Accessibility enquiries can be sent to the contact
-                    address below. Requests will be reviewed and
-                    addressed where reasonably possible.
+                    Accessibility enquiries can be sent to the
+                    organization's contact address below. Requests
+                    will be reviewed and addressed where reasonably
+                    possible.
                 </p>
 
             </div>
@@ -961,7 +960,8 @@
 
             <p>
                 For accessibility enquiries, caption and subtitle
-                questions, or to report an issue with this website,
+                questions, or to report a difficulty accessing
+                organizational information or supported media,
                 contact PHRINUSOMYIS™.
             </p>
 
@@ -988,22 +988,22 @@
 
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="events">Events</a></li>
-                    <li><a href="perfume">Fragrance</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/">Events</a></li>
+                    <li><a href="/perfume">Fragrance</a></li>
                 </ul>
 
             </div>
 
             <div class="phr-footer-section">
 
-                <h3>MEDIA</h3>
+                <h3>MEDIA &amp; PUBLICATIONS</h3>
 
                 <ul>
-                    <li><a href="news">Latest News</a></li>
-                    <li><a href="press">Press Releases</a></li>
-                    <li><a href="events">Events</a></li>
-                    <li><a href="help">Help Center</a></li>
+                    <li><a href="/newswire/news">Newswire</a></li>
+                    <li><a href="/magazine/news">Magazine</a></li>
+                    <li><a href="/">Events</a></li>
+                    <li><a href="/help">Help Centre</a></li>
                 </ul>
 
             </div>
@@ -1013,10 +1013,11 @@
                 <h3>LEGAL</h3>
 
                 <ul>
-                    <li><a href="policy">Privacy Policy</a></li>
-                    <li><a href="copyright">Copyright &amp; Intellectual Property</a></li>
-                    <li><a href="close" aria-current="page">Accessibility &amp; Captions</a></li>
-                    <li><a href="terms">Terms of Use</a></li>
+                    <li><a href="/policy">Privacy Policy</a></li>
+                    <li><a href="/copyright">Copyright &amp; Intellectual Property</a></li>
+                    <li><a href="/accessibility" aria-current="page">Accessibility &amp; Captions</a></li>
+                    <li><a href="/terms">Terms of Use</a></li>
+                    <li><a href="/cookies">Cookies</a></li>
                 </ul>
 
             </div>
@@ -1026,10 +1027,10 @@
                 <h3>ACCESSIBILITY</h3>
 
                 <ul>
-                    <li><a href="close#accessibility">Accessibility Support</a></li>
-                    <li><a href="close#captions">Captions &amp; Subtitles</a></li>
-                    <li><a href="close#languages">Language Access</a></li>
-                    <li><a href="close#contact">Contact Accessibility Support</a></li>
+                    <li><a href="/accessibility#accessibility">Accessibility Support</a></li>
+                    <li><a href="/accessibility#captions">Captions &amp; Subtitles</a></li>
+                    <li><a href="/accessibility#languages">Language Access</a></li>
+                    <li><a href="/accessibility#contact">Contact Accessibility Support</a></li>
                 </ul>
 
             </div>
@@ -1056,130 +1057,129 @@
 
     <!-- GOOGLE TRANSLATE FUNCTION -->
 
- 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    function googleTranslateElementInit() {
+        function googleTranslateElementInit() {
 
-        new google.translate.TranslateElement(
-            {
-                pageLanguage: 'en',
-                includedLanguages:
-                    'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-                autoDisplay: false
-            },
-            'google_translate_element'
-        );
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages:
+                        'en,fr,es,de,ar,zh,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+                    autoDisplay: false
+                },
+                'google_translate_element'
+            );
 
-        let savedLanguage = 'en';
-
-        try {
-            savedLanguage = localStorage.getItem('site_lang') || 'en';
-        } catch (error) {
-            savedLanguage = 'en';
-        }
-
-        const languageSwitcher =
-            document.getElementById('languageSwitcher');
-
-        if (languageSwitcher) {
-            languageSwitcher.value = savedLanguage;
-        }
-
-        if (savedLanguage !== 'en') {
-            setTimeout(function () {
-                applyGoogleLanguage(savedLanguage);
-            }, 1000);
-        }
-    }
-
-    function applyGoogleLanguage(language) {
-
-        const googleSelect =
-            document.querySelector('#google_translate_element select.goog-te-combo');
-
-        if (!googleSelect) {
-            return false;
-        }
-
-        googleSelect.value = language;
-
-        googleSelect.dispatchEvent(
-            new Event('change', { bubbles: true })
-        );
-
-        return true;
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-        const languageSwitcher =
-            document.getElementById('languageSwitcher');
-
-        if (!languageSwitcher) return;
-
-        languageSwitcher.addEventListener('change', function () {
-
-            const selectedLanguage = this.value;
+            let savedLanguage = 'en';
 
             try {
-                localStorage.setItem('site_lang', selectedLanguage);
+                savedLanguage = localStorage.getItem('site_lang') || 'en';
             } catch (error) {
-                // Translation remains available for this session.
+                savedLanguage = 'en';
             }
 
-            if (selectedLanguage === 'en') {
+            const languageSwitcher =
+                document.getElementById('languageSwitcher');
+
+            if (languageSwitcher) {
+                languageSwitcher.value = savedLanguage;
+            }
+
+            if (savedLanguage !== 'en') {
+                setTimeout(function () {
+                    applyGoogleLanguage(savedLanguage);
+                }, 1000);
+            }
+        }
+
+        function applyGoogleLanguage(language) {
+
+            const googleSelect =
+                document.querySelector('#google_translate_element select.goog-te-combo');
+
+            if (!googleSelect) {
+                return false;
+            }
+
+            googleSelect.value = language;
+
+            googleSelect.dispatchEvent(
+                new Event('change', { bubbles: true })
+            );
+
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const languageSwitcher =
+                document.getElementById('languageSwitcher');
+
+            if (!languageSwitcher) return;
+
+            languageSwitcher.addEventListener('change', function () {
+
+                const selectedLanguage = this.value;
 
                 try {
-                    localStorage.setItem('site_lang', 'en');
-
-                    document.cookie =
-                        'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
-
-                    document.cookie =
-                        'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' +
-                        location.hostname;
+                    localStorage.setItem('site_lang', selectedLanguage);
                 } catch (error) {
-                    // Continue with page reload.
+                    // Translation remains available for this session.
                 }
 
-                location.reload();
-                return;
-            }
+                if (selectedLanguage === 'en') {
 
-            if (!applyGoogleLanguage(selectedLanguage)) {
+                    try {
+                        localStorage.setItem('site_lang', 'en');
 
-                setTimeout(function () {
-                    applyGoogleLanguage(selectedLanguage);
-                }, 500);
+                        document.cookie =
+                            'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
 
-                setTimeout(function () {
-                    applyGoogleLanguage(selectedLanguage);
-                }, 1500);
+                        document.cookie =
+                            'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' +
+                            location.hostname;
+                    } catch (error) {
+                        // Continue with page reload.
+                    }
 
-                setTimeout(function () {
-                    applyGoogleLanguage(selectedLanguage);
-                }, 2500);
+                    location.reload();
+                    return;
+                }
+
+                if (!applyGoogleLanguage(selectedLanguage)) {
+
+                    setTimeout(function () {
+                        applyGoogleLanguage(selectedLanguage);
+                    }, 500);
+
+                    setTimeout(function () {
+                        applyGoogleLanguage(selectedLanguage);
+                    }, 1500);
+
+                    setTimeout(function () {
+                        applyGoogleLanguage(selectedLanguage);
+                    }, 2500);
+                }
+
+            });
+
+            const copyrightYear =
+                document.getElementById('copyrightYear');
+
+            if (copyrightYear) {
+                copyrightYear.textContent = new Date().getFullYear();
             }
 
         });
 
-        const copyrightYear =
-            document.getElementById('copyrightYear');
+    </script>
 
-        if (copyrightYear) {
-            copyrightYear.textContent = new Date().getFullYear();
-        }
-
-    });
-
-</script>
-
-<script
-    type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async
-></script>
+    <script
+        type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        async
+    ></script>
 
 </body>
 </html>
