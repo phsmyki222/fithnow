@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Terms of Use governing access to and engagement with PHRINUSOMYIS™, an international sports organization.">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Terms of Use governing access to and engagement with PHRINUSOMYIS™, its official channels, publications, sports competitions and ZEAVIQ SPORTS™.">
   <title>Terms of Use | PHRINUSOMYIS™</title>
 
   <style>
@@ -16,6 +15,9 @@
 
     html {
       scroll-behavior: smooth;
+      top: 0 !important;
+      margin-top: 0 !important;
+      overflow-x: hidden !important;
     }
 
     body {
@@ -25,6 +27,13 @@
       font-size: 16px;
       font-weight: 700;
       line-height: 1.8;
+      top: 0 !important;
+      margin-top: 0 !important;
+      position: relative !important;
+      overflow-x: hidden !important;
+      left: 0 !important;
+      right: 0 !important;
+      transform: none !important;
     }
 
     a {
@@ -106,12 +115,17 @@
     }
 
     #google_translate_element {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      width: 1px !important;
+      height: 1px !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      overflow: hidden !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      z-index: -1 !important;
     }
 
     .page-intro {
@@ -295,21 +309,114 @@
       font-weight: 900;
     }
 
-    /* Google Translate interface controls */
-    .goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    #goog-gt-tt,
-    .goog-tooltip,
-    .goog-tooltip:hover {
-      display: none !important;
+    /* STRONG GOOGLE TRANSLATE POP-UP AND BANNER SUPPRESSION */
+
+    html,
+    html body {
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      transform: none !important;
     }
 
+    body.translated-ltr,
+    body.translated-rtl,
     body {
       top: 0 !important;
+      margin-top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+    }
+
+    /* Hide Google Translate's top banner and injected frames */
+    .goog-te-banner-frame,
+    .goog-te-banner-frame.skiptranslate,
+    iframe.goog-te-banner-frame,
+    iframe.goog-te-menu-frame,
+    .goog-te-balloon-frame,
+    iframe.goog-te-balloon-frame {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      top: -10000px !important;
+      left: -10000px !important;
+      width: 0 !important;
+      height: 0 !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      border: 0 !important;
+    }
+
+    /* Hide Google Translate tooltip and pop-up elements */
+    #goog-gt-tt,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-te-balloon-frame,
+    .goog-te-spinner-pos,
+    .goog-te-ftab,
+    .goog-te-ftab-link,
+    .goog-te-menu-frame,
+    .goog-te-gadget-icon,
+    .goog-te-menu-value span,
+    .goog-te-menu2,
+    .goog-te-menu2-item,
+    .goog-te-menu2-item div {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Remove Google Translate's injected top spacing */
+    body > .skiptranslate,
+    body > .skiptranslate > iframe,
+    body > .skiptranslate > div {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      max-height: 0 !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      top: -10000px !important;
+      left: -10000px !important;
     }
 
     .skiptranslate {
       border: 0 !important;
+    }
+
+    /* Prevent translated pages from being shifted */
+    body.translated-ltr,
+    body.translated-rtl {
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      position: relative !important;
+    }
+
+    /* Prevent Google-injected elements from causing horizontal movement */
+    iframe.goog-te-banner-frame,
+    iframe.goog-te-menu-frame,
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame {
+      max-width: 0 !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+    }
+
+    /* Keep the page layout within the screen */
+    html,
+    body {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
     }
 
     @media (max-width: 850px) {
