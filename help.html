@@ -127,8 +127,6 @@
 
 </script>
 
-
-
 <style>
 :root {
     --black: #080808;
@@ -162,13 +160,9 @@ body, body * {
     font-weight: 700;
 }
 
-a {
-    color: var(--white);
-}
+a { color: var(--white); }
 
-button, input, select {
-    font: inherit;
-}
+button, input, select { font: inherit; }
 
 button, a, summary, select {
     -webkit-tap-highlight-color: transparent;
@@ -176,25 +170,17 @@ button, a, summary, select {
 
 /* GOOGLE TRANSLATE BANNER FIX */
 
-html, html body {
-    top: 0 !important;
-}
+html, html body { top: 0 !important; }
 
-body > .skiptranslate {
-    display: none !important;
-}
+body > .skiptranslate { display: none !important; }
 
 .goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-}
+.goog-te-banner-frame.skiptranslate { display: none !important; }
 
 #goog-gt-tt,
 .goog-te-balloon-frame,
 .goog-tooltip,
-.goog-text-highlight {
-    display: none !important;
-}
+.goog-text-highlight { display: none !important; }
 
 /* TOP NAVIGATION */
 
@@ -232,9 +218,7 @@ body > .skiptranslate {
     gap: 15px;
 }
 
-.top-menu {
-    position: relative;
-}
+.top-menu { position: relative; }
 
 .top-menu summary {
     display: inline-flex;
@@ -251,18 +235,14 @@ body > .skiptranslate {
     text-transform: uppercase;
 }
 
-.top-menu summary::-webkit-details-marker {
-    display: none;
-}
+.top-menu summary::-webkit-details-marker { display: none; }
 
 .top-menu summary::after {
     content: "⌄";
     font-size: 16px;
 }
 
-.top-menu[open] summary::after {
-    content: "⌃";
-}
+.top-menu[open] summary::after { content: "⌃"; }
 
 .top-menu-list {
     position: absolute;
@@ -285,13 +265,9 @@ body > .skiptranslate {
     border-bottom: 1px solid #292929;
 }
 
-.top-menu-list a:last-child {
-    border-bottom: none;
-}
+.top-menu-list a:last-child { border-bottom: none; }
 
-.top-menu-list a:hover {
-    background: #292929;
-}
+.top-menu-list a:hover { background: #292929; }
 
 /* GOOGLE TRANSLATE */
 
@@ -337,17 +313,9 @@ body > .skiptranslate {
 }
 
 .goog-logo-link,
-.goog-te-gadget span {
-    display: none !important;
-}
+.goog-te-gadget span { display: none !important; }
 
-body .goog-te-banner-frame {
-    display: none !important;
-}
-
-body {
-    top: 0 !important;
-}
+body .goog-te-banner-frame { display: none !important; }
 
 /* HEADER */
 
@@ -553,9 +521,7 @@ body {
     cursor: pointer;
 }
 
-.search-control button:hover {
-    background: #414141;
-}
+.search-control button:hover { background: #414141; }
 
 .search-note {
     margin: 11px 0;
@@ -579,9 +545,7 @@ body {
     border: 1px solid #505050;
 }
 
-.search-results.active {
-    display: block;
-}
+.search-results.active { display: block; }
 
 .search-results-heading {
     padding: 14px 17px;
@@ -602,13 +566,9 @@ body {
     transition: background .2s ease;
 }
 
-.search-result:last-child {
-    border-bottom: 0;
-}
+.search-result:last-child { border-bottom: 0; }
 
-.search-result:hover {
-    background: #292929;
-}
+.search-result:hover { background: #292929; }
 
 .search-result-type {
     display: block;
@@ -758,9 +718,7 @@ body {
     border: 1px solid var(--border);
 }
 
-.faq-item[hidden] {
-    display: none !important;
-}
+.faq-item[hidden] { display: none !important; }
 
 .faq-item summary {
     position: relative;
@@ -773,9 +731,7 @@ body {
     list-style: none;
 }
 
-.faq-item summary::-webkit-details-marker {
-    display: none;
-}
+.faq-item summary::-webkit-details-marker { display: none; }
 
 .faq-item summary::after {
     content: "+";
@@ -787,9 +743,7 @@ body {
     font-size: 22px;
 }
 
-.faq-item[open] summary::after {
-    content: "−";
-}
+.faq-item[open] summary::after { content: "−"; }
 
 .faq-answer {
     padding: 0 22px 22px;
@@ -798,9 +752,7 @@ body {
     line-height: 1.9;
 }
 
-.faq-answer p {
-    margin: 0 0 12px;
-}
+.faq-answer p { margin: 0 0 12px; }
 
 .faq-answer a {
     color: #fff;
@@ -808,9 +760,7 @@ body {
     text-underline-offset: 4px;
 }
 
-.faq-answer ul {
-    padding-left: 22px;
-}
+.faq-answer ul { padding-left: 22px; }
 
 /* PARTNERSHIP IMAGE */
 
@@ -889,9 +839,7 @@ body {
 
 /* RESOURCES */
 
-.resource-section {
-    margin-top: 100px;
-}
+.resource-section { margin-top: 100px; }
 
 .resource-grid {
     display: grid;
@@ -1028,9 +976,7 @@ body {
     list-style: none;
 }
 
-.phr-footer-section li {
-    margin-bottom: 12px;
-}
+.phr-footer-section li { margin-bottom: 12px; }
 
 .phr-footer-section a {
     color: #fff;
@@ -1038,9 +984,7 @@ body {
     text-decoration: none;
 }
 
-.phr-footer-section a:hover {
-    text-decoration: underline;
-}
+.phr-footer-section a:hover { text-decoration: underline; }
 
 .phr-footer-motto {
     max-width: 1150px;
@@ -1082,17 +1026,11 @@ body {
         flex-wrap: wrap;
     }
 
-    .topbar-brand {
-        font-size: 10px;
-    }
+    .topbar-brand { font-size: 10px; }
 
-    .topbar-actions {
-        gap: 8px;
-    }
+    .topbar-actions { gap: 8px; }
 
-    .translate-label {
-        display: none;
-    }
+    .translate-label { display: none; }
 
     #google_translate_element select {
         max-width: 115px;
@@ -1104,60 +1042,40 @@ body {
         font-size: 9px;
     }
 
-    .help-header {
-        padding: 50px 18px 35px;
-    }
+    .help-header { padding: 50px 18px 35px; }
 
     .help-header h1 {
         font-size: 22px;
         letter-spacing: 5px;
     }
 
-    .help-hero {
-        padding: 0 12px;
-    }
+    .help-hero { padding: 0 12px; }
 
-    .help-hero-frame {
-        height: 330px;
-    }
+    .help-hero-frame { height: 330px; }
 
-    .help-hero-overlay {
-        padding: 25px;
-    }
+    .help-hero-overlay { padding: 25px; }
 
-    .help-hero-overlay h2 {
-        font-size: 26px;
-    }
+    .help-hero-overlay h2 { font-size: 26px; }
 
-    .help-hero-overlay p {
-        font-size: 11px;
-    }
+    .help-hero-overlay p { font-size: 11px; }
 
-    .help-intro {
-        margin: 45px auto 35px;
-    }
+    .help-intro { margin: 45px auto 35px; }
 
     .help-container {
         margin-top: 50px;
         padding: 0 15px;
     }
 
-    .help-category-grid {
-        gap: 10px;
-    }
+    .help-category-grid { gap: 10px; }
 
     .help-category {
         min-height: 140px;
         padding: 17px 13px;
     }
 
-    .help-category h3 {
-        font-size: 10px;
-    }
+    .help-category h3 { font-size: 10px; }
 
-    .help-category p {
-        font-size: 10px;
-    }
+    .help-category p { font-size: 10px; }
 
     .section-heading {
         font-size: 17px;
@@ -1174,31 +1092,19 @@ body {
         font-size: 11px;
     }
 
-    .partnership-feature {
-        min-height: 340px;
-    }
+    .partnership-feature { min-height: 340px; }
 
-    .partnership-feature-content {
-        padding: 40px 23px;
-    }
+    .partnership-feature-content { padding: 40px 23px; }
 
-    .resource-grid {
-        grid-template-columns: 1fr;
-    }
+    .resource-grid { grid-template-columns: 1fr; }
 
-    .contact-support {
-        padding: 43px 18px;
-    }
+    .contact-support { padding: 43px 18px; }
 
-    .phr-footer-grid {
-        gap: 25px 15px;
-    }
+    .phr-footer-grid { gap: 25px 15px; }
 }
 
 @media (max-width: 390px) {
-    .help-category-grid {
-        grid-template-columns: 1fr;
-    }
+    .help-category-grid { grid-template-columns: 1fr; }
 
     .search-control input {
         padding: 14px 10px;
@@ -1210,9 +1116,7 @@ body {
         font-size: 9px;
     }
 
-    .phr-footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    .phr-footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* ACCESSIBILITY */
@@ -1235,8 +1139,8 @@ select:focus-visible {
     }
 }
 </style>
-
 </head>
+
 <body>
 
 <!-- TOP NAVIGATION AND LANGUAGE SELECTOR -->
@@ -1244,7 +1148,7 @@ select:focus-visible {
 <nav class="help-topbar" aria-label="Help Centre navigation">
 
     <a href="/" class="topbar-brand">
-        <img src="phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+        <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
         <span>PHRINUSOMYIS™</span>
     </a>
 
@@ -1260,10 +1164,10 @@ select:focus-visible {
 
             <div class="top-menu-list">
                 <a href="/">Homepage</a>
-                <a href="/sports">Sports</a>
-                <a href="/competitions">Competitions</a>
-                <a href="/sports-theater">Sports Theater™</a>
-                <a href="/events">Events</a>
+                <a href="/">Sports</a>
+                <a href="/">Competitions</a>
+                <a href="/">ZEAVIQ SPORTS™</a>
+                <a href="/">Events</a>
                 <a href="/newswire/news">Newswire</a>
                 <a href="/magazine/news">Magazine</a>
                 <a href="/contact">Contact</a>
@@ -1274,13 +1178,12 @@ select:focus-visible {
     </div>
 </nav>
 
-
 <!-- HEADER -->
 
 <header class="help-header">
 
     <img
-        src="phrinusomyis_logo.png"
+        src="/phrinusomyis_logo.png"
         class="help-logo"
         alt="PHRINUSOMYIS logo"
     >
@@ -1293,11 +1196,10 @@ select:focus-visible {
 
     <p>
         Find information about PHRINUSOMYIS™, its sports competitions,
-        Sports Theater™, official publications, events and partnerships.
+        ZEAVIQ SPORTS™, official publications, events and partnerships.
     </p>
 
 </header>
-
 
 <!-- MAIN SPORTS IMAGE -->
 
@@ -1330,7 +1232,6 @@ select:focus-visible {
 
 </section>
 
-
 <!-- INTRODUCTION -->
 
 <section class="help-intro">
@@ -1341,15 +1242,14 @@ select:focus-visible {
         Browse the help topics or search for a specific subject.
         Search results can direct you to relevant questions,
         organizational pages, events, publications and other
-        information available through the official website.
+        information available through PHRINUSOMYIS™.
     </p>
 
 </section>
 
-
 <!-- SEARCH -->
 
-<section class="search-wrap" aria-label="Search the PHRINUSOMYIS website">
+<section class="search-wrap" aria-label="Search PHRINUSOMYIS information">
 
     <label class="search-label" for="helpSearch">
         Search PHRINUSOMYIS™
@@ -1362,7 +1262,7 @@ select:focus-visible {
             id="helpSearch"
             placeholder="Search events, partnerships, magazine, sports..."
             autocomplete="off"
-            aria-label="Search website topics and help information"
+            aria-label="Search topics and help information"
             aria-controls="searchResults"
         >
 
@@ -1377,7 +1277,7 @@ select:focus-visible {
     </p>
 
     <div id="searchStatus" role="status" aria-live="polite">
-        Search the Help Centre and website destinations.
+        Search the Help Centre and organizational information.
     </div>
 
     <div
@@ -1387,7 +1287,6 @@ select:focus-visible {
     ></div>
 
 </section>
-
 
 <main class="help-container">
 
@@ -1417,10 +1316,10 @@ select:focus-visible {
                 <p>Competition information and participation enquiries.</p>
             </a>
 
-            <a href="#sports-theater" class="help-category">
+            <a href="#zeaviq-sports" class="help-category">
                 <span class="category-number">03 / CONCEPT</span>
-                <h3>Sports Theater™</h3>
-                <p>Information about the Sports Theater™ concept.</p>
+                <h3>ZEAVIQ SPORTS™</h3>
+                <p>Information about ZEAVIQ SPORTS™.</p>
             </a>
 
             <a href="#events" class="help-category">
@@ -1447,16 +1346,15 @@ select:focus-visible {
                 <p>Employment and recruitment information.</p>
             </a>
 
-            <a href="#website" class="help-category">
-                <span class="category-number">08 / WEBSITE</span>
-                <h3>Website &amp; Privacy</h3>
-                <p>Website navigation, privacy and accessibility.</p>
+            <a href="#organization-information" class="help-category">
+                <span class="category-number">08 / INFORMATION</span>
+                <h3>Organization &amp; Privacy</h3>
+                <p>Organizational information, privacy and accessibility.</p>
             </a>
 
         </div>
 
     </section>
-
 
     <!-- ORGANIZATION -->
 
@@ -1473,7 +1371,7 @@ select:focus-visible {
                 <p>
                     PHRINUSOMYIS™ is an international sports organization
                     that develops, owns and administers sports competitions
-                    and Sports Theater™ worldwide.
+                    and ZEAVIQ SPORTS™ worldwide.
                 </p>
                 <p>
                     The organization creates original sports formats
@@ -1488,7 +1386,7 @@ select:focus-visible {
                 <p>
                     PHRINUSOMYIS™ develops and administers sports
                     competitions, creates original sports formats
-                    and leads its Sports Theater™ concept.
+                    and leads ZEAVIQ SPORTS™.
                 </p>
             </div>
         </details>
@@ -1497,8 +1395,8 @@ select:focus-visible {
             <summary>Where can I find official information about the organization?</summary>
             <div class="faq-answer">
                 <p>
-                    Visit the official website and its published
-                    organizational, news, press and media sections.
+                    Visit the official PHRINUSOMYIS™ pages and its
+                    published organizational, news and magazine sections.
                 </p>
                 <p><a href="/">Visit the homepage</a></p>
             </div>
@@ -1516,7 +1414,6 @@ select:focus-visible {
         </details>
 
     </section>
-
 
     <!-- COMPETITIONS -->
 
@@ -1544,12 +1441,12 @@ select:focus-visible {
             <div class="faq-answer">
                 <p>
                     Competition information and related announcements
-                    are made available through the official Sports,
-                    Events and News sections of the website.
+                    are made available through PHRINUSOMYIS™ official
+                    organizational and publication channels.
                 </p>
                 <p>
-                    <a href="/sports">Explore Sports</a> |
-                    <a href="/competitions">Explore Competitions</a>
+                    <a href="/">Explore Sports</a> |
+                    <a href="/">Explore Competitions</a>
                 </p>
             </div>
         </details>
@@ -1580,50 +1477,48 @@ select:focus-visible {
 
     </section>
 
+    <!-- ZEAVIQ SPORTS -->
 
-    <!-- SPORTS THEATER -->
-
-    <section class="faq-section" id="sports-theater">
+    <section class="faq-section" id="zeaviq-sports">
 
         <div class="faq-section-heading">
-            <h2>Sports Theater™</h2>
-            <p>Understanding the organization's Sports Theater™ concept.</p>
+            <h2>ZEAVIQ SPORTS™</h2>
+            <p>Understanding ZEAVIQ SPORTS™ within PHRINUSOMYIS™.</p>
         </div>
 
         <details class="faq-item">
-            <summary>What is Sports Theater™?</summary>
+            <summary>What is ZEAVIQ SPORTS™?</summary>
             <div class="faq-answer">
                 <p>
-                    Sports Theater™ is a PHRINUSOMYIS™ sports concept
-                    built around original competitive formats and
-                    distinctive sporting experiences.
+                    ZEAVIQ SPORTS™ is part of the sporting identity
+                    and activities of PHRINUSOMYIS™, encompassing
+                    original sports formats and competitive experiences.
                 </p>
             </div>
         </details>
 
         <details class="faq-item">
-            <summary>Is Sports Theater™ part of PHRINUSOMYIS™?</summary>
+            <summary>Is ZEAVIQ SPORTS™ part of PHRINUSOMYIS™?</summary>
             <div class="faq-answer">
                 <p>
-                    Yes. Sports Theater™ is part of the sports
-                    identity and activities of PHRINUSOMYIS™.
+                    Yes. ZEAVIQ SPORTS™ is part of PHRINUSOMYIS™
+                    and its sporting activities.
                 </p>
             </div>
         </details>
 
         <details class="faq-item">
-            <summary>Where can I find more information about Sports Theater™?</summary>
+            <summary>Where can I find more information about ZEAVIQ SPORTS™?</summary>
             <div class="faq-answer">
                 <p>
-                    Visit the dedicated Sports Theater™ section
-                    of the official website.
+                    Visit the PHRINUSOMYIS™ homepage for
+                    organizational information.
                 </p>
-                <p><a href="/sports-theater">Explore Sports Theater™</a></p>
+                <p><a href="/">Explore PHRINUSOMYIS™</a></p>
             </div>
         </details>
 
     </section>
-
 
     <!-- EVENTS -->
 
@@ -1635,13 +1530,13 @@ select:focus-visible {
         </div>
 
         <details class="faq-item">
-            <summary>Where can I find upcoming event information?</summary>
+            <summary>Where can I find event information?</summary>
             <div class="faq-answer">
                 <p>
-                    Published event information is available
-                    through the official Events section.
+                    Published event information is made available
+                    through PHRINUSOMYIS™ official channels.
                 </p>
-                <p><a href="/events">Visit Events</a></p>
+                <p><a href="/">Visit PHRINUSOMYIS™</a></p>
             </div>
         </details>
 
@@ -1668,7 +1563,6 @@ select:focus-visible {
         </details>
 
     </section>
-
 
     <!-- PUBLICATIONS -->
 
@@ -1727,7 +1621,6 @@ select:focus-visible {
 
     </section>
 
-
     <!-- PARTNERSHIPS -->
 
     <section class="faq-section" id="partnerships">
@@ -1763,7 +1656,6 @@ select:focus-visible {
 
     </section>
 
-
     <!-- PARTNERSHIP IMAGE FEATURE -->
 
     <section class="partnership-feature">
@@ -1794,7 +1686,6 @@ select:focus-visible {
         </div>
 
     </section>
-
 
     <!-- CAREERS -->
 
@@ -1830,27 +1721,23 @@ select:focus-visible {
 
     </section>
 
+    <!-- ORGANIZATION INFORMATION, PRIVACY AND ACCESSIBILITY -->
 
-    <!-- WEBSITE AND PRIVACY -->
-
-    <section class="faq-section" id="website">
+    <section class="faq-section" id="organization-information">
 
         <div class="faq-section-heading">
-            <h2>Website, Privacy &amp; Security</h2>
-            <p>Information about using the official website.</p>
+            <h2>Organization Information, Privacy &amp; Accessibility</h2>
+            <p>Information about organizational policies and support.</p>
         </div>
 
         <details class="faq-item">
-            <summary>Where can I read the website's privacy policy?</summary>
+            <summary>Where can I read the organization's privacy policy?</summary>
             <div class="faq-answer">
                 <p>
-                    The organization's privacy information is
-                    available through its published privacy pages.
+                    PHRINUSOMYIS™ privacy information is available
+                    through its published Privacy Policy.
                 </p>
-                <p>
-                    <a href="/privacy">Privacy Information</a> |
-                    <a href="/policy">Privacy Policy</a>
-                </p>
+                <p><a href="/policy">Privacy Policy</a></p>
             </div>
         </details>
 
@@ -1858,38 +1745,58 @@ select:focus-visible {
             <summary>Where can I find information about cookies?</summary>
             <div class="faq-answer">
                 <p>
-                    Visit the Cookie Policy for information about
-                    cookies and related website preferences.
+                    Visit the Cookies page for information about
+                    cookies and related preferences.
                 </p>
-                <p><a href="/cookies">Cookie Policy</a></p>
+                <p><a href="/cookies">Cookies Information</a></p>
             </div>
         </details>
 
         <details class="faq-item">
-            <summary>Where can I find the website's terms of use?</summary>
+            <summary>Where can I find the organization's terms of use?</summary>
             <div class="faq-answer">
                 <p>
-                    The website's terms of use are available
-                    through the Terms page.
+                    The organization's Terms of Use are available
+                    through its published Terms page.
                 </p>
                 <p><a href="/terms">Terms of Use</a></p>
             </div>
         </details>
 
         <details class="faq-item">
-            <summary>How do I report a website-related problem?</summary>
+            <summary>Where can I find copyright and intellectual property information?</summary>
             <div class="faq-answer">
                 <p>
-                    For website-related enquiries, provide a
-                    description of the issue and the page
-                    where it occurred when contacting the organization.
+                    Copyright and intellectual property information
+                    is available through the organization's Copyright page.
+                </p>
+                <p><a href="/copyright">Copyright &amp; Intellectual Property</a></p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Where can I find accessibility information?</summary>
+            <div class="faq-answer">
+                <p>
+                    Accessibility information and related guidance
+                    are available through the Accessibility page.
+                </p>
+                <p><a href="/accessibility">Accessibility &amp; Captions</a></p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How do I report a problem with an official page?</summary>
+            <div class="faq-answer">
+                <p>
+                    Provide a description of the issue and identify
+                    the relevant page when contacting the organization.
                 </p>
                 <p><a href="/contact">Visit Contact</a></p>
             </div>
         </details>
 
     </section>
-
 
     <!-- OFFICIAL RESOURCES -->
 
@@ -1918,24 +1825,23 @@ select:focus-visible {
                 <div class="resource-arrow">Explore Magazine →</div>
             </a>
 
-            <a href="/sports" class="resource-card">
+            <a href="/" class="resource-card">
                 <span>Sports</span>
                 <h3>Sports &amp; Competitions</h3>
                 <p>Explore sporting activities and competition information.</p>
                 <div class="resource-arrow">Explore Sports →</div>
             </a>
 
-            <a href="/sports-theater" class="resource-card">
+            <a href="/" class="resource-card">
                 <span>Sports Concept</span>
-                <h3>Sports Theater™</h3>
-                <p>Discover the Sports Theater™ concept.</p>
-                <div class="resource-arrow">Explore Sports Theater →</div>
+                <h3>ZEAVIQ SPORTS™</h3>
+                <p>Discover ZEAVIQ SPORTS™ within PHRINUSOMYIS™.</p>
+                <div class="resource-arrow">Explore ZEAVIQ SPORTS™ →</div>
             </a>
 
         </div>
 
     </section>
-
 
     <!-- CONTACT -->
 
@@ -1963,7 +1869,6 @@ select:focus-visible {
 
 </main>
 
-
 <!-- FOOTER -->
 
 <footer class="phr-main-footer">
@@ -1974,19 +1879,18 @@ select:focus-visible {
             <h3>Main</h3>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/press">Press</a></li>
-                <li><a href="/events">Events</a></li>
+                <li><a href="/newswire/news">News</a></li>
+                <li><a href="/magazine/news">Press &amp; Magazine</a></li>
+                <li><a href="/">Events</a></li>
             </ul>
         </div>
 
         <div class="phr-footer-section">
             <h3>Sports</h3>
             <ul>
-                <li><a href="/sports">Sports</a></li>
-                <li><a href="/sports-theater">Sports Theater™</a></li>
-                <li><a href="/competitions">Competitions</a></li>
-                <li><a href="/media">Media</a></li>
+                <li><a href="/">Sports</a></li>
+                <li><a href="/">ZEAVIQ SPORTS™</a></li>
+                <li><a href="/">Competitions</a></li>
             </ul>
         </div>
 
@@ -2002,11 +1906,10 @@ select:focus-visible {
             <h3>Organization</h3>
             <ul>
                 <li><a href="/contact">Contact</a></li>
-                <li><a href="/policy">Policy</a></li>
+                <li><a href="/policy">Privacy Policy</a></li>
                 <li><a href="/terms">Terms of Use</a></li>
                 <li><a href="/copyright">Copyright</a></li>
-                <li><a href="/privacy">Privacy</a></li>
-                <li><a href="/security">Security</a></li>
+                <li><a href="/accessibility">Accessibility</a></li>
                 <li><a href="/help">Help Centre</a></li>
                 <li><a href="/cookies">Cookies</a></li>
             </ul>
@@ -2024,8 +1927,7 @@ select:focus-visible {
 
 </footer>
 
-
-<!-- SEARCH ENGINE: WEBSITE DESTINATIONS + FAQ CONTENT -->
+<!-- SEARCH ENGINE: ORGANIZATIONAL DESTINATIONS + FAQ CONTENT -->
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -2044,13 +1946,10 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     /*
-      WEBSITE SEARCH INDEX
+      ORGANIZATIONAL SEARCH INDEX
 
-      Add new pages here whenever new sections are
-      published on the PHRINUSOMYIS™ website.
-
-      Each result has a title, destination, description
-      and search keywords.
+      Add new destinations here when new official
+      sections become available.
     */
 
     const websitePages = [
@@ -2058,41 +1957,33 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "PHRINUSOMYIS™ Homepage",
             url: "/",
-            type: "Official Website",
+            type: "Organization",
             description: "Visit the official homepage of PHRINUSOMYIS™.",
-            keywords: "home homepage organization company main website about"
+            keywords: "home homepage organization company main about"
         },
 
         {
             title: "Sports & Competitions",
-            url: "/sports",
+            url: "/",
             type: "Sports",
             description: "Explore the sports activities and competition information of PHRINUSOMYIS™.",
             keywords: "sports sport competition competitions contests games athletes sporting"
         },
 
         {
-            title: "Competitions",
-            url: "/competitions",
-            type: "Competitions",
-            description: "Find information about PHRINUSOMYIS™ competitions.",
-            keywords: "competition tournament contest matches participation"
-        },
-
-        {
-            title: "Sports Theater™",
-            url: "/sports-theater",
+            title: "ZEAVIQ SPORTS™",
+            url: "/",
             type: "Sports Concept",
-            description: "Explore the Sports Theater™ concept.",
-            keywords: "sports theater sports theatre concept original formats"
+            description: "Explore ZEAVIQ SPORTS™ within PHRINUSOMYIS™.",
+            keywords: "zeaviq sports concept original formats sporting competitive experiences"
         },
 
         {
             title: "Events",
-            url: "/events",
+            url: "/",
             type: "Events",
             description: "Find published event information, announcements and event details.",
-            keywords: "events event dates venue location schedule upcoming activities"
+            keywords: "events event dates venue location schedule activities"
         },
 
         {
@@ -2116,7 +2007,7 @@ document.addEventListener("DOMContentLoaded", function () {
             url: "/contact",
             type: "Business & Cooperation",
             description: "Contact PHRINUSOMYIS™ about partnership and cooperation enquiries.",
-            keywords: "partnership partner partners business cooperation collaboration handshake agreement commercial proposal"
+            keywords: "partnership partner partners business cooperation collaboration agreement commercial proposal"
         },
 
         {
@@ -2136,51 +2027,43 @@ document.addEventListener("DOMContentLoaded", function () {
         },
 
         {
-            title: "Privacy Information",
-            url: "/privacy",
-            type: "Privacy",
-            description: "Read the organization's published privacy information.",
-            keywords: "privacy personal data information data protection"
-        },
-
-        {
             title: "Privacy Policy",
             url: "/policy",
             type: "Policy",
-            description: "Review the published policy information.",
-            keywords: "policy privacy rules data"
+            description: "Review the organization's published privacy policy.",
+            keywords: "policy privacy personal data information data protection"
         },
 
         {
-            title: "Security",
-            url: "/security",
-            type: "Security",
-            description: "Find the organization's published security information.",
-            keywords: "security website safety protection"
-        },
-
-        {
-            title: "Cookie Policy",
+            title: "Cookie Information",
             url: "/cookies",
-            type: "Website Information",
-            description: "Read information about cookies and website preferences.",
-            keywords: "cookies cookie browser tracking preferences"
+            type: "Organizational Information",
+            description: "Read information about cookies and related preferences.",
+            keywords: "cookies cookie browser preferences"
         },
 
         {
             title: "Terms of Use",
             url: "/terms",
             type: "Legal Information",
-            description: "Review the website's terms of use.",
+            description: "Review the organization's Terms of Use.",
             keywords: "terms conditions legal rules use"
         },
 
         {
-            title: "Press & Media",
-            url: "/press",
-            type: "Media",
-            description: "Find press and media information about PHRINUSOMYIS™.",
-            keywords: "press journalist journalists media media enquiries interview"
+            title: "Copyright & Intellectual Property",
+            url: "/copyright",
+            type: "Legal Information",
+            description: "Find copyright and intellectual property information.",
+            keywords: "copyright intellectual property ownership rights trademark"
+        },
+
+        {
+            title: "Accessibility & Captions",
+            url: "/accessibility",
+            type: "Accessibility",
+            description: "Find accessibility information and related guidance.",
+            keywords: "accessibility captions subtitles accessible assistance"
         },
 
         {
@@ -2193,7 +2076,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ];
 
-
     function normalize(value) {
         return String(value || "")
             .toLowerCase()
@@ -2203,7 +2085,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .replace(/\s+/g, " ")
             .trim();
     }
-
 
     /*
       Score results by matching the search terms
@@ -2236,7 +2117,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return score;
     }
 
-
     function createResult(title, type, description, url) {
 
         const link = document.createElement("a");
@@ -2267,7 +2147,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return link;
     }
 
-
     function searchWebsite() {
 
         const query = normalize(searchInput.value);
@@ -2289,13 +2168,12 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             searchStatus.textContent =
-                "Search the Help Centre and website destinations.";
+                "Search the Help Centre and organizational information.";
 
             return;
         }
 
-
-        /* Search website destination index */
+        /* Search organizational destination index */
 
         const pageMatches = websitePages
             .map(function (page) {
@@ -2311,7 +2189,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return b.score - a.score;
             })
             .slice(0, 8);
-
 
         /* Search FAQ questions and answers */
 
@@ -2336,7 +2213,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-
         /* Hide FAQ sections with no matching questions */
 
         faqSections.forEach(function (section) {
@@ -2350,8 +2226,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-
-        /* Display website destination results */
+        /* Display destination results */
 
         let totalResults = 0;
 
@@ -2359,7 +2234,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const heading = document.createElement("div");
             heading.className = "search-results-heading";
-            heading.textContent = "Related Website Pages";
+            heading.textContent = "Related Official Pages";
 
             resultsBox.appendChild(heading);
 
@@ -2378,7 +2253,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
         }
-
 
         /* Display FAQ results */
 
@@ -2422,7 +2296,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
         /* No results */
 
         if (totalResults === 0) {
@@ -2438,7 +2311,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
         resultsBox.classList.add("active");
 
         searchStatus.textContent =
@@ -2446,9 +2318,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
     searchInput.addEventListener("input", searchWebsite);
-
 
     clearButton.addEventListener("click", function () {
 
@@ -2460,7 +2330,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
     searchInput.addEventListener("keydown", function (event) {
 
         if (event.key === "Escape") {
@@ -2469,7 +2338,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     });
-
 
     /* Close the top dropdown after selecting a destination */
 
@@ -2489,8 +2357,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
-<!-- GOOGLE TRANSLATE -->
 
 <!-- GOOGLE TRANSLATE -->
 
