@@ -386,15 +386,57 @@
       .policy-section p,
       .policy-section li {
         font-size: 14px;
-      }
+      }. 
 
       .footer-grid {
         grid-template-columns: repeat(2, minmax(120px, 1fr));
         gap: 25px 15px;
-      }
+      }   
 
       .footer-bottom {
         flex-direction: column;
+      } 
+      /* Hide Google Translate pop-ups, banners and floating interfaces */
+          .goog-te-banner-frame,
+          .goog-te-banner-frame.skiptranslate,
+           .goog-te-balloon-frame,
+           #goog-gt-tt,
+          .goog-tooltip,
+          .goog-tooltip:hover,
+          .goog-te-spinner-pos,
+          .goog-te-gadget-icon,
+           .goog-te-menu-frame,
+            .goog-te-menu2,
+              .goog-te-ftab,
+                .goog-te-ftab-link,
+                 .goog-te-balloon-frame iframe {
+                 display: none !important;
+                visibility: hidden !important;
+               opacity: 0 !important;
+              pointer-events: none !important;
+   }
+
+             /* Prevent Google Translate from pushing the page down */
+           html,
+           body {
+          top: 0 !important;
+           margin-top: 0 !important;
+      }
+
+            /* Hide Google Translate branding and default widget */
+            .goog-logo-link,
+              .goog-te-gadget {
+               display: none !important;
+      }
+
+               /* Keep the translation element hidden */
+               #google_translate_element {
+               position: absolute !important;
+                left: -9999px !important;
+                top: -9999px !important;
+                  width: 1px !important;
+                     height: 1px !important;
+                   overflow: hidden !important;
       }
     }
   </style>
