@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy Policy of PHRINUSOMYIS™, an international sports organization. Learn how personal information is collected, used, protected and managed.">
-  <meta name="robots" content="index, follow">
   <title>Privacy Policy | PHRINUSOMYIS™</title>
+  <meta name="description" content="Official Privacy Policy of PHRINUSOMYIS™, an international sports organization.">
 
   <style>
     * {
@@ -16,6 +15,9 @@
 
     html {
       scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden !important;
     }
 
     body {
@@ -25,6 +27,16 @@
       font-size: 16px;
       font-weight: 700;
       line-height: 1.8;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden !important;
+      position: static !important;
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      transform: none !important;
     }
 
     a {
@@ -105,13 +117,18 @@
       cursor: pointer;
     }
 
+    /* Keep the Google Translate engine available but outside the visible page */
     #google_translate_element {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+      position: absolute !important;
+      left: -10000px !important;
+      top: 0 !important;
+      width: 1px !important;
+      height: 1px !important;
+      max-width: 1px !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
     }
 
     .page-intro {
@@ -306,21 +323,93 @@
       margin-top: 12px;
     }
 
-    /* Google Translate interface controls */
+    /* ==========================================
+       STRONG GOOGLE TRANSLATE POP-UP SUPPRESSION
+       ========================================== */
+
+    /* Hide the top Google Translate banner */
     .goog-te-banner-frame,
+    .goog-te-banner-frame.skiptranslate,
+    iframe.goog-te-banner-frame,
+    iframe.skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      top: -10000px !important;
+      left: -10000px !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+    }
+
+    /* Hide Google Translate floating pop-ups and tooltips */
     .goog-te-balloon-frame,
     #goog-gt-tt,
     .goog-tooltip,
-    .goog-tooltip:hover {
+    .goog-tooltip:hover,
+    .goog-te-spinner-pos,
+    .goog-te-menu-frame,
+    .goog-te-menu2,
+    .goog-te-ftab,
+    .goog-te-ftab-link {
       display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
-    body {
+    /* Hide the injected top-level translation banner container */
+    body > .skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      top: -10000px !important;
+      left: -10000px !important;
+    }
+
+    /* Prevent Google Translate from shifting the document */
+    html,
+    body,
+    body.translated-ltr,
+    body.translated-rtl {
       top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      position: static !important;
+      transform: none !important;
     }
 
-    .skiptranslate {
-      border: 0 !important;
+    /* Remove unwanted Google Translate spacing and branding */
+    .goog-logo-link,
+    .goog-te-gadget,
+    .goog-te-gadget span,
+    .goog-te-gadget img {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Keep page content from being pushed sideways */
+    html,
+    body,
+    #google_translate_element {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    /* Prevent injected translation frames from affecting layout */
+    iframe.goog-te-menu-frame,
+    iframe.goog-te-balloon-frame,
+    iframe[src*="translate.google"],
+    iframe[src*="translate.googleapis"] {
+      display: none !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
     }
 
     @media (max-width: 850px) {
@@ -386,57 +475,15 @@
       .policy-section p,
       .policy-section li {
         font-size: 14px;
-      }. 
+      }
 
       .footer-grid {
         grid-template-columns: repeat(2, minmax(120px, 1fr));
         gap: 25px 15px;
-      }   
+      }
 
       .footer-bottom {
         flex-direction: column;
-      } 
-      /* Hide Google Translate pop-ups, banners and floating interfaces */
-          .goog-te-banner-frame,
-          .goog-te-banner-frame.skiptranslate,
-           .goog-te-balloon-frame,
-           #goog-gt-tt,
-          .goog-tooltip,
-          .goog-tooltip:hover,
-          .goog-te-spinner-pos,
-          .goog-te-gadget-icon,
-           .goog-te-menu-frame,
-            .goog-te-menu2,
-              .goog-te-ftab,
-                .goog-te-ftab-link,
-                 .goog-te-balloon-frame iframe {
-                 display: none !important;
-                visibility: hidden !important;
-               opacity: 0 !important;
-              pointer-events: none !important;
-   }
-
-             /* Prevent Google Translate from pushing the page down */
-           html,
-           body {
-          top: 0 !important;
-           margin-top: 0 !important;
-      }
-
-            /* Hide Google Translate branding and default widget */
-            .goog-logo-link,
-              .goog-te-gadget {
-               display: none !important;
-      }
-
-               /* Keep the translation element hidden */
-               #google_translate_element {
-               position: absolute !important;
-                left: -9999px !important;
-                top: -9999px !important;
-                  width: 1px !important;
-                     height: 1px !important;
-                   overflow: hidden !important;
       }
     }
   </style>
@@ -722,9 +769,7 @@
         to support functionality, understand usage, maintain preferences
         and improve the user experience.
       </p>
-      <p>
-        Cookies may include:
-      </p>
+      <p>Cookies may include:</p>
       <ul>
         <li><strong>Essential cookies:</strong> technologies necessary for core functions.</li>
         <li><strong>Preference cookies:</strong> technologies that remember settings such as language preferences.</li>
