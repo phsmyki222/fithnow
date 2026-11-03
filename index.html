@@ -526,7 +526,7 @@ header,.site-header,.main-header{transform:none!important}
 .presentation-card img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;aspect-ratio:auto;background:transparent;transition:filter .35s ease}
 .presentation-card:hover img{filter:brightness(1.035)}
 
-/* NEWSWIRE: TWO VERY TALL IMAGES, FULL IMAGE VISIBLE */
+/* NEWSWIRE: TWO IMAGES ON DESKTOP AND TABLET */
 .presentation[data-presentation="newswire"] .presentation-track{gap:22px}
 .presentation[data-presentation="newswire"] .presentation-card{flex:0 0 calc(50% - 11px)}
 .presentation[data-presentation="newswire"] .presentation-card img{
@@ -694,85 +694,138 @@ header,.site-header,.main-header{transform:none!important}
 
 /* TABLET */
 @media(max-width:1100px){
-.main-nav{gap:11px}.main-nav a{font-size:9px}
-.header-logo img{width:140px}.language-select{max-width:105px}
-.dual-panel{height:760px}
-.dual-perfume{height:590px}
-.presentation[data-presentation="newswire"] .presentation-card img{height:760px}
+.main-nav{gap:11px}
+.main-nav a{font-size:9px}
+.header-logo img{width:140px}
+.language-select{max-width:105px}
+
+.dual-panel{height:clamp(480px,65vw,680px)}
+.dual-perfume{height:clamp(400px,53vw,560px)}
+
+.presentation[data-presentation="newswire"] .presentation-card img{
+  height:clamp(480px,65vw,680px);
 }
+}
+
 @media(max-width:900px){
 .header-inner{min-height:76px}
 .menu-toggle{display:block}
-.main-nav{display:none;position:absolute;top:76px;left:0;right:0;background:#171715;padding:22px 28px;flex-direction:column;align-items:flex-start;border-top:1px solid var(--line);max-height:calc(100vh - 76px);overflow-y:auto}
+
+.main-nav{
+  display:none;
+  position:absolute;
+  top:76px;
+  left:0;
+  right:0;
+  background:#171715;
+  padding:22px 28px;
+  flex-direction:column;
+  align-items:flex-start;
+  border-top:1px solid var(--line);
+  max-height:calc(100vh - 76px);
+  overflow-y:auto;
+}
 .main-nav.open{display:flex}
 .main-nav a{font-size:12px;padding:5px 0}
 .header-contact{display:none}
+
 .identity-grid,.download-grid{grid-template-columns:1fr;gap:35px}
 .formats-grid{grid-template-columns:1fr 1fr}
+
 .presentation-card{flex-basis:100%}
 .presentation-track{gap:20px}
+
 .footer-grid{grid-template-columns:1fr 1fr}
+
 .luxury-heading-row{display:block}
 .luxury-heading-row>.btn{margin-top:22px}
-.dual-panel{height:700px}
-.dual-perfume{height:540px}
-.presentation[data-presentation="newswire"] .presentation-card img{height:700px}
+
+.dual-panel{height:clamp(430px,70vw,620px)}
+.dual-perfume{height:clamp(360px,55vw,490px)}
+
+.presentation[data-presentation="newswire"] .presentation-card img{
+  height:clamp(430px,70vw,620px);
+}
 }
 
 /* MOBILE */
 @media(max-width:600px){
 .container{width:min(100% - 34px,var(--max-width))}
 .section{padding:70px 0}
+
 .header-inner{gap:10px}
 .header-logo img{width:128px}
 .language-select{max-width:100px;font-size:10px;padding:9px 6px}
+
 .hero{min-height:620px;background-position:58% center}
 .hero-content{padding:70px 0}
 .hero-logo{width:155px}
 .hero h1{font-size:clamp(42px,11vw,58px);letter-spacing:-1.7px}
 .hero-description{font-size:16px;line-height:1.75}
 .hero-buttons .btn{width:100%}
+
 .section-heading{font-size:clamp(34px,9vw,45px);letter-spacing:-1px}
 .section-intro{font-size:16px}
+
 .identity-panel{padding:33px 25px}
 .identity-panel .large-statement{font-size:30px}
+
 .statement-band{padding:42px 0}
 .statement-band h2{font-size:27px}
+
 .presentation{margin-top:30px}
 .presentation-track{gap:10px}
 .presentation-card{flex:0 0 100%}
 .presentation-card img{width:100%;height:auto;object-fit:contain}
-.presentation[data-presentation="newswire"] .presentation-track{gap:10px}
-.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 calc(50% - 5px)}
+
+/* NEWSWIRE: ONE IMAGE AT A TIME ON MOBILE */
+.presentation[data-presentation="newswire"] .presentation-track{
+  gap:10px;
+}
+.presentation[data-presentation="newswire"] .presentation-card{
+  flex:0 0 100%;
+}
 .presentation[data-presentation="newswire"] .presentation-card img{
-  height:620px;
+  width:100%;
+  height:auto;
+  max-height:520px;
   object-fit:contain;
+  object-position:center;
   background:#171715;
 }
+
 .sports-section{padding:72px 0}
 .formats-grid{grid-template-columns:1fr;margin-top:35px}
 .format-card{min-height:0;padding:28px 23px}
 .soul-content h2{font-size:48px}
 
-/* KEEP BOTH PANELS SIDE BY SIDE ON MOBILE */
+/* STACK TWO-PANEL PRESENTATIONS ON MOBILE */
 .dual-presentation{
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+  grid-template-columns:1fr;
+  gap:16px;
   margin-top:30px;
 }
-.dual-panel{height:620px}
-.dual-perfume{height:490px}
+.dual-panel{
+  height:clamp(300px,110vw,470px);
+}
+.dual-perfume{
+  height:clamp(280px,95vw,410px);
+}
 
 .luxury-actions{flex-direction:column}
 .luxury-actions .btn{width:100%}
+
 .download-panel{padding:27px 23px}
+
 .footer-grid{grid-template-columns:1fr 1fr;gap:28px 17px}
 .footer-brand{grid-column:1/-1}
 .footer-bottom{flex-direction:column}
+
 .faq-item summary{font-size:18px}
 .footer-social{gap:10px}
 .footer-social a{width:38px;height:38px}
 }
+
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .presentation-track,.dual-panel img,.dual-slide-track{transition:none!important}
@@ -1141,13 +1194,13 @@ html{scroll-behavior:auto}
         Access the PHRINUSOMYIS™ mobile experience on your Android device.
         Download the application using the official download link.
       </p>
-      <a href="https://phrinusomyis.com/downloads/phrinusomyis-android.apk" class="btn" download>Download Android App</a>
+      <a href="https://phrinusomyis.com/PHRINUSOMYIS.apk" class="btn" download>Download Android App</a>
     </div>
     <div class="download-panel">
       <p class="eyebrow">Official Android Application</p>
       <h3>Android Download</h3>
       <p>The application download is provided through the official PHRINUSOMYIS™ website.</p>
-      <a href="https://phrinusomyis.com/downloads/phrinusomyis-android.apk" class="btn btn-outline" download>Download APK</a>
+      <a href="https://phrinusomyis.com/PHRINUSOMYIS.apk" class="btn btn-outline" download>Download APK</a>
     </div>
   </div>
 </section>
@@ -1284,20 +1337,18 @@ html{scroll-behavior:auto}
         <a href="/perfume">Perfume</a>
         <a href="/#download">Android Application</a>
         <a href="/help">Help</a>
-        <a href="/cookies">Cookies</a>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <span>©2026 <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.</span>
+      <span>© <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.</span>
       <span>
         <a href="/policy">Privacy</a> &nbsp; | &nbsp;
         <a href="/terms">Terms</a> &nbsp; | &nbsp;
         <a href="/policy">Policies</a> &nbsp; | &nbsp;
         <a href="/copyright">Copyright</a> &nbsp; | &nbsp;
-        <a href="/accessibility">Accessibility</a> &nbsp; | &nbsp;
-        <a href="/cookies">Cookies</a>
+        <a href="/accessibility">Accessibility</a>
       </span>
       <strong>COMMANDING THE WORLD STAGE™</strong>
     </div>
@@ -1357,7 +1408,18 @@ function createCarousel(viewport){
   if(originalCards.length<=1)return;
 
   const name=viewport.dataset.presentation;
-  const settings=presentationSettings[name]||{interval:5000,initialDelay:2000,visible:1};
+  const settings=presentationSettings[name]||{
+    interval:5000,
+    initialDelay:2000,
+    visible:1
+  };
+
+  function getVisible(){
+    if(name==="newswire"&&window.innerWidth<=600){
+      return 1;
+    }
+    return settings.visible;
+  }
 
   const carousel={
     viewport:viewport,
@@ -1367,9 +1429,10 @@ function createCarousel(viewport){
     timer:null,
     delayTimer:null,
     paused:false,
-    visible:settings.visible,
+    visible:getVisible(),
     step:0,
-    update:null
+    update:null,
+    rebuild:null
   };
 
   function removeClones(){
@@ -1387,17 +1450,22 @@ function createCarousel(viewport){
     const gap=parseFloat(computedStyle.columnGap||computedStyle.gap)||0;
 
     carousel.step=cardWidth+gap;
-    track.style.transform="translate3d(-"+(carousel.index*carousel.step)+"px,0,0)";
+
+    track.style.transform=
+      "translate3d(-"+(carousel.index*carousel.step)+"px,0,0)";
   }
 
   carousel.update=update;
 
   function buildCarousel(){
     removeClones();
+
+    carousel.visible=getVisible();
     carousel.index=0;
 
     originalCards.slice(0,carousel.visible).forEach(function(card){
       const clone=card.cloneNode(true);
+
       clone.setAttribute("data-carousel-clone","true");
       clone.setAttribute("aria-hidden","true");
 
@@ -1411,11 +1479,14 @@ function createCarousel(viewport){
     update();
   }
 
+  carousel.rebuild=buildCarousel;
+
   function stop(){
     if(carousel.timer){
       clearInterval(carousel.timer);
       carousel.timer=null;
     }
+
     if(carousel.delayTimer){
       clearTimeout(carousel.delayTimer);
       carousel.delayTimer=null;
@@ -1441,6 +1512,7 @@ function createCarousel(viewport){
 
   function start(){
     stop();
+
     if(!carousel.paused){
       carousel.timer=window.setInterval(advance,settings.interval);
     }
@@ -1493,6 +1565,7 @@ function createDualPresentation(panel){
   if(effect==="slide"){
     state.track=panel.querySelector(".dual-slide-track");
     if(!state.track)return;
+
     state.images=Array.from(state.track.querySelectorAll("img"));
   }else{
     state.images=Array.from(panel.querySelectorAll("img"));
@@ -1506,7 +1579,8 @@ function createDualPresentation(panel){
     state.index=(state.index+1)%state.images.length;
 
     if(effect==="slide"){
-      state.track.style.transform="translate3d(-"+(state.index*100)+"%,0,0)";
+      state.track.style.transform=
+        "translate3d(-"+(state.index*100)+"%,0,0)";
     }else{
       state.images.forEach(function(img,index){
         img.classList.toggle("is-active",index===state.index);
@@ -1523,6 +1597,7 @@ function createDualPresentation(panel){
 
   function start(){
     stop();
+
     if(!state.paused){
       state.timer=window.setInterval(advance,interval);
     }
@@ -1557,25 +1632,40 @@ function createDualPresentation(panel){
 
 document.querySelectorAll("[data-dual-effect]").forEach(createDualPresentation);
 
-/* RESIZE HANDLING */
+/* RESPONSIVE RESIZE HANDLING */
 let resizeTimer=null;
 
 window.addEventListener("resize",function(){
   clearTimeout(resizeTimer);
 
   resizeTimer=window.setTimeout(function(){
+
     carousels.forEach(function(carousel){
-      carousel.track.style.transition="none";
-      carousel.update();
-      carousel.track.offsetHeight;
-      carousel.track.style.transition="";
+      const newVisible=
+        carousel.viewport.dataset.presentation==="newswire"&&window.innerWidth<=600
+          ?1
+          :(
+            presentationSettings[carousel.viewport.dataset.presentation]||
+            {visible:1}
+          ).visible;
+
+      if(newVisible!==carousel.visible){
+        carousel.rebuild();
+      }else{
+        carousel.track.style.transition="none";
+        carousel.update();
+        carousel.track.offsetHeight;
+        carousel.track.style.transition="";
+      }
     });
 
     dualPresentations.forEach(function(state){
       if(state.effect==="slide"&&state.track){
-        state.track.style.transform="translate3d(-"+(state.index*100)+"%,0,0)";
+        state.track.style.transform=
+          "translate3d(-"+(state.index*100)+"%,0,0)";
       }
     });
+
   },200);
 });
 
@@ -1606,7 +1696,8 @@ function clearGoogleTranslateCookies(){
     document.cookie=cookieName+"=; "+expiry+"; path=/";
 
     domains.forEach(function(domain){
-      document.cookie=cookieName+"=; "+expiry+"; path=/; domain="+domain;
+      document.cookie=
+        cookieName+"=; "+expiry+"; path=/; domain="+domain;
     });
   });
 }
@@ -1617,6 +1708,7 @@ function setGoogleLanguage(language){
 
   googleSelect.value=language;
   googleSelect.dispatchEvent(new Event("change",{bubbles:true}));
+
   return true;
 }
 
@@ -1655,6 +1747,7 @@ function changeWebsiteLanguage(language){
     clearGoogleTranslateCookies();
 
     if(wasTranslated)window.location.reload();
+
     return;
   }
 
