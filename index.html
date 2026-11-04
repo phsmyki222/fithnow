@@ -604,6 +604,61 @@ header,.site-header,.main-header{transform:none!important}
   transform:scale(1);
 }
 
+/* MAGAZINE: CLICKABLE EDITORIAL FRAME AND CAPTION */
+.magazine-card{
+  display:block;
+  min-width:0;
+  width:100%;
+  color:inherit;
+  text-decoration:none;
+  background:transparent;
+  outline-offset:5px;
+}
+.magazine-card .dual-panel{
+  width:100%;
+  margin:0;
+}
+.magazine-caption{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  gap:5px;
+  min-height:112px;
+  padding:17px 22px 19px;
+  background:#171715;
+  color:#E8E6E1;
+}
+.magazine-edition-number{
+  color:#a9824d;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2.2px;
+  line-height:1.4;
+}
+.magazine-edition-title{
+  color:#c5a36b;
+  font-family:var(--heading-font);
+  font-size:19px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+.magazine-edition-statement{
+  color:#E8E6E1;
+  font-size:14px;
+  font-weight:450;
+  font-style:italic;
+  line-height:1.55;
+}
+.magazine-card:focus-visible{
+  outline:2px solid #c5a36b;
+}
+.magazine-card:hover .magazine-edition-title{
+  color:#e0c28d;
+}
+
 /* PERFUME: FULL IMAGE, GENTLE CROSSFADE */
 .dual-perfume{
   height:650px;
@@ -810,6 +865,18 @@ header,.site-header,.main-header{transform:none!important}
 }
 .dual-perfume{
   height:clamp(280px,95vw,410px);
+}
+
+/* MAGAZINE CAPTION ON MOBILE */
+.magazine-caption{
+  min-height:105px;
+  padding:15px 17px 17px;
+}
+.magazine-edition-title{
+  font-size:17px;
+}
+.magazine-edition-statement{
+  font-size:13px;
 }
 
 .luxury-actions{flex-direction:column}
@@ -1120,21 +1187,123 @@ html{scroll-behavior:auto}
 
     <div class="dual-presentation" aria-label="PHRINUSOMYIS Magazine editorial presentation">
 
-      <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="6500">
-        <img src="/PHRINUSOMYISTHEEDGEWISEEddition001.jpg" alt="PHRINUSOMYIS THE EDGEWISE Edition 001" loading="lazy" class="is-active">
-        <img src="/PHRINUSOMYISTHEBIGSTORYEddition001.jpg" alt="PHRINUSOMYIS THE BIG STORY Edition 001" loading="lazy">
-        <img src="/PHRINUSOMYISTHEAPEXEddition001.jpg" alt="PHRINUSOMYIS THE APEX Edition 001" loading="lazy">
-        <img src="/PHRINUSOMYISTHECHRONICLEEddition001.jpg" alt="PHRINUSOMYIS THE CHRONICLE Edition 001" loading="lazy">
-        <img src="/PHRINUSOMYISLIFELINEEdition001.jpg" alt="PHRINUSOMYIS LIFELINE Edition 001" loading="lazy">
-      </div>
+      <!-- MAGAZINE PANEL ONE -->
+      <a href="/magazine/news" class="magazine-card" aria-label="Open PHRINUSOMYIS Magazine">
+        <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="6500">
 
-      <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="7800">
-        <img src="/PHRINUSOMYISTHEWORLDPULSEEdition001.jpg" alt="PHRINUSOMYIS THE WORLD PULSE Edition 001" loading="lazy" class="is-active">
-        <img src="/PHRINUSOMYISTHEMOMINANTSEdition001.jpg" alt="PHRINUSOMYIS THE MOMINANTS Edition 001" loading="lazy">
-        <img src="/PHRINUSOMYISTHESNOWJOURNEYEddition001.jpg" alt="PHRINUSOMYIS THE SNOW JOURNEY Edition 001" loading="lazy">
-        <img src="/PHRINUSOMYISPOWERSHIFTEdition001.jpg" alt="PHRINUSOMYIS POWER SHIFT Edition 001" loading="lazy">
-        <img src="/PHRINUSOMYISTHETAKEOVEREdition001.jpg" alt="PHRINUSOMYIS THE TAKEOVER Edition 001" loading="lazy">
-      </div>
+          <img
+            src="/PHRINUSOMYIS-THE-EDGEWISE-Eddition001.jpg"
+            alt="PHRINUSOMYIS THE EDGEWISE Edition 001"
+            loading="lazy"
+            class="is-active"
+            data-edition-number="EDITION 01"
+            data-edition-title="THE EDGEWISE"
+            data-edition-statement="The story beyond what we see."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-THE-BIG-STORY-Eddition001.jpg"
+            alt="PHRINUSOMYIS THE BIG STORY Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 02"
+            data-edition-title="THE BIG STORY"
+            data-edition-statement="Some moments change the course of history."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-THE-APEX-Eddition001.jpg"
+            alt="PHRINUSOMYIS THE APEX Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 03"
+            data-edition-title="THE APEX"
+            data-edition-statement="The height is only the beginning."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-THE-CHRONICLE-Eddition001.jpg"
+            alt="PHRINUSOMYIS THE CHRONICLE Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 04"
+            data-edition-title="THE CHRONICLE"
+            data-edition-statement="Not everything belongs to the present."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
+            alt="PHRINUSOMYIS LIFELINE Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 05"
+            data-edition-title="LIFELINE"
+            data-edition-statement="Behind every survival, there is a story."
+          >
+
+        </div>
+
+        <div class="magazine-caption" aria-live="polite">
+          <span class="magazine-edition-number">EDITION 01</span>
+          <span class="magazine-edition-title">THE EDGEWISE</span>
+          <span class="magazine-edition-statement">The story beyond what we see.</span>
+        </div>
+      </a>
+
+      <!-- MAGAZINE PANEL TWO -->
+      <a href="/magazine/news" class="magazine-card" aria-label="Open PHRINUSOMYIS Magazine">
+        <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="7800">
+
+          <img
+            src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg"
+            alt="PHRINUSOMYIS THE WORLD PULSE Edition 001"
+            loading="lazy"
+            class="is-active"
+            data-edition-number="EDITION 06"
+            data-edition-title="THE WORLD PULSE"
+            data-edition-statement="The world has more than one heartbeat."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
+            alt="PHRINUSOMYIS THE MOMINANTS Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 07"
+            data-edition-title="THE MOMINANTS"
+            data-edition-statement="Some leave footprints. Others change the ground."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Eddition001.jpg"
+            alt="PHRINUSOMYIS THE SNOW JOURNEY Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 08"
+            data-edition-title="THE SNOW JOURNEY"
+            data-edition-statement="Every journey has an untold side."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg"
+            alt="PHRINUSOMYIS THE POWERSHIFT Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 09"
+            data-edition-title="THE POWERSHIFT"
+            data-edition-statement="Every shift has a beginning."
+          >
+
+          <img
+            src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg"
+            alt="PHRINUSOMYIS THE TAKEOVER Edition 001"
+            loading="lazy"
+            data-edition-number="EDITION 10"
+            data-edition-title="THE TAKEOVER"
+            data-edition-statement="Every new era has a defining moment."
+          >
+
+        </div>
+
+        <div class="magazine-caption" aria-live="polite">
+          <span class="magazine-edition-number">EDITION 06</span>
+          <span class="magazine-edition-title">THE WORLD PULSE</span>
+          <span class="magazine-edition-statement">The world has more than one heartbeat.</span>
+        </div>
+      </a>
 
     </div>
 
@@ -1549,6 +1718,21 @@ function createDualPresentation(panel){
   const effect=panel.dataset.dualEffect;
   const interval=Number(panel.dataset.interval)||6000;
 
+  const isMagazine=panel.classList.contains("dual-editorial");
+  const magazineCard=isMagazine?panel.closest(".magazine-card"):null;
+
+  const editionNumber=magazineCard
+    ?magazineCard.querySelector(".magazine-edition-number")
+    :null;
+
+  const editionTitle=magazineCard
+    ?magazineCard.querySelector(".magazine-edition-title")
+    :null;
+
+  const editionStatement=magazineCard
+    ?magazineCard.querySelector(".magazine-edition-statement")
+    :null;
+
   const state={
     panel:panel,
     effect:effect,
@@ -1571,6 +1755,43 @@ function createDualPresentation(panel){
 
   if(state.images.length<2)return;
 
+  /*
+   * MAGAZINE CAPTIONS
+   * The caption is read directly from the active image.
+   * No additional timer is created.
+   */
+  function updateMagazineCaption(){
+    if(!isMagazine||!magazineCard)return;
+
+    const activeImage=state.images[state.index];
+    if(!activeImage)return;
+
+    if(editionNumber){
+      editionNumber.textContent=
+        activeImage.dataset.editionNumber||"";
+    }
+
+    if(editionTitle){
+      editionTitle.textContent=
+        activeImage.dataset.editionTitle||"";
+    }
+
+    if(editionStatement){
+      editionStatement.textContent=
+        activeImage.dataset.editionStatement||"";
+    }
+  }
+
+  /* SET INITIAL CAPTION FROM THE CURRENT ACTIVE IMAGE */
+  if(isMagazine){
+    const activeIndex=state.images.findIndex(function(img){
+      return img.classList.contains("is-active");
+    });
+
+    state.index=activeIndex>=0?activeIndex:0;
+    updateMagazineCaption();
+  }
+
   function advance(){
     if(state.paused)return;
 
@@ -1583,6 +1804,14 @@ function createDualPresentation(panel){
       state.images.forEach(function(img,index){
         img.classList.toggle("is-active",index===state.index);
       });
+
+      /*
+       * Update the magazine caption immediately after
+       * the active image changes.
+       */
+      if(isMagazine){
+        updateMagazineCaption();
+      }
     }
   }
 
