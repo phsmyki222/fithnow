@@ -6,10 +6,15 @@
 <title>LIFELINE — Edition 001 | PHRINUSOMYIS™ Magazine</title>
 <meta name="description" content="LIFELINE — Edition 001. An editorial exploration of the people, systems, relationships and essential foundations that sustain life and keep the world moving.">
 <meta name="author" content="PHRINUSOMYIS Magazine">
-<meta name="robots" content="index, follow">
+<meta name="publisher" content="PHRINUSOMYIS">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#171715">
+<meta name="keywords" content="LIFELINE, PHRINUSOMYIS Magazine, Edition 001, people, systems, relationships, continuity, resilience, human connection, essential foundations, editorial">
+<meta name="application-name" content="PHRINUSOMYIS Magazine">
+<meta name="format-detection" content="telephone=no">
 <link rel="canonical" href="https://phrinusomyis.com/magazine/lifeline">
 <link rel="icon" type="image/png" href="https://phrinusomyis.com/phrinusomyis_logo.png">
+
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PHRINUSOMYIS™ Magazine">
 <meta property="og:title" content="LIFELINE — Edition 001 | PHRINUSOMYIS™ Magazine">
@@ -18,6 +23,9 @@
 <meta property="og:image" content="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg">
 <meta property="og:image:alt" content="LIFELINE — PHRINUSOMYIS Magazine Edition 001 cover">
 <meta property="og:locale" content="en_US">
+<meta property="article:section" content="Editorial">
+<meta property="article:publisher" content="https://phrinusomyis.com/">
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LIFELINE — Edition 001 | PHRINUSOMYIS™ Magazine">
 <meta name="twitter:description" content="An editorial exploration of the people, systems, relationships and foundations that sustain life and keep the world moving.">
@@ -27,39 +35,139 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "@id": "https://phrinusomyis.com/magazine/lifeline#article",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://phrinusomyis.com/magazine/lifeline"
-  },
-  "headline": "LIFELINE",
-  "alternativeHeadline": "Edition 001",
-  "description": "An editorial exploration of the people, systems, relationships and essential foundations that sustain life and keep the world moving.",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "PHRINUSOMYIS Magazine",
-    "url": "https://phrinusomyis.com/magazine/news"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "PHRINUSOMYIS",
-    "url": "https://phrinusomyis.com/",
-    "logo": {
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://phrinusomyis.com/#organization",
+      "name": "PHRINUSOMYIS",
+      "url": "https://phrinusomyis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://phrinusomyis.com/#logo",
+        "url": "https://phrinusomyis.com/phrinusomyis_logo.png"
+      }
+    },
+    {
+      "@type": "Periodical",
+      "@id": "https://phrinusomyis.com/magazine/news#periodical",
+      "name": "PHRINUSOMYIS Magazine",
+      "url": "https://phrinusomyis.com/magazine/news",
+      "publisher": {
+        "@id": "https://phrinusomyis.com/#organization"
+      },
+      "inLanguage": "en",
+      "hasPart": {
+        "@id": "https://phrinusomyis.com/magazine/lifeline#article"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://phrinusomyis.com/#website",
+      "url": "https://phrinusomyis.com/",
+      "name": "PHRINUSOMYIS",
+      "publisher": {
+        "@id": "https://phrinusomyis.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://phrinusomyis.com/magazine/lifeline#webpage",
+      "url": "https://phrinusomyis.com/magazine/lifeline",
+      "name": "LIFELINE — Edition 001 | PHRINUSOMYIS™ Magazine",
+      "description": "LIFELINE — Edition 001. An editorial exploration of the people, systems, relationships and essential foundations that sustain life and keep the world moving.",
+      "isPartOf": {
+        "@id": "https://phrinusomyis.com/#website"
+      },
+      "about": {
+        "@id": "https://phrinusomyis.com/magazine/lifeline#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://phrinusomyis.com/magazine/lifeline#primaryimage"
+      },
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://phrinusomyis.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://phrinusomyis.com/magazine/lifeline#breadcrumb"
+      }
+    },
+    {
       "@type": "ImageObject",
-      "url": "https://phrinusomyis.com/phrinusomyis_logo.png"
+      "@id": "https://phrinusomyis.com/magazine/lifeline#primaryimage",
+      "url": "https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg",
+      "caption": "LIFELINE — PHRINUSOMYIS Magazine Edition 001 cover"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://phrinusomyis.com/magazine/lifeline#article",
+      "mainEntityOfPage": {
+        "@id": "https://phrinusomyis.com/magazine/lifeline#webpage"
+      },
+      "headline": "LIFELINE",
+      "alternativeHeadline": "Edition 001",
+      "description": "An editorial exploration of the people, systems, relationships and essential foundations that sustain life and keep the world moving.",
+      "image": {
+        "@id": "https://phrinusomyis.com/magazine/lifeline#primaryimage"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "PHRINUSOMYIS Magazine",
+        "url": "https://phrinusomyis.com/magazine/news"
+      },
+      "publisher": {
+        "@id": "https://phrinusomyis.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://phrinusomyis.com/magazine/news#periodical"
+      },
+      "articleSection": [
+        "The meaning of continuity",
+        "Beyond What Is Visible",
+        "The foundation",
+        "The Human Connection",
+        "Design, Structure and Purpose",
+        "Pressure and resilience",
+        "What We Leave in Motion"
+      ],
+      "keywords": [
+        "LIFELINE",
+        "PHRINUSOMYIS Magazine",
+        "Edition 001",
+        "continuity",
+        "resilience",
+        "human connection",
+        "essential foundations",
+        "people and systems"
+      ],
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://phrinusomyis.com/magazine/lifeline#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PHRINUSOMYIS",
+          "item": "https://phrinusomyis.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PHRINUSOMYIS Magazine",
+          "item": "https://phrinusomyis.com/magazine/news"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LIFELINE — Edition 001",
+          "item": "https://phrinusomyis.com/magazine/lifeline"
+        }
+      ]
     }
-  },
-  "isPartOf": {
-    "@type": "CreativeWorkSeries",
-    "name": "PHRINUSOMYIS Magazine — Edition 001",
-    "url": "https://phrinusomyis.com/magazine/news"
-  },
-  "inLanguage": "en"
+  ]
 }
 </script>
 
@@ -79,12 +187,88 @@
   --sans:Arial,Helvetica,sans-serif;
 }
 
-* {
-  box-sizing:border-box;
-}
+/* GOOGLE TRANSLATE: PAGE POSITION AND OVERLAY SUPPRESSION */
 
 html {
+  margin-top:0 !important;
+  top:0 !important;
   scroll-behavior:smooth;
+}
+
+html.translated-ltr,
+html.translated-rtl {
+  margin-top:0 !important;
+  top:0 !important;
+}
+
+body,
+body.translated-ltr,
+body.translated-rtl,
+body.skiptranslate {
+  position:relative !important;
+  top:0 !important;
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* Hide Google's injected translation banner and floating frames */
+
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+iframe.goog-te-menu-frame,
+.goog-te-menu-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-te-spinner-pos,
+.goog-te-gadget-icon,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-menu-value,
+.goog-te-menu2,
+.goog-te-menu2-item,
+.goog-te-menu2-item div,
+.goog-te-balloon-frame iframe {
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+  width:0 !important;
+  height:0 !important;
+  max-width:0 !important;
+  max-height:0 !important;
+  overflow:hidden !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+/* Prevent Google Translate from adding a blank strip above the website */
+
+body > .skiptranslate,
+body > div.skiptranslate,
+html body > .skiptranslate {
+  position:absolute !important;
+  top:0 !important;
+  left:0 !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  border:0 !important;
+  background:transparent !important;
+}
+
+/* Remove Google's injected top spacing and page displacement */
+
+body[style],
+html[style] {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  top:0 !important;
 }
 
 body {
@@ -95,6 +279,10 @@ body {
   line-height:1.7;
 }
 
+* {
+  box-sizing:border-box;
+}
+
 a {
   color:inherit;
   text-decoration:none;
@@ -103,6 +291,28 @@ a {
 button {
   font:inherit;
 }
+
+/* Keep the website's own language selector visible and usable */
+
+#google_translate_element {
+  display:none !important;
+  visibility:hidden !important;
+  width:0 !important;
+  height:0 !important;
+  overflow:hidden !important;
+}
+
+.language-area {
+  position:relative;
+  z-index:20;
+}
+
+.language-area select {
+  position:relative;
+  z-index:21;
+}
+
+/* Header identity and tagline */
 
 .site-header {
   background:var(--black);
@@ -167,6 +377,17 @@ button {
   color:var(--gold);
   font-size:10px;
   letter-spacing:.27em;
+}
+
+.brand-tagline {
+  display:block;
+  margin-top:5px;
+  color:#d7c19a;
+  font-family:var(--serif);
+  font-size:11px;
+  font-style:italic;
+  letter-spacing:.035em;
+  line-height:1.4;
 }
 
 .main-nav {
@@ -393,6 +614,44 @@ button {
   font-weight:600;
 }
 
+/* LIFELINE tagline: editorial conclusion */
+
+.tagline-conclusion {
+  position:relative;
+  margin:34px 0 10px;
+  padding:30px 32px;
+  border-left:4px solid var(--gold);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#e9e2d6;
+  text-align:left;
+}
+
+.tagline-conclusion .tagline-label {
+  display:block;
+  margin-bottom:12px;
+  color:var(--bronze);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.tagline-conclusion p {
+  max-width:790px;
+  margin:0;
+  color:#28251f;
+  font-family:var(--serif);
+  font-size:clamp(25px,4vw,38px);
+  font-style:italic;
+  line-height:1.4;
+}
+
+.tagline-conclusion strong {
+  color:#28251f;
+  font-weight:700;
+}
+
 .share-area {
   display:flex;
   flex-wrap:wrap;
@@ -517,10 +776,6 @@ button {
   font-size:10px;
 }
 
-#google_translate_element {
-  display:none;
-}
-
 @media(max-width:900px) {
   .magazine-grid {
     grid-template-columns:repeat(3,minmax(0,1fr));
@@ -560,6 +815,12 @@ button {
   .brand-type {
     font-size:8px;
     letter-spacing:.2em;
+  }
+
+  .brand-tagline {
+    max-width:190px;
+    font-size:9px;
+    line-height:1.3;
   }
 
   .nav-inner {
@@ -612,6 +873,11 @@ button {
   .pull-quote {
     margin:28px 0;
     padding:24px;
+  }
+
+  .tagline-conclusion {
+    margin:28px 0 8px;
+    padding:25px 22px;
   }
 
   .magazine-grid {
@@ -668,6 +934,7 @@ button {
       <span>
         <span class="brand-name">PHRINUSOMYIS™</span>
         <span class="brand-type">MAGAZINE</span>
+        <span class="brand-tagline">Behind every survival, there is a story.</span>
       </span>
     </a>
 
@@ -945,6 +1212,13 @@ button {
             what it allows others to continue.
           </strong>
         </p>
+
+        <div class="tagline-conclusion">
+          <span class="tagline-label">The LIFELINE perspective</span>
+          <p>
+            <strong>Behind every survival, there is a story.</strong>
+          </p>
+        </div>
       </section>
 
       <div class="share-area">
@@ -1052,6 +1326,84 @@ function googleTranslateElementInit() {
   script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
   script.async = true;
   document.body.appendChild(script);
+})();
+
+/*
+  Google Translate layout protection.
+  The observer watches for injected translation frames and banner elements.
+  It does not remove the custom language selector or the hidden translation engine.
+*/
+
+(function protectPageFromGoogleTranslate() {
+  var protectedSelectors = [
+    '.goog-te-banner-frame',
+    'iframe.goog-te-banner-frame',
+    '.goog-te-balloon-frame',
+    '.goog-te-menu-frame',
+    '#goog-gt-tt',
+    '.goog-tooltip',
+    '.goog-te-spinner-pos'
+  ];
+
+  function suppressGoogleElements() {
+    protectedSelectors.forEach(function(selector) {
+      document.querySelectorAll(selector).forEach(function(element) {
+        element.style.setProperty('display', 'none', 'important');
+        element.style.setProperty('visibility', 'hidden', 'important');
+        element.style.setProperty('opacity', '0', 'important');
+        element.style.setProperty('pointer-events', 'none', 'important');
+        element.style.setProperty('width', '0', 'important');
+        element.style.setProperty('height', '0', 'important');
+        element.style.setProperty('max-width', '0', 'important');
+        element.style.setProperty('max-height', '0', 'important');
+        element.style.setProperty('overflow', 'hidden', 'important');
+      });
+    });
+
+    document.documentElement.style.setProperty('margin-top', '0', 'important');
+    document.documentElement.style.setProperty('top', '0', 'important');
+
+    document.body.style.setProperty('margin-top', '0', 'important');
+    document.body.style.setProperty('padding-top', '0', 'important');
+    document.body.style.setProperty('top', '0', 'important');
+  }
+
+  suppressGoogleElements();
+
+  var observer = new MutationObserver(function(mutations) {
+    var shouldCheck = false;
+
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList' && mutation.addedNodes.length) {
+        shouldCheck = true;
+      }
+
+      if (
+        mutation.type === 'attributes' &&
+        mutation.target === document.body &&
+        (
+          mutation.attributeName === 'style' ||
+          mutation.attributeName === 'class'
+        )
+      ) {
+        shouldCheck = true;
+      }
+    });
+
+    if (shouldCheck) {
+      suppressGoogleElements();
+    }
+  });
+
+  observer.observe(document.documentElement, {
+    childList:true,
+    subtree:true
+  });
+
+  observer.observe(document.body, {
+    attributes:true,
+    attributeFilter:['style', 'class']
+  });
 })();
 
 document.getElementById('languageSelect').addEventListener('change', function() {
