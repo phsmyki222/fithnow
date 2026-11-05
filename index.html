@@ -763,62 +763,43 @@ header,.site-header,.main-header{
 
 /* HERO */
 .hero{
-  min-height:680px;
+  min-height:0;
   position:relative;
   display:flex;
-  align-items:center;
+  flex-direction:column;
+  align-items:stretch;
   background:#11110f;
   color:var(--ivory);
   overflow:hidden;
   isolation:isolate;
 }
 
-/* The hero is now a real HTML image, not a CSS background.
-   This allows the browser to prioritize its download. */
+/* FIRST IMAGE: CONTROLLED IMAGE FRAME */
 .hero-background{
-  position:absolute;
-  inset:0;
-  z-index:-2;
+  position:relative;
+  inset:auto;
+  z-index:0;
+  display:block;
   width:100%;
-  height:100%;
+  height:420px;
   max-width:none;
   object-fit:cover;
   object-position:center;
+  background:#11110f;
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(17,17,15,.96),
-      rgba(17,17,15,.78) 55%,
-      rgba(17,17,15,.38)
-    );
-  pointer-events:none;
-}
-
+/* The image now sits above the introductory content.
+   These overlays are no longer needed. */
+.hero::before,
 .hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:linear-gradient(
-    0deg,
-    rgba(15,15,14,.5),
-    transparent 55%
-  );
-  pointer-events:none;
+  display:none;
 }
 
 .hero-content{
   position:relative;
   z-index:2;
   max-width:950px;
-  padding:90px 0;
+  padding:48px 0 58px;
 }
 
 .hero-logo{
@@ -1551,8 +1532,14 @@ header,.site-header,.main-header{
   .header-logo img{width:140px}
   .language-select{max-width:105px}
 
-  .hero{min-height:600px}
-  .hero-background{object-position:58% center}
+  /* FIRST IMAGE: TABLET HEIGHT */
+  .hero{min-height:0}
+  .hero-background{
+    height:340px;
+    object-position:58% center;
+  }
+
+  .hero-content{padding:42px 0 50px}
 
   .dual-panel{height:clamp(480px,65vw,680px)}
   .dual-perfume{height:clamp(400px,53vw,560px)}
@@ -1609,8 +1596,9 @@ header,.site-header,.main-header{
 
   .luxury-heading-row>.btn{margin-top:22px}
 
-  .hero{min-height:560px}
-  .hero-content{padding:75px 0}
+  /* KEEP TABLET HERO IMAGE AT 340PX */
+  .hero{min-height:0}
+  .hero-content{padding:38px 0 48px}
 
   .dual-panel{height:clamp(430px,70vw,620px)}
   .dual-perfume{height:clamp(360px,55vw,490px)}
@@ -1640,26 +1628,19 @@ header,.site-header,.main-header{
     padding:9px 6px;
   }
 
-  /* HERO: CONTROLLED MOBILE IMAGE FRAME */
+  /* FIRST IMAGE: CONTROLLED MOBILE HEIGHT */
   .hero{
-    min-height:540px;
-    align-items:center;
+    min-height:0;
+    align-items:stretch;
   }
 
   .hero-background{
+    width:100%;
+    height:240px;
     object-position:62% center;
   }
 
-  .hero::before{
-    background:linear-gradient(
-      90deg,
-      rgba(17,17,15,.94),
-      rgba(17,17,15,.76) 65%,
-      rgba(17,17,15,.55)
-    );
-  }
-
-  .hero-content{padding:60px 0}
+  .hero-content{padding:35px 0 43px}
   .hero-logo{width:155px}
 
   .hero h1{
