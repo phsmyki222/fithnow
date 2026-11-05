@@ -436,7 +436,7 @@
   </script>
 </head>
 <style>
-:root {
+:root{
   --black:#171715;--charcoal:#25241f;--ivory:#f2eee5;
   --ivory-light:#f8f5ee;--stone:#e5ded1;--stone-deep:#d8cebd;
   --bronze:#a9824d;--gold:#c5a36b;--text:#24231f;
@@ -526,185 +526,112 @@ header,.site-header,.main-header{transform:none!important}
 .presentation-card img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;aspect-ratio:auto;background:transparent;transition:filter .35s ease}
 .presentation-card:hover img{filter:brightness(1.035)}
 
-/* NEWSWIRE: TWO IMAGES ON DESKTOP AND TABLET */
-.presentation[data-presentation="newswire"] .presentation-track{gap:22px}
-.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 calc(50% - 11px)}
-.presentation[data-presentation="newswire"] .presentation-card img{
-  width:100%;
-  height:850px;
-  object-fit:contain;
-  object-position:center;
-  background:#171715;
-}
-
-/* WORLD OF SPORT: 500PX BY 750PX FRAME */
+/* WORLD OF SPORT: EVERY IMAGE USES THE SAME 400PX BY 800PX FRAME */
 .presentation[data-presentation="sports"]{
   width:100%;
-  max-width:500px;
-  height:750px;
-  margin-left:auto;
-  margin-right:auto;
+  max-width:400px;
+  height:800px;
+  margin:40px auto 0;
   overflow:hidden;
 }
 .presentation[data-presentation="sports"] .presentation-track{
-  height:750px;
-  align-items:stretch;
+  height:800px;
+  align-items:flex-start;
+  gap:0;
 }
 .presentation[data-presentation="sports"] .presentation-card{
   flex:0 0 100%;
-  height:750px;
+  width:100%;
+  height:800px;
   min-width:0;
   overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 .presentation[data-presentation="sports"] .presentation-card img{
   display:block;
-  width:100%;
-  height:750px;
+  width:400px;
   max-width:100%;
+  height:800px;
+  flex:0 0 800px;
   object-fit:contain;
   object-position:center;
+  background:#171715;
+}
+.presentation-caption{
+  width:100%;
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 10px;
+  color:#c5a36b;
+  background:#171715;
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:2.5px;
+  text-align:center;
+}
+
+/* NEWSWIRE: TWO IMAGES ON DESKTOP, ONE ON MOBILE */
+.presentation[data-presentation="newswire"] .presentation-track{gap:22px}
+.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 calc(50% - 11px)}
+.presentation[data-presentation="newswire"] .presentation-card img{
+  width:100%;height:850px;object-fit:contain;object-position:center;background:#171715;
+}
+.presentation[data-presentation="newswire"] .presentation-caption{
+  min-height:58px;
 }
 
 /* TWO-PANEL AUTOMATIC PRESENTATIONS */
-.dual-presentation{
-  width:100%;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-  margin-top:42px;
-  align-items:stretch;
-}
-.dual-panel{
-  position:relative;
-  display:block;
-  width:100%;
-  height:850px;
-  min-width:0;
-  overflow:hidden;
-  background:#171715;
-}
-.dual-panel img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center;
-  background:#171715;
-}
+.dual-presentation{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:42px;align-items:stretch}
+.dual-panel{position:relative;display:block;width:100%;height:850px;min-width:0;overflow:hidden;background:#171715}
+.dual-panel img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#171715}
 
-/* VIKQUATHEL: HORIZONTAL SLIDE */
-.dual-slide-track{
+/* COMPETITION CAPTIONS */
+.competition-card{min-width:0;width:100%}
+.competition-card .dual-panel{height:850px}
+.competition-caption{
+  min-height:58px;
   display:flex;
-  width:100%;
-  height:100%;
-  transition:transform 1s cubic-bezier(.22,.7,.2,1);
-  will-change:transform;
-}
-.dual-slide-track img{
-  flex:0 0 100%;
-  width:100%;
-  height:100%;
-  object-fit:contain;
+  align-items:center;
+  justify-content:center;
+  padding:12px 15px;
+  background:#171715;
+  color:#c5a36b;
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:2px;
+  text-align:center;
 }
 
-/* VIKQUATHEL: DRAMATIC DISSOLVE */
-.dual-dissolve img{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:scale(1.015);
-  transition:opacity 2s ease,transform 3.8s ease;
-}
-.dual-dissolve img.is-active{
-  opacity:1;
-  transform:scale(1);
-}
+/* HORIZONTAL SLIDE */
+.dual-slide-track{display:flex;width:100%;height:100%;transition:transform 1s cubic-bezier(.22,.7,.2,1);will-change:transform}
+.dual-slide-track img{flex:0 0 100%;width:100%;height:100%;object-fit:contain}
+
+/* DRAMATIC DISSOLVE */
+.dual-dissolve img{position:absolute;inset:0;opacity:0;transform:scale(1.015);transition:opacity 2s ease,transform 3.8s ease}
+.dual-dissolve img.is-active{opacity:1;transform:scale(1)}
 
 /* MAGAZINE: EDITORIAL REVEAL */
-.dual-editorial img{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:scale(1.025);
-  transition:opacity 1.6s ease,transform 5s ease;
-}
-.dual-editorial img.is-active{
-  opacity:1;
-  transform:scale(1);
-}
+.dual-editorial img{position:absolute;inset:0;opacity:0;transform:scale(1.025);transition:opacity 1.6s ease,transform 5s ease}
+.dual-editorial img.is-active{opacity:1;transform:scale(1)}
 
 /* MAGAZINE: CLICKABLE EDITORIAL FRAME AND CAPTION */
-.magazine-card{
-  display:block;
-  min-width:0;
-  width:100%;
-  color:inherit;
-  text-decoration:none;
-  background:transparent;
-  outline-offset:5px;
-}
-.magazine-card .dual-panel{
-  width:100%;
-  margin:0;
-}
-.magazine-caption{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:flex-start;
-  gap:5px;
-  min-height:112px;
-  padding:17px 22px 19px;
-  background:#171715;
-  color:#E8E6E1;
-}
-.magazine-edition-number{
-  color:#a9824d;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2.2px;
-  line-height:1.4;
-}
-.magazine-edition-title{
-  color:#c5a36b;
-  font-family:var(--heading-font);
-  font-size:19px;
-  font-weight:800;
-  letter-spacing:1.2px;
-  line-height:1.35;
-  text-transform:uppercase;
-}
-.magazine-edition-statement{
-  color:#E8E6E1;
-  font-size:14px;
-  font-weight:450;
-  font-style:italic;
-  line-height:1.55;
-}
-.magazine-card:focus-visible{
-  outline:2px solid #c5a36b;
-}
-.magazine-card:hover .magazine-edition-title{
-  color:#e0c28d;
-}
+.magazine-card{display:block;min-width:0;width:100%;color:inherit;text-decoration:none;background:transparent;outline-offset:5px}
+.magazine-card .dual-panel{width:100%;margin:0}
+.magazine-caption{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:5px;min-height:112px;padding:17px 22px 19px;background:#171715;color:#E8E6E1}
+.magazine-edition-number{color:#a9824d;font-size:10px;font-weight:800;letter-spacing:2.2px;line-height:1.4}
+.magazine-edition-title{color:#c5a36b;font-family:var(--heading-font);font-size:19px;font-weight:800;letter-spacing:1.2px;line-height:1.35;text-transform:uppercase}
+.magazine-edition-statement{color:#E8E6E1;font-size:14px;font-weight:450;font-style:italic;line-height:1.55}
+.magazine-card:focus-visible{outline:2px solid #c5a36b}
+.magazine-card:hover .magazine-edition-title{color:#e0c28d}
 
-/* PERFUME: FULL IMAGE, GENTLE CROSSFADE */
-.dual-perfume{
-  height:650px;
-}
-.dual-perfume img{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:scale(1.01);
-  transition:opacity 1.8s ease,transform 5.5s ease;
-  object-fit:contain;
-  background:#171715;
-}
-.dual-perfume img.is-active{
-  opacity:1;
-  transform:scale(1);
-}
+/* PERFUME */
+.dual-perfume{height:650px}
+.dual-perfume img{position:absolute;inset:0;opacity:0;transform:scale(1.01);transition:opacity 1.8s ease,transform 5.5s ease;object-fit:contain;background:#171715}
+.dual-perfume img.is-active{opacity:1;transform:scale(1)}
 
 /* ZEAVIQ SPORTS */
 .sports-section{background:radial-gradient(ellipse at 15% 10%,rgba(169,130,77,.12),transparent 45%),linear-gradient(135deg,#22221e,#181816 70%);color:var(--ivory);padding:94px 0}
@@ -782,153 +709,81 @@ header,.site-header,.main-header{transform:none!important}
 .main-nav a{font-size:9px}
 .header-logo img{width:140px}
 .language-select{max-width:105px}
-
-.dual-panel{height:clamp(480px,65vw,680px)}
+.dual-panel,.competition-card .dual-panel{height:clamp(480px,65vw,680px)}
 .dual-perfume{height:clamp(400px,53vw,560px)}
-
-.presentation[data-presentation="newswire"] .presentation-card img{
-  height:clamp(480px,65vw,680px);
-}
+.presentation[data-presentation="newswire"] .presentation-card img{height:clamp(480px,65vw,680px)}
 }
 
+/* MOBILE NAVIGATION */
 @media(max-width:900px){
 .header-inner{min-height:76px}
 .menu-toggle{display:block}
-
-.main-nav{
-  display:none;
-  position:absolute;
-  top:76px;
-  left:0;
-  right:0;
-  background:#171715;
-  padding:22px 28px;
-  flex-direction:column;
-  align-items:flex-start;
-  border-top:1px solid var(--line);
-  max-height:calc(100vh - 76px);
-  overflow-y:auto;
-}
+.main-nav{display:none;position:absolute;top:76px;left:0;right:0;background:#171715;padding:22px 28px;flex-direction:column;align-items:flex-start;border-top:1px solid var(--line);max-height:calc(100vh - 76px);overflow-y:auto}
 .main-nav.open{display:flex}
 .main-nav a{font-size:12px;padding:5px 0}
 .header-contact{display:none}
-
 .identity-grid,.download-grid{grid-template-columns:1fr;gap:35px}
 .formats-grid{grid-template-columns:1fr 1fr}
-
 .presentation-card{flex-basis:100%}
 .presentation-track{gap:20px}
-
 .footer-grid{grid-template-columns:1fr 1fr}
-
 .luxury-heading-row{display:block}
 .luxury-heading-row>.btn{margin-top:22px}
-
-.dual-panel{height:clamp(430px,70vw,620px)}
+.dual-panel,.competition-card .dual-panel{height:clamp(430px,70vw,620px)}
 .dual-perfume{height:clamp(360px,55vw,490px)}
-
-.presentation[data-presentation="newswire"] .presentation-card img{
-  height:clamp(430px,70vw,620px);
-}
+.presentation[data-presentation="newswire"] .presentation-card img{height:clamp(430px,70vw,620px)}
 }
 
 /* MOBILE */
 @media(max-width:600px){
 .container{width:min(100% - 34px,var(--max-width))}
 .section{padding:70px 0}
-
 .header-inner{gap:10px}
 .header-logo img{width:128px}
 .language-select{max-width:100px;font-size:10px;padding:9px 6px}
-
 .hero{min-height:620px;background-position:58% center}
 .hero-content{padding:70px 0}
 .hero-logo{width:155px}
 .hero h1{font-size:clamp(42px,11vw,58px);letter-spacing:-1.7px}
 .hero-description{font-size:16px;line-height:1.75}
 .hero-buttons .btn{width:100%}
-
 .section-heading{font-size:clamp(34px,9vw,45px);letter-spacing:-1px}
 .section-intro{font-size:16px}
-
 .identity-panel{padding:33px 25px}
 .identity-panel .large-statement{font-size:30px}
-
 .statement-band{padding:42px 0}
 .statement-band h2{font-size:27px}
-
 .presentation{margin-top:30px}
 .presentation-track{gap:10px}
 .presentation-card{flex:0 0 100%}
 .presentation-card img{width:100%;height:auto;object-fit:contain}
 
 /* NEWSWIRE: ONE IMAGE AT A TIME ON MOBILE */
-.presentation[data-presentation="newswire"] .presentation-track{
-  gap:10px;
-}
-.presentation[data-presentation="newswire"] .presentation-card{
-  flex:0 0 100%;
-}
-.presentation[data-presentation="newswire"] .presentation-card img{
-  width:100%;
-  height:auto;
-  max-height:520px;
-  object-fit:contain;
-  object-position:center;
-  background:#171715;
-}
+.presentation[data-presentation="newswire"] .presentation-track{gap:10px}
+.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 100%}
+.presentation[data-presentation="newswire"] .presentation-card img{width:100%;height:auto;max-height:520px;object-fit:contain;object-position:center;background:#171715}
 
-/* WORLD OF SPORT: KEEP THE AGREED 500PX BY 750PX FRAME */
-.presentation[data-presentation="sports"]{
-  width:100%;
-  max-width:500px;
-  height:750px;
-}
-.presentation[data-presentation="sports"] .presentation-track,
-.presentation[data-presentation="sports"] .presentation-card,
-.presentation[data-presentation="sports"] .presentation-card img{
-  height:750px;
-}
-
+/* WORLD OF SPORT: FIXED IMAGE DIMENSIONS ON ALL SCREEN SIZES */
+.presentation[data-presentation="sports"]{width:100%;max-width:400px;height:800px}
+.presentation[data-presentation="sports"] .presentation-track{height:800px;gap:0}
+.presentation[data-presentation="sports"] .presentation-card{height:800px;flex:0 0 100%}
+.presentation[data-presentation="sports"] .presentation-card img{width:400px;max-width:100%;height:800px;flex:0 0 800px;object-fit:contain}
 .sports-section{padding:72px 0}
 .formats-grid{grid-template-columns:1fr;margin-top:35px}
 .format-card{min-height:0;padding:28px 23px}
 .soul-content h2{font-size:48px}
-
-/* STACK TWO-PANEL PRESENTATIONS ON MOBILE */
-.dual-presentation{
-  grid-template-columns:1fr;
-  gap:16px;
-  margin-top:30px;
-}
-.dual-panel{
-  height:clamp(300px,110vw,470px);
-}
-.dual-perfume{
-  height:clamp(280px,95vw,410px);
-}
-
-/* MAGAZINE CAPTION ON MOBILE */
-.magazine-caption{
-  min-height:105px;
-  padding:15px 17px 17px;
-}
-.magazine-edition-title{
-  font-size:17px;
-}
-.magazine-edition-statement{
-  font-size:13px;
-}
-
+.dual-presentation{grid-template-columns:1fr;gap:16px;margin-top:30px}
+.dual-panel,.competition-card .dual-panel{height:clamp(300px,110vw,470px)}
+.dual-perfume{height:clamp(280px,95vw,410px)}
+.magazine-caption{min-height:105px;padding:15px 17px 17px}
+.magazine-edition-title{font-size:17px}
+.magazine-edition-statement{font-size:13px}
 .luxury-actions{flex-direction:column}
 .luxury-actions .btn{width:100%}
-
 .download-panel{padding:27px 23px}
-
 .footer-grid{grid-template-columns:1fr 1fr;gap:28px 17px}
 .footer-brand{grid-column:1/-1}
 .footer-bottom{flex-direction:column}
-
 .faq-item summary{font-size:18px}
 .footer-social{gap:10px}
 .footer-social a{width:38px;height:38px}
@@ -1047,15 +902,47 @@ html{scroll-behavior:auto}
 
     <div class="presentation" data-presentation="sports">
       <div class="presentation-track">
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS007.jpg" alt="Sporting presentation 7" fetchpriority="high"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS008.jpg" alt="Sporting presentation 8"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS009.jpg" alt="Sporting presentation 9"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS010.jpg" alt="Sporting presentation 10"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS011.jpg" alt="Sporting presentation 11"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS012.jpg" alt="Sporting presentation 12"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS013.jpg" alt="Sporting presentation 13"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS014.jpg" alt="Sporting presentation 14"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS015.jpg" alt="Sporting presentation 15"></a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0010.jpg" alt="SPORTS THE LIGHT" fetchpriority="high">
+          <span class="presentation-caption">SPORTS THE LIGHT</span>
+        </a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0011.jpg" alt="RESILIENCE" loading="lazy">
+          <span class="presentation-caption">RESILIENCE</span>
+        </a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0012.jpg" alt="EXCELLENCE" loading="lazy">
+          <span class="presentation-caption">EXCELLENCE</span>
+        </a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0013.jpg" alt="GLORY" loading="lazy">
+          <span class="presentation-caption">GLORY</span>
+        </a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0014.jpg" alt="RECORDS" loading="lazy">
+          <span class="presentation-caption">RECORDS</span>
+        </a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0015.jpg" alt="GREATNESS" loading="lazy">
+          <span class="presentation-caption">GREATNESS</span>
+        </a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0016.jpg" alt="SPEED" loading="lazy">
+          <span class="presentation-caption">SPEED</span>
+        </a>
+
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
+          <img class="world-sport-image" src="/PHRINUSOMYIS-SPORTS0017.jpg" alt="LEGACY" loading="lazy">
+          <span class="presentation-caption">LEGACY</span>
+        </a>
+
       </div>
     </div>
 
@@ -1149,18 +1036,27 @@ html{scroll-behavior:auto}
 
     <div class="dual-presentation" aria-label="VIKQUATHEL competition presentation">
 
-      <div class="dual-panel" data-dual-effect="slide" data-interval="6200">
-        <div class="dual-slide-track">
-          <img src="/PHRINUSOMYIS-SPORTS001.jpg" alt="VIKQUATHEL competition image 1" loading="lazy">
-          <img src="/PHRINUSOMYIS-SPORTS002.jpg" alt="VIKQUATHEL competition image 2" loading="lazy">
-          <img src="/PHRINUSOMYIS-SPORTS003.jpg" alt="VIKQUATHEL competition image 3" loading="lazy">
+      <div class="competition-card">
+        <div class="dual-panel" data-dual-effect="slide" data-interval="6200">
+          <div class="dual-slide-track">
+            <img src="/PHRINUSOMYIS-SPORTS001.jpg" alt="COMPETITION" loading="lazy" data-caption="COMPETITION">
+            <img src="/PHRINUSOMYIS-SPORTS002.jpg" alt="ATHLETICISM" loading="lazy" data-caption="ATHLETICISM">
+            <img src="/PHRINUSOMYIS-SPORTS003.jpg" alt="ENDURANCE" loading="lazy" data-caption="ENDURANCE">
+            <img src="/PHRINUSOMYIS-SPORTS004.jpg" alt="VICTORY" loading="lazy" data-caption="VICTORY">
+            <img src="/PHRINUSOMYIS-SPORTS005.jpg" alt="CHAMPIONSHIP" loading="lazy" data-caption="CHAMPIONSHIP">
+          </div>
         </div>
+        <div class="competition-caption" aria-live="polite">COMPETITION</div>
       </div>
 
-      <div class="dual-panel dual-dissolve" data-dual-effect="dissolve" data-interval="7200">
-        <img src="/PHRINUSOMYIS-SPORTS004.jpg" class="is-active" alt="VIKQUATHEL competition image 4" loading="lazy">
-        <img src="/PHRINUSOMYIS-SPORTS005.jpg" alt="VIKQUATHEL competition image 5" loading="lazy">
-        <img src="/PHRINUSOMYIS-SPORTS006.jpg" alt="VIKQUATHEL competition image 6" loading="lazy">
+      <div class="competition-card">
+        <div class="dual-panel dual-dissolve" data-dual-effect="dissolve" data-interval="7200">
+          <img src="/PHRINUSOMYIS-SPORTS006.jpg" class="is-active" alt="PERFORMANCE" loading="lazy" data-caption="PERFORMANCE">
+          <img src="/PHRINUSOMYIS-SPORTS007.jpg" alt="DISCIPLINE" loading="lazy" data-caption="DISCIPLINE">
+          <img src="/PHRINUSOMYIS-SPORTS008.jpg" alt="PRECISION" loading="lazy" data-caption="PRECISION">
+          <img src="/PHRINUSOMYIS-SPORTS009.jpg" alt="STRENGTH" loading="lazy" data-caption="STRENGTH">
+        </div>
+        <div class="competition-caption" aria-live="polite">PERFORMANCE</div>
       </div>
 
     </div>
@@ -1183,11 +1079,32 @@ html{scroll-behavior:auto}
 
     <div class="presentation" data-presentation="newswire">
       <div class="presentation-track">
-        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE01.jpg" alt="Official Newswire presentation 1" loading="lazy"></a>
-        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE02.jpg" alt="Official Newswire presentation 2" loading="lazy"></a>
-        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE03.jpg" alt="Official Newswire presentation 3" loading="lazy"></a>
-        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE04.jpg" alt="Official Newswire presentation 4" loading="lazy"></a>
-        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE05.jpg" alt="Official Newswire presentation 5" loading="lazy"></a>
+
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
+          <img src="/PHRINUSOMYIS-NEWSWIRE01.jpg" alt="Newswire announcements" loading="lazy">
+          <span class="presentation-caption">ANNOUNCEMENTS</span>
+        </a>
+
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
+          <img src="/PHRINUSOMYIS-NEWSWIRE02.jpg" alt="Newswire statements" loading="lazy">
+          <span class="presentation-caption">STATEMENTS</span>
+        </a>
+
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
+          <img src="/PHRINUSOMYIS-NEWSWIRE03.jpg" alt="Newswire press releases" loading="lazy">
+          <span class="presentation-caption">PRESS RELEASES</span>
+        </a>
+
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
+          <img src="/PHRINUSOMYIS-NEWSWIRE04.jpg" alt="Newswire updates" loading="lazy">
+          <span class="presentation-caption">UPDATES</span>
+        </a>
+
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
+          <img src="/PHRINUSOMYIS-NEWSWIRE05.jpg" alt="Newswire communiqués" loading="lazy">
+          <span class="presentation-caption">COMMUNIQUÉS</span>
+        </a>
+
       </div>
     </div>
 
@@ -1216,51 +1133,15 @@ html{scroll-behavior:auto}
       <a href="/magazine/news" class="magazine-card" aria-label="Open PHRINUSOMYIS Magazine">
         <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="6500">
 
-          <img
-            src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg"
-            alt="PHRINUSOMYIS THE EDGEWISE Edition 001"
-            loading="lazy"
-            class="is-active"
-            data-edition-number="EDITION 01"
-            data-edition-title="THE EDGEWISE"
-            data-edition-statement="The story beyond what we see."
-          >
+          <img src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="PHRINUSOMYIS THE EDGEWISE Edition 001" loading="lazy" class="is-active" data-edition-number="EDITION 01" data-edition-title="THE EDGEWISE" data-edition-statement="The story beyond what we see.">
 
-          <img
-            src="/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg"
-            alt="PHRINUSOMYIS THE BIG STORY Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 02"
-            data-edition-title="THE BIG STORY"
-            data-edition-statement="Some moments change the course of history."
-          >
+          <img src="/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg" alt="PHRINUSOMYIS THE BIG STORY Edition 001" loading="lazy" data-edition-number="EDITION 02" data-edition-title="THE BIG STORY" data-edition-statement="Some moments change the course of history.">
 
-          <img
-            src="/PHRINUSOMYIS-THE-APEX-Edition001.jpg"
-            alt="PHRINUSOMYIS THE APEX Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 03"
-            data-edition-title="THE APEX"
-            data-edition-statement="The height is only the beginning."
-          >
+          <img src="/PHRINUSOMYIS-THE-APEX-Edition001.jpg" alt="PHRINUSOMYIS THE APEX Edition 001" loading="lazy" data-edition-number="EDITION 03" data-edition-title="THE APEX" data-edition-statement="The height is only the beginning.">
 
-          <img
-            src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
-            alt="PHRINUSOMYIS THE CHRONICLE Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 04"
-            data-edition-title="THE CHRONICLE"
-            data-edition-statement="Not everything belongs to the present."
-          >
+          <img src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg" alt="PHRINUSOMYIS THE CHRONICLE Edition 001" loading="lazy" data-edition-number="EDITION 04" data-edition-title="THE CHRONICLE" data-edition-statement="Not everything belongs to the present.">
 
-          <img
-            src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
-            alt="PHRINUSOMYIS LIFELINE Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 05"
-            data-edition-title="LIFELINE"
-            data-edition-statement="Behind every survival, there is a story."
-          >
+          <img src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg" alt="PHRINUSOMYIS LIFELINE Edition 001" loading="lazy" data-edition-number="EDITION 05" data-edition-title="LIFELINE" data-edition-statement="Behind every survival, there is a story.">
 
         </div>
 
@@ -1275,51 +1156,15 @@ html{scroll-behavior:auto}
       <a href="/magazine/news" class="magazine-card" aria-label="Open PHRINUSOMYIS Magazine">
         <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="7800">
 
-          <img
-            src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg"
-            alt="PHRINUSOMYIS THE WORLD PULSE Edition 001"
-            loading="lazy"
-            class="is-active"
-            data-edition-number="EDITION 06"
-            data-edition-title="THE WORLD PULSE"
-            data-edition-statement="The world has more than one heartbeat."
-          >
+          <img src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg" alt="PHRINUSOMYIS THE WORLD PULSE Edition 001" loading="lazy" class="is-active" data-edition-number="EDITION 06" data-edition-title="THE WORLD PULSE" data-edition-statement="The world has more than one heartbeat.">
 
-          <img
-            src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
-            alt="PHRINUSOMYIS THE MOMINANTS Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 07"
-            data-edition-title="THE MOMINANTS"
-            data-edition-statement="Some leave footprints. Others change the ground."
-          >
+          <img src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg" alt="PHRINUSOMYIS THE MOMINANTS Edition 001" loading="lazy" data-edition-number="EDITION 07" data-edition-title="THE MOMINANTS" data-edition-statement="Some leave footprints. Others change the ground.">
 
-          <img
-            src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg"
-            alt="PHRINUSOMYIS THE SNOW JOURNEY Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 08"
-            data-edition-title="THE SNOW JOURNEY"
-            data-edition-statement="Every journey has an untold side."
-          >
+          <img src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg" alt="PHRINUSOMYIS THE SNOW JOURNEY Edition 001" loading="lazy" data-edition-number="EDITION 08" data-edition-title="THE SNOW JOURNEY" data-edition-statement="Every journey has an untold side.">
 
-          <img
-            src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg"
-            alt="PHRINUSOMYIS THE POWERSHIFT Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 09"
-            data-edition-title="THE POWERSHIFT"
-            data-edition-statement="Every shift has a beginning."
-          >
+          <img src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg" alt="PHRINUSOMYIS THE POWERSHIFT Edition 001" loading="lazy" data-edition-number="EDITION 09" data-edition-title="THE POWERSHIFT" data-edition-statement="Every shift has a beginning.">
 
-          <img
-            src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg"
-            alt="PHRINUSOMYIS THE TAKEOVER Edition 001"
-            loading="lazy"
-            data-edition-number="EDITION 10"
-            data-edition-title="THE TAKEOVER"
-            data-edition-statement="Every new era has a defining moment."
-          >
+          <img src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg" alt="PHRINUSOMYIS THE TAKEOVER Edition 001" loading="lazy" data-edition-number="EDITION 10" data-edition-title="THE TAKEOVER" data-edition-statement="Every new era has a defining moment.">
 
         </div>
 
@@ -1350,16 +1195,15 @@ html{scroll-behavior:auto}
     <div class="dual-presentation" aria-label="Perfume collection presentation">
 
       <a href="/perfume" class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="7000" aria-label="Open perfume collection">
-        <img src="/PHRINUSOMYIS-PERFUME001.jpg" class="is-active" alt="Perfume collection image 1" loading="lazy">
-        <img src="/PHRINUSOMYIS-PERFUME002.jpg" alt="Perfume collection image 2" loading="lazy">
-        <img src="/PHRINUSOMYIS-PERFUME003.jpg" alt="Perfume collection image 3" loading="lazy">
-        <img src="/PHRINUSOMYIS-PERFUME004.jpg" alt="Perfume collection image 4" loading="lazy">
+        <img src="/PHRINUSOMYIS-PERFUME001.jpg" class="is-active" alt="FRAGRANCE" loading="lazy" data-caption="FRAGRANCE">
+        <img src="/PHRINUSOMYIS-PERFUME002.jpg" alt="ESSENCE" loading="lazy" data-caption="ESSENCE">
+        <img src="/PHRINUSOMYIS-PERFUME003.jpg" alt="PERFUMERY" loading="lazy" data-caption="PERFUMERY">
       </a>
 
       <a href="/perfume" class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="8500" aria-label="Open perfume collection">
-        <img src="/PHRINUSOMYIS-PERFUME005.jpg" class="is-active" alt="Perfume collection image 5" loading="lazy">
-        <img src="/PHRINUSOMYIS-PERFUME006.jpg" alt="Perfume collection image 6" loading="lazy">
-        <img src="/PHRINUSOMYIS-PERFUME007.jpg" alt="Perfume collection image 7" loading="lazy">
+        <img src="/PHRINUSOMYIS-PERFUME004.jpg" class="is-active" alt="ELEGANCE" loading="lazy" data-caption="ELEGANCE">
+        <img src="/PHRINUSOMYIS-PERFUME005.jpg" alt="SIGNATURE" loading="lazy" data-caption="SIGNATURE">
+        <img src="/PHRINUSOMYIS-PERFUME006.jpg" alt="OPULENCE" loading="lazy" data-caption="OPULENCE">
       </a>
 
     </div>
@@ -1553,6 +1397,22 @@ document.querySelectorAll("img[data-shared-image]").forEach(function(img){
   img.src=SHARED_IMAGE;
 });
 
+/* FORCE ALL WORLD OF SPORT IMAGES TO THE SAME DIMENSIONS */
+function enforceWorldSportImageSize(){
+  document.querySelectorAll(
+    '.presentation[data-presentation="sports"] .world-sport-image'
+  ).forEach(function(img){
+    img.style.width="400px";
+    img.style.maxWidth="100%";
+    img.style.height="800px";
+    img.style.objectFit="contain";
+    img.style.objectPosition="center";
+    img.style.flex="0 0 800px";
+    img.style.display="block";
+  });
+}
+enforceWorldSportImageSize();
+
 /* MOBILE NAVIGATION */
 const menuToggle=document.getElementById("menuToggle");
 const mainNav=document.getElementById("mainNav");
@@ -1602,9 +1462,7 @@ function createCarousel(viewport){
   };
 
   function getVisible(){
-    if(name==="newswire"&&window.innerWidth<=600){
-      return 1;
-    }
+    if(name==="newswire"&&window.innerWidth<=600)return 1;
     return settings.visible;
   }
 
@@ -1618,8 +1476,7 @@ function createCarousel(viewport){
     paused:false,
     visible:getVisible(),
     step:0,
-    update:null,
-    rebuild:null
+    transitionHandler:null
   };
 
   function removeClones(){
@@ -1642,8 +1499,6 @@ function createCarousel(viewport){
       "translate3d(-"+(carousel.index*carousel.step)+"px,0,0)";
   }
 
-  carousel.update=update;
-
   function buildCarousel(){
     removeClones();
 
@@ -1663,10 +1518,9 @@ function createCarousel(viewport){
       track.appendChild(clone);
     });
 
+    track.style.transition="";
     update();
   }
-
-  carousel.rebuild=buildCarousel;
 
   function stop(){
     if(carousel.timer){
@@ -1680,26 +1534,49 @@ function createCarousel(viewport){
     }
   }
 
+  function resetToBeginning(){
+    track.style.transition="none";
+    carousel.index=0;
+    update();
+    track.offsetHeight;
+    track.style.transition="";
+  }
+
   function advance(){
     if(carousel.paused)return;
 
-    carousel.index+=carousel.visible;
+    /*
+      Newswire advances one image at a time.
+      This creates the sequence:
+      01+02, 02+03, 03+04, 04+05, 05+01.
+      The cloned cards allow the final transition to complete.
+    */
+    const step=name==="newswire"?1:carousel.visible;
+
+    carousel.index+=step;
     update();
 
     if(carousel.index>=originalCards.length){
+      const onTransitionEnd=function(event){
+        if(event.target!==track||event.propertyName!=="transform")return;
+        track.removeEventListener("transitionend",onTransitionEnd);
+        resetToBeginning();
+      };
+
+      track.addEventListener("transitionend",onTransitionEnd);
+
+      /* Fallback for browsers or reduced-motion settings without transitionend */
       window.setTimeout(function(){
-        track.style.transition="none";
-        carousel.index=0;
-        update();
-        track.offsetHeight;
-        track.style.transition="";
-      },900);
+        if(carousel.index>=originalCards.length){
+          track.removeEventListener("transitionend",onTransitionEnd);
+          resetToBeginning();
+        }
+      },1100);
     }
   }
 
   function start(){
     stop();
-
     if(!carousel.paused){
       carousel.timer=window.setInterval(advance,settings.interval);
     }
@@ -1739,7 +1616,9 @@ function createDualPresentation(panel){
   const interval=Number(panel.dataset.interval)||6000;
 
   const isMagazine=panel.classList.contains("dual-editorial");
+  const isCompetition=panel.closest(".competition-card")!==null;
   const magazineCard=isMagazine?panel.closest(".magazine-card"):null;
+  const competitionCard=isCompetition?panel.closest(".competition-card"):null;
 
   const editionNumber=magazineCard
     ?magazineCard.querySelector(".magazine-edition-number")
@@ -1751,6 +1630,10 @@ function createDualPresentation(panel){
 
   const editionStatement=magazineCard
     ?magazineCard.querySelector(".magazine-edition-statement")
+    :null;
+
+  const competitionCaption=competitionCard
+    ?competitionCard.querySelector(".competition-caption")
     :null;
 
   const state={
@@ -1767,7 +1650,6 @@ function createDualPresentation(panel){
   if(effect==="slide"){
     state.track=panel.querySelector(".dual-slide-track");
     if(!state.track)return;
-
     state.images=Array.from(state.track.querySelectorAll("img"));
   }else{
     state.images=Array.from(panel.querySelectorAll("img"));
@@ -1775,11 +1657,6 @@ function createDualPresentation(panel){
 
   if(state.images.length<2)return;
 
-  /*
-   * MAGAZINE CAPTIONS
-   * The caption is read directly from the active image.
-   * No additional timer is created.
-   */
   function updateMagazineCaption(){
     if(!isMagazine||!magazineCard)return;
 
@@ -1787,30 +1664,34 @@ function createDualPresentation(panel){
     if(!activeImage)return;
 
     if(editionNumber){
-      editionNumber.textContent=
-        activeImage.dataset.editionNumber||"";
+      editionNumber.textContent=activeImage.dataset.editionNumber||"";
     }
-
     if(editionTitle){
-      editionTitle.textContent=
-        activeImage.dataset.editionTitle||"";
+      editionTitle.textContent=activeImage.dataset.editionTitle||"";
     }
-
     if(editionStatement){
-      editionStatement.textContent=
-        activeImage.dataset.editionStatement||"";
+      editionStatement.textContent=activeImage.dataset.editionStatement||"";
     }
   }
 
-  /* SET INITIAL CAPTION FROM THE CURRENT ACTIVE IMAGE */
-  if(isMagazine){
-    const activeIndex=state.images.findIndex(function(img){
-      return img.classList.contains("is-active");
-    });
+  function updateCompetitionCaption(){
+    if(!isCompetition||!competitionCaption)return;
 
-    state.index=activeIndex>=0?activeIndex:0;
-    updateMagazineCaption();
+    const activeImage=state.images[state.index];
+    if(activeImage){
+      competitionCaption.textContent=activeImage.dataset.caption||"";
+    }
   }
+
+  /* INITIAL IMAGE AND CAPTION */
+  const activeIndex=state.images.findIndex(function(img){
+    return img.classList.contains("is-active");
+  });
+
+  state.index=activeIndex>=0?activeIndex:0;
+
+  if(isMagazine)updateMagazineCaption();
+  if(isCompetition)updateCompetitionCaption();
 
   function advance(){
     if(state.paused)return;
@@ -1824,15 +1705,10 @@ function createDualPresentation(panel){
       state.images.forEach(function(img,index){
         img.classList.toggle("is-active",index===state.index);
       });
-
-      /*
-       * Update the magazine caption immediately after
-       * the active image changes.
-       */
-      if(isMagazine){
-        updateMagazineCaption();
-      }
     }
+
+    if(isMagazine)updateMagazineCaption();
+    if(isCompetition)updateCompetitionCaption();
   }
 
   function stop(){
@@ -1844,7 +1720,6 @@ function createDualPresentation(panel){
 
   function start(){
     stop();
-
     if(!state.paused){
       state.timer=window.setInterval(advance,interval);
     }
@@ -1891,10 +1766,7 @@ window.addEventListener("resize",function(){
       const newVisible=
         carousel.viewport.dataset.presentation==="newswire"&&window.innerWidth<=600
           ?1
-          :(
-            presentationSettings[carousel.viewport.dataset.presentation]||
-            {visible:1}
-          ).visible;
+          :(presentationSettings[carousel.viewport.dataset.presentation]||{visible:1}).visible;
 
       if(newVisible!==carousel.visible){
         carousel.rebuild();
@@ -1905,6 +1777,8 @@ window.addEventListener("resize",function(){
         carousel.track.style.transition="";
       }
     });
+
+    enforceWorldSportImageSize();
 
     dualPresentations.forEach(function(state){
       if(state.effect==="slide"&&state.track){
@@ -1943,8 +1817,7 @@ function clearGoogleTranslateCookies(){
     document.cookie=cookieName+"=; "+expiry+"; path=/";
 
     domains.forEach(function(domain){
-      document.cookie=
-        cookieName+"=; "+expiry+"; path=/; domain="+domain;
+      document.cookie=cookieName+"=; "+expiry+"; path=/; domain="+domain;
     });
   });
 }
@@ -1955,7 +1828,6 @@ function setGoogleLanguage(language){
 
   googleSelect.value=language;
   googleSelect.dispatchEvent(new Event("change",{bubbles:true}));
-
   return true;
 }
 
@@ -1994,7 +1866,6 @@ function changeWebsiteLanguage(language){
     clearGoogleTranslateCookies();
 
     if(wasTranslated)window.location.reload();
-
     return;
   }
 
