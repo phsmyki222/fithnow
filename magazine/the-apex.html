@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE APEX — Edition 001 | PHRINUSOMYIS™ Magazine</title>
+<meta name="description" content="THE APEX — Edition 001. A PHRINUSOMYIS™ Magazine publication.">
+
+<link rel="canonical" href="https://phrinusomyis.com/magazine/the-apex">
+<link rel="icon" type="image/png" href="https://phrinusomyis.com/phrinusomyis_logo.png">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="THE APEX — Edition 001">
+<meta property="og:description" content="THE APEX — PHRINUSOMYIS Magazine.">
+<meta property="og:url" content="https://phrinusomyis.com/magazine/the-apex">
+<meta property="og:image" content="https://phrinusomyis.com/PHRINUSOMYIS-THE-APEX-Edition001.jpg">
+
+<meta name="theme-color" content="#090909">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#090909;
+  --black-soft:#11110f;
+  --panel:#171613;
+  --gold:#c6a263;
+  --gold-light:#e4c58c;
+  --ivory:#f4efe5;
+  --muted:#a9a397;
+  --line:rgba(198,162,99,.30);
+  --page-width:1450px;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:110px;
+}
+
+body {
+  background:var(--black);
+  color:var(--ivory);
+  font-family:"DM Sans",Arial,sans-serif;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+img {
+  display:block;
+  max-width:100%;
+}
+
+button, select {
+  font:inherit;
+}
+
+.container {
+  width:min(var(--page-width),92%);
+  margin:0 auto;
+}
+
+/* HEADER */
+
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(9,9,9,.97);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner {
+  width:min(var(--page-width),92%);
+  min-height:94px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:20px;
+}
+
+.language-area {
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+.language-select {
+  max-width:190px;
+  padding:10px 34px 10px 13px;
+  color:var(--ivory);
+  background:#171613;
+  border:1px solid var(--line);
+  border-radius:2px;
+  outline:none;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.language-select option {
+  background:#171613;
+  color:var(--ivory);
+}
+
+.brand {
+  justify-self:end;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  text-align:right;
+}
+
+.brand img {
+  width:53px;
+  height:53px;
+  object-fit:contain;
+}
+
+.brand-name {
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+
+.brand-name strong {
+  font-size:15px;
+  letter-spacing:1.5px;
+  color:var(--ivory);
+}
+
+.brand-name span {
+  margin-top:5px;
+  font-size:10px;
+  letter-spacing:3px;
+  color:var(--gold);
+}
+
+/* NAVIGATION */
+
+.edition-navigation {
+  background:#11110f;
+  border-bottom:1px solid rgba(198,162,99,.16);
+}
+
+.navigation-inner {
+  width:min(var(--page-width),92%);
+  margin:auto;
+  padding:13px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px 23px;
+}
+
+.navigation-inner a {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:1.1px;
+  color:#bcb6aa;
+  transition:color .25s ease;
+  white-space:nowrap;
+}
+
+.navigation-inner a:hover,
+.navigation-inner a.active {
+  color:var(--gold-light);
+}
+
+/* INTRODUCTION */
+
+.page-intro {
+  padding:75px 20px 45px;
+  text-align:center;
+}
+
+.eyebrow {
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.page-intro h1 {
+  margin:17px 0 8px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(48px,8vw,92px);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:2px;
+  color:var(--ivory);
+}
+
+.edition-number {
+  margin-top:18px;
+  color:var(--gold-light);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:4px;
+}
+
+/* COVER */
+
+.cover-section {
+  padding:25px 0 80px;
+}
+
+.cover-frame {
+  width:min(790px,100%);
+  margin:0 auto;
+  background:#111;
+  border:1px solid var(--line);
+  padding:9px;
+  box-shadow:0 25px 75px rgba(0,0,0,.42);
+}
+
+.cover-frame img {
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.cover-caption {
+  text-align:center;
+  padding-top:20px;
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* LIGHT EDITORIAL */
+
+.editorial-section {
+  padding:75px 20px;
+  background:#f7f5f0;
+  color:#292722;
+}
+
+.editorial-inner {
+  width:min(850px,100%);
+  margin:0 auto;
+}
+
+.editorial-kicker {
+  margin-bottom:15px;
+  color:#987344;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.editorial-section h2 {
+  margin-bottom:27px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(34px,5vw,55px);
+  line-height:1.12;
+  font-weight:500;
+  color:#211f1a;
+}
+
+.editorial-section h3 {
+  margin:48px 0 16px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:31px;
+  font-weight:600;
+  color:#73552f;
+}
+
+.editorial-section p {
+  margin:0 0 23px;
+  font-size:15px;
+  line-height:2;
+  color:#48453e;
+}
+
+.editorial-section p strong {
+  color:#201e19;
+  font-weight:700;
+}
+
+.editorial-quote {
+  margin:43px 0;
+  padding:25px 30px;
+  border-left:3px solid #a9824d;
+  background:#eee9df;
+  color:#73552f;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(23px,3vw,31px);
+  font-style:italic;
+  line-height:1.5;
+}
+
+/* DARK EDITORIAL */
+
+.dark-editorial {
+  padding:80px 20px;
+  background:
+    radial-gradient(ellipse at top,rgba(198,162,99,.08),transparent 55%),
+    #10100e;
+}
+
+.dark-editorial .editorial-inner {
+  max-width:850px;
+}
+
+.dark-editorial .editorial-kicker {
+  color:var(--gold);
+}
+
+.dark-editorial h2 {
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(34px,5vw,53px);
+  font-weight:500;
+  line-height:1.15;
+  margin-bottom:25px;
+  color:var(--gold-light);
+}
+
+.dark-editorial h3 {
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:30px;
+  font-weight:500;
+  margin:43px 0 15px;
+  color:var(--gold-light);
+}
+
+.dark-editorial p {
+  margin-bottom:23px;
+  color:#c9c2b6;
+  font-size:15px;
+  line-height:2;
+}
+
+.dark-editorial p strong {
+  color:var(--ivory);
+  font-weight:600;
+}
+
+/* COLLECTION */
+
+.collection-section {
+  padding:75px 0 85px;
+  background:#0b0b0a;
+  border-top:1px solid var(--line);
+}
+
+.section-heading {
+  margin-bottom:36px;
+  text-align:center;
+}
+
+.section-heading .eyebrow {
+  margin-bottom:12px;
+}
+
+.section-heading h2 {
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(32px,5vw,49px);
+  font-weight:500;
+  color:var(--ivory);
+}
+
+.collection-grid {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:24px 17px;
+}
+
+.collection-card {
+  display:block;
+  min-width:0;
+  transition:transform .3s ease;
+}
+
+.collection-card:hover {
+  transform:translateY(-5px);
+}
+
+.collection-card img {
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border:1px solid rgba(198,162,99,.24);
+  background:#171613;
+  transition:border-color .3s ease,filter .3s ease;
+}
+
+.collection-card:hover img {
+  border-color:var(--gold);
+  filter:brightness(1.08);
+}
+
+.collection-card span {
+  display:block;
+  margin-top:11px;
+  color:#d5cdbc;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.1px;
+  text-align:center;
+}
+
+.collection-card.current span {
+  color:var(--gold-light);
+}
+
+/* CLOSING AND SHARE */
+
+.closing-section {
+  padding:65px 20px;
+  text-align:center;
+  background:#151410;
+  border-top:1px solid var(--line);
+}
+
+.closing-section p {
+  color:var(--gold-light);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(24px,4vw,37px);
+  font-style:italic;
+}
+
+.share-area {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.share-button {
+  padding:11px 20px;
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--gold-light);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:background .25s ease,color .25s ease;
+}
+
+.share-button:hover {
+  background:var(--gold);
+  color:#111;
+}
+
+/* FOOTER */
+
+.site-footer {
+  padding:32px 20px;
+  background:#080808;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+
+.footer-brand {
+  color:var(--ivory);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.footer-slogan {
+  margin-top:9px;
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+.footer-copyright {
+  margin-top:15px;
+  color:#77736a;
+  font-size:10px;
+}
+
+/* GOOGLE TRANSLATE */
+
+#google_translate_element {
+  position:absolute;
+  left:-9999px;
+  top:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+  .collection-grid {
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .navigation-inner {
+    gap:10px 16px;
+  }
+}
+
+@media(max-width:650px) {
+  .header-inner {
+    min-height:78px;
+    grid-template-columns:1fr auto;
+    gap:10px;
+  }
+
+  .brand {
+    gap:8px;
+  }
+
+  .brand img {
+    width:40px;
+    height:40px;
+  }
+
+  .brand-name strong {
+    font-size:11px;
+    letter-spacing:1px;
+  }
+
+  .brand-name span {
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
+  .language-select {
+    max-width:145px;
+    padding:9px 25px 9px 9px;
+    font-size:11px;
+  }
+
+  .navigation-inner {
+    justify-content:flex-start;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    padding:13px 4%;
+    scrollbar-width:none;
+  }
+
+  .navigation-inner::-webkit-scrollbar {
+    display:none;
+  }
+
+  .navigation-inner a {
+    font-size:9px;
+  }
+
+  .page-intro {
+    padding:55px 15px 30px;
+  }
+
+  .cover-section {
+    padding:20px 0 55px;
+  }
+
+  .cover-frame {
+    padding:5px;
+  }
+
+  .editorial-section,
+  .dark-editorial {
+    padding:55px 22px;
+  }
+
+  .editorial-section p,
+  .dark-editorial p {
+    font-size:14px;
+    line-height:1.9;
+  }
+
+  .editorial-quote {
+    padding:20px;
+  }
+
+  .collection-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px 13px;
+  }
+
+  .collection-card span {
+    font-size:9px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior:auto !important;
+    transition:none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="language-area">
+      <select class="language-select" id="siteLanguage" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="ar">العربية</option>
+        <option value="zh-CN">中文</option>
+        <option value="ru">Русский</option>
+        <option value="pt">Português</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="it">Italiano</option>
+        <option value="nl">Nederlands</option>
+        <option value="tr">Türkçe</option>
+        <option value="hi">हिन्दी</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="th">ไทย</option>
+        <option value="pl">Polski</option>
+        <option value="sv">Svenska</option>
+        <option value="fi">Suomi</option>
+        <option value="da">Dansk</option>
+      </select>
+    </div>
+
+    <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS homepage">
+      <img
+        src="https://phrinusomyis.com/phrinusomyis_logo.png"
+        alt="PHRINUSOMYIS logo"
+      >
+      <span class="brand-name">
+        <strong>PHRINUSOMYIS™</strong>
+        <span>MAGAZINE</span>
+      </span>
+    </a>
+
+  </div>
+</header>
+
+<div id="google_translate_element"></div>
+
+<nav class="edition-navigation" aria-label="Magazine navigation">
+  <div class="navigation-inner">
+
+    <a href="https://phrinusomyis.com/magazine/news">MAGAZINE HOME</a>
+    <a href="https://phrinusomyis.com/magazine/the-edgewise">THE EDGEWISE</a>
+    <a href="https://phrinusomyis.com/magazine/the-big-story">THE BIG STORY</a>
+    <a class="active" href="https://phrinusomyis.com/magazine/the-apex">THE APEX</a>
+    <a href="https://phrinusomyis.com/magazine/the-chronicle">THE CHRONICLE</a>
+    <a href="https://phrinusomyis.com/magazine/lifeline">LIFELINE</a>
+    <a href="https://phrinusomyis.com/magazine/the-world-pulse">THE WORLD PULSE</a>
+    <a href="https://phrinusomyis.com/magazine/the-mominants">THE MOMINANTS™</a>
+    <a href="https://phrinusomyis.com/magazine/the-snow-journey">THE SNOW JOURNEY</a>
+    <a href="https://phrinusomyis.com/magazine/the-powershift">THE POWERSHIFT</a>
+    <a href="https://phrinusomyis.com/magazine/the-takeover">THE TAKEOVER</a>
+
+  </div>
+</nav>
+
+<main>
+
+<!-- TITLE -->
+
+<section class="page-intro">
+  <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE</div>
+  <h1>THE APEX</h1>
+  <div class="edition-number">EDITION 001</div>
+</section>
+
+<!-- COVER IMAGE -->
+
+<section class="cover-section">
+  <div class="container">
+
+    <div class="cover-frame">
+      <img
+        src="https://phrinusomyis.com/PHRINUSOMYIS-THE-APEX-Edition001.jpg"
+        alt="THE APEX — PHRINUSOMYIS Magazine Edition 001"
+        fetchpriority="high"
+      >
+    </div>
+
+    <div class="cover-caption">
+      PHRINUSOMYIS™ MAGAZINE · EDITION 001
+    </div>
+
+  </div>
+</section>
+
+<!-- EDITORIAL FEATURE -->
+
+<section class="editorial-section">
+  <div class="editorial-inner">
+
+    <div class="editorial-kicker">THE APEX · EDITORIAL</div>
+
+    <h2>The Meaning of the Highest Point</h2>
+
+    <p>
+      The highest point is often understood as a destination. It is
+      the place reached after a long sequence of effort, decisions
+      and challenges. Yet reaching a position and understanding
+      what that position represents are two different things.
+    </p>
+
+    <p>
+      An achievement can be measured by its result, but its full
+      significance is found in the circumstances that produced it.
+      The work behind the result, the standard required to reach it
+      and the responsibility that comes with it all form part of
+      the larger picture.
+    </p>
+
+    <p>
+      Across sport, leadership, performance and human achievement,
+      the idea of the apex carries a particular weight. It represents
+      a point at which preparation meets opportunity and ability
+      is tested against the demands of the moment.
+    </p>
+
+    <blockquote class="editorial-quote">
+      Reaching the top is an achievement. What it represents is
+      the larger story.
+    </blockquote>
+
+    <h3>The Standard Behind Achievement</h3>
+
+    <p>
+      Exceptional performance rarely comes from one isolated act.
+      It is built through repeated decisions, discipline and the
+      willingness to meet demanding standards over time.
+    </p>
+
+    <p>
+      In competition, the difference between participation and
+      distinction can be found in details that are not always
+      immediately visible. Preparation, consistency, awareness
+      and execution influence the outcome long before it becomes
+      a result that others can recognise.
+    </p>
+
+    <p>
+      The same principle extends beyond competition. In any field,
+      meaningful achievement is shaped by the quality of the work
+      and the standards maintained throughout the process.
+    </p>
+
+  </div>
+</section>
+
+<!-- SECOND EDITORIAL SECTION -->
+
+<section class="dark-editorial">
+  <div class="editorial-inner">
+
+    <div class="editorial-kicker">BEYOND THE RESULT</div>
+
+    <h2>What It Takes to Stand Apart</h2>
+
+    <p>
+      Distinction is not created by recognition alone. Recognition
+      may follow an achievement, but it does not create the ability
+      or judgement that made the achievement possible.
+    </p>
+
+    <p>
+      To stand apart requires more than reaching a particular
+      position. It requires an understanding of the demands of
+      that position and the capacity to meet them consistently.
+      The standard must exist before the recognition arrives.
+    </p>
+
+    <p>
+      This is especially clear in sport, where performance is
+      examined in real time. Conditions change, opponents adapt
+      and the pressure of a contest can expose the smallest
+      differences in preparation and execution.
+    </p>
+
+    <h3>The Responsibility of the Position</h3>
+
+    <p>
+      The highest position also brings a different perspective.
+      It changes the expectations placed on the individual,
+      the organisation or the team that occupies it.
+    </p>
+
+    <p>
+      An achievement may mark the conclusion of one challenge,
+      but it can also establish a new reference point. What was
+      once considered exceptional becomes the standard against
+      which the next performance is measured.
+    </p>
+
+    <p>
+      In that sense, the apex is not simply about arrival.
+      It is also about what follows.
+    </p>
+
+  </div>
+</section>
+
+<!-- CLOSING EDITORIAL -->
+
+<section class="editorial-section">
+  <div class="editorial-inner">
+
+    <div class="editorial-kicker">THE APEX · EDITION 001</div>
+
+    <h2>Beyond Arrival</h2>
+
+    <p>
+      Every achievement has its own circumstances and its own
+      meaning. Some are remembered for the difficulty of the
+      challenge, others for the quality of the performance or
+      the influence they have on what comes next.
+    </p>
+
+    <p>
+      The highest point is therefore more than a position on a
+      scale. It is a measure of what has been accomplished and
+      a point from which new expectations emerge.
+    </p>
+
+    <p>
+      The achievement deserves recognition. The standard behind
+      it deserves attention.
+    </p>
+
+    <blockquote class="editorial-quote">
+      The measure of achievement extends beyond the moment
+      it is reached.
+    </blockquote>
+
+  </div>
+</section>
+
+<!-- SHARE -->
+
+<section class="closing-section">
+  <div class="container">
+
+    <p>THE APEX — Edition 001</p>
+
+    <div class="share-area">
+      <button class="share-button" id="shareButton" type="button">
+        SHARE THIS MAGAZINE
+      </button>
+
+      <button class="share-button" id="copyButton" type="button">
+        COPY PAGE LINK
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEN-MAGAZINE COLLECTION -->
+
+<section class="collection-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE</div>
+      <h2>Edition 001</h2>
+    </div>
+
+    <div class="collection-grid">
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-edgewise">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg"
+             alt="THE EDGEWISE Edition 001" loading="lazy">
+        <span>THE EDGEWISE</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-big-story">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg"
+             alt="THE BIG STORY Edition 001" loading="lazy">
+        <span>THE BIG STORY</span>
+      </a>
+
+      <a class="collection-card current" href="https://phrinusomyis.com/magazine/the-apex">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-APEX-Edition001.jpg"
+             alt="THE APEX Edition 001" loading="lazy">
+        <span>THE APEX</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-chronicle">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
+             alt="THE CHRONICLE Edition 001" loading="lazy">
+        <span>THE CHRONICLE</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/lifeline">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
+             alt="LIFELINE Edition 001" loading="lazy">
+        <span>LIFELINE</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-world-pulse">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg"
+             alt="THE WORLD PULSE Edition 001" loading="lazy">
+        <span>THE WORLD PULSE</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-mominants">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
+             alt="THE MOMINANTS Edition 001" loading="lazy">
+        <span>THE MOMINANTS™</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-snow-journey">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg"
+             alt="THE SNOW JOURNEY Edition 001" loading="lazy">
+        <span>THE SNOW JOURNEY</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-powershift">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg"
+             alt="THE POWERSHIFT Edition 001" loading="lazy">
+        <span>THE POWERSHIFT</span>
+      </a>
+
+      <a class="collection-card" href="https://phrinusomyis.com/magazine/the-takeover">
+        <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg"
+             alt="THE TAKEOVER Edition 001" loading="lazy">
+        <span>THE TAKEOVER</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+  <div class="footer-brand">PHRINUSOMYIS™ MAGAZINE</div>
+  <div class="footer-slogan">COMMANDING THE WORLD STAGE™</div>
+  <div class="footer-copyright">
+    © <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.
+  </div>
+</footer>
+
+<!-- GOOGLE TRANSLATE -->
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage:"en",
+      includedLanguages:"en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+      autoDisplay:false
+    },
+    "google_translate_element"
+  );
+}
+
+(function loadGoogleTranslate() {
+  var script = document.createElement("script");
+  script.src =
+    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  script.async = true;
+  document.body.appendChild(script);
+})();
+
+document.getElementById("siteLanguage").addEventListener("change",function() {
+  var language = this.value;
+
+  if (!language) return;
+
+  if (language === "en") {
+    document.cookie =
+      "googtrans=/en/en; path=/; domain=" + window.location.hostname;
+    document.cookie =
+      "googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    window.location.reload();
+    return;
+  }
+
+  var googleSelect = document.querySelector(".goog-te-combo");
+
+  if (googleSelect) {
+    googleSelect.value = language;
+    googleSelect.dispatchEvent(new Event("change"));
+  } else {
+    document.cookie = "googtrans=/en/" + language + "; path=/";
+    window.location.reload();
+  }
+});
+</script>
+
+<!-- SHARE FUNCTIONS -->
+
+<script>
+document.getElementById("currentYear").textContent =
+  new Date().getFullYear();
+
+const pageUrl = window.location.href;
+const pageTitle = "THE APEX — Edition 001 | PHRINUSOMYIS Magazine";
+
+document.getElementById("shareButton").addEventListener("click",async function() {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title:pageTitle,
+        text:"THE APEX — PHRINUSOMYIS Magazine Edition 001.",
+        url:pageUrl
+      });
+    } catch(error) {
+      /* Share window closed or unavailable. */
+    }
+  } else if (navigator.clipboard) {
+    await navigator.clipboard.writeText(pageUrl);
+    this.textContent = "LINK COPIED";
+  } else {
+    window.prompt("Copy this page link:",pageUrl);
+  }
+});
+
+document.getElementById("copyButton").addEventListener("click",async function() {
+  try {
+    await navigator.clipboard.writeText(pageUrl);
+    this.textContent = "LINK COPIED";
+  } catch(error) {
+    window.prompt("Copy this page link:",pageUrl);
+  }
+});
+</script>
+
+</body>
+</html>
