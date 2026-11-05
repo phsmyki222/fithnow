@@ -1,29 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>PHRINUSOMYIS™ Magazine | THE NEXT CHAPTER OF COMPETITIVE SPORT</title>
-  <meta name="description" content="PHRINUSOMYIS™ Magazine presents The Next Chapter of Competitive Sport, a feature exploring the history and evolution of competition.">
+  <title>PHRINUSOMYIS™ Magazine | Official Edition 001 Collection</title>
+  <meta name="description" content="Explore the PHRINUSOMYIS™ Magazine Edition 001 collection, featuring ten individual editorial publications.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#ffffff">
 
   <link rel="canonical" href="https://phrinusomyis.com/magazine/news">
   <link rel="icon" href="https://phrinusomyis.com/phrinusomyis_logo.png">
 
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="PHRINUSOMYIS™ Magazine">
-  <meta property="og:title" content="PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT">
-  <meta property="og:description" content="A feature from PHRINUSOMYIS™ Magazine.">
-  <meta property="og:url" content="https://phrinusomyis.com/magazine/news.html">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=85">
+  <meta property="og:title" content="PHRINUSOMYIS™ Magazine | Edition 001">
+  <meta property="og:description" content="Ten editorial publications. One collection. Discover PHRINUSOMYIS™ Magazine Edition 001.">
+  <meta property="og:url" content="https://phrinusomyis.com/magazine/news">
+  <meta property="og:image" content="https://phrinusomyis.com/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT">
-  <meta name="twitter:description" content="A feature from PHRINUSOMYIS™ Magazine.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=85">
+  <meta name="twitter:title" content="PHRINUSOMYIS™ Magazine | Edition 001">
+  <meta name="twitter:description" content="Discover the ten editorial publications in PHRINUSOMYIS™ Magazine Edition 001.">
+  <meta name="twitter:image" content="https://phrinusomyis.com/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,20 +31,10 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT",
-    "description": "A feature from PHRINUSOMYIS™ Magazine.",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://phrinusomyis.com/magazine/news.html"
-    },
-    "image": [
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "author": {
-      "@type": "Organization",
-      "name": "PHRINUSOMYIS™ Editorial"
-    },
+    "@type": "CollectionPage",
+    "name": "PHRINUSOMYIS™ Magazine — Edition 001",
+    "description": "The official PHRINUSOMYIS™ Magazine Edition 001 collection.",
+    "url": "https://phrinusomyis.com/magazine/news",
     "publisher": {
       "@type": "Organization",
       "name": "PHRINUSOMYIS™",
@@ -98,7 +87,7 @@
       text-decoration: none;
     }
 
-    button {
+    button, select {
       font: inherit;
     }
 
@@ -151,6 +140,7 @@
     }
 
     .brand-name {
+      display: block;
       font-family: "Barlow Condensed", sans-serif;
       font-weight: 900;
       font-size: clamp(1.45rem, 3vw, 2.15rem);
@@ -159,6 +149,7 @@
     }
 
     .brand-subtitle {
+      display: block;
       margin-top: 6px;
       color: var(--gold);
       font-size: .65rem;
@@ -181,6 +172,55 @@
       font-weight: 500;
     }
 
+    /* LANGUAGE SELECTOR */
+
+    .language-bar {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-soft);
+    }
+
+    .language-inner {
+      min-height: 43px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .language-inner label {
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    #siteLanguage {
+      max-width: 190px;
+      padding: 7px 28px 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: white;
+      color: var(--ink);
+      font-size: .72rem;
+      cursor: pointer;
+    }
+
+    #google_translate_element {
+      display: none !important;
+    }
+
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-text-highlight {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+
     /* NAVIGATION */
 
     .nav {
@@ -192,25 +232,29 @@
       min-height: 49px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      gap: 22px;
+      overflow-x: auto;
+      scrollbar-width: thin;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
+      flex-wrap: nowrap;
       gap: 25px;
       list-style: none;
+      white-space: nowrap;
     }
 
     .nav a {
-      font-size: .69rem;
+      font-size: .68rem;
       font-weight: 800;
-      letter-spacing: .08em;
+      letter-spacing: .07em;
       text-transform: uppercase;
     }
 
-    .nav a:hover {
+    .nav a:hover,
+    .nav a.active {
       color: var(--gold);
     }
 
@@ -218,7 +262,7 @@
       color: #866324;
     }
 
-    /* COVER */
+    /* INTRODUCTION */
 
     .cover {
       padding-top: 34px;
@@ -402,15 +446,153 @@
       letter-spacing: .08em;
     }
 
-    /* ARTICLE LAYOUT */
+    /* EDITION COLLECTION */
 
-    .layout {
+    .collection-section {
+      padding-top: 76px;
+      padding-bottom: 75px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .section-heading h2 {
+      margin-top: 8px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      font-weight: 900;
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .section-heading p {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: .8rem;
+      text-align: right;
+    }
+
+    .edition-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 35px 22px;
+      padding-top: 30px;
+    }
+
+    .edition-card {
+      min-width: 0;
+      display: block;
+      transition: transform .25s ease;
+    }
+
+    .edition-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .edition-image {
+      position: relative;
+      overflow: hidden;
+      background: #e8e6e0;
+      aspect-ratio: 3 / 4;
+    }
+
+    .edition-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .edition-card:hover .edition-image img {
+      transform: scale(1.035);
+    }
+
+    .edition-number {
+      position: absolute;
+      left: 11px;
+      top: 11px;
+      padding: 5px 8px;
+      background: rgba(255,255,255,.94);
+      color: var(--ink);
+      font-size: .61rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .edition-details {
+      padding-top: 13px;
+    }
+
+    .edition-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+
+    .edition-statement {
+      margin-top: 7px;
+      color: var(--muted);
+      font-family: "Playfair Display", serif;
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .edition-read {
+      display: inline-block;
+      margin-top: 11px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--gold);
+      color: #80601f;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* COLLECTION NOTE */
+
+    .collection-note {
+      margin-top: 50px;
+      padding: 30px;
+      background: var(--paper-soft);
+      border-left: 3px solid var(--gold);
+    }
+
+    .collection-note h3 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .collection-note p {
+      max-width: 800px;
+      margin-top: 10px;
+      color: #555;
+      font-size: .9rem;
+    }
+
+    /* FEATURE ARTICLE */
+
+    .feature-section {
+      padding-top: 65px;
+      padding-bottom: 75px;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature-layout {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 280px;
       gap: 65px;
       align-items: start;
-      padding-top: 68px;
-      padding-bottom: 80px;
     }
 
     .article-header {
@@ -513,8 +695,6 @@
       letter-spacing: .13em;
       text-transform: uppercase;
     }
-
-    /* ARTICLE PHOTOGRAPHS */
 
     .article-photo {
       margin: 35px 0;
@@ -626,63 +806,6 @@
       font-size: .75rem;
     }
 
-    /* NEWSWIRE CROSS-LINK */
-
-    .newswire-panel {
-      margin-top: 45px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      background: var(--paper-soft);
-    }
-
-    .newswire-panel h3 {
-      margin-top: 8px;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 2rem;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-
-    .newswire-panel p {
-      margin-top: 12px;
-      color: #555;
-      font-size: .9rem;
-    }
-
-    .newswire-panel a {
-      display: inline-block;
-      margin-top: 16px;
-      padding-bottom: 4px;
-      border-bottom: 2px solid var(--gold);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    /* END PANEL */
-
-    .closing-panel {
-      margin-top: 50px;
-      padding: 35px 25px;
-      background: #f3f1ec;
-      text-align: center;
-    }
-
-    .closing-panel h3 {
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.7rem);
-      font-weight: 900;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .closing-panel p {
-      margin-top: 13px;
-      color: #555;
-      font-size: .86rem;
-    }
-
     /* FOOTER */
 
     footer {
@@ -756,6 +879,19 @@
       visibility: visible;
     }
 
+    /* RESPONSIVE */
+
+    @media (max-width: 1000px) {
+      .edition-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .feature-layout {
+        grid-template-columns: minmax(0, 1fr) 240px;
+        gap: 30px;
+      }
+    }
+
     @media (max-width: 900px) {
       .cover-grid {
         grid-template-columns: 1fr;
@@ -769,9 +905,13 @@
         min-height: 380px;
       }
 
-      .layout {
-        grid-template-columns: minmax(0, 1fr) 240px;
-        gap: 30px;
+      .feature-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .sidebar {
+        position: static;
       }
     }
 
@@ -793,9 +933,12 @@
         font-size: .56rem;
       }
 
+      .language-inner {
+        justify-content: space-between;
+      }
+
       .nav-inner {
         padding: 12px 0;
-        align-items: flex-start;
       }
 
       .nav-links {
@@ -836,15 +979,41 @@
         border-bottom: 0;
       }
 
-      .layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding-top: 45px;
+      .collection-section {
+        padding-top: 50px;
         padding-bottom: 50px;
       }
 
-      .sidebar {
-        position: static;
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading p {
+        margin-top: 12px;
+        text-align: left;
+      }
+
+      .edition-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 27px 14px;
+        padding-top: 22px;
+      }
+
+      .edition-title {
+        font-size: 1.25rem;
+      }
+
+      .edition-statement {
+        font-size: .78rem;
+      }
+
+      .collection-note {
+        padding: 22px;
+      }
+
+      .feature-section {
+        padding-top: 45px;
+        padding-bottom: 50px;
       }
 
       .article-title {
@@ -869,11 +1038,27 @@
       }
     }
 
+    @media (max-width: 360px) {
+      .edition-grid {
+        gap: 22px 10px;
+      }
+
+      .edition-title {
+        font-size: 1.1rem;
+      }
+
+      .edition-statement {
+        font-size: .73rem;
+      }
+    }
+
     @media print {
       .nav,
+      .language-bar,
       .sidebar,
       .share-grid,
-      .back-top {
+      .back-top,
+      .edition-grid {
         display: none !important;
       }
 
@@ -882,7 +1067,7 @@
         background: #fff;
       }
 
-      .layout {
+      .feature-layout {
         display: block;
       }
 
@@ -907,6 +1092,7 @@
 
   <header class="masthead">
     <div class="container masthead-inner">
+
       <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS official website">
         <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
         <span>
@@ -919,54 +1105,97 @@
         THE MAGAZINE
         <span>Official Editorial Publication</span>
       </div>
+
     </div>
   </header>
 
+  <!-- CUSTOM GOOGLE TRANSLATE SELECTOR -->
+
+  <div class="language-bar">
+    <div class="container language-inner">
+
+      <label for="siteLanguage">Language</label>
+
+      <select id="siteLanguage" aria-label="Select website language">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="ar">العربية</option>
+        <option value="zh-CN">中文（简体）</option>
+        <option value="ru">Русский</option>
+        <option value="pt">Português</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="it">Italiano</option>
+        <option value="nl">Nederlands</option>
+        <option value="tr">Türkçe</option>
+        <option value="hi">हिन्दी</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="th">ไทย</option>
+        <option value="pl">Polski</option>
+        <option value="sv">Svenska</option>
+        <option value="fi">Suomi</option>
+        <option value="da">Dansk</option>
+      </select>
+
+      <div id="google_translate_element"></div>
+
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+
   <nav class="nav" aria-label="Main navigation">
     <div class="container nav-inner">
+
       <ul class="nav-links">
         <li><a href="https://phrinusomyis.com/">Home</a></li>
-        <li><a href="#cover">Cover</a></li>
+        <li><a class="active" href="https://phrinusomyis.com/magazine/news">Magazine Home</a></li>
+        <li><a href="#collection">Edition 001</a></li>
         <li><a href="#feature">Feature</a></li>
-        <li><a href="#contents">Contents</a></li>
-        <li><a class="nav-newswire" href="https://phrinusomyis.com/newsroom/newswire.html">Newswire ↗</a></li>
+        <li><a href="https://phrinusomyis.com/newsroom/newswire.html" class="nav-newswire">Newswire ↗</a></li>
       </ul>
+
     </div>
   </nav>
 
   <main>
 
-    <!-- COVER: THE SLIDES ROTATE AUTOMATICALLY.
-         Replace each image URL with your preferred image URL. -->
+    <!-- MASTER COVER -->
 
     <section class="cover container" id="cover">
+
       <div class="cover-kicker">
         <span>PHRINUSOMYIS™ MAGAZINE</span>
-        <span>THE FEATURE</span>
+        <span>EDITION 001 · THE COLLECTION</span>
       </div>
 
       <div class="cover-grid">
+
         <div class="cover-copy">
-          <span class="cover-label">The Cover Story</span>
+
+          <span class="cover-label">The Official Magazine</span>
 
           <h1>
-            The Next Chapter
-            <span>of Competitive Sport</span>
+            The World
+            <span>In Perspective</span>
           </h1>
 
           <p class="cover-description">
-            From the ancient history of human competition to the next
-            chapter in the evolution of sport.
+            Ten editorial publications exploring stories, moments,
+            journeys and perspectives from across the world.
           </p>
 
           <p class="cover-byline">PHRINUSOMYIS™ EDITORIAL</p>
+
         </div>
 
         <div class="cover-photo" aria-label="Magazine cover photography">
 
           <div class="cover-slides">
 
-            <!-- IMAGE 1: SPORTS COMPETITION -->
             <img
               class="cover-slide active"
               src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1800&q=90"
@@ -974,20 +1203,18 @@
               fetchpriority="high"
             >
 
-            <!-- IMAGE 2: STADIUM -->
             <img
               class="cover-slide"
               src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=90"
               alt="Sports stadium"
-              loading="eager"
+              loading="lazy"
             >
 
-            <!-- IMAGE 3: ANCIENT COMPETITION -->
             <img
               class="cover-slide"
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruins_of_Olympia,_Greece,_Stadium.jpg"
               alt="Ancient stadium at Olympia in Greece"
-              loading="eager"
+              loading="lazy"
             >
 
           </div>
@@ -999,291 +1226,503 @@
           </div>
 
           <div class="cover-photo-caption">
-            The history of competition. The future of sport.
+            Stories. Perspectives. The world beyond the cover.
           </div>
+
         </div>
+
       </div>
 
       <div class="editorial-strip">
+
         <div class="strip-item">
-          <strong>Competition</strong>
-          <span>The contest and the competitor</span>
+          <strong>Ten Publications</strong>
+          <span>One Edition 001 collection</span>
         </div>
+
         <div class="strip-item">
-          <strong>Sports Theater™</strong>
-          <span>Original sports formats</span>
+          <strong>Global Perspectives</strong>
+          <span>Stories from different worlds</span>
         </div>
+
         <div class="strip-item">
           <strong>PHRINUSOMYIS™</strong>
           <span>An international sports organization</span>
         </div>
+
       </div>
+
     </section>
 
-    <!-- MAIN FEATURE -->
+    <!-- THE TEN MAGAZINE CHILDREN -->
 
-    <div class="container layout">
+    <section class="collection-section container" id="collection">
 
-      <article id="feature">
+      <div class="section-heading">
 
-        <header class="article-header">
-          <p class="article-category">Cover Story · Competitive Sport</p>
-
-          <h2 class="article-title">
-            PHRINUSOMYIS™: The Next Chapter of Competitive Sport
-          </h2>
-
-          <p class="article-deck">
-            The story of competition reaches across thousands of years.
-            Its structures have changed, but the human desire to test
-            ability, resolve and performance remains.
-          </p>
-
-          <div class="article-meta">
-            <span>PHRINUSOMYIS™ Editorial</span>
-            <span>Magazine Feature</span>
-            <span>Official Publication</span>
-          </div>
-        </header>
-
-        <div class="article-body">
-
-          <!-- Replace the editorial text below with the exact published
-               Newswire article text when transferring your original copy. -->
-
-          <p class="lead">
-            Competition is one of the oldest expressions of human ability.
-            Across generations, people have tested strength, skill,
-            endurance and resolve against one another.
-          </p>
-
-          <p>
-            The forms have changed throughout history. The settings, rules
-            and expectations have evolved, but competition continues to
-            place individuals and teams before a test in which performance
-            matters and an outcome must be determined.
-          </p>
-
-          <p>
-            Modern sport developed established structures that brought
-            organisation, consistency and international recognition to
-            competition. Those structures became a defining part of the
-            sporting world.
-          </p>
-
-          <figure class="article-photo">
-            <img
-              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=85"
-              alt="Stadium setting for organised sporting competition"
-              loading="lazy"
-            >
-            <figcaption>
-              Sport has developed across eras, places and generations.
-            </figcaption>
-          </figure>
-
-          <h2 id="history">Travel Back to 3000 BC</h2>
-
-          <p>
-            To understand the long history of competition, the story reaches
-            back thousands of years. In the ancient world, physical contests
-            were connected to community life, preparation, strength and
-            standing among others.
-          </p>
-
-          <p>
-            Ancient civilisations developed their own traditions of physical
-            contests. The settings and practices differed, but competition
-            offered a way to demonstrate ability and confront a test in
-            front of others.
-          </p>
-
-          <figure class="article-photo">
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruins_of_Olympia,_Greece,_Stadium.jpg"
-              alt="Historical remains of the ancient stadium at Olympia"
-              loading="lazy"
-            >
-            <figcaption>
-              Ancient Olympia, Greece — a historic setting associated with
-              the development of organised athletic competition.
-            </figcaption>
-          </figure>
-
-          <p>
-            From ancient contests to modern international sport, the history
-            of competition reflects a continuing evolution in how people
-            organise, perform and measure sporting achievement.
-          </p>
-
-          <blockquote class="pullquote">
-            Competition is not confined to one era. Its history continues
-            wherever people create a contest and step forward to meet it.
-            <cite>PHRINUSOMYIS™ Magazine</cite>
-          </blockquote>
-
-          <h2 id="present">Returning to the Present</h2>
-
-          <p>
-            Today's sporting landscape includes established disciplines,
-            international competitions and familiar governing structures.
-            It also leaves room for original formats and different ways to
-            organise a sporting contest.
-          </p>
-
-          <p>
-            PHRINUSOMYIS™ is an international sports organization that
-            develops, owns and administers sports competitions and
-            Sports Theater™ worldwide. It creates original sports formats
-            that break away from traditional sports structures.
-          </p>
-
-          <figure class="article-photo">
-            <img
-              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=85"
-              alt="Athletes racing on a track"
-              loading="lazy"
-            >
-            <figcaption>
-              Performance under pressure remains central to competitive sport.
-            </figcaption>
-          </figure>
-
-          <h2 id="direction">A Different Direction</h2>
-
-          <p>
-            PHRINUSOMYIS™ develops original competitions with their own
-            identity. Sports Theater™ is part of this sporting direction,
-            providing the concept through which its sporting ideas are
-            presented.
-          </p>
-
-          <p>
-            SOUL SURVIVE™ is a competition within the Sports Theater™
-            concept. Its themes include will, resolve, endurance, discipline
-            and performance under pressure.
-          </p>
-
-          <p>
-            Different formats can create different demands on competitors.
-            Each contest has its own purpose, structure and outcome, while
-            retaining the central significance of performance.
-          </p>
-
-          <h2 id="next-chapter">The Next Chapter</h2>
-
-          <p>
-            The evolution of sport has been shaped over time by people who
-            created contests, developed rules and introduced new ways to
-            measure performance.
-          </p>
-
-          <p>
-            PHRINUSOMYIS™ develops and administers its own sporting
-            competitions and Sports Theater™ worldwide. Its work forms part
-            of the continuing story of competitive sport and original
-            sporting formats.
-          </p>
-
-          <p>
-            The history of competition stretches back thousands of years.
-            Its continuing story will be written through the formats people
-            create, the competitors who enter them and the performances
-            that follow.
-          </p>
-
+        <div>
+          <p class="eyebrow gold">PHRINUSOMYIS™ MAGAZINE</p>
+          <h2>Edition 001</h2>
         </div>
 
-        <!-- NEWSWIRE LINK -->
+        <p>
+          Explore the ten publications. Select any cover to enter
+          its individual editorial page.
+        </p>
 
-        <section class="newswire-panel" id="official-newswire">
-          <p class="eyebrow gold">Official Newswire</p>
+      </div>
 
-          <h3>Read the Newswire Edition</h3>
+      <div class="edition-grid">
 
-          <p>
-            Read the corresponding publication on the official
-            PHRINUSOMYIS™ Newswire.
-          </p>
+        <!-- 01 THE EDGEWISE -->
 
-          <a href="https://phrinusomyis.com/newsroom/newswire.html">
-            Visit Official Newswire ↗
-          </a>
-        </section>
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-edgewise" aria-label="Read THE EDGEWISE">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg"
+              alt="THE EDGEWISE — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 01</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE EDGEWISE</h3>
+            <p class="edition-statement">The story beyond what we see.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
 
-        <section class="closing-panel">
-          <p class="eyebrow gold">PHRINUSOMYIS™</p>
-          <h3>Commanding the World Stage™</h3>
-          <p>Official Magazine · Competitive Sport · Original Sports Formats</p>
-        </section>
+        <!-- 02 THE BIG STORY -->
 
-      </article>
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-big-story" aria-label="Read THE BIG STORY">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg"
+              alt="THE BIG STORY — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 02</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE BIG STORY</h3>
+            <p class="edition-statement">Some moments change the course of history.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
 
-      <!-- SIDEBAR -->
+        <!-- 03 THE APEX -->
 
-      <aside class="sidebar">
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-apex" aria-label="Read THE APEX">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-APEX-Edition001.jpg"
+              alt="THE APEX — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 03</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE APEX</h3>
+            <p class="edition-statement">The height is only the beginning.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
 
-        <section class="sidebar-block" id="contents">
-          <h3 class="sidebar-heading">Contents</h3>
+        <!-- 04 THE CHRONICLE -->
 
-          <ol class="contents">
-            <li><a href="#cover">The Cover Story</a></li>
-            <li><a href="#history">Travel Back to 3000 BC</a></li>
-            <li><a href="#present">Returning to the Present</a></li>
-            <li><a href="#direction">A Different Direction</a></li>
-            <li><a href="#next-chapter">The Next Chapter</a></li>
-            <li><a href="#official-newswire">Newswire Edition</a></li>
-          </ol>
-        </section>
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-chronicle" aria-label="Read THE CHRONICLE">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
+              alt="THE CHRONICLE — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 04</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE CHRONICLE</h3>
+            <p class="edition-statement">Not everything belongs to the present.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
 
-        <section class="sidebar-block">
-          <h3 class="sidebar-heading">The Organization</h3>
+        <!-- 05 LIFELINE -->
 
-          <p class="sidebar-copy">
-            PHRINUSOMYIS™ is an international sports organization that
-            develops, owns and administers sports competitions and
-            Sports Theater™ worldwide.
-          </p>
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/lifeline" aria-label="Read LIFELINE">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
+              alt="LIFELINE — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 05</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">LIFELINE</h3>
+            <p class="edition-statement">Behind every survival, there is a story.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
 
-          <a class="sidebar-button" href="https://phrinusomyis.com/">
-            Official Website
-          </a>
-        </section>
+        <!-- 06 THE WORLD PULSE -->
 
-        <section class="sidebar-block">
-          <h3 class="sidebar-heading">Share This Feature</h3>
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-world-pulse" aria-label="Read THE WORLD PULSE">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg"
+              alt="THE WORLD PULSE — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 06</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE WORLD PULSE</h3>
+            <p class="edition-statement">The world has more than one heartbeat.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
 
-          <div class="share-grid">
-            <button type="button" id="share-native">Share</button>
-            <button type="button" id="share-copy">Copy Link</button>
-            <button type="button" id="share-facebook">Facebook</button>
-            <button type="button" id="share-x">X / Twitter</button>
-            <button type="button" id="share-linkedin">LinkedIn</button>
-            <button type="button" id="share-print">Print</button>
+        <!-- 07 THE MOMINANTS -->
+
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-mominants" aria-label="Read THE MOMINANTS">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
+              alt="THE MOMINANTS — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 07</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE MOMINANTS™</h3>
+            <p class="edition-statement">Some leave footprints. Others change the ground.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
+
+        <!-- 08 THE SNOW JOURNEY -->
+
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-snow-journey" aria-label="Read THE SNOW JOURNEY">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg"
+              alt="THE SNOW JOURNEY — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 08</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE SNOW JOURNEY</h3>
+            <p class="edition-statement">Every journey has an untold side.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
+
+        <!-- 09 THE POWERSHIFT -->
+
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-powershift" aria-label="Read THE POWERSHIFT">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg"
+              alt="THE POWERSHIFT — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 09</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE POWERSHIFT</h3>
+            <p class="edition-statement">Every shift has a beginning.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
+
+        <!-- 10 THE TAKEOVER -->
+
+        <a class="edition-card" href="https://phrinusomyis.com/magazine/the-takeover" aria-label="Read THE TAKEOVER">
+          <div class="edition-image">
+            <img
+              src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg"
+              alt="THE TAKEOVER — PHRINUSOMYIS Magazine Edition 001"
+              loading="lazy"
+            >
+            <span class="edition-number">EDITION 001 · 10</span>
+          </div>
+          <div class="edition-details">
+            <h3 class="edition-title">THE TAKEOVER</h3>
+            <p class="edition-statement">Every new era has a defining moment.</p>
+            <span class="edition-read">Read Publication ↗</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="collection-note">
+        <h3>Ten Publications. One Collection.</h3>
+        <p>
+          Each Edition 001 publication has its own editorial identity
+          and dedicated reading page. The collection connects all ten
+          publications through the PHRINUSOMYIS™ Magazine.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- MASTER FEATURE -->
+
+    <section class="feature-section" id="feature">
+
+      <div class="container feature-layout">
+
+        <article>
+
+          <header class="article-header">
+
+            <p class="article-category">Magazine Feature · Competitive Sport</p>
+
+            <h2 class="article-title">
+              PHRINUSOMYIS™: The Next Chapter of Competitive Sport
+            </h2>
+
+            <p class="article-deck">
+              The story of competition reaches across thousands of years.
+              Its structures have changed, but the human desire to test
+              ability, resolve and performance remains.
+            </p>
+
+            <div class="article-meta">
+              <span>PHRINUSOMYIS™ Editorial</span>
+              <span>Magazine Feature</span>
+              <span>Official Publication</span>
+            </div>
+
+          </header>
+
+          <div class="article-body">
+
+            <p class="lead">
+              Competition is one of the oldest expressions of human ability.
+              Across generations, people have tested strength, skill,
+              endurance and resolve against one another.
+            </p>
+
+            <p>
+              The forms have changed throughout history. The settings, rules
+              and expectations have evolved, but competition continues to
+              place individuals and teams before a test in which performance
+              matters and an outcome must be determined.
+            </p>
+
+            <p>
+              Modern sport developed established structures that brought
+              organisation, consistency and international recognition to
+              competition. Those structures became a defining part of the
+              sporting world.
+            </p>
+
+            <figure class="article-photo">
+              <img
+                src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=85"
+                alt="Stadium setting for organised sporting competition"
+                loading="lazy"
+              >
+              <figcaption>
+                Sport has developed across eras, places and generations.
+              </figcaption>
+            </figure>
+
+            <h2 id="history">Travel Back to 3000 BC</h2>
+
+            <p>
+              To understand the long history of competition, the story reaches
+              back thousands of years. In the ancient world, physical contests
+              were connected to community life, preparation, strength and
+              standing among others.
+            </p>
+
+            <p>
+              Ancient civilisations developed their own traditions of physical
+              contests. The settings and practices differed, but competition
+              offered a way to demonstrate ability and confront a test in
+              front of others.
+            </p>
+
+            <figure class="article-photo">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruins_of_Olympia,_Greece,_Stadium.jpg"
+                alt="Historical remains of the ancient stadium at Olympia"
+                loading="lazy"
+              >
+              <figcaption>
+                Ancient Olympia, Greece — a historic setting associated with
+                the development of organised athletic competition.
+              </figcaption>
+            </figure>
+
+            <p>
+              From ancient contests to modern international sport, the history
+              of competition reflects a continuing evolution in how people
+              organise, perform and measure sporting achievement.
+            </p>
+
+            <blockquote class="pullquote">
+              Competition is not confined to one era. Its history continues
+              wherever people create a contest and step forward to meet it.
+              <cite>PHRINUSOMYIS™ Magazine</cite>
+            </blockquote>
+
+            <h2 id="present">Returning to the Present</h2>
+
+            <p>
+              Today's sporting landscape includes established disciplines,
+              international competitions and familiar governing structures.
+              It also leaves room for original formats and different ways to
+              organise a sporting contest.
+            </p>
+
+            <p>
+              PHRINUSOMYIS™ is an international sports organization that
+              develops, owns and administers sports competitions and
+              Sports Theater™ worldwide. It creates original sports formats
+              that break away from traditional sports structures.
+            </p>
+
+            <figure class="article-photo">
+              <img
+                src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=85"
+                alt="Athletes racing on a track"
+                loading="lazy"
+              >
+              <figcaption>
+                Performance under pressure remains central to competitive sport.
+              </figcaption>
+            </figure>
+
+            <h2 id="direction">A Different Direction</h2>
+
+            <p>
+              PHRINUSOMYIS™ develops original competitions with their own
+              identity. Sports Theater™ is part of this sporting direction,
+              providing the concept through which its sporting ideas are
+              presented.
+            </p>
+
+            <p>
+              SOUL SURVIVE™ is a competition within the Sports Theater™
+              concept. Its themes include will, resolve, endurance, discipline
+              and performance under pressure.
+            </p>
+
+            <p>
+              Different formats can create different demands on competitors.
+              Each contest has its own purpose, structure and outcome, while
+              retaining the central significance of performance.
+            </p>
+
+            <h2 id="next-chapter">The Next Chapter</h2>
+
+            <p>
+              The evolution of sport has been shaped over time by people who
+              created contests, developed rules and introduced new ways to
+              measure performance.
+            </p>
+
+            <p>
+              PHRINUSOMYIS™ develops and administers its own sporting
+              competitions and Sports Theater™ worldwide. Its work forms part
+              of the continuing story of competitive sport and original
+              sporting formats.
+            </p>
+
+            <p>
+              The history of competition stretches back thousands of years.
+              Its continuing story will be written through the formats people
+              create, the competitors who enter them and the performances
+              that follow.
+            </p>
+
           </div>
 
-          <p id="share-status" aria-live="polite"></p>
-        </section>
+        </article>
 
-        <section class="sidebar-block">
-          <h3 class="sidebar-heading">Also Published</h3>
+        <!-- SIDEBAR -->
 
-          <p class="sidebar-copy">
-            The official Newswire edition of this feature is available
-            through PHRINUSOMYIS™.
-          </p>
+        <aside class="sidebar">
 
-          <a class="sidebar-button" href="https://phrinusomyis.com/newsroom/newswire.html">
-            Read Newswire ↗
-          </a>
-        </section>
+          <section class="sidebar-block" id="contents">
 
-      </aside>
+            <h3 class="sidebar-heading">Feature Contents</h3>
 
-    </div>
+            <ol class="contents">
+              <li><a href="#cover">Magazine Cover</a></li>
+              <li><a href="#collection">Edition 001 Collection</a></li>
+              <li><a href="#history">Travel Back to 3000 BC</a></li>
+              <li><a href="#present">Returning to the Present</a></li>
+              <li><a href="#direction">A Different Direction</a></li>
+              <li><a href="#next-chapter">The Next Chapter</a></li>
+            </ol>
+
+          </section>
+
+          <section class="sidebar-block">
+
+            <h3 class="sidebar-heading">The Organization</h3>
+
+            <p class="sidebar-copy">
+              PHRINUSOMYIS™ is an international sports organization that
+              develops, owns and administers sports competitions and
+              Sports Theater™ worldwide.
+            </p>
+
+            <a class="sidebar-button" href="https://phrinusomyis.com/">
+              Official Website
+            </a>
+
+          </section>
+
+          <section class="sidebar-block">
+
+            <h3 class="sidebar-heading">Share This Page</h3>
+
+            <div class="share-grid">
+              <button type="button" id="share-native">Share</button>
+              <button type="button" id="share-copy">Copy Link</button>
+              <button type="button" id="share-facebook">Facebook</button>
+              <button type="button" id="share-x">X / Twitter</button>
+              <button type="button" id="share-linkedin">LinkedIn</button>
+              <button type="button" id="share-print">Print</button>
+            </div>
+
+            <p id="share-status" aria-live="polite"></p>
+
+          </section>
+
+          <section class="sidebar-block">
+
+            <h3 class="sidebar-heading">Explore the Collection</h3>
+
+            <p class="sidebar-copy">
+              Ten individual publications are presented in Edition 001.
+              Select a cover to read its complete editorial publication.
+            </p>
+
+            <a class="sidebar-button" href="#collection">
+              Explore Edition 001
+            </a>
+
+          </section>
+
+        </aside>
+
+      </div>
+
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
+
   <footer>
+
     <div class="container footer-main">
 
       <div>
@@ -1294,7 +1733,8 @@
       <nav class="footer-links" aria-label="Footer links">
         <a href="https://phrinusomyis.com/">Home</a>
         <a href="https://phrinusomyis.com/newsroom/newswire.html">Newswire</a>
-        <a href="#cover">Magazine</a>
+        <a href="https://phrinusomyis.com/magazine/news">Magazine</a>
+        <a href="#collection">Edition 001</a>
         <a href="#top">Back to Top ↑</a>
       </nav>
 
@@ -1304,6 +1744,7 @@
       <span>© <span id="year"></span> PHRINUSOMYIS™. All rights reserved.</span>
       <span>PHRINUSOMYIS™ Magazine · Official Publication</span>
     </div>
+
   </footer>
 
   <a class="back-top" id="back-top" href="#top" aria-label="Back to top">↑</a>
@@ -1312,14 +1753,14 @@
     (() => {
       "use strict";
 
-      /* ROTATING COVER IMAGES */
+      /* ROTATING MASTER COVER IMAGES */
 
       const slides = Array.from(document.querySelectorAll(".cover-slide"));
       const dots = Array.from(document.querySelectorAll(".slide-dot"));
       const coverPhoto = document.querySelector(".cover-photo");
 
       let currentSlide = 0;
-      let rotationTimer;
+      let rotationTimer = null;
 
       function showSlide(index) {
         if (!slides.length) return;
@@ -1335,8 +1776,17 @@
         });
       }
 
+      function stopRotation() {
+        if (rotationTimer) {
+          clearInterval(rotationTimer);
+          rotationTimer = null;
+        }
+      }
+
       function startRotation() {
-        clearInterval(rotationTimer);
+        stopRotation();
+
+        if (document.hidden || slides.length < 2) return;
 
         rotationTimer = setInterval(() => {
           showSlide(currentSlide + 1);
@@ -1350,15 +1800,12 @@
         });
       });
 
-      coverPhoto?.addEventListener("mouseenter", () => {
-        clearInterval(rotationTimer);
-      });
-
+      coverPhoto?.addEventListener("mouseenter", stopRotation);
       coverPhoto?.addEventListener("mouseleave", startRotation);
 
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) {
-          clearInterval(rotationTimer);
+          stopRotation();
         } else {
           startRotation();
         }
@@ -1369,10 +1816,8 @@
       /* SHARE, COPY AND PRINT */
 
       const status = document.getElementById("share-status");
-      const pageUrl = window.location.href;
-      const pageTitle =
-        document.querySelector(".article-title")?.textContent.trim() ||
-        document.title;
+      const pageUrl = "https://phrinusomyis.com/magazine/news";
+      const pageTitle = document.title;
 
       function showStatus(message) {
         if (status) status.textContent = message;
@@ -1413,7 +1858,7 @@
         try {
           await navigator.share({
             title: pageTitle,
-            text: "Read this feature from PHRINUSOMYIS™ Magazine.",
+            text: "Explore PHRINUSOMYIS™ Magazine Edition 001.",
             url: pageUrl
           });
 
@@ -1456,7 +1901,7 @@
       document.getElementById("year").textContent =
         new Date().getFullYear();
 
-      /* BACK-TO-TOP BUTTON */
+      /* BACK TO TOP */
 
       const backTop = document.getElementById("back-top");
 
@@ -1465,6 +1910,74 @@
       }, { passive: true });
 
     })();
+
+    /* GOOGLE TRANSLATE */
+
+    let pendingLanguage = null;
+
+    function applyGoogleLanguage(language) {
+      const combo = document.querySelector(".goog-te-combo");
+
+      if (!combo) {
+        pendingLanguage = language;
+        return false;
+      }
+
+      combo.value = language;
+      combo.dispatchEvent(new Event("change"));
+
+      pendingLanguage = null;
+      return true;
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "en",
+        includedLanguages:
+          "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+        autoDisplay: false
+      }, "google_translate_element");
+
+      if (pendingLanguage) {
+        const languageToApply = pendingLanguage;
+
+        let attempts = 0;
+        const retry = setInterval(() => {
+          attempts++;
+
+          if (applyGoogleLanguage(languageToApply) || attempts >= 20) {
+            clearInterval(retry);
+          }
+        }, 250);
+      }
+    }
+
+    document.getElementById("siteLanguage").addEventListener("change", function () {
+      const selectedLanguage = this.value;
+
+      if (selectedLanguage === "en") {
+        pendingLanguage = null;
+
+        document.cookie =
+          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+
+        document.cookie =
+          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" +
+          location.hostname;
+
+        location.reload();
+        return;
+      }
+
+      applyGoogleLanguage(selectedLanguage);
+    });
+
+  </script>
+
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async
+    defer>
   </script>
 
 </body>
