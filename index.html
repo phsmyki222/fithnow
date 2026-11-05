@@ -445,85 +445,528 @@
   --heading-font:"Aptos Display","Segoe UI",Arial,sans-serif;
   --body-font:"Aptos","Segoe UI",Arial,sans-serif;
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{background:var(--ivory);color:var(--text);font-family:var(--body-font);font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body.translated-ltr,body.translated-rtl{top:0!important;position:static!important}
-img{display:block;max-width:100%}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:95px;
+}
+
+body{
+  background:var(--ivory);
+  color:var(--text);
+  font-family:var(--body-font);
+  font-size:17px;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+body.translated-ltr,body.translated-rtl{
+  top:0!important;
+  position:static!important;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
 a{color:inherit;text-decoration:none}
 button,select{font:inherit}
 
 /* GOOGLE TRANSLATE */
-html,body{top:0!important;left:0!important;right:0!important;margin-top:0!important;transform:none!important;width:100%!important;max-width:100%!important;overflow-x:hidden!important}
-#google_translate_element{position:fixed!important;left:-10000px!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;z-index:-1!important}
-.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,.goog-te-gadget-simple,.goog-te-menu-value,.goog-logo-link,.goog-te-balloon-frame,#goog-gt-tt,.goog-tooltip,.goog-tooltip:hover,.goog-te-spinner-pos,.goog-te-menu-frame,.goog-te-menu2,.goog-te-menu2-item,iframe[src*="translate.google"],iframe[src*="translate.googleapis"]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;height:0!important;max-height:0!important;border:0!important}
-.goog-te-banner-frame,iframe.goog-te-banner-frame,.goog-te-menu-frame,.goog-te-balloon-frame,#goog-gt-tt{position:fixed!important;top:-10000px!important;left:-10000px!important;width:1px!important;overflow:hidden!important}
-.goog-text-highlight{background:transparent!important;box-shadow:none!important;border:none!important}
-body>.skiptranslate{display:none!important;position:fixed!important;top:-10000px!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;visibility:hidden!important;pointer-events:none!important}
-html.translated-ltr,html.translated-rtl,html body,body.translated-ltr,body.translated-rtl{top:0!important;margin-top:0!important}
-#google_translate_element .goog-te-gadget{font-size:0!important;line-height:0!important}
-#google_translate_element .goog-te-gadget .goog-te-combo{font-size:14px!important;line-height:normal!important}
-header,.site-header,.main-header{transform:none!important}
+html,body{
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  margin-top:0!important;
+  transform:none!important;
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+
+#google_translate_element{
+  position:fixed!important;
+  left:-10000px!important;
+  top:0!important;
+  width:1px!important;
+  height:1px!important;
+  overflow:hidden!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  z-index:-1!important;
+}
+
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-gadget,
+.goog-te-gadget-icon,
+.goog-te-gadget-simple,
+.goog-te-menu-value,
+.goog-logo-link,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-te-spinner-pos,
+.goog-te-menu-frame,
+.goog-te-menu2,
+.goog-te-menu2-item,
+iframe[src*="translate.google"],
+iframe[src*="translate.googleapis"]{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  height:0!important;
+  max-height:0!important;
+  border:0!important;
+}
+
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt{
+  position:fixed!important;
+  top:-10000px!important;
+  left:-10000px!important;
+  width:1px!important;
+  overflow:hidden!important;
+}
+
+.goog-text-highlight{
+  background:transparent!important;
+  box-shadow:none!important;
+  border:none!important;
+}
+
+body>.skiptranslate{
+  display:none!important;
+  position:fixed!important;
+  top:-10000px!important;
+  left:-10000px!important;
+  width:1px!important;
+  height:1px!important;
+  overflow:hidden!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+html.translated-ltr,
+html.translated-rtl,
+html body,
+body.translated-ltr,
+body.translated-rtl{
+  top:0!important;
+  margin-top:0!important;
+}
+
+#google_translate_element .goog-te-gadget{
+  font-size:0!important;
+  line-height:0!important;
+}
+
+#google_translate_element .goog-te-gadget .goog-te-combo{
+  font-size:14px!important;
+  line-height:normal!important;
+}
+
+header,.site-header,.main-header{
+  transform:none!important;
+}
 
 /* GENERAL LAYOUT */
-.container{width:min(var(--max-width),calc(100% - 64px));margin:0 auto}
+.container{
+  width:min(var(--max-width),calc(100% - 64px));
+  margin:0 auto;
+}
+
 .section{padding:94px 0}
 .section-dark{background:var(--black);color:var(--ivory)}
 .section-stone{background:var(--stone)}
-.section-label{color:var(--bronze);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800;margin-bottom:17px}
-.section-heading{font-family:var(--heading-font);font-size:clamp(37px,4.3vw,61px);font-weight:750;line-height:1.12;letter-spacing:-1.8px;max-width:1000px}
-.section-intro{max-width:790px;margin-top:20px;color:var(--muted);font-size:17px;line-height:1.85;font-weight:450}
+
+.section-label{
+  color:var(--bronze);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:17px;
+}
+
+.section-heading{
+  font-family:var(--heading-font);
+  font-size:clamp(37px,4.3vw,61px);
+  font-weight:750;
+  line-height:1.12;
+  letter-spacing:-1.8px;
+  max-width:1000px;
+}
+
+.section-intro{
+  max-width:790px;
+  margin-top:20px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.85;
+  font-weight:450;
+}
+
 .section-dark .section-intro{color:#c5beb2}
-.gold-line{width:66px;height:3px;background:var(--bronze);margin:25px 0}
-.eyebrow{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:var(--bronze)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:13px 25px;border:1px solid var(--bronze);background:var(--bronze);color:#fff;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.3px;transition:background .25s ease,color .25s ease;cursor:pointer}
-.btn:hover{background:transparent;color:var(--bronze)}
-.btn-outline{background:transparent;color:var(--ivory);border-color:rgba(244,240,231,.7)}
-.btn-outline:hover{background:var(--ivory);color:var(--black)}
-.btn-dark{background:var(--black);border-color:var(--black)}
-.btn-dark:hover{color:var(--black);background:transparent}
+
+.gold-line{
+  width:66px;
+  height:3px;
+  background:var(--bronze);
+  margin:25px 0;
+}
+
+.eyebrow{
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:var(--bronze);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:13px 25px;
+  border:1px solid var(--bronze);
+  background:var(--bronze);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  transition:background .25s ease,color .25s ease;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:transparent;
+  color:var(--bronze);
+}
+
+.btn-outline{
+  background:transparent;
+  color:var(--ivory);
+  border-color:rgba(244,240,231,.7);
+}
+
+.btn-outline:hover{
+  background:var(--ivory);
+  color:var(--black);
+}
+
+.btn-dark{
+  background:var(--black);
+  border-color:var(--black);
+}
+
+.btn-dark:hover{
+  color:var(--black);
+  background:transparent;
+}
 
 /* HEADER */
-.site-header{width:100%;position:sticky;top:0;z-index:1000;background:rgba(23,23,21,.97);border-bottom:1px solid rgba(197,163,107,.3);backdrop-filter:blur(16px)}
-.header-inner{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.header-logo img{width:165px;height:auto;object-fit:contain}
-.main-nav{display:flex;align-items:center;justify-content:center;gap:18px}
-.main-nav a{color:#e8e2d7;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.9px;white-space:nowrap;transition:color .2s ease}
+.site-header{
+  width:100%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(23,23,21,.97);
+  border-bottom:1px solid rgba(197,163,107,.3);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+.header-inner{
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.header-logo img{
+  width:165px;
+  height:auto;
+  object-fit:contain;
+}
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+}
+
+.main-nav a{
+  color:#e8e2d7;
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.9px;
+  white-space:nowrap;
+  transition:color .2s ease;
+}
+
 .main-nav a:hover{color:var(--gold)}
-.header-actions{display:flex;align-items:center;gap:12px}
-.language-select{background:#262622;border:1px solid rgba(197,163,107,.65);color:var(--ivory);padding:10px 9px;font-size:12px;max-width:130px;outline:none;border-radius:0}
-.language-select option{color:#171715;background:#fff}
-.header-contact{min-height:40px;padding:9px 15px;font-size:10px}
-.menu-toggle{display:none;color:var(--ivory);border:1px solid var(--line);background:transparent;padding:9px 12px;cursor:pointer}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.language-select{
+  background:#262622;
+  border:1px solid rgba(197,163,107,.65);
+  color:var(--ivory);
+  padding:10px 9px;
+  font-size:12px;
+  max-width:130px;
+  outline:none;
+  border-radius:0;
+}
+
+.language-select option{
+  color:#171715;
+  background:#fff;
+}
+
+.header-contact{
+  min-height:40px;
+  padding:9px 15px;
+  font-size:10px;
+}
+
+.menu-toggle{
+  display:none;
+  color:var(--ivory);
+  border:1px solid var(--line);
+  background:transparent;
+  padding:9px 12px;
+  cursor:pointer;
+}
 
 /* HERO */
-.hero{min-height:680px;position:relative;display:flex;align-items:center;background:linear-gradient(90deg,rgba(17,17,15,.96),rgba(17,17,15,.78) 55%,rgba(17,17,15,.38)),url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=85");background-size:cover;background-position:center;color:var(--ivory);overflow:hidden}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,15,14,.5),transparent 55%);pointer-events:none}
-.hero-content{position:relative;z-index:2;max-width:950px;padding:90px 0}
-.hero-logo{width:190px;margin-bottom:29px;padding:9px;background:rgba(244,240,231,.97)}
-.hero-kicker{color:var(--gold);font-size:12px;font-weight:850;letter-spacing:4px;text-transform:uppercase;margin-bottom:20px}
-.hero h1{font-family:var(--heading-font);font-weight:800;font-size:clamp(47px,6.6vw,86px);line-height:1.02;letter-spacing:-2.5px;max-width:950px}
-.hero h1 span{display:block;color:var(--gold)}
-.hero-description{max-width:720px;color:#e0d9ce;font-size:18px;font-weight:500;margin:26px 0 32px;line-height:1.8}
-.hero-buttons{display:flex;flex-wrap:wrap;gap:13px}
+.hero{
+  min-height:680px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:#11110f;
+  color:var(--ivory);
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* The hero is now a real HTML image, not a CSS background.
+   This allows the browser to prioritize its download. */
+.hero-background{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17,17,15,.96),
+      rgba(17,17,15,.78) 55%,
+      rgba(17,17,15,.38)
+    );
+  pointer-events:none;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(
+    0deg,
+    rgba(15,15,14,.5),
+    transparent 55%
+  );
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:950px;
+  padding:90px 0;
+}
+
+.hero-logo{
+  width:190px;
+  margin-bottom:29px;
+  padding:9px;
+  background:rgba(244,240,231,.97);
+}
+
+.hero-kicker{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-family:var(--heading-font);
+  font-weight:800;
+  font-size:clamp(47px,6.6vw,86px);
+  line-height:1.02;
+  letter-spacing:-2.5px;
+  max-width:950px;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:720px;
+  color:#e0d9ce;
+  font-size:18px;
+  font-weight:500;
+  margin:26px 0 32px;
+  line-height:1.8;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+}
 
 /* ORGANIZATION */
-.identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
-.identity-copy p:not(.section-label){color:#5f5c55;margin-top:18px;font-size:17px;line-height:1.85}
-.identity-panel{background:linear-gradient(140deg,#24231f,#171715);color:var(--ivory);padding:48px 43px;border-left:4px solid var(--bronze);box-shadow:0 20px 55px rgba(37,33,25,.12)}
-.identity-panel .large-statement{font-family:var(--heading-font);font-size:clamp(29px,3vw,41px);font-weight:700;line-height:1.28;letter-spacing:-1px}
-.identity-panel .small-statement{color:var(--gold);font-size:12px;font-weight:850;margin-top:25px;letter-spacing:2px}
+.identity-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+
+.identity-copy p:not(.section-label){
+  color:#5f5c55;
+  margin-top:18px;
+  font-size:17px;
+  line-height:1.85;
+}
+
+.identity-panel{
+  background:linear-gradient(140deg,#24231f,#171715);
+  color:var(--ivory);
+  padding:48px 43px;
+  border-left:4px solid var(--bronze);
+  box-shadow:0 20px 55px rgba(37,33,25,.12);
+}
+
+.identity-panel .large-statement{
+  font-family:var(--heading-font);
+  font-size:clamp(29px,3vw,41px);
+  font-weight:700;
+  line-height:1.28;
+  letter-spacing:-1px;
+}
+
+.identity-panel .small-statement{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:850;
+  margin-top:25px;
+  letter-spacing:2px;
+}
 
 /* STATEMENT BAND */
-.statement-band{background:linear-gradient(110deg,#292823,#353127 55%,#292823);color:var(--ivory);padding:52px 0;text-align:center}
-.statement-band p{color:var(--gold);font-size:12px;font-weight:850;letter-spacing:4px;margin-bottom:12px}
-.statement-band h2{font-family:var(--heading-font);font-weight:800;font-size:clamp(27px,3.8vw,48px);letter-spacing:-1px;line-height:1.2}
+.statement-band{
+  background:linear-gradient(110deg,#292823,#353127 55%,#292823);
+  color:var(--ivory);
+  padding:52px 0;
+  text-align:center;
+}
+
+.statement-band p{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:4px;
+  margin-bottom:12px;
+}
+
+.statement-band h2{
+  font-family:var(--heading-font);
+  font-weight:800;
+  font-size:clamp(27px,3.8vw,48px);
+  letter-spacing:-1px;
+  line-height:1.2;
+}
 
 /* AUTOMATIC IMAGE PRESENTATIONS */
-.presentation{width:100%;overflow:hidden;margin-top:40px;position:relative}
-.presentation-track{display:flex;align-items:stretch;gap:24px;width:100%;transition:transform .85s cubic-bezier(.22,.7,.2,1);will-change:transform}
-.presentation-card{display:block;flex:0 0 100%;min-width:0;overflow:hidden;background:transparent;border:0;outline:none}
-.presentation-card img{display:block;width:100%;height:560px;max-width:100%;object-fit:cover;object-position:center;background:#171715;transition:filter .35s ease}
+.presentation{
+  width:100%;
+  overflow:hidden;
+  margin-top:40px;
+  position:relative;
+}
+
+.presentation-track{
+  display:flex;
+  align-items:stretch;
+  gap:24px;
+  width:100%;
+  transition:transform .85s cubic-bezier(.22,.7,.2,1);
+  will-change:transform;
+}
+
+.presentation-card{
+  display:block;
+  flex:0 0 100%;
+  min-width:0;
+  overflow:hidden;
+  background:transparent;
+  border:0;
+  outline:none;
+}
+
+.presentation-card img{
+  display:block;
+  width:100%;
+  height:560px;
+  max-width:100%;
+  object-fit:cover;
+  object-position:center;
+  background:#171715;
+  transition:filter .35s ease;
+}
+
 .presentation-card:hover img{filter:brightness(1.035)}
 
 /* FIXED CAPTION BOXES */
@@ -550,8 +993,14 @@ header,.site-header,.main-header{transform:none!important}
 }
 
 /* NEWSWIRE: TWO IMAGES ON DESKTOP */
-.presentation[data-presentation="newswire"] .presentation-track{gap:22px}
-.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 calc(50% - 11px)}
+.presentation[data-presentation="newswire"] .presentation-track{
+  gap:22px;
+}
+
+.presentation[data-presentation="newswire"] .presentation-card{
+  flex:0 0 calc(50% - 11px);
+}
+
 .presentation[data-presentation="newswire"] .presentation-card img{
   width:100%;
   height:560px;
@@ -560,7 +1009,7 @@ header,.site-header,.main-header{transform:none!important}
   background:#171715;
 }
 
-/* WORLD OF SPORT: FIXED 500PX BY 750PX IMAGE FRAME */
+/* WORLD OF SPORT */
 .presentation[data-presentation="sports"]{
   width:100%;
   max-width:500px;
@@ -569,16 +1018,19 @@ header,.site-header,.main-header{transform:none!important}
   margin-right:auto;
   overflow:hidden;
 }
+
 .presentation[data-presentation="sports"] .presentation-track{
   height:814px;
   align-items:stretch;
 }
+
 .presentation[data-presentation="sports"] .presentation-card{
   flex:0 0 100%;
   height:814px;
   min-width:0;
   overflow:hidden;
 }
+
 .presentation[data-presentation="sports"] .presentation-card img{
   display:block;
   width:100%;
@@ -597,6 +1049,7 @@ header,.site-header,.main-header{transform:none!important}
   margin-top:42px;
   align-items:stretch;
 }
+
 .dual-panel{
   position:relative;
   display:block;
@@ -606,6 +1059,7 @@ header,.site-header,.main-header{transform:none!important}
   overflow:hidden;
   background:#171715;
 }
+
 .dual-panel img{
   display:block;
   width:100%;
@@ -615,13 +1069,22 @@ header,.site-header,.main-header{transform:none!important}
   background:#171715;
 }
 
-/* COMPETITIVE STAGE: FIXED IMAGE FRAME AND CROP */
-.competition-card{display:flex;flex-direction:column;min-width:0;width:100%;overflow:hidden}
+/* COMPETITIVE STAGE */
+.competition-card{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  width:100%;
+  overflow:hidden;
+}
+
 .competition-card .dual-panel{height:560px}
+
 .competition-card .dual-panel img{
   object-fit:cover;
   object-position:center;
 }
+
 .competition-card .dual-slide-track img{
   flex:0 0 100%;
   width:100%;
@@ -637,6 +1100,7 @@ header,.site-header,.main-header{transform:none!important}
   transition:transform 1s cubic-bezier(.22,.7,.2,1);
   will-change:transform;
 }
+
 .dual-slide-track img{
   flex:0 0 100%;
   width:100%;
@@ -652,6 +1116,7 @@ header,.site-header,.main-header{transform:none!important}
   transform:scale(1.015);
   transition:opacity 2s ease,transform 3.8s ease;
 }
+
 .dual-dissolve img.is-active{
   opacity:1;
   transform:scale(1);
@@ -665,12 +1130,13 @@ header,.site-header,.main-header{transform:none!important}
   transform:scale(1.025);
   transition:opacity 1.6s ease,transform 5s ease;
 }
+
 .dual-editorial img.is-active{
   opacity:1;
   transform:scale(1);
 }
 
-/* MAGAZINE: CLICKABLE EDITORIAL FRAME AND CAPTION */
+/* MAGAZINE: EDITORIAL FRAME AND CAPTION */
 .magazine-card{
   display:block;
   min-width:0;
@@ -680,10 +1146,12 @@ header,.site-header,.main-header{transform:none!important}
   background:transparent;
   outline-offset:5px;
 }
+
 .magazine-card .dual-panel{
   width:100%;
   margin:0;
 }
+
 .magazine-caption{
   display:flex;
   flex-direction:column;
@@ -695,6 +1163,7 @@ header,.site-header,.main-header{transform:none!important}
   background:#171715;
   color:#E8E6E1;
 }
+
 .magazine-edition-number{
   color:#a9824d;
   font-size:10px;
@@ -702,6 +1171,7 @@ header,.site-header,.main-header{transform:none!important}
   letter-spacing:2.2px;
   line-height:1.4;
 }
+
 .magazine-edition-title{
   color:#c5a36b;
   font-family:var(--heading-font);
@@ -711,6 +1181,7 @@ header,.site-header,.main-header{transform:none!important}
   line-height:1.35;
   text-transform:uppercase;
 }
+
 .magazine-edition-statement{
   color:#E8E6E1;
   font-size:14px;
@@ -718,11 +1189,13 @@ header,.site-header,.main-header{transform:none!important}
   font-style:italic;
   line-height:1.55;
 }
+
 .magazine-card:focus-visible{outline:2px solid #c5a36b}
 .magazine-card:hover .magazine-edition-title{color:#e0c28d}
 
-/* PERFUME: FULL IMAGE, GENTLE CROSSFADE */
+/* PERFUME */
 .dual-perfume{height:650px}
+
 .dual-perfume img{
   position:absolute;
   inset:0;
@@ -732,211 +1205,615 @@ header,.site-header,.main-header{transform:none!important}
   object-fit:contain;
   background:#171715;
 }
-.dual-perfume img.is-active{opacity:1;transform:scale(1)}
-.perfume-card{display:flex;flex-direction:column;min-width:0;width:100%}
+
+.dual-perfume img.is-active{
+  opacity:1;
+  transform:scale(1);
+}
+
+.perfume-card{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  width:100%;
+}
+
 .perfume-card .dual-panel{height:560px}
 .perfume-card .dual-panel img{object-fit:cover}
 
 /* ZEAVIQ SPORTS */
-.sports-section{background:radial-gradient(ellipse at 15% 10%,rgba(169,130,77,.12),transparent 45%),linear-gradient(135deg,#22221e,#181816 70%);color:var(--ivory);padding:94px 0}
+.sports-section{
+  background:
+    radial-gradient(ellipse at 15% 10%,rgba(169,130,77,.12),transparent 45%),
+    linear-gradient(135deg,#22221e,#181816 70%);
+  color:var(--ivory);
+  padding:94px 0;
+}
+
 .sports-section .section-heading{max-width:1050px}
 .theater-grid{display:block}
 .theater-copy{max-width:900px}
-.theater-copy p:not(.section-label){color:#c7c0b5;margin:21px 0;font-size:16px;line-height:1.85}
+
+.theater-copy p:not(.section-label){
+  color:#c7c0b5;
+  margin:21px 0;
+  font-size:16px;
+  line-height:1.85;
+}
 
 /* ORIGINAL FORMATS */
-.formats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;background:rgba(197,163,107,.3);border:1px solid rgba(197,163,107,.3)}
-.format-card{padding:34px 28px;background:#1d1d1a;min-height:225px}
-.format-number{color:var(--bronze);font-family:var(--heading-font);font-size:32px;font-weight:700;margin-bottom:22px}
-.format-card h3{font-family:var(--heading-font);font-size:24px;font-weight:750;margin-bottom:12px}
-.format-card p{color:#c0baaf;font-size:15px;line-height:1.75}
+.formats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  margin-top:48px;
+  background:rgba(197,163,107,.3);
+  border:1px solid rgba(197,163,107,.3);
+}
+
+.format-card{
+  padding:34px 28px;
+  background:#1d1d1a;
+  min-height:225px;
+}
+
+.format-number{
+  color:var(--bronze);
+  font-family:var(--heading-font);
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+.format-card h3{
+  font-family:var(--heading-font);
+  font-size:24px;
+  font-weight:750;
+  margin-bottom:12px;
+}
+
+.format-card p{
+  color:#c0baaf;
+  font-size:15px;
+  line-height:1.75;
+}
 
 /* VIKQUATHEL */
-.soul-section{background:linear-gradient(90deg,rgba(17,17,16,.96),rgba(17,17,16,.7)),url("https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1800&q=85");background-position:center;background-size:cover;color:var(--ivory)}
+.soul-section{
+  background:
+    linear-gradient(90deg,rgba(17,17,16,.96),rgba(17,17,16,.7)),
+    url("https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1800&q=85");
+  background-position:center;
+  background-size:cover;
+  color:var(--ivory);
+}
+
 .soul-content{max-width:820px}
-.soul-content h2{font-family:var(--heading-font);font-weight:850;font-size:clamp(48px,7vw,82px);line-height:1.04;letter-spacing:-2px;margin:18px 0}
-.soul-content p:not(.section-label){color:#d0c9bd;max-width:720px;margin-bottom:28px;font-size:17px;line-height:1.85}
+
+.soul-content h2{
+  font-family:var(--heading-font);
+  font-weight:850;
+  font-size:clamp(48px,7vw,82px);
+  line-height:1.04;
+  letter-spacing:-2px;
+  margin:18px 0;
+}
+
+.soul-content p:not(.section-label){
+  color:#d0c9bd;
+  max-width:720px;
+  margin-bottom:28px;
+  font-size:17px;
+  line-height:1.85;
+}
 
 /* COMPETITIONS */
-.competition-section{background:linear-gradient(135deg,#e8e1d5,#f1ece3)}
+.competition-section{
+  background:linear-gradient(135deg,#e8e1d5,#f1ece3);
+}
 
 /* EDITORIAL */
-.editorial-section{background:radial-gradient(ellipse at 90% 0%,rgba(169,130,77,.1),transparent 40%),#22221f;color:var(--ivory)}
-.editorial-section.light{background:linear-gradient(130deg,#eee8dc,#e5ded1);color:var(--text)}
+.editorial-section{
+  background:
+    radial-gradient(ellipse at 90% 0%,rgba(169,130,77,.1),transparent 40%),
+    #22221f;
+  color:var(--ivory);
+}
+
+.editorial-section.light{
+  background:linear-gradient(130deg,#eee8dc,#e5ded1);
+  color:var(--text);
+}
+
 .section-action{margin-top:27px}
-.magazine-section{background:linear-gradient(130deg,#eee8dc,#e4dccf);color:var(--text)}
+
+.magazine-section{
+  background:linear-gradient(130deg,#eee8dc,#e4dccf);
+  color:var(--text);
+}
 
 /* LUXURY */
-.luxury-section{background:linear-gradient(135deg,#e9e2d6,#f2eee5 55%,#e4dacb);color:var(--text)}
-.luxury-heading-row{display:flex;justify-content:space-between;align-items:flex-end;gap:25px}
-.luxury-intro{max-width:690px;color:#5f5a51;margin-top:17px;font-size:17px;line-height:1.8}
-.luxury-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.luxury-section{
+  background:linear-gradient(135deg,#e9e2d6,#f2eee5 55%,#e4dacb);
+  color:var(--text);
+}
+
+.luxury-heading-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:25px;
+}
+
+.luxury-intro{
+  max-width:690px;
+  color:#5f5a51;
+  margin-top:17px;
+  font-size:17px;
+  line-height:1.8;
+}
+
+.luxury-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
 
 /* ANDROID */
-.download-section{background:linear-gradient(90deg,rgba(19,19,17,.96),rgba(19,19,17,.79)),url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85");background-position:center;background-size:cover;color:var(--ivory)}
-.download-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:55px;align-items:center}
-.download-copy p:not(.section-label){color:#d0c9bd;max-width:720px;margin:22px 0 27px;font-size:17px}
-.download-panel{border:1px solid rgba(197,163,107,.5);background:rgba(255,255,255,.055);padding:34px}
-.download-panel h3{font-family:var(--heading-font);font-size:27px;font-weight:750;margin:12px 0}
-.download-panel p:not(.eyebrow){color:#c4bdb2;font-size:15px;margin-bottom:22px}
+.download-section{
+  background:
+    linear-gradient(90deg,rgba(19,19,17,.96),rgba(19,19,17,.79)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85");
+  background-position:center;
+  background-size:cover;
+  color:var(--ivory);
+}
+
+.download-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:55px;
+  align-items:center;
+}
+
+.download-copy p:not(.section-label){
+  color:#d0c9bd;
+  max-width:720px;
+  margin:22px 0 27px;
+  font-size:17px;
+}
+
+.download-panel{
+  border:1px solid rgba(197,163,107,.5);
+  background:rgba(255,255,255,.055);
+  padding:34px;
+}
+
+.download-panel h3{
+  font-family:var(--heading-font);
+  font-size:27px;
+  font-weight:750;
+  margin:12px 0;
+}
+
+.download-panel p:not(.eyebrow){
+  color:#c4bdb2;
+  font-size:15px;
+  margin-bottom:22px;
+}
 
 /* FAQ */
-.faq-list{margin-top:40px;max-width:980px}
-.faq-item{border-bottom:1px solid var(--line);padding:21px 0}
-.faq-item summary{cursor:pointer;list-style:none;font-family:var(--heading-font);font-size:21px;font-weight:700;display:flex;justify-content:space-between;gap:20px}
+.faq-list{
+  margin-top:40px;
+  max-width:980px;
+}
+
+.faq-item{
+  border-bottom:1px solid var(--line);
+  padding:21px 0;
+}
+
+.faq-item summary{
+  cursor:pointer;
+  list-style:none;
+  font-family:var(--heading-font);
+  font-size:21px;
+  font-weight:700;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";color:var(--bronze);font-size:25px}
+.faq-item summary::after{
+  content:"+";
+  color:var(--bronze);
+  font-size:25px;
+}
+
 .faq-item[open] summary::after{content:"−"}
-.faq-item p{color:#5f5b54;margin-top:13px;max-width:820px;font-size:16px;line-height:1.85}
+
+.faq-item p{
+  color:#5f5b54;
+  margin-top:13px;
+  max-width:820px;
+  font-size:16px;
+  line-height:1.85;
+}
 
 /* FOOTER */
-.site-footer{background:#111110;color:var(--ivory);padding:65px 0 23px}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:38px;padding-bottom:48px}
-.footer-logo{width:165px;padding:7px;background:#f4f0e7;margin-bottom:18px}
-.footer-brand p{max-width:340px;color:#bdb7ad;font-size:14px;line-height:1.85}
-.footer-column h4{color:var(--gold);font-size:11px;font-weight:850;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
-.footer-column a{display:block;color:#d0c9bd;font-size:14px;margin:9px 0;transition:color .2s ease}
+.site-footer{
+  background:#111110;
+  color:var(--ivory);
+  padding:65px 0 23px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:38px;
+  padding-bottom:48px;
+}
+
+.footer-logo{
+  width:165px;
+  padding:7px;
+  background:#f4f0e7;
+  margin-bottom:18px;
+}
+
+.footer-brand p{
+  max-width:340px;
+  color:#bdb7ad;
+  font-size:14px;
+  line-height:1.85;
+}
+
+.footer-column h4{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.footer-column a{
+  display:block;
+  color:#d0c9bd;
+  font-size:14px;
+  margin:9px 0;
+  transition:color .2s ease;
+}
+
 .footer-column a:hover{color:var(--gold)}
-.footer-social{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:23px}
-.footer-social a{width:39px;height:39px;display:inline-flex;align-items:center;justify-content:center;color:var(--ivory);border:1px solid rgba(197,163,107,.45);background:rgba(255,255,255,.035);transition:color .25s ease,background .25s ease,border-color .25s ease,transform .25s ease}
-.footer-social a:hover{color:#171715;background:var(--gold);border-color:var(--gold);transform:translateY(-3px)}
-.footer-social svg{width:18px;height:18px;display:block;fill:currentColor}
+
+.footer-social{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:23px;
+}
+
+.footer-social a{
+  width:39px;
+  height:39px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--ivory);
+  border:1px solid rgba(197,163,107,.45);
+  background:rgba(255,255,255,.035);
+  transition:color .25s ease,background .25s ease,border-color .25s ease,transform .25s ease;
+}
+
+.footer-social a:hover{
+  color:#171715;
+  background:var(--gold);
+  border-color:var(--gold);
+  transform:translateY(-3px);
+}
+
+.footer-social svg{
+  width:18px;
+  height:18px;
+  display:block;
+  fill:currentColor;
+}
+
 .footer-social .social-x svg{width:17px;height:17px}
 .footer-social .social-youtube svg{width:20px;height:20px}
 .footer-social .social-tiktok svg{width:18px;height:18px}
-.footer-bottom{border-top:1px solid rgba(197,163,107,.25);padding-top:21px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:#aaa49a;font-size:12px}
-.footer-bottom strong{color:var(--gold);letter-spacing:1.3px}
+
+.footer-bottom{
+  border-top:1px solid rgba(197,163,107,.25);
+  padding-top:21px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  color:#aaa49a;
+  font-size:12px;
+}
+
+.footer-bottom strong{
+  color:var(--gold);
+  letter-spacing:1.3px;
+}
 
 /* TABLET */
 @media(max-width:1100px){
-.main-nav{gap:11px}
-.main-nav a{font-size:9px}
-.header-logo img{width:140px}
-.language-select{max-width:105px}
-.dual-panel{height:clamp(480px,65vw,680px)}
-.dual-perfume{height:clamp(400px,53vw,560px)}
-.competition-card .dual-panel,.perfume-card .dual-panel{height:clamp(420px,55vw,560px)}
-.presentation[data-presentation="newswire"] .presentation-card img{height:500px}
+
+  .main-nav{gap:11px}
+  .main-nav a{font-size:9px}
+  .header-logo img{width:140px}
+  .language-select{max-width:105px}
+
+  .hero{min-height:600px}
+  .hero-background{object-position:58% center}
+
+  .dual-panel{height:clamp(480px,65vw,680px)}
+  .dual-perfume{height:clamp(400px,53vw,560px)}
+
+  .competition-card .dual-panel,
+  .perfume-card .dual-panel{
+    height:clamp(420px,55vw,560px);
+  }
+
+  .presentation[data-presentation="newswire"] .presentation-card img{
+    height:500px;
+  }
 }
 
 /* TABLET AND SMALL LAPTOP */
 @media(max-width:900px){
-.header-inner{min-height:76px}
-.menu-toggle{display:block}
-.main-nav{
-  display:none;
-  position:absolute;
-  top:76px;
-  left:0;
-  right:0;
-  background:#171715;
-  padding:22px 28px;
-  flex-direction:column;
-  align-items:flex-start;
-  border-top:1px solid var(--line);
-  max-height:calc(100vh - 76px);
-  overflow-y:auto;
-}
-.main-nav.open{display:flex}
-.main-nav a{font-size:12px;padding:5px 0}
-.header-contact{display:none}
-.identity-grid,.download-grid{grid-template-columns:1fr;gap:35px}
-.formats-grid{grid-template-columns:1fr 1fr}
-.presentation-card{flex-basis:100%}
-.presentation-track{gap:20px}
-.footer-grid{grid-template-columns:1fr 1fr}
-.luxury-heading-row{display:block}
-.luxury-heading-row>.btn{margin-top:22px}
-.dual-panel{height:clamp(430px,70vw,620px)}
-.dual-perfume{height:clamp(360px,55vw,490px)}
-.competition-card .dual-panel,.perfume-card .dual-panel{height:clamp(380px,65vw,540px)}
-.presentation[data-presentation="newswire"] .presentation-card img{height:460px}
+
+  .header-inner{min-height:76px}
+
+  .menu-toggle{display:block}
+
+  .main-nav{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:#171715;
+    padding:22px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    border-top:1px solid var(--line);
+    max-height:calc(100vh - 76px);
+    overflow-y:auto;
+  }
+
+  .main-nav.open{display:flex}
+  .main-nav a{font-size:12px;padding:5px 0}
+  .header-contact{display:none}
+
+  .identity-grid,
+  .download-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .formats-grid{grid-template-columns:1fr 1fr}
+
+  .presentation-card{flex-basis:100%}
+  .presentation-track{gap:20px}
+
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .luxury-heading-row{display:block}
+
+  .luxury-heading-row>.btn{margin-top:22px}
+
+  .hero{min-height:560px}
+  .hero-content{padding:75px 0}
+
+  .dual-panel{height:clamp(430px,70vw,620px)}
+  .dual-perfume{height:clamp(360px,55vw,490px)}
+
+  .competition-card .dual-panel,
+  .perfume-card .dual-panel{
+    height:clamp(380px,65vw,540px);
+  }
+
+  .presentation[data-presentation="newswire"] .presentation-card img{
+    height:460px;
+  }
 }
 
 /* MOBILE */
 @media(max-width:600px){
-.container{width:min(100% - 34px,var(--max-width))}
-.section{padding:70px 0}
-.header-inner{gap:10px}
-.header-logo img{width:128px}
-.language-select{max-width:100px;font-size:10px;padding:9px 6px}
-.hero{min-height:620px;background-position:58% center}
-.hero-content{padding:70px 0}
-.hero-logo{width:155px}
-.hero h1{font-size:clamp(42px,11vw,58px);letter-spacing:-1.7px}
-.hero-description{font-size:16px;line-height:1.75}
-.hero-buttons .btn{width:100%}
-.section-heading{font-size:clamp(34px,9vw,45px);letter-spacing:-1px}
-.section-intro{font-size:16px}
-.identity-panel{padding:33px 25px}
-.identity-panel .large-statement{font-size:30px}
-.statement-band{padding:42px 0}
-.statement-band h2{font-size:27px}
-.presentation{margin-top:30px}
-.presentation-track{gap:10px}
-.presentation-card{flex:0 0 100%}
-.presentation-card img{width:100%;height:420px;object-fit:cover}
 
-/* NEWSWIRE: ONE IMAGE AT A TIME ON MOBILE */
-.presentation[data-presentation="newswire"] .presentation-track{gap:10px}
-.presentation[data-presentation="newswire"] .presentation-card{flex:0 0 100%}
-.presentation[data-presentation="newswire"] .presentation-card img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  object-position:center;
-  background:#171715;
-}
-.presentation-caption,.competition-caption,.perfume-caption{
-  height:60px;
-  min-height:60px;
-  font-size:14px;
-  letter-spacing:1.4px;
+  .container{width:min(100% - 34px,var(--max-width))}
+  .section{padding:70px 0}
+
+  .header-inner{gap:10px}
+  .header-logo img{width:128px}
+
+  .language-select{
+    max-width:100px;
+    font-size:10px;
+    padding:9px 6px;
+  }
+
+  /* HERO: CONTROLLED MOBILE IMAGE FRAME */
+  .hero{
+    min-height:540px;
+    align-items:center;
+  }
+
+  .hero-background{
+    object-position:62% center;
+  }
+
+  .hero::before{
+    background:linear-gradient(
+      90deg,
+      rgba(17,17,15,.94),
+      rgba(17,17,15,.76) 65%,
+      rgba(17,17,15,.55)
+    );
+  }
+
+  .hero-content{padding:60px 0}
+  .hero-logo{width:155px}
+
+  .hero h1{
+    font-size:clamp(42px,11vw,58px);
+    letter-spacing:-1.7px;
+  }
+
+  .hero-description{
+    font-size:16px;
+    line-height:1.75;
+  }
+
+  .hero-buttons .btn{width:100%}
+
+  .section-heading{
+    font-size:clamp(34px,9vw,45px);
+    letter-spacing:-1px;
+  }
+
+  .section-intro{font-size:16px}
+
+  .identity-panel{padding:33px 25px}
+  .identity-panel .large-statement{font-size:30px}
+
+  .statement-band{padding:42px 0}
+  .statement-band h2{font-size:27px}
+
+  .presentation{margin-top:30px}
+  .presentation-track{gap:10px}
+  .presentation-card{flex:0 0 100%}
+
+  .presentation-card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+  }
+
+  /* NEWSWIRE: ONE IMAGE AT A TIME ON MOBILE */
+  .presentation[data-presentation="newswire"] .presentation-track{
+    gap:10px;
+  }
+
+  .presentation[data-presentation="newswire"] .presentation-card{
+    flex:0 0 100%;
+  }
+
+  .presentation[data-presentation="newswire"] .presentation-card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    object-position:center;
+    background:#171715;
+  }
+
+  .presentation-caption,
+  .competition-caption,
+  .perfume-caption{
+    height:60px;
+    min-height:60px;
+    font-size:14px;
+    letter-spacing:1.4px;
+  }
+
+  /* WORLD OF SPORT: MOBILE FRAME */
+  .presentation[data-presentation="sports"]{
+    width:100%;
+    max-width:500px;
+    height:814px;
+  }
+
+  .presentation[data-presentation="sports"] .presentation-track,
+  .presentation[data-presentation="sports"] .presentation-card{
+    height:814px;
+  }
+
+  .presentation[data-presentation="sports"] .presentation-card img{
+    height:750px;
+    object-fit:cover;
+  }
+
+  .sports-section{padding:72px 0}
+
+  .formats-grid{
+    grid-template-columns:1fr;
+    margin-top:35px;
+  }
+
+  .format-card{
+    min-height:0;
+    padding:28px 23px;
+  }
+
+  .soul-content h2{font-size:48px}
+
+  /* STACK TWO-PANEL PRESENTATIONS ON MOBILE */
+  .dual-presentation{
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-top:30px;
+  }
+
+  .dual-panel{height:clamp(300px,110vw,470px)}
+  .dual-perfume{height:clamp(280px,95vw,410px)}
+
+  .competition-card .dual-panel,
+  .perfume-card .dual-panel{
+    height:420px;
+  }
+
+  /* MAGAZINE CAPTION ON MOBILE */
+  .magazine-caption{
+    min-height:105px;
+    padding:15px 17px 17px;
+  }
+
+  .magazine-edition-title{font-size:17px}
+  .magazine-edition-statement{font-size:13px}
+
+  .luxury-actions{flex-direction:column}
+  .luxury-actions .btn{width:100%}
+
+  .download-panel{padding:27px 23px}
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:28px 17px;
+  }
+
+  .footer-brand{grid-column:1/-1}
+  .footer-bottom{flex-direction:column}
+  .faq-item summary{font-size:18px}
+  .footer-social{gap:10px}
+  .footer-social a{width:38px;height:38px}
 }
 
-/* WORLD OF SPORT: FIXED IMAGE FRAME ON MOBILE */
-.presentation[data-presentation="sports"]{
-  width:100%;
-  max-width:500px;
-  height:814px;
-}
-.presentation[data-presentation="sports"] .presentation-track,
-.presentation[data-presentation="sports"] .presentation-card{
-  height:814px;
-}
-.presentation[data-presentation="sports"] .presentation-card img{
-  height:750px;
-  object-fit:cover;
-}
-.sports-section{padding:72px 0}
-.formats-grid{grid-template-columns:1fr;margin-top:35px}
-.format-card{min-height:0;padding:28px 23px}
-.soul-content h2{font-size:48px}
-
-/* STACK TWO-PANEL PRESENTATIONS ON MOBILE */
-.dual-presentation{grid-template-columns:1fr;gap:16px;margin-top:30px}
-.dual-panel{height:clamp(300px,110vw,470px)}
-.dual-perfume{height:clamp(280px,95vw,410px)}
-.competition-card .dual-panel,.perfume-card .dual-panel{height:420px}
-
-/* MAGAZINE CAPTION ON MOBILE */
-.magazine-caption{min-height:105px;padding:15px 17px 17px}
-.magazine-edition-title{font-size:17px}
-.magazine-edition-statement{font-size:13px}
-.luxury-actions{flex-direction:column}
-.luxury-actions .btn{width:100%}
-.download-panel{padding:27px 23px}
-.footer-grid{grid-template-columns:1fr 1fr;gap:28px 17px}
-.footer-brand{grid-column:1/-1}
-.footer-bottom{flex-direction:column}
-.faq-item summary{font-size:18px}
-.footer-social{gap:10px}
-.footer-social a{width:38px;height:38px}
-}
-
+/* REDUCE MOTION */
 @media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}
-.presentation-track,.dual-panel img,.dual-slide-track{transition:none!important}
+
+  html{scroll-behavior:auto}
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+
+  .presentation-track,
+  .dual-panel img,
+  .dual-slide-track{
+    transition:none!important;
+  }
 }
 </style>
 </head>
@@ -946,8 +1823,16 @@ html{scroll-behavior:auto}
 
 <header class="site-header">
   <div class="container header-inner">
+
     <a href="/" class="header-logo" aria-label="PHRINUSOMYIS homepage">
-      <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo" width="165" fetchpriority="high">
+      <img
+        src="https://phrinusomyis.com/phrinusomyis_logo.png"
+        alt="PHRINUSOMYIS logo"
+        width="165"
+        height="auto"
+        loading="eager"
+        decoding="async"
+      >
     </a>
 
     <nav class="main-nav" id="mainNav">
@@ -957,6 +1842,7 @@ html{scroll-behavior:auto}
     </nav>
 
     <div class="header-actions">
+
       <select id="siteLanguage" class="language-select" aria-label="Select website language">
         <option value="en">English</option>
         <option value="fr">Français</option>
@@ -980,66 +1866,118 @@ html{scroll-behavior:auto}
         <option value="fi">Suomi</option>
         <option value="da">Dansk</option>
       </select>
+
       <a href="/contact" class="btn header-contact">Contact</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >☰</button>
+
     </div>
   </div>
 </header>
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
+
+  <img
+    class="hero-background"
+    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=80"
+    srcset="
+      https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=768&q=75 768w,
+      https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=78 1200w,
+      https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=80 2000w
+    "
+    sizes="100vw"
+    alt=""
+    width="2000"
+    height="1125"
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
+  >
+
   <div class="container">
     <div class="hero-content">
-      <img class="hero-logo" src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo" width="190" fetchpriority="high">
+
+      <img
+        class="hero-logo"
+        src="https://phrinusomyis.com/phrinusomyis_logo.png"
+        alt="PHRINUSOMYIS logo"
+        width="190"
+        height="auto"
+        loading="eager"
+        decoding="async"
+      >
+
       <p class="hero-kicker">COMMANDING THE WORLD STAGE™</p>
+
       <h1>INTERNATIONAL SPORT.<span>ORIGINAL COMPETITION.</span></h1>
+
       <p class="hero-description">
         PHRINUSOMYIS™ is an international sports organization that develops,
         owns and administers sports competitions and ZEAVIQ SPORTS™ worldwide.
         It creates original sports formats that break away from traditional
         sports structures.
       </p>
+
       <div class="hero-buttons">
         <a href="/#sports" class="btn">Explore Sports</a>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- ORGANIZATION -->
 <section class="section" id="organization">
   <div class="container identity-grid">
+
     <div class="identity-copy">
       <p class="section-label">The Organization</p>
       <h2 class="section-heading">A distinct position in international sport.</h2>
       <div class="gold-line"></div>
+
       <p>
         PHRINUSOMYIS™ develops, owns and administers sports competitions
         and original sporting formats. Its work is defined by a distinct
         approach to competition, sporting presentation and the experience
         of the world stage.
       </p>
+
       <p>
         The organization brings its competitions and ZEAVIQ SPORTS™
         concept together under one international sports identity.
       </p>
     </div>
+
     <div class="identity-panel">
       <p class="eyebrow">PHRINUSOMYIS™</p>
+
       <p class="large-statement">
         Original sporting formats.
         Distinct competitions.
         A different stage for sport.
       </p>
+
       <p class="small-statement">COMMANDING THE WORLD STAGE™</p>
     </div>
+
   </div>
 </section>
 
+<!-- WORLD OF SPORT -->
 <section class="sports-section" id="sports">
   <div class="container">
+
     <p class="section-label">The World of Sport</p>
     <h2 class="section-heading">Sport takes centre stage.</h2>
+
     <p class="section-intro">
       Discover the sporting disciplines, athletic performances
       and competitive environments connected to the world of sport.
@@ -1047,38 +1985,54 @@ html{scroll-behavior:auto}
 
     <div class="presentation" data-presentation="sports">
       <div class="presentation-track">
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0010.jpg" alt="Sporting presentation 10" fetchpriority="high">
+          <img
+            src="/PHRINUSOMYIS-SPORTS0010.jpg"
+            alt="Sporting presentation 10"
+            width="500"
+            height="750"
+            loading="eager"
+            decoding="async"
+          >
           <span class="presentation-caption">SPORTS THE LIGHT</span>
         </a>
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0011.jpg" alt="Sporting presentation 11">
+          <img src="/PHRINUSOMYIS-SPORTS0011.jpg" alt="Sporting presentation 11" width="500" height="750" loading="lazy" decoding="async">
           <span class="presentation-caption">RESILIENCE</span>
         </a>
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0012.jpg" alt="Sporting presentation 12">
+          <img src="/PHRINUSOMYIS-SPORTS0012.jpg" alt="Sporting presentation 12" width="500" height="750" loading="lazy" decoding="async">
           <span class="presentation-caption">EXCELLENCE</span>
         </a>
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0013.jpg" alt="Sporting presentation 13">
+          <img src="/PHRINUSOMYIS-SPORTS0013.jpg" alt="Sporting presentation 13" width="500" height="750" loading="lazy" decoding="async">
           <span class="presentation-caption">GLORY</span>
         </a>
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0014.jpg" alt="Sporting presentation 14">
+          <img src="/PHRINUSOMYIS-SPORTS0014.jpg" alt="Sporting presentation 14" width="500" height="750" loading="lazy" decoding="async">
           <span class="presentation-caption">RECORDS</span>
         </a>
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0015.jpg" alt="Sporting presentation 15">
+          <img src="/PHRINUSOMYIS-SPORTS0015.jpg" alt="Sporting presentation 15" width="500" height="750" loading="lazy" decoding="async">
           <span class="presentation-caption">GREATNESS</span>
         </a>
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0016.jpg" alt="Sporting presentation 16">
+          <img src="/PHRINUSOMYIS-SPORTS0016.jpg" alt="Sporting presentation 16" width="500" height="750" loading="lazy" decoding="async">
           <span class="presentation-caption">SPEED</span>
         </a>
+
         <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport">
-          <img src="/PHRINUSOMYIS-SPORTS0017.jpg" alt="Sporting presentation 17">
+          <img src="/PHRINUSOMYIS-SPORTS0017.jpg" alt="Sporting presentation 17" width="500" height="750" loading="lazy" decoding="async">
           <span class="presentation-caption">LEGACY</span>
         </a>
+
       </div>
     </div>
 
@@ -1086,9 +2040,11 @@ html{scroll-behavior:auto}
       Sport is more than a discipline. It is a stage for human performance,
       competition and achievement.
     </p>
+
   </div>
 </section>
 
+<!-- STATEMENT BAND -->
 <section class="statement-band">
   <div class="container">
     <p>PHRINUSOMYIS™</p>
@@ -1096,75 +2052,97 @@ html{scroll-behavior:auto}
   </div>
 </section>
 
+<!-- ZEAVIQ SPORTS -->
 <section class="section section-dark" id="sports-theater">
   <div class="container theater-grid">
+
     <div class="theater-copy">
       <p class="section-label">A PHRINUSOMYIS™ Concept</p>
       <h2 class="section-heading">ZEAVIQ SPORTS™</h2>
       <div class="gold-line"></div>
+
       <p>
         ZEAVIQ SPORTS™ is the PHRINUSOMYIS™ concept for original
         competitive sporting experiences. It presents competition
         through a distinct sporting identity and a different approach
         to the traditional structure of sport.
       </p>
+
       <p>
         It is a platform for original formats and competitions
         developed and administered by PHRINUSOMYIS™.
       </p>
+
       <a href="/#competitions" class="btn">Explore Competitions</a>
     </div>
+
   </div>
 </section>
 
+<!-- ORIGINAL FORMATS -->
 <section class="section formats-section section-dark">
   <div class="container">
+
     <p class="section-label">Original Sporting Formats</p>
     <h2 class="section-heading">Competition beyond traditional structures.</h2>
+
     <p class="section-intro">
       PHRINUSOMYIS™ creates original sports formats with their own
       competitive identity, presentation and sporting purpose.
     </p>
+
     <div class="formats-grid">
+
       <article class="format-card">
         <div class="format-number">01</div>
         <h3>Original Formats</h3>
         <p>Sporting concepts developed around distinctive competitive identities and structures.</p>
       </article>
+
       <article class="format-card">
         <div class="format-number">02</div>
         <h3>Competition Administration</h3>
         <p>Competitions developed, owned and administered by PHRINUSOMYIS™.</p>
       </article>
+
       <article class="format-card">
         <div class="format-number">03</div>
         <h3>ZEAVIQ SPORTS™</h3>
         <p>A distinct concept bringing original sporting competition to the world stage.</p>
       </article>
+
     </div>
   </div>
 </section>
 
+<!-- VIKQUATHEL -->
 <section class="section soul-section">
   <div class="container">
+
     <div class="soul-content">
       <p class="section-label">Within ZEAVIQ SPORTS™</p>
       <h2>VIKQUATHEL™</h2>
       <div class="gold-line"></div>
+
       <p>
         VIKQUATHEL™ is a competition within the ZEAVIQ SPORTS™ concept.
         Its identity is built around the human response to pressure,
         endurance, resolve and performance when the challenge is greatest.
       </p>
+
       <a href="/#competitions" class="btn">Discover the Competition</a>
     </div>
+
   </div>
 </section>
 
+<!-- COMPETITIONS -->
 <section class="section competition-section" id="competitions">
   <div class="container">
+
     <p class="section-label">The Competitive Stage</p>
     <h2 class="section-heading">One contest. One winner.</h2>
+
     <p class="section-intro">
       Discover the sporting identity and competition concepts
       developed under PHRINUSOMYIS™.
@@ -1173,90 +2151,124 @@ html{scroll-behavior:auto}
     <div class="dual-presentation" aria-label="VIKQUATHEL competition presentation">
 
       <div class="competition-card">
+
         <div class="dual-panel" data-dual-effect="slide" data-interval="6200">
           <div class="dual-slide-track">
-            <img src="/PHRINUSOMYIS-SPORTS001.jpg" alt="Competition image 1" loading="lazy" data-competition-caption="COMPETITION">
-            <img src="/PHRINUSOMYIS-SPORTS002.jpg" alt="Competition image 2" loading="lazy" data-competition-caption="ATHLETICISM">
-            <img src="/PHRINUSOMYIS-SPORTS003.jpg" alt="Competition image 3" loading="lazy" data-competition-caption="ENDURANCE">
-            <img src="/PHRINUSOMYIS-SPORTS004.jpg" alt="Competition image 4" loading="lazy" data-competition-caption="VICTORY">
-            <img src="/PHRINUSOMYIS-SPORTS005.jpg" alt="Competition image 5" loading="lazy" data-competition-caption="CHAMPIONSHIP">
+
+            <img src="/PHRINUSOMYIS-SPORTS001.jpg" alt="Competition image 1" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="COMPETITION">
+
+            <img src="/PHRINUSOMYIS-SPORTS002.jpg" alt="Competition image 2" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="ATHLETICISM">
+
+            <img src="/PHRINUSOMYIS-SPORTS003.jpg" alt="Competition image 3" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="ENDURANCE">
+
+            <img src="/PHRINUSOMYIS-SPORTS004.jpg" alt="Competition image 4" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="VICTORY">
+
+            <img src="/PHRINUSOMYIS-SPORTS005.jpg" alt="Competition image 5" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="CHAMPIONSHIP">
+
           </div>
         </div>
+
         <div class="competition-caption" aria-live="polite">COMPETITION</div>
+
       </div>
 
       <div class="competition-card">
+
         <div class="dual-panel dual-dissolve" data-dual-effect="dissolve" data-interval="7200">
-          <img src="/PHRINUSOMYIS-SPORTS006.jpg" class="is-active" alt="Competition image 6" loading="lazy" data-competition-caption="PERFORMANCE">
-          <img src="/PHRINUSOMYIS-SPORTS007.jpg" alt="Competition image 7" loading="lazy" data-competition-caption="DISCIPLINE">
-          <img src="/PHRINUSOMYIS-SPORTS008.jpg" alt="Competition image 8" loading="lazy" data-competition-caption="PRECISION">
-          <img src="/PHRINUSOMYIS-SPORTS009.jpg" alt="Competition image 9" loading="lazy" data-competition-caption="STRENGTH">
+
+          <img src="/PHRINUSOMYIS-SPORTS006.jpg" class="is-active" alt="Competition image 6" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="PERFORMANCE">
+
+          <img src="/PHRINUSOMYIS-SPORTS007.jpg" alt="Competition image 7" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="DISCIPLINE">
+
+          <img src="/PHRINUSOMYIS-SPORTS008.jpg" alt="Competition image 8" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="PRECISION">
+
+          <img src="/PHRINUSOMYIS-SPORTS009.jpg" alt="Competition image 9" width="800" height="560" loading="lazy" decoding="async" data-competition-caption="STRENGTH">
+
         </div>
+
         <div class="competition-caption" aria-live="polite">PERFORMANCE</div>
+
       </div>
 
     </div>
 
     <p class="section-intro">One contest. One winner. A stage defined by performance.</p>
+
   </div>
 </section>
 
+<!-- NEWSWIRE -->
 <section class="section editorial-section" id="newswire">
   <div class="container">
+
     <p class="section-label">Official Communications</p>
     <h2 class="section-heading">Newswire</h2>
+
     <p class="section-intro">
       Official announcements, organizational statements and press
       communications from PHRINUSOMYIS™.
     </p>
+
     <div class="section-action">
       <a href="/newswire/news" class="btn">Enter Official Newswire</a>
     </div>
 
     <div class="presentation" data-presentation="newswire">
       <div class="presentation-track">
+
         <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
-          <img src="/PHRINUSOMYIS-NEWSWIRE01.jpg" alt="Official Newswire announcements" loading="lazy">
+          <img src="/PHRINUSOMYIS-NEWSWIRE01.jpg" alt="Official Newswire announcements" width="800" height="560" loading="lazy" decoding="async">
           <span class="presentation-caption">ANNOUNCEMENTS</span>
         </a>
+
         <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
-          <img src="/PHRINUSOMYIS-NEWSWIRE02.jpg" alt="Official Newswire statements" loading="lazy">
+          <img src="/PHRINUSOMYIS-NEWSWIRE02.jpg" alt="Official Newswire statements" width="800" height="560" loading="lazy" decoding="async">
           <span class="presentation-caption">STATEMENTS</span>
         </a>
+
         <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
-          <img src="/PHRINUSOMYIS-NEWSWIRE03.jpg" alt="Official Newswire press releases" loading="lazy">
+          <img src="/PHRINUSOMYIS-NEWSWIRE03.jpg" alt="Official Newswire press releases" width="800" height="560" loading="lazy" decoding="async">
           <span class="presentation-caption">PRESS RELEASES</span>
         </a>
+
         <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
-          <img src="/PHRINUSOMYIS-NEWSWIRE04.jpg" alt="Official Newswire updates" loading="lazy">
+          <img src="/PHRINUSOMYIS-NEWSWIRE04.jpg" alt="Official Newswire updates" width="800" height="560" loading="lazy" decoding="async">
           <span class="presentation-caption">UPDATES</span>
         </a>
+
         <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
-          <img src="/PHRINUSOMYIS-NEWSWIRE05.jpg" alt="Official Newswire communiqués" loading="lazy">
+          <img src="/PHRINUSOMYIS-NEWSWIRE05.jpg" alt="Official Newswire communiqués" width="800" height="560" loading="lazy" decoding="async">
           <span class="presentation-caption">COMMUNIQUÉS</span>
         </a>
+
         <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire">
-          <img src="/PHRINUSOMYIS-NEWSWIRE04.jpg" alt="Official Newswire time news" loading="lazy">
+          <img src="/PHRINUSOMYIS-NEWSWIRE04.jpg" alt="Official Newswire time news" width="800" height="560" loading="lazy" decoding="async">
           <span class="presentation-caption">TIME NEWS</span>
         </a>
+
       </div>
     </div>
 
     <p class="section-intro">Official communication. Direct from the organization.</p>
+
   </div>
 </section>
 
 <!-- THE NEWS SECTION HAS BEEN REMOVED COMPLETELY. -->
 <!-- THE MEDIA SECTION HAS BEEN REMOVED COMPLETELY. -->
 
+<!-- MAGAZINE -->
 <section class="section magazine-section" id="magazine">
   <div class="container">
+
     <p class="section-label">Editorial Publication</p>
     <h2 class="section-heading">PHRINUSOMYIS™ Magazine</h2>
+
     <p class="section-intro">
       Sporting perspectives, features, stories, photography
       and selected editorial coverage.
     </p>
+
     <div class="section-action">
       <a href="/magazine/news" class="btn btn-dark">Enter Magazine</a>
     </div>
@@ -1265,12 +2277,16 @@ html{scroll-behavior:auto}
 
       <!-- MAGAZINE PANEL ONE -->
       <a href="/magazine/news" class="magazine-card" aria-label="Open PHRINUSOMYIS Magazine">
+
         <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="6500">
 
           <img
             src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg"
             alt="PHRINUSOMYIS THE EDGEWISE Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             class="is-active"
             data-edition-number="EDITION 01"
             data-edition-title="THE EDGEWISE"
@@ -1280,7 +2296,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg"
             alt="PHRINUSOMYIS THE BIG STORY Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 02"
             data-edition-title="THE BIG STORY"
             data-edition-statement="Some moments change the course of history."
@@ -1289,7 +2308,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-THE-APEX-Edition001.jpg"
             alt="PHRINUSOMYIS THE APEX Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 03"
             data-edition-title="THE APEX"
             data-edition-statement="The height is only the beginning."
@@ -1298,7 +2320,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
             alt="PHRINUSOMYIS THE CHRONICLE Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 04"
             data-edition-title="THE CHRONICLE"
             data-edition-statement="Not everything belongs to the present."
@@ -1307,7 +2332,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
             alt="PHRINUSOMYIS LIFELINE Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 05"
             data-edition-title="LIFELINE"
             data-edition-statement="Behind every survival, there is a story."
@@ -1320,16 +2348,21 @@ html{scroll-behavior:auto}
           <span class="magazine-edition-title">THE EDGEWISE</span>
           <span class="magazine-edition-statement">The story beyond what we see.</span>
         </div>
+
       </a>
 
       <!-- MAGAZINE PANEL TWO -->
       <a href="/magazine/news" class="magazine-card" aria-label="Open PHRINUSOMYIS Magazine">
+
         <div class="dual-panel dual-editorial" data-dual-effect="editorial" data-interval="7800">
 
           <img
             src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg"
             alt="PHRINUSOMYIS THE WORLD PULSE Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             class="is-active"
             data-edition-number="EDITION 06"
             data-edition-title="THE WORLD PULSE"
@@ -1339,7 +2372,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
             alt="PHRINUSOMYIS THE MOMINANTS Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 07"
             data-edition-title="THE MOMINANTS"
             data-edition-statement="Some leave footprints. Others change the ground."
@@ -1348,7 +2384,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg"
             alt="PHRINUSOMYIS THE SNOW JOURNEY Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 08"
             data-edition-title="THE SNOW JOURNEY"
             data-edition-statement="Every journey has an untold side."
@@ -1357,7 +2396,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg"
             alt="PHRINUSOMYIS THE POWERSHIFT Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 09"
             data-edition-title="THE POWERSHIFT"
             data-edition-statement="Every shift has a beginning."
@@ -1366,7 +2408,10 @@ html{scroll-behavior:auto}
           <img
             src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg"
             alt="PHRINUSOMYIS THE TAKEOVER Edition 001"
+            width="800"
+            height="850"
             loading="lazy"
+            decoding="async"
             data-edition-number="EDITION 10"
             data-edition-title="THE TAKEOVER"
             data-edition-statement="Every new era has a defining moment."
@@ -1379,79 +2424,115 @@ html{scroll-behavior:auto}
           <span class="magazine-edition-title">THE WORLD PULSE</span>
           <span class="magazine-edition-statement">The world has more than one heartbeat.</span>
         </div>
+
       </a>
 
     </div>
 
     <p class="section-intro">A publication with its own visual identity and editorial voice.</p>
+
   </div>
 </section>
 
+<!-- PERFUME -->
 <section class="section luxury-section" id="luxury">
   <div class="container">
+
     <div class="luxury-heading-row">
+
       <div>
         <p class="section-label">PHRINUSOMYIS™ Luxury</p>
         <h2 class="section-heading">The Perfume Collection.</h2>
         <p class="luxury-intro">Discover the perfume collection presented through PHRINUSOMYIS™ Luxury.</p>
       </div>
+
       <a href="/perfume" class="btn btn-dark">Explore Luxury</a>
+
     </div>
 
     <div class="dual-presentation" aria-label="Perfume collection presentation">
 
       <div class="perfume-card">
+
         <a href="/perfume" class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="7000" aria-label="Open perfume collection">
-          <img src="/PHRINUSOMYIS-PERFUME001.jpg" class="is-active" alt="Perfume collection image 1" loading="lazy" data-perfume-caption="FRAGRANCE">
-          <img src="/PHRINUSOMYIS-PERFUME002.jpg" alt="Perfume collection image 2" loading="lazy" data-perfume-caption="ESSENCE">
-          <img src="/PHRINUSOMYIS-PERFUME003.jpg" alt="Perfume collection image 3" loading="lazy" data-perfume-caption="PERFUMERY">
+
+          <img src="/PHRINUSOMYIS-PERFUME001.jpg" class="is-active" alt="Perfume collection image 1" width="800" height="560" loading="lazy" decoding="async" data-perfume-caption="FRAGRANCE">
+
+          <img src="/PHRINUSOMYIS-PERFUME002.jpg" alt="Perfume collection image 2" width="800" height="560" loading="lazy" decoding="async" data-perfume-caption="ESSENCE">
+
+          <img src="/PHRINUSOMYIS-PERFUME003.jpg" alt="Perfume collection image 3" width="800" height="560" loading="lazy" decoding="async" data-perfume-caption="PERFUMERY">
+
         </a>
+
         <div class="perfume-caption" aria-live="polite">FRAGRANCE</div>
+
       </div>
 
       <div class="perfume-card">
+
         <a href="/perfume" class="dual-panel dual-perfume" data-dual-effect="perfume" data-interval="8500" aria-label="Open perfume collection">
-          <img src="/PHRINUSOMYIS-PERFUME004.jpg" class="is-active" alt="Perfume collection image 4" loading="lazy" data-perfume-caption="ELEGANCE">
-          <img src="/PHRINUSOMYIS-PERFUME005.jpg" alt="Perfume collection image 5" loading="lazy" data-perfume-caption="SIGNATURE">
-          <img src="/PHRINUSOMYIS-PERFUME006.jpg" alt="Perfume collection image 6" loading="lazy" data-perfume-caption="OPULENCE">
+
+          <img src="/PHRINUSOMYIS-PERFUME004.jpg" class="is-active" alt="Perfume collection image 4" width="800" height="560" loading="lazy" decoding="async" data-perfume-caption="ELEGANCE">
+
+          <img src="/PHRINUSOMYIS-PERFUME005.jpg" alt="Perfume collection image 5" width="800" height="560" loading="lazy" decoding="async" data-perfume-caption="SIGNATURE">
+
+          <img src="/PHRINUSOMYIS-PERFUME006.jpg" alt="Perfume collection image 6" width="800" height="560" loading="lazy" decoding="async" data-perfume-caption="OPULENCE">
+
         </a>
+
         <div class="perfume-caption" aria-live="polite">ELEGANCE</div>
+
       </div>
 
     </div>
 
     <p class="section-intro">A considered presentation of the collection.</p>
+
     <div class="luxury-actions">
       <a href="/perfume" class="btn btn-dark">View Perfume Collection</a>
       <a href="/perfume" class="btn" style="background:transparent;color:#171715;">Visit Luxury</a>
     </div>
+
   </div>
 </section>
 
+<!-- ANDROID APPLICATION -->
 <section class="section download-section" id="download">
   <div class="container download-grid">
+
     <div class="download-copy">
       <p class="section-label">Mobile Application</p>
       <h2 class="section-heading">PHRINUSOMYIS™ on Android.</h2>
+
       <p>
         Access the PHRINUSOMYIS™ mobile experience on your Android device.
         Download the application using the official download link.
       </p>
-      <a href="https://phrinusomyis.com/PHRINUSOMYIS.apk" class="btn" download>Download Android App</a>
+
+      <a href="https://phrinusomyis.com/PHRINUSOMYIS.apk" class="btn" download>
+        Download Android App
+      </a>
     </div>
+
     <div class="download-panel">
       <p class="eyebrow">Official Android Application</p>
       <h3>Android Download</h3>
       <p>The application download is provided through the official PHRINUSOMYIS™ website.</p>
-      <a href="https://phrinusomyis.com/PHRINUSOMYIS.apk" class="btn btn-outline" download>Download APK</a>
+      <a href="https://phrinusomyis.com/PHRINUSOMYIS.apk" class="btn btn-outline" download>
+        Download APK
+      </a>
     </div>
+
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="section" id="faq">
   <div class="container">
+
     <p class="section-label">Information</p>
     <h2 class="section-heading">Frequently Asked Questions.</h2>
+
     <div class="faq-list">
 
       <details class="faq-item">
@@ -1515,20 +2596,35 @@ html{scroll-behavior:auto}
 
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
+
     <div class="footer-grid">
 
       <div class="footer-brand">
+
         <a href="/">
-          <img class="footer-logo" src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo" loading="lazy">
+          <img
+            class="footer-logo"
+            src="https://phrinusomyis.com/phrinusomyis_logo.png"
+            alt="PHRINUSOMYIS logo"
+            width="165"
+            height="auto"
+            loading="lazy"
+            decoding="async"
+          >
         </a>
+
         <p>
           PHRINUSOMYIS™ is an international sports organization that
           develops, owns and administers sports competitions and
           ZEAVIQ SPORTS™ worldwide.
         </p>
-        <p style="margin-top:16px;color:#c5a36b;font-weight:800;">COMMANDING THE WORLD STAGE™</p>
+
+        <p style="margin-top:16px;color:#c5a36b;font-weight:800;">
+          COMMANDING THE WORLD STAGE™
+        </p>
 
         <div class="footer-social" aria-label="PHRINUSOMYIS social media">
 
@@ -1585,7 +2681,9 @@ html{scroll-behavior:auto}
     </div>
 
     <div class="footer-bottom">
+
       <span>© <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.</span>
+
       <span>
         <a href="/policy">Privacy</a> &nbsp; | &nbsp;
         <a href="/terms">Terms</a> &nbsp; | &nbsp;
@@ -1593,7 +2691,9 @@ html{scroll-behavior:auto}
         <a href="/copyright">Copyright</a> &nbsp; | &nbsp;
         <a href="/accessibility">Accessibility</a>
       </span>
+
       <strong>COMMANDING THE WORLD STAGE™</strong>
+
     </div>
   </div>
 </footer>
@@ -1614,26 +2714,63 @@ const menuToggle=document.getElementById("menuToggle");
 const mainNav=document.getElementById("mainNav");
 
 if(menuToggle&&mainNav){
+
   menuToggle.addEventListener("click",function(){
+
     const isOpen=mainNav.classList.toggle("open");
+
     menuToggle.setAttribute("aria-expanded",String(isOpen));
     menuToggle.textContent=isOpen?"✕":"☰";
+
   });
 
   mainNav.querySelectorAll("a").forEach(function(link){
+
     link.addEventListener("click",function(){
+
       mainNav.classList.remove("open");
       menuToggle.setAttribute("aria-expanded","false");
       menuToggle.textContent="☰";
+
     });
+
   });
 }
 
 /* FOOTER YEAR */
 const yearElement=document.getElementById("currentYear");
+
 if(yearElement){
   yearElement.textContent=new Date().getFullYear();
 }
+
+/* REDUCED MOTION PREFERENCE */
+const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* VISIBILITY CONTROL */
+const visibilityObserver=("IntersectionObserver" in window)
+  ?new IntersectionObserver(function(entries){
+
+      entries.forEach(function(entry){
+
+        const controller=entry.target.__slideController;
+
+        if(!controller)return;
+
+        if(entry.isIntersecting){
+          controller.resume();
+        }else{
+          controller.pause();
+        }
+
+      });
+
+    },{
+      root:null,
+      rootMargin:"250px 0px",
+      threshold:0
+    })
+  :null;
 
 /* AUTOMATIC CAROUSELS */
 const presentationSettings={
@@ -1644,13 +2781,18 @@ const presentationSettings={
 const carousels=[];
 
 function createCarousel(viewport){
+
   const track=viewport.querySelector(".presentation-track");
   if(!track)return;
 
-  const originalCards=Array.from(track.querySelectorAll(".presentation-card"));
+  const originalCards=Array.from(
+    track.querySelectorAll(".presentation-card")
+  );
+
   if(originalCards.length<=1)return;
 
   const name=viewport.dataset.presentation;
+
   const settings=presentationSettings[name]||{
     interval:5000,
     initialDelay:2000,
@@ -1658,7 +2800,11 @@ function createCarousel(viewport){
   };
 
   function getVisible(){
-    if(name==="newswire"&&window.innerWidth<=600)return 1;
+
+    if(name==="newswire"&&window.innerWidth<=600){
+      return 1;
+    }
+
     return settings.visible;
   }
 
@@ -1674,16 +2820,20 @@ function createCarousel(viewport){
     step:0,
     update:null,
     rebuild:null,
-    fallbackTimer:null
+    fallbackTimer:null,
+    started:false
   };
 
   function removeClones(){
+
     track.querySelectorAll("[data-carousel-clone]").forEach(function(clone){
       clone.remove();
     });
+
   }
 
   function update(){
+
     const firstCard=track.querySelector(".presentation-card");
     if(!firstCard)return;
 
@@ -1692,19 +2842,24 @@ function createCarousel(viewport){
     const gap=parseFloat(computedStyle.columnGap||computedStyle.gap)||0;
 
     carousel.step=cardWidth+gap;
-    track.style.transform="translate3d(-"+(carousel.index*carousel.step)+"px,0,0)";
+
+    track.style.transform=
+      "translate3d(-"+(carousel.index*carousel.step)+"px,0,0)";
   }
 
   carousel.update=update;
 
   function buildCarousel(){
+
     removeClones();
 
     carousel.visible=getVisible();
     carousel.index=0;
 
     originalCards.slice(0,carousel.visible).forEach(function(card){
+
       const clone=card.cloneNode(true);
+
       clone.setAttribute("data-carousel-clone","true");
       clone.setAttribute("aria-hidden","true");
 
@@ -1713,32 +2868,39 @@ function createCarousel(viewport){
       });
 
       track.appendChild(clone);
+
     });
 
     track.style.transition="none";
     update();
     track.offsetHeight;
     track.style.transition="";
+
   }
 
   carousel.rebuild=buildCarousel;
 
   function stop(){
+
     if(carousel.timer){
       clearInterval(carousel.timer);
       carousel.timer=null;
     }
+
     if(carousel.delayTimer){
       clearTimeout(carousel.delayTimer);
       carousel.delayTimer=null;
     }
+
     if(carousel.fallbackTimer){
       clearTimeout(carousel.fallbackTimer);
       carousel.fallbackTimer=null;
     }
+
   }
 
   function resetAfterClone(){
+
     if(carousel.index<originalCards.length)return;
 
     track.style.transition="none";
@@ -1746,46 +2908,87 @@ function createCarousel(viewport){
     update();
     track.offsetHeight;
     track.style.transition="";
+
   }
 
   track.addEventListener("transitionend",function(event){
+
     if(event.target!==track||event.propertyName!=="transform")return;
+
     if(carousel.index>=originalCards.length){
       resetAfterClone();
     }
+
   });
 
   function advance(){
-    if(carousel.paused)return;
+
+    if(carousel.paused||reducedMotion)return;
 
     carousel.index+=1;
     update();
 
     if(carousel.index>=originalCards.length){
-      if(carousel.fallbackTimer)clearTimeout(carousel.fallbackTimer);
+
+      if(carousel.fallbackTimer){
+        clearTimeout(carousel.fallbackTimer);
+      }
 
       carousel.fallbackTimer=window.setTimeout(function(){
+
         resetAfterClone();
         carousel.fallbackTimer=null;
-      },1000);
+
+      },1100);
+
     }
+
   }
 
   function start(){
+
     stop();
-    if(!carousel.paused){
-      carousel.timer=window.setInterval(advance,settings.interval);
+
+    if(
+      !carousel.paused&&
+      !reducedMotion&&
+      !document.hidden
+    ){
+      carousel.timer=window.setInterval(
+        advance,
+        settings.interval
+      );
     }
+
   }
 
   function pause(){
+
     carousel.paused=true;
     stop();
+
   }
 
   function resume(){
+
     carousel.paused=false;
-    start();
+
+    if(!carousel.started){
+
+      carousel.started=true;
+
+      carousel.delayTimer=window.setTimeout(function(){
+
+        if(!carousel.paused){
+          start();
+        }
+
+      },settings.initialDelay);
+
+    }else{
+      start();
+    }
+
   }
 
   buildCarousel();
@@ -1795,34 +2998,67 @@ function createCarousel(viewport){
   viewport.addEventListener("focusin",pause);
   viewport.addEventListener("focusout",resume);
 
+  viewport.__slideController={
+    pause:pause,
+    resume:resume
+  };
+
+  if(visibilityObserver){
+    visibilityObserver.observe(viewport);
+  }else{
+    resume();
+  }
+
   carousels.push(carousel);
 
-  carousel.delayTimer=window.setTimeout(function(){
-    if(!carousel.paused)start();
-  },settings.initialDelay);
 }
 
+/* CREATE PRESENTATIONS */
 document.querySelectorAll("[data-presentation]").forEach(createCarousel);
 
 /* INDEPENDENT TWO-PANEL SLIDESHOWS */
 const dualPresentations=[];
 
 function createDualPresentation(panel){
+
   const effect=panel.dataset.dualEffect;
   const interval=Number(panel.dataset.interval)||6000;
 
   const isMagazine=panel.classList.contains("dual-editorial");
   const isCompetition=panel.closest(".competition-card")!==null;
   const isPerfume=panel.classList.contains("dual-perfume");
-  const magazineCard=isMagazine?panel.closest(".magazine-card"):null;
-  const competitionCard=isCompetition?panel.closest(".competition-card"):null;
-  const perfumeCard=isPerfume?panel.closest(".perfume-card"):null;
 
-  const editionNumber=magazineCard?magazineCard.querySelector(".magazine-edition-number"):null;
-  const editionTitle=magazineCard?magazineCard.querySelector(".magazine-edition-title"):null;
-  const editionStatement=magazineCard?magazineCard.querySelector(".magazine-edition-statement"):null;
-  const competitionCaption=competitionCard?competitionCard.querySelector(".competition-caption"):null;
-  const perfumeCaption=perfumeCard?perfumeCard.querySelector(".perfume-caption"):null;
+  const magazineCard=isMagazine
+    ?panel.closest(".magazine-card")
+    :null;
+
+  const competitionCard=isCompetition
+    ?panel.closest(".competition-card")
+    :null;
+
+  const perfumeCard=isPerfume
+    ?panel.closest(".perfume-card")
+    :null;
+
+  const editionNumber=magazineCard
+    ?magazineCard.querySelector(".magazine-edition-number")
+    :null;
+
+  const editionTitle=magazineCard
+    ?magazineCard.querySelector(".magazine-edition-title")
+    :null;
+
+  const editionStatement=magazineCard
+    ?magazineCard.querySelector(".magazine-edition-statement")
+    :null;
+
+  const competitionCaption=competitionCard
+    ?competitionCard.querySelector(".competition-caption")
+    :null;
+
+  const perfumeCaption=perfumeCard
+    ?perfumeCard.querySelector(".perfume-caption")
+    :null;
 
   const state={
     panel:panel,
@@ -1832,43 +3068,78 @@ function createDualPresentation(panel){
     timer:null,
     paused:false,
     images:[],
-    track:null
+    track:null,
+    started:false
   };
 
   if(effect==="slide"){
+
     state.track=panel.querySelector(".dual-slide-track");
+
     if(!state.track)return;
-    state.images=Array.from(state.track.querySelectorAll("img"));
+
+    state.images=Array.from(
+      state.track.querySelectorAll("img")
+    );
+
   }else{
-    state.images=Array.from(panel.querySelectorAll("img"));
+
+    state.images=Array.from(
+      panel.querySelectorAll("img")
+    );
+
   }
 
   if(state.images.length<2)return;
 
   function updateMagazineCaption(){
+
     if(!isMagazine||!magazineCard)return;
+
     const activeImage=state.images[state.index];
     if(!activeImage)return;
 
-    if(editionNumber)editionNumber.textContent=activeImage.dataset.editionNumber||"";
-    if(editionTitle)editionTitle.textContent=activeImage.dataset.editionTitle||"";
-    if(editionStatement)editionStatement.textContent=activeImage.dataset.editionStatement||"";
+    if(editionNumber){
+      editionNumber.textContent=
+        activeImage.dataset.editionNumber||"";
+    }
+
+    if(editionTitle){
+      editionTitle.textContent=
+        activeImage.dataset.editionTitle||"";
+    }
+
+    if(editionStatement){
+      editionStatement.textContent=
+        activeImage.dataset.editionStatement||"";
+    }
+
   }
 
   function updateCompetitionCaption(){
+
     if(!competitionCaption)return;
+
     const activeImage=state.images[state.index];
+
     if(activeImage){
-      competitionCaption.textContent=activeImage.dataset.competitionCaption||"";
+      competitionCaption.textContent=
+        activeImage.dataset.competitionCaption||"";
     }
+
   }
 
   function updatePerfumeCaption(){
+
     if(!perfumeCaption)return;
+
     const activeImage=state.images[state.index];
+
     if(activeImage){
-      perfumeCaption.textContent=activeImage.dataset.perfumeCaption||"";
+      perfumeCaption.textContent=
+        activeImage.dataset.perfumeCaption||"";
     }
+
   }
 
   const activeIndex=state.images.findIndex(function(img){
@@ -1882,45 +3153,88 @@ function createDualPresentation(panel){
   updatePerfumeCaption();
 
   function advance(){
-    if(state.paused)return;
+
+    if(state.paused||reducedMotion)return;
 
     state.index=(state.index+1)%state.images.length;
 
     if(effect==="slide"){
-      state.track.style.transform="translate3d(-"+(state.index*100)+"%,0,0)";
+
+      state.track.style.transform=
+        "translate3d(-"+(state.index*100)+"%,0,0)";
+
     }else{
+
       state.images.forEach(function(img,index){
-        img.classList.toggle("is-active",index===state.index);
+
+        img.classList.toggle(
+          "is-active",
+          index===state.index
+        );
+
       });
+
     }
 
     updateMagazineCaption();
     updateCompetitionCaption();
     updatePerfumeCaption();
+
   }
 
   function stop(){
+
     if(state.timer){
       clearInterval(state.timer);
       state.timer=null;
     }
+
   }
 
   function start(){
+
     stop();
-    if(!state.paused){
-      state.timer=window.setInterval(advance,interval);
+
+    if(
+      !state.paused&&
+      !reducedMotion&&
+      !document.hidden
+    ){
+      state.timer=window.setInterval(
+        advance,
+        interval
+      );
     }
+
   }
 
   function pause(){
+
     state.paused=true;
     stop();
+
   }
 
   function resume(){
+
     state.paused=false;
-    start();
+
+    if(!state.started){
+
+      state.started=true;
+
+      window.setTimeout(function(){
+
+        if(!state.paused){
+          start();
+        }
+
+      },interval);
+
+    }else{
+      start();
+    }
+
   }
 
   panel.addEventListener("mouseenter",pause);
@@ -1933,46 +3247,104 @@ function createDualPresentation(panel){
   state.pause=pause;
   state.resume=resume;
 
+  panel.__slideController={
+    pause:pause,
+    resume:resume
+  };
+
+  if(visibilityObserver){
+    visibilityObserver.observe(panel);
+  }else{
+    resume();
+  }
+
   dualPresentations.push(state);
 
-  window.setTimeout(function(){
-    if(!state.paused)start();
-  },interval);
 }
 
-document.querySelectorAll("[data-dual-effect]").forEach(createDualPresentation);
+/* CREATE DUAL PRESENTATIONS */
+document.querySelectorAll("[data-dual-effect]").forEach(
+  createDualPresentation
+);
+
+/* PAUSE SLIDESHOWS WHEN THE PAGE IS NOT VISIBLE */
+document.addEventListener("visibilitychange",function(){
+
+  if(document.hidden){
+
+    carousels.forEach(function(carousel){
+      carousel.pause();
+    });
+
+    dualPresentations.forEach(function(state){
+      state.pause();
+    });
+
+  }else{
+
+    carousels.forEach(function(carousel){
+      if(!visibilityObserver){
+        carousel.resume();
+      }
+    });
+
+    dualPresentations.forEach(function(state){
+      if(!visibilityObserver){
+        state.resume();
+      }
+    });
+
+  }
+
+});
 
 /* RESPONSIVE RESIZE HANDLING */
 let resizeTimer=null;
 
 window.addEventListener("resize",function(){
+
   clearTimeout(resizeTimer);
 
   resizeTimer=window.setTimeout(function(){
 
     carousels.forEach(function(carousel){
+
       const newVisible=
-        carousel.viewport.dataset.presentation==="newswire"&&window.innerWidth<=600
+        carousel.viewport.dataset.presentation==="newswire"&&
+        window.innerWidth<=600
           ?1
-          :(presentationSettings[carousel.viewport.dataset.presentation]||{visible:1}).visible;
+          :(presentationSettings[
+            carousel.viewport.dataset.presentation
+          ]||{visible:1}).visible;
 
       if(newVisible!==carousel.visible){
+
         carousel.rebuild();
+
       }else{
+
         carousel.track.style.transition="none";
         carousel.update();
         carousel.track.offsetHeight;
         carousel.track.style.transition="";
+
       }
+
     });
 
     dualPresentations.forEach(function(state){
+
       if(state.effect==="slide"&&state.track){
-        state.track.style.transform="translate3d(-"+(state.index*100)+"%,0,0)";
+
+        state.track.style.transform=
+          "translate3d(-"+(state.index*100)+"%,0,0)";
+
       }
+
     });
 
   },200);
+
 });
 
 /* GOOGLE TRANSLATE: FUNCTIONAL LANGUAGE SELECTOR */
@@ -1983,10 +3355,15 @@ let translateWaitTimer=null;
 let translateAttempts=0;
 
 function getGoogleSelect(){
-  return document.querySelector("#google_translate_element select.goog-te-combo");
+
+  return document.querySelector(
+    "#google_translate_element select.goog-te-combo"
+  );
+
 }
 
 function clearGoogleTranslateCookies(){
+
   const hostname=window.location.hostname;
   const hostnameParts=hostname.split(".");
   const domains=[hostname];
@@ -1999,47 +3376,74 @@ function clearGoogleTranslateCookies(){
   const expiry="expires=Thu, 01 Jan 1970 00:00:00 GMT";
 
   cookieNames.forEach(function(cookieName){
-    document.cookie=cookieName+"=; "+expiry+"; path=/";
+
+    document.cookie=
+      cookieName+"=; "+expiry+"; path=/";
 
     domains.forEach(function(domain){
-      document.cookie=cookieName+"=; "+expiry+"; path=/; domain="+domain;
+
+      document.cookie=
+        cookieName+"=; "+expiry+"; path=/; domain="+domain;
+
     });
+
   });
+
 }
 
 function setGoogleLanguage(language){
+
   const googleSelect=getGoogleSelect();
+
   if(!googleSelect)return false;
 
   googleSelect.value=language;
-  googleSelect.dispatchEvent(new Event("change",{bubbles:true}));
+
+  googleSelect.dispatchEvent(
+    new Event("change",{bubbles:true})
+  );
+
   return true;
+
 }
 
 function waitForGoogleTranslate(language){
-  if(translateWaitTimer)clearInterval(translateWaitTimer);
+
+  if(translateWaitTimer){
+    clearInterval(translateWaitTimer);
+  }
+
   translateAttempts=0;
 
   translateWaitTimer=window.setInterval(function(){
+
     translateAttempts++;
 
     if(setGoogleLanguage(language)){
+
       clearInterval(translateWaitTimer);
       translateWaitTimer=null;
       return;
+
     }
 
     if(translateAttempts>=40){
+
       clearInterval(translateWaitTimer);
       translateWaitTimer=null;
+
     }
+
   },500);
+
 }
 
 function changeWebsiteLanguage(language){
+
   selectedLanguage=language;
 
   if(language==="en"){
+
     const wasTranslated=
       document.cookie.indexOf("googtrans=")!==-1||
       document.body.classList.contains("translated-ltr")||
@@ -2048,43 +3452,64 @@ function changeWebsiteLanguage(language){
       document.documentElement.classList.contains("translated-rtl");
 
     clearGoogleTranslateCookies();
-    if(wasTranslated)window.location.reload();
+
+    if(wasTranslated){
+      window.location.reload();
+    }
+
     return;
+
   }
 
   if(!setGoogleLanguage(language)){
     waitForGoogleTranslate(language);
   }
+
 }
 
 window.googleTranslateElementInit=function(){
-  if(!window.google||!window.google.translate||!window.google.translate.TranslateElement)return;
+
+  if(
+    !window.google||
+    !window.google.translate||
+    !window.google.translate.TranslateElement
+  ){
+    return;
+  }
 
   new window.google.translate.TranslateElement({
+
     pageLanguage:"en",
     includedLanguages:"fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
     autoDisplay:false
+
   },"google_translate_element");
 
   if(selectedLanguage!=="en"){
     waitForGoogleTranslate(selectedLanguage);
   }
+
 };
 
 if(languageSelector){
-  languageSelector.addEventListener("change",function(){
-    changeWebsiteLanguage(this.value);
-  });
-}
 
-if(languageSelector){
+  languageSelector.addEventListener("change",function(){
+
+    changeWebsiteLanguage(this.value);
+
+  });
+
   selectedLanguage=languageSelector.value||"en";
+
 }
 
 })();
 </script>
 
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+<script
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  async
+></script>
 
 </body>
 </html>
