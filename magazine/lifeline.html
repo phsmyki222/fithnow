@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LIFELINE — Edition 001 | PHRINUSOMYIS™ Magazine</title>
+<meta name="description" content="LIFELINE — Edition 001. What keeps the world moving. An editorial exploration of the people, systems, connections and foundations that sustain life.">
+<meta name="author" content="PHRINUSOMYIS Magazine">
+<meta name="theme-color" content="#171715">
+
+<link rel="canonical" href="https://phrinusomyis.com/magazine/lifeline">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="LIFELINE — Edition 001 | PHRINUSOMYIS™ Magazine">
+<meta property="og:description" content="What keeps the world moving.">
+<meta property="og:url" content="https://phrinusomyis.com/magazine/lifeline">
+<meta property="og:image" content="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LIFELINE — Edition 001">
+<meta name="twitter:description" content="What keeps the world moving.">
+<meta name="twitter:image" content="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg">
+
+<style>
+:root {
+  --black:#171715;
+  --charcoal:#25241f;
+  --ivory:#f2eee5;
+  --ivory-light:#f8f5ee;
+  --stone:#e5ded1;
+  --bronze:#a9824d;
+  --gold:#c5a36b;
+  --text:#24231f;
+  --muted:#777168;
+  --line:rgba(169,130,77,.3);
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Arial,Helvetica,sans-serif;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  background:var(--ivory);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.7;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+button {
+  font:inherit;
+}
+
+.site-header {
+  background:var(--black);
+  color:var(--ivory);
+  border-bottom:1px solid rgba(197,163,107,.35);
+}
+
+.header-inner {
+  max-width:1440px;
+  margin:auto;
+  min-height:92px;
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+
+.language-area {
+  display:flex;
+  align-items:center;
+  min-width:150px;
+}
+
+.language-area select {
+  max-width:160px;
+  padding:9px 28px 9px 10px;
+  border:1px solid rgba(197,163,107,.5);
+  border-radius:0;
+  background:var(--black);
+  color:var(--ivory);
+  font-size:12px;
+  letter-spacing:.04em;
+  outline:none;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:13px;
+  text-align:right;
+}
+
+.brand img {
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+.brand-name {
+  display:block;
+  font-family:var(--serif);
+  font-size:19px;
+  letter-spacing:.13em;
+  line-height:1.3;
+}
+
+.brand-type {
+  display:block;
+  margin-top:3px;
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:.27em;
+}
+
+.main-nav {
+  background:#201f1b;
+  border-bottom:1px solid rgba(197,163,107,.2);
+}
+
+.nav-inner {
+  max-width:1440px;
+  margin:auto;
+  padding:0 5%;
+  display:flex;
+  align-items:center;
+  gap:23px;
+  overflow-x:auto;
+  scrollbar-width:thin;
+}
+
+.nav-inner a {
+  flex:0 0 auto;
+  padding:16px 0 14px;
+  color:#c9c1b4;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  border-bottom:2px solid transparent;
+  transition:.2s ease;
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+  color:var(--gold);
+  border-bottom-color:var(--gold);
+}
+
+.page-heading {
+  padding:64px 6% 34px;
+  text-align:center;
+}
+
+.eyebrow {
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+}
+
+.page-heading h1 {
+  margin:12px 0 4px;
+  font-family:var(--serif);
+  font-size:clamp(39px,7vw,76px);
+  font-weight:400;
+  letter-spacing:.09em;
+  line-height:1.1;
+}
+
+.edition-label {
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.24em;
+}
+
+.cover-section {
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 5% 55px;
+}
+
+.cover-frame {
+  background:var(--black);
+  padding:12px;
+  border:1px solid var(--line);
+}
+
+.cover-frame img {
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:900px;
+  object-fit:contain;
+  margin:auto;
+}
+
+.cover-caption {
+  padding-top:18px;
+  text-align:center;
+}
+
+.cover-caption p {
+  margin:0;
+  color:var(--bronze);
+  font-family:var(--serif);
+  font-size:clamp(19px,3vw,27px);
+  font-style:italic;
+}
+
+.cover-caption span {
+  display:block;
+  margin-top:9px;
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.article-shell {
+  max-width:1000px;
+  margin:0 auto;
+  padding:0 5% 80px;
+}
+
+.article-intro {
+  padding:52px 0 48px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.article-kicker {
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+}
+
+.article-intro h2 {
+  max-width:820px;
+  margin:18px 0 22px;
+  font-family:var(--serif);
+  font-size:clamp(31px,5vw,52px);
+  font-weight:400;
+  line-height:1.16;
+}
+
+.article-intro p {
+  max-width:780px;
+  margin:0;
+  color:#57534c;
+  font-family:var(--serif);
+  font-size:20px;
+  line-height:1.75;
+}
+
+.article-body {
+  padding-top:36px;
+}
+
+.article-section {
+  padding:34px 0;
+}
+
+.article-section h3 {
+  margin:0 0 17px;
+  font-family:var(--serif);
+  font-size:29px;
+  font-weight:400;
+  line-height:1.25;
+}
+
+.article-section p {
+  margin:0 0 18px;
+  color:#4d4942;
+  font-size:16px;
+  line-height:1.95;
+}
+
+.article-section p:last-child {
+  margin-bottom:0;
+}
+
+.article-section.dark {
+  margin:26px -5.5%;
+  padding:46px 5.5%;
+  background:var(--charcoal);
+  color:var(--ivory);
+}
+
+.article-section.dark h3 {
+  color:var(--ivory);
+}
+
+.article-section.dark p {
+  color:#d5cec1;
+}
+
+.article-section.dark .article-kicker {
+  color:var(--gold);
+  display:block;
+  margin-bottom:15px;
+}
+
+.pull-quote {
+  margin:38px 0;
+  padding:30px 34px;
+  border-left:3px solid var(--gold);
+  background:#e9e2d6;
+}
+
+.pull-quote p {
+  margin:0;
+  color:#38342e;
+  font-family:var(--serif);
+  font-size:clamp(23px,3.5vw,34px);
+  line-height:1.45;
+}
+
+.article-ending {
+  padding:48px 0 25px;
+  border-top:1px solid var(--line);
+}
+
+.article-ending p {
+  max-width:790px;
+  margin:0;
+  color:#4d4942;
+  font-family:var(--serif);
+  font-size:20px;
+  line-height:1.85;
+}
+
+.article-ending strong {
+  color:var(--text);
+  font-weight:600;
+}
+
+.share-area {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  padding:30px 0 55px;
+}
+
+.share-area button {
+  padding:12px 19px;
+  border:1px solid var(--bronze);
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  transition:.2s ease;
+}
+
+.share-area button:hover {
+  background:var(--black);
+  color:var(--ivory);
+}
+
+.collection-section {
+  background:var(--black);
+  color:var(--ivory);
+  padding:68px 5% 76px;
+}
+
+.collection-inner {
+  max-width:1320px;
+  margin:auto;
+}
+
+.collection-heading {
+  margin-bottom:32px;
+  text-align:center;
+}
+
+.collection-heading span {
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:.27em;
+  text-transform:uppercase;
+}
+
+.collection-heading h2 {
+  margin:10px 0 0;
+  font-family:var(--serif);
+  font-size:clamp(29px,4vw,43px);
+  font-weight:400;
+  letter-spacing:.06em;
+}
+
+.magazine-grid {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:22px;
+}
+
+.magazine-card {
+  display:block;
+  min-width:0;
+}
+
+.magazine-card img {
+  display:block;
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border:1px solid rgba(197,163,107,.25);
+  transition:transform .25s ease, opacity .25s ease;
+}
+
+.magazine-card:hover img {
+  transform:translateY(-5px);
+  opacity:.88;
+}
+
+.magazine-card span {
+  display:block;
+  padding-top:12px;
+  color:#e5ded1;
+  font-family:var(--serif);
+  font-size:14px;
+  letter-spacing:.07em;
+}
+
+.magazine-card small {
+  display:block;
+  padding-top:4px;
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:.16em;
+}
+
+.site-footer {
+  padding:35px 5%;
+  background:#11110f;
+  color:#b9b1a4;
+  text-align:center;
+}
+
+.footer-brand {
+  color:var(--ivory);
+  font-family:var(--serif);
+  font-size:16px;
+  letter-spacing:.19em;
+}
+
+.footer-slogan {
+  margin-top:8px;
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:.22em;
+}
+
+.copyright {
+  margin-top:20px;
+  color:#827b70;
+  font-size:10px;
+}
+
+#google_translate_element {
+  display:none;
+}
+
+@media(max-width:900px) {
+  .magazine-grid {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:600px) {
+  .header-inner {
+    min-height:76px;
+    padding:13px 4%;
+    gap:10px;
+  }
+
+  .language-area {
+    min-width:0;
+  }
+
+  .language-area select {
+    max-width:125px;
+    font-size:10px;
+  }
+
+  .brand {
+    gap:8px;
+  }
+
+  .brand img {
+    width:36px;
+    height:36px;
+  }
+
+  .brand-name {
+    font-size:13px;
+    letter-spacing:.1em;
+  }
+
+  .brand-type {
+    font-size:8px;
+    letter-spacing:.2em;
+  }
+
+  .nav-inner {
+    gap:18px;
+    padding:0 4%;
+  }
+
+  .nav-inner a {
+    font-size:9px;
+  }
+
+  .page-heading {
+    padding:45px 5% 27px;
+  }
+
+  .cover-section {
+    padding:0 4% 42px;
+  }
+
+  .cover-frame {
+    padding:7px;
+  }
+
+  .article-shell {
+    padding:0 6% 55px;
+  }
+
+  .article-intro {
+    padding:38px 0;
+  }
+
+  .article-intro p {
+    font-size:18px;
+  }
+
+  .article-section {
+    padding:27px 0;
+  }
+
+  .article-section p {
+    font-size:15px;
+    line-height:1.85;
+  }
+
+  .article-section.dark {
+    margin:22px -7%;
+    padding:36px 7%;
+  }
+
+  .pull-quote {
+    margin:28px 0;
+    padding:24px;
+  }
+
+  .magazine-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:19px 13px;
+  }
+
+  .collection-section {
+    padding:52px 5% 58px;
+  }
+
+  .magazine-card span {
+    font-size:12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="google_translate_element"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="language-area">
+      <select id="languageSelect" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+        <option value="ar">Arabic</option>
+        <option value="zh-CN">Simplified Chinese</option>
+        <option value="ru">Russian</option>
+        <option value="pt">Portuguese</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="it">Italian</option>
+        <option value="nl">Dutch</option>
+        <option value="tr">Turkish</option>
+        <option value="hi">Hindi</option>
+        <option value="id">Indonesian</option>
+        <option value="vi">Vietnamese</option>
+        <option value="th">Thai</option>
+        <option value="pl">Polish</option>
+        <option value="sv">Swedish</option>
+        <option value="fi">Finnish</option>
+        <option value="da">Danish</option>
+      </select>
+    </div>
+
+    <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
+      <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+      <span>
+        <span class="brand-name">PHRINUSOMYIS™</span>
+        <span class="brand-type">MAGAZINE</span>
+      </span>
+    </a>
+
+  </div>
+</header>
+
+<nav class="main-nav" aria-label="Magazine navigation">
+  <div class="nav-inner">
+    <a href="https://phrinusomyis.com/magazine/news">Collection</a>
+    <a href="https://phrinusomyis.com/magazine/the-edgewise">Edgewise</a>
+    <a href="https://phrinusomyis.com/magazine/the-big-story">The Big Story</a>
+    <a href="https://phrinusomyis.com/magazine/the-apex">The Apex</a>
+    <a href="https://phrinusomyis.com/magazine/the-chronicle">The Chronicle</a>
+    <a class="active" href="https://phrinusomyis.com/magazine/lifeline">Lifeline</a>
+    <a href="https://phrinusomyis.com/magazine/the-world-pulse">World Pulse</a>
+    <a href="https://phrinusomyis.com/magazine/the-mominants">The Mominants</a>
+    <a href="https://phrinusomyis.com/magazine/the-snow-journey">Snow Journey</a>
+    <a href="https://phrinusomyis.com/magazine/the-powershift">Powershift</a>
+    <a href="https://phrinusomyis.com/magazine/the-takeover">The Takeover</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-heading">
+    <div class="eyebrow">PHRINUSOMYIS™ Magazine</div>
+    <h1>LIFELINE</h1>
+    <div class="edition-label">EDITION 001</div>
+  </section>
+
+  <section class="cover-section">
+    <div class="cover-frame">
+      <img
+        src="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
+        alt="LIFELINE — PHRINUSOMYIS Magazine Edition 001"
+        loading="eager">
+    </div>
+
+    <div class="cover-caption">
+      <p>What keeps the world moving.</p>
+      <span>Edition 001</span>
+    </div>
+  </section>
+
+  <article class="article-shell">
+
+    <header class="article-intro">
+      <div class="article-kicker">The meaning of continuity</div>
+
+      <h2>The Things That Keep Life Moving Are Not Always the Things We See.</h2>
+
+      <p>
+        Every day, the world depends on countless connections, decisions,
+        relationships and structures. Some are visible. Many operate quietly
+        in the background. Together, they make continuity possible.
+        LIFELINE examines the foundations that sustain life and the often
+        overlooked forces that allow people, communities and entire societies
+        to keep moving.
+      </p>
+    </header>
+
+    <div class="article-body">
+
+      <section class="article-section">
+        <h3>Beyond What Is Visible</h3>
+
+        <p>
+          The world is often judged by what can be seen: the buildings that
+          define a city, the roads that connect its neighbourhoods, the
+          institutions that represent its authority, and the achievements
+          that attract public attention. Yet the visible result is only one
+          part of a much larger reality.
+        </p>
+
+        <p>
+          Behind every functioning environment are people and systems whose
+          contributions may never receive recognition. There are individuals
+          who maintain essential services, families who provide stability,
+          workers whose consistency supports entire industries, and decisions
+          made long before their consequences become apparent.
+        </p>
+
+        <p>
+          Their significance is not reduced by their lack of visibility.
+          In many cases, the opposite is true. The more essential a foundation
+          becomes, the easier it can be to overlook while everything continues
+          to work.
+        </p>
+
+        <p>
+          This is one of the defining characteristics of a lifeline: its value
+          is not measured by how often it attracts attention, but by what
+          depends on its existence.
+        </p>
+      </section>
+
+      <section class="article-section dark">
+        <span class="article-kicker">The foundation</span>
+
+        <h3>Continuity Is Built.</h3>
+
+        <p>
+          Continuity is sometimes mistaken for something automatic. Life
+          continues, businesses operate, communities grow and societies
+          advance. But none of these outcomes is guaranteed simply because
+          time passes.
+        </p>
+
+        <p>
+          Continuity requires preparation. It requires structure, knowledge,
+          responsibility and the ability to respond when circumstances
+          change. It depends on people who understand that their actions
+          extend beyond the immediate moment.
+        </p>
+
+        <p>
+          A system that works only under perfect conditions is not necessarily
+          a strong system. Strength is also revealed by its ability to
+          withstand pressure, adapt to disruption and preserve what matters
+          when the expected course of events changes.
+        </p>
+
+        <p>
+          This is why the foundations of life deserve serious consideration.
+          What sustains something over time is often more important than
+          what makes it impressive for a moment.
+        </p>
+      </section>
+
+      <section class="article-section">
+        <h3>The Human Connection</h3>
+
+        <p>
+          No structure exists in isolation from the people it serves. A
+          community is more than a collection of buildings. An organisation
+          is more than its name or its formal arrangements. A society is more
+          than its institutions. Their meaning is found in the lives they
+          touch and the possibilities they make available.
+        </p>
+
+        <p>
+          Human connection gives purpose to structure. It turns a service
+          into something useful, an idea into something that can be shared,
+          and an achievement into something that can influence the lives
+          of others.
+        </p>
+
+        <p>
+          The strongest connections are not always the loudest. They are
+          often demonstrated through reliability, mutual responsibility,
+          trust and the quiet assurance that someone or something will
+          remain present when it is needed.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            What sustains life is not always celebrated. Sometimes its
+            greatest achievement is simply that life can continue.
+          </p>
+        </div>
+
+        <p>
+          That understanding changes how we measure contribution. It asks
+          us to look beyond visibility and consider the lasting effect of
+          what people build, protect, maintain and pass on.
+        </p>
+      </section>
+
+      <section class="article-section">
+        <h3>Design, Structure and Purpose</h3>
+
+        <p>
+          Design is often associated with appearance. Structure is often
+          associated with arrangement. But both carry a deeper responsibility:
+          they determine how something functions, how people experience it
+          and whether its purpose can be fulfilled.
+        </p>
+
+        <p>
+          A well-considered design does more than attract the eye. It creates
+          relationships between elements. It gives direction to movement,
+          establishes order and makes an intended experience possible.
+          Structure gives that intention a form that can be understood,
+          used and sustained.
+        </p>
+
+        <p>
+          This principle reaches far beyond architecture or visual creation.
+          It applies to the way organisations are arranged, the way
+          opportunities are made accessible, the way knowledge is preserved
+          and the way people work together.
+        </p>
+
+        <p>
+          When purpose and structure are aligned, the result can serve
+          beyond its original moment. It becomes something that others
+          can understand, depend upon and build upon.
+        </p>
+      </section>
+
+      <section class="article-section dark">
+        <span class="article-kicker">Pressure and resilience</span>
+
+        <h3>The True Measure Appears When It Is Needed.</h3>
+
+        <p>
+          The importance of a lifeline is not always obvious during ordinary
+          conditions. Its significance becomes clearer when something is
+          interrupted, when a familiar arrangement no longer works, or when
+          people must depend on the foundations already in place.
+        </p>
+
+        <p>
+          Pressure reveals the quality of preparation. It exposes weaknesses
+          that comfort can conceal and demonstrates whether a structure has
+          been built with genuine understanding of its responsibilities.
+        </p>
+
+        <p>
+          Resilience, therefore, is not simply the ability to endure. It is
+          the capacity to preserve purpose while adapting to changing
+          circumstances. It is the discipline to continue without ignoring
+          what must be improved.
+        </p>
+
+        <p>
+          A meaningful response to difficulty does not end when the immediate
+          problem passes. It leaves behind stronger knowledge, better
+          decisions and a clearer understanding of what must be protected
+          in the future.
+        </p>
+      </section>
+
+      <section class="article-section">
+        <h3>What We Leave in Motion</h3>
+
+        <p>
+          Every generation inherits more than the physical world around it.
+          It inherits systems, values, knowledge, responsibilities and
+          unfinished work. Some of these foundations are strengthened.
+          Others are questioned, redesigned or replaced.
+        </p>
+
+        <p>
+          The choices made in one period can shape the opportunities
+          available in another. A decision to educate, preserve, organise
+          or create can continue producing value long after the person
+          responsible for it has moved on.
+        </p>
+
+        <p>
+          This is where the idea of a lifeline extends beyond immediate
+          survival. It becomes a question of continuity between generations:
+          what is carried forward, what is improved, and what must not be
+          allowed to disappear.
+        </p>
+
+        <p>
+          The lasting value of an undertaking is not limited to the moment
+          it is completed. Its greater significance may be found in what
+          becomes possible because it exists.
+        </p>
+      </section>
+
+      <section class="article-ending">
+        <div class="article-kicker">LIFELINE — Edition 001</div>
+
+        <p>
+          The world does not move through visible achievements alone.
+          It moves because countless foundations continue to serve a purpose,
+          because people maintain connections, and because ideas are given
+          the structure required to become part of everyday life.
+          <strong>
+            The measure of what we build is not only what it becomes, but
+            what it allows others to continue.
+          </strong>
+        </p>
+      </section>
+
+      <div class="share-area">
+        <button type="button" id="shareButton">Share Article</button>
+        <button type="button" id="copyButton">Copy Page Link</button>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="collection-section">
+    <div class="collection-inner">
+
+      <div class="collection-heading">
+        <span>PHRINUSOMYIS Magazine</span>
+        <h2>EDITION 001</h2>
+      </div>
+
+      <div class="magazine-grid">
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-edgewise">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="THE EDGEWISE Edition 001" loading="lazy">
+          <span>THE EDGEWISE</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-big-story">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg" alt="THE BIG STORY Edition 001" loading="lazy">
+          <span>THE BIG STORY</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-apex">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-APEX-Edition001.jpg" alt="THE APEX Edition 001" loading="lazy">
+          <span>THE APEX</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-chronicle">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg" alt="THE CHRONICLE Edition 001" loading="lazy">
+          <span>THE CHRONICLE</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/lifeline">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg" alt="LIFELINE Edition 001" loading="lazy">
+          <span>LIFELINE</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-world-pulse">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg" alt="THE WORLD PULSE Edition 001" loading="lazy">
+          <span>THE WORLD PULSE</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-mominants">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg" alt="THE MOMINANTS Edition 001" loading="lazy">
+          <span>THE MOMINANTS™</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-snow-journey">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg" alt="THE SNOW JOURNEY Edition 001" loading="lazy">
+          <span>THE SNOW JOURNEY</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-powershift">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg" alt="THE POWERSHIFT Edition 001" loading="lazy">
+          <span>THE POWERSHIFT</span>
+          <small>EDITION 001</small>
+        </a>
+
+        <a class="magazine-card" href="https://phrinusomyis.com/magazine/the-takeover">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg" alt="THE TAKEOVER Edition 001" loading="lazy">
+          <span>THE TAKEOVER</span>
+          <small>EDITION 001</small>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-brand">PHRINUSOMYIS™ MAGAZINE</div>
+  <div class="footer-slogan">COMMANDING THE WORLD STAGE™</div>
+  <div class="copyright">
+    © <span id="currentYear"></span> PHRINUSOMYIS™. All rights reserved.
+  </div>
+</footer>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+(function loadGoogleTranslate() {
+  var script = document.createElement('script');
+  script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  script.async = true;
+  document.body.appendChild(script);
+})();
+
+document.getElementById('languageSelect').addEventListener('change', function() {
+  var language = this.value;
+
+  if (language === 'en') {
+    var reset = document.querySelector('.goog-te-combo');
+    if (reset) {
+      reset.value = 'en';
+      reset.dispatchEvent(new Event('change'));
+    }
+    return;
+  }
+
+  var translateSelect = document.querySelector('.goog-te-combo');
+
+  if (translateSelect) {
+    translateSelect.value = language;
+    translateSelect.dispatchEvent(new Event('change'));
+  }
+});
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+var pageUrl = 'https://phrinusomyis.com/magazine/lifeline';
+var pageTitle = 'LIFELINE — Edition 001 | PHRINUSOMYIS Magazine';
+
+document.getElementById('shareButton').addEventListener('click', async function() {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: pageTitle,
+        text: 'LIFELINE — What keeps the world moving.',
+        url: pageUrl
+      });
+    } catch (error) {
+      if (error.name !== 'AbortError') {
+        copyPageLink();
+      }
+    }
+  } else {
+    copyPageLink();
+  }
+});
+
+function copyPageLink() {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(pageUrl).then(function() {
+      document.getElementById('copyButton').textContent = 'Link Copied';
+    }).catch(function() {
+      window.prompt('Copy this page link:', pageUrl);
+    });
+  } else {
+    window.prompt('Copy this page link:', pageUrl);
+  }
+}
+
+document.getElementById('copyButton').addEventListener('click', copyPageLink);
+</script>
+
+</body>
+</html>
