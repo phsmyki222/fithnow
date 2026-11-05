@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE POWERSHIFT — PHRINUSOMYIS™ MAGAZINE | Edition 001</title>
+  <meta name="description" content="THE POWERSHIFT — an editorial exploration of how power moves through institutions, technology, economies, culture and human society. PHRINUSOMYIS™ Magazine, Edition 001.">
+  <meta name="theme-color" content="#101010">
+  <link rel="canonical" href="https://phrinusomyis.com/magazine/the-powershift">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="THE POWERSHIFT — PHRINUSOMYIS™ MAGAZINE">
+  <meta property="og:description" content="An exploration of how power moves, changes hands and shapes the world.">
+  <meta property="og:image" content="https://phrinusomyis.com/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg">
+  <meta property="og:url" content="https://phrinusomyis.com/magazine/the-powershift">
+
+  <style>
+    :root {
+      --black: #101010;
+      --deep: #171717;
+      --gold: #c7a45b;
+      --gold-light: #dfc58e;
+      --ivory: #f3f0e8;
+      --white: #ffffff;
+      --muted: #aaa69d;
+      --line: rgba(199,164,91,.35);
+      --content: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--ivory);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.75;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, select { font: inherit; }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 20px clamp(18px, 5vw, 70px);
+      border-bottom: 1px solid var(--line);
+      background: #0b0b0b;
+    }
+
+    .language-control select {
+      max-width: 170px;
+      padding: 9px 12px;
+      color: var(--ivory);
+      background: #171717;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: right;
+      font-family: Arial, sans-serif;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: block;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .brand-section {
+      display: block;
+      margin-top: 3px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    .translate-hidden {
+      display: none;
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: #131313;
+      font-family: Arial, sans-serif;
+    }
+
+    .main-nav a {
+      color: #c5c0b5;
+      font-size: 11px;
+      letter-spacing: 1px;
+      transition: color .2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--gold-light);
+    }
+
+    .page-intro {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 66px 24px 34px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 17px 0 7px;
+      color: var(--ivory);
+      font-size: clamp(38px, 7vw, 76px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      line-height: 1.08;
+    }
+
+    .edition {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+    }
+
+    .cover-wrap {
+      width: min(900px, calc(100% - 36px));
+      margin: 25px auto 36px;
+      background: #1a1a1a;
+      border: 1px solid var(--line);
+      padding: 9px;
+    }
+
+    .cover-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .share-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0 20px 50px;
+    }
+
+    .share-row button {
+      padding: 11px 19px;
+      color: var(--gold-light);
+      background: transparent;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .share-row button:hover {
+      color: var(--black);
+      background: var(--gold);
+    }
+
+    .article-section {
+      padding: 76px 24px;
+    }
+
+    .article-section.light {
+      color: #24221e;
+      background: var(--ivory);
+    }
+
+    .article-section.dark {
+      color: var(--ivory);
+      background: var(--deep);
+    }
+
+    .article-inner {
+      max-width: 790px;
+      margin: 0 auto;
+    }
+
+    .section-number {
+      margin-bottom: 15px;
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    .light .section-number { color: #92713b; }
+
+    h2 {
+      margin: 0 0 26px;
+      font-size: clamp(27px, 4vw, 39px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .article-inner p {
+      margin: 0 0 21px;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .article-inner p:last-child { margin-bottom: 0; }
+
+    .article-inner strong { font-weight: 700; }
+
+    .pull-quote {
+      margin: 38px 0;
+      padding: 8px 0 8px 25px;
+      border-left: 2px solid var(--gold);
+      color: var(--gold-light);
+      font-size: clamp(23px, 4vw, 31px);
+      line-height: 1.45;
+    }
+
+    .light .pull-quote { color: #785b2e; }
+
+    .collection {
+      padding: 70px 24px 82px;
+      background: #0b0b0b;
+    }
+
+    .collection-inner {
+      max-width: var(--content);
+      margin: 0 auto;
+    }
+
+    .collection-heading {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .collection-heading h2 {
+      margin: 10px 0 0;
+      font-size: clamp(25px, 4vw, 35px);
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .cover-card {
+      display: block;
+      min-width: 0;
+      transition: transform .25s ease;
+    }
+
+    .cover-card:hover { transform: translateY(-5px); }
+
+    .cover-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border: 1px solid rgba(199,164,91,.3);
+    }
+
+    .cover-card span {
+      display: block;
+      padding-top: 10px;
+      color: #d6cdbb;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .cover-card.current span { color: var(--gold-light); }
+
+    footer {
+      padding: 35px 20px;
+      border-top: 1px solid var(--line);
+      background: #080808;
+      text-align: center;
+    }
+
+    .footer-title {
+      color: var(--ivory);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .footer-slogan {
+      margin-top: 9px;
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .copyright {
+      margin-top: 16px;
+      color: #77736b;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .cover-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .article-section { padding: 58px 22px; }
+      .article-inner p { font-size: 17px; }
+    }
+
+    @media (max-width: 520px) {
+      .site-header { padding: 14px 15px; }
+      .brand { gap: 8px; }
+      .brand img { width: 38px; height: 38px; }
+      .brand-name { font-size: 10px; letter-spacing: 1px; }
+      .brand-section { font-size: 9px; letter-spacing: 3px; }
+      .language-control select { max-width: 112px; padding: 8px 5px; font-size: 10px; }
+      .main-nav { gap: 10px 14px; padding: 14px 12px; }
+      .main-nav a { font-size: 9px; }
+      .page-intro { padding-top: 48px; }
+      .cover-wrap { width: calc(100% - 24px); padding: 5px; }
+      .article-section { padding: 48px 20px; }
+      .article-inner p { font-size: 16px; line-height: 1.85; }
+      .cover-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="language-control">
+      <select id="languageSelect" aria-label="Select language">
+        <option value="">Language</option>
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+        <option value="ar">Arabic</option>
+        <option value="zh-CN">Simplified Chinese</option>
+        <option value="ru">Russian</option>
+        <option value="pt">Portuguese</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="it">Italian</option>
+        <option value="nl">Dutch</option>
+        <option value="tr">Turkish</option>
+        <option value="hi">Hindi</option>
+        <option value="id">Indonesian</option>
+        <option value="vi">Vietnamese</option>
+        <option value="th">Thai</option>
+        <option value="pl">Polish</option>
+        <option value="sv">Swedish</option>
+        <option value="fi">Finnish</option>
+        <option value="da">Danish</option>
+      </select>
+    </div>
+
+    <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS homepage">
+      <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+      <span>
+        <span class="brand-name">PHRINUSOMYIS™</span>
+        <span class="brand-section">MAGAZINE</span>
+      </span>
+    </a>
+  </header>
+
+  <div id="google_translate_element" class="translate-hidden"></div>
+
+  <nav class="main-nav" aria-label="Magazine navigation">
+    <a href="https://phrinusomyis.com/magazine/news">COLLECTION</a>
+    <a href="https://phrinusomyis.com/magazine/the-edgewise">THE EDGEWISE</a>
+    <a href="https://phrinusomyis.com/magazine/the-big-story">THE BIG STORY</a>
+    <a href="https://phrinusomyis.com/magazine/the-apex">THE APEX</a>
+    <a href="https://phrinusomyis.com/magazine/the-chronicle">THE CHRONICLE</a>
+    <a href="https://phrinusomyis.com/magazine/lifeline">LIFELINE</a>
+    <a href="https://phrinusomyis.com/magazine/the-world-pulse">THE WORLD PULSE</a>
+    <a href="https://phrinusomyis.com/magazine/the-mominants">THE MOMINANTS™</a>
+    <a href="https://phrinusomyis.com/magazine/the-snow-journey">THE SNOW JOURNEY</a>
+    <a class="active" href="https://phrinusomyis.com/magazine/the-powershift">THE POWERSHIFT</a>
+    <a href="https://phrinusomyis.com/magazine/the-takeover">THE TAKEOVER</a>
+  </nav>
+
+  <main>
+    <section class="page-intro">
+      <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE</div>
+      <h1>THE POWERSHIFT</h1>
+      <div class="edition">EDITION 001</div>
+    </section>
+
+    <div class="cover-wrap">
+      <img
+        src="https://phrinusomyis.com/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg"
+        alt="THE POWERSHIFT — PHRINUSOMYIS Magazine Edition 001 cover"
+      >
+    </div>
+
+    <div class="share-row">
+      <button type="button" id="shareButton">Share Article</button>
+      <button type="button" id="copyButton">Copy Page Link</button>
+    </div>
+
+    <article>
+      <section class="article-section light">
+        <div class="article-inner">
+          <div class="section-number">01 — THE MOVEMENT OF POWER</div>
+          <h2>Power is never as still as it appears.</h2>
+
+          <p>Every age has its centres of influence. They are found in palaces, parliaments, trading cities, universities, factories, laboratories, financial institutions and the places where people gather to make decisions. Some are visible to the world. Others work quietly, shaping the conditions under which millions of people live.</p>
+
+          <p>Power is often associated with the person who occupies the highest office or commands the largest fortune. Yet the visible holder of authority is only one part of a much larger arrangement. Behind a decision may stand a network of institutions, knowledge, resources, relationships and public consent. A title can grant authority, but the systems surrounding that title determine how far its influence can travel.</p>
+
+          <p>History shows that these arrangements do not remain fixed. Cities rise while others lose their centrality. Industries that once appeared indispensable give way to new forms of production. Empires expand, encounter limits and eventually become chapters in the history of places they once governed. Influence changes direction, sometimes gradually and sometimes in a single generation.</p>
+
+          <p>The powershift is not simply the arrival of one powerful person after another. It is the movement of influence between people, institutions, economies, technologies and societies. It changes the choices available to a population and can alter the course of events long after the original decision-makers have disappeared.</p>
+
+          <div class="pull-quote">Power is not only held. It is organised, distributed, protected, challenged and transferred.</div>
+        </div>
+      </section>
+
+      <section class="article-section dark">
+        <div class="article-inner">
+          <div class="section-number">02 — THE FOUNDATIONS OF INFLUENCE</div>
+          <h2>What gives power its reach?</h2>
+
+          <p>Resources have always shaped the balance of influence. Fertile land supported settlements and agriculture. Waterways connected distant communities. Ports gave trading cities access to wider markets. Mineral deposits, energy supplies and productive industries changed the strategic importance of entire regions.</p>
+
+          <p>But resources alone do not explain lasting influence. Their value depends on the ability to understand, organise, develop and distribute them. A resource without infrastructure may remain inaccessible. Knowledge without institutions may struggle to reach the people who need it. Capital without sound judgement can disappear as quickly as it arrives.</p>
+
+          <p>Education is one of the most consequential foundations of power because it expands the capacity of people to interpret the world and participate in shaping it. Scientific research changes what societies can produce. Engineering changes what they can build. Law establishes rules through which authority is exercised. Culture gives communities a shared language of meaning, belonging and identity.</p>
+
+          <p>These foundations are connected. A country's influence may be strengthened by its universities, the reliability of its infrastructure, the quality of its institutions, the strength of its industries and the confidence its people place in the future. The same principle applies to organisations and communities on a smaller scale.</p>
+
+          <p>Influence becomes durable when the things that support it are stronger than the personality of the individual temporarily in charge.</p>
+        </div>
+      </section>
+
+      <section class="article-section light">
+        <div class="article-inner">
+          <div class="section-number">03 — THE GEOGRAPHY OF CHANGE</div>
+          <h2>The world does not have one centre.</h2>
+
+          <p>For centuries, maps of influence have been redrawn by movement: the movement of people, goods, ideas, money, knowledge and technology. A commercial route can transform a coastal settlement. A new industrial centre can attract workers from distant regions. A transport corridor can connect communities that previously had limited access to markets and opportunity.</p>
+
+          <p>Geography matters, but it does not dictate a permanent position in the world. Countries and cities inherit different advantages and face different constraints. Their future influence depends partly on what they do with those conditions: the institutions they build, the skills they develop, the relationships they establish and the opportunities they make accessible.</p>
+
+          <p>Africa, Asia, Europe, the Americas and the wider world are not isolated chapters in separate histories. Their economies, cultures and decisions increasingly intersect. A disruption in one region can affect production elsewhere. A scientific discovery can change industries across continents. A cultural movement can begin in one community and find an audience around the world.</p>
+
+          <p>The distribution of global influence is therefore a living process. It is shaped by cooperation as much as competition, by access as much as possession, and by the ability to contribute something valuable to a connected world.</p>
+
+          <p>When influence moves, the consequences are rarely confined to the place where the movement began.</p>
+        </div>
+      </section>
+
+      <section class="article-section dark">
+        <div class="article-inner">
+          <div class="section-number">04 — TECHNOLOGY AND THE NEW LEVERS</div>
+          <h2>When the tools change, the balance changes.</h2>
+
+          <p>Technology has repeatedly altered the relationship between authority and possibility. The printing press widened access to written knowledge. Industrial machinery changed production and the organisation of labour. Electricity extended the operating hours of cities and industries. Telecommunications reduced the distance between decisions and their consequences.</p>
+
+          <p>Digital networks have added another transformation. Information can now travel across borders in seconds. A small organisation can reach an international audience. A local business can serve customers far beyond its immediate surroundings. Researchers can collaborate across continents, while individuals can publish ideas without depending entirely on the institutions that once controlled distribution.</p>
+
+          <p>Yet access to technology is not the same as control over its benefits. Infrastructure, technical skills, ownership, regulation and the ability to convert information into useful decisions remain important. The same technology can create opportunity for one community and dependency for another.</p>
+
+          <p>Artificial intelligence, automation, advanced manufacturing and new forms of communication are changing how work is organised and how value is created. Their significance will not be measured only by what machines can do. It will also be measured by the choices societies make about responsibility, access, employment, education and the distribution of the gains.</p>
+
+          <div class="pull-quote">A new tool can change the possibilities of an age. The institutions around it determine who can use those possibilities.</div>
+        </div>
+      </section>
+
+      <section class="article-section light">
+        <div class="article-inner">
+          <div class="section-number">05 — THE HUMAN DIMENSION</div>
+          <h2>Influence is also built through trust.</h2>
+
+          <p>Not every form of power can be measured in territory, money or formal authority. A teacher can change the direction of a student's life. A doctor can restore the future of a family. An artist can give expression to an experience that a society has struggled to describe. A community leader can bring people together around a common responsibility.</p>
+
+          <p>These forms of influence may not appear on a national balance sheet, but they shape the foundations on which societies depend. They create knowledge, confidence, solidarity and a sense of possibility. Their effects can extend across generations.</p>
+
+          <p>Trust is particularly important because authority without trust often has to rely on force, pressure or constant supervision. Trust, by contrast, makes cooperation possible. It allows institutions to function, partnerships to endure and people to contribute beyond what can be demanded of them.</p>
+
+          <p>This does not mean that trust should replace accountability. Responsible influence requires both. People and institutions entrusted with power must be answerable for the decisions they make and the consequences those decisions create.</p>
+
+          <p>The strongest influence is not always the loudest. Sometimes it is the work that changes a person's opportunities, strengthens a community or leaves behind a system that continues to serve people long after its creators have moved on.</p>
+        </div>
+      </section>
+
+      <section class="article-section dark">
+        <div class="article-inner">
+          <div class="section-number">06 — THE POWER OF SPORT</div>
+          <h2>Competition reveals more than a result.</h2>
+
+          <p>Sport offers a distinctive view of power because it places human ability within a visible structure of rules, performance, pressure and consequence. An athlete may possess extraordinary physical ability, but performance also depends on preparation, judgement, discipline, coordination and the capacity to respond when circumstances change.</p>
+
+          <p>On the field of competition, authority is tested through action. A reputation cannot complete the contest. A history of success cannot guarantee the next result. Participants must demonstrate their capabilities within the conditions of the event, and the outcome becomes part of a shared public record.</p>
+
+          <p>Sport also carries influence beyond the competitors themselves. It can bring communities together, give nations moments of collective identity, create livelihoods and build connections between people who may otherwise have little in common. Its events become part of cultural memory. Certain performances remain meaningful long after the stadium has emptied.</p>
+
+          <p>Within this wider landscape, <strong>PHRINUSOMYIS™</strong> approaches sport as an international field of organised competition, original formats and public experience. Through <strong>ZEAVIQ SPORTS™</strong> and the wider sports work associated with the organisation, the structure of competition becomes an opportunity to examine how athletic ability, rules, decision-making and live presentation can combine to create distinctive sporting experiences.</p>
+
+          <p><strong>Sports Theater™</strong> reflects a broader understanding of competition: sport can be structured as a live experience in which athletic performance, endurance, control and decisions under pressure carry meaning beyond the final score. The design of a competition determines not only how a winner is identified, but also what participants must demonstrate and what an audience is invited to witness.</p>
+
+          <p>This is one of the important dimensions of a powershift. New forms of organisation can change how a field is experienced, how talent is recognised and how an audience understands the possibilities within it. In sport, as in other parts of society, the rules and structures surrounding performance matter.</p>
+        </div>
+      </section>
+
+      <section class="article-section light">
+        <div class="article-inner">
+          <div class="section-number">07 — RESPONSIBILITY AND CONSEQUENCE</div>
+          <h2>Every shift leaves something behind.</h2>
+
+          <p>Changes in power create opportunities, but they also create responsibilities. When an industry expands, workers and communities experience the effects. When a city develops, the decisions made about housing, transport, public space and infrastructure influence who benefits. When a technology becomes widespread, its design and governance can shape the rights and choices of entire populations.</p>
+
+          <p>It is therefore not enough to celebrate change simply because something new has replaced what came before. A new arrangement must be examined through its consequences. Does it improve access? Does it create lasting value? Does it strengthen the institutions people depend on? Does it distribute opportunity more widely, or concentrate advantage in fewer hands?</p>
+
+          <p>History contains examples of extraordinary achievements that were accompanied by exploitation, exclusion or environmental damage. It also contains examples of difficult transitions that eventually created broader possibilities. The difference often lies in the decisions made during the transition and the responsibilities accepted by those with influence.</p>
+
+          <p>Power can open doors, but it can also close them. It can protect the public interest or place it at risk. Its true significance is revealed not only by the scale of what it controls, but by the quality of what it leaves behind.</p>
+        </div>
+      </section>
+
+      <section class="article-section dark">
+        <div class="article-inner">
+          <div class="section-number">08 — THE NEXT BALANCE</div>
+          <h2>The future belongs to more than the powerful of today.</h2>
+
+          <p>Every generation inherits a world shaped by decisions made before it arrived. It inherits institutions, borders, infrastructure, knowledge, traditions and unfinished problems. It also inherits the ability to reconsider those arrangements and build something different.</p>
+
+          <p>The next balance of influence will be shaped by the way societies respond to education, climate pressures, demographic change, technological transformation, economic opportunity and the movement of ideas across borders. No single institution or country can determine every outcome. The future will emerge from many connected decisions, made at different levels and under different conditions.</p>
+
+          <p>Some shifts will be dramatic and visible. Others will take place through years of preparation: a school improving its standards, a research institution producing new knowledge, a community building stronger infrastructure, an organisation establishing a lasting system, or a new generation developing skills that change the work available to them.</p>
+
+          <p>The most consequential shifts may not announce themselves at the moment they begin. Their significance becomes clearer when their effects reach people, institutions and places far beyond their point of origin.</p>
+
+          <p>Power is always moving. The question is not simply who occupies the position of influence today, but what kind of world is being shaped by the decisions made from that position — and what will remain when the balance changes again.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <section class="collection">
+    <div class="collection-inner">
+      <div class="collection-heading">
+        <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE</div>
+        <h2>EDITION 001</h2>
+      </div>
+
+      <div class="cover-grid">
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-edgewise">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="THE EDGEWISE cover">
+          <span>THE EDGEWISE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-big-story">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg" alt="THE BIG STORY cover">
+          <span>THE BIG STORY</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-apex">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-APEX-Edition001.jpg" alt="THE APEX cover">
+          <span>THE APEX</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-chronicle">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg" alt="THE CHRONICLE cover">
+          <span>THE CHRONICLE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/lifeline">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg" alt="LIFELINE cover">
+          <span>LIFELINE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-world-pulse">
+          <img src="https://phrinusomyis.com/PHRINUSOMYISTHEWORLDPULSEEdition001.jpg" alt="THE WORLD PULSE cover">
+          <span>THE WORLD PULSE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-mominants">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg" alt="THE MOMINANTS cover">
+          <span>THE MOMINANTS™</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-snow-journey">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg" alt="THE SNOW JOURNEY cover">
+          <span>THE SNOW JOURNEY</span>
+        </a>
+
+        <a class="cover-card current" href="https://phrinusomyis.com/magazine/the-powershift">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg" alt="THE POWERSHIFT cover">
+          <span>THE POWERSHIFT</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-takeover">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg" alt="THE TAKEOVER cover">
+          <span>THE TAKEOVER</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-title">PHRINUSOMYIS™ MAGAZINE</div>
+    <div class="footer-slogan">COMMANDING THE WORLD STAGE™</div>
+    <div class="copyright">© <span id="year"></span> PHRINUSOMYIS™. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const pageUrl = "https://phrinusomyis.com/magazine/the-powershift";
+
+    document.getElementById("shareButton").addEventListener("click", async () => {
+      const shareData = {
+        title: "THE POWERSHIFT — PHRINUSOMYIS™ MAGAZINE",
+        text: "Read THE POWERSHIFT — Edition 001.",
+        url: pageUrl
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (error) {
+          if (error.name !== "AbortError") {
+            copyPageLink();
+          }
+        }
+      } else {
+        copyPageLink();
+      }
+    });
+
+    document.getElementById("copyButton").addEventListener("click", copyPageLink);
+
+    async function copyPageLink() {
+      try {
+        await navigator.clipboard.writeText(pageUrl);
+        document.getElementById("copyButton").textContent = "Link Copied";
+        setTimeout(() => {
+          document.getElementById("copyButton").textContent = "Copy Page Link";
+        }, 2000);
+      } catch (error) {
+        window.prompt("Copy this page link:", pageUrl);
+      }
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "en",
+        autoDisplay: false
+      }, "google_translate_element");
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", function () {
+      const language = this.value;
+      if (!language) return;
+
+      const attemptTranslate = () => {
+        const select = document.querySelector(".goog-te-combo");
+        if (select) {
+          select.value = language;
+          select.dispatchEvent(new Event("change"));
+        }
+      };
+
+      attemptTranslate();
+      setTimeout(attemptTranslate, 700);
+    });
+  </script>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
