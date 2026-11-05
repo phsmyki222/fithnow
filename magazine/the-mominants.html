@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>THE MOMINANTS™ | PHRINUSOMYIS™ MAGAZINE — EDITION 001</title>
+  <meta name="description" content="THE MOMINANTS™ — An exploration of human experience, culture, history, identity, life and the stories that shape the world. PHRINUSOMYIS™ MAGAZINE, Edition 001.">
+  <meta name="theme-color" content="#080808">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="THE MOMINANTS™ | PHRINUSOMYIS™ MAGAZINE">
+  <meta property="og:description" content="The experiences, ideas and stories through which the world takes shape.">
+  <meta property="og:image" content="https://phrinusomyis.com/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg">
+  <meta property="og:url" content="https://phrinusomyis.com/magazine/the-mominants">
+
+  <style>
+    :root {
+      --black: #080808;
+      --deep: #101010;
+      --panel: #171717;
+      --gold: #c6a45c;
+      --gold-light: #e0c98e;
+      --ivory: #f3efe6;
+      --muted: #aaa69e;
+      --line: rgba(198,164,92,.32);
+      --max: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
+    body {
+      background: var(--black);
+      color: var(--ivory);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, select {
+      font: inherit;
+    }
+
+    .topbar {
+      min-height: 94px;
+      padding: 18px 5.5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8,8,8,.97);
+    }
+
+    .language-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .language-area label {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    #languageSelect {
+      background: #111;
+      color: var(--ivory);
+      border: 1px solid rgba(198,164,92,.55);
+      padding: 9px 28px 9px 10px;
+      border-radius: 0;
+      font-size: 12px;
+      outline: none;
+      max-width: 155px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-align: right;
+    }
+
+    .brand img {
+      width: 49px;
+      height: 49px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: var(--ivory);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      line-height: 1.4;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      margin-top: 3px;
+    }
+
+    .main-nav {
+      padding: 14px 5.5%;
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: #0d0d0d;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) #111;
+    }
+
+    .main-nav a {
+      color: #aaa69e;
+      font-size: 10px;
+      letter-spacing: 1.35px;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--gold-light);
+    }
+
+    .main-nav a.home-link {
+      color: var(--ivory);
+    }
+
+    .page-intro {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 75px 6% 42px;
+      text-align: center;
+    }
+
+    .edition-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    h1 {
+      color: var(--ivory);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(39px, 7.5vw, 88px);
+      font-weight: 400;
+      letter-spacing: 2px;
+      line-height: 1.08;
+    }
+
+    .cover-statement {
+      color: var(--gold-light);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(18px, 2.5vw, 25px);
+      font-style: italic;
+      margin-top: 22px;
+    }
+
+    .cover-wrap {
+      width: min(100% - 40px, 1120px);
+      margin: 0 auto 65px;
+      background: #111;
+      border: 1px solid rgba(198,164,92,.25);
+      padding: 10px;
+    }
+
+    .cover-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .article-actions {
+      max-width: var(--max);
+      margin: -32px auto 48px;
+      padding: 0 6%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .action-button {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ivory);
+      padding: 11px 20px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .action-button:hover {
+      background: var(--gold);
+      color: #080808;
+      border-color: var(--gold);
+    }
+
+    .article {
+      width: 100%;
+    }
+
+    .article-section {
+      padding: 75px 7%;
+    }
+
+    .article-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .section-dark {
+      background: var(--deep);
+    }
+
+    .section-light {
+      background: var(--ivory);
+      color: #24221e;
+    }
+
+    .section-gold {
+      background: #17140e;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-number {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-light .section-number {
+      color: #92723a;
+    }
+
+    .article-section h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(29px, 4.5vw, 43px);
+      line-height: 1.2;
+      font-weight: 400;
+      margin-bottom: 28px;
+    }
+
+    .article-section p {
+      font-size: 16px;
+      line-height: 1.95;
+      margin-bottom: 21px;
+      font-weight: 400;
+    }
+
+    .article-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-light p {
+      color: #39362f;
+    }
+
+    .article-section strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .section-light strong {
+      color: #785c2c;
+    }
+
+    .pull-quote {
+      max-width: 790px;
+      margin: 35px auto;
+      padding: 25px 0;
+      color: var(--gold-light);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(25px, 4vw, 39px);
+      line-height: 1.4;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .section-light .pull-quote {
+      color: #785c2c;
+    }
+
+    .closing {
+      text-align: center;
+      padding-top: 95px;
+      padding-bottom: 95px;
+    }
+
+    .closing h2 {
+      color: var(--gold-light);
+      font-size: clamp(29px, 5vw, 48px);
+      letter-spacing: 2px;
+    }
+
+    .closing p {
+      max-width: 720px;
+      margin: 22px auto 0;
+    }
+
+    .collection {
+      padding: 75px 5.5%;
+      background: #0b0b0b;
+      border-top: 1px solid var(--line);
+    }
+
+    .collection-heading {
+      max-width: var(--max);
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    .collection-heading span {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .collection-heading h2 {
+      color: var(--ivory);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(27px, 4vw, 38px);
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .cover-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .cover-card {
+      display: block;
+      border: 1px solid rgba(198,164,92,.18);
+      background: #121212;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .cover-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .cover-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: #171717;
+    }
+
+    .cover-card span {
+      display: block;
+      padding: 12px 9px;
+      color: var(--ivory);
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 40px 6%;
+      background: #050505;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: var(--ivory);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .footer-slogan {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+      margin-top: 9px;
+    }
+
+    .copyright {
+      color: #77736b;
+      font-size: 10px;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    #google_translate_element {
+      display: none;
+    }
+
+    .goog-te-banner-frame,
+    .goog-te-gadget,
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+
+    @media (max-width: 900px) {
+      .cover-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        min-height: 75px;
+        padding: 13px 4%;
+        gap: 10px;
+      }
+
+      .language-area {
+        gap: 5px;
+      }
+
+      .language-area label {
+        display: none;
+      }
+
+      #languageSelect {
+        max-width: 115px;
+        font-size: 11px;
+        padding: 8px 5px;
+      }
+
+      .brand {
+        gap: 7px;
+      }
+
+      .brand img {
+        width: 37px;
+        height: 37px;
+      }
+
+      .brand-name {
+        font-size: 11px;
+        letter-spacing: 1.2px;
+      }
+
+      .brand-name span {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+      }
+
+      .main-nav {
+        padding: 12px 4%;
+        gap: 18px;
+      }
+
+      .main-nav a {
+        font-size: 9px;
+      }
+
+      .page-intro {
+        padding: 56px 5% 30px;
+      }
+
+      .cover-wrap {
+        width: calc(100% - 24px);
+        padding: 6px;
+        margin-bottom: 52px;
+      }
+
+      .article-actions {
+        margin-top: -20px;
+        margin-bottom: 32px;
+      }
+
+      .action-button {
+        padding: 10px 13px;
+        font-size: 9px;
+      }
+
+      .article-section {
+        padding: 55px 7%;
+      }
+
+      .article-section p {
+        font-size: 15px;
+        line-height: 1.85;
+      }
+
+      .cover-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .collection {
+        padding: 58px 4%;
+      }
+
+      .cover-card span {
+        font-size: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="google_translate_element"></div>
+
+  <header class="topbar">
+    <div class="language-area">
+      <label for="languageSelect">Language</label>
+      <select id="languageSelect" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+        <option value="ar">Arabic</option>
+        <option value="zh-CN">Chinese</option>
+        <option value="ru">Russian</option>
+        <option value="pt">Portuguese</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="it">Italian</option>
+        <option value="nl">Dutch</option>
+        <option value="tr">Turkish</option>
+        <option value="hi">Hindi</option>
+        <option value="id">Indonesian</option>
+        <option value="vi">Vietnamese</option>
+        <option value="th">Thai</option>
+        <option value="pl">Polish</option>
+        <option value="sv">Swedish</option>
+        <option value="fi">Finnish</option>
+        <option value="da">Danish</option>
+      </select>
+    </div>
+
+    <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
+      <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+      <div class="brand-name">
+        PHRINUSOMYIS™
+        <span>MAGAZINE</span>
+      </div>
+    </a>
+  </header>
+
+  <nav class="main-nav" aria-label="Magazine navigation">
+    <a class="home-link" href="https://phrinusomyis.com/magazine/news">COLLECTION</a>
+    <a href="https://phrinusomyis.com/magazine/the-edgewise">THE EDGEWISE</a>
+    <a href="https://phrinusomyis.com/magazine/the-big-story">THE BIG STORY</a>
+    <a href="https://phrinusomyis.com/magazine/the-apex">THE APEX</a>
+    <a href="https://phrinusomyis.com/magazine/the-chronicle">THE CHRONICLE</a>
+    <a href="https://phrinusomyis.com/magazine/lifeline">LIFELINE</a>
+    <a href="https://phrinusomyis.com/magazine/the-world-pulse">THE WORLD PULSE</a>
+    <a class="active" href="https://phrinusomyis.com/magazine/the-mominants">THE MOMINANTS™</a>
+    <a href="https://phrinusomyis.com/magazine/the-snow-journey">THE SNOW JOURNEY</a>
+    <a href="https://phrinusomyis.com/magazine/the-powershift">THE POWERSHIFT</a>
+    <a href="https://phrinusomyis.com/magazine/the-takeover">THE TAKEOVER</a>
+  </nav>
+
+  <main>
+    <section class="page-intro">
+      <div class="edition-label">PHRINUSOMYIS MAGAZINE · EDITION 001</div>
+      <h1>THE MOMINANTS™</h1>
+      <p class="cover-statement">The stories that become part of who we are.</p>
+    </section>
+
+    <div class="cover-wrap">
+      <img
+        src="https://phrinusomyis.com/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
+        alt="THE MOMINANTS™ — PHRINUSOMYIS Magazine Edition 001 cover"
+      >
+    </div>
+
+    <div class="article-actions">
+      <button class="action-button" id="shareButton" type="button">Share Article</button>
+      <button class="action-button" id="copyButton" type="button">Copy Article Link</button>
+    </div>
+
+    <article class="article">
+
+      <section class="article-section section-dark">
+        <div class="article-inner">
+          <span class="section-number">01 — THE MAKING OF A STORY</span>
+          <h2>Some things happen. Others become part of history.</h2>
+
+          <p>
+            Human life is made up of experiences that rarely announce their
+            importance when they occur. A child hears a story from a grandparent.
+            A family gathers around a meal. A community celebrates an achievement.
+            An individual makes a decision without knowing how far its consequences
+            will travel. A group of people creates something that did not exist
+            before, and an idea begins to take a life of its own.
+          </p>
+
+          <p>
+            At first, these experiences may appear ordinary. They belong to
+            everyday life, to the conversations and activities that fill a
+            person's days. Yet some of them become reference points. They are
+            remembered, repeated, recorded and passed from one generation to
+            another. Their significance grows as people discover what they
+            represented and what followed.
+          </p>
+
+          <p>
+            History is not made only by the events that occupy the largest
+            pages of textbooks. It is also shaped by the experiences of people,
+            the customs of communities, the decisions of institutions and the
+            ideas that gradually alter the way society understands itself.
+          </p>
+
+          <p>
+            The story of humanity is therefore much larger than a sequence of
+            dates. It is a continuing account of how people live, create,
+            remember, change and give meaning to the world around them.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section section-light">
+        <div class="article-inner">
+          <span class="section-number">02 — BEFORE THE PRESENT</span>
+          <h2>The past is not as distant as it appears.</h2>
+
+          <p>
+            Long before the modern world took its present shape, people were
+            already building societies, establishing traditions, exchanging
+            knowledge, preparing food, creating art, competing, trading and
+            finding ways to explain the world they inhabited.
+          </p>
+
+          <p>
+            Across ancient civilisations, people developed systems of belief,
+            forms of government, methods of construction and ways of organising
+            collective life. They created objects that served practical needs
+            and others that expressed beauty, status, identity or devotion.
+            They celebrated victories, mourned losses, marked seasons and
+            preserved accounts of events they considered important.
+          </p>
+
+          <p>
+            The details differed from one civilisation to another, but a
+            common human question remained: how could life be organised,
+            protected, understood and passed forward?
+          </p>
+
+          <p>
+            The answer was never permanent. Every generation inherited
+            something from those before it and added its own interpretation.
+            Languages evolved. Traditions travelled. Knowledge was preserved
+            or lost. New ways of living emerged, sometimes through deliberate
+            invention and sometimes through circumstances no one had expected.
+          </p>
+
+          <p>
+            What we call the past is not simply what has ended. It is also
+            the foundation beneath many things that continue to define the
+            present. The buildings we preserve, the foods we prepare, the
+            words we speak, the institutions we trust and the customs we
+            question all carry traces of earlier lives.
+          </p>
+
+          <div class="pull-quote">
+            Every generation receives a story it did not begin.
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section section-dark">
+        <div class="article-inner">
+          <span class="section-number">03 — CULTURE AND THE TABLE</span>
+          <h2>Sometimes a culture introduces itself through food.</h2>
+
+          <p>
+            A meal can carry an entire history. The ingredients may reveal
+            the geography of a place. The method of preparation may reflect
+            generations of knowledge. The spices, textures and combinations
+            may tell stories of trade, migration, agriculture, adaptation
+            and encounters between different peoples.
+          </p>
+
+          <p>
+            Across the world, food has always been more than nourishment.
+            It marks celebrations, welcomes guests, expresses hospitality
+            and brings families together. Recipes are often preserved
+            through practice rather than written records. A particular
+            dish can connect someone living far from their birthplace
+            to the language, landscape and family traditions they grew up with.
+          </p>
+
+          <p>
+            Consider how a familiar ingredient can take on different
+            meanings in different places. The same basic food may be
+            prepared with different techniques, accompanied by different
+            ingredients and served on different occasions. The result
+            reflects the environment and imagination of the people
+            who have made it their own.
+          </p>
+
+          <p>
+            Food also reveals how cultures meet. Trade introduces new
+            ingredients. Migration carries recipes across borders.
+            Communities adapt what they encounter and create traditions
+            that may eventually become part of a country's wider identity.
+            What begins in one place can find a home somewhere else.
+          </p>
+
+          <p>
+            A table can therefore become a place of cultural memory.
+            It allows people to preserve identity while sharing it with
+            others. A dish is not only something prepared and consumed;
+            it can be a record of where people have been and how their
+            lives have changed.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section section-light">
+        <div class="article-inner">
+          <span class="section-number">04 — THE QUESTION OF LIFE</span>
+          <h2>Ordinary life contains questions that are anything but ordinary.</h2>
+
+          <p>
+            People wake up, work, travel, eat, communicate, raise families,
+            build relationships and make decisions. These activities can
+            become so familiar that their deeper significance disappears
+            from view. Yet each is connected to a much larger story about
+            what it means to live.
+          </p>
+
+          <p>
+            Why do people gather? Why do societies establish rules?
+            Why do families preserve certain customs? Why does one
+            community celebrate a particular achievement while another
+            remembers a different kind of sacrifice? Why do people
+            create institutions, build homes, travel across continents
+            or devote years to mastering a skill?
+          </p>
+
+          <p>
+            There is rarely one answer. Human behaviour is shaped by
+            necessity, emotion, knowledge, environment, memory,
+            opportunity and belief. The same action can carry different
+            meanings depending on the person, the circumstances and
+            the society in which it takes place.
+          </p>
+
+          <p>
+            This complexity is part of what makes life worth examining.
+            Beneath familiar routines are systems of meaning that
+            influence how people see themselves and relate to others.
+            What appears simple from the outside may contain generations
+            of experience, difficult choices and accumulated understanding.
+          </p>
+
+          <p>
+            To take everyday life seriously is not to make it complicated.
+            It is to recognise that the ordinary is often where the
+            most important parts of human existence are found.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section section-gold">
+        <div class="article-inner">
+          <span class="section-number">05 — THE TURNING OF THE WORLD</span>
+          <h2>Not every change begins with a grand announcement.</h2>
+
+          <p>
+            Some developments begin with a question. Others begin with
+            dissatisfaction, curiosity, necessity or the recognition
+            that an existing way of doing things no longer answers
+            the needs of the people it serves.
+          </p>
+
+          <p>
+            A new method can alter an industry. A discovery can change
+            how a society understands nature. A movement can give
+            people language for an experience they previously struggled
+            to express. A new institution can create a structure through
+            which an idea becomes organised, visible and lasting.
+          </p>
+
+          <p>
+            The early stages of change are not always easy to recognise.
+            What later appears inevitable may once have seemed unusual,
+            impractical or difficult to understand. Its importance
+            becomes clearer through what it makes possible and through
+            the people who carry it forward.
+          </p>
+
+          <p>
+            This is one reason the record of human progress must include
+            more than its celebrated outcomes. It must also recognise
+            the thinking, preparation, work and organisation that allow
+            new directions to become real.
+          </p>
+
+          <p>
+            The world is not shaped only by those who respond to existing
+            circumstances. It is also shaped by those who identify
+            possibilities that have not yet been given a form.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section section-dark">
+        <div class="article-inner">
+          <span class="section-number">06 — AN ORGANIZATION BECOMES PART OF THE STORY</span>
+          <h2>Ideas acquire a different meaning when they become institutions.</h2>
+
+          <p>
+            An organization is more than its name, its visual identity
+            or the words used to describe it. Its deeper character is
+            found in the work it undertakes, the structures it establishes,
+            the standards it maintains and the contribution it makes
+            to the field in which it operates.
+          </p>
+
+          <p>
+            <strong>PHRINUSOMYIS™</strong> is an international sports
+            organization that develops, owns and administers sports
+            competitions and Sports Theater™ worldwide. Its place in
+            the wider story of sport is connected to the creation of
+            original sports formats and a distinct approach to
+            competitive experiences.
+          </p>
+
+          <p>
+            Sport itself has a long human history. Across societies,
+            people have used physical contests to test ability,
+            demonstrate discipline, establish standards, represent
+            communities and create shared experiences. The forms have
+            changed across time and geography, but the human interest
+            in competition has remained significant.
+          </p>
+
+          <p>
+            The development of sport is therefore not only a record
+            of games and champions. It is also a record of organisation:
+            how competitions are structured, how rules establish
+            fairness, how participants are prepared, how audiences
+            experience events and how sporting identities become
+            part of cultural memory.
+          </p>
+
+          <p>
+            Through <strong>ZEAVIQ SPORTS™</strong> and the wider
+            PHRINUSOMYIS™ sporting framework, the organisation's
+            story belongs within this continuing account of how
+            competitive sport is shaped, presented and experienced.
+            It is part of a broader conversation about the place
+            sport occupies in society and the forms it can take
+            as human expectations evolve.
+          </p>
+
+          <p>
+            This is how an organisation becomes part of a larger
+            narrative: not simply by existing, but through the
+            identity it establishes, the work it administers and
+            the contribution its activities make to the world
+            around it.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section section-light">
+        <div class="article-inner">
+          <span class="section-number">07 — SPORT AS HUMAN EXPRESSION</span>
+          <h2>Competition reveals more than the result.</h2>
+
+          <p>
+            A sporting contest has an immediate outcome. Someone wins,
+            someone loses, a record is set or a performance becomes
+            part of the history of a competition. But the meaning
+            of sport is rarely exhausted by the final score.
+          </p>
+
+          <p>
+            The contest reveals preparation, discipline, judgement,
+            courage, coordination and the ability to respond under
+            pressure. It brings individual effort into a public
+            setting, where the performance can be witnessed,
+            remembered and discussed.
+          </p>
+
+          <p>
+            For spectators, sport can create a shared experience
+            among people who may otherwise have little in common.
+            Different generations can remember the same contest
+            for different reasons. A national team can represent
+            more than its players. A local competition can become
+            part of a community's identity. A remarkable performance
+            can remain in public memory long after the event itself.
+          </p>
+
+          <p>
+            The design of a competition influences what participants
+            must demonstrate and what audiences are able to appreciate.
+            Its rules, structure, environment and presentation are
+            not incidental details. They determine the character
+            of the experience.
+          </p>
+
+          <p>
+            As sport continues to evolve, the responsibility of
+            organisations is to understand both its established
+            significance and the possibilities for new forms
+            of competition. The history of sport is not finished.
+            It continues wherever people create, administer,
+            participate in and experience competition.
+          </p>
+
+          <div class="pull-quote">
+            A contest may end with a result. Its meaning can continue for generations.
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section section-dark">
+        <div class="article-inner">
+          <span class="section-number">08 — THE STORIES WE CHOOSE TO KEEP</span>
+          <h2>Memory gives experiences a place beyond their own time.</h2>
+
+          <p>
+            People do not remember everything equally. Certain experiences
+            remain because they changed a relationship, revealed something
+            unexpected, represented a collective achievement or became
+            connected to a significant period in life.
+          </p>
+
+          <p>
+            Communities preserve their stories through monuments,
+            photographs, archives, ceremonies, oral traditions,
+            publications, performances and places of historical
+            importance. Each method offers a different way to carry
+            information and meaning into the future.
+          </p>
+
+          <p>
+            What is preserved influences what later generations can
+            understand. When a story is recorded carefully, people
+            who were not present can still examine its circumstances,
+            consider its consequences and learn from the choices
+            that shaped it.
+          </p>
+
+          <p>
+            But preservation is not simply the act of keeping everything.
+            It requires judgement: what deserves to be documented,
+            whose experiences should be included, what evidence
+            supports the account and how the meaning of the past
+            can be presented without losing its complexity.
+          </p>
+
+          <p>
+            A society's memory is part of its inheritance. It can
+            provide continuity, reveal mistakes, honour achievement
+            and help people understand how the present came to be.
+            The stories that survive influence the questions
+            future generations will ask.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section section-light">
+        <div class="article-inner">
+          <span class="section-number">09 — THE FUTURE OF HUMAN EXPERIENCE</span>
+          <h2>The future will be remembered by people who have not yet arrived.</h2>
+
+          <p>
+            Every generation makes choices within circumstances it
+            did not create. It inherits knowledge, systems, traditions,
+            opportunities and problems. It then decides what to
+            preserve, what to improve, what to replace and what
+            to create.
+          </p>
+
+          <p>
+            The future will contain new forms of communication,
+            new ways of working, new cultural expressions and
+            new structures for organising society. Some changes
+            will be gradual. Others may transform entire industries
+            or alter how people understand their place in the world.
+          </p>
+
+          <p>
+            Yet technology and invention alone cannot determine
+            the quality of that future. The values guiding their
+            use matter just as much. The way people design
+            institutions, distribute opportunity, protect
+            knowledge and maintain public trust will influence
+            what future generations inherit.
+          </p>
+
+          <p>
+            What appears to be a small decision today may become
+            part of a much larger account tomorrow. A standard
+            established now can influence how an industry operates.
+            An idea developed now can open a field of possibility.
+            A cultural practice maintained now can remain meaningful
+            long after its original setting has changed.
+          </p>
+
+          <p>
+            The future is not a separate story waiting somewhere
+            beyond the present. It is being shaped through the
+            choices, work and experiences taking place now.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section section-gold closing">
+        <div class="article-inner">
+          <span class="section-number">THE MOMINANTS™ — EDITION 001</span>
+          <h2>THE STORY DOES NOT END WHERE THE EXPERIENCE ENDS.</h2>
+
+          <p>
+            A civilisation leaves traces of how it lived. A culture
+            carries the memory of its people. A meal can preserve
+            the knowledge of generations. A sporting contest can
+            become part of a nation's shared history. An organisation
+            can contribute to the evolution of an entire field
+            through the work it establishes and administers.
+          </p>
+
+          <p>
+            These stories do not all belong to the same place,
+            and they do not all carry the same meaning. Some are
+            personal. Some are cultural. Some are institutional.
+            Others become part of the history of humanity.
+          </p>
+
+          <p>
+            What connects them is the way experiences acquire
+            significance through the lives they touch, the ideas
+            they carry and the consequences they leave behind.
+          </p>
+
+          <p>
+            The past gives context. The present gives experience.
+            The future gives consequence. Between them runs
+            the continuing story of human life.
+          </p>
+
+          <div class="pull-quote">
+            We inherit more than history. We inherit the responsibility
+            of deciding what the next generation will remember.
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+    <section class="collection">
+      <div class="collection-heading">
+        <span>PHRINUSOMYIS MAGAZINE</span>
+        <h2>EDITION 001</h2>
+      </div>
+
+      <div class="cover-grid">
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-edgewise">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="THE EDGEWISE Edition 001" loading="lazy">
+          <span>THE EDGEWISE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-big-story">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg" alt="THE BIG STORY Edition 001" loading="lazy">
+          <span>THE BIG STORY</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-apex">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-APEX-Edition001.jpg" alt="THE APEX Edition 001" loading="lazy">
+          <span>THE APEX</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-chronicle">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg" alt="THE CHRONICLE Edition 001" loading="lazy">
+          <span>THE CHRONICLE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/lifeline">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-LIFELINE-Edition001.jpg" alt="LIFELINE Edition 001" loading="lazy">
+          <span>LIFELINE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-world-pulse">
+          <img src="https://phrinusomyis.com/PHRINUSOMYISTHEWORLDPULSEEdition001.jpg" alt="THE WORLD PULSE Edition 001" loading="lazy">
+          <span>THE WORLD PULSE</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-mominants">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg" alt="THE MOMINANTS Edition 001" loading="lazy">
+          <span>THE MOMINANTS™</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-snow-journey">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg" alt="THE SNOW JOURNEY Edition 001" loading="lazy">
+          <span>THE SNOW JOURNEY</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-powershift">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg" alt="THE POWERSHIFT Edition 001" loading="lazy">
+          <span>THE POWERSHIFT</span>
+        </a>
+
+        <a class="cover-card" href="https://phrinusomyis.com/magazine/the-takeover">
+          <img src="https://phrinusomyis.com/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg" alt="THE TAKEOVER Edition 001" loading="lazy">
+          <span>THE TAKEOVER</span>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">PHRINUSOMYIS™ MAGAZINE</div>
+    <div class="footer-slogan">COMMANDING THE WORLD STAGE™</div>
+    <div class="copyright">
+      © <span id="copyrightYear"></span> PHRINUSOMYIS™. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const articleUrl = "https://phrinusomyis.com/magazine/the-mominants";
+
+    document.getElementById("copyrightYear").textContent =
+      new Date().getFullYear();
+
+    async function copyArticleLink() {
+      try {
+        await navigator.clipboard.writeText(articleUrl);
+        alert("Article link copied.");
+      } catch (error) {
+        const temporaryInput = document.createElement("textarea");
+        temporaryInput.value = articleUrl;
+        document.body.appendChild(temporaryInput);
+        temporaryInput.select();
+        document.execCommand("copy");
+        temporaryInput.remove();
+        alert("Article link copied.");
+      }
+    }
+
+    document.getElementById("shareButton").addEventListener("click", async () => {
+      const shareData = {
+        title: "THE MOMINANTS™ | PHRINUSOMYIS™ MAGAZINE",
+        text: "The stories that become part of who we are.",
+        url: articleUrl
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (error) {
+          if (error.name !== "AbortError") {
+            await copyArticleLink();
+          }
+        }
+      } else {
+        await copyArticleLink();
+      }
+    });
+
+    document.getElementById("copyButton").addEventListener("click", copyArticleLink);
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "en",
+        autoDisplay: false
+      }, "google_translate_element");
+    }
+
+    function changeLanguage(language) {
+      if (language === "en") {
+        const cookie = document.cookie
+          .split(";")
+          .find(item => item.trim().startsWith("googtrans="));
+
+        if (cookie) {
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+        }
+
+        location.reload();
+        return;
+      }
+
+      const select = document.querySelector(".goog-te-combo");
+
+      if (select) {
+        select.value = language;
+        select.dispatchEvent(new Event("change"));
+      }
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", function () {
+      changeLanguage(this.value);
+    });
+  </script>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
