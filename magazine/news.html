@@ -108,6 +108,30 @@
       gap: 24px;
     }
 
+    .language-area {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .language-select {
+      width: min(100%, 235px);
+      min-height: 43px;
+      padding: 0 14px;
+      color: var(--ivory);
+      background: var(--panel);
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      font: 500 14px "DM Sans", sans-serif;
+      cursor: pointer;
+      outline-offset: 3px;
+    }
+
+    .language-select option {
+      color: #171717;
+      background: #ffffff;
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -145,30 +169,6 @@
       font-size: 17px;
       letter-spacing: 5px;
       color: var(--ivory);
-    }
-
-    .language-area {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    .language-select {
-      width: min(100%, 235px);
-      min-height: 43px;
-      padding: 0 14px;
-      color: var(--ivory);
-      background: var(--panel);
-      border: 1px solid var(--gold);
-      border-radius: 5px;
-      font: 500 14px "DM Sans", sans-serif;
-      cursor: pointer;
-      outline-offset: 3px;
-    }
-
-    .language-select option {
-      color: #171717;
-      background: #ffffff;
     }
 
     .page-shell {
@@ -574,6 +574,41 @@
       font-weight: 600;
     }
 
+    /* HISTORICAL STORYTELLING: WHITE READING PANELS */
+
+    .article-body .history-section {
+      margin: 0 0 25px;
+      padding: clamp(25px, 4vw, 42px);
+      background: #ffffff;
+      border: 1px solid #e8e2d8;
+      border-left: 4px solid #b18a4d;
+      color: #28251f;
+    }
+
+    .article-body .history-section h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #8a642e;
+    }
+
+    .article-body .history-section p {
+      color: #3c3933;
+      font-size: 15px;
+      line-height: 2.05;
+    }
+
+    .article-body .history-section p strong {
+      color: #171613;
+    }
+
+    .article-body .history-section .article-quote {
+      background: #f5f0e7;
+      border-left-color: #a77b39;
+      color: #765324;
+    }
+
+    /* ARTICLE IMAGES */
+
     .article-image {
       width: 100%;
       margin: 27px 0 30px;
@@ -597,6 +632,8 @@
       letter-spacing: .3px;
     }
 
+    /* EDITORIAL QUOTATION */
+
     .article-quote {
       margin: 35px 0;
       padding: 25px 28px;
@@ -608,6 +645,8 @@
       line-height: 1.5;
       font-style: italic;
     }
+
+    /* ARTICLE SIDEBAR */
 
     .article-sidebar {
       position: sticky;
@@ -785,7 +824,7 @@
     @media (max-width: 620px) {
       .header-inner {
         width: calc(100% - 28px);
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(0, 1fr) auto;
         gap: 12px;
       }
 
@@ -794,6 +833,7 @@
       }
 
       .brand {
+        justify-self: end;
         gap: 8px;
       }
 
@@ -916,6 +956,14 @@
         font-size: 14px;
       }
 
+      .article-body .history-section {
+        padding: 23px 19px;
+      }
+
+      .article-body .history-section p {
+        font-size: 14px;
+      }
+
       .article-quote {
         padding: 20px;
       }
@@ -985,7 +1033,7 @@
         </select>
       </div>
 
-      <!-- ORGANIZATION NAME AND MAGAZINE NAME -->
+      <!-- ORGANIZATION NAME AND MAGAZINE NAME: RIGHT SIDE -->
       <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
         <img
           src="https://phrinusomyis.com/phrinusomyis_logo.png"
@@ -1270,7 +1318,8 @@
 
         <div class="article-body">
 
-          <section id="origins">
+          <!-- HISTORICAL SECTION -->
+          <section id="origins" class="history-section">
             <h3>Competition: An Expression of Human Ability</h3>
 
             <p>
@@ -1297,7 +1346,8 @@
             </p>
           </section>
 
-          <section id="ancient-world">
+          <!-- ANCIENT HISTORY -->
+          <section id="ancient-world" class="history-section">
             <h3>Travel Back to 3000 BC</h3>
 
             <p>
@@ -1328,6 +1378,7 @@
             </blockquote>
           </section>
 
+          <!-- RETURN TO THE PRESENT -->
           <section id="modern-sport">
             <h3>Returning to the Present</h3>
 
@@ -1354,6 +1405,7 @@
             </p>
           </section>
 
+          <!-- PHRINUSOMYIS -->
           <section id="different-direction">
             <h3>A Different Direction</h3>
 
@@ -1380,7 +1432,8 @@
             </p>
           </section>
 
-          <section id="sports-theater">
+          <!-- ZEAVIQ SPORTS -->
+          <section id="zeaviq-sports">
             <h3>ZEAVIQ SPORTS™</h3>
 
             <p>
@@ -1412,6 +1465,7 @@
             </p>
           </section>
 
+          <!-- NEXT CHAPTER -->
           <section id="next-chapter">
             <h3>The Next Chapter</h3>
 
@@ -1438,6 +1492,7 @@
             </p>
           </section>
 
+          <!-- CLOSING -->
           <section id="continuing-story">
             <h3>A Story That Continues</h3>
 
@@ -1465,7 +1520,7 @@
           <a href="#ancient-world">Travel Back to 3000 BC</a>
           <a href="#modern-sport">Returning to the Present</a>
           <a href="#different-direction">A Different Direction</a>
-          <a href="#sports-theater">ZEAVIQ SPORTS™</a>
+          <a href="#zeaviq-sports">ZEAVIQ SPORTS™</a>
           <a href="#next-chapter">The Next Chapter</a>
           <a href="#continuing-story">A Story That Continues</a>
 
