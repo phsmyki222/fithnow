@@ -103,7 +103,7 @@
       min-height: 94px;
       margin: auto;
       display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 24px;
     }
@@ -111,6 +111,7 @@
     .brand {
       display: inline-flex;
       align-items: center;
+      justify-self: end;
       gap: 15px;
       color: var(--gold-light);
       text-decoration: none;
@@ -148,7 +149,7 @@
 
     .language-area {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
     }
 
@@ -156,50 +157,18 @@
       width: min(100%, 235px);
       min-height: 43px;
       padding: 0 14px;
-      color: #171717;
-      background: #f7f5f0;
-      border: 1px solid #d4c8b2;
+      color: var(--ivory);
+      background: var(--panel);
+      border: 1px solid var(--gold);
       border-radius: 5px;
       font: 500 14px "DM Sans", sans-serif;
       cursor: pointer;
       outline-offset: 3px;
     }
 
-    .language-caption {
-      display: block;
-      text-align: center;
-      color: #aaa49a;
-      font-size: 10px;
-      margin-top: 5px;
-    }
-
-    .language-caption span {
-      color: #fff;
-    }
-
-    .believe {
-      justify-self: end;
-      text-align: center;
-      color: var(--gold-light);
-      padding-left: 20px;
-      border-left: 1px solid var(--line);
-    }
-
-    .believe strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      font-weight: 500;
-      font-size: clamp(21px, 2.5vw, 32px);
-      line-height: 1;
-    }
-
-    .believe span {
-      display: block;
-      color: var(--ivory);
-      font-size: 10px;
-      letter-spacing: 1.2px;
-      margin-top: 7px;
+    .language-select option {
+      color: #171717;
+      background: #ffffff;
     }
 
     .page-shell {
@@ -783,16 +752,6 @@
         gap: 15px;
       }
 
-      .language-area {
-        grid-column: 1 / -1;
-        grid-row: 2;
-      }
-
-      .believe {
-        grid-column: 2;
-        grid-row: 1;
-      }
-
       .edition-menu {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -830,6 +789,10 @@
         gap: 12px;
       }
 
+      .language-area {
+        justify-content: flex-start;
+      }
+
       .brand {
         gap: 8px;
       }
@@ -848,25 +811,11 @@
         letter-spacing: 3px;
       }
 
-      .believe {
-        padding-left: 12px;
-      }
-
-      .believe strong {
-        font-size: 20px;
-      }
-
-      .believe span {
-        font-size: 8px;
-        letter-spacing: .5px;
-      }
-
-      .language-area {
-        grid-column: 1 / -1;
-      }
-
       .language-select {
-        width: min(100%, 280px);
+        width: min(100%, 170px);
+        min-height: 40px;
+        padding: 0 9px;
+        font-size: 12px;
       }
 
       .intro {
@@ -1004,6 +953,39 @@
   <header class="site-header">
     <div class="header-inner">
 
+      <!-- LANGUAGE SELECTOR: LEFT SIDE -->
+      <div class="language-area">
+        <select
+          class="language-select"
+          id="siteLanguage"
+          aria-label="Select website language"
+        >
+          <option value="en">Select Language</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="ar">العربية</option>
+          <option value="zh-CN">中文（简体）</option>
+          <option value="ru">Русский</option>
+          <option value="pt">Português</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="th">ไทย</option>
+          <option value="pl">Polski</option>
+          <option value="sv">Svenska</option>
+          <option value="fi">Suomi</option>
+          <option value="da">Dansk</option>
+        </select>
+      </div>
+
+      <!-- ORGANIZATION NAME AND MAGAZINE NAME -->
       <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
         <img
           src="https://phrinusomyis.com/phrinusomyis_logo.png"
@@ -1014,45 +996,6 @@
           <span>MAGAZINE</span>
         </span>
       </a>
-
-      <div class="language-area">
-        <div>
-          <select
-            class="language-select"
-            id="siteLanguage"
-            aria-label="Select website language"
-          >
-            <option value="en">Select Language</option>
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-            <option value="ar">العربية</option>
-            <option value="zh-CN">中文（简体）</option>
-            <option value="ru">Русский</option>
-            <option value="pt">Português</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="it">Italiano</option>
-            <option value="nl">Nederlands</option>
-            <option value="tr">Türkçe</option>
-            <option value="hi">हिन्दी</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="th">ไทย</option>
-            <option value="pl">Polski</option>
-            <option value="sv">Svenska</option>
-            <option value="fi">Suomi</option>
-            <option value="da">Dansk</option>
-          </select>
-          <span class="language-caption">Powered by <span>Google Translate</span></span>
-        </div>
-      </div>
-
-      <div class="believe" aria-label="PHRINUSOMYIS brand statement">
-        <strong>PHRINUSOMYIS™</strong>
-        <span>COMMANDING THE WORLD STAGE™</span>
-      </div>
 
     </div>
   </header>
@@ -1417,7 +1360,7 @@
             <p>
               <strong>PHRINUSOMYIS™ is an international sports
               organization</strong> that develops, owns and administers
-              sports competitions and Sports Theater™ worldwide. It creates
+              sports competitions and ZEAVIQ SPORTS™ worldwide. It creates
               original sports formats that establish distinctive competitive
               experiences.
             </p>
@@ -1438,10 +1381,10 @@
           </section>
 
           <section id="sports-theater">
-            <h3>Sports Theater™</h3>
+            <h3>ZEAVIQ SPORTS™</h3>
 
             <p>
-              Sports Theater™ is a PHRINUSOMYIS™ sports concept that brings
+              ZEAVIQ SPORTS™ is a PHRINUSOMYIS™ sports concept that brings
               athletic performance and live presentation into a distinctive
               competitive environment. It places emphasis on endurance,
               control, decision-making under pressure, resilience and
@@ -1457,7 +1400,7 @@
 
             <p>
               One of the competition identities associated with this
-              direction is <strong>SOUL SURVIVE™</strong>. Its name reflects
+              direction is <strong>VIKQUATHEL™</strong>. Its name reflects
               the relationship between inner resolve and the ability to
               continue through adversity.
             </p>
@@ -1481,7 +1424,7 @@
 
             <p>
               PHRINUSOMYIS™ forms part of that continuing story through its
-              original sports formats, competitions and Sports Theater™.
+              original sports formats, competitions and ZEAVIQ SPORTS™.
               Its work gives competitive sport another direction to explore
               while recognising the history and significance of the sporting
               world that came before it.
@@ -1522,7 +1465,7 @@
           <a href="#ancient-world">Travel Back to 3000 BC</a>
           <a href="#modern-sport">Returning to the Present</a>
           <a href="#different-direction">A Different Direction</a>
-          <a href="#sports-theater">Sports Theater™</a>
+          <a href="#sports-theater">ZEAVIQ SPORTS™</a>
           <a href="#next-chapter">The Next Chapter</a>
           <a href="#continuing-story">A Story That Continues</a>
 
