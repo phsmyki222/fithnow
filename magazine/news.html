@@ -13,7 +13,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="PHRINUSOMYIS™ Magazine | Edition 001">
-  <meta property="og:description" content=" editions perspectives. One magazine experience.">
+  <meta property="og:description" content="Ten editions. Ten perspectives. One magazine experience.">
   <meta property="og:url" content="https://phrinusomyis.com/magazine/news">
   <meta property="og:image" content="https://phrinusomyis.com/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg">
 
@@ -108,30 +108,6 @@
       gap: 24px;
     }
 
-    .language-area {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    .language-select {
-      width: min(100%, 235px);
-      min-height: 43px;
-      padding: 0 14px;
-      color: var(--ivory);
-      background: var(--panel);
-      border: 1px solid var(--gold);
-      border-radius: 5px;
-      font: 500 14px "DM Sans", sans-serif;
-      cursor: pointer;
-      outline-offset: 3px;
-    }
-
-    .language-select option {
-      color: #171717;
-      background: #ffffff;
-    }
-
     .brand {
       display: inline-flex;
       align-items: center;
@@ -169,6 +145,30 @@
       font-size: 17px;
       letter-spacing: 5px;
       color: var(--ivory);
+    }
+
+    .language-area {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .language-select {
+      width: min(100%, 235px);
+      min-height: 43px;
+      padding: 0 14px;
+      color: var(--ivory);
+      background: var(--panel);
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      font: 500 14px "DM Sans", sans-serif;
+      cursor: pointer;
+      outline-offset: 3px;
+    }
+
+    .language-select option {
+      color: #171717;
+      background: #ffffff;
     }
 
     .page-shell {
@@ -574,41 +574,6 @@
       font-weight: 600;
     }
 
-    /* HISTORICAL STORYTELLING: WHITE READING PANELS */
-
-    .article-body .history-section {
-      margin: 0 0 25px;
-      padding: clamp(25px, 4vw, 42px);
-      background: #ffffff;
-      border: 1px solid #e8e2d8;
-      border-left: 4px solid #b18a4d;
-      color: #28251f;
-    }
-
-    .article-body .history-section h3 {
-      margin-top: 0;
-      margin-bottom: 20px;
-      color: #8a642e;
-    }
-
-    .article-body .history-section p {
-      color: #3c3933;
-      font-size: 15px;
-      line-height: 2.05;
-    }
-
-    .article-body .history-section p strong {
-      color: #171613;
-    }
-
-    .article-body .history-section .article-quote {
-      background: #f5f0e7;
-      border-left-color: #a77b39;
-      color: #765324;
-    }
-
-    /* ARTICLE IMAGES */
-
     .article-image {
       width: 100%;
       margin: 27px 0 30px;
@@ -632,8 +597,6 @@
       letter-spacing: .3px;
     }
 
-    /* EDITORIAL QUOTATION */
-
     .article-quote {
       margin: 35px 0;
       padding: 25px 28px;
@@ -645,8 +608,6 @@
       line-height: 1.5;
       font-style: italic;
     }
-
-    /* ARTICLE SIDEBAR */
 
     .article-sidebar {
       position: sticky;
@@ -824,7 +785,7 @@
     @media (max-width: 620px) {
       .header-inner {
         width: calc(100% - 28px);
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: 1fr auto;
         gap: 12px;
       }
 
@@ -833,7 +794,6 @@
       }
 
       .brand {
-        justify-self: end;
         gap: 8px;
       }
 
@@ -956,14 +916,6 @@
         font-size: 14px;
       }
 
-      .article-body .history-section {
-        padding: 23px 19px;
-      }
-
-      .article-body .history-section p {
-        font-size: 14px;
-      }
-
       .article-quote {
         padding: 20px;
       }
@@ -995,20 +947,9 @@
 
 <body>
 
-  <!-- ORGANIZATION NAME AND MAGAZINE NAME: RIGHT SIDE -->
-      <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
-        <img
-          src="https://phrinusomyis.com/phrinusomyis_logo.png"
-          alt="PHRINUSOMYIS logo"
-        >
-        <span class="brand-name">
-          <strong>PHRINUSOMYIS™</strong>
-          <span>MAGAZINE</span>
-        </span>
-      </a>
+  <div id="google_translate_element" aria-hidden="true"></div>
 
-    </div>
-    <div id="google_translate_element" aria-hidden="true"></div>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
 
@@ -1044,7 +985,19 @@
         </select>
       </div>
 
-      
+      <!-- ORGANIZATION NAME AND MAGAZINE NAME -->
+      <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
+        <img
+          src="https://phrinusomyis.com/phrinusomyis_logo.png"
+          alt="PHRINUSOMYIS logo"
+        >
+        <span class="brand-name">
+          <strong>PHRINUSOMYIS™</strong>
+          <span>MAGAZINE</span>
+        </span>
+      </a>
+
+    </div>
   </header>
 
   <main class="page-shell">
@@ -1054,7 +1007,7 @@
       <div class="eyebrow">THE PHRINUSOMYIS™ MAGAZINE</div>
       <h1>Edition 001</h1>
       <p>
-         Editions Perspectives Discover the stories, ideas and
+        Ten editions. Ten perspectives. Discover the stories, ideas and
         experiences presented across the PHRINUSOMYIS Magazine collection.
       </p>
     </section>
@@ -1317,8 +1270,7 @@
 
         <div class="article-body">
 
-          <!-- HISTORICAL SECTION -->
-          <section id="origins" class="history-section">
+          <section id="origins">
             <h3>Competition: An Expression of Human Ability</h3>
 
             <p>
@@ -1345,8 +1297,7 @@
             </p>
           </section>
 
-          <!-- ANCIENT HISTORY -->
-          <section id="ancient-world" class="history-section">
+          <section id="ancient-world">
             <h3>Travel Back to 3000 BC</h3>
 
             <p>
@@ -1377,7 +1328,6 @@
             </blockquote>
           </section>
 
-          <!-- RETURN TO THE PRESENT -->
           <section id="modern-sport">
             <h3>Returning to the Present</h3>
 
@@ -1404,7 +1354,6 @@
             </p>
           </section>
 
-          <!-- PHRINUSOMYIS -->
           <section id="different-direction">
             <h3>A Different Direction</h3>
 
@@ -1431,8 +1380,7 @@
             </p>
           </section>
 
-          <!-- ZEAVIQ SPORTS -->
-          <section id="zeaviq-sports">
+          <section id="sports-theater">
             <h3>ZEAVIQ SPORTS™</h3>
 
             <p>
@@ -1464,7 +1412,6 @@
             </p>
           </section>
 
-          <!-- NEXT CHAPTER -->
           <section id="next-chapter">
             <h3>The Next Chapter</h3>
 
@@ -1491,7 +1438,6 @@
             </p>
           </section>
 
-          <!-- CLOSING -->
           <section id="continuing-story">
             <h3>A Story That Continues</h3>
 
@@ -1519,7 +1465,7 @@
           <a href="#ancient-world">Travel Back to 3000 BC</a>
           <a href="#modern-sport">Returning to the Present</a>
           <a href="#different-direction">A Different Direction</a>
-          <a href="#zeaviq-sports">ZEAVIQ SPORTS™</a>
+          <a href="#sports-theater">ZEAVIQ SPORTS™</a>
           <a href="#next-chapter">The Next Chapter</a>
           <a href="#continuing-story">A Story That Continues</a>
 
@@ -1862,3 +1808,4 @@
 
 </body>
 </html>
+
