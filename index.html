@@ -537,21 +537,30 @@ header,.site-header,.main-header{transform:none!important}
   background:#171715;
 }
 
-/* WORLD OF SPORT: 850PX BY 300PX FRAME */
+/* WORLD OF SPORT: 500PX BY 750PX FRAME */
 .presentation[data-presentation="sports"]{
   width:100%;
-  max-width:850px;
-  height:300px;
+  max-width:500px;
+  height:750px;
   margin-left:auto;
   margin-right:auto;
+  overflow:hidden;
 }
-.presentation[data-presentation="sports"] .presentation-track,
-.presentation[data-presentation="sports"] .presentation-card,
-.presentation[data-presentation="sports"] .presentation-card img{
-  height:300px;
+.presentation[data-presentation="sports"] .presentation-track{
+  height:750px;
+  align-items:stretch;
+}
+.presentation[data-presentation="sports"] .presentation-card{
+  flex:0 0 100%;
+  height:750px;
+  min-width:0;
+  overflow:hidden;
 }
 .presentation[data-presentation="sports"] .presentation-card img{
+  display:block;
   width:100%;
+  height:750px;
+  max-width:100%;
   object-fit:contain;
   object-position:center;
 }
@@ -869,6 +878,18 @@ header,.site-header,.main-header{transform:none!important}
   background:#171715;
 }
 
+/* WORLD OF SPORT: KEEP THE AGREED 500PX BY 750PX FRAME */
+.presentation[data-presentation="sports"]{
+  width:100%;
+  max-width:500px;
+  height:750px;
+}
+.presentation[data-presentation="sports"] .presentation-track,
+.presentation[data-presentation="sports"] .presentation-card,
+.presentation[data-presentation="sports"] .presentation-card img{
+  height:750px;
+}
+
 .sports-section{padding:72px 0}
 .formats-grid{grid-template-columns:1fr;margin-top:35px}
 .format-card{min-height:0;padding:28px 23px}
@@ -1026,10 +1047,15 @@ html{scroll-behavior:auto}
 
     <div class="presentation" data-presentation="sports">
       <div class="presentation-track">
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS007.jpg" alt="Sporting presentation" fetchpriority="high"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS008.jpg" alt="Sporting presentation"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS009.jpg" alt="Sporting presentation"></a>
-        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS010.jpg" alt="Sporting presentation"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS007.jpg" alt="Sporting presentation 7" fetchpriority="high"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS008.jpg" alt="Sporting presentation 8"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS009.jpg" alt="Sporting presentation 9"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS010.jpg" alt="Sporting presentation 10"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS011.jpg" alt="Sporting presentation 11"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS012.jpg" alt="Sporting presentation 12"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS013.jpg" alt="Sporting presentation 13"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS014.jpg" alt="Sporting presentation 14"></a>
+        <a href="/#sports-theater" class="presentation-card" aria-label="Explore sport"><img src="/PHRINUSOMYIS-SPORTS015.jpg" alt="Sporting presentation 15"></a>
       </div>
     </div>
 
@@ -1157,11 +1183,11 @@ html{scroll-behavior:auto}
 
     <div class="presentation" data-presentation="newswire">
       <div class="presentation-track">
-        <a href="/Newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE001.jpg" alt="Official Newswire presentation 1" loading="lazy"></a>
-        <a href="/Newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE002.jpg" alt="Official Newswire presentation 2" loading="lazy"></a>
-        <a href="/Newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE003.jpg" alt="Official Newswire presentation 3" loading="lazy"></a>
-        <a href="/Newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE004.jpg" alt="Official Newswire presentation 4" loading="lazy"></a>
-        <a href="/Newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE005.jpg" alt="Official Newswire presentation 5" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE001.jpg" alt="Official Newswire presentation 1" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE002.jpg" alt="Official Newswire presentation 2" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE003.jpg" alt="Official Newswire presentation 3" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE004.jpg" alt="Official Newswire presentation 4" loading="lazy"></a>
+        <a href="/newswire/news" class="presentation-card" aria-label="Open official Newswire"><img src="/PHRINUSOMYIS-NEWSWIRE005.jpg" alt="Official Newswire presentation 5" loading="lazy"></a>
       </div>
     </div>
 
