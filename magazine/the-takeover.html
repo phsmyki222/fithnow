@@ -113,12 +113,6 @@
   </script>
 
 <style>
-    /* =====================================================
-       PHRINUSOMYIS™ MAGAZINE
-       THE TAKEOVER — EDITION 001
-       SHARED EDITORIAL DESIGN
-       ===================================================== */
-
     :root {
       --gold: #c9a45c;
       --gold-light: #e3c98f;
@@ -1866,9 +1860,16 @@
       }
     }
 
+    /*
+       IMPORTANT:
+       Google Translate expects the googtrans cookie value
+       in its normal path format, for example /en/fr.
+       Do not URL-encode this value.
+    */
+
     function setTranslationCookie(name, value, domain) {
       var cookie =
-        name + "=" + encodeURIComponent(value) +
+        name + "=" + value +
         ";path=/" +
         ";SameSite=Lax";
 
@@ -1879,27 +1880,71 @@
       document.cookie = cookie;
     }
 
+    function clearTranslationCookies() {
+      var expired =
+        "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax";
+
+      document.cookie = expired;
+      document.cookie = expired + ";domain=.phrinusomyis.com";
+      document.cookie = expired + ";domain=phrinusomyis.com";
+    }
+
+    function applyGoogleTranslation(language) {
+      var googleSelect = document.querySelector(".goog-te-combo");
+
+      if (!googleSelect) {
+        return false;
+      }
+
+      googleSelect.value = language;
+
+      googleSelect.dispatchEvent(
+        new Event("change", { bubbles: true })
+      );
+
+      return true;
+    }
+
     function changeWebsiteLanguage(language) {
       if (!language) {
         return;
       }
 
       if (language === "en") {
-        var expired =
-          "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
-
-        document.cookie = expired;
-        document.cookie = expired + ";domain=.phrinusomyis.com";
-        document.cookie = expired + ";domain=phrinusomyis.com";
-
+        clearTranslationCookies();
         window.location.reload();
         return;
       }
 
+      /*
+         Save the language in Google's expected cookie format.
+         Both domain and host-level cookies are written to
+         support the main domain and its subdomains.
+      */
+
       var translation = "/en/" + language;
 
       setTranslationCookie("googtrans", translation, "");
-      setTranslationCookie("googtrans", translation, ".phrinusomyis.com");
+      setTranslationCookie(
+        "googtrans",
+        translation,
+        ".phrinusomyis.com"
+      );
+
+      /*
+         Try to change the language immediately through
+         Google's generated select control.
+      */
+
+      if (applyGoogleTranslation(language)) {
+        return;
+      }
+
+      /*
+         If Google's translation control has not finished
+         loading, reload so the saved cookie can be read
+         when the translation engine initializes.
+      */
 
       window.location.reload();
     }
@@ -1911,7 +1956,9 @@
         return;
       }
 
-      var match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
+      var match = document.cookie.match(
+        /(?:^|;\s*)googtrans=([^;]+)/
+      );
 
       if (match && match[1]) {
         try {
@@ -1920,7 +1967,9 @@
 
           if (
             language &&
-            selector.querySelector('option[value="' + language + '"]')
+            selector.querySelector(
+              'option[value="' + language + '"]'
+            )
           ) {
             selector.value = language;
           }
