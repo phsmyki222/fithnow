@@ -653,10 +653,12 @@ button {
   font-size:10px;
 }
 
-/* Google Translate containment and injected-interface suppression */
+/* ============================================================
+   GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
+   ============================================================ */
 
-/* Keep the Google translation engine available to the custom selector,
-   but move its invisible container outside the visible page layout. */
+/* Keep the translation engine available but off-screen. */
+
 #google_translate_element {
   display:block !important;
   position:fixed !important;
@@ -673,20 +675,33 @@ button {
   z-index:-1 !important;
 }
 
-/* Remove Google's top banner and translation frames. */
+/* Hide Google's top translation banner. */
+
 .goog-te-banner-frame,
 iframe.goog-te-banner-frame,
-iframe.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-KE6vqe {
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  height:0 !important;
+  width:0 !important;
+  max-height:0 !important;
+  max-width:0 !important;
+  pointer-events:none !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:-10000px !important;
+  border:0 !important;
+}
+
+/* Hide translation menus, tooltips and pop-out interfaces. */
+
 .goog-te-menu-frame,
 iframe.goog-te-menu-frame,
 .goog-te-balloon-frame,
 iframe.goog-te-balloon-frame,
-.VIpgJd-ZVi9od-ORHb-OEVmcd,
-.VIpgJd-ZVi9od-ORHb,
-.VIpgJd-ZVi9od-ORHb-KE6vqe,
-.goog-te-ftab,
-.goog-te-ftab-link,
-.goog-te-gadget-icon,
 #goog-gt-tt,
 .goog-te-tooltip-container,
 .goog-tooltip,
@@ -696,26 +711,23 @@ iframe.goog-te-balloon-frame,
 .VIpgJd-yAWNEb-L7lbkb,
 .VIpgJd-ZVi9od-vH1Gmf,
 .VIpgJd-ZVi9od-xl07Ob,
-.VIpgJd-ZVi9od-SmfZ,
-.goog-te-spinner-pos,
-.goog-te-menu2,
-.goog-te-menu2-item {
+.VIpgJd-ZVi9od-SmfZ {
   display:none !important;
   visibility:hidden !important;
   opacity:0 !important;
   pointer-events:none !important;
-  height:0 !important;
-  width:0 !important;
-  max-height:0 !important;
-  max-width:0 !important;
-  border:0 !important;
-  box-shadow:none !important;
   position:fixed !important;
   left:-10000px !important;
   top:-10000px !important;
+  width:0 !important;
+  height:0 !important;
+  max-width:0 !important;
+  max-height:0 !important;
+  z-index:-9999 !important;
 }
 
 /* Remove translation highlights. */
+
 .goog-text-highlight {
   background:transparent !important;
   background-color:transparent !important;
@@ -725,6 +737,7 @@ iframe.goog-te-balloon-frame,
 }
 
 /* Hide Google branding and unwanted gadget interfaces. */
+
 .goog-logo-link,
 .goog-te-gadget-icon,
 .goog-te-spinner-pos,
@@ -738,32 +751,30 @@ iframe.goog-te-balloon-frame,
 }
 
 /* Remove Google gadget styling. */
+
 .goog-te-gadget {
   color:transparent !important;
   font-size:0 !important;
   line-height:0 !important;
 }
 
-/* Prevent the injected banner from pushing the document down. */
-html,
-html.translated-ltr,
-html.translated-rtl {
-  margin-top:0 !important;
-  padding-top:0 !important;
-  top:0 !important;
-}
+/* Prevent Google's injected banner from moving the page. */
 
+html,
 body,
 body.translated-ltr,
 body.translated-rtl {
-  position:relative !important;
   top:0 !important;
   margin-top:0 !important;
   padding-top:0 !important;
 }
 
-/* Hide Google's injected top-level skiptranslate banner container,
-   without hiding the custom language selector in the header. */
+body {
+  position:relative !important;
+}
+
+/* Hide Google's injected top-level banner container. */
+
 body > .skiptranslate {
   display:none !important;
   visibility:hidden !important;
@@ -772,7 +783,8 @@ body > .skiptranslate {
   overflow:hidden !important;
 }
 
-/* Remove translation hover effects and injected interface decoration. */
+/* Remove translation hover effects and interface decoration. */
+
 font[style*="vertical-align"],
 font[style*="background-color"] {
   box-shadow:none !important;
@@ -787,6 +799,7 @@ font[style*="background-color"] {
 }
 
 /* Preserve the original site's page structure and header position. */
+
 .site-header,
 .main-nav,
 main,
@@ -1382,117 +1395,36 @@ main,
   </div>
 </footer>
 
-
 <script>
-/* ==========================================
-   GOOGLE TRANSLATE INITIALISATION
-========================================== */
-
-var googleTranslateReady = false;
-var pendingLanguage = null;
-
+/* Google Translate initialisation */
 function googleTranslateElementInit() {
-
   new google.translate.TranslateElement({
     pageLanguage: 'en',
     autoDisplay: false
   }, 'google_translate_element');
-
-  googleTranslateReady = true;
-
-  /* Apply any language selected before Google loaded. */
-  if (pendingLanguage) {
-    connectGoogleLanguage(pendingLanguage);
-  }
 }
 
-
-/* Load Google's translation engine. */
 (function loadGoogleTranslate() {
-
-  if (document.getElementById('google-translate-script')) {
-    return;
-  }
-
   var script = document.createElement('script');
-
-  script.id = 'google-translate-script';
-  script.src =
-    'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-
+  script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
   script.async = true;
-
-  script.onerror = function() {
-    console.error('Google Translate could not be loaded.');
-  };
-
   document.body.appendChild(script);
-
 })();
 
+/* Custom language selector */
+document.getElementById('languageSelect').addEventListener('change', function() {
+  var language = this.value;
+  var translateSelect = document.querySelector('.goog-te-combo');
 
-/* ==========================================
-   CUSTOM LANGUAGE SELECTOR CONNECTION
-========================================== */
-
-function connectGoogleLanguage(language) {
-
-  pendingLanguage = language;
-
-  var attempts = 0;
-  var maxAttempts = 40;
-
-  function applyLanguage() {
-
-    var translateSelect =
-      document.querySelector('#google_translate_element .goog-te-combo') ||
-      document.querySelector('.goog-te-combo');
-
-    if (translateSelect) {
-
-      translateSelect.value = language;
-
-      translateSelect.dispatchEvent(
-        new Event('change', {
-          bubbles: true
-        })
-      );
-
-      pendingLanguage = null;
-
-      return;
-    }
-
-    attempts++;
-
-    if (attempts < maxAttempts) {
-      setTimeout(applyLanguage, 250);
-    } else {
-      console.error(
-        'Google Translate is not ready. Please check the Google Translate script connection.'
-      );
-    }
-
+  if (translateSelect) {
+    translateSelect.value = language;
+    translateSelect.dispatchEvent(new Event('change'));
   }
+});
 
-  applyLanguage();
-}
-
-
-/* Listen to the custom language selector. */
-document.getElementById('languageSelect')
-  .addEventListener('change', function() {
-
-    var selectedLanguage = this.value;
-
-    connectGoogleLanguage(selectedLanguage);
-
-  });
-
-
-/* ==========================================
-   GOOGLE TRANSLATE BANNER AND POPOUT PROTECTION
-========================================== */
+/* ============================================================
+   GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
+   ============================================================ */
 
 (function protectPageFromGoogleInterface() {
 
@@ -1514,6 +1446,7 @@ document.getElementById('languageSelect')
     body.style.setProperty('padding-top', '0px', 'important');
   }
 
+  /* Remove unwanted Google banners and pop-outs. */
 
   function removeGooglePopouts() {
 
@@ -1525,12 +1458,22 @@ document.getElementById('languageSelect')
       '.goog-te-menu-frame',
       'iframe.goog-te-menu-frame',
       '#goog-gt-tt',
-      '.goog-tooltip',
       '.goog-te-tooltip-container',
+      '.goog-tooltip',
+      '.goog-tooltip:hover',
       '.goog-te-ftab',
+      '.goog-te-ftab-link',
+      '.goog-te-menu2',
+      '.goog-te-menu2-item',
       '.VIpgJd-ZVi9od-ORHb-OEVmcd',
       '.VIpgJd-ZVi9od-ORHb',
-      '.VIpgJd-ZVi9od-ORHb-KE6vqe'
+      '.VIpgJd-ZVi9od-ORHb-KE6vqe',
+      '.VIpgJd-ZVi9od-aZ2wEe-wOHMyf',
+      '.VIpgJd-ZVi9od-l4eHX',
+      '.VIpgJd-yAWNEb-L7lbkb',
+      '.VIpgJd-ZVi9od-vH1Gmf',
+      '.VIpgJd-ZVi9od-xl07Ob',
+      '.VIpgJd-ZVi9od-SmfZ'
     ];
 
     unwantedSelectors.forEach(function(selector) {
@@ -1548,20 +1491,24 @@ document.getElementById('languageSelect')
     restorePagePosition();
   }
 
+  /* Initial protection. */
 
   removeGooglePopouts();
 
+  /* Monitor Google's injected elements and layout changes. */
 
-  /* Monitor injected Google interface elements. */
   var observer = new MutationObserver(function() {
     removeGooglePopouts();
   });
 
   observer.observe(document.documentElement, {
-    childList: true,
-    subtree: true
+    childList:true,
+    subtree:true,
+    attributes:true,
+    attributeFilter:['style', 'class']
   });
 
+  /* Additional protection. */
 
   window.addEventListener('load', removeGooglePopouts);
   window.addEventListener('pageshow', removeGooglePopouts);
@@ -1570,94 +1517,45 @@ document.getElementById('languageSelect')
 
 })();
 
+/* Current year */
+document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-/* ==========================================
-   CURRENT YEAR
-========================================== */
-
-document.getElementById('currentYear').textContent =
-  new Date().getFullYear();
-
-
-/* ==========================================
-   ARTICLE SHARING AND PAGE LINK
-========================================== */
-
-var pageUrl =
-  'https://phrinusomyis.com/magazine/the-chronicle';
-
-var pageTitle =
-  'THE CHRONICLE — Edition 001 | PHRINUSOMYIS Magazine';
-
+/* Sharing and page-link functions */
+var pageUrl = 'https://phrinusomyis.com/magazine/the-chronicle';
+var pageTitle = 'THE CHRONICLE — Edition 001 | PHRINUSOMYIS Magazine';
 
 function copyPageLink() {
-
   if (navigator.clipboard && navigator.clipboard.writeText) {
-
-    navigator.clipboard.writeText(pageUrl)
-      .then(function() {
-
-        document.getElementById('copyButton').textContent =
-          'Link Copied';
-
-      })
-      .catch(function() {
-
-        window.prompt('Copy this page link:', pageUrl);
-
-      });
-
+    navigator.clipboard.writeText(pageUrl).then(function() {
+      document.getElementById('copyButton').textContent = 'Link Copied';
+    }).catch(function() {
+      window.prompt('Copy this page link:', pageUrl);
+    });
   } else {
-
     window.prompt('Copy this page link:', pageUrl);
-
   }
-
 }
 
-
-/* Share article. */
-document.getElementById('shareButton')
-  .addEventListener('click', async function() {
-
-    if (navigator.share) {
-
-      try {
-
-        await navigator.share({
-
-          title: pageTitle,
-
-          text:
-            'THE CHRONICLE — Not everything belongs to the present.',
-
-          url: pageUrl
-
-        });
-
-      } catch (error) {
-
-        if (error.name !== 'AbortError') {
-          copyPageLink();
-        }
-
+document.getElementById('shareButton').addEventListener('click', async function() {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: pageTitle,
+        text: 'THE CHRONICLE — Not everything belongs to the present.',
+        url: pageUrl
+      });
+    } catch (error) {
+      if (error.name !== 'AbortError') {
+        copyPageLink();
       }
-
-    } else {
-
-      copyPageLink();
-
     }
+  } else {
+    copyPageLink();
+  }
+});
 
-  });
-
-
-/* Copy article URL. */
-document.getElementById('copyButton')
-  .addEventListener('click', copyPageLink);
-
+document.getElementById('copyButton').addEventListener('click', copyPageLink);
 </script>
-
 
 </body>
 </html>
