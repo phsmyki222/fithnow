@@ -119,7 +119,7 @@
   }
   </script>
 
-  <style>
+<style>
     :root {
       --black: #080808;
       --deep: #101010;
@@ -552,84 +552,130 @@
       letter-spacing: 1px;
     }
 
+    /*
+      GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
+
+      Keep the translation engine available off-screen.
+      Do not use display:none on the translation engine.
+    */
+
     #google_translate_element {
-      display: none !important;
-      visibility: hidden !important;
-      width: 0 !important;
-      height: 0 !important;
+      display: block !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: 0 !important;
+      width: 1px !important;
+      height: 1px !important;
+      max-width: 1px !important;
+      max-height: 1px !important;
       overflow: hidden !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      z-index: -1 !important;
     }
 
+    /* Hide Google's top translation banner. */
+
     .goog-te-banner-frame,
-    .goog-te-gadget,
-    .goog-logo-link {
+    iframe.goog-te-banner-frame,
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-ORHb,
+    .VIpgJd-ZVi9od-ORHb-KE6vqe {
       display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      max-height: 0 !important;
+      max-width: 0 !important;
+      pointer-events: none !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      border: 0 !important;
+    }
+
+    /* Hide translation menus, tooltips and pop-out interfaces. */
+
+    .goog-te-menu-frame,
+    iframe.goog-te-menu-frame,
+    .goog-te-balloon-frame,
+    iframe.goog-te-balloon-frame,
+    #goog-gt-tt,
+    .goog-te-tooltip-container,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+    .VIpgJd-ZVi9od-l4eHX,
+    .VIpgJd-yAWNEb-L7lbkb,
+    .VIpgJd-ZVi9od-vH1Gmf,
+    .VIpgJd-ZVi9od-xl07Ob,
+    .VIpgJd-ZVi9od-SmfZ {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      width: 0 !important;
+      height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      z-index: -9999 !important;
+    }
+
+    /* Remove translation highlights. */
+
+    .goog-text-highlight {
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+      color: inherit !important;
+    }
+
+    /* Hide Google branding and unwanted gadget interfaces. */
+
+    .goog-logo-link,
+    .goog-te-gadget-icon,
+    .goog-te-spinner-pos,
+    .goog-te-ftab,
+    .goog-te-ftab-link,
+    .goog-te-menu2,
+    .goog-te-menu2-item,
+    .goog-te-gadget-simple {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Remove Google gadget styling. */
+
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0 !important;
+      line-height: 0 !important;
+    }
+
+    /* Prevent Google's injected banner from moving the page. */
+
+    html,
+    body,
+    body.translated-ltr,
+    body.translated-rtl {
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
 
     body {
-      top: 0 !important;
-    }
-
-    /*
-      GOOGLE TRANSLATE LAYOUT SUPPRESSION
-      These rules target Google's injected banner, page offsets,
-      translation tooltips and floating interface elements.
-      The custom #languageSelect remains visible and functional.
-    */
-
-    html,
-    html body {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-      top: 0 !important;
-      transform: none !important;
-    }
-
-    html body {
       position: relative !important;
-      inset-block-start: 0 !important;
-    }
-
-    html.translated-ltr,
-    html.translated-rtl,
-    body.translated-ltr,
-    body.translated-rtl {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-      top: 0 !important;
-    }
-
-    iframe.goog-te-banner-frame,
-    iframe.goog-te-menu-frame,
-    .goog-te-banner-frame,
-    .goog-te-menu-frame,
-    .goog-te-balloon-frame,
-    .goog-te-ftab-frame,
-    .goog-te-spinner-pos,
-    #goog-gt-tt,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-te-balloon-frame,
-    .goog-te-menu2,
-    .goog-te-menu2-item,
-    .goog-te-menu2-item div,
-    .goog-te-menu2-item span,
-    .goog-te-gadget-icon,
-    .goog-te-gadget-simple,
-    .goog-te-gadget {
-      visibility: hidden !important;
-      display: none !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      max-height: 0 !important;
-      max-width: 0 !important;
-      overflow: hidden !important;
     }
 
     /*
-      Google's top banner is commonly injected as a direct
-      body child with the skiptranslate class. Hide that injected
-      banner without hiding the custom language selector.
+      Hide Google's injected banner when it is added directly
+      to the body. The site's own language selector is unaffected.
     */
 
     body > .skiptranslate,
@@ -647,23 +693,7 @@
       overflow: hidden !important;
     }
 
-    /*
-      Prevent the Google Translate banner from reserving space
-      above the page or shifting the document down.
-    */
-
-    body.goog-te-banner,
-    body[style*="top: 40px"],
-    body[style*="top:40px"],
-    body[style*="top: 0px"] {
-      top: 0 !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-
-    /*
-      Keep the site's own language selector above page content.
-    */
+    /* Keep the custom language selector visible and functional. */
 
     .language-area,
     #languageSelect {
@@ -1503,56 +1533,101 @@
     });
 
     /*
-      GOOGLE TRANSLATE BANNER AND LAYOUT CLEANUP
+      GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
 
-      Google Translate can inject a banner outside the page layout
-      and apply an inline top offset to the body. This observer
-      removes the visible banner and restores the page position
-      if those changes are injected after the page has loaded.
+      Remove unwanted Google banners and pop-outs, and restore
+      the page position if Google injects layout changes.
+      The translation engine and custom language selector remain.
     */
 
-    (function suppressGoogleTranslateDisplacement() {
-      function resetTranslateLayout() {
-        document.documentElement.style.setProperty("margin-top", "0px", "important");
-        document.documentElement.style.setProperty("padding-top", "0px", "important");
+    (function protectPageFromGoogleInterface() {
 
-        document.body.style.setProperty("top", "0px", "important");
-        document.body.style.setProperty("margin-top", "0px", "important");
-        document.body.style.setProperty("padding-top", "0px", "important");
+      function restorePagePosition() {
 
-        const injectedBanners = document.querySelectorAll(
-          "body > .skiptranslate, iframe.goog-te-banner-frame, .goog-te-banner-frame"
-        );
+        const html = document.documentElement;
+        const body = document.body;
 
-        injectedBanners.forEach(function (element) {
-          if (element.id !== "google_translate_element") {
-            element.style.setProperty("display", "none", "important");
-            element.style.setProperty("visibility", "hidden", "important");
-            element.style.setProperty("height", "0px", "important");
-            element.style.setProperty("width", "0px", "important");
-            element.style.setProperty("top", "-10000px", "important");
-          }
-        });
+        if (!html || !body) {
+          return;
+        }
+
+        if (html.style.top !== "0px") {
+          html.style.setProperty("top", "0px", "important");
+        }
+
+        if (html.style.marginTop !== "0px") {
+          html.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (html.style.paddingTop !== "0px") {
+          html.style.setProperty("padding-top", "0px", "important");
+        }
+
+        if (body.style.top !== "0px") {
+          body.style.setProperty("top", "0px", "important");
+        }
+
+        if (body.style.marginTop !== "0px") {
+          body.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (body.style.paddingTop !== "0px") {
+          body.style.setProperty("padding-top", "0px", "important");
+        }
       }
 
-      resetTranslateLayout();
+      /* Remove unwanted Google banners and pop-outs. */
 
-      const translateObserver = new MutationObserver(function () {
-        resetTranslateLayout();
+      function removeGooglePopouts() {
+
+        const unwantedSelectors = [
+          "iframe.goog-te-banner-frame",
+          ".goog-te-banner-frame",
+          ".goog-te-balloon-frame",
+          "#goog-gt-tt",
+          ".goog-tooltip"
+        ];
+
+        unwantedSelectors.forEach(selector => {
+
+          document.querySelectorAll(selector).forEach(element => {
+
+            if (!element.closest("#google_translate_element")) {
+              element.remove();
+            }
+
+          });
+
+        });
+
+        restorePagePosition();
+      }
+
+      /* Initial protection. */
+
+      removeGooglePopouts();
+
+      /* Monitor Google's injected elements and layout changes. */
+
+      const observer = new MutationObserver(() => {
+        removeGooglePopouts();
       });
 
-      translateObserver.observe(document.documentElement, {
+      observer.observe(document.documentElement, {
         childList: true,
-        subtree: true
-      });
-
-      translateObserver.observe(document.body, {
+        subtree: true,
         attributes: true,
         attributeFilter: ["style", "class"]
       });
 
-      window.addEventListener("load", resetTranslateLayout);
-      window.addEventListener("pageshow", resetTranslateLayout);
+      /* Additional protection. */
+
+      window.addEventListener("load", removeGooglePopouts);
+
+      window.addEventListener("resize", removeGooglePopouts);
+
+      window.addEventListener("scroll", restorePagePosition);
+
     })();
   </script>
 
