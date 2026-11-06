@@ -200,660 +200,705 @@
     ]
   }
   </script>
+<style>
+  :root {
+    --black: #080808;
+    --deep: #101010;
+    --gold: #c6a45c;
+    --gold-light: #e0c98e;
+    --ivory: #f3efe6;
+    --muted: #aaa69e;
+    --line: rgba(198,164,92,.32);
+    --max: 1240px;
+  }
 
-  <style>
-    :root {
-      --black: #080808;
-      --deep: #101010;
-      --gold: #c6a45c;
-      --gold-light: #e0c98e;
-      --ivory: #f3efe6;
-      --muted: #aaa69e;
-      --line: rgba(198,164,92,.32);
-      --max: 1240px;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--black);
+    top: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--ivory);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.75;
+    overflow-x: hidden;
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button, select {
+    font: inherit;
+  }
+
+  .topbar {
+    min-height: 94px;
+    padding: 18px 5.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(8,8,8,.97);
+  }
+
+  .language-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .language-area label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  #languageSelect {
+    background: #111;
+    color: var(--ivory);
+    border: 1px solid rgba(198,164,92,.55);
+    padding: 9px 28px 9px 10px;
+    font-size: 12px;
+    outline: none;
+    max-width: 155px;
+    cursor: pointer;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-align: right;
+  }
+
+  .brand img {
+    width: 49px;
+    height: 49px;
+    object-fit: contain;
+  }
+
+  .brand-name {
+    color: var(--ivory);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    line-height: 1.4;
+  }
+
+  .brand-name span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 3px;
+  }
+
+  .brand-tagline {
+    display: block;
+    color: var(--gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: .6px;
+    line-height: 1.5;
+    margin-top: 5px;
+    text-transform: none;
+  }
+
+  .main-nav {
+    padding: 14px 5.5%;
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: #0d0d0d;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) #111;
+  }
+
+  .main-nav a {
+    color: #aaa69e;
+    font-size: 10px;
+    letter-spacing: 1.35px;
+    text-transform: uppercase;
+    transition: color .2s ease;
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+    color: var(--gold-light);
+  }
+
+  .main-nav a.home-link {
+    color: var(--ivory);
+  }
+
+  .page-intro {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 75px 6% 42px;
+    text-align: center;
+  }
+
+  .edition-label {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+  }
+
+  h1 {
+    color: var(--ivory);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(43px, 8vw, 91px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.05;
+  }
+
+  .cover-statement {
+    color: var(--gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(18px, 2.5vw, 25px);
+    font-style: italic;
+    margin-top: 22px;
+  }
+
+  .cover-wrap {
+    width: min(100% - 40px, 1120px);
+    margin: 0 auto 65px;
+    background: #111;
+    border: 1px solid rgba(198,164,92,.25);
+    padding: 10px;
+  }
+
+  .cover-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .article-actions {
+    max-width: var(--max);
+    margin: -32px auto 48px;
+    padding: 0 6%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .action-button {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ivory);
+    padding: 11px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .2s ease;
+  }
+
+  .action-button:hover {
+    background: var(--gold);
+    color: #080808;
+    border-color: var(--gold);
+  }
+
+  .article-section {
+    padding: 75px 7%;
+  }
+
+  .article-inner {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .section-dark {
+    background: var(--deep);
+  }
+
+  .section-light {
+    background: var(--ivory);
+    color: #24221e;
+  }
+
+  .section-gold {
+    background: #17140e;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-number {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .section-light .section-number {
+    color: #92723a;
+  }
+
+  .article-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(29px, 4.5vw, 43px);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+
+  .article-section p {
+    font-size: 16px;
+    line-height: 1.95;
+    margin-bottom: 21px;
+    font-weight: 400;
+  }
+
+  .article-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-light p {
+    color: #39362f;
+  }
+
+  .article-section strong {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .section-light strong {
+    color: #785c2c;
+  }
+
+  .pull-quote {
+    max-width: 790px;
+    margin: 35px auto;
+    padding: 25px 0;
+    color: var(--gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 4vw, 39px);
+    line-height: 1.4;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .section-light .pull-quote {
+    color: #785c2c;
+  }
+
+  .closing {
+    text-align: center;
+    padding-top: 95px;
+    padding-bottom: 95px;
+  }
+
+  .closing h2 {
+    color: var(--gold-light);
+    font-size: clamp(29px, 5vw, 48px);
+    letter-spacing: 2px;
+  }
+
+  .closing p {
+    max-width: 720px;
+    margin: 22px auto 0;
+  }
+
+  .tagline-conclusion {
+    max-width: 760px;
+    margin: 45px auto 0;
+    padding: 30px 25px;
+    border-top: 1px solid rgba(198,164,92,.5);
+    border-bottom: 1px solid rgba(198,164,92,.5);
+    text-align: center;
+  }
+
+  .tagline-conclusion p {
+    color: var(--ivory);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(19px, 2.8vw, 25px);
+    line-height: 1.7;
+    margin: 0 auto 18px;
+  }
+
+  .tagline-conclusion strong {
+    display: block;
+    color: var(--gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  .collection {
+    padding: 75px 5.5%;
+    background: #0b0b0b;
+    border-top: 1px solid var(--line);
+  }
+
+  .collection-heading {
+    max-width: var(--max);
+    margin: 0 auto 35px;
+    text-align: center;
+  }
+
+  .collection-heading span {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .collection-heading h2 {
+    color: var(--ivory);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 4vw, 38px);
+    font-weight: 400;
+    margin-top: 10px;
+  }
+
+  .cover-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .cover-card {
+    display: block;
+    border: 1px solid rgba(198,164,92,.18);
+    background: #121212;
+    transition: transform .25s ease, border-color .25s ease;
+  }
+
+  .cover-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+  }
+
+  .cover-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: #171717;
+  }
+
+  .cover-card span {
+    display: block;
+    padding: 12px 9px;
+    color: var(--ivory);
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    line-height: 1.5;
+  }
+
+  footer {
+    padding: 40px 6%;
+    background: #050505;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .footer-brand {
+    color: var(--ivory);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
+
+  .footer-slogan {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 9px;
+  }
+
+  .copyright {
+    color: #77736b;
+    font-size: 10px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* ============================================================
+     GOOGLE TRANSLATE — HIDDEN ENGINE, WORKING CUSTOM SELECTOR
+     ============================================================ */
+
+  /*
+     Keep the Google Translate engine in the document so that
+     its language selector can initialise, but move it off-screen.
+     Do not use display:none on the engine container.
+  */
+
+  #google_translate_element {
+    display: block !important;
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    max-width: 1px !important;
+    max-height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+  }
+
+  /* Hide Google's top translation banner and its iframe. */
+
+  .goog-te-banner-frame,
+  iframe.goog-te-banner-frame,
+  .VIpgJd-ZVi9od-ORHb-OEVmcd,
+  .VIpgJd-ZVi9od-ORHb,
+  .VIpgJd-ZVi9od-ORHb-KE6vqe {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    max-height: 0 !important;
+    max-width: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    left: -10000px !important;
+    top: -10000px !important;
+    border: 0 !important;
+  }
+
+  /* Hide Google translation menus and pop-out interfaces. */
+
+  .goog-te-menu-frame,
+  iframe.goog-te-menu-frame,
+  .goog-te-balloon-frame,
+  iframe.goog-te-balloon-frame,
+  #goog-gt-tt,
+  .goog-te-tooltip-container,
+  .goog-tooltip,
+  .goog-tooltip:hover,
+  .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+  .VIpgJd-ZVi9od-l4eHX,
+  .VIpgJd-yAWNEb-L7lbkb,
+  .VIpgJd-ZVi9od-vH1Gmf,
+  .VIpgJd-ZVi9od-xl07Ob,
+  .VIpgJd-ZVi9od-SmfZ {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    left: -10000px !important;
+    top: -10000px !important;
+    width: 0 !important;
+    height: 0 !important;
+    max-width: 0 !important;
+    max-height: 0 !important;
+    z-index: -9999 !important;
+  }
+
+  /* Remove Google translation highlights. */
+
+  .goog-text-highlight {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: inherit !important;
+  }
+
+  /* Hide Google branding and the translation gadget interface. */
+
+  .goog-logo-link,
+  .goog-te-gadget-icon,
+  .goog-te-spinner-pos,
+  .goog-te-ftab,
+  .goog-te-ftab-link,
+  .goog-te-menu2,
+  .goog-te-menu2-item {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .goog-te-gadget {
+    color: transparent !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+
+  /* Keep the custom language selector fully visible. */
+
+  .language-area,
+  #languageSelect {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #languageSelect {
+    position: relative;
+    z-index: 5;
+  }
+
+  /*
+     Google sometimes adds top spacing to the page after translation.
+     These rules prevent the injected banner from moving the layout.
+  */
+
+  html,
+  body,
+  body.translated-ltr,
+  body.translated-rtl {
+    top: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body {
+    position: relative !important;
+  }
+
+  @media (max-width: 900px) {
+    .cover-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--black);
-    }
-
-    body {
-      background: var(--black);
-      color: var(--ivory);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.75;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, select {
-      font: inherit;
-    }
-
+  @media (max-width: 600px) {
     .topbar {
-      min-height: 94px;
-      padding: 18px 5.5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-      background: rgba(8,8,8,.97);
-    }
-
-    .language-area {
-      display: flex;
-      align-items: center;
+      min-height: 75px;
+      padding: 13px 4%;
       gap: 10px;
     }
 
+    .language-area {
+      gap: 5px;
+    }
+
     .language-area label {
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      display: none;
     }
 
     #languageSelect {
-      background: #111;
-      color: var(--ivory);
-      border: 1px solid rgba(198,164,92,.55);
-      padding: 9px 28px 9px 10px;
-      font-size: 12px;
-      outline: none;
-      max-width: 155px;
+      max-width: 115px;
+      font-size: 11px;
+      padding: 8px 5px;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      text-align: right;
+      gap: 7px;
     }
 
     .brand img {
-      width: 49px;
-      height: 49px;
-      object-fit: contain;
+      width: 37px;
+      height: 37px;
     }
 
     .brand-name {
-      color: var(--ivory);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 2.2px;
-      line-height: 1.4;
+      font-size: 11px;
+      letter-spacing: 1.2px;
     }
 
     .brand-name span {
-      display: block;
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 4px;
-      margin-top: 3px;
+      font-size: 8px;
+      letter-spacing: 2.5px;
     }
 
     .brand-tagline {
-      display: block;
-      color: var(--gold-light);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 10px;
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: .6px;
-      line-height: 1.5;
-      margin-top: 5px;
-      text-transform: none;
+      font-size: 8px;
+      letter-spacing: .2px;
+      margin-top: 3px;
     }
 
     .main-nav {
-      padding: 14px 5.5%;
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      overflow-x: auto;
-      white-space: nowrap;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background: #0d0d0d;
-      scrollbar-width: thin;
-      scrollbar-color: var(--gold) #111;
+      padding: 12px 4%;
+      gap: 18px;
     }
 
     .main-nav a {
-      color: #aaa69e;
-      font-size: 10px;
-      letter-spacing: 1.35px;
-      text-transform: uppercase;
-      transition: color .2s ease;
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active {
-      color: var(--gold-light);
-    }
-
-    .main-nav a.home-link {
-      color: var(--ivory);
+      font-size: 9px;
     }
 
     .page-intro {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 75px 6% 42px;
-      text-align: center;
-    }
-
-    .edition-label {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 17px;
-    }
-
-    h1 {
-      color: var(--ivory);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(43px, 8vw, 91px);
-      font-weight: 400;
-      letter-spacing: 2px;
-      line-height: 1.05;
-    }
-
-    .cover-statement {
-      color: var(--gold-light);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(18px, 2.5vw, 25px);
-      font-style: italic;
-      margin-top: 22px;
+      padding: 56px 5% 30px;
     }
 
     .cover-wrap {
-      width: min(100% - 40px, 1120px);
-      margin: 0 auto 65px;
-      background: #111;
-      border: 1px solid rgba(198,164,92,.25);
-      padding: 10px;
-    }
-
-    .cover-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
+      width: calc(100% - 24px);
+      padding: 6px;
+      margin-bottom: 52px;
     }
 
     .article-actions {
-      max-width: var(--max);
-      margin: -32px auto 48px;
-      padding: 0 6%;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      margin-top: -20px;
+      margin-bottom: 32px;
     }
 
     .action-button {
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--ivory);
-      padding: 11px 20px;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: .2s ease;
-    }
-
-    .action-button:hover {
-      background: var(--gold);
-      color: #080808;
-      border-color: var(--gold);
+      padding: 10px 13px;
+      font-size: 9px;
     }
 
     .article-section {
-      padding: 75px 7%;
-    }
-
-    .article-inner {
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    .section-dark {
-      background: var(--deep);
-    }
-
-    .section-light {
-      background: var(--ivory);
-      color: #24221e;
-    }
-
-    .section-gold {
-      background: #17140e;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-number {
-      display: block;
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .section-light .section-number {
-      color: #92723a;
-    }
-
-    .article-section h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(29px, 4.5vw, 43px);
-      line-height: 1.2;
-      font-weight: 400;
-      margin-bottom: 28px;
+      padding: 55px 7%;
     }
 
     .article-section p {
-      font-size: 16px;
-      line-height: 1.95;
-      margin-bottom: 21px;
-      font-weight: 400;
-    }
-
-    .article-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .section-light p {
-      color: #39362f;
-    }
-
-    .article-section strong {
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-
-    .section-light strong {
-      color: #785c2c;
-    }
-
-    .pull-quote {
-      max-width: 790px;
-      margin: 35px auto;
-      padding: 25px 0;
-      color: var(--gold-light);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(25px, 4vw, 39px);
-      line-height: 1.4;
-      text-align: center;
-      font-style: italic;
-    }
-
-    .section-light .pull-quote {
-      color: #785c2c;
-    }
-
-    .closing {
-      text-align: center;
-      padding-top: 95px;
-      padding-bottom: 95px;
-    }
-
-    .closing h2 {
-      color: var(--gold-light);
-      font-size: clamp(29px, 5vw, 48px);
-      letter-spacing: 2px;
-    }
-
-    .closing p {
-      max-width: 720px;
-      margin: 22px auto 0;
-    }
-
-    .tagline-conclusion {
-      max-width: 760px;
-      margin: 45px auto 0;
-      padding: 30px 25px;
-      border-top: 1px solid rgba(198,164,92,.5);
-      border-bottom: 1px solid rgba(198,164,92,.5);
-      text-align: center;
-    }
-
-    .tagline-conclusion p {
-      color: var(--ivory);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(19px, 2.8vw, 25px);
-      line-height: 1.7;
-      margin: 0 auto 18px;
-    }
-
-    .tagline-conclusion strong {
-      display: block;
-      color: var(--gold-light);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(25px, 4vw, 38px);
-      font-weight: 600;
-      font-style: italic;
-      line-height: 1.35;
-    }
-
-    .collection {
-      padding: 75px 5.5%;
-      background: #0b0b0b;
-      border-top: 1px solid var(--line);
-    }
-
-    .collection-heading {
-      max-width: var(--max);
-      margin: 0 auto 35px;
-      text-align: center;
-    }
-
-    .collection-heading span {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .collection-heading h2 {
-      color: var(--ivory);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(27px, 4vw, 38px);
-      font-weight: 400;
-      margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.85;
     }
 
     .cover-grid {
-      max-width: var(--max);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
 
-    .cover-card {
-      display: block;
-      border: 1px solid rgba(198,164,92,.18);
-      background: #121212;
-      transition: transform .25s ease, border-color .25s ease;
-    }
-
-    .cover-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-    }
-
-    .cover-card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      background: #171717;
+    .collection {
+      padding: 58px 4%;
     }
 
     .cover-card span {
-      display: block;
-      padding: 12px 9px;
-      color: var(--ivory);
-      text-align: center;
-      font-size: 10px;
-      letter-spacing: 1.2px;
-      line-height: 1.5;
+      font-size: 9px;
     }
 
-    footer {
-      padding: 40px 6%;
-      background: #050505;
-      border-top: 1px solid var(--line);
-      text-align: center;
+    .tagline-conclusion {
+      padding: 24px 15px;
+      margin-top: 35px;
     }
-
-    .footer-brand {
-      color: var(--ivory);
-      font-size: 12px;
-      letter-spacing: 3px;
-      font-weight: 700;
-    }
-
-    .footer-slogan {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 3px;
-      margin-top: 9px;
-    }
-
-    .copyright {
-      color: #77736b;
-      font-size: 10px;
-      margin-top: 20px;
-      letter-spacing: 1px;
-    }
-
-    /* Google Translate: hide injected banner, frames and floating interfaces. */
-
-    #google_translate_element {
-      display: none !important;
-      position: absolute !important;
-      width: 0 !important;
-      height: 0 !important;
-      overflow: hidden !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
-    }
-
-    .goog-te-banner-frame,
-    iframe.goog-te-banner-frame,
-    .goog-te-menu-frame,
-    iframe.goog-te-menu-frame,
-    .goog-te-balloon-frame,
-    iframe.goog-te-balloon-frame,
-    .goog-te-gadget,
-    .goog-logo-link,
-    .goog-te-gadget-icon,
-    .goog-te-spinner-pos,
-    .goog-te-ftab,
-    .goog-te-ftab-link,
-    .goog-te-menu2,
-    .goog-te-menu2-item,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-text-highlight,
-    .goog-te-balloon-frame,
-    #goog-gt-tt,
-    .goog-te-balloon-frame,
-    .VIpgJd-ZVi9od-ORHb-OEVmcd,
-    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-    .VIpgJd-ZVi9od-l4eHX,
-    .VIpgJd-ZVi9od-ORHb,
-    .VIpgJd-yAWNEb-L7lbkb,
-    .VIpgJd-ZVi9od-vH1Gmf,
-    .VIpgJd-ZVi9od-xl07Ob,
-    .VIpgJd-ZVi9od-SmfZ,
-    .VIpgJd-ZVi9od-ORHb-KE6vqe,
-    .VIpgJd-ZVi9od-aZ2wEe,
-    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-    .skiptranslate iframe,
-    body > .skiptranslate,
-    body > iframe.skiptranslate,
-    html > .skiptranslate,
-    html > iframe.skiptranslate {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      position: absolute !important;
-      left: -10000px !important;
-      top: -10000px !important;
-      width: 0 !important;
-      height: 0 !important;
-      max-width: 0 !important;
-      max-height: 0 !important;
-      overflow: hidden !important;
-      border: 0 !important;
-    }
-
-    html,
-    body {
-      top: 0 !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-      transform: none !important;
-    }
-
-    body {
-      position: relative !important;
-    }
-
-    body.translated-ltr,
-    body.translated-rtl {
-      top: 0 !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-
-    body > .skiptranslate {
-      display: none !important;
-    }
-
-    /* Keep the site's own language selector visible and usable. */
-
-    .language-area,
-    #languageSelect {
-      display: flex;
-      visibility: visible;
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    #languageSelect {
-      position: relative;
-      z-index: 5;
-    }
-
-    @media (max-width: 900px) {
-      .cover-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 600px) {
-      .topbar {
-        min-height: 75px;
-        padding: 13px 4%;
-        gap: 10px;
-      }
-
-      .language-area {
-        gap: 5px;
-      }
-
-      .language-area label {
-        display: none;
-      }
-
-      #languageSelect {
-        max-width: 115px;
-        font-size: 11px;
-        padding: 8px 5px;
-      }
-
-      .brand {
-        gap: 7px;
-      }
-
-      .brand img {
-        width: 37px;
-        height: 37px;
-      }
-
-      .brand-name {
-        font-size: 11px;
-        letter-spacing: 1.2px;
-      }
-
-      .brand-name span {
-        font-size: 8px;
-        letter-spacing: 2.5px;
-      }
-
-      .brand-tagline {
-        font-size: 8px;
-        letter-spacing: .2px;
-        margin-top: 3px;
-      }
-
-      .main-nav {
-        padding: 12px 4%;
-        gap: 18px;
-      }
-
-      .main-nav a {
-        font-size: 9px;
-      }
-
-      .page-intro {
-        padding: 56px 5% 30px;
-      }
-
-      .cover-wrap {
-        width: calc(100% - 24px);
-        padding: 6px;
-        margin-bottom: 52px;
-      }
-
-      .article-actions {
-        margin-top: -20px;
-        margin-bottom: 32px;
-      }
-
-      .action-button {
-        padding: 10px 13px;
-        font-size: 9px;
-      }
-
-      .article-section {
-        padding: 55px 7%;
-      }
-
-      .article-section p {
-        font-size: 15px;
-        line-height: 1.85;
-      }
-
-      .cover-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .collection {
-        padding: 58px 4%;
-      }
-
-      .cover-card span {
-        font-size: 9px;
-      }
-
-      .tagline-conclusion {
-        padding: 24px 15px;
-        margin-top: 35px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
@@ -1456,6 +1501,10 @@
     document.getElementById("copyrightYear").textContent =
       new Date().getFullYear();
 
+    /* ============================================================
+       SHARE AND COPY FUNCTIONS
+       ============================================================ */
+
     async function copyArticleLink() {
       try {
         await navigator.clipboard.writeText(articleUrl);
@@ -1463,10 +1512,15 @@
       } catch (error) {
         const temporaryInput = document.createElement("textarea");
         temporaryInput.value = articleUrl;
+        temporaryInput.style.position = "fixed";
+        temporaryInput.style.left = "-9999px";
+
         document.body.appendChild(temporaryInput);
         temporaryInput.select();
+
         document.execCommand("copy");
         temporaryInput.remove();
+
         alert("Article link copied.");
       }
     }
@@ -1493,80 +1547,214 @@
 
     document.getElementById("copyButton").addEventListener("click", copyArticleLink);
 
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: "en",
-        autoDisplay: false
-      }, "google_translate_element");
-    }
 
-    function changeLanguage(language) {
-      if (language === "en") {
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
-        location.reload();
+    /* ============================================================
+       GOOGLE TRANSLATE INITIALISATION
+       ============================================================ */
+
+    const supportedLanguages = [
+      "en", "fr", "es", "de", "ar", "zh-CN", "ru", "pt",
+      "ja", "ko", "it", "nl", "tr", "hi", "id", "vi",
+      "th", "pl", "sv", "fi", "da"
+    ];
+
+    /*
+       This function is called by Google's external script.
+       It creates the translation engine used by the custom
+       language selector at the top of the website.
+    */
+
+    window.googleTranslateElementInit = function () {
+      if (
+        !window.google ||
+        !google.translate ||
+        !google.translate.TranslateElement
+      ) {
         return;
       }
 
-      const select = document.querySelector(".goog-te-combo");
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: supportedLanguages.join(","),
+          autoDisplay: false
+        },
+        "google_translate_element"
+      );
+    };
 
-      if (select) {
-        select.value = language;
-        select.dispatchEvent(new Event("change"));
+
+    /* ============================================================
+       WAIT FOR GOOGLE'S INTERNAL LANGUAGE SELECTOR
+       ============================================================ */
+
+    function waitForGoogleLanguageSelector(maxAttempts = 40) {
+      return new Promise((resolve, reject) => {
+        let attempts = 0;
+
+        const checkSelector = () => {
+          const googleSelect = document.querySelector(".goog-te-combo");
+
+          if (googleSelect) {
+            resolve(googleSelect);
+            return;
+          }
+
+          attempts++;
+
+          if (attempts >= maxAttempts) {
+            reject(new Error("Google Translate language selector did not load."));
+            return;
+          }
+
+          setTimeout(checkSelector, 250);
+        };
+
+        checkSelector();
+      });
+    }
+
+
+    /* ============================================================
+       CHANGE LANGUAGE THROUGH THE CUSTOM SELECTOR
+       ============================================================ */
+
+    async function changeLanguage(language) {
+      if (!supportedLanguages.includes(language)) {
+        return;
+      }
+
+      /*
+         English is the original page language.
+         Clear the Google translation cookie and reload.
+      */
+
+      if (language === "en") {
+        const hostname = window.location.hostname;
+        const domainParts = hostname.split(".");
+        const rootDomain = domainParts.length > 1
+          ? "." + domainParts.slice(-2).join(".")
+          : hostname;
+
+        document.cookie =
+          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+        document.cookie =
+          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + hostname;
+
+        document.cookie =
+          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + rootDomain;
+
+        window.location.reload();
+        return;
+      }
+
+      try {
+        const googleSelect = await waitForGoogleLanguageSelector();
+
+        googleSelect.value = language;
+
+        googleSelect.dispatchEvent(
+          new Event("change", { bubbles: true })
+        );
+
+      } catch (error) {
+        console.error("Google Translate could not change language:", error);
+        alert("The translation service is still loading. Please try again shortly.");
       }
     }
 
-    document.getElementById("languageSelect").addEventListener("change", function () {
-      changeLanguage(this.value);
-    });
 
-    /*
-      Google Translate may inject a banner, iframe or inline spacing
-      after the page has loaded. This observer removes those injected
-      interface elements and restores the document's top positioning.
-      It does not remove the site's own language selector.
-    */
+    /* ============================================================
+       CONNECT THE VISIBLE LANGUAGE SELECTOR
+       ============================================================ */
 
-    (function suppressGoogleTranslateInterface() {
-      const googleInterfaceSelectors = [
-        "iframe.goog-te-banner-frame",
-        "iframe.goog-te-menu-frame",
-        "iframe.goog-te-balloon-frame",
-        ".goog-te-banner-frame",
-        ".goog-te-menu-frame",
-        ".goog-te-balloon-frame",
-        "#goog-gt-tt",
-        ".goog-tooltip",
-        ".VIpgJd-ZVi9od-ORHb-OEVmcd",
-        ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf"
-      ];
+    document
+      .getElementById("languageSelect")
+      .addEventListener("change", function () {
+        changeLanguage(this.value);
+      });
 
-      function removeGoogleInterface() {
-        googleInterfaceSelectors.forEach(function (selector) {
-          document.querySelectorAll(selector).forEach(function (element) {
+
+    /* ============================================================
+       GOOGLE BANNER AND POP-OUT PROTECTION
+       ============================================================ */
+
+    (function protectPageFromGoogleInterface() {
+
+      function restorePagePosition() {
+        const html = document.documentElement;
+        const body = document.body;
+
+        if (!html || !body) {
+          return;
+        }
+
+        if (html.style.top !== "0px") {
+          html.style.setProperty("top", "0px", "important");
+        }
+
+        if (html.style.marginTop !== "0px") {
+          html.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (html.style.paddingTop !== "0px") {
+          html.style.setProperty("padding-top", "0px", "important");
+        }
+
+        if (body.style.top !== "0px") {
+          body.style.setProperty("top", "0px", "important");
+        }
+
+        if (body.style.marginTop !== "0px") {
+          body.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (body.style.paddingTop !== "0px") {
+          body.style.setProperty("padding-top", "0px", "important");
+        }
+      }
+
+
+      /*
+         Remove only unwanted Google banner and tooltip elements.
+         Do not remove the hidden translation engine or its
+         internal language selector.
+      */
+
+      function removeGooglePopouts() {
+        const unwantedSelectors = [
+          "iframe.goog-te-banner-frame",
+          ".goog-te-banner-frame",
+          ".goog-te-balloon-frame",
+          "#goog-gt-tt",
+          ".goog-tooltip"
+        ];
+
+        unwantedSelectors.forEach(selector => {
+          document.querySelectorAll(selector).forEach(element => {
             if (!element.closest("#google_translate_element")) {
               element.remove();
             }
           });
         });
 
-        if (document.documentElement) {
-          document.documentElement.style.setProperty("top", "0", "important");
-          document.documentElement.style.setProperty("margin-top", "0", "important");
-          document.documentElement.style.setProperty("padding-top", "0", "important");
-        }
-
-        if (document.body) {
-          document.body.style.setProperty("top", "0", "important");
-          document.body.style.setProperty("margin-top", "0", "important");
-          document.body.style.setProperty("padding-top", "0", "important");
-        }
+        restorePagePosition();
       }
 
-      removeGoogleInterface();
 
-      const observer = new MutationObserver(function () {
-        removeGoogleInterface();
+      /* Initial protection. */
+
+      removeGooglePopouts();
+
+
+      /*
+         Monitor Google's injected elements and layout changes.
+         The observer does not delete the translation engine.
+      */
+
+      const observer = new MutationObserver(() => {
+        removeGooglePopouts();
       });
 
       observer.observe(document.documentElement, {
@@ -1576,12 +1764,20 @@
         attributeFilter: ["style", "class"]
       });
 
-      window.addEventListener("load", removeGoogleInterface);
-      window.addEventListener("resize", removeGoogleInterface);
+
+      window.addEventListener("load", removeGooglePopouts);
+      window.addEventListener("resize", removeGooglePopouts);
+      window.addEventListener("scroll", restorePagePosition);
+
     })();
+
   </script>
 
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async
+    defer>
+  </script>
 
 </body>
 </html>
