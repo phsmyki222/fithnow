@@ -1,21 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT</title>
-
   <link rel="canonical" href="https://phrinusomyis.com/newsroom/newswire.html">
-
   <meta name="application-name" content="PHRINUSOMYIS™">
   <meta name="author" content="PHRINUSOMYIS™">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#f5f3ed">
-
   <meta name="description" content="PHRINUSOMYIS™ examines the evolution of competitive sport and its independent direction beyond traditional sporting structures.">
-
+  <meta name="keywords" content="PHRINUSOMYIS, competitive sport, international sports organization, sports competitions, sports history, global sport">
+  <meta name="language" content="English">
+  <meta name="content-language" content="en">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="PHRINUSOMYIS™">
   <meta property="og:title" content="PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT">
@@ -23,15 +20,13 @@
   <meta property="og:url" content="https://phrinusomyis.com/newsroom/newswire.html">
   <meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
   <meta property="og:image:alt" content="PHRINUSOMYIS™ — THE STANDARD">
-
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT">
   <meta name="twitter:description" content="A look at the history of sport and the independent direction PHRINUSOMYIS™ has taken in competitive competition.">
   <meta name="twitter:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
-
   <link rel="icon" href="https://phrinusomyis.com/phrinusomyis_logo.png">
   <link rel="apple-touch-icon" href="https://phrinusomyis.com/phrinusomyis_logo.png">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,10 +34,10 @@
     "@id": "https://phrinusomyis.com/newsroom/newswire.html#article",
     "headline": "PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT",
     "description": "PHRINUSOMYIS™ examines the evolution of competitive sport and its independent direction beyond traditional sporting structures.",
-    "url": "https://phrinusomyis.com/newsroom/newswire",
+    "url": "https://phrinusomyis.com/newsroom/newswire.html",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://phrinusomyis.com/newsroom/newswire"
+      "@id": "https://phrinusomyis.com/newsroom/newswire.html"
     },
     "image": {
       "@type": "ImageObject",
@@ -62,7 +57,9 @@
         "url": "https://phrinusomyis.com/phrinusomyis_logo.png"
       }
     },
-    "inLanguage": "en"
+    "articleSection": "Newswire",
+    "inLanguage": "en",
+    "isAccessibleForFree": true
   }
   </script>
 
@@ -70,13 +67,17 @@
     :root {
       --background: #f5f3ed;
       --surface: #ffffff;
-      --surface-light: #ebe7dc;
-      --gold: #a78332;
-      --gold-light: #92702b;
-      --text: #25231e;
-      --muted: #6e6a60;
-      --border: rgba(155, 122, 49, 0.28);
+      --surface-light: #eeece5;
+      --gold: #a47c25;
+      --gold-light: #846019;
+      --text: #24231f;
+      --muted: #66635c;
+      --border: rgba(164, 124, 37, 0.27);
       --content-width: 1180px;
+      --heading-color: #795a19;
+      --paragraph-color: #302e29;
+      --intro-background: #efede5;
+      --closing-background: #eeece5;
     }
 
     * {
@@ -90,12 +91,21 @@
 
     body {
       margin: 0;
-      background: var(--background);
+      background:
+        radial-gradient(ellipse at 10% 5%, rgba(201,166,70,.075), transparent 34%),
+        radial-gradient(ellipse at 90% 35%, rgba(164,124,37,.045), transparent 32%),
+        var(--background);
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 17px;
+      font-weight: 600;
       line-height: 1.85;
       -webkit-font-smoothing: antialiased;
+      transition: background .3s ease, color .3s ease;
+    }
+
+    body, p, li, span, label, a, button, select {
+      font-weight: 600;
     }
 
     a {
@@ -104,7 +114,7 @@
     }
 
     a:hover {
-      color: #ffffff;
+      color: var(--heading-color);
     }
 
     button {
@@ -156,14 +166,14 @@
       color: var(--gold);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 3px;
     }
 
     .header-link {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       white-space: nowrap;
@@ -192,7 +202,7 @@
       color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
     }
 
     .breadcrumbs span {
@@ -220,9 +230,9 @@
 
     h1 {
       margin: 0;
-      color: var(--text);
+      color: var(--heading-color);
       font-size: clamp(34px, 5vw, 57px);
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1.13;
       letter-spacing: -1.5px;
       text-transform: uppercase;
@@ -249,19 +259,21 @@
     .article-intro {
       margin: 0 0 32px;
       padding: 23px 26px;
-      border-left: 3px solid var(--gold);
-      background: linear-gradient(
-        120deg,
-        rgba(167, 131, 50, 0.10),
-        rgba(167, 131, 50, 0.025)
-      );
-      color: var(--text);
+      border-left: 4px solid var(--gold);
+      background: var(--intro-background);
+      color: var(--paragraph-color);
       font-size: 19px;
+      font-weight: 700;
       line-height: 1.8;
+    }
+
+    .article-body {
+      color: var(--paragraph-color);
     }
 
     .article-body p {
       margin: 0 0 25px;
+      font-weight: 600;
     }
 
     .article-body p:first-child::first-letter {
@@ -269,18 +281,20 @@
       padding: 8px 10px 0 0;
       color: var(--gold-light);
       font-size: 58px;
-      line-height: 0.85;
+      font-weight: 800;
+      line-height: .85;
     }
 
     .article-body strong {
-      color: var(--gold-light);
-      font-weight: 700;
+      color: var(--heading-color);
+      font-weight: 800;
     }
 
     .article-body h2 {
       margin: 42px 0 18px;
-      color: var(--gold-light);
+      color: var(--heading-color);
       font-size: 25px;
+      font-weight: 800;
       line-height: 1.35;
     }
 
@@ -288,13 +302,15 @@
       margin-top: 38px;
       padding: 26px;
       border: 1px solid var(--border);
-      background: var(--surface);
+      border-left: 4px solid var(--gold);
+      background: var(--closing-background);
     }
 
     .article-closing p {
       margin: 0;
-      color: var(--gold-light);
+      color: var(--heading-color);
       font-size: 20px;
+      font-weight: 700;
       font-style: italic;
       line-height: 1.8;
     }
@@ -309,11 +325,12 @@
       padding: 22px;
       border: 1px solid var(--border);
       background: var(--surface);
+      box-shadow: 0 5px 22px rgba(0,0,0,.035);
     }
 
     .sidebar-card h2 {
       margin: 0 0 15px;
-      color: var(--gold-light);
+      color: var(--heading-color);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 800;
@@ -326,6 +343,7 @@
       margin: 0;
       color: var(--muted);
       font-size: 14px;
+      font-weight: 600;
       line-height: 1.8;
     }
 
@@ -336,7 +354,7 @@
     }
 
     .sidebar-nav li {
-      border-bottom: 1px solid rgba(120, 110, 90, 0.16);
+      border-bottom: 1px solid var(--border);
     }
 
     .sidebar-nav li:last-child {
@@ -346,7 +364,7 @@
     .sidebar-nav a {
       display: block;
       padding: 9px 0;
-      color: var(--text);
+      color: var(--paragraph-color);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
       line-height: 1.5;
@@ -378,7 +396,7 @@
       color: var(--gold) !important;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px !important;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 3px;
       text-align: center;
     }
@@ -399,7 +417,7 @@
       color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
@@ -417,10 +435,10 @@
       cursor: pointer;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
+      font-weight: 800;
+      letter-spacing: .8px;
       text-transform: uppercase;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: background .2s ease, color .2s ease;
     }
 
     .action-button:hover {
@@ -429,7 +447,8 @@
     }
 
     .action-button:focus-visible,
-    a:focus-visible {
+    a:focus-visible,
+    select:focus-visible {
       outline: 2px solid var(--gold-light);
       outline-offset: 4px;
     }
@@ -451,7 +470,7 @@
 
     .issuance h2 {
       margin: 0 0 20px;
-      color: var(--gold-light);
+      color: var(--heading-color);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 800;
@@ -464,7 +483,7 @@
       grid-template-columns: 135px minmax(0, 1fr);
       gap: 16px;
       padding: 11px 0;
-      border-bottom: 1px solid rgba(120, 110, 90, 0.16);
+      border-bottom: 1px solid var(--border);
       font-size: 15px;
       line-height: 1.6;
     }
@@ -479,7 +498,7 @@
 
     .issuance-value {
       color: var(--text);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .site-footer {
@@ -505,17 +524,335 @@
     }
 
     .footer-copy strong {
-      color: var(--gold-light);
+      color: var(--heading-color);
       letter-spacing: 1px;
     }
 
     .footer-link {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
       white-space: nowrap;
+    }
+
+    /* READING PREFERENCES */
+
+    .reading-preferences {
+      max-width: var(--content-width);
+      margin: 0 auto 32px;
+      padding: 22px 25px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: 0 5px 22px rgba(0,0,0,.035);
+    }
+
+    .preferences-heading {
+      margin: 0 0 15px;
+      color: var(--heading-color);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .preferences-description {
+      margin: 0 0 17px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .theme-options {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .theme-button {
+      min-height: 76px;
+      padding: 10px 7px;
+      border: 1px solid var(--border);
+      background: var(--background);
+      color: var(--text);
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.5;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .theme-button:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+
+    .theme-button[aria-pressed="true"] {
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 0 2px rgba(164,124,37,.12);
+    }
+
+    .theme-swatch {
+      display: block;
+      width: 34px;
+      height: 23px;
+      margin: 0 auto 7px;
+      border: 1px solid rgba(128,128,128,.35);
+    }
+
+    .swatch-original { background: linear-gradient(90deg,#080808 50%,#c9a646 50%); }
+    .swatch-white { background: linear-gradient(90deg,#fff 50%,#b18b39 50%); }
+    .swatch-ivory { background: linear-gradient(90deg,#eee5d2 50%,#80602b 50%); }
+    .swatch-dark { background: linear-gradient(90deg,#202020 50%,#d6b65f 50%); }
+    .swatch-gold { background: linear-gradient(90deg,#fff 50%,#a47c25 50%); }
+    .swatch-classic { background: linear-gradient(90deg,#fff 50%,#222 50%); }
+    .swatch-grey { background: linear-gradient(90deg,#e8e9eb 50%,#536171 50%); }
+
+    /* GOOGLE TRANSLATE */
+
+    .language-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      max-width: var(--content-width);
+      margin: 0 auto 25px;
+      padding: 17px 22px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: 0 5px 22px rgba(0,0,0,.035);
+    }
+
+    .language-information {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .language-title {
+      color: var(--heading-color);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .language-subtitle {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    .language-select {
+      min-width: 220px;
+      min-height: 43px;
+      padding: 9px 35px 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .language-status {
+      flex-basis: 100%;
+      min-height: 17px;
+      color: var(--gold-light);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+    }
+
+    /* Google translation engine stays available but visually hidden. */
+
+    #google_translate_element {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      clip-path: inset(50%) !important;
+      white-space: nowrap !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .goog-te-banner-frame,
+    iframe.goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-te-spinner-pos,
+    .goog-te-gadget-icon,
+    .goog-te-menu-frame,
+    .goog-te-ftab-frame,
+    .goog-te-menu-value,
+    .goog-te-menu2,
+    .goog-te-menu2-item,
+    .goog-te-menu2-item div,
+    .goog-te-menu2-item-selected,
+    .goog-te-menu2-item-highlighted {
+      visibility: hidden !important;
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    body {
+      top: 0 !important;
+      position: relative !important;
+    }
+
+    html {
+      margin-top: 0 !important;
+      top: 0 !important;
+    }
+
+    body.translated-ltr,
+    body.translated-rtl {
+      top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    .skiptranslate {
+      display: none !important;
+    }
+
+    #goog-gt-tt,
+    .goog-te-balloon-frame,
+    .goog-text-highlight {
+      display: none !important;
+      visibility: hidden !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: 0 !important;
+    }
+
+    /* THEME 1: ORIGINAL BLACK AND GOLD */
+
+    body[data-theme="original"] {
+      --background: #080808;
+      --surface: #111111;
+      --surface-light: #171717;
+      --gold: #c9a646;
+      --gold-light: #e6cb7a;
+      --text: #f3f0e8;
+      --muted: #aaa69a;
+      --border: rgba(201,166,70,.3);
+      --heading-color: #e6cb7a;
+      --paragraph-color: #e8e3d7;
+      --intro-background: #17150f;
+      --closing-background: #17150f;
+    }
+
+    /* THEME 2: SOFT WHITE EDITORIAL */
+
+    body[data-theme="white"] {
+      --background: #f5f3ed;
+      --surface: #ffffff;
+      --surface-light: #eeece5;
+      --gold: #a47c25;
+      --gold-light: #846019;
+      --text: #24231f;
+      --muted: #66635c;
+      --border: rgba(164,124,37,.27);
+      --heading-color: #795a19;
+      --paragraph-color: #302e29;
+      --intro-background: #efede5;
+      --closing-background: #eeece5;
+    }
+
+    /* THEME 3: WARM IVORY */
+
+    body[data-theme="ivory"] {
+      --background: #eee7d9;
+      --surface: #f8f3e9;
+      --surface-light: #e8deca;
+      --gold: #9b762f;
+      --gold-light: #74551d;
+      --text: #332c20;
+      --muted: #766b58;
+      --border: rgba(132,99,37,.3);
+      --heading-color: #795820;
+      --paragraph-color: #3d3529;
+      --intro-background: #e6dcc8;
+      --closing-background: #e6dcc8;
+    }
+
+    /* THEME 4: CHARCOAL AND GOLD */
+
+    body[data-theme="charcoal"] {
+      --background: #202020;
+      --surface: #292929;
+      --surface-light: #343434;
+      --gold: #d1ad50;
+      --gold-light: #f0d47e;
+      --text: #f0ede5;
+      --muted: #b6b1a5;
+      --border: rgba(209,173,80,.35);
+      --heading-color: #f0d47e;
+      --paragraph-color: #e6e1d6;
+      --intro-background: #30302c;
+      --closing-background: #30302c;
+    }
+
+    /* THEME 5: WHITE WITH GOLD TYPOGRAPHY */
+
+    body[data-theme="gold"] {
+      --background: #ffffff;
+      --surface: #fafafa;
+      --surface-light: #f3f0e8;
+      --gold: #a47c25;
+      --gold-light: #987020;
+      --text: #9a7428;
+      --muted: #806b48;
+      --border: rgba(164,124,37,.3);
+      --heading-color: #997020;
+      --paragraph-color: #92702b;
+      --intro-background: #f8f5ed;
+      --closing-background: #f8f5ed;
+    }
+
+    /* THEME 6: WHITE, BLACK AND GOLD */
+
+    body[data-theme="classic"] {
+      --background: #ffffff;
+      --surface: #f8f8f8;
+      --surface-light: #eeeeee;
+      --gold: #a47c25;
+      --gold-light: #8b681e;
+      --text: #171717;
+      --muted: #555555;
+      --border: rgba(164,124,37,.3);
+      --heading-color: #967020;
+      --paragraph-color: #202020;
+      --intro-background: #f4f1e9;
+      --closing-background: #f4f1e9;
+    }
+
+    /* THEME 7: REFINED LIGHT GREY */
+
+    body[data-theme="grey"] {
+      --background: #e9ebee;
+      --surface: #f8f9fa;
+      --surface-light: #e1e4e8;
+      --gold: #65788b;
+      --gold-light: #40566d;
+      --text: #222b35;
+      --muted: #5d6874;
+      --border: rgba(75,94,114,.25);
+      --heading-color: #40566d;
+      --paragraph-color: #29333d;
+      --intro-background: #e0e5e9;
+      --closing-background: #e0e5e9;
     }
 
     @media (max-width: 850px) {
@@ -538,6 +875,10 @@
       .brand img {
         width: 49px;
         height: 49px;
+      }
+
+      .theme-options {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
     }
 
@@ -573,7 +914,7 @@
 
       .header-link {
         font-size: 10px;
-        letter-spacing: 0.7px;
+        letter-spacing: .7px;
       }
 
       .page-shell {
@@ -586,7 +927,7 @@
 
       h1 {
         font-size: 35px;
-        letter-spacing: -0.8px;
+        letter-spacing: -.8px;
       }
 
       .article-intro {
@@ -632,24 +973,30 @@
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .reading-preferences,
+      .language-section {
+        margin-left: 18px;
+        margin-right: 18px;
+      }
+
+      .theme-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .language-section {
+        align-items: stretch;
+      }
+
+      .language-select {
+        width: 100%;
+      }
     }
 
     @media print {
-      :root {
-        --background: #ffffff;
-        --surface: #ffffff;
-        --surface-light: #ffffff;
-        --text: #111111;
-        --muted: #555555;
-        --gold: #9a7620;
-        --gold-light: #775b12;
-        --border: #cccccc;
-      }
-
       body {
-        background: #ffffff;
-        color: #111111;
-        font-size: 12pt;
+        background: #ffffff !important;
+        color: #111111 !important;
       }
 
       .site-header,
@@ -658,8 +1005,8 @@
       .article-sidebar,
       .share-section,
       .site-footer,
-      .reader-tools,
-      .reader-tools-wrap {
+      .reading-preferences,
+      .language-section {
         display: none !important;
       }
 
@@ -672,7 +1019,7 @@
       .article-body h2,
       .article-closing p,
       .issuance-value {
-        color: #111111;
+        color: #111111 !important;
       }
 
       .article-layout {
@@ -682,7 +1029,7 @@
       .article-intro,
       .article-closing,
       .issuance {
-        background: #ffffff;
+        background: #ffffff !important;
         break-inside: avoid;
       }
 
@@ -690,386 +1037,13 @@
         color: #111111;
       }
     }
-
-    /* =========================================
-       PHRINUSOMYIS™ READER EXPERIENCE
-       Seven coordinated reading themes
-    ========================================= */
-
-    body,
-    body * {
-      font-weight: 700 !important;
-    }
-
-    body {
-      background: var(--background);
-      color: var(--text);
-      transition: background-color .25s ease, color .25s ease;
-    }
-
-    .article,
-    .article-body,
-    .article-body p,
-    .article-intro,
-    .article-closing,
-    .issuance,
-    .sidebar-card {
-      color: var(--text);
-    }
-
-    .article-body p {
-      line-height: 1.95;
-    }
-
-    .article-body strong,
-    .article-body h2,
-    .article-closing p,
-    .sidebar-card h2,
-    .issuance h2 {
-      color: var(--gold-light);
-    }
-
-    .reader-tools-wrap {
-      position: relative;
-      z-index: 20;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 5px 20px rgba(0,0,0,.035);
-    }
-
-    .reader-tools {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 16px 28px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-    }
-
-    .reader-tools-title {
-      width: 100%;
-      margin: 0 0 2px;
-      color: var(--gold-light);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .reader-control {
-      display: flex;
-      flex: 1 1 220px;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 0;
-    }
-
-    .reader-control label {
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .reader-control select {
-      width: 100%;
-      min-height: 43px;
-      padding: 10px 35px 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .reader-control select:focus {
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
-    }
-
-    .reader-note {
-      width: 100%;
-      margin: 0;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    /* Theme 1: Original Black and Gold */
-
-    body[data-theme="original"] {
-      --background: #111111;
-      --surface: #191919;
-      --surface-light: #242424;
-      --text: #f3f0e8;
-      --muted: #c0b9a8;
-      --gold: #c9a646;
-      --gold-light: #e6cb7a;
-      --border: rgba(201,166,70,.35);
-    }
-
-    /* Theme 2: Editorial Ivory */
-
-    body[data-theme="ivory"] {
-      --background: #f5f3ed;
-      --surface: #ffffff;
-      --surface-light: #ebe7dc;
-      --text: #29271f;
-      --muted: #706b60;
-      --gold: #a78332;
-      --gold-light: #92702b;
-      --border: rgba(155,122,49,.28);
-    }
-
-    /* Theme 3: Pure White */
-
-    body[data-theme="white"] {
-      --background: #ffffff;
-      --surface: #f8f8f8;
-      --surface-light: #eeeeee;
-      --text: #181818;
-      --muted: #555555;
-      --gold: #9a7620;
-      --gold-light: #775b12;
-      --border: rgba(130,105,48,.25);
-    }
-
-    /* Theme 4: Midnight Gold */
-
-    body[data-theme="midnight"] {
-      --background: #090d16;
-      --surface: #121a28;
-      --surface-light: #1c293b;
-      --text: #f4f0e5;
-      --muted: #b3bdcc;
-      --gold: #c6a34b;
-      --gold-light: #e8cc80;
-      --border: rgba(198,163,75,.35);
-    }
-
-    /* Theme 5: White and Gold */
-
-    body[data-theme="whitegold"] {
-      --background: #ffffff;
-      --surface: #fffdf7;
-      --surface-light: #f7f0dc;
-      --text: #a17a22;
-      --muted: #876d38;
-      --gold: #a17a22;
-      --gold-light: #8c681b;
-      --border: rgba(161,122,34,.32);
-    }
-
-    /* Theme 6: White, Black and Gold */
-
-    body[data-theme="classic"] {
-      --background: #ffffff;
-      --surface: #f7f7f5;
-      --surface-light: #eceae4;
-      --text: #202020;
-      --muted: #626262;
-      --gold: #aa852f;
-      --gold-light: #967126;
-      --border: rgba(170,133,47,.32);
-    }
-
-    /* Theme 7: Slate Blue */
-
-    body[data-theme="slate"] {
-      --background: #eaf0f5;
-      --surface: #ffffff;
-      --surface-light: #dce5ee;
-      --text: #203449;
-      --muted: #52677b;
-      --gold: #416d91;
-      --gold-light: #315c80;
-      --border: rgba(49,92,128,.25);
-    }
-
-    /* Apply theme colours consistently */
-
-    .site-header,
-    .reader-tools-wrap,
-    .site-footer,
-    .sidebar-card,
-    .issuance,
-    .article-closing {
-      background: var(--surface);
-      border-color: var(--border);
-    }
-
-    .article-intro {
-      background: linear-gradient(
-        120deg,
-        var(--surface-light),
-        var(--surface)
-      );
-      color: var(--text);
-      border-left-color: var(--gold);
-    }
-
-    .brand-name,
-    .sidebar-brand,
-    .issuance-value,
-    .article-body p,
-    .article-intro {
-      color: var(--text);
-    }
-
-    .brand-tagline,
-    .sidebar-motto,
-    .article-body h2,
-    .article-body strong,
-    .article-closing p,
-    .sidebar-card h2,
-    .issuance h2,
-    .section-label {
-      color: var(--gold-light);
-    }
-
-    .sidebar-card p,
-    .breadcrumbs,
-    .issuance-label,
-    .footer-copy {
-      color: var(--muted);
-    }
-
-    .article-sidebar .sidebar-nav a {
-      color: var(--text);
-    }
-
-    .action-button {
-      border-color: var(--border);
-      color: var(--gold-light);
-    }
-
-    .action-button:hover {
-      background: var(--gold);
-      color: var(--background);
-    }
-
-    .top-rule {
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        var(--gold-light),
-        var(--gold),
-        transparent
-      );
-    }
-
-    /* =========================================
-       GOOGLE TRANSLATE INTERFACE SUPPRESSION
-    ========================================= */
-
-    html {
-      margin-top: 0 !important;
-      top: 0 !important;
-    }
-
-    html body {
-      margin-top: 0 !important;
-      top: 0 !important;
-      position: relative !important;
-    }
-
-    body > .skiptranslate,
-    .goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    .goog-te-menu-frame,
-    .goog-te-spinner-pos,
-    #goog-gt-tt,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-text-highlight,
-    .goog-te-gadget,
-    .goog-te-gadget-simple,
-    .goog-te-menu-value,
-    .goog-te-menu2,
-    .goog-te-menu2-item,
-    iframe.goog-te-banner-frame,
-    iframe.goog-te-menu-frame {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      height: 0 !important;
-      max-height: 0 !important;
-      width: 0 !important;
-      max-width: 0 !important;
-      overflow: hidden !important;
-      position: absolute !important;
-      left: -99999px !important;
-      top: -99999px !important;
-      border: 0 !important;
-    }
-
-    .goog-te-gadget,
-    .goog-te-gadget span,
-    .goog-te-gadget a {
-      font-size: 0 !important;
-      line-height: 0 !important;
-    }
-
-    body.translated-ltr,
-    body.translated-rtl {
-      top: 0 !important;
-      margin-top: 0 !important;
-    }
-
-    body.translated-ltr {
-      margin-top: 0 !important;
-    }
-
-    #google_translate_element {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      clip-path: inset(50%) !important;
-      white-space: nowrap !important;
-      left: -10000px !important;
-      top: auto !important;
-    }
-
-    /* Preserve reading experience on mobile */
-
-    @media (max-width: 650px) {
-      .reader-tools {
-        padding: 15px 18px;
-        gap: 12px;
-      }
-
-      .reader-control {
-        flex: 1 1 100%;
-      }
-
-      .reader-control select {
-        min-height: 46px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
   </style>
 </head>
 
-<body data-theme="ivory">
+<body data-theme="white">
+
+  <!-- GOOGLE TRANSLATE ENGINE -->
+  <div id="google_translate_element" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="header-inner">
@@ -1091,65 +1065,94 @@
     <div class="top-rule"></div>
   </header>
 
-  <!-- READER LANGUAGE AND COLOUR CONTROLS -->
+  <main class="page-shell">
 
-  <section class="reader-tools-wrap" aria-label="Reader preferences">
-    <div class="reader-tools">
-
-      <h2 class="reader-tools-title">Personalise Your Reading Experience</h2>
-
-      <div class="reader-control">
-        <label for="language-selector">Language / Translate</label>
-        <select id="language-selector" aria-label="Choose reading language">
-          <option value="en" selected>English — Original Language</option>
-          <option value="fr">Français — French</option>
-          <option value="es">Español — Spanish</option>
-          <option value="de">Deutsch — German</option>
-          <option value="ar">العربية — Arabic</option>
-          <option value="zh-CN">中文 — Chinese</option>
-          <option value="ru">Русский — Russian</option>
-          <option value="pt">Português — Portuguese</option>
-          <option value="ja">日本語 — Japanese</option>
-          <option value="ko">한국어 — Korean</option>
-          <option value="it">Italiano — Italian</option>
-          <option value="nl">Nederlands — Dutch</option>
-          <option value="tr">Türkçe — Turkish</option>
-          <option value="hi">हिन्दी — Hindi</option>
-          <option value="id">Bahasa Indonesia — Indonesian</option>
-          <option value="vi">Tiếng Việt — Vietnamese</option>
-          <option value="th">ไทย — Thai</option>
-          <option value="pl">Polski — Polish</option>
-          <option value="sv">Svenska — Swedish</option>
-          <option value="fi">Suomi — Finnish</option>
-          <option value="da">Dansk — Danish</option>
-        </select>
+    <!-- LANGUAGE SELECTOR -->
+    <section class="language-section" aria-label="Website language">
+      <div class="language-information">
+        <span class="language-title">Read in your language</span>
+        <span class="language-subtitle">English is the original language of this publication.</span>
       </div>
 
-      <div class="reader-control">
-        <label for="theme-selector">Choose Your Reading Background</label>
-        <select id="theme-selector" aria-label="Choose reading background">
-          <option value="original">01 — Original Black & Gold</option>
-          <option value="ivory" selected>02 — Editorial Ivory</option>
-          <option value="white">03 — Pure White</option>
-          <option value="midnight">04 — Midnight Gold</option>
-          <option value="whitegold">05 — White & Gold</option>
-          <option value="classic">06 — White, Black & Gold</option>
-          <option value="slate">07 — Slate Blue</option>
-        </select>
-      </div>
+      <select
+        class="language-select"
+        id="language-selector"
+        aria-label="Choose publication language"
+      >
+        <option value="">English — Original</option>
+        <option value="fr">Français — French</option>
+        <option value="es">Español — Spanish</option>
+        <option value="de">Deutsch — German</option>
+        <option value="ar">العربية — Arabic</option>
+        <option value="zh-CN">中文 — Chinese</option>
+        <option value="ru">Русский — Russian</option>
+        <option value="pt">Português — Portuguese</option>
+        <option value="ja">日本語 — Japanese</option>
+        <option value="ko">한국어 — Korean</option>
+        <option value="it">Italiano — Italian</option>
+        <option value="nl">Nederlands — Dutch</option>
+        <option value="tr">Türkçe — Turkish</option>
+        <option value="hi">हिन्दी — Hindi</option>
+        <option value="id">Bahasa Indonesia — Indonesian</option>
+        <option value="vi">Tiếng Việt — Vietnamese</option>
+        <option value="th">ไทย — Thai</option>
+        <option value="pl">Polski — Polish</option>
+        <option value="sv">Svenska — Swedish</option>
+        <option value="fi">Suomi — Finnish</option>
+        <option value="da">Dansk — Danish</option>
+      </select>
 
-      <p class="reader-note">
-        Select your preferred language and reading appearance. Your selection changes the reading presentation without changing the original publication.
+      <span class="language-status" id="language-status" role="status" aria-live="polite"></span>
+    </section>
+
+    <!-- READING APPEARANCE SELECTOR -->
+    <section class="reading-preferences" aria-label="Reading appearance preferences">
+      <h2 class="preferences-heading">Choose Your Reading Appearance</h2>
+
+      <p class="preferences-description">
+        Select the reading appearance that is most comfortable for you. Your selection changes the presentation of the entire publication.
       </p>
 
-    </div>
-  </section>
+      <div class="theme-options">
 
-  <!-- HIDDEN GOOGLE TRANSLATE ENGINE -->
+        <button class="theme-button" type="button" data-theme-choice="original" aria-pressed="false">
+          <span class="theme-swatch swatch-original"></span>
+          Original Black & Gold
+        </button>
 
-  <div id="google_translate_element" aria-hidden="true"></div>
+        <button class="theme-button" type="button" data-theme-choice="white" aria-pressed="true">
+          <span class="theme-swatch swatch-white"></span>
+          Soft White Editorial
+        </button>
 
-  <main class="page-shell">
+        <button class="theme-button" type="button" data-theme-choice="ivory" aria-pressed="false">
+          <span class="theme-swatch swatch-ivory"></span>
+          Warm Ivory
+        </button>
+
+        <button class="theme-button" type="button" data-theme-choice="charcoal" aria-pressed="false">
+          <span class="theme-swatch swatch-dark"></span>
+          Charcoal & Gold
+        </button>
+
+        <button class="theme-button" type="button" data-theme-choice="gold" aria-pressed="false">
+          <span class="theme-swatch swatch-gold"></span>
+          White & Gold Text
+        </button>
+
+        <button class="theme-button" type="button" data-theme-choice="classic" aria-pressed="false">
+          <span class="theme-swatch swatch-classic"></span>
+          White, Black & Gold
+        </button>
+
+        <button class="theme-button" type="button" data-theme-choice="grey" aria-pressed="false">
+          <span class="theme-swatch swatch-grey"></span>
+          Refined Light Grey
+        </button>
+
+      </div>
+    </section>
+
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
       <span>›</span>
@@ -1168,6 +1171,7 @@
 
     <div class="article-layout">
       <article class="article">
+
         <p class="article-intro">
           The past explains how humanity arrived at this moment, but it cannot
           determine the full course of what comes next. PHRINUSOMYIS™ follows
@@ -1175,6 +1179,7 @@
         </p>
 
         <div class="article-body" id="article-content">
+
           <p>
             Look at what happens in the electric tension right before a contest
             begins—the total silence, the sudden cohesion of millions of minds
@@ -1287,6 +1292,7 @@
               taken—and what will that mean for the future of competition?
             </p>
           </div>
+
         </div>
 
         <section class="share-section" aria-label="Article actions">
@@ -1325,9 +1331,11 @@
             <span class="issuance-value">Victor Seth AMUNTHLIA</span>
           </div>
         </section>
+
       </article>
 
       <aside class="article-sidebar" aria-label="Newswire information">
+
         <section class="sidebar-card">
           <img
             class="sidebar-logo"
@@ -1360,6 +1368,7 @@
             <li><a href="#issuance-title">Official issuance</a></li>
           </ul>
         </section>
+
       </aside>
     </div>
   </main>
@@ -1376,99 +1385,128 @@
     </div>
   </footer>
 
-  <!-- READER PREFERENCE AND GOOGLE TRANSLATE JAVASCRIPT -->
-
   <script>
     (function () {
       "use strict";
 
-      const themeSelector = document.getElementById("theme-selector");
-      const languageSelector = document.getElementById("language-selector");
+      /* ==========================================
+         READING THEME CONTROLS
+      ========================================== */
 
-      const availableThemes = [
+      const themeButtons = document.querySelectorAll("[data-theme-choice]");
+      const validThemes = [
         "original",
-        "ivory",
         "white",
-        "midnight",
-        "whitegold",
+        "ivory",
+        "charcoal",
+        "gold",
         "classic",
-        "slate"
+        "grey"
       ];
 
-      /* Restore the visitor's preferred reading theme */
-
-      try {
-        const savedTheme = localStorage.getItem("phrinusomyis-reader-theme");
-
-        if (availableThemes.includes(savedTheme)) {
-          document.body.setAttribute("data-theme", savedTheme);
-          themeSelector.value = savedTheme;
-        }
-      } catch (error) {
-        /* The reader remains functional when storage is unavailable. */
-      }
-
-      themeSelector.addEventListener("change", function () {
-        const selectedTheme = this.value;
-
-        if (!availableThemes.includes(selectedTheme)) {
-          return;
+      function applyTheme(theme) {
+        if (!validThemes.includes(theme)) {
+          theme = "white";
         }
 
-        document.body.setAttribute("data-theme", selectedTheme);
+        document.body.setAttribute("data-theme", theme);
+
+        themeButtons.forEach(function (button) {
+          const selected = button.dataset.themeChoice === theme;
+          button.setAttribute("aria-pressed", String(selected));
+        });
 
         try {
-          localStorage.setItem(
-            "phrinusomyis-reader-theme",
-            selectedTheme
-          );
+          localStorage.setItem("phrinusomyis-reading-theme", theme);
         } catch (error) {
-          /* Theme selection still works without persistent storage. */
+          // Theme selection still works if browser storage is unavailable.
         }
-      });
-
-      /* Google Translate integration */
-
-      function changeLanguage(language) {
-        const translateSelect = document.querySelector(".goog-te-combo");
-
-        if (!translateSelect) {
-          return false;
-        }
-
-        const targetLanguage = language === "en" ? "" : language;
-
-        translateSelect.value = targetLanguage;
-
-        translateSelect.dispatchEvent(
-          new Event("change", { bubbles: true })
-        );
-
-        return true;
       }
 
-      function applyLanguage(language, attempts) {
+      themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          applyTheme(button.dataset.themeChoice);
+        });
+      });
+
+      try {
+        const savedTheme = localStorage.getItem("phrinusomyis-reading-theme");
+        applyTheme(savedTheme || "white");
+      } catch (error) {
+        applyTheme("white");
+      }
+
+      /* ==========================================
+         GOOGLE TRANSLATE
+      ========================================== */
+
+      const languageSelector = document.getElementById("language-selector");
+      const languageStatus = document.getElementById("language-status");
+
+      let selectedLanguage = "";
+
+      function updateLanguageStatus(message) {
+        languageStatus.textContent = message;
+      }
+
+      function getGoogleTranslateCombo() {
+        return document.querySelector(".goog-te-combo");
+      }
+
+      function setGoogleLanguage(language, attempts) {
         attempts = attempts || 0;
 
-        if (changeLanguage(language)) {
+        const combo = getGoogleTranslateCombo();
+
+        if (!combo) {
+          if (attempts < 30) {
+            window.setTimeout(function () {
+              setGoogleLanguage(language, attempts + 1);
+            }, 300);
+          } else {
+            updateLanguageStatus(
+              "The translation service is taking longer than expected to load. Please try again."
+            );
+          }
           return;
         }
 
-        if (attempts < 30) {
-          window.setTimeout(function () {
-            applyLanguage(language, attempts + 1);
-          }, 300);
+        combo.value = language;
+
+        combo.dispatchEvent(new Event("change", {
+          bubbles: true
+        }));
+
+        selectedLanguage = language;
+
+        if (language === "") {
+          updateLanguageStatus("Original English publication selected.");
+        } else {
+          updateLanguageStatus("Translation requested. Please allow the page a moment to update.");
         }
       }
 
       languageSelector.addEventListener("change", function () {
-        applyLanguage(this.value);
+        const language = languageSelector.value;
+
+        if (language === selectedLanguage) {
+          return;
+        }
+
+        updateLanguageStatus("Applying your language preference...");
+
+        setGoogleLanguage(language);
       });
 
-      /* Initialise Google Translate with English as the source language */
+      /*
+       * Google Translate initialization callback.
+       * English is the original language.
+       * All supported languages are explicitly listed.
+       */
 
       window.googleTranslateElementInit = function () {
-        if (!window.google || !google.translate) {
+        if (!window.google || !window.google.translate) {
+          updateLanguageStatus("Translation service is unavailable at the moment.");
           return;
         }
 
@@ -1478,86 +1516,23 @@
             includedLanguages:
               "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
             autoDisplay: false,
-            multilanguagePage: true
+            multilanguagePage: false
           },
           "google_translate_element"
         );
 
-        if (languageSelector.value !== "en") {
-          applyLanguage(languageSelector.value);
-        }
+        updateLanguageStatus("English is the original publication language.");
       };
 
-      /* Hide unwanted Google interface elements if dynamically injected */
+      /*
+       * The selector and the translation engine work together.
+       * Theme changes are independent of the translated text,
+       * so visitors can change their reading appearance at any time.
+       */
 
-      function suppressGoogleInterface() {
-        document.documentElement.style.setProperty(
-          "margin-top",
-          "0px",
-          "important"
-        );
-
-        document.body.style.setProperty(
-          "margin-top",
-          "0px",
-          "important"
-        );
-
-        document.body.style.setProperty(
-          "top",
-          "0px",
-          "important"
-        );
-
-        const unwantedSelectors = [
-          ".goog-te-banner-frame",
-          ".goog-te-balloon-frame",
-          ".goog-te-menu-frame",
-          "#goog-gt-tt",
-          ".goog-tooltip",
-          ".goog-te-spinner-pos",
-          "iframe.goog-te-banner-frame"
-        ];
-
-        unwantedSelectors.forEach(function (selector) {
-          document.querySelectorAll(selector).forEach(function (element) {
-            element.style.setProperty("display", "none", "important");
-            element.style.setProperty("visibility", "hidden", "important");
-            element.style.setProperty("height", "0", "important");
-            element.style.setProperty("pointer-events", "none", "important");
-          });
-        });
-      }
-
-      const observer = new MutationObserver(function () {
-        suppressGoogleInterface();
-      });
-
-      observer.observe(document.documentElement, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ["style", "class"]
-      });
-
-      suppressGoogleInterface();
-
-    })();
-  </script>
-
-  <!-- GOOGLE TRANSLATE LIBRARY -->
-
-  <script
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async
-    defer
-  ></script>
-
-  <!-- ORIGINAL NEWSWIRE SHARE AND PRINT FUNCTIONALITY -->
-
-  <script>
-    (function () {
-      "use strict";
+      /* ==========================================
+         ARTICLE SHARING
+      ========================================== */
 
       const articleUrl = "https://phrinusomyis.com/newsroom/newswire.html";
       const articleTitle =
@@ -1626,8 +1601,16 @@
       printButton.addEventListener("click", function () {
         window.print();
       });
+
     })();
   </script>
+
+  <!-- GOOGLE TRANSLATE SCRIPT -->
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async
+    defer
+  ></script>
 
 </body>
 </html>
