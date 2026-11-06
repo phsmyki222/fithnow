@@ -1382,34 +1382,118 @@ main,
   </div>
 </footer>
 
+
 <script>
-/* Google Translate initialisation */
+/* ==========================================
+   GOOGLE TRANSLATE INITIALISATION
+========================================== */
+
+var googleTranslateReady = false;
+var pendingLanguage = null;
+
 function googleTranslateElementInit() {
+
   new google.translate.TranslateElement({
     pageLanguage: 'en',
     autoDisplay: false
   }, 'google_translate_element');
+
+  googleTranslateReady = true;
+
+  /* Apply any language selected before Google loaded. */
+  if (pendingLanguage) {
+    connectGoogleLanguage(pendingLanguage);
+  }
 }
 
+
+/* Load Google's translation engine. */
 (function loadGoogleTranslate() {
+
+  if (document.getElementById('google-translate-script')) {
+    return;
+  }
+
   var script = document.createElement('script');
-  script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+
+  script.id = 'google-translate-script';
+  script.src =
+    'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+
   script.async = true;
+
+  script.onerror = function() {
+    console.error('Google Translate could not be loaded.');
+  };
+
   document.body.appendChild(script);
+
 })();
 
-/* Custom language selector */
-document.getElementById('languageSelect').addEventListener('change', function() {
-  var language = this.value;
-  var translateSelect = document.querySelector('.goog-te-combo');
 
-  if (translateSelect) {
-    translateSelect.value = language;
-    translateSelect.dispatchEvent(new Event('change'));
+/* ==========================================
+   CUSTOM LANGUAGE SELECTOR CONNECTION
+========================================== */
+
+function connectGoogleLanguage(language) {
+
+  pendingLanguage = language;
+
+  var attempts = 0;
+  var maxAttempts = 40;
+
+  function applyLanguage() {
+
+    var translateSelect =
+      document.querySelector('#google_translate_element .goog-te-combo') ||
+      document.querySelector('.goog-te-combo');
+
+    if (translateSelect) {
+
+      translateSelect.value = language;
+
+      translateSelect.dispatchEvent(
+        new Event('change', {
+          bubbles: true
+        })
+      );
+
+      pendingLanguage = null;
+
+      return;
+    }
+
+    attempts++;
+
+    if (attempts < maxAttempts) {
+      setTimeout(applyLanguage, 250);
+    } else {
+      console.error(
+        'Google Translate is not ready. Please check the Google Translate script connection.'
+      );
+    }
+
   }
-});
 
-/* Google Translate banner and pop-out protection */
+  applyLanguage();
+}
+
+
+/* Listen to the custom language selector. */
+document.getElementById('languageSelect')
+  .addEventListener('change', function() {
+
+    var selectedLanguage = this.value;
+
+    connectGoogleLanguage(selectedLanguage);
+
+  });
+
+
+/* ==========================================
+   GOOGLE TRANSLATE BANNER AND POPOUT PROTECTION
+========================================== */
+
 (function protectPageFromGoogleInterface() {
 
   function restorePagePosition() {
@@ -1429,6 +1513,7 @@ document.getElementById('languageSelect').addEventListener('change', function() 
     body.style.setProperty('margin-top', '0px', 'important');
     body.style.setProperty('padding-top', '0px', 'important');
   }
+
 
   function removeGooglePopouts() {
 
@@ -1463,22 +1548,21 @@ document.getElementById('languageSelect').addEventListener('change', function() 
     restorePagePosition();
   }
 
-  /* Initial protection. */
+
   removeGooglePopouts();
 
-  /* Monitor Google's injected elements and layout changes. */
+
+  /* Monitor injected Google interface elements. */
   var observer = new MutationObserver(function() {
     removeGooglePopouts();
   });
 
   observer.observe(document.documentElement, {
-    childList:true,
-    subtree:true,
-    attributes:true,
-    attributeFilter:['style', 'class']
+    childList: true,
+    subtree: true
   });
 
-  /* Additional protection. */
+
   window.addEventListener('load', removeGooglePopouts);
   window.addEventListener('pageshow', removeGooglePopouts);
   window.addEventListener('resize', removeGooglePopouts);
@@ -1486,45 +1570,94 @@ document.getElementById('languageSelect').addEventListener('change', function() 
 
 })();
 
-/* Current year */
-document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-/* Sharing and page-link functions */
-var pageUrl = 'https://phrinusomyis.com/magazine/the-chronicle';
-var pageTitle = 'THE CHRONICLE — Edition 001 | PHRINUSOMYIS Magazine';
+/* ==========================================
+   CURRENT YEAR
+========================================== */
+
+document.getElementById('currentYear').textContent =
+  new Date().getFullYear();
+
+
+/* ==========================================
+   ARTICLE SHARING AND PAGE LINK
+========================================== */
+
+var pageUrl =
+  'https://phrinusomyis.com/magazine/the-chronicle';
+
+var pageTitle =
+  'THE CHRONICLE — Edition 001 | PHRINUSOMYIS Magazine';
+
 
 function copyPageLink() {
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(pageUrl).then(function() {
-      document.getElementById('copyButton').textContent = 'Link Copied';
-    }).catch(function() {
-      window.prompt('Copy this page link:', pageUrl);
-    });
+
+    navigator.clipboard.writeText(pageUrl)
+      .then(function() {
+
+        document.getElementById('copyButton').textContent =
+          'Link Copied';
+
+      })
+      .catch(function() {
+
+        window.prompt('Copy this page link:', pageUrl);
+
+      });
+
   } else {
+
     window.prompt('Copy this page link:', pageUrl);
+
   }
+
 }
 
-document.getElementById('shareButton').addEventListener('click', async function() {
-  if (navigator.share) {
-    try {
-      await navigator.share({
-        title: pageTitle,
-        text: 'THE CHRONICLE — Not everything belongs to the present.',
-        url: pageUrl
-      });
-    } catch (error) {
-      if (error.name !== 'AbortError') {
-        copyPageLink();
-      }
-    }
-  } else {
-    copyPageLink();
-  }
-});
 
-document.getElementById('copyButton').addEventListener('click', copyPageLink);
+/* Share article. */
+document.getElementById('shareButton')
+  .addEventListener('click', async function() {
+
+    if (navigator.share) {
+
+      try {
+
+        await navigator.share({
+
+          title: pageTitle,
+
+          text:
+            'THE CHRONICLE — Not everything belongs to the present.',
+
+          url: pageUrl
+
+        });
+
+      } catch (error) {
+
+        if (error.name !== 'AbortError') {
+          copyPageLink();
+        }
+
+      }
+
+    } else {
+
+      copyPageLink();
+
+    }
+
+  });
+
+
+/* Copy article URL. */
+document.getElementById('copyButton')
+  .addEventListener('click', copyPageLink);
+
 </script>
+
 
 </body>
 </html>
