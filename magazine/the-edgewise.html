@@ -167,7 +167,9 @@ img {
 /* GOOGLE TRANSLATE OVERLAY AND PAGE-PUSH PROTECTION */
 
 html,
-body {
+body,
+body.translated-ltr,
+body.translated-rtl {
   margin-top:0 !important;
   padding-top:0 !important;
   top:0 !important;
@@ -177,19 +179,45 @@ body {
   position:relative !important;
 }
 
+/* Keep the translation engine available but off-screen */
+
+#google_translate_element {
+  display:block !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:0 !important;
+  width:1px !important;
+  height:1px !important;
+  max-width:1px !important;
+  max-height:1px !important;
+  overflow:hidden !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  z-index:-1 !important;
+}
+
 /* Hide Google's top translation banner and injected frame */
 
-iframe.goog-te-banner-frame,
 .goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate {
+iframe.goog-te-banner-frame,
+iframe.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-KE6vqe {
   display:none !important;
   visibility:hidden !important;
+  opacity:0 !important;
   height:0 !important;
   width:0 !important;
+  max-height:0 !important;
+  max-width:0 !important;
+  pointer-events:none !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:-10000px !important;
   border:0 !important;
-  position:absolute !important;
-  left:-99999px !important;
-  top:-99999px !important;
 }
 
 /* Hide the injected top-level translation container */
@@ -202,43 +230,76 @@ body > .skiptranslate {
   overflow:hidden !important;
 }
 
-/* Hide Google translation pop-outs and floating overlays */
+/* Hide translation menus, tooltips and pop-out interfaces */
 
-#goog-gt-tt,
-.goog-te-balloon-frame,
 .goog-te-menu-frame,
-.goog-te-menu2,
-.goog-te-spinner-pos,
+iframe.goog-te-menu-frame,
+.goog-te-balloon-frame,
+iframe.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-te-tooltip-container,
 .goog-tooltip,
 .goog-tooltip:hover,
-.goog-text-highlight,
-.goog-te-gadget-icon {
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-l4eHX,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-ZVi9od-vH1Gmf,
+.VIpgJd-ZVi9od-xl07Ob,
+.VIpgJd-ZVi9od-SmfZ {
   display:none !important;
   visibility:hidden !important;
   opacity:0 !important;
   pointer-events:none !important;
-}
-
-/* Prevent translation iframe overlays from covering the page */
-
-iframe.goog-te-menu-frame,
-iframe.goog-te-balloon-frame,
-iframe.goog-te-banner-frame {
-  display:none !important;
-  visibility:hidden !important;
-  pointer-events:none !important;
-}
-
-/* Keep the hidden translation engine out of the visible layout */
-
-#google_translate_element {
-  position:absolute !important;
+  position:fixed !important;
   left:-10000px !important;
   top:-10000px !important;
-  width:1px !important;
-  height:1px !important;
-  overflow:hidden !important;
+  width:0 !important;
+  height:0 !important;
+  max-width:0 !important;
+  max-height:0 !important;
+  z-index:-9999 !important;
+}
+
+/* Remove translation highlights */
+
+.goog-text-highlight {
+  background:transparent !important;
+  background-color:transparent !important;
+  box-shadow:none !important;
+  border:none !important;
+  color:inherit !important;
+}
+
+/* Hide Google branding and unwanted gadget interfaces */
+
+.goog-logo-link,
+.goog-te-gadget-icon,
+.goog-te-spinner-pos,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-menu2,
+.goog-te-menu2-item {
+  display:none !important;
   visibility:hidden !important;
+}
+
+/* Remove Google gadget styling */
+
+.goog-te-gadget {
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+}
+
+/* Prevent Google's injected banner from moving the page */
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl {
+  top:0 !important;
+  margin-top:0 !important;
+  padding-top:0 !important;
 }
 
 /* HEADER */
@@ -700,12 +761,19 @@ iframe.goog-te-banner-frame {
 /* GOOGLE TRANSLATE - HIDDEN ENGINE */
 
 #google_translate_element {
-  position:absolute;
-  left:-9999px;
-  top:-9999px;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+  display:block !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:0 !important;
+  width:1px !important;
+  height:1px !important;
+  max-width:1px !important;
+  max-height:1px !important;
+  overflow:hidden !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  z-index:-1 !important;
 }
 
 /* RESPONSIVE */
@@ -1317,53 +1385,91 @@ document.getElementById("siteLanguage").addEventListener("change", function() {
 <!-- GOOGLE TRANSLATE PAGE-POSITION PROTECTION -->
 
 <script>
-(function protectPageFromTranslateOverlays() {
+(function protectPageFromGoogleInterface() {
 
-  function resetGoogleTranslationLayout() {
-    document.documentElement.style.setProperty(
-      "margin-top",
-      "0px",
-      "important"
-    );
+  function restorePagePosition() {
 
-    document.documentElement.style.setProperty(
-      "top",
-      "0px",
-      "important"
-    );
+    const html = document.documentElement;
+    const body = document.body;
 
-    document.body.style.setProperty(
-      "margin-top",
-      "0px",
-      "important"
-    );
+    if (!html || !body) {
+      return;
+    }
 
-    document.body.style.setProperty(
-      "top",
-      "0px",
-      "important"
-    );
+    if (html.style.top !== "0px") {
+      html.style.setProperty("top", "0px", "important");
+    }
 
-    document.querySelectorAll(
-      "iframe.goog-te-banner-frame, .goog-te-banner-frame"
-    ).forEach(function(element) {
-      element.style.setProperty("display", "none", "important");
-      element.style.setProperty("visibility", "hidden", "important");
-      element.style.setProperty("height", "0", "important");
-    });
+    if (html.style.marginTop !== "0px") {
+      html.style.setProperty("margin-top", "0px", "important");
+    }
 
-    document.querySelectorAll(
-      "#goog-gt-tt, .goog-te-balloon-frame, .goog-te-menu-frame"
-    ).forEach(function(element) {
-      element.style.setProperty("display", "none", "important");
-      element.style.setProperty("visibility", "hidden", "important");
-    });
+    if (html.style.paddingTop !== "0px") {
+      html.style.setProperty("padding-top", "0px", "important");
+    }
+
+    if (body.style.top !== "0px") {
+      body.style.setProperty("top", "0px", "important");
+    }
+
+    if (body.style.marginTop !== "0px") {
+      body.style.setProperty("margin-top", "0px", "important");
+    }
+
+    if (body.style.paddingTop !== "0px") {
+      body.style.setProperty("padding-top", "0px", "important");
+    }
   }
 
-  resetGoogleTranslationLayout();
+  /* Remove unwanted Google banners and pop-outs. */
 
-  var observer = new MutationObserver(function() {
-    resetGoogleTranslationLayout();
+  function removeGooglePopouts() {
+
+    const unwantedSelectors = [
+      "iframe.goog-te-banner-frame",
+      ".goog-te-banner-frame",
+      ".goog-te-balloon-frame",
+      "iframe.goog-te-balloon-frame",
+      ".goog-te-menu-frame",
+      "iframe.goog-te-menu-frame",
+      "#goog-gt-tt",
+      ".goog-tooltip",
+      ".goog-tooltip:hover",
+      ".goog-te-tooltip-container",
+      ".VIpgJd-ZVi9od-ORHb-OEVmcd",
+      ".VIpgJd-ZVi9od-ORHb",
+      ".VIpgJd-ZVi9od-ORHb-KE6vqe",
+      ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf",
+      ".VIpgJd-ZVi9od-l4eHX",
+      ".VIpgJd-yAWNEb-L7lbkb",
+      ".VIpgJd-ZVi9od-vH1Gmf",
+      ".VIpgJd-ZVi9od-xl07Ob",
+      ".VIpgJd-ZVi9od-SmfZ"
+    ];
+
+    unwantedSelectors.forEach(selector => {
+
+      document.querySelectorAll(selector).forEach(element => {
+
+        if (!element.closest("#google_translate_element")) {
+          element.remove();
+        }
+
+      });
+
+    });
+
+    restorePagePosition();
+  }
+
+  /* Initial protection. */
+
+  removeGooglePopouts();
+
+  /* Monitor Google's injected elements and layout changes. */
+
+  const observer = new MutationObserver(() => {
+    removeGooglePopouts();
   });
 
   observer.observe(document.documentElement, {
@@ -1373,8 +1479,13 @@ document.getElementById("siteLanguage").addEventListener("change", function() {
     attributeFilter:["style","class"]
   });
 
-  window.addEventListener("load", resetGoogleTranslationLayout);
-  window.addEventListener("resize", resetGoogleTranslationLayout);
+  /* Additional protection. */
+
+  window.addEventListener("load", removeGooglePopouts);
+
+  window.addEventListener("resize", removeGooglePopouts);
+
+  window.addEventListener("scroll", restorePagePosition);
 
 })();
 </script>
