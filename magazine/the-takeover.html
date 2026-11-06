@@ -112,7 +112,7 @@
   }
   </script>
 
-  <style>
+<style>
     /* =====================================================
        PHRINUSOMYIS™ MAGAZINE
        THE TAKEOVER — EDITION 001
@@ -197,15 +197,16 @@
     }
 
     /* =====================================================
-       GOOGLE TRANSLATE — BANNER AND OVERLAY SUPPRESSION
+       GOOGLE TRANSLATE — BANNER AND POPOUT PROTECTION
        Retains the custom language selector below.
        ===================================================== */
 
     html,
     html.translated-ltr,
     html.translated-rtl {
-      margin-top: 0 !important;
       top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
 
     body,
@@ -217,6 +218,8 @@
       padding-top: 0 !important;
     }
 
+    /* Hide Google's injected banner and frames. */
+
     body > .skiptranslate,
     body > iframe.skiptranslate,
     iframe.goog-te-banner-frame,
@@ -225,14 +228,9 @@
     .goog-te-banner-frame,
     .goog-te-menu-frame,
     .goog-te-balloon-frame,
-    #goog-gt-tt,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-text-highlight,
-    .goog-te-spinner-pos,
-    .goog-te-gadget-icon,
-    .goog-te-menu-value span:nth-child(3),
-    .goog-te-menu-value span:nth-child(5) {
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-ORHb,
+    .VIpgJd-ZVi9od-ORHb-KE6vqe {
       display: none !important;
       visibility: hidden !important;
       opacity: 0 !important;
@@ -248,6 +246,35 @@
       border: 0 !important;
       box-shadow: none !important;
       overflow: hidden !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+    }
+
+    /* Hide translation menus, tooltips and pop-out interfaces. */
+
+    #goog-gt-tt,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-te-tooltip-container,
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+    .VIpgJd-ZVi9od-l4eHX,
+    .VIpgJd-yAWNEb-L7lbkb,
+    .VIpgJd-ZVi9od-vH1Gmf,
+    .VIpgJd-ZVi9od-xl07Ob,
+    .VIpgJd-ZVi9od-SmfZ {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      width: 0 !important;
+      height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      z-index: -9999 !important;
     }
 
     .goog-te-banner-frame.skiptranslate {
@@ -259,11 +286,35 @@
       overflow: hidden !important;
     }
 
-    .goog-te-balloon-frame,
-    #goog-gt-tt,
-    .goog-tooltip,
+    /* Remove translation highlights. */
+
     .goog-text-highlight {
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+      color: inherit !important;
+    }
+
+    /* Hide Google branding and unwanted gadget interfaces. */
+
+    .goog-logo-link,
+    .goog-te-gadget-icon,
+    .goog-te-spinner-pos,
+    .goog-te-ftab,
+    .goog-te-ftab-link,
+    .goog-te-menu2,
+    .goog-te-menu2-item,
+    .goog-te-menu-value span:nth-child(3),
+    .goog-te-menu-value span:nth-child(5) {
       display: none !important;
+      visibility: hidden !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0 !important;
+      line-height: 0 !important;
     }
 
     body > .skiptranslate {
@@ -272,21 +323,28 @@
       left: -10000px !important;
     }
 
+    /* Keep the translation engine available but off-screen. */
+
     #google_translate_element {
+      display: block !important;
       position: fixed !important;
       left: -10000px !important;
-      top: -10000px !important;
+      top: 0 !important;
       width: 1px !important;
       height: 1px !important;
+      max-width: 1px !important;
+      max-height: 1px !important;
       min-width: 1px !important;
       min-height: 1px !important;
       overflow: hidden !important;
       opacity: 0 !important;
       visibility: hidden !important;
       pointer-events: none !important;
+      z-index: -1 !important;
     }
 
-    /* Do not allow translation controls to alter the page layout. */
+    /* Do not allow translation controls to alter page layout. */
+
     body > .skiptranslate + * {
       margin-top: 0 !important;
     }
@@ -1873,45 +1931,71 @@
     }
 
     /* =====================================================
-       GOOGLE TRANSLATE LAYOUT DEFENCE
+       GOOGLE TRANSLATE — BANNER AND POPOUT PROTECTION
        ===================================================== */
 
-    (function () {
-      function suppressTranslateBanner() {
-        document.documentElement.style.setProperty(
-          "margin-top",
-          "0px",
-          "important"
-        );
+    (function protectPageFromGoogleInterface() {
 
-        document.body.style.setProperty(
-          "top",
-          "0px",
-          "important"
-        );
+      function restorePagePosition() {
+        var html = document.documentElement;
+        var body = document.body;
 
-        document.body.style.setProperty(
-          "margin-top",
-          "0px",
-          "important"
-        );
+        if (!html || !body) {
+          return;
+        }
 
-        var banners = document.querySelectorAll(
-          "iframe.goog-te-banner-frame, " +
-          ".goog-te-banner-frame, " +
-          ".goog-te-menu-frame, " +
-          ".goog-te-balloon-frame, " +
-          "#goog-gt-tt, " +
-          ".goog-tooltip, " +
-          ".goog-text-highlight"
-        );
+        if (html.style.top !== "0px") {
+          html.style.setProperty("top", "0px", "important");
+        }
 
-        banners.forEach(function (element) {
-          element.style.setProperty("display", "none", "important");
-          element.style.setProperty("visibility", "hidden", "important");
-          element.style.setProperty("height", "0", "important");
-          element.style.setProperty("width", "0", "important");
-          element.style.setProperty("pointer-events", "none", "important");
+        if (html.style.marginTop !== "0px") {
+          html.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (html.style.paddingTop !== "0px") {
+          html.style.setProperty("padding-top", "0px", "important");
+        }
+
+        if (body.style.top !== "0px") {
+          body.style.setProperty("top", "0px", "important");
+        }
+
+        if (body.style.marginTop !== "0px") {
+          body.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (body.style.paddingTop !== "0px") {
+          body.style.setProperty("padding-top", "0px", "important");
+        }
+      }
+
+      function removeGooglePopouts() {
+        var unwantedSelectors = [
+          "iframe.goog-te-banner-frame",
+          ".goog-te-banner-frame",
+          ".goog-te-balloon-frame",
+          "iframe.goog-te-menu-frame",
+          ".goog-te-menu-frame",
+          "#goog-gt-tt",
+          ".goog-tooltip",
+          ".goog-tooltip:hover",
+          ".VIpgJd-ZVi9od-ORHb-OEVmcd",
+          ".VIpgJd-ZVi9od-ORHb",
+          ".VIpgJd-ZVi9od-ORHb-KE6vqe",
+          ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf",
+          ".VIpgJd-ZVi9od-l4eHX",
+          ".VIpgJd-yAWNEb-L7lbkb",
+          ".VIpgJd-ZVi9od-vH1Gmf",
+          ".VIpgJd-ZVi9od-xl07Ob",
+          ".VIpgJd-ZVi9od-SmfZ"
+        ];
+
+        unwantedSelectors.forEach(function (selector) {
+          document.querySelectorAll(selector).forEach(function (element) {
+            if (!element.closest("#google_translate_element")) {
+              element.remove();
+            }
+          });
         });
 
         var bodyChildren = document.body.children;
@@ -1922,43 +2006,18 @@
             element.classList.contains("skiptranslate") &&
             element.id !== "google_translate_element"
           ) {
-            element.style.setProperty("display", "none", "important");
-            element.style.setProperty("position", "absolute", "important");
-            element.style.setProperty("top", "-10000px", "important");
-            element.style.setProperty("left", "-10000px", "important");
-            element.style.setProperty("height", "0", "important");
-            element.style.setProperty("overflow", "hidden", "important");
+            element.remove();
           }
         });
+
+        restorePagePosition();
       }
 
-      var observer;
-
       function startTranslateProtection() {
-        suppressTranslateBanner();
+        removeGooglePopouts();
 
-        observer = new MutationObserver(function (mutations) {
-          var translateChange = mutations.some(function (mutation) {
-            var target = mutation.target;
-
-            return (
-              target === document.body ||
-              target === document.documentElement ||
-              (
-                target.nodeType === 1 &&
-                target.closest &&
-                (
-                  target.closest(".skiptranslate") ||
-                  target.closest(".goog-te-banner-frame") ||
-                  target.closest("#goog-gt-tt")
-                )
-              )
-            );
-          });
-
-          if (translateChange) {
-            suppressTranslateBanner();
-          }
+        var observer = new MutationObserver(function () {
+          removeGooglePopouts();
         });
 
         observer.observe(document.documentElement, {
@@ -1968,12 +2027,14 @@
           attributeFilter: ["style", "class"]
         });
 
-        window.addEventListener("load", suppressTranslateBanner);
-        window.addEventListener("pageshow", suppressTranslateBanner);
+        window.addEventListener("load", removeGooglePopouts);
+        window.addEventListener("pageshow", removeGooglePopouts);
+        window.addEventListener("resize", removeGooglePopouts);
+        window.addEventListener("scroll", restorePagePosition);
 
-        setTimeout(suppressTranslateBanner, 500);
-        setTimeout(suppressTranslateBanner, 1500);
-        setTimeout(suppressTranslateBanner, 3000);
+        setTimeout(removeGooglePopouts, 500);
+        setTimeout(removeGooglePopouts, 1500);
+        setTimeout(removeGooglePopouts, 3000);
       }
 
       if (document.readyState === "loading") {
@@ -1984,6 +2045,7 @@
       } else {
         startTranslateProtection();
       }
+
     })();
 
     /* =====================================================
