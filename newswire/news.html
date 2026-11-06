@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,11 +86,26 @@
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 110px;
+      margin-top: 0 !important;
     }
 
     body {
-      margin: 0;
-      background: var(--background);
+      margin: 0 !important;
+      top: 0 !important;
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(201, 166, 70, 0.055),
+          transparent 48%
+        ),
+        linear-gradient(
+          180deg,
+          #0b0a08 0%,
+          #080808 38%,
+          #090908 75%,
+          #050505 100%
+        );
+      background-attachment: fixed;
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 17px;
@@ -111,6 +127,8 @@
     }
 
     .site-header {
+      position: relative;
+      z-index: 10;
       border-bottom: 1px solid var(--border);
       background: rgba(8, 8, 8, 0.97);
     }
@@ -167,6 +185,147 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
+
+    /* CUSTOM GOOGLE TRANSLATE LANGUAGE SELECTOR */
+
+    .language-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .language-label {
+      color: var(--gold-light);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .language-select {
+      min-width: 145px;
+      min-height: 39px;
+      padding: 8px 30px 8px 12px;
+      border: 1px solid rgba(201, 166, 70, 0.55);
+      border-radius: 0;
+      outline: none;
+      background-color: #111111;
+      color: #e6cb7a;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      color-scheme: dark;
+    }
+
+    .language-select:hover,
+    .language-select:focus {
+      border-color: #e6cb7a;
+      background-color: #171717;
+    }
+
+    .language-select option {
+      background: #111111;
+      color: #f3f0e8;
+    }
+
+    .language-select:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    .language-status {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* HIDDEN GOOGLE TRANSLATE ENGINE */
+
+    #google_translate_element {
+      position: fixed !important;
+      left: -10000px !important;
+      top: 0 !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      z-index: -9999 !important;
+    }
+
+    .goog-te-gadget,
+    .goog-te-gadget-simple,
+    .goog-te-gadget span,
+    .goog-te-gadget a {
+      visibility: hidden !important;
+      display: none !important;
+    }
+
+    /* SUPPRESS GOOGLE TRANSLATE BANNERS AND PAGE DISPLACEMENT */
+
+    html,
+    html body,
+    body.translated-ltr,
+    body.translated-rtl {
+      margin-top: 0 !important;
+      top: 0 !important;
+    }
+
+    .goog-te-banner-frame,
+    iframe.goog-te-banner-frame,
+    iframe.skiptranslate,
+    .goog-te-menu-frame,
+    .goog-te-ftab-frame,
+    .goog-te-balloon-frame,
+    #goog-gt-tt,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-te-spinner-pos,
+    .goog-te-spinner,
+    .goog-te-gadget-icon,
+    .goog-te-menu-value,
+    .goog-te-menu2,
+    .goog-te-menu2-item,
+    .goog-te-menu2-item-selected {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    body > .skiptranslate,
+    body > .goog-te-banner-frame,
+    body > iframe.goog-te-banner-frame {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .goog-text-highlight {
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    .skiptranslate {
+      border: none !important;
+    }
+
+    /* PRESERVE THE WEBSITE'S ORIGINAL DESIGN */
 
     .top-rule {
       height: 3px;
@@ -259,6 +418,10 @@
       line-height: 1.8;
     }
 
+    .article-body {
+      padding: 5px 0;
+    }
+
     .article-body p {
       margin: 0 0 25px;
     }
@@ -287,7 +450,11 @@
       margin-top: 38px;
       padding: 26px;
       border: 1px solid var(--border);
-      background: var(--surface);
+      background: linear-gradient(
+        135deg,
+        rgba(201, 166, 70, 0.075),
+        rgba(17, 17, 17, 0.98) 55%
+      );
     }
 
     .article-closing p {
@@ -307,7 +474,11 @@
       margin-bottom: 20px;
       padding: 22px;
       border: 1px solid var(--border);
-      background: var(--surface);
+      background: linear-gradient(
+        145deg,
+        rgba(201, 166, 70, 0.035),
+        #111111 45%
+      );
     }
 
     .sidebar-card h2 {
@@ -517,6 +688,17 @@
       white-space: nowrap;
     }
 
+    @media (max-width: 950px) {
+      .header-inner {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .language-control {
+        margin-left: auto;
+      }
+    }
+
     @media (max-width: 850px) {
       .article-layout {
         grid-template-columns: minmax(0, 1fr);
@@ -573,6 +755,18 @@
       .header-link {
         font-size: 10px;
         letter-spacing: 0.7px;
+      }
+
+      .language-control {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-between;
+      }
+
+      .language-select {
+        flex: 1;
+        max-width: 210px;
       }
 
       .page-shell {
@@ -656,7 +850,8 @@
       .breadcrumbs,
       .article-sidebar,
       .share-section,
-      .site-footer {
+      .site-footer,
+      .language-control {
         display: none !important;
       }
 
@@ -691,6 +886,10 @@
 </head>
 
 <body>
+
+  <!-- HIDDEN GOOGLE TRANSLATE ENGINE -->
+  <div id="google_translate_element" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
@@ -705,6 +904,48 @@
           <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
         </span>
       </a>
+
+      <!-- CUSTOM LANGUAGE SELECTOR -->
+      <div class="language-control">
+        <label class="language-label" for="site-language">
+          Language
+        </label>
+
+        <select
+          class="language-select"
+          id="site-language"
+          aria-label="Select website language"
+        >
+          <option value="">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="ar">العربية</option>
+          <option value="zh-CN">中文</option>
+          <option value="ru">Русский</option>
+          <option value="pt">Português</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="th">ไทย</option>
+          <option value="pl">Polski</option>
+          <option value="sv">Svenska</option>
+          <option value="fi">Suomi</option>
+          <option value="da">Dansk</option>
+        </select>
+
+        <span
+          class="language-status"
+          id="language-status"
+          role="status"
+          aria-live="polite"
+        ></span>
+      </div>
 
       <a class="header-link" href="/">Official Website ↗</a>
     </div>
@@ -1011,5 +1252,171 @@
       });
     })();
   </script>
+
+  <!-- GOOGLE TRANSLATE INITIALIZATION -->
+  <script>
+    (function () {
+      "use strict";
+
+      const languageSelector = document.getElementById("site-language");
+      const languageStatus = document.getElementById("language-status");
+
+      let translateReady = false;
+
+      const supportedLanguages = [
+        "fr", "es", "de", "ar", "zh-CN",
+        "ru", "pt", "ja", "ko", "it",
+        "nl", "tr", "hi", "id", "vi",
+        "th", "pl", "sv", "fi", "da"
+      ];
+
+      function getGoogleCombo() {
+        return document.querySelector(".goog-te-combo");
+      }
+
+      function setLanguage(language) {
+        const combo = getGoogleCombo();
+
+        if (!combo) {
+          languageStatus.textContent =
+            "Translation service is still loading. Please try again shortly.";
+          return false;
+        }
+
+        if (language !== "" && !supportedLanguages.includes(language)) {
+          return false;
+        }
+
+        combo.value = language;
+        combo.dispatchEvent(new Event("change", { bubbles: true }));
+
+        languageStatus.textContent = language === ""
+          ? "English selected."
+          : "Translation requested.";
+
+        return true;
+      }
+
+      languageSelector.addEventListener("change", function () {
+        if (!translateReady) {
+          languageStatus.textContent =
+            "Translation service is still loading. Please try again shortly.";
+          return;
+        }
+
+        setLanguage(languageSelector.value);
+      });
+
+      window.googleTranslateElementInit = function () {
+        try {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+              includedLanguages: supportedLanguages.join(","),
+              autoDisplay: false,
+              multilanguagePage: true
+            },
+            "google_translate_element"
+          );
+
+          const waitForCombo = function (attempt) {
+            const combo = getGoogleCombo();
+
+            if (combo) {
+              translateReady = true;
+              languageSelector.disabled = false;
+              languageStatus.textContent = "Translation service ready.";
+
+              if (languageSelector.value !== "") {
+                setLanguage(languageSelector.value);
+              }
+
+              return;
+            }
+
+            if (attempt < 40) {
+              window.setTimeout(function () {
+                waitForCombo(attempt + 1);
+              }, 250);
+            } else {
+              languageStatus.textContent =
+                "Translation service could not initialize. Refresh the page to try again.";
+            }
+          };
+
+          waitForCombo(0);
+
+        } catch (error) {
+          languageStatus.textContent =
+            "Translation service could not initialize.";
+        }
+      };
+
+      languageSelector.disabled = true;
+
+    })();
+  </script>
+
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async
+    defer
+  ></script>
+
+  <!-- ADDITIONAL GOOGLE TRANSLATE PAGE-POSITION PROTECTION -->
+  <script>
+    (function () {
+      "use strict";
+
+      function suppressTranslateDisplacement() {
+        document.documentElement.style.setProperty(
+          "margin-top",
+          "0px",
+          "important"
+        );
+
+        document.body.style.setProperty(
+          "margin-top",
+          "0px",
+          "important"
+        );
+
+        document.body.style.setProperty(
+          "top",
+          "0px",
+          "important"
+        );
+
+        const unwantedElements = document.querySelectorAll(
+          ".goog-te-banner-frame, " +
+          "iframe.goog-te-banner-frame, " +
+          "#goog-gt-tt, " +
+          ".goog-tooltip, " +
+          ".goog-te-balloon-frame"
+        );
+
+        unwantedElements.forEach(function (element) {
+          element.style.setProperty("display", "none", "important");
+          element.style.setProperty("visibility", "hidden", "important");
+          element.style.setProperty("pointer-events", "none", "important");
+        });
+      }
+
+      suppressTranslateDisplacement();
+
+      const observer = new MutationObserver(function () {
+        suppressTranslateDisplacement();
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["style", "class"],
+        childList: true,
+        subtree: true
+      });
+
+    })();
+  </script>
+
 </body>
 </html>
