@@ -723,20 +723,27 @@ select {
 /* GOOGLE TRANSLATE ENGINE */
 
 #google_translate_element {
-  position:absolute;
-  left:-9999px;
-  top:-9999px;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+  display:block !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:0 !important;
+  width:1px !important;
+  height:1px !important;
+  max-width:1px !important;
+  max-height:1px !important;
+  overflow:hidden !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  z-index:-1 !important;
 }
 
 /* GOOGLE TRANSLATE BANNER AND POP-OUT SUPPRESSION */
 
-/* Prevent Google's injected banner from occupying the top of the page. */
-
 html,
-body {
+body,
+body.translated-ltr,
+body.translated-rtl {
   top:0 !important;
   margin-top:0 !important;
   padding-top:0 !important;
@@ -753,15 +760,22 @@ body {
 iframe.goog-te-banner-frame,
 iframe[name="goog-te-banner-frame"],
 .goog-te-balloon-frame,
-iframe.goog-te-balloon-frame {
+iframe.goog-te-balloon-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-KE6vqe {
   display:none !important;
   visibility:hidden !important;
   opacity:0 !important;
   width:0 !important;
   height:0 !important;
+  max-width:0 !important;
   max-height:0 !important;
   border:0 !important;
   pointer-events:none !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:-10000px !important;
 }
 
 /* Google Translate's injected top-level spacer. */
@@ -777,13 +791,16 @@ body > .skiptranslate {
   padding:0 !important;
 }
 
-/* Google Translate tooltips, pop-ups and translation information boxes. */
+/* Google Translate menus, tooltips and pop-out interfaces. */
 
+.goog-te-menu-frame,
+iframe.goog-te-menu-frame,
+.goog-te-balloon-frame,
+iframe.goog-te-balloon-frame,
 #goog-gt-tt,
+.goog-te-tooltip-container,
 .goog-tooltip,
 .goog-tooltip:hover,
-.goog-te-balloon-frame,
-.goog-te-menu-frame,
 .goog-te-menu2,
 .goog-te-menu2-item,
 .goog-te-menu-value,
@@ -794,24 +811,58 @@ body > .skiptranslate {
 .goog-te-gadget-simple .goog-te-menu-value span,
 .VIpgJd-ZVi9od-aZ2wEe,
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-xl07Ob,
 .VIpgJd-ZVi9od-xl07Ob-OEVmcd,
 .VIpgJd-ZVi9od-vH1Gmf,
+.VIpgJd-ZVi9od-l4eHX,
 .VIpgJd-ZVi9od-l9xktf,
-.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-ZVi9od-SmfZ,
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc,
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc-ibnC6b {
   display:none !important;
   visibility:hidden !important;
   opacity:0 !important;
   pointer-events:none !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:-10000px !important;
+  width:0 !important;
+  height:0 !important;
+  max-width:0 !important;
+  max-height:0 !important;
+  z-index:-9999 !important;
 }
 
 /* Remove Google's translation highlight and hover effects. */
 
 .goog-text-highlight {
   background:transparent !important;
+  background-color:transparent !important;
   box-shadow:none !important;
-  border:0 !important;
+  border:none !important;
+  color:inherit !important;
+}
+
+/* Hide Google branding and unwanted gadget interfaces. */
+
+.goog-logo-link,
+.goog-te-gadget-icon,
+.goog-te-spinner-pos,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-menu2,
+.goog-te-menu2-item {
+  display:none !important;
+  visibility:hidden !important;
+}
+
+/* Remove Google gadget styling. */
+
+.goog-te-gadget {
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
 }
 
 /* Keep the custom site language selector visible and usable. */
@@ -825,14 +876,7 @@ body > .skiptranslate {
   pointer-events:auto !important;
 }
 
-/* Stop Google-injected spacing from shifting the page. */
-
-body.translated-ltr,
-body.translated-rtl {
-  top:0 !important;
-  margin-top:0 !important;
-  padding-top:0 !important;
-}
+/* Prevent Google's injected banner from moving the page. */
 
 html.translated-ltr,
 html.translated-rtl {
@@ -1473,72 +1517,97 @@ document.getElementById("siteLanguage").addEventListener("change",function() {
 });
 </script>
 
-<!-- GOOGLE TRANSLATE PAGE POSITION PROTECTION -->
+<!-- GOOGLE TRANSLATE BANNER AND POP-OUT PROTECTION -->
 
 <script>
-(function protectPageFromGoogleTranslate() {
-  function resetGoogleTranslateSpacing() {
-    var html = document.documentElement;
-    var body = document.body;
+(function protectPageFromGoogleInterface() {
 
-    if (!html || !body) return;
+  function restorePagePosition() {
 
-    if (html.style.top && html.style.top !== "0px") {
+    const html = document.documentElement;
+    const body = document.body;
+
+    if (!html || !body) {
+      return;
+    }
+
+    if (html.style.top !== "0px") {
       html.style.setProperty("top","0px","important");
     }
 
-    if (body.style.top && body.style.top !== "0px") {
+    if (html.style.marginTop !== "0px") {
+      html.style.setProperty("margin-top","0px","important");
+    }
+
+    if (html.style.paddingTop !== "0px") {
+      html.style.setProperty("padding-top","0px","important");
+    }
+
+    if (body.style.top !== "0px") {
       body.style.setProperty("top","0px","important");
     }
 
-    if (body.style.marginTop && body.style.marginTop !== "0px") {
+    if (body.style.marginTop !== "0px") {
       body.style.setProperty("margin-top","0px","important");
     }
 
-    if (body.style.paddingTop && body.style.paddingTop !== "0px") {
+    if (body.style.paddingTop !== "0px") {
       body.style.setProperty("padding-top","0px","important");
     }
-
-    var bannerFrames = document.querySelectorAll(
-      ".goog-te-banner-frame, iframe.goog-te-banner-frame, iframe[name='goog-te-banner-frame']"
-    );
-
-    bannerFrames.forEach(function(frame) {
-      frame.style.setProperty("display","none","important");
-      frame.style.setProperty("visibility","hidden","important");
-      frame.style.setProperty("height","0","important");
-      frame.style.setProperty("width","0","important");
-    });
-
-    var directTranslateContainers = document.querySelectorAll(
-      "body > .skiptranslate"
-    );
-
-    directTranslateContainers.forEach(function(container) {
-      if (container.id !== "google_translate_element") {
-        container.style.setProperty("display","none","important");
-        container.style.setProperty("height","0","important");
-        container.style.setProperty("margin","0","important");
-        container.style.setProperty("padding","0","important");
-      }
-    });
   }
 
-  resetGoogleTranslateSpacing();
+  /* Remove unwanted Google banners and pop-outs. */
 
-  var observer = new MutationObserver(function() {
-    resetGoogleTranslateSpacing();
+  function removeGooglePopouts() {
+
+    const unwantedSelectors = [
+      "iframe.goog-te-banner-frame",
+      ".goog-te-banner-frame",
+      ".goog-te-balloon-frame",
+      "#goog-gt-tt",
+      ".goog-tooltip"
+    ];
+
+    unwantedSelectors.forEach(selector => {
+
+      document.querySelectorAll(selector).forEach(element => {
+
+        if (!element.closest("#google_translate_element")) {
+          element.remove();
+        }
+
+      });
+
+    });
+
+    restorePagePosition();
+  }
+
+  /* Initial protection. */
+
+  removeGooglePopouts();
+
+  /* Monitor Google's injected elements and layout changes. */
+
+  const observer = new MutationObserver(() => {
+    removeGooglePopouts();
   });
 
   observer.observe(document.documentElement, {
     childList:true,
     subtree:true,
     attributes:true,
-    attributeFilter:["style"]
+    attributeFilter:["style","class"]
   });
 
-  window.addEventListener("load",resetGoogleTranslateSpacing);
-  window.addEventListener("pageshow",resetGoogleTranslateSpacing);
+  /* Additional protection. */
+
+  window.addEventListener("load",removeGooglePopouts);
+
+  window.addEventListener("resize",removeGooglePopouts);
+
+  window.addEventListener("scroll",restorePagePosition);
+
 })();
 </script>
 
