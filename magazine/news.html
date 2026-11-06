@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
     :root {
       --black: #090909;
       --black-soft: #11110f;
@@ -44,6 +44,8 @@
       scroll-behavior: smooth;
       background: var(--black);
       top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
 
     body {
@@ -53,38 +55,129 @@
       font-family: "DM Sans", sans-serif;
       overflow-x: hidden;
       top: 0 !important;
-      position: static !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      position: relative !important;
     }
 
-    body > .skiptranslate,
-    .goog-te-banner-frame,
-    .goog-te-banner-frame.skiptranslate,
-    iframe.goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-te-spinner-pos {
-      display: none !important;
-      visibility: hidden !important;
-    }
+    /* ============================================================
+       GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
+       ============================================================ */
 
-    .goog-text-highlight {
-      background: transparent !important;
-      box-shadow: none !important;
-    }
+    /* Keep the translation engine available but off-screen. */
 
     #google_translate_element {
-      position: absolute !important;
+      display: block !important;
+      position: fixed !important;
       left: -10000px !important;
       top: 0 !important;
       width: 1px !important;
       height: 1px !important;
+      max-width: 1px !important;
+      max-height: 1px !important;
       overflow: hidden !important;
       opacity: 0 !important;
+      visibility: hidden !important;
       pointer-events: none !important;
+      z-index: -1 !important;
+    }
+
+    /* Hide Google's top translation banner. */
+
+    .goog-te-banner-frame,
+    iframe.goog-te-banner-frame,
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-ORHb,
+    .VIpgJd-ZVi9od-ORHb-KE6vqe {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      max-height: 0 !important;
+      max-width: 0 !important;
+      pointer-events: none !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      border: 0 !important;
+    }
+
+    /* Hide translation menus, tooltips and pop-out interfaces. */
+
+    .goog-te-menu-frame,
+    iframe.goog-te-menu-frame,
+    .goog-te-balloon-frame,
+    iframe.goog-te-balloon-frame,
+    #goog-gt-tt,
+    .goog-te-tooltip-container,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+    .VIpgJd-ZVi9od-l4eHX,
+    .VIpgJd-yAWNEb-L7lbkb,
+    .VIpgJd-ZVi9od-vH1Gmf,
+    .VIpgJd-ZVi9od-xl07Ob,
+    .VIpgJd-ZVi9od-SmfZ {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      width: 0 !important;
+      height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      z-index: -9999 !important;
+    }
+
+    /* Remove translation highlights. */
+
+    .goog-text-highlight {
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+      color: inherit !important;
+    }
+
+    /* Hide Google branding and unwanted gadget interfaces. */
+
+    .goog-logo-link,
+    .goog-te-gadget-icon,
+    .goog-te-spinner-pos,
+    .goog-te-ftab,
+    .goog-te-ftab-link,
+    .goog-te-menu2,
+    .goog-te-menu2-item {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Remove Google gadget styling. */
+
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0 !important;
+      line-height: 0 !important;
+    }
+
+    /* Prevent Google's injected banner from moving the page. */
+
+    html,
+    body,
+    body.translated-ltr,
+    body.translated-rtl {
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
 
     body > .skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
       height: 0 !important;
     }
 
@@ -1380,7 +1473,7 @@
             </p>
           </section>
 
-          <section id="sports-theater">
+          <section id="zeaviq-sports">
             <h3>ZEAVIQ SPORTS™</h3>
 
             <p>
@@ -1465,7 +1558,7 @@
           <a href="#ancient-world">Travel Back to 3000 BC</a>
           <a href="#modern-sport">Returning to the Present</a>
           <a href="#different-direction">A Different Direction</a>
-          <a href="#sports-theater">ZEAVIQ SPORTS™</a>
+          <a href="#zeaviq-sports">ZEAVIQ SPORTS™</a>
           <a href="#next-chapter">The Next Chapter</a>
           <a href="#continuing-story">A Story That Continues</a>
 
@@ -1806,6 +1899,98 @@
     defer>
   </script>
 
+  <!-- GOOGLE TRANSLATE — AUTOMATIC BANNER AND POP-OUT PROTECTION -->
+  <script>
+    (function protectPageFromGoogleInterface() {
+
+      function restorePagePosition() {
+
+        const html = document.documentElement;
+        const body = document.body;
+
+        if (!html || !body) {
+          return;
+        }
+
+        if (html.style.top !== "0px") {
+          html.style.setProperty("top", "0px", "important");
+        }
+
+        if (html.style.marginTop !== "0px") {
+          html.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (html.style.paddingTop !== "0px") {
+          html.style.setProperty("padding-top", "0px", "important");
+        }
+
+        if (body.style.top !== "0px") {
+          body.style.setProperty("top", "0px", "important");
+        }
+
+        if (body.style.marginTop !== "0px") {
+          body.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (body.style.paddingTop !== "0px") {
+          body.style.setProperty("padding-top", "0px", "important");
+        }
+      }
+
+      /* Remove unwanted Google banners and pop-outs. */
+
+      function removeGooglePopouts() {
+
+        const unwantedSelectors = [
+          "iframe.goog-te-banner-frame",
+          ".goog-te-banner-frame",
+          ".goog-te-balloon-frame",
+          "#goog-gt-tt",
+          ".goog-tooltip"
+        ];
+
+        unwantedSelectors.forEach(selector => {
+
+          document.querySelectorAll(selector).forEach(element => {
+
+            if (!element.closest("#google_translate_element")) {
+              element.remove();
+            }
+
+          });
+
+        });
+
+        restorePagePosition();
+      }
+
+      /* Initial protection. */
+
+      removeGooglePopouts();
+
+      /* Monitor Google's injected elements and layout changes. */
+
+      const observer = new MutationObserver(() => {
+        removeGooglePopouts();
+      });
+
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style", "class"]
+      });
+
+      /* Additional protection. */
+
+      window.addEventListener("load", removeGooglePopouts);
+
+      window.addEventListener("resize", removeGooglePopouts);
+
+      window.addEventListener("scroll", restorePagePosition);
+
+    })();
+  </script>
+
 </body>
 </html>
-
