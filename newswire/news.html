@@ -12,7 +12,7 @@
   <meta name="application-name" content="PHRINUSOMYIS™">
   <meta name="author" content="PHRINUSOMYIS™">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#f7f5ef">
+  <meta name="theme-color" content="#f5f3ed">
 
   <meta name="description" content="PHRINUSOMYIS™ examines the evolution of competitive sport and its independent direction beyond traditional sporting structures.">
 
@@ -68,74 +68,52 @@
 
   <style>
     :root {
-      --background: #f7f5ef;
+      --background: #f5f3ed;
       --surface: #ffffff;
-      --surface-light: #f0ede4;
-      --gold: #aa8531;
-      --gold-light: #c19b45;
-      --gold-pale: #f4ecd8;
-      --text: #28271f;
-      --muted: #69665d;
-      --border: rgba(170, 133, 49, 0.28);
+      --surface-light: #ebe7dc;
+      --gold: #a78332;
+      --gold-light: #92702b;
+      --text: #25231e;
+      --muted: #6e6a60;
+      --border: rgba(155, 122, 49, 0.28);
       --content-width: 1180px;
-      --heading: #353126;
-      --green: #526b55;
-      --shadow: 0 12px 35px rgba(53, 47, 32, 0.055);
     }
 
     * {
       box-sizing: border-box;
-      font-weight: 700;
     }
 
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 110px;
-      background: var(--background);
     }
 
     body {
       margin: 0;
-      background:
-        radial-gradient(
-          ellipse at 10% 8%,
-          rgba(201, 166, 70, 0.075),
-          transparent 35%
-        ),
-        radial-gradient(
-          ellipse at 90% 40%,
-          rgba(174, 160, 119, 0.065),
-          transparent 38%
-        ),
-        var(--background);
+      background: var(--background);
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 17px;
-      font-weight: 700;
       line-height: 1.85;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: #997326;
+      color: var(--gold-light);
       text-decoration: none;
-      font-weight: 700;
     }
 
     a:hover {
-      color: #55401b;
+      color: #ffffff;
     }
 
-    button,
-    select {
+    button {
       font: inherit;
-      font-weight: 700;
     }
 
     .site-header {
       border-bottom: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 3px 18px rgba(53, 47, 32, 0.035);
+      background: var(--surface);
     }
 
     .header-inner {
@@ -178,143 +156,18 @@
       color: var(--gold);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 3px;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 22px;
     }
 
     .header-link {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       white-space: nowrap;
     }
-
-    /* CUSTOM LANGUAGE SELECTOR */
-
-    .language-area {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      background: #faf8f2;
-      min-height: 42px;
-    }
-
-    .language-icon {
-      color: var(--gold);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-    }
-
-    .language-label {
-      color: #625637;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .language-select {
-      max-width: 145px;
-      border: 0;
-      outline: none;
-      background: transparent;
-      color: #353126;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .language-select:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
-    }
-
-    /* GOOGLE TRANSLATE ENGINE */
-
-    #google_translate_element {
-      position: absolute !important;
-      left: -10000px !important;
-      top: 0 !important;
-      width: 1px !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-    .goog-te-gadget,
-    .goog-te-gadget-simple,
-    .goog-te-menu-value,
-    .goog-te-gadget span,
-    .goog-te-gadget img {
-      display: none !important;
-    }
-
-    .goog-te-banner-frame,
-    iframe.goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    #goog-gt-tt,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-te-spinner-pos,
-    .goog-te-menu-frame,
-    .goog-te-menu2,
-    .goog-te-menu2-item,
-    .goog-te-menu2-item-selected {
-      visibility: hidden !important;
-      display: none !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-    body,
-    body.translated-ltr,
-    body.translated-rtl {
-      top: 0 !important;
-      margin-top: 0 !important;
-      position: static !important;
-    }
-
-    html {
-      margin-top: 0 !important;
-      top: 0 !important;
-    }
-
-    .skiptranslate {
-      max-height: 0 !important;
-      overflow: hidden !important;
-    }
-
-    body > .skiptranslate,
-    body > iframe.skiptranslate {
-      display: none !important;
-    }
-
-    .goog-text-highlight {
-      background: transparent !important;
-      box-shadow: none !important;
-      border: none !important;
-    }
-
-    iframe.goog-te-menu-frame {
-      max-height: 0 !important;
-    }
-
-    /* END GOOGLE TRANSLATE STYLING */
 
     .top-rule {
       height: 3px;
@@ -339,7 +192,6 @@
       color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      font-weight: 700;
       letter-spacing: 0.5px;
     }
 
@@ -353,8 +205,7 @@
       margin-bottom: 16px;
       padding: 5px 11px;
       border: 1px solid var(--border);
-      background: #fbf8ef;
-      color: #8a6823;
+      color: var(--gold-light);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
       font-weight: 800;
@@ -369,9 +220,9 @@
 
     h1 {
       margin: 0;
-      color: #353126;
+      color: var(--text);
       font-size: clamp(34px, 5vw, 57px);
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.13;
       letter-spacing: -1.5px;
       text-transform: uppercase;
@@ -393,51 +244,43 @@
 
     .article {
       min-width: 0;
-      padding: 32px;
-      border: 1px solid rgba(170, 133, 49, 0.17);
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: var(--shadow);
     }
 
     .article-intro {
       margin: 0 0 32px;
       padding: 23px 26px;
-      border-left: 4px solid var(--gold);
+      border-left: 3px solid var(--gold);
       background: linear-gradient(
         120deg,
-        #f4ecd9,
-        #fbf9f3
+        rgba(167, 131, 50, 0.10),
+        rgba(167, 131, 50, 0.025)
       );
-      color: #51442b;
+      color: var(--text);
       font-size: 19px;
-      font-weight: 800;
       line-height: 1.8;
     }
 
     .article-body p {
       margin: 0 0 25px;
-      color: #454239;
-      font-weight: 700;
     }
 
     .article-body p:first-child::first-letter {
       float: left;
       padding: 8px 10px 0 0;
-      color: #a47b28;
+      color: var(--gold-light);
       font-size: 58px;
       line-height: 0.85;
     }
 
     .article-body strong {
-      color: #88651f;
-      font-weight: 900;
+      color: var(--gold-light);
+      font-weight: 700;
     }
 
     .article-body h2 {
       margin: 42px 0 18px;
-      color: #7b632e;
+      color: var(--gold-light);
       font-size: 25px;
-      font-weight: 800;
       line-height: 1.35;
     }
 
@@ -445,15 +288,13 @@
       margin-top: 38px;
       padding: 26px;
       border: 1px solid var(--border);
-      border-top: 3px solid var(--gold);
-      background: #f8f3e7;
+      background: var(--surface);
     }
 
     .article-closing p {
       margin: 0;
-      color: #574625;
+      color: var(--gold-light);
       font-size: 20px;
-      font-weight: 800;
       font-style: italic;
       line-height: 1.8;
     }
@@ -467,13 +308,12 @@
       margin-bottom: 20px;
       padding: 22px;
       border: 1px solid var(--border);
-      background: #ffffff;
-      box-shadow: 0 5px 20px rgba(53, 47, 32, 0.04);
+      background: var(--surface);
     }
 
     .sidebar-card h2 {
       margin: 0 0 15px;
-      color: #8a6b2d;
+      color: var(--gold-light);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 800;
@@ -484,9 +324,8 @@
 
     .sidebar-card p {
       margin: 0;
-      color: #666258;
+      color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
       line-height: 1.8;
     }
 
@@ -497,7 +336,7 @@
     }
 
     .sidebar-nav li {
-      border-bottom: 1px solid rgba(170, 133, 49, 0.14);
+      border-bottom: 1px solid rgba(120, 110, 90, 0.16);
     }
 
     .sidebar-nav li:last-child {
@@ -507,15 +346,14 @@
     .sidebar-nav a {
       display: block;
       padding: 9px 0;
-      color: #514c3e;
+      color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
-      font-weight: 700;
       line-height: 1.5;
     }
 
     .sidebar-nav a:hover {
-      color: var(--gold);
+      color: var(--gold-light);
     }
 
     .sidebar-logo {
@@ -540,7 +378,7 @@
       color: var(--gold) !important;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px !important;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 3px;
       text-align: center;
     }
@@ -558,10 +396,10 @@
 
     .share-label {
       margin-right: 8px;
-      color: #777064;
+      color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
@@ -574,12 +412,12 @@
       padding: 8px 14px;
       border: 1px solid var(--border);
       border-radius: 0;
-      background: #fbf9f3;
-      color: #806122;
+      background: transparent;
+      color: var(--gold-light);
       cursor: pointer;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
       transition: background 0.2s ease, color 0.2s ease;
@@ -587,7 +425,7 @@
 
     .action-button:hover {
       background: var(--gold);
-      color: #ffffff;
+      color: #080808;
     }
 
     .action-button:focus-visible,
@@ -599,23 +437,21 @@
     .share-status {
       flex-basis: 100%;
       min-height: 20px;
-      color: #8a6b2d;
+      color: var(--gold-light);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      font-weight: 800;
     }
 
     .issuance {
       margin-top: 35px;
       padding: 27px;
       border: 1px solid var(--border);
-      background: #ffffff;
-      box-shadow: var(--shadow);
+      background: var(--surface);
     }
 
     .issuance h2 {
       margin: 0 0 20px;
-      color: #876626;
+      color: var(--gold-light);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 800;
@@ -628,9 +464,8 @@
       grid-template-columns: 135px minmax(0, 1fr);
       gap: 16px;
       padding: 11px 0;
-      border-bottom: 1px solid rgba(170, 133, 49, 0.14);
+      border-bottom: 1px solid rgba(120, 110, 90, 0.16);
       font-size: 15px;
-      font-weight: 700;
       line-height: 1.6;
     }
 
@@ -639,17 +474,17 @@
     }
 
     .issuance-label {
-      color: #777064;
+      color: var(--muted);
     }
 
     .issuance-value {
-      color: #353126;
-      font-weight: 800;
+      color: var(--text);
+      font-weight: 700;
     }
 
     .site-footer {
       border-top: 1px solid var(--border);
-      background: #efede5;
+      background: var(--surface);
     }
 
     .footer-inner {
@@ -663,23 +498,21 @@
     }
 
     .footer-copy {
-      color: #716d62;
+      color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: 700;
       line-height: 1.8;
     }
 
     .footer-copy strong {
-      color: #806122;
+      color: var(--gold-light);
       letter-spacing: 1px;
-      font-weight: 900;
     }
 
     .footer-link {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
       white-space: nowrap;
@@ -706,10 +539,6 @@
         width: 49px;
         height: 49px;
       }
-
-      .header-inner {
-        flex-wrap: wrap;
-      }
     }
 
     @media (max-width: 560px) {
@@ -720,7 +549,7 @@
 
       .header-inner {
         padding: 15px 18px;
-        gap: 14px;
+        gap: 12px;
       }
 
       .brand {
@@ -742,37 +571,13 @@
         letter-spacing: 2px;
       }
 
-      .header-actions {
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-      }
-
       .header-link {
         font-size: 10px;
         letter-spacing: 0.7px;
       }
 
-      .language-area {
-        padding: 7px 9px;
-        gap: 7px;
-      }
-
-      .language-label {
-        font-size: 9px;
-      }
-
-      .language-select {
-        max-width: 125px;
-        font-size: 11px;
-      }
-
       .page-shell {
         padding: 25px 18px 45px;
-      }
-
-      .article {
-        padding: 20px 17px;
       }
 
       .breadcrumbs {
@@ -853,18 +658,13 @@
       .article-sidebar,
       .share-section,
       .site-footer,
-      .language-area {
+      .reader-tools,
+      .reader-tools-wrap {
         display: none !important;
       }
 
       .page-shell {
         max-width: none;
-        padding: 0;
-      }
-
-      .article {
-        border: 0;
-        box-shadow: none;
         padding: 0;
       }
 
@@ -890,10 +690,387 @@
         color: #111111;
       }
     }
+
+    /* =========================================
+       PHRINUSOMYIS™ READER EXPERIENCE
+       Seven coordinated reading themes
+    ========================================= */
+
+    body,
+    body * {
+      font-weight: 700 !important;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    .article,
+    .article-body,
+    .article-body p,
+    .article-intro,
+    .article-closing,
+    .issuance,
+    .sidebar-card {
+      color: var(--text);
+    }
+
+    .article-body p {
+      line-height: 1.95;
+    }
+
+    .article-body strong,
+    .article-body h2,
+    .article-closing p,
+    .sidebar-card h2,
+    .issuance h2 {
+      color: var(--gold-light);
+    }
+
+    .reader-tools-wrap {
+      position: relative;
+      z-index: 20;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 5px 20px rgba(0,0,0,.035);
+    }
+
+    .reader-tools {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .reader-tools-title {
+      width: 100%;
+      margin: 0 0 2px;
+      color: var(--gold-light);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .reader-control {
+      display: flex;
+      flex: 1 1 220px;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .reader-control label {
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .reader-control select {
+      width: 100%;
+      min-height: 43px;
+      padding: 10px 35px 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .reader-control select:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .reader-note {
+      width: 100%;
+      margin: 0;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* Theme 1: Original Black and Gold */
+
+    body[data-theme="original"] {
+      --background: #111111;
+      --surface: #191919;
+      --surface-light: #242424;
+      --text: #f3f0e8;
+      --muted: #c0b9a8;
+      --gold: #c9a646;
+      --gold-light: #e6cb7a;
+      --border: rgba(201,166,70,.35);
+    }
+
+    /* Theme 2: Editorial Ivory */
+
+    body[data-theme="ivory"] {
+      --background: #f5f3ed;
+      --surface: #ffffff;
+      --surface-light: #ebe7dc;
+      --text: #29271f;
+      --muted: #706b60;
+      --gold: #a78332;
+      --gold-light: #92702b;
+      --border: rgba(155,122,49,.28);
+    }
+
+    /* Theme 3: Pure White */
+
+    body[data-theme="white"] {
+      --background: #ffffff;
+      --surface: #f8f8f8;
+      --surface-light: #eeeeee;
+      --text: #181818;
+      --muted: #555555;
+      --gold: #9a7620;
+      --gold-light: #775b12;
+      --border: rgba(130,105,48,.25);
+    }
+
+    /* Theme 4: Midnight Gold */
+
+    body[data-theme="midnight"] {
+      --background: #090d16;
+      --surface: #121a28;
+      --surface-light: #1c293b;
+      --text: #f4f0e5;
+      --muted: #b3bdcc;
+      --gold: #c6a34b;
+      --gold-light: #e8cc80;
+      --border: rgba(198,163,75,.35);
+    }
+
+    /* Theme 5: White and Gold */
+
+    body[data-theme="whitegold"] {
+      --background: #ffffff;
+      --surface: #fffdf7;
+      --surface-light: #f7f0dc;
+      --text: #a17a22;
+      --muted: #876d38;
+      --gold: #a17a22;
+      --gold-light: #8c681b;
+      --border: rgba(161,122,34,.32);
+    }
+
+    /* Theme 6: White, Black and Gold */
+
+    body[data-theme="classic"] {
+      --background: #ffffff;
+      --surface: #f7f7f5;
+      --surface-light: #eceae4;
+      --text: #202020;
+      --muted: #626262;
+      --gold: #aa852f;
+      --gold-light: #967126;
+      --border: rgba(170,133,47,.32);
+    }
+
+    /* Theme 7: Slate Blue */
+
+    body[data-theme="slate"] {
+      --background: #eaf0f5;
+      --surface: #ffffff;
+      --surface-light: #dce5ee;
+      --text: #203449;
+      --muted: #52677b;
+      --gold: #416d91;
+      --gold-light: #315c80;
+      --border: rgba(49,92,128,.25);
+    }
+
+    /* Apply theme colours consistently */
+
+    .site-header,
+    .reader-tools-wrap,
+    .site-footer,
+    .sidebar-card,
+    .issuance,
+    .article-closing {
+      background: var(--surface);
+      border-color: var(--border);
+    }
+
+    .article-intro {
+      background: linear-gradient(
+        120deg,
+        var(--surface-light),
+        var(--surface)
+      );
+      color: var(--text);
+      border-left-color: var(--gold);
+    }
+
+    .brand-name,
+    .sidebar-brand,
+    .issuance-value,
+    .article-body p,
+    .article-intro {
+      color: var(--text);
+    }
+
+    .brand-tagline,
+    .sidebar-motto,
+    .article-body h2,
+    .article-body strong,
+    .article-closing p,
+    .sidebar-card h2,
+    .issuance h2,
+    .section-label {
+      color: var(--gold-light);
+    }
+
+    .sidebar-card p,
+    .breadcrumbs,
+    .issuance-label,
+    .footer-copy {
+      color: var(--muted);
+    }
+
+    .article-sidebar .sidebar-nav a {
+      color: var(--text);
+    }
+
+    .action-button {
+      border-color: var(--border);
+      color: var(--gold-light);
+    }
+
+    .action-button:hover {
+      background: var(--gold);
+      color: var(--background);
+    }
+
+    .top-rule {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        var(--gold-light),
+        var(--gold),
+        transparent
+      );
+    }
+
+    /* =========================================
+       GOOGLE TRANSLATE INTERFACE SUPPRESSION
+    ========================================= */
+
+    html {
+      margin-top: 0 !important;
+      top: 0 !important;
+    }
+
+    html body {
+      margin-top: 0 !important;
+      top: 0 !important;
+      position: relative !important;
+    }
+
+    body > .skiptranslate,
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    .goog-te-menu-frame,
+    .goog-te-spinner-pos,
+    #goog-gt-tt,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-text-highlight,
+    .goog-te-gadget,
+    .goog-te-gadget-simple,
+    .goog-te-menu-value,
+    .goog-te-menu2,
+    .goog-te-menu2-item,
+    iframe.goog-te-banner-frame,
+    iframe.goog-te-menu-frame {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      max-height: 0 !important;
+      width: 0 !important;
+      max-width: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      left: -99999px !important;
+      top: -99999px !important;
+      border: 0 !important;
+    }
+
+    .goog-te-gadget,
+    .goog-te-gadget span,
+    .goog-te-gadget a {
+      font-size: 0 !important;
+      line-height: 0 !important;
+    }
+
+    body.translated-ltr,
+    body.translated-rtl {
+      top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    body.translated-ltr {
+      margin-top: 0 !important;
+    }
+
+    #google_translate_element {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      clip-path: inset(50%) !important;
+      white-space: nowrap !important;
+      left: -10000px !important;
+      top: auto !important;
+    }
+
+    /* Preserve reading experience on mobile */
+
+    @media (max-width: 650px) {
+      .reader-tools {
+        padding: 15px 18px;
+        gap: 12px;
+      }
+
+      .reader-control {
+        flex: 1 1 100%;
+      }
+
+      .reader-control select {
+        min-height: 46px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body data-theme="ivory">
+
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
@@ -909,50 +1086,67 @@
         </span>
       </a>
 
-      <div class="header-actions">
-
-        <div class="language-area" aria-label="Website language selector">
-          <span class="language-icon" aria-hidden="true">◎</span>
-          <label class="language-label" for="language-select">Language</label>
-
-          <select
-            class="language-select"
-            id="language-select"
-            aria-label="Select website language"
-          >
-            <option value="en" selected>English</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-            <option value="ar">العربية</option>
-            <option value="zh-CN">中文</option>
-            <option value="ru">Русский</option>
-            <option value="pt">Português</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="it">Italiano</option>
-            <option value="nl">Nederlands</option>
-            <option value="tr">Türkçe</option>
-            <option value="hi">हिन्दी</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="th">ไทย</option>
-            <option value="pl">Polski</option>
-            <option value="sv">Svenska</option>
-            <option value="fi">Suomi</option>
-            <option value="da">Dansk</option>
-          </select>
-        </div>
-
-        <a class="header-link" href="/">Official Website ↗</a>
-
-      </div>
+      <a class="header-link" href="/">Official Website ↗</a>
     </div>
-
     <div class="top-rule"></div>
   </header>
 
-  <!-- Hidden Google Translate engine -->
+  <!-- READER LANGUAGE AND COLOUR CONTROLS -->
+
+  <section class="reader-tools-wrap" aria-label="Reader preferences">
+    <div class="reader-tools">
+
+      <h2 class="reader-tools-title">Personalise Your Reading Experience</h2>
+
+      <div class="reader-control">
+        <label for="language-selector">Language / Translate</label>
+        <select id="language-selector" aria-label="Choose reading language">
+          <option value="en" selected>English — Original Language</option>
+          <option value="fr">Français — French</option>
+          <option value="es">Español — Spanish</option>
+          <option value="de">Deutsch — German</option>
+          <option value="ar">العربية — Arabic</option>
+          <option value="zh-CN">中文 — Chinese</option>
+          <option value="ru">Русский — Russian</option>
+          <option value="pt">Português — Portuguese</option>
+          <option value="ja">日本語 — Japanese</option>
+          <option value="ko">한국어 — Korean</option>
+          <option value="it">Italiano — Italian</option>
+          <option value="nl">Nederlands — Dutch</option>
+          <option value="tr">Türkçe — Turkish</option>
+          <option value="hi">हिन्दी — Hindi</option>
+          <option value="id">Bahasa Indonesia — Indonesian</option>
+          <option value="vi">Tiếng Việt — Vietnamese</option>
+          <option value="th">ไทย — Thai</option>
+          <option value="pl">Polski — Polish</option>
+          <option value="sv">Svenska — Swedish</option>
+          <option value="fi">Suomi — Finnish</option>
+          <option value="da">Dansk — Danish</option>
+        </select>
+      </div>
+
+      <div class="reader-control">
+        <label for="theme-selector">Choose Your Reading Background</label>
+        <select id="theme-selector" aria-label="Choose reading background">
+          <option value="original">01 — Original Black & Gold</option>
+          <option value="ivory" selected>02 — Editorial Ivory</option>
+          <option value="white">03 — Pure White</option>
+          <option value="midnight">04 — Midnight Gold</option>
+          <option value="whitegold">05 — White & Gold</option>
+          <option value="classic">06 — White, Black & Gold</option>
+          <option value="slate">07 — Slate Blue</option>
+        </select>
+      </div>
+
+      <p class="reader-note">
+        Select your preferred language and reading appearance. Your selection changes the reading presentation without changing the original publication.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- HIDDEN GOOGLE TRANSLATE ENGINE -->
+
   <div id="google_translate_element" aria-hidden="true"></div>
 
   <main class="page-shell">
@@ -1182,6 +1376,185 @@
     </div>
   </footer>
 
+  <!-- READER PREFERENCE AND GOOGLE TRANSLATE JAVASCRIPT -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      const themeSelector = document.getElementById("theme-selector");
+      const languageSelector = document.getElementById("language-selector");
+
+      const availableThemes = [
+        "original",
+        "ivory",
+        "white",
+        "midnight",
+        "whitegold",
+        "classic",
+        "slate"
+      ];
+
+      /* Restore the visitor's preferred reading theme */
+
+      try {
+        const savedTheme = localStorage.getItem("phrinusomyis-reader-theme");
+
+        if (availableThemes.includes(savedTheme)) {
+          document.body.setAttribute("data-theme", savedTheme);
+          themeSelector.value = savedTheme;
+        }
+      } catch (error) {
+        /* The reader remains functional when storage is unavailable. */
+      }
+
+      themeSelector.addEventListener("change", function () {
+        const selectedTheme = this.value;
+
+        if (!availableThemes.includes(selectedTheme)) {
+          return;
+        }
+
+        document.body.setAttribute("data-theme", selectedTheme);
+
+        try {
+          localStorage.setItem(
+            "phrinusomyis-reader-theme",
+            selectedTheme
+          );
+        } catch (error) {
+          /* Theme selection still works without persistent storage. */
+        }
+      });
+
+      /* Google Translate integration */
+
+      function changeLanguage(language) {
+        const translateSelect = document.querySelector(".goog-te-combo");
+
+        if (!translateSelect) {
+          return false;
+        }
+
+        const targetLanguage = language === "en" ? "" : language;
+
+        translateSelect.value = targetLanguage;
+
+        translateSelect.dispatchEvent(
+          new Event("change", { bubbles: true })
+        );
+
+        return true;
+      }
+
+      function applyLanguage(language, attempts) {
+        attempts = attempts || 0;
+
+        if (changeLanguage(language)) {
+          return;
+        }
+
+        if (attempts < 30) {
+          window.setTimeout(function () {
+            applyLanguage(language, attempts + 1);
+          }, 300);
+        }
+      }
+
+      languageSelector.addEventListener("change", function () {
+        applyLanguage(this.value);
+      });
+
+      /* Initialise Google Translate with English as the source language */
+
+      window.googleTranslateElementInit = function () {
+        if (!window.google || !google.translate) {
+          return;
+        }
+
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages:
+              "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+            autoDisplay: false,
+            multilanguagePage: true
+          },
+          "google_translate_element"
+        );
+
+        if (languageSelector.value !== "en") {
+          applyLanguage(languageSelector.value);
+        }
+      };
+
+      /* Hide unwanted Google interface elements if dynamically injected */
+
+      function suppressGoogleInterface() {
+        document.documentElement.style.setProperty(
+          "margin-top",
+          "0px",
+          "important"
+        );
+
+        document.body.style.setProperty(
+          "margin-top",
+          "0px",
+          "important"
+        );
+
+        document.body.style.setProperty(
+          "top",
+          "0px",
+          "important"
+        );
+
+        const unwantedSelectors = [
+          ".goog-te-banner-frame",
+          ".goog-te-balloon-frame",
+          ".goog-te-menu-frame",
+          "#goog-gt-tt",
+          ".goog-tooltip",
+          ".goog-te-spinner-pos",
+          "iframe.goog-te-banner-frame"
+        ];
+
+        unwantedSelectors.forEach(function (selector) {
+          document.querySelectorAll(selector).forEach(function (element) {
+            element.style.setProperty("display", "none", "important");
+            element.style.setProperty("visibility", "hidden", "important");
+            element.style.setProperty("height", "0", "important");
+            element.style.setProperty("pointer-events", "none", "important");
+          });
+        });
+      }
+
+      const observer = new MutationObserver(function () {
+        suppressGoogleInterface();
+      });
+
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style", "class"]
+      });
+
+      suppressGoogleInterface();
+
+    })();
+  </script>
+
+  <!-- GOOGLE TRANSLATE LIBRARY -->
+
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async
+    defer
+  ></script>
+
+  <!-- ORIGINAL NEWSWIRE SHARE AND PRINT FUNCTIONALITY -->
+
   <script>
     (function () {
       "use strict";
@@ -1255,74 +1628,6 @@
       });
     })();
   </script>
-
-  <!-- GOOGLE TRANSLATE INITIALIZATION -->
-
-  <script>
-    window.googleTranslateElementInit = function () {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          includedLanguages:
-            "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-          autoDisplay: false,
-          multilanguagePage: true
-        },
-        "google_translate_element"
-      );
-
-      window.googleTranslateReady = true;
-
-      if (window.pendingGoogleLanguage) {
-        window.setGoogleLanguage(window.pendingGoogleLanguage);
-        window.pendingGoogleLanguage = null;
-      }
-    };
-
-    window.setGoogleLanguage = function (language) {
-      if (language === "en") {
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.delete("_x_tr_sl");
-        currentUrl.searchParams.delete("_x_tr_tl");
-        currentUrl.searchParams.delete("_x_tr_hl");
-
-        document.cookie =
-          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-
-        document.cookie =
-          "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" +
-          window.location.hostname;
-
-        window.location.href = currentUrl.toString();
-        return;
-      }
-
-      const combo = document.querySelector(".goog-te-combo");
-
-      if (!combo) {
-        window.pendingGoogleLanguage = language;
-        return;
-      }
-
-      combo.value = language;
-      combo.dispatchEvent(new Event("change"));
-    };
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const selector = document.getElementById("language-select");
-
-      if (selector) {
-        selector.addEventListener("change", function () {
-          window.setGoogleLanguage(this.value);
-        });
-      }
-    });
-  </script>
-
-  <script
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async
-  ></script>
 
 </body>
 </html>
