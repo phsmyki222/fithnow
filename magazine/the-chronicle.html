@@ -658,11 +658,14 @@ button {
 /* Keep the Google translation engine available to the custom selector,
    but move its invisible container outside the visible page layout. */
 #google_translate_element {
+  display:block !important;
   position:fixed !important;
   left:-10000px !important;
   top:0 !important;
   width:1px !important;
   height:1px !important;
+  max-width:1px !important;
+  max-height:1px !important;
   overflow:hidden !important;
   opacity:0 !important;
   visibility:hidden !important;
@@ -675,14 +678,28 @@ button {
 iframe.goog-te-banner-frame,
 iframe.skiptranslate,
 .goog-te-menu-frame,
+iframe.goog-te-menu-frame,
 .goog-te-balloon-frame,
+iframe.goog-te-balloon-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-KE6vqe,
 .goog-te-ftab,
+.goog-te-ftab-link,
 .goog-te-gadget-icon,
 #goog-gt-tt,
+.goog-te-tooltip-container,
 .goog-tooltip,
 .goog-tooltip:hover,
-.goog-text-highlight,
-.goog-te-spinner-pos {
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-l4eHX,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-ZVi9od-vH1Gmf,
+.VIpgJd-ZVi9od-xl07Ob,
+.VIpgJd-ZVi9od-SmfZ,
+.goog-te-spinner-pos,
+.goog-te-menu2,
+.goog-te-menu2-item {
   display:none !important;
   visibility:hidden !important;
   opacity:0 !important;
@@ -693,6 +710,38 @@ iframe.skiptranslate,
   max-width:0 !important;
   border:0 !important;
   box-shadow:none !important;
+  position:fixed !important;
+  left:-10000px !important;
+  top:-10000px !important;
+}
+
+/* Remove translation highlights. */
+.goog-text-highlight {
+  background:transparent !important;
+  background-color:transparent !important;
+  box-shadow:none !important;
+  border:none !important;
+  color:inherit !important;
+}
+
+/* Hide Google branding and unwanted gadget interfaces. */
+.goog-logo-link,
+.goog-te-gadget-icon,
+.goog-te-spinner-pos,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-menu2,
+.goog-te-menu2-item {
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+}
+
+/* Remove Google gadget styling. */
+.goog-te-gadget {
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
 }
 
 /* Prevent the injected banner from pushing the document down. */
@@ -1360,83 +1409,81 @@ document.getElementById('languageSelect').addEventListener('change', function() 
   }
 });
 
-/* Remove Google's injected banner positioning and visible pop-outs.
-   The observer is limited to added elements and avoids observing every
-   attribute change throughout the document. */
-(function suppressGoogleTranslateInterface() {
-  var resetGoogleLayout = function() {
-    document.documentElement.style.setProperty('margin-top', '0px', 'important');
-    document.documentElement.style.setProperty('padding-top', '0px', 'important');
+/* Google Translate banner and pop-out protection */
+(function protectPageFromGoogleInterface() {
 
-    document.body.style.setProperty('top', '0px', 'important');
-    document.body.style.setProperty('margin-top', '0px', 'important');
-    document.body.style.setProperty('padding-top', '0px', 'important');
+  function restorePagePosition() {
 
-    var banner = document.querySelector('.goog-te-banner-frame');
-    if (banner) {
-      banner.style.setProperty('display', 'none', 'important');
-      banner.style.setProperty('visibility', 'hidden', 'important');
-      banner.style.setProperty('height', '0px', 'important');
-      banner.style.setProperty('top', '-10000px', 'important');
+    var html = document.documentElement;
+    var body = document.body;
+
+    if (!html || !body) {
+      return;
     }
 
-    var skipTranslate = document.querySelector('body > .skiptranslate');
-    if (skipTranslate && !skipTranslate.contains(document.getElementById('languageSelect'))) {
-      skipTranslate.style.setProperty('display', 'none', 'important');
-      skipTranslate.style.setProperty('height', '0px', 'important');
-      skipTranslate.style.setProperty('overflow', 'hidden', 'important');
-    }
+    html.style.setProperty('top', '0px', 'important');
+    html.style.setProperty('margin-top', '0px', 'important');
+    html.style.setProperty('padding-top', '0px', 'important');
 
-    document.querySelectorAll(
-      '.goog-te-menu-frame, .goog-te-balloon-frame, .goog-te-ftab, #goog-gt-tt, .goog-tooltip, .goog-te-spinner-pos'
-    ).forEach(function(element) {
-      element.style.setProperty('display', 'none', 'important');
-      element.style.setProperty('visibility', 'hidden', 'important');
-      element.style.setProperty('pointer-events', 'none', 'important');
-    });
-  };
+    body.style.setProperty('top', '0px', 'important');
+    body.style.setProperty('margin-top', '0px', 'important');
+    body.style.setProperty('padding-top', '0px', 'important');
+  }
 
-  resetGoogleLayout();
+  function removeGooglePopouts() {
 
-  var observer = new MutationObserver(function(mutations) {
-    var foundGoogleElement = false;
+    var unwantedSelectors = [
+      'iframe.goog-te-banner-frame',
+      '.goog-te-banner-frame',
+      '.goog-te-balloon-frame',
+      'iframe.goog-te-balloon-frame',
+      '.goog-te-menu-frame',
+      'iframe.goog-te-menu-frame',
+      '#goog-gt-tt',
+      '.goog-tooltip',
+      '.goog-te-tooltip-container',
+      '.goog-te-ftab',
+      '.VIpgJd-ZVi9od-ORHb-OEVmcd',
+      '.VIpgJd-ZVi9od-ORHb',
+      '.VIpgJd-ZVi9od-ORHb-KE6vqe'
+    ];
 
-    mutations.forEach(function(mutation) {
-      mutation.addedNodes.forEach(function(node) {
-        if (node.nodeType !== 1) return;
+    unwantedSelectors.forEach(function(selector) {
 
-        if (
-          node.matches &&
-          node.matches(
-            '.goog-te-banner-frame, .skiptranslate, .goog-te-menu-frame, .goog-te-balloon-frame, .goog-te-ftab, #goog-gt-tt, .goog-tooltip'
-          )
-        ) {
-          foundGoogleElement = true;
+      document.querySelectorAll(selector).forEach(function(element) {
+
+        if (!element.closest('#google_translate_element')) {
+          element.remove();
         }
 
-        if (
-          node.querySelector &&
-          node.querySelector(
-            '.goog-te-banner-frame, .skiptranslate, .goog-te-menu-frame, .goog-te-balloon-frame, .goog-te-ftab, #goog-gt-tt, .goog-tooltip'
-          )
-        ) {
-          foundGoogleElement = true;
-        }
       });
+
     });
 
-    if (foundGoogleElement) {
-      resetGoogleLayout();
-    }
+    restorePagePosition();
+  }
+
+  /* Initial protection. */
+  removeGooglePopouts();
+
+  /* Monitor Google's injected elements and layout changes. */
+  var observer = new MutationObserver(function() {
+    removeGooglePopouts();
   });
 
   observer.observe(document.documentElement, {
     childList:true,
-    subtree:true
+    subtree:true,
+    attributes:true,
+    attributeFilter:['style', 'class']
   });
 
-  window.addEventListener('load', resetGoogleLayout);
-  window.addEventListener('pageshow', resetGoogleLayout);
+  /* Additional protection. */
+  window.addEventListener('load', removeGooglePopouts);
+  window.addEventListener('pageshow', removeGooglePopouts);
+  window.addEventListener('resize', removeGooglePopouts);
+  window.addEventListener('scroll', restorePagePosition);
+
 })();
 
 /* Current year */
