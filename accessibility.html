@@ -70,7 +70,7 @@
         scroll-padding-top: 30px;
     }
 
-    /* GOOGLE TRANSLATE: HIDE BANNER, MENUS AND POPOUTS */
+    /* GOOGLE TRANSLATE: BANNER AND POPOUT PROTECTION */
 
     .goog-te-banner-frame,
     .goog-te-banner-frame.skiptranslate,
@@ -82,7 +82,25 @@
     .goog-tooltip:hover,
     .goog-text-highlight,
     .goog-te-menu-frame,
-    .goog-te-ftab-frame {
+    iframe.goog-te-menu-frame,
+    .goog-te-ftab-frame,
+    .goog-te-ftab,
+    .goog-te-ftab-link,
+    .goog-te-menu2,
+    .goog-te-menu2-item,
+    .goog-te-spinner-pos,
+    .goog-te-gadget-icon,
+    .goog-logo-link,
+    .goog-te-tooltip-container,
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-ORHb,
+    .VIpgJd-ZVi9od-ORHb-KE6vqe,
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+    .VIpgJd-ZVi9od-l4eHX,
+    .VIpgJd-yAWNEb-L7lbkb,
+    .VIpgJd-ZVi9od-vH1Gmf,
+    .VIpgJd-ZVi9od-xl07Ob,
+    .VIpgJd-ZVi9od-SmfZ {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -91,27 +109,38 @@
         min-height: 0 !important;
         max-height: 0 !important;
         width: 0 !important;
+        max-width: 0 !important;
         border: 0 !important;
+        position: fixed !important;
+        left: -10000px !important;
+        top: -10000px !important;
+        z-index: -9999 !important;
     }
 
     /* KEEP TRANSLATION ENGINE INITIALIZED OFF-SCREEN */
 
     #google_translate_element {
         display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: absolute !important;
-        left: -9999px !important;
+        position: fixed !important;
+        left: -10000px !important;
         top: 0 !important;
         width: 1px !important;
         height: 1px !important;
+        max-width: 1px !important;
+        max-height: 1px !important;
         overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
         z-index: -1 !important;
     }
 
     #google_translate_element .goog-te-gadget {
         display: block !important;
         visibility: visible !important;
+        color: transparent !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
         font-weight: 700 !important;
     }
 
@@ -129,6 +158,16 @@
         display: none !important;
     }
 
+    /* REMOVE TRANSLATION HIGHLIGHTS */
+
+    .goog-text-highlight {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        color: inherit !important;
+    }
+
     /* REMOVE GOOGLE TRANSLATE PAGE DISPLACEMENT */
 
     html,
@@ -140,6 +179,10 @@
         top: 0 !important;
         margin-top: 0 !important;
         padding-top: 0 !important;
+    }
+
+    body {
+        position: relative !important;
     }
 
     body > .skiptranslate,
@@ -1150,96 +1193,104 @@
 
         /* GOOGLE TRANSLATE: CONTINUOUS BANNER AND POPOUT PROTECTION */
 
-        (function () {
+        (function protectPageFromGoogleInterface() {
 
-            function removeGoogleTranslatePopouts() {
+            function restorePagePosition() {
 
-                const unwantedElements = document.querySelectorAll(
-                    [
-                        'body > .skiptranslate',
-                        'body > div.skiptranslate',
-                        '.goog-te-banner-frame',
-                        'iframe.goog-te-banner-frame',
-                        'iframe.skiptranslate',
-                        '.goog-te-balloon-frame',
-                        '#goog-gt-tt',
-                        '.goog-tooltip',
-                        '.goog-te-ftab-frame'
-                    ].join(',')
-                );
+                const html = document.documentElement;
+                const body = document.body;
 
-                unwantedElements.forEach(function (element) {
+                if (!html || !body) {
+                    return;
+                }
 
-                    if (
-                        element.id === 'google_translate_element' ||
-                        element.closest('#google_translate_element')
-                    ) {
-                        return;
-                    }
+                if (html.style.top !== "0px") {
+                    html.style.setProperty("top", "0px", "important");
+                }
 
-                    element.remove();
+                if (html.style.marginTop !== "0px") {
+                    html.style.setProperty("margin-top", "0px", "important");
+                }
+
+                if (html.style.paddingTop !== "0px") {
+                    html.style.setProperty("padding-top", "0px", "important");
+                }
+
+                if (body.style.top !== "0px") {
+                    body.style.setProperty("top", "0px", "important");
+                }
+
+                if (body.style.marginTop !== "0px") {
+                    body.style.setProperty("margin-top", "0px", "important");
+                }
+
+                if (body.style.paddingTop !== "0px") {
+                    body.style.setProperty("padding-top", "0px", "important");
+                }
+            }
+
+            function removeGooglePopouts() {
+
+                const unwantedSelectors = [
+                    "body > .skiptranslate",
+                    "body > div.skiptranslate",
+                    "iframe.goog-te-banner-frame",
+                    ".goog-te-banner-frame",
+                    "iframe.skiptranslate",
+                    ".goog-te-balloon-frame",
+                    "#goog-gt-tt",
+                    ".goog-tooltip",
+                    ".goog-te-menu-frame",
+                    "iframe.goog-te-menu-frame",
+                    ".goog-te-ftab-frame"
+                ];
+
+                unwantedSelectors.forEach(function (selector) {
+
+                    document.querySelectorAll(selector).forEach(function (element) {
+
+                        if (
+                            element.id === "google_translate_element" ||
+                            element.closest("#google_translate_element")
+                        ) {
+                            return;
+                        }
+
+                        element.remove();
+
+                    });
+
                 });
 
-                document.documentElement.style.setProperty(
-                    'top',
-                    '0px',
-                    'important'
-                );
-
-                document.documentElement.style.setProperty(
-                    'margin-top',
-                    '0px',
-                    'important'
-                );
-
-                document.documentElement.style.setProperty(
-                    'padding-top',
-                    '0px',
-                    'important'
-                );
-
-                if (document.body) {
-
-                    document.body.style.setProperty(
-                        'top',
-                        '0px',
-                        'important'
-                    );
-
-                    document.body.style.setProperty(
-                        'margin-top',
-                        '0px',
-                        'important'
-                    );
-
-                    document.body.style.setProperty(
-                        'padding-top',
-                        '0px',
-                        'important'
-                    );
-                }
+                restorePagePosition();
             }
 
             function startGoogleTranslateProtection() {
 
-                removeGoogleTranslatePopouts();
+                removeGooglePopouts();
 
                 const observer = new MutationObserver(function () {
-                    removeGoogleTranslatePopouts();
+                    removeGooglePopouts();
                 });
 
                 observer.observe(document.documentElement, {
                     childList: true,
                     subtree: true,
                     attributes: true,
-                    attributeFilter: ['style', 'class']
+                    attributeFilter: ["style", "class"]
                 });
+
+                window.addEventListener("load", removeGooglePopouts);
+
+                window.addEventListener("resize", removeGooglePopouts);
+
+                window.addEventListener("scroll", restorePagePosition);
             }
 
-            if (document.readyState === 'loading') {
+            if (document.readyState === "loading") {
 
                 document.addEventListener(
-                    'DOMContentLoaded',
+                    "DOMContentLoaded",
                     startGoogleTranslateProtection
                 );
 
