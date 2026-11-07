@@ -566,11 +566,14 @@ html,body{
 }
 
 #google_translate_element{
+  display:block!important;
   position:fixed!important;
   left:-10000px!important;
   top:0!important;
   width:1px!important;
   height:1px!important;
+  max-width:1px!important;
+  max-height:1px!important;
   overflow:hidden!important;
   opacity:0!important;
   visibility:hidden!important;
@@ -619,8 +622,10 @@ iframe.goog-te-banner-frame,
 
 .goog-text-highlight{
   background:transparent!important;
+  background-color:transparent!important;
   box-shadow:none!important;
   border:none!important;
+  color:inherit!important;
 }
 
 body>.skiptranslate{
@@ -642,16 +647,77 @@ body.translated-ltr,
 body.translated-rtl{
   top:0!important;
   margin-top:0!important;
+  padding-top:0!important;
 }
 
 #google_translate_element .goog-te-gadget{
+  display:block!important;
+  color:transparent!important;
   font-size:0!important;
   line-height:0!important;
 }
 
 #google_translate_element .goog-te-gadget .goog-te-combo{
+  display:block!important;
   font-size:14px!important;
   line-height:normal!important;
+}
+
+.goog-te-menu-frame,
+iframe.goog-te-menu-frame,
+.goog-te-balloon-frame,
+iframe.goog-te-balloon-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-KE6vqe,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-l4eHX,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-ZVi9od-vH1Gmf,
+.VIpgJd-ZVi9od-xl07Ob,
+.VIpgJd-ZVi9od-SmfZ{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  position:fixed!important;
+  left:-10000px!important;
+  top:-10000px!important;
+  width:0!important;
+  height:0!important;
+  max-width:0!important;
+  max-height:0!important;
+  z-index:-9999!important;
+}
+
+.goog-logo-link,
+.goog-te-gadget-icon,
+.goog-te-spinner-pos,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-menu2,
+.goog-te-menu2-item{
+  display:none!important;
+  visibility:hidden!important;
+}
+
+.goog-te-gadget{
+  color:transparent!important;
+  font-size:0!important;
+  line-height:0!important;
+}
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl{
+  top:0!important;
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+body{
+  position:relative!important;
 }
 
 header,.site-header,.main-header{
@@ -1895,11 +1961,7 @@ header,.site-header,.main-header{
 </head>
 
 <body>
-<div id="google_translate_element" aria-hidden="true"></div> 
-  <script
-  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-  async
-></script>
+<div id="google_translate_element" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -2443,6 +2505,7 @@ header,.site-header,.main-header{
             height="850"
             loading="lazy"
             decoding="async"
+            class="is-active"
             data-edition-number="EDITION 06"
             data-edition-title="THE WORLD PULSE"
             data-edition-statement="The world has more than one heartbeat."
@@ -3426,6 +3489,87 @@ window.addEventListener("resize",function(){
 
 });
 
+/* GOOGLE TRANSLATE: BANNER AND POP-OUT PROTECTION */
+(function protectPageFromGoogleInterface(){
+
+  function restorePagePosition(){
+
+    const html=document.documentElement;
+    const body=document.body;
+
+    if(!html||!body)return;
+
+    if(html.style.top!=="0px"){
+      html.style.setProperty("top","0px","important");
+    }
+
+    if(html.style.marginTop!=="0px"){
+      html.style.setProperty("margin-top","0px","important");
+    }
+
+    if(html.style.paddingTop!=="0px"){
+      html.style.setProperty("padding-top","0px","important");
+    }
+
+    if(body.style.top!=="0px"){
+      body.style.setProperty("top","0px","important");
+    }
+
+    if(body.style.marginTop!=="0px"){
+      body.style.setProperty("margin-top","0px","important");
+    }
+
+    if(body.style.paddingTop!=="0px"){
+      body.style.setProperty("padding-top","0px","important");
+    }
+
+  }
+
+  function removeGooglePopouts(){
+
+    const unwantedSelectors=[
+      "iframe.goog-te-banner-frame",
+      ".goog-te-banner-frame",
+      ".goog-te-balloon-frame",
+      "#goog-gt-tt",
+      ".goog-tooltip"
+    ];
+
+    unwantedSelectors.forEach(function(selector){
+
+      document.querySelectorAll(selector).forEach(function(element){
+
+        if(!element.closest("#google_translate_element")){
+          element.remove();
+        }
+
+      });
+
+    });
+
+    restorePagePosition();
+
+  }
+
+  removeGooglePopouts();
+
+  const googleInterfaceObserver=new MutationObserver(function(){
+    removeGooglePopouts();
+  });
+
+  googleInterfaceObserver.observe(document.documentElement,{
+    childList:true,
+    subtree:true,
+    attributes:true,
+    attributeFilter:["style","class"]
+  });
+
+  window.addEventListener("load",removeGooglePopouts);
+  window.addEventListener("resize",removeGooglePopouts);
+  window.addEventListener("scroll",restorePagePosition);
+
+})();
+
 /* GOOGLE TRANSLATE: FUNCTIONAL LANGUAGE SELECTOR */
 const languageSelector=document.getElementById("siteLanguage");
 
@@ -3581,105 +3725,6 @@ if(languageSelector){
   selectedLanguage=languageSelector.value||"en";
 
 }
-
-})();
-</script>
-
-<!-- GOOGLE TRANSLATE: BANNER AND POP-OUT PROTECTION -->
-<script>
-(function protectPageFromGoogleInterface(){
-
-  "use strict";
-
-  function restorePagePosition(){
-
-    const html=document.documentElement;
-    const body=document.body;
-
-    if(!html||!body)return;
-
-    if(html.style.top!=="0px"){
-      html.style.setProperty("top","0px","important");
-    }
-
-    if(html.style.marginTop!=="0px"){
-      html.style.setProperty("margin-top","0px","important");
-    }
-
-    if(html.style.paddingTop!=="0px"){
-      html.style.setProperty("padding-top","0px","important");
-    }
-
-    if(body.style.top!=="0px"){
-      body.style.setProperty("top","0px","important");
-    }
-
-    if(body.style.marginTop!=="0px"){
-      body.style.setProperty("margin-top","0px","important");
-    }
-
-    if(body.style.paddingTop!=="0px"){
-      body.style.setProperty("padding-top","0px","important");
-    }
-
-  }
-
-  function removeGooglePopouts(){
-
-    const unwantedSelectors=[
-      "iframe.goog-te-banner-frame",
-      ".goog-te-banner-frame",
-      ".VIpgJd-ZVi9od-ORHb-OEVmcd",
-      ".VIpgJd-ZVi9od-ORHb",
-      ".VIpgJd-ZVi9od-ORHb-KE6vqe",
-      ".goog-te-menu-frame",
-      "iframe.goog-te-menu-frame",
-      ".goog-te-balloon-frame",
-      "iframe.goog-te-balloon-frame",
-      "#goog-gt-tt",
-      ".goog-te-tooltip-container",
-      ".goog-tooltip",
-      ".goog-tooltip:hover",
-      ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf",
-      ".VIpgJd-ZVi9od-l4eHX",
-      ".VIpgJd-yAWNEb-L7lbkb",
-      ".VIpgJd-ZVi9od-vH1Gmf",
-      ".VIpgJd-ZVi9od-xl07Ob",
-      ".VIpgJd-ZVi9od-SmfZ"
-    ];
-
-    unwantedSelectors.forEach(function(selector){
-
-      document.querySelectorAll(selector).forEach(function(element){
-
-        if(!element.closest("#google_translate_element")){
-          element.remove();
-        }
-
-      });
-
-    });
-
-    restorePagePosition();
-
-  }
-
-  removeGooglePopouts();
-
-  const observer=new MutationObserver(function(){
-    removeGooglePopouts();
-  });
-
-  observer.observe(document.documentElement,{
-    childList:true,
-    subtree:true,
-    attributes:true,
-    attributeFilter:["style","class"]
-  });
-
-  window.addEventListener("load",removeGooglePopouts);
-  window.addEventListener("resize",removeGooglePopouts);
-  window.addEventListener("scroll",restorePagePosition);
 
 })();
 </script>
