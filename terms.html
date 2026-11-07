@@ -115,14 +115,18 @@
     }
 
     #google_translate_element {
+      display: block !important;
       position: fixed !important;
       left: -10000px !important;
-      top: -10000px !important;
+      top: 0 !important;
       width: 1px !important;
       height: 1px !important;
+      max-width: 1px !important;
+      max-height: 1px !important;
       min-width: 0 !important;
       min-height: 0 !important;
       overflow: hidden !important;
+      opacity: 0 !important;
       visibility: hidden !important;
       pointer-events: none !important;
       z-index: -1 !important;
@@ -410,6 +414,56 @@
       max-width: 0 !important;
       max-height: 0 !important;
       overflow: hidden !important;
+    }
+
+    /* Additional Google Translate interface protection */
+
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-ORHb,
+    .VIpgJd-ZVi9od-ORHb-KE6vqe,
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+    .VIpgJd-ZVi9od-l4eHX,
+    .VIpgJd-yAWNEb-L7lbkb,
+    .VIpgJd-ZVi9od-vH1Gmf,
+    .VIpgJd-ZVi9od-xl07Ob,
+    .VIpgJd-ZVi9od-SmfZ {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      width: 0 !important;
+      height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      z-index: -9999 !important;
+    }
+
+    .goog-text-highlight {
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+      color: inherit !important;
+    }
+
+    .goog-logo-link,
+    .goog-te-gadget-icon,
+    .goog-te-spinner-pos,
+    .goog-te-ftab,
+    .goog-te-ftab-link,
+    .goog-te-menu2,
+    .goog-te-menu2-item {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0 !important;
+      line-height: 0 !important;
     }
 
     /* Keep the page layout within the screen */
@@ -1272,6 +1326,83 @@
       } else {
         startTranslateProtection();
       }
+    })();
+
+    /* ADDITIONAL GOOGLE TRANSLATE BANNER AND POP-OUT PROTECTION */
+    (function protectPageFromGoogleInterface() {
+
+      function restorePagePosition() {
+        const html = document.documentElement;
+        const body = document.body;
+
+        if (!html || !body) {
+          return;
+        }
+
+        if (html.style.top !== "0px") {
+          html.style.setProperty("top", "0px", "important");
+        }
+
+        if (html.style.marginTop !== "0px") {
+          html.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (html.style.paddingTop !== "0px") {
+          html.style.setProperty("padding-top", "0px", "important");
+        }
+
+        if (body.style.top !== "0px") {
+          body.style.setProperty("top", "0px", "important");
+        }
+
+        if (body.style.marginTop !== "0px") {
+          body.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (body.style.paddingTop !== "0px") {
+          body.style.setProperty("padding-top", "0px", "important");
+        }
+      }
+
+      function removeGooglePopouts() {
+        const unwantedSelectors = [
+          "iframe.goog-te-banner-frame",
+          ".goog-te-banner-frame",
+          ".goog-te-balloon-frame",
+          "iframe.goog-te-menu-frame",
+          "#goog-gt-tt",
+          ".goog-tooltip",
+          ".goog-te-ftab"
+        ];
+
+        unwantedSelectors.forEach(function (selector) {
+          document.querySelectorAll(selector).forEach(function (element) {
+            if (!element.closest("#google_translate_element")) {
+              element.remove();
+            }
+          });
+        });
+
+        restorePagePosition();
+      }
+
+      removeGooglePopouts();
+
+      const googleInterfaceObserver = new MutationObserver(function () {
+        removeGooglePopouts();
+      });
+
+      googleInterfaceObserver.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style", "class"]
+      });
+
+      window.addEventListener("load", removeGooglePopouts);
+      window.addEventListener("resize", removeGooglePopouts);
+      window.addEventListener("scroll", restorePagePosition);
+
     })();
   </script>
 
