@@ -1857,14 +1857,16 @@
           },
           "google_translate_element"
         );
+
+        restoreLanguageSelection();
       }
     }
 
     /*
-       IMPORTANT:
-       Google Translate expects the googtrans cookie value
-       in its normal path format, for example /en/fr.
-       Do not URL-encode this value.
+       Google Translate expects the cookie value in this format:
+       /en/fr
+
+       The value must not be URL-encoded.
     */
 
     function setTranslationCookie(name, value, domain) {
@@ -1889,21 +1891,13 @@
       document.cookie = expired + ";domain=phrinusomyis.com";
     }
 
-    function applyGoogleTranslation(language) {
-      var googleSelect = document.querySelector(".goog-te-combo");
+    /*
+       Apply the selected language.
 
-      if (!googleSelect) {
-        return false;
-      }
-
-      googleSelect.value = language;
-
-      googleSelect.dispatchEvent(
-        new Event("change", { bubbles: true })
-      );
-
-      return true;
-    }
+       The cookie is saved before reloading the page.
+       Google Translate reads this cookie when its engine
+       initialises on the next page load.
+    */
 
     function changeWebsiteLanguage(language) {
       if (!language) {
@@ -1916,15 +1910,21 @@
         return;
       }
 
-      /*
-         Save the language in Google's expected cookie format.
-         Both domain and host-level cookies are written to
-         support the main domain and its subdomains.
-      */
-
       var translation = "/en/" + language;
 
+      /*
+         Clear previous values first so an older cookie
+         cannot override the newly selected language.
+      */
+
+      clearTranslationCookies();
+
+      /*
+         Save both host-level and organization-domain cookies.
+      */
+
       setTranslationCookie("googtrans", translation, "");
+
       setTranslationCookie(
         "googtrans",
         translation,
@@ -1932,18 +1932,9 @@
       );
 
       /*
-         Try to change the language immediately through
-         Google's generated select control.
-      */
-
-      if (applyGoogleTranslation(language)) {
-        return;
-      }
-
-      /*
-         If Google's translation control has not finished
-         loading, reload so the saved cookie can be read
-         when the translation engine initializes.
+         Reload so Google Translate reads the selected language
+         during initialisation rather than relying only on a
+         manually dispatched change event.
       */
 
       window.location.reload();
@@ -1960,22 +1951,25 @@
         /(?:^|;\s*)googtrans=([^;]+)/
       );
 
-      if (match && match[1]) {
-        try {
-          var value = decodeURIComponent(match[1]);
-          var language = value.split("/").pop();
+      if (!match || !match[1]) {
+        selector.value = "";
+        return;
+      }
 
-          if (
-            language &&
-            selector.querySelector(
-              'option[value="' + language + '"]'
-            )
-          ) {
-            selector.value = language;
-          }
-        } catch (error) {
-          selector.value = "";
+      try {
+        var value = decodeURIComponent(match[1]);
+        var language = value.split("/").pop();
+
+        if (
+          language &&
+          selector.querySelector(
+            'option[value="' + language + '"]'
+          )
+        ) {
+          selector.value = language;
         }
+      } catch (error) {
+        selector.value = "";
       }
     }
 
