@@ -182,6 +182,109 @@ body > .skiptranslate { display: none !important; }
 .goog-tooltip,
 .goog-text-highlight { display: none !important; }
 
+/* GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION */
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl {
+    top: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+body {
+    position: relative !important;
+}
+
+/* Hide Google's top translation banner. */
+
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-KE6vqe {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    max-height: 0 !important;
+    max-width: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    left: -10000px !important;
+    top: -10000px !important;
+    border: 0 !important;
+}
+
+/* Hide translation menus, tooltips and pop-out interfaces. */
+
+.goog-te-menu-frame,
+iframe.goog-te-menu-frame,
+.goog-te-balloon-frame,
+iframe.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-te-tooltip-container,
+.goog-tooltip,
+.goog-tooltip:hover,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-l4eHX,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-ZVi9od-vH1Gmf,
+.VIpgJd-ZVi9od-xl07Ob,
+.VIpgJd-ZVi9od-SmfZ {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    left: -10000px !important;
+    top: -10000px !important;
+    width: 0 !important;
+    height: 0 !important;
+    max-width: 0 !important;
+    max-height: 0 !important;
+    z-index: -9999 !important;
+}
+
+/* Remove translation highlights. */
+
+.goog-text-highlight {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: inherit !important;
+}
+
+/* Hide Google branding without hiding the language selector. */
+
+.goog-logo-link,
+.goog-te-gadget-icon,
+.goog-te-spinner-pos,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-menu2,
+.goog-te-menu2-item {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Keep the visible language selector intact. */
+
+.goog-te-gadget {
+    color: #fff !important;
+    font-size: 0 !important;
+    line-height: normal !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    margin: 0 !important;
+    color: #fff !important;
+    background: #171717 !important;
+}
+
 /* TOP NAVIGATION */
 
 .help-topbar {
@@ -298,12 +401,6 @@ body > .skiptranslate { display: none !important; }
     border: 1px solid #555;
     font-size: 11px;
     border-radius: 0;
-}
-
-.goog-te-gadget {
-    color: #fff !important;
-    font-size: 0 !important;
-    font-weight: 700 !important;
 }
 
 .goog-te-gadget .goog-te-combo {
@@ -1926,6 +2023,102 @@ select:focus-visible {
     </div>
 
 </footer>
+
+<!-- GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION -->
+
+<script>
+(function protectPageFromGoogleInterface() {
+
+    function restorePagePosition() {
+
+        const html = document.documentElement;
+        const body = document.body;
+
+        if (!html || !body) {
+            return;
+        }
+
+        if (html.style.top !== "0px") {
+            html.style.setProperty("top", "0px", "important");
+        }
+
+        if (html.style.marginTop !== "0px") {
+            html.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (html.style.paddingTop !== "0px") {
+            html.style.setProperty("padding-top", "0px", "important");
+        }
+
+        if (body.style.top !== "0px") {
+            body.style.setProperty("top", "0px", "important");
+        }
+
+        if (body.style.marginTop !== "0px") {
+            body.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (body.style.paddingTop !== "0px") {
+            body.style.setProperty("padding-top", "0px", "important");
+        }
+    }
+
+    function removeGooglePopouts() {
+
+        const unwantedSelectors = [
+            "iframe.goog-te-banner-frame",
+            ".goog-te-banner-frame",
+            ".goog-te-balloon-frame",
+            "iframe.goog-te-balloon-frame",
+            ".goog-te-menu-frame",
+            "iframe.goog-te-menu-frame",
+            "#goog-gt-tt",
+            ".goog-tooltip",
+            ".goog-te-tooltip-container"
+        ];
+
+        unwantedSelectors.forEach(function (selector) {
+
+            document.querySelectorAll(selector).forEach(function (element) {
+
+                if (!element.closest("#google_translate_element")) {
+                    element.remove();
+                }
+
+            });
+
+        });
+
+        restorePagePosition();
+    }
+
+    /* Initial protection. */
+
+    removeGooglePopouts();
+
+    /* Monitor Google's injected elements and layout changes. */
+
+    const observer = new MutationObserver(function () {
+        removeGooglePopouts();
+    });
+
+    observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style", "class"]
+    });
+
+    /* Additional protection. */
+
+    window.addEventListener("load", removeGooglePopouts);
+
+    window.addEventListener("resize", removeGooglePopouts);
+
+    window.addEventListener("scroll", restorePagePosition);
+
+})();
+</script>
 
 <!-- SEARCH ENGINE: ORGANIZATIONAL DESTINATIONS + FAQ CONTENT -->
 
