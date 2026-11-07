@@ -65,46 +65,47 @@
   </script>
 
   <style>
-    /* =========================================
+    /* =====================================================
        PHRINUSOMYIS™ NEWSWIRE
-       TEN COMPLETE MASTER THEMES
-    ========================================= */
+       2026 EDITION — INSTITUTIONAL EDITORIAL PRESENTATION
+       TEN COMPLETE READING THEMES
+    ===================================================== */
 
     :root {
-      color-scheme: light;
+      color-scheme: dark;
 
-      --page-bg: #f5f3ed;
-      --surface: #ffffff;
-      --surface-alt: #eeece5;
-      --surface-raised: #ffffff;
+      --page-bg: #080808;
+      --surface: #111111;
+      --surface-alt: #191919;
+      --surface-raised: #202020;
 
-      --text: #24231f;
-      --text-secondary: #66635c;
-      --heading: #795a19;
+      --text: #f3f0e8;
+      --text-secondary: #b9b4a8;
+      --heading: #e6cb7a;
 
-      --accent: #a47c25;
-      --accent-strong: #846019;
-      --accent-soft: rgba(164,124,37,.12);
+      --accent: #c9a646;
+      --accent-strong: #e6cb7a;
+      --accent-soft: rgba(201,166,70,.16);
 
-      --link: #846019;
-      --link-hover: #795a19;
+      --link: #e6cb7a;
+      --link-hover: #ffffff;
 
-      --button-bg: #24231f;
-      --button-text: #ffffff;
-      --button-hover: #a47c25;
+      --button-bg: #c9a646;
+      --button-text: #080808;
+      --button-hover: #e6cb7a;
 
-      --border: rgba(164,124,37,.27);
-      --border-strong: rgba(164,124,37,.48);
+      --border: rgba(201,166,70,.30);
+      --border-strong: rgba(201,166,70,.60);
 
-      --intro-bg: #efede5;
-      --closing-bg: #eeece5;
-      --label-bg: #f0eadb;
-      --label-text: #795a19;
+      --intro-bg: #17150f;
+      --closing-bg: #17150f;
+      --label-bg: #282113;
+      --label-text: #e6cb7a;
 
-      --shadow: 0 12px 35px rgba(0,0,0,.055);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.035);
+      --shadow: 0 18px 55px rgba(0,0,0,.38);
+      --shadow-small: 0 7px 25px rgba(0,0,0,.25);
 
-      --content-width: 1180px;
+      --content-width: 1240px;
       --radius: 3px;
 
       --font-editorial: Georgia, "Times New Roman", serif;
@@ -127,32 +128,20 @@
       top: 0 !important;
       margin: 0 !important;
       padding: 0;
+      overflow-x: hidden;
 
       background: var(--page-bg);
       color: var(--text);
 
       font-family: var(--font-editorial);
       font-size: 17px;
-      font-weight: 600;
-      line-height: 1.85;
+      font-weight: 400;
+      line-height: 1.9;
 
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
 
-      transition:
-        background-color .28s ease,
-        color .28s ease;
-    }
-
-    body,
-    p,
-    li,
-    span,
-    label,
-    a,
-    button,
-    select {
-      font-weight: 600;
+      transition: background-color .28s ease, color .28s ease;
     }
 
     img {
@@ -186,20 +175,21 @@
       color: var(--button-text);
     }
 
-    /* =========================================
+    /* =====================================================
        SITE HEADER
-    ========================================= */
+    ===================================================== */
 
     .site-header {
+      position: relative;
+      z-index: 5;
       border-bottom: 1px solid var(--border);
       background: var(--surface);
-      transition: background .28s ease;
     }
 
     .header-inner {
       max-width: var(--content-width);
       margin: 0 auto;
-      padding: 18px 28px;
+      padding: 20px 30px;
 
       display: flex;
       align-items: center;
@@ -233,10 +223,10 @@
 
     .brand-tagline {
       display: block;
-      margin-top: 3px;
+      margin-top: 4px;
       color: var(--accent);
       font-family: var(--font-interface);
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 800;
       letter-spacing: 3px;
     }
@@ -244,7 +234,7 @@
     .header-link {
       color: var(--link);
       font-family: var(--font-interface);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -257,27 +247,27 @@
         90deg,
         transparent,
         var(--accent),
-        var(--heading),
+        #f2dfaa,
         var(--accent),
         transparent
       );
     }
 
-    /* =========================================
+    /* =====================================================
        MAIN PAGE
-    ========================================= */
+    ===================================================== */
 
     .page-shell {
       max-width: var(--content-width);
       margin: 0 auto;
-      padding: 34px 28px 70px;
+      padding: 35px 30px 75px;
     }
 
     .breadcrumbs {
       margin-bottom: 28px;
       color: var(--text-secondary);
       font-family: var(--font-interface);
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: .5px;
     }
 
@@ -286,12 +276,132 @@
       color: var(--accent);
     }
 
+    /* =====================================================
+       NEWSWIRE MASTHEAD / HERO
+    ===================================================== */
+
+    .newswire-masthead {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+
+      min-height: 340px;
+      margin-bottom: 38px;
+      padding: 52px 48px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      border: 1px solid var(--border-strong);
+      background:
+        radial-gradient(
+          ellipse at 85% 25%,
+          rgba(201,166,70,.18),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 15% 100%,
+          rgba(201,166,70,.09),
+          transparent 42%
+        ),
+        linear-gradient(120deg, #080808 0%, #15130e 55%, #080808 100%);
+
+      box-shadow: var(--shadow);
+    }
+
+    .newswire-masthead::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 390px;
+      height: 390px;
+      right: -100px;
+      top: -130px;
+      border: 1px solid rgba(201,166,70,.23);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 24px rgba(201,166,70,.035),
+        0 0 0 50px rgba(201,166,70,.025),
+        0 0 0 78px rgba(201,166,70,.018);
+    }
+
+    .newswire-masthead::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        #f2dfaa,
+        var(--accent),
+        transparent
+      );
+    }
+
+    .masthead-kicker {
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-family: var(--font-interface);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .masthead-title {
+      max-width: 780px;
+      margin: 0;
+      color: #f5f0df;
+      font-family: var(--font-interface);
+      font-size: clamp(34px, 5.5vw, 66px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+
+    .masthead-description {
+      max-width: 610px;
+      margin: 22px 0 0;
+      color: #c9c0aa;
+      font-family: var(--font-editorial);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .masthead-signature {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+
+      color: #e6cb7a;
+      font-family: var(--font-interface);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .masthead-signature span {
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+    }
+
     .section-label {
       display: inline-block;
-      margin-bottom: 16px;
-      padding: 6px 12px;
+      margin-bottom: 17px;
+      padding: 7px 13px;
 
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-strong);
       background: var(--label-bg);
       color: var(--label-text);
 
@@ -303,16 +413,16 @@
     }
 
     .page-heading {
-      max-width: 950px;
-      margin-bottom: 34px;
+      max-width: 970px;
+      margin-bottom: 36px;
     }
 
     h1 {
       margin: 0;
       color: var(--heading);
-      font-size: clamp(34px, 5vw, 57px);
-      font-weight: 800;
-      line-height: 1.13;
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 700;
+      line-height: 1.12;
       letter-spacing: -1.5px;
       text-transform: uppercase;
     }
@@ -324,9 +434,9 @@
       background: var(--accent);
     }
 
-    /* =========================================
+    /* =====================================================
        ARTICLE LAYOUT
-    ========================================= */
+    ===================================================== */
 
     .article-layout {
       display: grid;
@@ -340,18 +450,30 @@
     }
 
     .article-intro {
-      margin: 0 0 32px;
-      padding: 23px 26px;
+      position: relative;
+      margin: 0 0 36px;
+      padding: 27px 30px;
 
       border-left: 4px solid var(--accent);
       background: var(--intro-bg);
       color: var(--text);
 
-      font-size: 19px;
-      font-weight: 700;
-      line-height: 1.8;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.85;
 
       box-shadow: var(--shadow-small);
+    }
+
+    .article-intro::before {
+      content: "THE CENTRAL STATEMENT";
+      display: block;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-family: var(--font-interface);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
     }
 
     .article-body {
@@ -359,56 +481,134 @@
     }
 
     .article-body p {
-      margin: 0 0 25px;
+      margin: 0 0 27px;
       color: var(--text);
-      font-weight: 600;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.95;
     }
 
-    .article-body p:first-child::first-letter {
+    .article-body p:first-of-type::first-letter {
       float: left;
-      padding: 8px 10px 0 0;
+      padding: 8px 11px 0 0;
       color: var(--accent);
-      font-size: 58px;
-      font-weight: 800;
-      line-height: .85;
+      font-size: 62px;
+      font-weight: 700;
+      line-height: .8;
     }
 
     .article-body strong {
       color: var(--heading);
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .article-body h2 {
-      margin: 42px 0 18px;
+      margin: 48px 0 20px;
       color: var(--heading);
-      font-size: 25px;
-      font-weight: 800;
+      font-size: 27px;
+      font-weight: 700;
       line-height: 1.35;
     }
 
-    .article-closing {
-      margin-top: 38px;
-      padding: 26px;
+    /* Editorial question — visually distinct, still in the article */
 
-      border: 1px solid var(--border);
+    .editorial-question {
+      position: relative;
+      margin: 40px 0;
+      padding: 23px 27px 23px 31px;
+
+      border-left: 2px solid var(--accent);
+      background: linear-gradient(
+        90deg,
+        var(--accent-soft),
+        transparent
+      );
+
+      color: var(--heading) !important;
+      font-size: clamp(22px, 3vw, 29px) !important;
+      font-style: italic;
+      line-height: 1.55 !important;
+    }
+
+    .editorial-question::before {
+      content: "A MOMENT TO CONSIDER";
+      display: block;
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-family: var(--font-interface);
+      font-size: 9px;
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    /* Pull quote — integrated into the reading journey */
+
+    .editorial-pullquote {
+      margin: 42px 0;
+      padding: 28px 30px;
+
+      border-top: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
+
+      color: var(--heading);
+      font-size: clamp(22px, 3vw, 30px);
+      font-style: italic;
+      font-weight: 600;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .editorial-pullquote::before {
+      content: "“";
+      display: block;
+      height: 35px;
+      color: var(--accent);
+      font-size: 55px;
+      line-height: 1;
+    }
+
+    .article-closing {
+      position: relative;
+      margin-top: 45px;
+      padding: 31px 32px;
+
+      border: 1px solid var(--border-strong);
       border-left: 4px solid var(--accent);
 
-      background: var(--closing-bg);
+      background:
+        linear-gradient(
+          135deg,
+          var(--closing-bg),
+          var(--surface)
+        );
+
       box-shadow: var(--shadow-small);
+    }
+
+    .article-closing::before {
+      content: "THE QUESTION THAT REMAINS";
+      display: block;
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-family: var(--font-interface);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
     }
 
     .article-closing p {
       margin: 0;
       color: var(--heading);
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 21px;
+      font-weight: 600;
       font-style: italic;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
-    /* =========================================
+    /* =====================================================
        SIDEBAR
-    ========================================= */
+    ===================================================== */
 
     .article-sidebar {
       position: sticky;
@@ -431,7 +631,7 @@
       color: var(--heading);
 
       font-family: var(--font-interface);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 1.8px;
       line-height: 1.5;
@@ -442,7 +642,7 @@
       margin: 0;
       color: var(--text-secondary);
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.8;
     }
 
@@ -462,12 +662,12 @@
 
     .sidebar-nav a {
       display: block;
-      padding: 9px 0;
+      padding: 10px 0;
       color: var(--text);
 
       font-family: var(--font-interface);
-      font-size: 13px;
-      line-height: 1.5;
+      font-size: 12px;
+      line-height: 1.6;
     }
 
     .sidebar-nav a:hover {
@@ -495,15 +695,15 @@
       margin-top: 5px !important;
       color: var(--accent) !important;
       font-family: var(--font-interface);
-      font-size: 10px !important;
+      font-size: 9px !important;
       font-weight: 800;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       text-align: center;
     }
 
-    /* =========================================
+    /* =====================================================
        ARTICLE ACTIONS
-    ========================================= */
+    ===================================================== */
 
     .share-section {
       display: flex;
@@ -511,8 +711,8 @@
       align-items: center;
       gap: 10px;
 
-      margin-top: 40px;
-      padding: 24px 0;
+      margin-top: 43px;
+      padding: 25px 0;
 
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
@@ -523,7 +723,7 @@
       color: var(--text-secondary);
 
       font-family: var(--font-interface);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -534,8 +734,8 @@
       align-items: center;
       justify-content: center;
 
-      min-height: 41px;
-      padding: 9px 16px;
+      min-height: 42px;
+      padding: 10px 17px;
 
       border: 1px solid var(--border-strong);
       border-radius: var(--radius);
@@ -546,7 +746,7 @@
       cursor: pointer;
 
       font-family: var(--font-interface);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: .8px;
       text-transform: uppercase;
@@ -571,18 +771,18 @@
       color: var(--accent-strong);
 
       font-family: var(--font-interface);
-      font-size: 12px;
+      font-size: 11px;
     }
 
-    /* =========================================
+    /* =====================================================
        OFFICIAL ISSUANCE
-    ========================================= */
+    ===================================================== */
 
     .issuance {
       margin-top: 35px;
-      padding: 27px;
+      padding: 29px;
 
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-strong);
       background: var(--surface);
 
       box-shadow: var(--shadow-small);
@@ -593,9 +793,9 @@
       color: var(--heading);
 
       font-family: var(--font-interface);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
     }
 
@@ -604,7 +804,7 @@
       grid-template-columns: 135px minmax(0, 1fr);
       gap: 16px;
 
-      padding: 11px 0;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border);
 
       font-size: 15px;
@@ -621,12 +821,12 @@
 
     .issuance-value {
       color: var(--text);
-      font-weight: 800;
+      font-weight: 700;
     }
 
-    /* =========================================
+    /* =====================================================
        FOOTER
-    ========================================= */
+    ===================================================== */
 
     .site-footer {
       border-top: 1px solid var(--border);
@@ -636,7 +836,7 @@
     .footer-inner {
       max-width: var(--content-width);
       margin: 0 auto;
-      padding: 28px;
+      padding: 30px;
 
       display: flex;
       align-items: center;
@@ -647,8 +847,8 @@
     .footer-copy {
       color: var(--text-secondary);
       font-family: var(--font-interface);
-      font-size: 11px;
-      line-height: 1.8;
+      font-size: 10px;
+      line-height: 1.9;
     }
 
     .footer-copy strong {
@@ -659,16 +859,16 @@
     .footer-link {
       color: var(--link);
       font-family: var(--font-interface);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
       white-space: nowrap;
     }
 
-    /* =========================================
-       TEN MASTER THEME SELECTOR
-    ========================================= */
+    /* =====================================================
+       TEN MASTER READING THEMES
+    ===================================================== */
 
     .reading-preferences {
       max-width: var(--content-width);
@@ -686,7 +886,7 @@
       color: var(--heading);
 
       font-family: var(--font-interface);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 1.8px;
       text-transform: uppercase;
@@ -697,7 +897,7 @@
       color: var(--text-secondary);
 
       font-family: var(--font-interface);
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.7;
     }
 
@@ -798,9 +998,9 @@
     .swatch-platinum span:nth-child(2) { background: #40566d; }
     .swatch-platinum span:nth-child(3) { background: #ffffff; }
 
-    /* =========================================
+    /* =====================================================
        LANGUAGE SELECTOR
-    ========================================= */
+    ===================================================== */
 
     .language-section {
       display: flex;
@@ -828,7 +1028,7 @@
     .language-title {
       color: var(--heading);
       font-family: var(--font-interface);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -837,7 +1037,7 @@
     .language-subtitle {
       color: var(--text-secondary);
       font-family: var(--font-interface);
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .language-select {
@@ -852,8 +1052,8 @@
       color: var(--text);
 
       font-family: var(--font-interface);
-      font-size: 13px;
-      font-weight: 800;
+      font-size: 12px;
+      font-weight: 700;
       cursor: pointer;
     }
 
@@ -862,108 +1062,130 @@
       min-height: 17px;
       color: var(--accent-strong);
       font-family: var(--font-interface);
-      font-size: 11px;
+      font-size: 10px;
     }
 
-    /* =========================================
-       GOOGLE TRANSLATE PROTECTION
-       Hide the injected banner and prevent
-       page displacement without hiding the
-       entire translation engine.
-    ========================================= */
+    /* =====================================================
+       GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
+    ===================================================== */
 
     #google_translate_element {
-      position: absolute !important;
+      display: block !important;
+      position: fixed !important;
       left: -10000px !important;
       top: 0 !important;
 
       width: 1px !important;
       height: 1px !important;
+      max-width: 1px !important;
+      max-height: 1px !important;
 
       overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      clip-path: inset(50%) !important;
-
-      white-space: nowrap !important;
       opacity: 0 !important;
+      visibility: hidden !important;
       pointer-events: none !important;
+      z-index: -1 !important;
     }
-
-    /* Google top translation banner */
 
     .goog-te-banner-frame,
     iframe.goog-te-banner-frame,
-    iframe.skiptranslate,
-    .goog-te-ftab-frame,
-    .goog-te-menu-frame {
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-ORHb,
+    .VIpgJd-ZVi9od-ORHb-KE6vqe {
       display: none !important;
       visibility: hidden !important;
       opacity: 0 !important;
 
       height: 0 !important;
+      width: 0 !important;
       max-height: 0 !important;
+      max-width: 0 !important;
 
-      border: 0 !important;
       pointer-events: none !important;
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+      border: 0 !important;
     }
 
-    /* Translation tooltips and popouts */
-
+    .goog-te-menu-frame,
+    iframe.goog-te-menu-frame,
+    .goog-te-balloon-frame,
+    iframe.goog-te-balloon-frame,
     #goog-gt-tt,
+    .goog-te-tooltip-container,
     .goog-tooltip,
     .goog-tooltip:hover,
-    .goog-te-balloon-frame,
-    .goog-te-spinner-pos,
-    .goog-te-gadget-icon,
-    .goog-te-menu2,
-    .goog-te-menu-value,
-    .goog-te-menu2-item,
-    .goog-te-menu2-item div,
-    .goog-te-menu2-item-selected,
-    .goog-te-menu2-item-highlighted,
-    .goog-text-highlight {
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+    .VIpgJd-ZVi9od-l4eHX,
+    .VIpgJd-yAWNEb-L7lbkb,
+    .VIpgJd-ZVi9od-vH1Gmf,
+    .VIpgJd-ZVi9od-xl07Ob,
+    .VIpgJd-ZVi9od-SmfZ {
       display: none !important;
       visibility: hidden !important;
       opacity: 0 !important;
       pointer-events: none !important;
 
+      position: fixed !important;
+      left: -10000px !important;
+      top: -10000px !important;
+
+      width: 0 !important;
+      height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+
+      z-index: -9999 !important;
+    }
+
+    .goog-text-highlight {
       background: transparent !important;
+      background-color: transparent !important;
       box-shadow: none !important;
-      border: 0 !important;
+      border: none !important;
+      color: inherit !important;
     }
 
-    /* Prevent Google's top offset */
-
-    html,
-    html.translated-ltr,
-    html.translated-rtl {
-      margin-top: 0 !important;
-      top: 0 !important;
+    .goog-logo-link,
+    .goog-te-gadget-icon,
+    .goog-te-spinner-pos,
+    .goog-te-ftab,
+    .goog-te-ftab-link,
+    .goog-te-menu2,
+    .goog-te-menu2-item {
+      display: none !important;
+      visibility: hidden !important;
     }
-
-    body,
-    body.translated-ltr,
-    body.translated-rtl {
-      position: relative !important;
-      top: 0 !important;
-      margin-top: 0 !important;
-    }
-
-    /* Do not globally hide .skiptranslate:
-       Google requires translation-related elements
-       to remain available for the language engine. */
 
     .goog-te-gadget {
+      color: transparent !important;
       font-size: 0 !important;
+      line-height: 0 !important;
     }
 
     .goog-te-gadget .goog-te-combo {
       visibility: visible !important;
     }
 
-    /* =========================================
+    html,
+    html.translated-ltr,
+    html.translated-rtl,
+    body,
+    body.translated-ltr,
+    body.translated-rtl {
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    body {
+      position: relative !important;
+    }
+
+    /* =====================================================
        THEME 01 — BLACK AUTHORITY
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="original"] {
       color-scheme: dark;
@@ -996,13 +1218,13 @@
       --label-bg: #282113;
       --label-text: #e6cb7a;
 
-      --shadow: 0 12px 35px rgba(0,0,0,.35);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.25);
+      --shadow: 0 18px 55px rgba(0,0,0,.38);
+      --shadow-small: 0 7px 25px rgba(0,0,0,.25);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 02 — WHITE EDITORIAL
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="white"] {
       color-scheme: light;
@@ -1039,9 +1261,9 @@
       --shadow-small: 0 5px 22px rgba(0,0,0,.035);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 03 — DIGITAL BLUE
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="digital-blue"] {
       color-scheme: dark;
@@ -1078,9 +1300,9 @@
       --shadow-small: 0 5px 22px rgba(0,0,0,.22);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 04 — WHITE AND BLUE
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="white-blue"] {
       color-scheme: light;
@@ -1117,9 +1339,9 @@
       --shadow-small: 0 5px 22px rgba(0,51,102,.045);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 05 — CHARCOAL EXECUTIVE
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="charcoal"] {
       color-scheme: dark;
@@ -1156,9 +1378,9 @@
       --shadow-small: 0 5px 22px rgba(0,0,0,.20);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 06 — EMERALD INSTITUTION
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="emerald"] {
       color-scheme: dark;
@@ -1195,9 +1417,9 @@
       --shadow-small: 0 5px 22px rgba(0,0,0,.18);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 07 — ROSE EDITORIAL
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="rose"] {
       color-scheme: light;
@@ -1234,9 +1456,9 @@
       --shadow-small: 0 5px 22px rgba(99,45,64,.045);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 08 — MIDNIGHT TECHNOLOGY
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="midnight"] {
       color-scheme: dark;
@@ -1273,9 +1495,9 @@
       --shadow-small: 0 5px 22px rgba(0,0,0,.23);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 09 — BURGUNDY DISTINCTION
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="burgundy"] {
       color-scheme: dark;
@@ -1312,9 +1534,9 @@
       --shadow-small: 0 5px 22px rgba(0,0,0,.21);
     }
 
-    /* =========================================
+    /* =====================================================
        THEME 10 — PLATINUM CLASSIC
-    ========================================= */
+    ===================================================== */
 
     body[data-theme="platinum"] {
       color-scheme: light;
@@ -1351,9 +1573,9 @@
       --shadow-small: 0 5px 22px rgba(35,55,75,.045);
     }
 
-    /* =========================================
+    /* =====================================================
        RESPONSIVE DESIGN
-    ========================================= */
+    ===================================================== */
 
     @media (max-width: 850px) {
       .article-layout {
@@ -1379,6 +1601,10 @@
 
       .theme-options {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .newswire-masthead {
+        min-height: 300px;
       }
     }
 
@@ -1408,39 +1634,86 @@
       }
 
       .brand-tagline {
-        font-size: 9px;
-        letter-spacing: 2px;
+        font-size: 8px;
+        letter-spacing: 1.5px;
       }
 
       .header-link {
-        font-size: 10px;
-        letter-spacing: .7px;
+        font-size: 9px;
+        letter-spacing: .5px;
       }
 
       .page-shell {
-        padding: 25px 18px 45px;
+        padding: 24px 18px 45px;
       }
 
       .breadcrumbs {
-        font-size: 11px;
+        font-size: 10px;
+      }
+
+      .newswire-masthead {
+        min-height: 280px;
+        padding: 32px 23px;
+      }
+
+      .masthead-kicker {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+      }
+
+      .masthead-title {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .masthead-description {
+        font-size: 16px;
+      }
+
+      .masthead-signature {
+        font-size: 8px;
+        letter-spacing: 1.3px;
       }
 
       h1 {
-        font-size: 35px;
+        font-size: 34px;
         letter-spacing: -.8px;
       }
 
       .article-intro {
-        padding: 18px;
+        padding: 19px;
         font-size: 17px;
       }
 
-      .article-body p:first-child::first-letter {
-        font-size: 48px;
+      .article-body p {
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .article-body p:first-of-type::first-letter {
+        font-size: 49px;
       }
 
       .article-body h2 {
         font-size: 22px;
+      }
+
+      .editorial-question {
+        padding: 19px;
+        font-size: 22px !important;
+      }
+
+      .editorial-pullquote {
+        padding: 22px 15px;
+        font-size: 23px;
+      }
+
+      .article-closing {
+        padding: 22px;
+      }
+
+      .article-closing p {
+        font-size: 18px;
       }
 
       .article-sidebar {
@@ -1491,7 +1764,7 @@
 
       .theme-button {
         min-height: 95px;
-        font-size: 10px;
+        font-size: 9px;
       }
 
       .language-section {
@@ -1504,9 +1777,9 @@
       }
     }
 
-    /* =========================================
+    /* =====================================================
        PRINT PRESENTATION
-    ========================================= */
+    ===================================================== */
 
     @media print {
       body {
@@ -1517,6 +1790,7 @@
       .site-header,
       .top-rule,
       .breadcrumbs,
+      .newswire-masthead,
       .article-sidebar,
       .share-section,
       .site-footer,
@@ -1533,7 +1807,9 @@
       h1,
       .article-body h2,
       .article-closing p,
-      .issuance-value {
+      .issuance-value,
+      .editorial-question,
+      .editorial-pullquote {
         color: #111111 !important;
       }
 
@@ -1543,7 +1819,9 @@
 
       .article-intro,
       .article-closing,
-      .issuance {
+      .issuance,
+      .editorial-question,
+      .editorial-pullquote {
         background: #ffffff !important;
         break-inside: avoid;
       }
@@ -1552,14 +1830,17 @@
         color: #111111;
       }
     }
-
   </style>
 </head>
 
-<body data-theme="white">
+<body data-theme="original">
 
   <!-- GOOGLE TRANSLATE ENGINE -->
   <div id="google_translate_element" aria-hidden="true"></div>
+
+  <!-- =====================================================
+       SITE HEADER
+  ====================================================== -->
 
   <header class="site-header">
     <div class="header-inner">
@@ -1576,18 +1857,26 @@
         </span>
       </a>
 
-      <a class="header-link" href="/">Official Website ↗</a>
+      <a class="header-link" href="https://phrinusomyis.com/">
+        Official Website ↗
+      </a>
     </div>
+
     <div class="top-rule"></div>
   </header>
 
   <main class="page-shell">
 
-    <!-- LANGUAGE SELECTOR -->
+    <!-- =====================================================
+         LANGUAGE SELECTOR
+    ====================================================== -->
+
     <section class="language-section" aria-label="Website language">
       <div class="language-information">
         <span class="language-title">Read in your language</span>
-        <span class="language-subtitle">English is the original language of this publication.</span>
+        <span class="language-subtitle">
+          English is the original language of this publication.
+        </span>
       </div>
 
       <select
@@ -1618,71 +1907,135 @@
         <option value="da">Dansk — Danish</option>
       </select>
 
-      <span class="language-status" id="language-status" role="status" aria-live="polite"></span>
+      <span
+        class="language-status"
+        id="language-status"
+        role="status"
+        aria-live="polite"
+      ></span>
     </section>
 
-    <!-- TEN MASTER READING THEMES -->
+    <!-- =====================================================
+         TEN MASTER READING THEMES
+         BLACK AUTHORITY IS THE DEFAULT
+    ====================================================== -->
+
     <section class="reading-preferences" aria-label="Reading appearance preferences">
       <h2 class="preferences-heading">Choose Your Reading Appearance</h2>
 
       <p class="preferences-description">
-        Select the reading appearance that is most comfortable for you. Your selection changes the presentation of the entire publication.
+        Select the reading appearance that is most comfortable for you.
+        Your selection changes the presentation of the entire publication.
       </p>
 
       <div class="theme-options">
 
-        <button class="theme-button" type="button" data-theme-choice="original" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="original"
+          aria-pressed="true"
+        >
           <span class="theme-swatch swatch-black"><span></span><span></span><span></span></span>
           Black Authority
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="white" aria-pressed="true">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="white"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-editorial"><span></span><span></span><span></span></span>
           White Editorial
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="digital-blue" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="digital-blue"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-blue"><span></span><span></span><span></span></span>
           Digital Blue
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="white-blue" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="white-blue"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-whiteblue"><span></span><span></span><span></span></span>
           White and Blue
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="charcoal" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="charcoal"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-charcoal"><span></span><span></span><span></span></span>
           Charcoal Executive
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="emerald" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="emerald"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-emerald"><span></span><span></span><span></span></span>
           Emerald Institution
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="rose" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="rose"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-rose"><span></span><span></span><span></span></span>
           Rose Editorial
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="midnight" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="midnight"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-midnight"><span></span><span></span><span></span></span>
           Midnight Technology
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="burgundy" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="burgundy"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-burgundy"><span></span><span></span><span></span></span>
           Burgundy Distinction
         </button>
 
-        <button class="theme-button" type="button" data-theme-choice="platinum" aria-pressed="false">
+        <button
+          class="theme-button"
+          type="button"
+          data-theme-choice="platinum"
+          aria-pressed="false"
+        >
           <span class="theme-swatch swatch-platinum"><span></span><span></span><span></span></span>
           Platinum Classic
         </button>
 
       </div>
     </section>
+
+    <!-- =====================================================
+         BREADCRUMBS
+    ====================================================== -->
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
@@ -1692,15 +2045,47 @@
       <span aria-current="page">The Next Chapter of Competitive Sport</span>
     </nav>
 
+    <!-- =====================================================
+         NEWSWIRE MASTHEAD
+    ====================================================== -->
+
+    <section class="newswire-masthead" aria-label="PHRINUSOMYIS Newswire">
+      <span class="masthead-kicker">PHRINUSOMYIS™ Official Newswire</span>
+
+      <h2 class="masthead-title">
+        The world of sport. A different direction.
+      </h2>
+
+      <p class="masthead-description">
+        Official perspectives, institutional communications and defining
+        statements from PHRINUSOMYIS™.
+      </p>
+
+      <div class="masthead-signature">
+        <span></span>
+        COMMANDING THE WORLD STAGE™
+        <span></span>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ARTICLE HEADING
+    ====================================================== -->
+
     <div class="page-heading" id="newswire">
-      <span class="section-label">PHRINUSOMYIS™ Newswire</span>
+      <span class="section-label">Official Newswire</span>
 
       <h1>PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT</h1>
 
       <div class="heading-rule"></div>
     </div>
 
+    <!-- =====================================================
+         ARTICLE AND SIDEBAR
+    ====================================================== -->
+
     <div class="article-layout">
+
       <article class="article">
 
         <p class="article-intro">
@@ -1722,8 +2107,12 @@
             going and how far competition has really travelled, we cannot just
             look at what stands before us right now. That is why we must take a
             journey together back to where the current first gathered its
-            strength. Now, let us travel back in time to 3000 BC... thousands
-            of years back. Years back where the world was completely different.
+            strength.
+          </p>
+
+          <p class="editorial-question">
+            Now, let us travel back in time to 3000 BC... thousands of years
+            back. Years back where the world was completely different.
           </p>
 
           <p>
@@ -1742,15 +2131,19 @@
             a direct connection between physical effort and ultimate truth.
           </p>
 
+          <p class="editorial-question">
+            Are you there?
+          </p>
+
           <p>
-            Are you there? Now, let us walk this path forward together, leaving
-            3000 BC behind as time carries us through passing generations
-            toward the present day. As we move forward through the centuries,
-            the world expands and the ways humanity experiences sports evolve
-            through early human civilizations. Communal sports turn into
-            sacred festival games; open dirt fields turn into grand stone
-            arenas; martial discipline forms across ancient empires; and
-            physical endurance becomes woven into the honor of nations.
+            Now, let us walk this path forward together, leaving 3000 BC behind
+            as time carries us through passing generations toward the present
+            day. As we move forward through the centuries, the world expands
+            and the ways humanity experiences sports evolve through early human
+            civilizations. Communal sports turn into sacred festival games;
+            open dirt fields turn into grand stone arenas; martial discipline
+            forms across ancient empires; and physical endurance becomes woven
+            into the honor of nations.
           </p>
 
           <p>
@@ -1764,6 +2157,11 @@
             form—until our journey reaches the point where looking backward
             alone is no longer enough.
           </p>
+
+          <blockquote class="editorial-pullquote">
+            The past explains how humanity arrived at the present moment.
+            It does not determine every direction that competition can take.
+          </blockquote>
 
           <p>
             <strong>PHRINUSOMYIS™</strong> is an international sports
@@ -1826,6 +2224,10 @@
 
         </div>
 
+        <!-- =================================================
+             ARTICLE ACTIONS
+        ================================================== -->
+
         <section class="share-section" aria-label="Article actions">
           <span class="share-label">Share this article</span>
 
@@ -1841,8 +2243,18 @@
             Print
           </button>
 
-          <span class="share-status" id="share-status" role="status" aria-live="polite"></span>
+          <span
+            class="share-status"
+            id="share-status"
+            role="status"
+            aria-live="polite"
+          ></span>
         </section>
+
+        <!-- =================================================
+             OFFICIAL ISSUANCE
+             FOUNDER FIELD REMOVED
+        ================================================== -->
 
         <section class="issuance" aria-labelledby="issuance-title">
           <h2 id="issuance-title">Official Issuance</h2>
@@ -1856,14 +2268,13 @@
             <span class="issuance-label">President</span>
             <span class="issuance-value">Victor Seth AMUNTHLIA</span>
           </div>
-
-          <div class="issuance-row">
-            <span class="issuance-label">Founder</span>
-            <span class="issuance-value">Victor Seth AMUNTHLIA</span>
-          </div>
         </section>
 
       </article>
+
+      <!-- ===================================================
+           SIDEBAR
+      ==================================================== -->
 
       <aside class="article-sidebar" aria-label="Newswire information">
 
@@ -1876,27 +2287,41 @@
             height="94"
             loading="lazy"
           >
+
           <div class="sidebar-brand">PHRINUSOMYIS™</div>
           <p class="sidebar-motto">COMMANDING THE WORLD STAGE™</p>
         </section>
 
         <section class="sidebar-card">
           <h2>About the Organization</h2>
+
           <p>
             PHRINUSOMYIS™ is an international sports organization.
           </p>
+
           <p style="margin-top: 14px;">
-            <a href="https://phrinusomyis.com/magazine/news">Visit Magazine Section↗</a>
+            <a href="https://phrinusomyis.com/magazine/news">
+              Visit Magazine Section ↗
+            </a>
           </p>
         </section>
 
         <section class="sidebar-card">
           <h2>In This Article</h2>
+
           <ul class="sidebar-nav">
-            <li><a href="#article-content">The history of sport</a></li>
-            <li><a href="#article-content">The modern sporting era</a></li>
-            <li><a href="#article-content">PHRINUSOMYIS™'s direction</a></li>
-            <li><a href="#issuance-title">Official issuance</a></li>
+            <li>
+              <a href="#article-content">The history of sport</a>
+            </li>
+            <li>
+              <a href="#article-content">The modern sporting era</a>
+            </li>
+            <li>
+              <a href="#article-content">PHRINUSOMYIS™'s direction</a>
+            </li>
+            <li>
+              <a href="#issuance-title">Official issuance</a>
+            </li>
           </ul>
         </section>
 
@@ -1904,17 +2329,29 @@
     </div>
   </main>
 
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer class="site-footer">
     <div class="footer-inner">
+
       <div class="footer-copy">
         <strong>PHRINUSOMYIS™</strong><br>
         COMMANDING THE WORLD STAGE™.<br>
         © 2026 PHRINUSOMYIS™. All rights reserved.
       </div>
 
-      <a class="footer-link" href="../index.html">Return to Homepage ↗</a>
+      <a class="footer-link" href="../index.html">
+        Return to Homepage ↗
+      </a>
+
     </div>
   </footer>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
   <script>
     (function () {
@@ -1922,9 +2359,11 @@
 
       /* ==========================================
          TEN MASTER THEME CONTROLS
+         BLACK AUTHORITY IS THE DEFAULT
       ========================================== */
 
-      const themeButtons = document.querySelectorAll("[data-theme-choice]");
+      const themeButtons =
+        document.querySelectorAll("[data-theme-choice]");
 
       const validThemes = [
         "original",
@@ -1939,7 +2378,7 @@
         "platinum"
       ];
 
-      const defaultTheme = "white";
+      const defaultTheme = "original";
 
       function applyTheme(theme) {
         if (!validThemes.includes(theme)) {
@@ -1949,7 +2388,8 @@
         document.body.setAttribute("data-theme", theme);
 
         themeButtons.forEach(function (button) {
-          const selected = button.dataset.themeChoice === theme;
+          const selected =
+            button.dataset.themeChoice === theme;
 
           button.setAttribute(
             "aria-pressed",
@@ -1957,7 +2397,8 @@
           );
         });
 
-        const themeColor = document.querySelector('meta[name="theme-color"]');
+        const themeColor =
+          document.querySelector('meta[name="theme-color"]');
 
         const themeColors = {
           "original": "#080808",
@@ -1973,7 +2414,10 @@
         };
 
         if (themeColor) {
-          themeColor.setAttribute("content", themeColors[theme]);
+          themeColor.setAttribute(
+            "content",
+            themeColors[theme]
+          );
         }
 
         try {
@@ -2013,8 +2457,6 @@
         document.getElementById("language-status");
 
       let selectedLanguage = "";
-
-      let translateReady = false;
 
       function updateLanguageStatus(message) {
         languageStatus.textContent = message;
@@ -2095,86 +2537,80 @@
           "google_translate_element"
         );
 
-        translateReady = true;
-
         updateLanguageStatus(
           "English is the original publication language."
         );
       };
 
       /* ==========================================
-         GOOGLE TRANSLATE BANNER PROTECTION
+         GOOGLE TRANSLATE — BANNER AND POP-OUT
+         PROTECTION
       ========================================== */
 
-      function suppressGoogleTranslationBanner() {
-        document.documentElement.style.setProperty(
-          "margin-top",
-          "0px",
-          "important"
-        );
+      function restorePagePosition() {
+        const html = document.documentElement;
+        const body = document.body;
 
-        document.documentElement.style.setProperty(
-          "top",
-          "0px",
-          "important"
-        );
+        if (!html || !body) {
+          return;
+        }
 
-        document.body.style.setProperty(
-          "top",
-          "0px",
-          "important"
-        );
+        if (html.style.top !== "0px") {
+          html.style.setProperty("top", "0px", "important");
+        }
 
-        document.body.style.setProperty(
-          "margin-top",
-          "0px",
-          "important"
-        );
+        if (html.style.marginTop !== "0px") {
+          html.style.setProperty("margin-top", "0px", "important");
+        }
 
+        if (html.style.paddingTop !== "0px") {
+          html.style.setProperty("padding-top", "0px", "important");
+        }
+
+        if (body.style.top !== "0px") {
+          body.style.setProperty("top", "0px", "important");
+        }
+
+        if (body.style.marginTop !== "0px") {
+          body.style.setProperty("margin-top", "0px", "important");
+        }
+
+        if (body.style.paddingTop !== "0px") {
+          body.style.setProperty("padding-top", "0px", "important");
+        }
+      }
+
+      function removeGooglePopouts() {
         const unwantedSelectors = [
-          ".goog-te-banner-frame",
           "iframe.goog-te-banner-frame",
-          ".goog-te-ftab-frame",
+          ".goog-te-banner-frame",
           ".goog-te-balloon-frame",
+          "iframe.goog-te-balloon-frame",
+          ".goog-te-menu-frame",
+          "iframe.goog-te-menu-frame",
+          ".goog-te-ftab-frame",
           "#goog-gt-tt",
           ".goog-tooltip",
-          ".goog-te-menu-frame"
+          ".goog-te-tooltip-container"
         ];
 
         unwantedSelectors.forEach(function (selector) {
           document.querySelectorAll(selector).forEach(function (element) {
-            element.style.setProperty(
-              "display",
-              "none",
-              "important"
-            );
-
-            element.style.setProperty(
-              "visibility",
-              "hidden",
-              "important"
-            );
-
-            element.style.setProperty(
-              "height",
-              "0px",
-              "important"
-            );
-
-            element.style.setProperty(
-              "pointer-events",
-              "none",
-              "important"
-            );
+            if (!element.closest("#google_translate_element")) {
+              element.remove();
+            }
           });
         });
+
+        restorePagePosition();
       }
 
-      suppressGoogleTranslationBanner();
+      removeGooglePopouts();
 
-      const translationObserver = new MutationObserver(function () {
-        suppressGoogleTranslationBanner();
-      });
+      const translationObserver =
+        new MutationObserver(function () {
+          removeGooglePopouts();
+        });
 
       translationObserver.observe(
         document.documentElement,
@@ -2186,11 +2622,9 @@
         }
       );
 
-      /*
-       * Translation remains available.
-       * Only unwanted Google interface elements
-       * and unwanted page displacement are targeted.
-       */
+      window.addEventListener("load", removeGooglePopouts);
+      window.addEventListener("resize", removeGooglePopouts);
+      window.addEventListener("scroll", restorePagePosition);
 
       /* ==========================================
          ARTICLE SHARING
@@ -2262,7 +2696,6 @@
             document.createElement("textarea");
 
           temporaryInput.value = articleUrl;
-
           temporaryInput.setAttribute("readonly", "");
 
           temporaryInput.style.position = "fixed";
