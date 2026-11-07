@@ -496,6 +496,7 @@ button {
 }
 
 /* THE CHRONICLE tagline conclusion */
+
 .tagline-conclusion {
   margin:34px 0 10px;
   padding:34px 36px;
@@ -747,7 +748,6 @@ iframe.goog-te-balloon-frame,
 .goog-te-menu2-item {
   display:none !important;
   visibility:hidden !important;
-  opacity:0 !important;
 }
 
 /* Remove Google gadget styling. */
@@ -773,49 +773,12 @@ body {
   position:relative !important;
 }
 
-/* Hide Google's injected top-level banner container. */
+/* ============================================================
+   RESPONSIVE LAYOUT
+   ============================================================ */
 
-body > .skiptranslate {
-  display:none !important;
-  visibility:hidden !important;
-  height:0 !important;
-  max-height:0 !important;
-  overflow:hidden !important;
-}
+@media (max-width:600px) {
 
-/* Remove translation hover effects and interface decoration. */
-
-font[style*="vertical-align"],
-font[style*="background-color"] {
-  box-shadow:none !important;
-}
-
-.goog-te-menu-value,
-.goog-te-menu-value:hover,
-.goog-te-menu-value:focus {
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
-}
-
-/* Preserve the original site's page structure and header position. */
-
-.site-header,
-.main-nav,
-main,
-.site-footer {
-  position:relative;
-  top:0;
-}
-
-/* Mobile layout */
-@media(max-width:900px) {
-  .magazine-grid {
-    grid-template-columns:repeat(3,minmax(0,1fr));
-  }
-}
-
-@media(max-width:600px) {
   .header-inner {
     min-height:76px;
     padding:13px 4%;
@@ -925,6 +888,7 @@ main,
   .magazine-card span {
     font-size:12px;
   }
+
 }
 </style>
 </head>
@@ -959,9 +923,8 @@ main,
         <option value="sv">Swedish</option>
         <option value="fi">Finnish</option>
         <option value="da">Danish</option>
-      </select> 
-      <div id="google_translate_element"></div>
-    </div> 
+      </select>
+    </div>
 
     <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS home">
       <img src="https://phrinusomyis.com/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
@@ -1443,16 +1406,6 @@ window.googleTranslateElementInit = function() {
    CUSTOM LANGUAGE SELECTOR — CORRECTED
    ============================================================ */
 
-/*
-  Important:
-  Google Translate uses an empty string for the original
-  page language (English). It does not use "en" in its
-  internal selector.
-
-  This function also remembers a selection if the Google
-  Translate selector has not finished loading yet.
-*/
-
 (function setupCustomLanguageSelector() {
 
   var languageSelect = document.getElementById('languageSelect');
@@ -1462,6 +1415,7 @@ window.googleTranslateElementInit = function() {
   }
 
   var requestedLanguage = null;
+  var languageObserver = null;
 
   function applySelectedLanguage() {
 
@@ -1489,19 +1443,26 @@ window.googleTranslateElementInit = function() {
     var googleLanguageValue =
       requestedLanguage === 'en' ? '' : requestedLanguage;
 
-    translateSelect.value = googleLanguageValue;
+    /*
+      Do not dispatch a change event if the language is
+      already selected in Google's internal selector.
+    */
 
-    translateSelect.dispatchEvent(
-      new Event('change', { bubbles:true })
-    );
+    if (translateSelect.value !== googleLanguageValue) {
+
+      translateSelect.value = googleLanguageValue;
+
+      translateSelect.dispatchEvent(
+        new Event('change', { bubbles:true })
+      );
+
+    }
 
     return true;
   }
 
-  /*
-    When the visitor chooses a language, save the selection
-    and apply it immediately if Google's selector is ready.
-  */
+
+  /* Save and apply the visitor's language selection. */
 
   languageSelect.addEventListener('change', function() {
 
@@ -1511,10 +1472,11 @@ window.googleTranslateElementInit = function() {
 
   });
 
+
   /*
-    If the visitor selects a language before Google Translate
-    has finished loading, wait for Google's selector to appear.
-    The saved selection is then applied automatically.
+    Watch the hidden Google Translate container.
+    When Google creates its internal language selector,
+    apply the visitor's previously selected language.
   */
 
   var translateElement = document.getElementById(
@@ -1523,7 +1485,7 @@ window.googleTranslateElementInit = function() {
 
   if (translateElement) {
 
-    var languageObserver = new MutationObserver(function() {
+    languageObserver = new MutationObserver(function() {
 
       if (requestedLanguage) {
         applySelectedLanguage();
@@ -1622,10 +1584,9 @@ window.googleTranslateElementInit = function() {
   /*
     Monitor injected Google elements.
 
-    Important correction:
-    Observe child-list changes only. Observing style and class
-    attributes here can cause repeated observer callbacks when
-    this protection code itself restores page positioning.
+    Observe child-list changes only. This avoids repeated
+    callbacks caused by this protection code restoring
+    page positioning and changing style attributes.
   */
 
   var observer = new MutationObserver(function() {
