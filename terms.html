@@ -6,7 +6,7 @@
   <meta name="description" content="Terms of Use governing access to and engagement with PHRINUSOMYIS™, its official channels, publications, sports competitions and ZEAVIQ SPORTS™.">
   <title>Terms of Use | PHRINUSOMYIS™</title>
 
-  <style>
+<style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -1202,6 +1202,76 @@
           }
         }, 300);
       });
+    })();
+
+    /* GOOGLE TRANSLATE BANNER AND POP-UP PROTECTION */
+    (function () {
+      function restorePagePosition() {
+        const html = document.documentElement;
+        const body = document.body;
+
+        if (!html || !body) {
+          return;
+        }
+
+        html.style.setProperty("top", "0", "important");
+        html.style.setProperty("margin-top", "0", "important");
+        html.style.setProperty("padding-top", "0", "important");
+        html.style.setProperty("transform", "none", "important");
+
+        body.style.setProperty("top", "0", "important");
+        body.style.setProperty("margin-top", "0", "important");
+        body.style.setProperty("padding-top", "0", "important");
+        body.style.setProperty("left", "0", "important");
+        body.style.setProperty("right", "0", "important");
+        body.style.setProperty("transform", "none", "important");
+      }
+
+      function suppressTranslateElements() {
+        const selectors = [
+          ".goog-te-banner-frame",
+          "iframe.goog-te-banner-frame",
+          "iframe.goog-te-menu-frame",
+          ".goog-te-balloon-frame",
+          "iframe.goog-te-balloon-frame",
+          "#goog-gt-tt",
+          ".goog-tooltip",
+          ".goog-te-ftab"
+        ];
+
+        document.querySelectorAll(selectors.join(",")).forEach(function (element) {
+          element.remove();
+        });
+
+        document.querySelectorAll("body > .skiptranslate").forEach(function (element) {
+          if (element.id !== "google_translate_element") {
+            element.remove();
+          }
+        });
+
+        restorePagePosition();
+      }
+
+      const translateProtectionObserver = new MutationObserver(function () {
+        suppressTranslateElements();
+      });
+
+      function startTranslateProtection() {
+        suppressTranslateElements();
+
+        translateProtectionObserver.observe(document.documentElement, {
+          childList: true,
+          subtree: true
+        });
+
+        restorePagePosition();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startTranslateProtection);
+      } else {
+        startTranslateProtection();
+      }
     })();
   </script>
 
