@@ -494,8 +494,6 @@ button {
   font-weight:600;
 }
 
-/* THE CHRONICLE tagline conclusion */
-
 .tagline-conclusion {
   margin:34px 0 10px;
   padding:34px 36px;
@@ -657,7 +655,7 @@ button {
    GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
    ============================================================ */
 
-/* Keep the translation engine available but off-screen. */
+/* Keep Google's translation engine available off-screen. */
 
 #google_translate_element {
   display:block !important;
@@ -675,7 +673,7 @@ button {
   z-index:-1 !important;
 }
 
-/* Hide Google's top translation banner. */
+/* Hide the top translation banner without deleting its iframe. */
 
 .goog-te-banner-frame,
 iframe.goog-te-banner-frame,
@@ -696,12 +694,10 @@ iframe.goog-te-banner-frame,
   border:0 !important;
 }
 
-/* Hide translation menus, tooltips and pop-out interfaces. */
+/* Hide unwanted translation menus and tooltips visually. */
 
-.goog-te-menu-frame,
-iframe.goog-te-menu-frame,
 .goog-te-balloon-frame,
-iframe.goog-te-balloon-frame,
+.goog-te-menu-frame,
 #goog-gt-tt,
 .goog-te-tooltip-container,
 .goog-tooltip,
@@ -716,14 +712,6 @@ iframe.goog-te-balloon-frame,
   visibility:hidden !important;
   opacity:0 !important;
   pointer-events:none !important;
-  position:fixed !important;
-  left:-10000px !important;
-  top:-10000px !important;
-  width:0 !important;
-  height:0 !important;
-  max-width:0 !important;
-  max-height:0 !important;
-  z-index:-9999 !important;
 }
 
 /* Remove translation highlights. */
@@ -736,7 +724,7 @@ iframe.goog-te-balloon-frame,
   color:inherit !important;
 }
 
-/* Hide Google branding and unwanted gadget interfaces. */
+/* Hide Google branding. */
 
 .goog-logo-link,
 .goog-te-gadget-icon,
@@ -749,7 +737,7 @@ iframe.goog-te-balloon-frame,
   visibility:hidden !important;
 }
 
-/* Remove Google gadget styling. */
+/* Hide gadget text without removing its functional select. */
 
 .goog-te-gadget {
   color:transparent !important;
@@ -757,7 +745,7 @@ iframe.goog-te-balloon-frame,
   line-height:0 !important;
 }
 
-/* Prevent Google's injected banner from moving the page. */
+/* Prevent banner-induced page displacement. */
 
 html,
 body,
@@ -1360,538 +1348,220 @@ body {
 
 <script>
 /* ============================================================
-   GOOGLE TRANSLATE — LANGUAGE INITIALISATION
+   GOOGLE TRANSLATE INITIALISATION
    ============================================================ */
 
-(function() {
+window.googleTranslateElementInit = function() {
 
-  'use strict';
-
-  var supportedLanguages = [
-    'en', 'fr', 'es', 'de', 'ar', 'zh-CN', 'ru', 'pt',
-    'ja', 'ko', 'it', 'nl', 'tr', 'hi', 'id', 'vi',
-    'th', 'pl', 'sv', 'fi', 'da'
-  ];
-
-  var languageSelect = document.getElementById('languageSelect');
-
-  var translateElement = document.getElementById(
-    'google_translate_element'
-  );
-
-  var requestedLanguage = null;
-
-  var translateInitialized = false;
-
-  var pendingAttempts = 0;
-
-  var maxAttempts = 80;
-
-  /*
-    Read the existing Google Translate cookie.
-
-    This allows the custom selector to reflect a language
-    that was already selected during a previous visit.
-  */
-
-  function getSavedGoogleLanguage() {
-
-    var cookies = document.cookie.split(';');
-
-    for (var i = 0; i < cookies.length; i++) {
-
-      var cookie = cookies[i].trim();
-
-      if (cookie.indexOf('googtrans=') === 0) {
-
-        var value = decodeURIComponent(
-          cookie.substring('googtrans='.length)
-        );
-
-        var parts = value.split('/');
-
-        if (parts.length >= 3 && parts[2]) {
-          return parts[2];
-        }
-
-      }
-
-    }
-
-    return 'en';
+  if (!window.google || !google.translate) {
+    return;
   }
 
+  new google.translate.TranslateElement({
+    pageLanguage:'en',
+    autoDisplay:false
+  }, 'google_translate_element');
 
-  /*
-    Set the visible selector to the saved language.
-  */
+};
 
-  function synchronizeVisibleLanguage() {
 
-    if (!languageSelect) {
-      return;
-    }
+/* Load Google Translate only once. */
 
-    var savedLanguage = getSavedGoogleLanguage();
+(function loadGoogleTranslate() {
 
-    if (supportedLanguages.indexOf(savedLanguage) !== -1) {
-
-      languageSelect.value = savedLanguage;
-
-    } else {
-
-      languageSelect.value = 'en';
-
-    }
-
+  if (document.getElementById('google-translate-script')) {
+    return;
   }
 
+  var script = document.createElement('script');
 
-  /*
-    Google's callback must be available globally.
-    This function is called when the Google library loads.
-  */
+  script.id = 'google-translate-script';
+  script.src =
+    'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
 
-  window.googleTranslateElementInit = function() {
+  script.async = true;
 
-    if (translateInitialized) {
-      return;
-    }
-
-    if (
-      !window.google ||
-      !window.google.translate ||
-      !window.google.translate.TranslateElement
-    ) {
-      return;
-    }
-
-    translateInitialized = true;
-
-    new google.translate.TranslateElement(
-      {
-        pageLanguage: 'en',
-        includedLanguages: supportedLanguages.join(','),
-        autoDisplay: false
-      },
-      'google_translate_element'
-    );
-
-    synchronizeVisibleLanguage();
-
-    /*
-      If the visitor selected a language before Google's
-      internal selector appeared, apply that selection now.
-    */
-
-    if (requestedLanguage) {
-      waitForGoogleSelectorAndApply();
-    }
-
-  };
-
-
-  /* ============================================================
-     WAIT FOR GOOGLE'S INTERNAL SELECTOR
-     ============================================================ */
-
-  function waitForGoogleSelectorAndApply() {
-
-    pendingAttempts = 0;
-
-    function checkSelector() {
-
-      if (!requestedLanguage) {
-        return;
-      }
-
-      var googleSelect = document.querySelector(
-        '#google_translate_element select.goog-te-combo'
-      );
-
-      if (!googleSelect) {
-        googleSelect = document.querySelector('.goog-te-combo');
-      }
-
-      if (googleSelect) {
-
-        applyLanguageToGoogle(googleSelect, requestedLanguage);
-
-        return;
-      }
-
-      pendingAttempts++;
-
-      if (pendingAttempts >= maxAttempts) {
-
-        console.error(
-          'Google Translate did not create its internal language selector.'
-        );
-
-        return;
-      }
-
-      window.setTimeout(checkSelector, 250);
-
-    }
-
-    checkSelector();
-
-  }
-
-
-  /* ============================================================
-     APPLY THE SELECTED LANGUAGE
-     ============================================================ */
-
-  function applyLanguageToGoogle(googleSelect, language) {
-
-    if (!googleSelect || !language) {
-      return;
-    }
-
-    /*
-      English is the original language.
-
-      Google's internal selector uses an empty value
-      to represent the original page language.
-    */
-
-    var googleLanguage = language === 'en' ? '' : language;
-
-    googleSelect.value = googleLanguage;
-
-    /*
-      Trigger Google's own change event.
-
-      This is the event that activates translation.
-    */
-
-    googleSelect.dispatchEvent(
-      new Event('change', {
-        bubbles: true
-      })
-    );
-
-  }
-
-
-  /* ============================================================
-     RESTORE ORIGINAL ENGLISH
-     ============================================================ */
-
-  function clearGoogleTranslation() {
-
-    var hostname = window.location.hostname;
-
-    var domainParts = hostname.split('.');
-
-    var rootDomain = domainParts.length > 1
-      ? '.' + domainParts.slice(-2).join('.')
-      : hostname;
-
-    var expiredCookie =
-      '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
-
-    document.cookie = 'googtrans' + expiredCookie;
-
-    document.cookie =
-      'googtrans' + expiredCookie +
-      ' domain=' + hostname + ';';
-
-    document.cookie =
-      'googtrans' + expiredCookie +
-      ' domain=' + rootDomain + ';';
-
-    /*
-      Also remove cookies associated with the Google
-      translation iframe where browser policy permits.
-    */
-
-    window.location.reload();
-
-  }
-
-
-  /* ============================================================
-     CONNECT THE CUSTOM LANGUAGE SELECTOR
-     ============================================================ */
-
-  if (languageSelect) {
-
-    synchronizeVisibleLanguage();
-
-    languageSelect.addEventListener('change', function() {
-
-      var selectedLanguage = this.value;
-
-      if (supportedLanguages.indexOf(selectedLanguage) === -1) {
-        return;
-      }
-
-      requestedLanguage = selectedLanguage;
-
-      /*
-        English restores the original, untranslated page.
-      */
-
-      if (selectedLanguage === 'en') {
-
-        clearGoogleTranslation();
-
-        return;
-      }
-
-      /*
-        If Google is already ready, apply immediately.
-        Otherwise wait until its selector is created.
-      */
-
-      var googleSelect = document.querySelector(
-        '#google_translate_element select.goog-te-combo'
-      );
-
-      if (!googleSelect) {
-        googleSelect = document.querySelector('.goog-te-combo');
-      }
-
-      if (googleSelect) {
-
-        applyLanguageToGoogle(
-          googleSelect,
-          selectedLanguage
-        );
-
-      } else {
-
-        waitForGoogleSelectorAndApply();
-
-      }
-
-    });
-
-  }
-
-
-  /* ============================================================
-     LOAD GOOGLE TRANSLATE LIBRARY
-     ============================================================ */
-
-  function loadGoogleTranslate() {
-
-    if (document.getElementById('google-translate-script')) {
-      return;
-    }
-
-    var script = document.createElement('script');
-
-    script.id = 'google-translate-script';
-
-    script.src =
-      'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-
-    script.async = true;
-
-    script.onerror = function() {
-
-      console.error(
-        'Google Translate library could not be loaded.'
-      );
-
-    };
-
-    document.head.appendChild(script);
-
-  }
-
-  loadGoogleTranslate();
+  document.body.appendChild(script);
 
 })();
 
 
 /* ============================================================
-   GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
+   CUSTOM LANGUAGE SELECTOR
    ============================================================ */
 
-(function protectPageFromGoogleInterface() {
+(function setupCustomLanguageSelector() {
 
-  'use strict';
+  var languageSelect =
+    document.getElementById('languageSelect');
+
+  var translateElement =
+    document.getElementById('google_translate_element');
+
+  if (!languageSelect || !translateElement) {
+    return;
+  }
+
+  var requestedLanguage = null;
+  var applyTimer = null;
+
 
   /*
-    Restore the original page position whenever Google
-    attempts to introduce unwanted top spacing.
+    Apply the requested language to Google's real selector.
+    Never remove or modify Google's internal elements.
   */
+
+  function applySelectedLanguage() {
+
+    if (!requestedLanguage) {
+      return false;
+    }
+
+    var translateSelect =
+      translateElement.querySelector('select.goog-te-combo');
+
+    if (!translateSelect) {
+      translateSelect =
+        document.querySelector('select.goog-te-combo');
+    }
+
+    if (!translateSelect) {
+      return false;
+    }
+
+    var googleLanguageValue =
+      requestedLanguage === 'en' ? '' : requestedLanguage;
+
+    if (translateSelect.value === googleLanguageValue) {
+      return true;
+    }
+
+    translateSelect.value = googleLanguageValue;
+
+    translateSelect.dispatchEvent(
+      new Event('change', { bubbles:true })
+    );
+
+    return true;
+  }
+
+
+  /*
+    Retry while Google's translation selector is initializing.
+    This is a short, controlled retry and does not monitor
+    or delete elements throughout the document.
+  */
+
+  function retryLanguageApplication() {
+
+    if (applySelectedLanguage()) {
+      clearInterval(applyTimer);
+      applyTimer = null;
+    }
+
+  }
+
+
+  function requestLanguage(language) {
+
+    requestedLanguage = language;
+
+    if (applyTimer) {
+      clearInterval(applyTimer);
+    }
+
+    if (applySelectedLanguage()) {
+      return;
+    }
+
+    var attempts = 0;
+
+    applyTimer = setInterval(function() {
+
+      attempts++;
+
+      retryLanguageApplication();
+
+      if (attempts >= 40) {
+        clearInterval(applyTimer);
+        applyTimer = null;
+      }
+
+    }, 250);
+
+  }
+
+
+  /* Visitor selects a language. */
+
+  languageSelect.addEventListener('change', function() {
+
+    requestLanguage(this.value);
+
+  });
+
+
+  /*
+    Observe only Google's translation container.
+    This allows the language control to become available
+    without interfering with the rest of the page.
+  */
+
+  var languageObserver = new MutationObserver(function() {
+
+    if (requestedLanguage) {
+      applySelectedLanguage();
+    }
+
+  });
+
+  languageObserver.observe(translateElement, {
+    childList:true,
+    subtree:true
+  });
+
+})();
+
+
+/* ============================================================
+   GOOGLE TRANSLATE — SAFE PAGE POSITION PROTECTION
+   ============================================================ */
+
+/*
+  IMPORTANT:
+
+  Do not delete Google-injected elements.
+  Do not remove skiptranslate elements.
+  Do not remove Google's translation iframes.
+  Do not run a document-wide removal observer.
+
+  CSS above handles the visual protection.
+  The translation engine remains free to operate.
+*/
+
+(function protectPagePosition() {
 
   function restorePagePosition() {
 
     var html = document.documentElement;
-
     var body = document.body;
 
     if (!html || !body) {
       return;
     }
 
-    html.style.setProperty(
-      'top',
-      '0px',
-      'important'
-    );
+    html.style.setProperty('top', '0px', 'important');
+    html.style.setProperty('margin-top', '0px', 'important');
+    html.style.setProperty('padding-top', '0px', 'important');
 
-    html.style.setProperty(
-      'margin-top',
-      '0px',
-      'important'
-    );
-
-    html.style.setProperty(
-      'padding-top',
-      '0px',
-      'important'
-    );
-
-    body.style.setProperty(
-      'top',
-      '0px',
-      'important'
-    );
-
-    body.style.setProperty(
-      'margin-top',
-      '0px',
-      'important'
-    );
-
-    body.style.setProperty(
-      'padding-top',
-      '0px',
-      'important'
-    );
+    body.style.setProperty('top', '0px', 'important');
+    body.style.setProperty('margin-top', '0px', 'important');
+    body.style.setProperty('padding-top', '0px', 'important');
 
   }
 
-
-  /*
-    Remove only unwanted Google banner and pop-out
-    interfaces.
-
-    IMPORTANT:
-    Do not remove Google's skiptranslate elements.
-    Do not remove the hidden translation engine.
-    Do not remove Google's internal language selector.
-  */
-
-  function removeGooglePopouts() {
-
-    var unwantedSelectors = [
-
-      'iframe.goog-te-banner-frame',
-      '.goog-te-banner-frame',
-
-      '.goog-te-balloon-frame',
-      'iframe.goog-te-balloon-frame',
-
-      '.goog-te-menu-frame',
-      'iframe.goog-te-menu-frame',
-
-      '#goog-gt-tt',
-      '.goog-te-tooltip-container',
-      '.goog-tooltip',
-
-      '.goog-te-ftab',
-      '.goog-te-ftab-link',
-
-      '.VIpgJd-ZVi9od-ORHb-OEVmcd',
-      '.VIpgJd-ZVi9od-ORHb',
-      '.VIpgJd-ZVi9od-ORHb-KE6vqe',
-
-      '.VIpgJd-ZVi9od-aZ2wEe-wOHMyf',
-      '.VIpgJd-ZVi9od-l4eHX',
-      '.VIpgJd-yAWNEb-L7lbkb',
-      '.VIpgJd-ZVi9od-vH1Gmf',
-      '.VIpgJd-ZVi9od-xl07Ob',
-      '.VIpgJd-ZVi9od-SmfZ'
-
-    ];
-
-    unwantedSelectors.forEach(function(selector) {
-
-      document.querySelectorAll(selector).forEach(function(element) {
-
-        /*
-          Never remove the translation engine or any
-          element inside its container.
-        */
-
-        if (
-          element.id === 'google_translate_element' ||
-          element.closest('#google_translate_element')
-        ) {
-          return;
-        }
-
-        element.remove();
-
-      });
-
-    });
-
-    restorePagePosition();
-
-  }
-
-
-  /* Initial protection. */
-
-  removeGooglePopouts();
-
-
-  /*
-    Monitor injected Google elements.
-
-    Child-list observation only prevents an endless
-    feedback loop from style changes made by this
-    protection script.
-
-    Google's language selector is preserved.
-  */
-
-  var observer = new MutationObserver(function() {
-
-    removeGooglePopouts();
-
-  });
-
-  observer.observe(document.documentElement, {
-
-    childList: true,
-
-    subtree: true
-
-  });
-
-
-  /* Additional protection. */
-
-  window.addEventListener(
-    'load',
-    removeGooglePopouts
-  );
-
-  window.addEventListener(
-    'pageshow',
-    removeGooglePopouts
-  );
-
-  window.addEventListener(
-    'resize',
-    removeGooglePopouts
-  );
-
-  window.addEventListener(
-    'scroll',
-    restorePagePosition
-  );
+  window.addEventListener('load', restorePagePosition);
+  window.addEventListener('pageshow', restorePagePosition);
 
 })();
 
@@ -1948,13 +1618,9 @@ document.getElementById('shareButton').addEventListener(
       try {
 
         await navigator.share({
-
-          title: pageTitle,
-
-          text: 'THE CHRONICLE — Not everything belongs to the present.',
-
-          url: pageUrl
-
+          title:pageTitle,
+          text:'THE CHRONICLE — Not everything belongs to the present.',
+          url:pageUrl
         });
 
       } catch (error) {
