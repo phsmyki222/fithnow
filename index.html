@@ -2439,7 +2439,6 @@ header,.site-header,.main-header{
             height="850"
             loading="lazy"
             decoding="async"
-            class="is-active"
             data-edition-number="EDITION 06"
             data-edition-title="THE WORLD PULSE"
             data-edition-statement="The world has more than one heartbeat."
@@ -3578,6 +3577,105 @@ if(languageSelector){
   selectedLanguage=languageSelector.value||"en";
 
 }
+
+})();
+</script>
+
+<!-- GOOGLE TRANSLATE: BANNER AND POP-OUT PROTECTION -->
+<script>
+(function protectPageFromGoogleInterface(){
+
+  "use strict";
+
+  function restorePagePosition(){
+
+    const html=document.documentElement;
+    const body=document.body;
+
+    if(!html||!body)return;
+
+    if(html.style.top!=="0px"){
+      html.style.setProperty("top","0px","important");
+    }
+
+    if(html.style.marginTop!=="0px"){
+      html.style.setProperty("margin-top","0px","important");
+    }
+
+    if(html.style.paddingTop!=="0px"){
+      html.style.setProperty("padding-top","0px","important");
+    }
+
+    if(body.style.top!=="0px"){
+      body.style.setProperty("top","0px","important");
+    }
+
+    if(body.style.marginTop!=="0px"){
+      body.style.setProperty("margin-top","0px","important");
+    }
+
+    if(body.style.paddingTop!=="0px"){
+      body.style.setProperty("padding-top","0px","important");
+    }
+
+  }
+
+  function removeGooglePopouts(){
+
+    const unwantedSelectors=[
+      "iframe.goog-te-banner-frame",
+      ".goog-te-banner-frame",
+      ".VIpgJd-ZVi9od-ORHb-OEVmcd",
+      ".VIpgJd-ZVi9od-ORHb",
+      ".VIpgJd-ZVi9od-ORHb-KE6vqe",
+      ".goog-te-menu-frame",
+      "iframe.goog-te-menu-frame",
+      ".goog-te-balloon-frame",
+      "iframe.goog-te-balloon-frame",
+      "#goog-gt-tt",
+      ".goog-te-tooltip-container",
+      ".goog-tooltip",
+      ".goog-tooltip:hover",
+      ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf",
+      ".VIpgJd-ZVi9od-l4eHX",
+      ".VIpgJd-yAWNEb-L7lbkb",
+      ".VIpgJd-ZVi9od-vH1Gmf",
+      ".VIpgJd-ZVi9od-xl07Ob",
+      ".VIpgJd-ZVi9od-SmfZ"
+    ];
+
+    unwantedSelectors.forEach(function(selector){
+
+      document.querySelectorAll(selector).forEach(function(element){
+
+        if(!element.closest("#google_translate_element")){
+          element.remove();
+        }
+
+      });
+
+    });
+
+    restorePagePosition();
+
+  }
+
+  removeGooglePopouts();
+
+  const observer=new MutationObserver(function(){
+    removeGooglePopouts();
+  });
+
+  observer.observe(document.documentElement,{
+    childList:true,
+    subtree:true,
+    attributes:true,
+    attributeFilter:["style","class"]
+  });
+
+  window.addEventListener("load",removeGooglePopouts);
+  window.addEventListener("resize",removeGooglePopouts);
+  window.addEventListener("scroll",restorePagePosition);
 
 })();
 </script>
