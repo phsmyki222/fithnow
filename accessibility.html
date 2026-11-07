@@ -35,6 +35,7 @@
     }
     </script>
 
+
 <style>
     :root {
         --gold: #B28B28;
@@ -69,34 +70,12 @@
         scroll-padding-top: 30px;
     }
 
-    /* HIDE GOOGLE'S OWN LANGUAGE MENU */
-    #google_translate_element,
-    #google_translate_element .goog-te-gadget,
-    #google_translate_element .goog-te-gadget-simple,
-    #google_translate_element .goog-te-combo,
-    #google_translate_element .goog-te-menu-value,
-    #google_translate_element .goog-te-menu-frame {
-        display: none !important;
-        visibility: hidden !important;
-    }
+    /* GOOGLE TRANSLATE: HIDE BANNER, MENUS AND POPOUTS */
 
-    /* GOOGLE TRANSLATE: HIDE TOP BANNER */
     .goog-te-banner-frame,
     .goog-te-banner-frame.skiptranslate,
     iframe.goog-te-banner-frame,
-    iframe.skiptranslate {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        height: 0 !important;
-        min-height: 0 !important;
-        max-height: 0 !important;
-        width: 0 !important;
-        border: 0 !important;
-    }
-
-    /* GOOGLE TRANSLATE: HIDE SIDE POP-OUTS AND TOOLTIPS */
+    iframe.skiptranslate,
     .goog-te-balloon-frame,
     #goog-gt-tt,
     .goog-tooltip,
@@ -108,41 +87,26 @@
         visibility: hidden !important;
         opacity: 0 !important;
         pointer-events: none !important;
-    }
-
-    /* PREVENT TOP SPACING AND PAGE PUSH-DOWN */
-    html,
-    body,
-    html.translated-ltr,
-    html.translated-rtl,
-    body.translated-ltr,
-    body.translated-rtl {
-        top: 0 !important;
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    /* HIDE THE BANNER CONTAINER */
-    body > .skiptranslate,
-    body > div.skiptranslate {
-        display: none !important;
-        visibility: hidden !important;
         height: 0 !important;
         min-height: 0 !important;
         max-height: 0 !important;
-        overflow: hidden !important;
+        width: 0 !important;
+        border: 0 !important;
     }
 
-    /* KEEP GOOGLE TRANSLATE ENGINE INITIALIZED */
+    /* KEEP TRANSLATION ENGINE INITIALIZED OFF-SCREEN */
+
     #google_translate_element {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        position: relative !important;
-        z-index: 999 !important;
-        width: auto;
-        height: auto;
-        overflow: visible !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: 0 !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        z-index: -1 !important;
     }
 
     #google_translate_element .goog-te-gadget {
@@ -165,28 +129,31 @@
         display: none !important;
     }
 
-    /* HIDE UNWANTED GOOGLE TRANSLATE BANNER */
-    .goog-te-banner-frame,
-    iframe.skiptranslate,
-    body > .skiptranslate {
-        display: none !important;
-        visibility: hidden !important;
+    /* REMOVE GOOGLE TRANSLATE PAGE DISPLACEMENT */
+
+    html,
+    body,
+    html.translated-ltr,
+    html.translated-rtl,
+    body.translated-ltr,
+    body.translated-rtl {
+        top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 
-    /* KEEP GOOGLE TRANSLATE ENGINE INITIALIZED OFF-SCREEN */
-    #google_translate_element {
-        position: absolute !important;
-        left: -9999px !important;
-        width: 1px !important;
-        height: 1px !important;
+    body > .skiptranslate,
+    body > div.skiptranslate {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
         overflow: hidden !important;
     }
 
-    body {
-        top: 0 !important;
-    }
-
     /* LANGUAGE SELECTOR */
+
     .language-bar {
         position: absolute;
         top: 25px;
@@ -214,6 +181,7 @@
     }
 
     /* HEADER */
+
     .cc-header {
         padding: 115px 20px 65px;
         text-align: center;
@@ -259,6 +227,7 @@
     }
 
     /* MAIN CONTENT */
+
     .cc-container {
         max-width: 1050px;
         margin: 0 auto;
@@ -308,6 +277,7 @@
     }
 
     /* HUMAN-CENTRED IMAGE SECTION */
+
     .cc-image-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -349,6 +319,7 @@
     }
 
     /* INFORMATION GRID */
+
     .spec-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -379,6 +350,7 @@
     }
 
     /* NOTICE */
+
     .cc-notice {
         border: 1px solid rgba(178, 139, 40, 0.45);
         background: #EBE6D8;
@@ -403,6 +375,7 @@
     }
 
     /* CONTACT */
+
     .cc-contact {
         margin-top: 80px;
         padding: 45px 20px;
@@ -445,6 +418,7 @@
     }
 
     /* FOOTER */
+
     .phr-main-footer {
         background: #E8E5DC;
         color: var(--text);
@@ -533,6 +507,7 @@
     }
 
     /* MOBILE */
+
     @media (min-width: 768px) {
         .phr-footer-grid {
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1172,6 +1147,109 @@
             }
 
         });
+
+        /* GOOGLE TRANSLATE: CONTINUOUS BANNER AND POPOUT PROTECTION */
+
+        (function () {
+
+            function removeGoogleTranslatePopouts() {
+
+                const unwantedElements = document.querySelectorAll(
+                    [
+                        'body > .skiptranslate',
+                        'body > div.skiptranslate',
+                        '.goog-te-banner-frame',
+                        'iframe.goog-te-banner-frame',
+                        'iframe.skiptranslate',
+                        '.goog-te-balloon-frame',
+                        '#goog-gt-tt',
+                        '.goog-tooltip',
+                        '.goog-te-ftab-frame'
+                    ].join(',')
+                );
+
+                unwantedElements.forEach(function (element) {
+
+                    if (
+                        element.id === 'google_translate_element' ||
+                        element.closest('#google_translate_element')
+                    ) {
+                        return;
+                    }
+
+                    element.remove();
+                });
+
+                document.documentElement.style.setProperty(
+                    'top',
+                    '0px',
+                    'important'
+                );
+
+                document.documentElement.style.setProperty(
+                    'margin-top',
+                    '0px',
+                    'important'
+                );
+
+                document.documentElement.style.setProperty(
+                    'padding-top',
+                    '0px',
+                    'important'
+                );
+
+                if (document.body) {
+
+                    document.body.style.setProperty(
+                        'top',
+                        '0px',
+                        'important'
+                    );
+
+                    document.body.style.setProperty(
+                        'margin-top',
+                        '0px',
+                        'important'
+                    );
+
+                    document.body.style.setProperty(
+                        'padding-top',
+                        '0px',
+                        'important'
+                    );
+                }
+            }
+
+            function startGoogleTranslateProtection() {
+
+                removeGoogleTranslatePopouts();
+
+                const observer = new MutationObserver(function () {
+                    removeGoogleTranslatePopouts();
+                });
+
+                observer.observe(document.documentElement, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['style', 'class']
+                });
+            }
+
+            if (document.readyState === 'loading') {
+
+                document.addEventListener(
+                    'DOMContentLoaded',
+                    startGoogleTranslateProtection
+                );
+
+            } else {
+
+                startGoogleTranslateProtection();
+
+            }
+
+        })();
 
     </script>
 
