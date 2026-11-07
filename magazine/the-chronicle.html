@@ -1396,31 +1396,149 @@ main,
 </footer>
 
 <script>
-/* Google Translate initialisation */
-function googleTranslateElementInit() {
+/* ============================================================
+   GOOGLE TRANSLATE INITIALISATION
+   ============================================================ */
+
+/*
+  The Google Translate callback is attached to window so that
+  Google's external script can reliably find it.
+*/
+
+window.googleTranslateElementInit = function() {
+
+  if (!window.google || !google.translate) {
+    return;
+  }
+
   new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    autoDisplay: false
+    pageLanguage:'en',
+    autoDisplay:false
   }, 'google_translate_element');
-}
+
+};
+
+
+/* Load the Google Translate library once. */
 
 (function loadGoogleTranslate() {
+
+  if (document.getElementById('google-translate-script')) {
+    return;
+  }
+
   var script = document.createElement('script');
+
+  script.id = 'google-translate-script';
   script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
   script.async = true;
+
   document.body.appendChild(script);
+
 })();
 
-/* Custom language selector */
-document.getElementById('languageSelect').addEventListener('change', function() {
-  var language = this.value;
-  var translateSelect = document.querySelector('.goog-te-combo');
 
-  if (translateSelect) {
-    translateSelect.value = language;
-    translateSelect.dispatchEvent(new Event('change'));
+/* ============================================================
+   CUSTOM LANGUAGE SELECTOR — CORRECTED
+   ============================================================ */
+
+/*
+  Important:
+  Google Translate uses an empty string for the original
+  page language (English). It does not use "en" in its
+  internal selector.
+
+  This function also remembers a selection if the Google
+  Translate selector has not finished loading yet.
+*/
+
+(function setupCustomLanguageSelector() {
+
+  var languageSelect = document.getElementById('languageSelect');
+
+  if (!languageSelect) {
+    return;
   }
-});
+
+  var requestedLanguage = null;
+
+  function applySelectedLanguage() {
+
+    if (!requestedLanguage) {
+      return false;
+    }
+
+    var translateSelect = document.querySelector(
+      '#google_translate_element select.goog-te-combo'
+    );
+
+    if (!translateSelect) {
+      translateSelect = document.querySelector('.goog-te-combo');
+    }
+
+    if (!translateSelect) {
+      return false;
+    }
+
+    /*
+      English is the original language.
+      Google Translate represents it with an empty value.
+    */
+
+    var googleLanguageValue =
+      requestedLanguage === 'en' ? '' : requestedLanguage;
+
+    translateSelect.value = googleLanguageValue;
+
+    translateSelect.dispatchEvent(
+      new Event('change', { bubbles:true })
+    );
+
+    return true;
+  }
+
+  /*
+    When the visitor chooses a language, save the selection
+    and apply it immediately if Google's selector is ready.
+  */
+
+  languageSelect.addEventListener('change', function() {
+
+    requestedLanguage = this.value;
+
+    applySelectedLanguage();
+
+  });
+
+  /*
+    If the visitor selects a language before Google Translate
+    has finished loading, wait for Google's selector to appear.
+    The saved selection is then applied automatically.
+  */
+
+  var translateElement = document.getElementById(
+    'google_translate_element'
+  );
+
+  if (translateElement) {
+
+    var languageObserver = new MutationObserver(function() {
+
+      if (requestedLanguage) {
+        applySelectedLanguage();
+      }
+
+    });
+
+    languageObserver.observe(translateElement, {
+      childList:true,
+      subtree:true
+    });
+
+  }
+
+})();
+
 
 /* ============================================================
    GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
@@ -1444,7 +1562,9 @@ document.getElementById('languageSelect').addEventListener('change', function() 
     body.style.setProperty('top', '0px', 'important');
     body.style.setProperty('margin-top', '0px', 'important');
     body.style.setProperty('padding-top', '0px', 'important');
+
   }
+
 
   /* Remove unwanted Google banners and pop-outs. */
 
@@ -1489,13 +1609,23 @@ document.getElementById('languageSelect').addEventListener('change', function() 
     });
 
     restorePagePosition();
+
   }
+
 
   /* Initial protection. */
 
   removeGooglePopouts();
 
-  /* Monitor Google's injected elements and layout changes. */
+
+  /*
+    Monitor injected Google elements.
+
+    Important correction:
+    Observe child-list changes only. Observing style and class
+    attributes here can cause repeated observer callbacks when
+    this protection code itself restores page positioning.
+  */
 
   var observer = new MutationObserver(function() {
     removeGooglePopouts();
@@ -1503,10 +1633,9 @@ document.getElementById('languageSelect').addEventListener('change', function() 
 
   observer.observe(document.documentElement, {
     childList:true,
-    subtree:true,
-    attributes:true,
-    attributeFilter:['style', 'class']
+    subtree:true
   });
+
 
   /* Additional protection. */
 
@@ -1517,44 +1646,87 @@ document.getElementById('languageSelect').addEventListener('change', function() 
 
 })();
 
-/* Current year */
-document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-/* Sharing and page-link functions */
-var pageUrl = 'https://phrinusomyis.com/magazine/the-chronicle';
-var pageTitle = 'THE CHRONICLE — Edition 001 | PHRINUSOMYIS Magazine';
+/* ============================================================
+   CURRENT YEAR
+   ============================================================ */
+
+document.getElementById('currentYear').textContent =
+  new Date().getFullYear();
+
+
+/* ============================================================
+   SHARING AND PAGE-LINK FUNCTIONS
+   ============================================================ */
+
+var pageUrl =
+  'https://phrinusomyis.com/magazine/the-chronicle';
+
+var pageTitle =
+  'THE CHRONICLE — Edition 001 | PHRINUSOMYIS Magazine';
+
 
 function copyPageLink() {
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
+
     navigator.clipboard.writeText(pageUrl).then(function() {
-      document.getElementById('copyButton').textContent = 'Link Copied';
+
+      document.getElementById('copyButton').textContent =
+        'Link Copied';
+
     }).catch(function() {
+
       window.prompt('Copy this page link:', pageUrl);
+
     });
+
   } else {
+
     window.prompt('Copy this page link:', pageUrl);
+
   }
+
 }
 
-document.getElementById('shareButton').addEventListener('click', async function() {
-  if (navigator.share) {
-    try {
-      await navigator.share({
-        title: pageTitle,
-        text: 'THE CHRONICLE — Not everything belongs to the present.',
-        url: pageUrl
-      });
-    } catch (error) {
-      if (error.name !== 'AbortError') {
-        copyPageLink();
-      }
-    }
-  } else {
-    copyPageLink();
-  }
-});
 
-document.getElementById('copyButton').addEventListener('click', copyPageLink);
+document.getElementById('shareButton').addEventListener(
+  'click',
+  async function() {
+
+    if (navigator.share) {
+
+      try {
+
+        await navigator.share({
+          title:pageTitle,
+          text:'THE CHRONICLE — Not everything belongs to the present.',
+          url:pageUrl
+        });
+
+      } catch (error) {
+
+        if (error.name !== 'AbortError') {
+          copyPageLink();
+        }
+
+      }
+
+    } else {
+
+      copyPageLink();
+
+    }
+
+  }
+);
+
+
+document.getElementById('copyButton').addEventListener(
+  'click',
+  copyPageLink
+);
+
 </script>
 
 </body>
