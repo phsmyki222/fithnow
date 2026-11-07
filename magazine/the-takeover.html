@@ -111,7 +111,6 @@
     ]
   }
   </script>
-
 <style>
     :root {
       --gold: #c9a45c;
@@ -191,8 +190,9 @@
     }
 
     /* =====================================================
-       GOOGLE TRANSLATE — SAFE INTERFACE PROTECTION
-       Does not remove or disable translation engine elements.
+       GOOGLE TRANSLATE — SAFE BANNER PROTECTION
+       Translation remains active.
+       The banner is moved behind and above the website.
        ===================================================== */
 
     html,
@@ -212,41 +212,70 @@
       padding-top: 0 !important;
     }
 
-    /* Completely hide Google's top translation banner. */
+    /*
+       GOOGLE TOP BANNER
+
+       Keep the banner element in the document.
+       Move it outside the visible screen and place it
+       behind the website instead of deleting it.
+    */
 
     iframe.goog-te-banner-frame,
     .goog-te-banner-frame,
     .goog-te-banner-frame.skiptranslate {
-      display: none !important;
+      display: block !important;
+      position: fixed !important;
+      top: -1000px !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: -999999 !important;
+      width: 100% !important;
+      height: 1px !important;
+      max-height: 1px !important;
+      min-height: 1px !important;
       visibility: hidden !important;
       opacity: 0 !important;
       pointer-events: none !important;
-      position: fixed !important;
-      top: -10000px !important;
-      left: -10000px !important;
-      width: 0 !important;
-      height: 0 !important;
-      max-height: 0 !important;
+      transform: translateY(-1000px) !important;
       border: 0 !important;
     }
 
-    /* Completely hide Google translation menus and frames.
-       This prevents them from covering the top or left side. */
+    /*
+       GOOGLE BANNER CONTAINER
 
-    iframe.goog-te-menu-frame,
-    .goog-te-menu-frame,
-    .goog-te-balloon-frame,
-    iframe.goog-te-balloon-frame {
-      display: none !important;
+       Google sometimes places the banner inside a direct
+       body child carrying the skiptranslate class.
+       Move that banner container behind the website.
+       Do not remove it from the document.
+    */
+
+    body > .skiptranslate {
+      position: fixed !important;
+      top: -1000px !important;
+      left: 0 !important;
+      z-index: -999999 !important;
+      width: 100% !important;
+      height: 1px !important;
+      max-height: 1px !important;
+      overflow: hidden !important;
       visibility: hidden !important;
       opacity: 0 !important;
       pointer-events: none !important;
-      position: fixed !important;
-      top: -10000px !important;
-      left: -10000px !important;
-      width: 0 !important;
-      height: 0 !important;
-      border: 0 !important;
+      transform: translateY(-1000px) !important;
+    }
+
+    /*
+       Prevent Google's banner from pushing the website down.
+    */
+
+    body {
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    body > .skiptranslate + * {
+      margin-top: 0 !important;
     }
 
     /* Hide unwanted Google translation pop-outs. */
@@ -271,6 +300,16 @@
       width: 0 !important;
       height: 0 !important;
       z-index: -9999 !important;
+    }
+
+    /* Hide unwanted Google translation menus. */
+
+    iframe.goog-te-menu-frame,
+    .goog-te-menu-frame,
+    .goog-te-balloon-frame {
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
     /* Remove translation highlights without disabling translation. */
@@ -305,10 +344,8 @@
     }
 
     /*
-       IMPORTANT:
-       Do not hide body > .skiptranslate.
-       Do not remove Google's injected skiptranslate elements.
-       They may be required by the translation engine.
+       Do not delete Google's injected translation elements.
+       Do not remove skiptranslate elements with JavaScript.
     */
 
     /* Keep Google Translate initialized but off-screen. */
@@ -329,12 +366,6 @@
       visibility: hidden !important;
       pointer-events: none !important;
       z-index: -1 !important;
-    }
-
-    /* Prevent banner displacement. */
-
-    body > .skiptranslate + * {
-      margin-top: 0 !important;
     }
 
     /* =====================================================
@@ -1935,7 +1966,8 @@
     /*
        APPLY LANGUAGE THROUGH GOOGLE'S ACTUAL SELECTOR
 
-       This activates the actual Google Translate language control.
+       The actual Google Translate language control is used.
+       The working language-switching implementation is retained.
     */
 
     function changeWebsiteLanguage(language) {
@@ -2033,7 +2065,6 @@
     /* =====================================================
        SAFE GOOGLE INTERFACE PROTECTION
 
-       IMPORTANT:
        No MutationObserver.
        No deleting skiptranslate elements.
        No removing Google-created translation elements.
