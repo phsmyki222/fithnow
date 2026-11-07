@@ -212,7 +212,7 @@
       padding-top: 0 !important;
     }
 
-    /* Hide Google's top translation banner only. */
+    /* Completely hide Google's top translation banner. */
 
     iframe.goog-te-banner-frame,
     .goog-te-banner-frame,
@@ -221,8 +221,31 @@
       visibility: hidden !important;
       opacity: 0 !important;
       pointer-events: none !important;
+      position: fixed !important;
+      top: -10000px !important;
+      left: -10000px !important;
+      width: 0 !important;
       height: 0 !important;
       max-height: 0 !important;
+      border: 0 !important;
+    }
+
+    /* Completely hide Google translation menus and frames.
+       This prevents them from covering the top or left side. */
+
+    iframe.goog-te-menu-frame,
+    .goog-te-menu-frame,
+    .goog-te-balloon-frame,
+    iframe.goog-te-balloon-frame {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: fixed !important;
+      top: -10000px !important;
+      left: -10000px !important;
+      width: 0 !important;
+      height: 0 !important;
       border: 0 !important;
     }
 
@@ -248,16 +271,6 @@
       width: 0 !important;
       height: 0 !important;
       z-index: -9999 !important;
-    }
-
-    /* Hide unwanted Google translation menus. */
-
-    iframe.goog-te-menu-frame,
-    .goog-te-menu-frame,
-    .goog-te-balloon-frame {
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
     }
 
     /* Remove translation highlights without disabling translation. */
@@ -1922,11 +1935,7 @@
     /*
        APPLY LANGUAGE THROUGH GOOGLE'S ACTUAL SELECTOR
 
-       This is the important correction.
-
-       Instead of manually forcing a page reload and relying
-       on cookies alone, this function activates the actual
-       Google Translate language control.
+       This activates the actual Google Translate language control.
     */
 
     function changeWebsiteLanguage(language) {
