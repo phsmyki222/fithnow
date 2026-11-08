@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
-<meta name="description" content="A PHRINUSOMYIS™ tribute to extraordinary sporting figures whose achievements, courage and influence became part of sporting history.">
+<meta name="description" content="PHRINUSOMYIS™ honours the figures who shaped sporting history and explores the meaning of legacy, human potential and what every generation carries forward.">
 <meta name="theme-color" content="#171715">
 <meta name="robots" content="index,follow">
 
@@ -14,7 +13,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
-<meta property="og:description" content="Honouring the figures who shaped sporting history.">
+<meta property="og:description" content="Recognising sporting history. Exploring what remains. Understanding what every generation carries forward.">
 <meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
 <meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -66,8 +65,6 @@ img {display:block;max-width:100%}
 a {color:inherit;text-decoration:none}
 button,select {font:inherit}
 button {cursor:pointer}
-
-/* TOP LINE */
 
 .site-topline {
   height:5px;
@@ -254,7 +251,7 @@ button {cursor:pointer}
 }
 
 .hero-description {
-  max-width:620px;
+  max-width:650px;
   margin:28px 0 0;
   color:rgba(248,245,238,.78);
   font-family:var(--editorial);
@@ -555,7 +552,7 @@ button {cursor:pointer}
 
 .dark .carousel-progress span {background:var(--gold)}
 
-/* PASSING THE LEGACY */
+/* LEGACY INTERLUDE */
 
 .legacy-interlude {
   position:relative;
@@ -605,7 +602,7 @@ button {cursor:pointer}
 }
 
 .interlude-inner p {
-  max-width:720px;
+  max-width:760px;
   margin:auto;
   color:rgba(248,245,238,.68);
   font-size:14px;
@@ -623,58 +620,101 @@ button {cursor:pointer}
   text-transform:uppercase;
 }
 
-/* NEXT GENERATION */
+/* QUESTIONS OF LEGACY */
 
-.next-generation {
-  padding:115px 24px 120px;
+.questions-section {
+  padding:110px 24px 120px;
   background:var(--ivory-light);
 }
 
-.next-inner {
-  max-width:1000px;
+.questions-inner {
+  width:min(100%,1050px);
   margin:auto;
+}
+
+.questions-header {
+  max-width:790px;
+  margin:0 auto 65px;
   text-align:center;
 }
 
-.next-inner h2 {
+.questions-header h2 {
   margin:20px 0;
   color:var(--black);
   font-family:var(--editorial);
-  font-size:clamp(34px,5vw,54px);
+  font-size:clamp(34px,5vw,52px);
   font-weight:400;
   line-height:1.2;
 }
 
-.next-inner > p {
-  max-width:790px;
-  margin:auto;
+.questions-header p {
   color:var(--muted);
   font-size:14px;
   line-height:2;
 }
 
-.next-statement {
-  margin:48px auto 0;
-  padding:28px 20px;
+.question-list {
   border-top:1px solid var(--line);
+}
+
+.question-item {
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:25px;
+  padding:34px 10px;
   border-bottom:1px solid var(--line);
+}
+
+.question-number {
   color:var(--bronze);
   font-family:var(--heading);
-  font-size:clamp(20px,3vw,30px);
+  font-size:25px;
   font-weight:700;
-  letter-spacing:1.5px;
-  line-height:1.5;
+}
+
+.question-content h3 {
+  margin:0 0 16px;
+  color:var(--black);
+  font-family:var(--heading);
+  font-size:clamp(25px,3.5vw,34px);
+  font-weight:700;
+  line-height:1.15;
+}
+
+.question-answer {
+  max-width:810px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:2;
+}
+
+.question-importance {
+  max-width:810px;
+  margin-top:17px;
+  padding-left:18px;
+  border-left:2px solid var(--gold);
+  color:var(--text);
+  font-size:13px;
+  line-height:1.9;
+}
+
+.question-importance strong {
+  display:block;
+  margin-bottom:5px;
+  color:var(--bronze);
+  font-size:9px;
+  letter-spacing:2px;
   text-transform:uppercase;
 }
 
-/* PERSONAL MOTIVATIONAL MESSAGE */
+/* PERSONAL REFLECTION */
 
-.inheritance-section {
-  padding:90px 24px;
+.reflection-section {
+  padding:95px 24px;
   background:var(--stone);
 }
 
-.inheritance-inner {
+.reflection-inner {
   width:min(100%,1000px);
   margin:auto;
   display:grid;
@@ -683,7 +723,7 @@ button {cursor:pointer}
   align-items:center;
 }
 
-.inheritance-label {
+.reflection-label {
   color:var(--bronze);
   font-size:10px;
   font-weight:700;
@@ -691,7 +731,7 @@ button {cursor:pointer}
   text-transform:uppercase;
 }
 
-.inheritance-heading {
+.reflection-heading {
   margin:17px 0;
   color:var(--black);
   font-family:var(--heading);
@@ -701,13 +741,13 @@ button {cursor:pointer}
   text-transform:uppercase;
 }
 
-.inheritance-description {
+.reflection-description {
   color:var(--muted);
   font-size:13px;
   line-height:2;
 }
 
-.personal-quote {
+.reflection-card {
   position:relative;
   padding:38px 35px;
   color:var(--ivory-light);
@@ -715,34 +755,30 @@ button {cursor:pointer}
   border-left:3px solid var(--gold);
 }
 
-.personal-quote::before {
-  content:"“";
+.reflection-card .reflection-question {
   display:block;
-  margin-bottom:10px;
+  margin-bottom:19px;
   color:var(--gold);
-  font-family:var(--editorial);
-  font-size:55px;
-  line-height:.7;
-}
-
-.personal-quote blockquote {
-  margin:0;
-  color:var(--ivory-light);
-  font-family:var(--editorial);
-  font-size:clamp(21px,3vw,29px);
-  line-height:1.55;
-}
-
-.personal-quote cite {
-  display:block;
-  margin-top:25px;
-  color:var(--gold);
-  font-family:var(--body);
   font-size:9px;
-  font-style:normal;
   font-weight:700;
   letter-spacing:2px;
   text-transform:uppercase;
+}
+
+.reflection-card h3 {
+  margin:0 0 18px;
+  color:var(--ivory-light);
+  font-family:var(--editorial);
+  font-size:clamp(22px,3vw,30px);
+  font-weight:400;
+  line-height:1.5;
+}
+
+.reflection-card p {
+  margin:0;
+  color:rgba(248,245,238,.66);
+  font-size:13px;
+  line-height:2;
 }
 
 /* CLOSING */
@@ -776,7 +812,7 @@ button {cursor:pointer}
 }
 
 .closing p {
-  max-width:690px;
+  max-width:720px;
   margin:25px auto 0;
   color:rgba(248,245,238,.68);
   font-family:var(--editorial);
@@ -799,7 +835,7 @@ button {cursor:pointer}
   text-transform:uppercase;
 }
 
-/* BOTTOM SITE NAVIGATION */
+/* BOTTOM NAVIGATION */
 
 .site-navigation {
   padding:34px 24px;
@@ -834,11 +870,6 @@ button {cursor:pointer}
 .navigation-link:hover {
   color:var(--black);
   background:var(--gold);
-  border-color:var(--gold);
-}
-
-.navigation-link.current {
-  color:var(--gold);
   border-color:var(--gold);
 }
 
@@ -936,7 +967,7 @@ html {
 
   .collection-heading p {max-width:600px}
 
-  .inheritance-inner {
+  .reflection-inner {
     grid-template-columns:1fr;
     gap:30px;
   }
@@ -1018,11 +1049,26 @@ html {
 
   .legacy-interlude {padding:95px 22px}
 
-  .next-generation {padding:85px 22px}
+  .questions-section {padding:80px 22px}
 
-  .inheritance-section {padding:75px 22px}
+  .questions-header {margin-bottom:40px}
 
-  .personal-quote {padding:30px 25px}
+  .question-item {
+    grid-template-columns:36px 1fr;
+    gap:12px;
+    padding:27px 0;
+  }
+
+  .question-number {font-size:21px}
+
+  .question-content h3 {font-size:27px}
+
+  .question-answer,
+  .question-importance {font-size:12px}
+
+  .reflection-section {padding:75px 22px}
+
+  .reflection-card {padding:30px 25px}
 
   .closing {padding:80px 22px}
 
@@ -1066,6 +1112,7 @@ html {
 
     <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
       <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+
       <span class="brand-copy">
         <span class="brand-name">PHRINUSOMYIS™</span>
         <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
@@ -1073,10 +1120,14 @@ html {
     </a>
 
     <div class="header-right">
-      <a class="back-link" href="/">Return to PHRINUSOMYIS</a>
+
+      <a class="back-link" href="/">
+        Return to PHRINUSOMYIS
+      </a>
 
       <div class="language-control">
         <label for="siteLanguage">Language</label>
+
         <select id="siteLanguage" aria-label="Select language">
           <option value="en" selected>English</option>
           <option value="fr">Français</option>
@@ -1101,17 +1152,22 @@ html {
           <option value="da">Dansk</option>
         </select>
       </div>
-    </div>
 
+    </div>
   </div>
 </header>
 
 <main>
 
   <!-- HERO -->
+
   <section class="hero">
+
     <div class="hero-inner">
-      <div class="eyebrow">A PHRINUSOMYIS™ Editorial Tribute</div>
+
+      <div class="eyebrow">
+        A PHRINUSOMYIS™ Editorial Tribute
+      </div>
 
       <h1>
         The Legacy
@@ -1119,64 +1175,104 @@ html {
       </h1>
 
       <p class="hero-description">
-        Honouring the figures whose achievements, courage and influence
-        became part of sporting history.
+        Honouring the people who shaped sporting history
+        and exploring what their achievements continue
+        to mean for generations beyond their own.
       </p>
 
       <div class="hero-bottom">
         <span class="hero-line"></span>
-        <span class="hero-note">A tribute across generations and continents</span>
+        <span class="hero-note">
+          Recognition · Responsibility · Continuity
+        </span>
       </div>
+
     </div>
+
   </section>
 
   <!-- INTRODUCTION -->
-  <section class="intro-section">
-    <div class="intro-inner">
-      <div class="section-label">Beyond the Moment</div>
 
-      <h2>Greatness never leaves the stage.</h2>
+  <section class="intro-section">
+
+    <div class="intro-inner">
+
+      <div class="section-label">
+        Beyond the Moment
+      </div>
+
+      <h2>
+        Greatness is remembered. Its meaning travels further.
+      </h2>
 
       <p>
-        Sporting history is shaped by individuals whose performances
-        transcend the moment in which they occurred. Across disciplines,
-        nations and generations, their achievements established
-        enduring points of reference in the story of sport.
+        Sporting history is shaped by individuals whose achievements
+        reach beyond the competitions in which they occurred.
+        Their discipline, courage, decisions and contributions
+        become part of a much larger human story.
 
-        This collection recognizes their contribution and preserves
-        a place for their names in the wider sporting narrative.
+        But remembering the past is only one part of understanding
+        a legacy. What matters equally is what people learn from it,
+        what they choose to carry forward and what they make possible
+        for those who follow.
+
+        This collection recognises the figures who shaped sport
+        while inviting every visitor to consider the wider meaning
+        of what one generation leaves for another.
       </p>
 
       <div class="gold-divider"></div>
+
     </div>
+
   </section>
 
   <!-- FIRST COLLECTION -->
+
   <section class="collection-section" id="first-collection">
+
     <div class="collection-inner">
 
       <div class="collection-heading">
+
         <div>
-          <div class="section-label">The Historical Collection · 01</div>
+          <div class="section-label">
+            The Historical Collection · 01
+          </div>
+
           <h2>Names That Endure</h2>
         </div>
 
         <p>
-          From Africa to Europe and Asia, these figures left a lasting
-          mark on their respective sporting disciplines.
+          From Africa to Europe and Asia, these figures
+          left lasting marks on their respective sporting
+          disciplines and became part of sporting history.
         </p>
 
         <div class="carousel-controls">
+
           <button class="carousel-button" type="button"
-            data-carousel-prev="legendsOne" aria-label="Previous legends">
-            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            data-carousel-prev="legendsOne"
+            aria-label="Previous legends">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+
           </button>
 
           <button class="carousel-button" type="button"
-            data-carousel-next="legendsOne" aria-label="Next legends">
-            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            data-carousel-next="legendsOne"
+            aria-label="Next legends">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+
           </button>
+
         </div>
+
       </div>
 
       <div class="carousel-window">
@@ -1184,40 +1280,71 @@ html {
       </div>
 
       <div class="carousel-footer">
-        <div class="carousel-count">Collection 01 / 02</div>
-        <div class="carousel-progress"><span id="progress-legendsOne"></span></div>
-        <div class="carousel-count">14 Historical Figures</div>
+
+        <div class="carousel-count">
+          Collection 01 / 02
+        </div>
+
+        <div class="carousel-progress">
+          <span id="progress-legendsOne"></span>
+        </div>
+
+        <div class="carousel-count">
+          14 Historical Figures
+        </div>
+
       </div>
 
     </div>
+
   </section>
 
   <!-- SECOND COLLECTION -->
+
   <section class="collection-section dark" id="second-collection">
+
     <div class="collection-inner">
 
       <div class="collection-heading">
+
         <div>
-          <div class="section-label">The Historical Collection · 02</div>
+          <div class="section-label">
+            The Historical Collection · 02
+          </div>
+
           <h2>Across the World</h2>
         </div>
 
         <p>
-          From the Americas to Oceania and Europe, their achievements
-          remain part of the international story of sport.
+          From the Americas to Oceania and Europe,
+          their achievements remain part of the
+          international story of sport.
         </p>
 
         <div class="carousel-controls">
+
           <button class="carousel-button" type="button"
-            data-carousel-prev="legendsTwo" aria-label="Previous legends">
-            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            data-carousel-prev="legendsTwo"
+            aria-label="Previous legends">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+
           </button>
 
           <button class="carousel-button" type="button"
-            data-carousel-next="legendsTwo" aria-label="Next legends">
-            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            data-carousel-next="legendsTwo"
+            aria-label="Next legends">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+
           </button>
+
         </div>
+
       </div>
 
       <div class="carousel-window">
@@ -1225,129 +1352,453 @@ html {
       </div>
 
       <div class="carousel-footer">
-        <div class="carousel-count">Collection 02 / 02</div>
-        <div class="carousel-progress"><span id="progress-legendsTwo"></span></div>
-        <div class="carousel-count">14 Historical Figures</div>
+
+        <div class="carousel-count">
+          Collection 02 / 02
+        </div>
+
+        <div class="carousel-progress">
+          <span id="progress-legendsTwo"></span>
+        </div>
+
+        <div class="carousel-count">
+          14 Historical Figures
+        </div>
+
       </div>
 
     </div>
+
   </section>
 
-  <!-- THE PASSING OF THE LEGACY -->
+  <!-- THE MEANING OF LEGACY -->
+
   <section class="legacy-interlude">
+
     <div class="interlude-inner">
 
       <div class="interlude-mark">“</div>
 
       <h2>
-        Legends pass.<br>
-        Their legacy lives on.
+        What one generation achieves<br>
+        can become the foundation<br>
+        of another.
       </h2>
 
       <p>
-        A generation may reach the end of its journey, but what it has
-        built does not have to end with it. Knowledge, values, experience,
-        responsibility and opportunity move forward.
+        No generation exists entirely on its own.
+        Every period of progress is connected to people,
+        knowledge, experiences and opportunities that came before it.
 
-        Just as a baton passes from one runner to another, every generation
-        receives something it must carry with purpose. The responsibility
-        is not simply to inherit what came before, but to give what follows
-        something worthy of carrying.
+        In sport, one athlete can change how a discipline is understood.
+        One achievement can alter expectations.
+        One example can influence someone who has never met
+        the person responsible for it.
+
+        The same principle extends far beyond sport.
+        In every area of human life, what is learned, created,
+        protected and shared can influence people yet to come.
+
+        A legacy becomes meaningful when its value does not
+        end with the person who created it.
       </p>
 
       <span class="interlude-emphasis">
-        The next generation carries it forward.
+        The value of a legacy is also found in what follows.
       </span>
 
     </div>
+
   </section>
 
-  <!-- NEXT GENERATION -->
-  <section class="next-generation">
-    <div class="next-inner">
+  <!-- QUESTIONS OF LEGACY -->
 
-      <div class="section-label">The Next Generation</div>
+  <section class="questions-section">
 
-      <h2>The story does not end here.</h2>
+    <div class="questions-inner">
 
-      <p>
-        Every generation inherits a legacy. Those who came before
-        established their place in history through dedication, courage,
-        discipline and the choices they made.
+      <div class="questions-header">
 
-        Those who follow inherit more than achievements. They inherit
-        responsibility: to learn, to build, to protect what has value,
-        to improve what can be improved and to create opportunities
-        that did not exist before.
+        <div class="section-label">
+          Questions of Legacy
+        </div>
 
-        The next chapter belongs to those prepared to carry it forward.
-      </p>
-
-      <div class="next-statement">
-        Yesterday's champions.<br>
-        Today's inspiration.<br>
-        Tomorrow's greatness.
-      </div>
-
-    </div>
-  </section>
-
-  <!-- A MESSAGE BEYOND SPORT -->
-  <section class="inheritance-section">
-    <div class="inheritance-inner">
-
-      <div>
-        <div class="inheritance-label">A Message to Every Generation</div>
-
-        <h2 class="inheritance-heading">
-          What you receive.<br>
-          What you become.
+        <h2>
+          What does the past have to do with your future?
         </h2>
 
-        <p class="inheritance-description">
-          Legacy is not limited to a stadium, a competition or a trophy.
-          It lives in families, institutions, businesses, communities
-          and in the opportunities one generation leaves for another.
-
-          Whatever has been entrusted to you, carry it with care.
-          Build with purpose. Lead with integrity. Make room for those
-          who will follow.
+        <p>
+          These questions extend beyond the sporting arena.
+          They concern how people understand achievement,
+          recognise the contributions of others and decide
+          what they will carry into the world around them.
         </p>
+
       </div>
 
-      <div class="personal-quote">
-        <blockquote>
-          You do not have to begin where the previous generation began.
-          You have the responsibility to take what you have received
-          further than it has ever gone.
-        </blockquote>
+      <div class="question-list">
 
-        <cite>
-          A PHRINUSOMYIS™ Reflection
-        </cite>
+        <!-- QUESTION 01 -->
+
+        <article class="question-item">
+
+          <div class="question-number">01</div>
+
+          <div class="question-content">
+
+            <h3>
+              What does it really mean to leave a legacy?
+            </h3>
+
+            <div class="question-answer">
+              A legacy is what remains meaningful beyond the
+              moment of achievement. It can be a contribution,
+              an example, a body of knowledge, a standard of
+              excellence, an opportunity created or a difference
+              made in another person's life.
+
+              It does not have to be recognised by the entire world.
+              A person can leave something valuable through their
+              work, their decisions, their relationships and the
+              positive influence they have on others.
+            </div>
+
+            <div class="question-importance">
+              <strong>Why this matters</strong>
+              It changes how we understand success.
+              Life is not measured only by what someone accumulates
+              or accomplishes personally, but also by the value
+              their actions create beyond themselves.
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- QUESTION 02 -->
+
+        <article class="question-item">
+
+          <div class="question-number">02</div>
+
+          <div class="question-content">
+
+            <h3>
+              Why should we remember people who came before us?
+            </h3>
+
+            <div class="question-answer">
+              Because the present did not appear without a history.
+              The opportunities, standards and possibilities
+              available today have been influenced by people
+              who made contributions before us.
+
+              Remembering them allows us to understand the effort
+              behind progress, recognise achievements that might
+              otherwise be overlooked and learn from experiences
+              that still have something to teach.
+            </div>
+
+            <div class="question-importance">
+              <strong>Why this matters</strong>
+              Recognition gives history its proper place.
+              It also prevents each generation from treating
+              everything it inherits as though it began with them.
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- QUESTION 03 -->
+
+        <article class="question-item">
+
+          <div class="question-number">03</div>
+
+          <div class="question-content">
+
+            <h3>
+              What should one generation pass to the next?
+            </h3>
+
+            <div class="question-answer">
+              More than names, records, possessions or achievements.
+
+              Every generation has the opportunity to pass on
+              knowledge, experience, principles, opportunities
+              and lessons learned through both success and failure.
+
+              It can also pass on institutions that work,
+              ideas worth developing, standards worth protecting
+              and the freedom for others to take things further.
+            </div>
+
+            <div class="question-importance">
+              <strong>Why this matters</strong>
+              Progress becomes stronger when people do not have
+              to begin from nothing. What is shared today can
+              become the starting point for someone else's
+              achievement tomorrow.
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- QUESTION 04 -->
+
+        <article class="question-item">
+
+          <div class="question-number">04</div>
+
+          <div class="question-content">
+
+            <h3>
+              Does legacy belong only to champions and famous people?
+            </h3>
+
+            <div class="question-answer">
+              No. Sporting champions provide visible examples
+              of what dedication, preparation and achievement
+              can produce. But the meaning of legacy is not
+              reserved for people whose names appear in history books.
+
+              It belongs equally to the teacher who changes
+              a student's direction, the parent who creates
+              a better foundation for a family, the professional
+              who improves an industry, the leader who creates
+              opportunities and the individual who makes a
+              meaningful contribution to their community.
+            </div>
+
+            <div class="question-importance">
+              <strong>Why this matters</strong>
+              Every person has the capacity to contribute something
+              of value. Recognition may differ, but meaningful
+              contribution is not limited by fame, occupation
+              or public attention.
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- QUESTION 05 -->
+
+        <article class="question-item">
+
+          <div class="question-number">05</div>
+
+          <div class="question-content">
+
+            <h3>
+              Is there an age at which a person stops having
+              something to build or contribute?
+            </h3>
+
+            <div class="question-answer">
+              Human potential is not confined to a particular age.
+              Different stages of life bring different experiences,
+              responsibilities and opportunities.
+
+              A young person may be discovering what is possible.
+              Someone in the middle of their journey may be building,
+              leading or changing direction. An older person may
+              still be creating, teaching, sharing knowledge
+              and opening doors for others.
+
+              There is no single timetable for making a contribution
+              that matters.
+            </div>
+
+            <div class="question-importance">
+              <strong>Why this matters</strong>
+              It reminds us that opportunity and purpose do not
+              belong to one age group. Every stage of life can
+              have meaning, and every generation has something
+              valuable to offer.
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- QUESTION 06 -->
+
+        <article class="question-item">
+
+          <div class="question-number">06</div>
+
+          <div class="question-content">
+
+            <h3>
+              What happens when a person inherits an opportunity?
+            </h3>
+
+            <div class="question-answer">
+              An opportunity is not simply something to receive.
+              It carries the possibility of development and
+              the responsibility to make meaningful use of it.
+
+              Someone may inherit education, knowledge, resources,
+              experience, a business, an institution or a chance
+              that was unavailable to those before them.
+
+              What follows depends on how that opportunity is
+              understood, developed and used.
+            </div>
+
+            <div class="question-importance">
+              <strong>Why this matters</strong>
+              Receiving something valuable is only one part
+              of the journey. Developing it, improving it and
+              making it accessible to others can give it a
+              much longer life.
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- QUESTION 07 -->
+
+        <article class="question-item">
+
+          <div class="question-number">07</div>
+
+          <div class="question-content">
+
+            <h3>
+              What should remain after we have moved on?
+            </h3>
+
+            <div class="question-answer">
+              Ideally, something that continues to serve a purpose.
+              It may be knowledge that helps another person,
+              work that improves an industry, an institution
+              that continues to function, an opportunity that
+              changes someone's circumstances or an example
+              that influences decisions long after its creator
+              is no longer present.
+
+              The form will differ from one person to another.
+              What matters is that the contribution has value
+              beyond its original moment.
+            </div>
+
+            <div class="question-importance">
+              <strong>Why this matters</strong>
+              It gives us a broader understanding of the lives
+              we lead. Our actions can have consequences and
+              create possibilities that extend further than
+              we may ever personally witness.
+            </div>
+
+          </div>
+
+        </article>
+
       </div>
 
     </div>
+
+  </section>
+
+  <!-- A PERSONAL REFLECTION -->
+
+  <section class="reflection-section">
+
+    <div class="reflection-inner">
+
+      <div>
+
+        <div class="reflection-label">
+          A Reflection for Every Visitor
+        </div>
+
+        <h2 class="reflection-heading">
+          Your place<br>
+          in the story.
+        </h2>
+
+        <p class="reflection-description">
+          You may recognise the names in this collection.
+          You may be discovering some of them for the first time.
+
+          You may be an athlete, a student, a professional,
+          an entrepreneur, a parent, a teacher, a leader
+          or someone still deciding what direction to take.
+
+          Whatever your circumstances, the question of legacy
+          is not distant from your own life.
+
+          It concerns what you are learning, what you are creating,
+          what you are contributing and what others may one day
+          be able to build upon.
+        </p>
+
+      </div>
+
+      <div class="reflection-card">
+
+        <span class="reflection-question">
+          One Question Worth Considering
+        </span>
+
+        <h3>
+          When someone looks back at the part of the world
+          you have influenced, what will they find that
+          is worth carrying forward?
+        </h3>
+
+        <p>
+          The answer does not need to be a trophy, a title,
+          a public achievement or a name remembered by millions.
+
+          It may be something you built, something you taught,
+          a person you helped, a standard you upheld or an
+          opportunity you made possible.
+
+          Your contribution does not have to resemble anyone
+          else's. It only needs to have meaning beyond the moment
+          in which it was made.
+        </p>
+
+      </div>
+
+    </div>
+
   </section>
 
   <!-- CLOSING -->
+
   <section class="closing">
+
     <div class="closing-inner">
 
-      <div class="section-label">The Legacy Continues</div>
+      <div class="section-label">
+        The Legacy Continues
+      </div>
 
       <h2>
-        History remembers.
-        <span>The future moves.</span>
+        The past has its place.
+        <span>What follows has its own.</span>
       </h2>
 
       <p>
-        The achievements of the past remain part of the story.
-        The generations ahead will write their own chapters.
+        Those who came before us deserve recognition for
+        what they achieved and what they contributed.
 
-        What was carried before us deserves recognition.
-        What we carry today deserves responsibility.
-        What we leave behind deserves purpose.
+        Those living today have their own opportunities,
+        responsibilities and possibilities.
+
+        Those who come after deserve more than the memory
+        of what once existed. They deserve the benefit of
+        what has been learned, developed and passed forward.
+
+        This is why sporting history matters.
+        And this is why legacy extends beyond sport.
       </p>
 
       <div class="closing-rule"></div>
@@ -1357,43 +1808,47 @@ html {
       </div>
 
     </div>
+
   </section>
 
 </main>
 
 <!-- BOTTOM NAVIGATION -->
-<nav class="site-navigation" aria-label="PHRINUSOMYIS website navigation">
+
+<nav class="site-navigation"
+  aria-label="PHRINUSOMYIS website navigation">
+
   <div class="navigation-inner">
 
     <a class="navigation-link" href="/">
       Homepage
     </a>
 
-    <a class="navigation-link" href="/newsroom/newswire.html">
+    <a class="navigation-link"
+      href="/newsroom/newswire.html">
       Newswire
     </a>
 
-    <a class="navigation-link" href="/newsletter.html">
-      Newsletter
-    </a>
-
-    <a class="navigation-link" href="/magazine/news">
+    <a class="navigation-link"
+      href="/magazine/news">
       Magazine
     </a>
 
-    <a class="navigation-link current" href="/legacy-of-sport.html" aria-current="page">
-      Legacy of Sport
-    </a>
-
   </div>
+
 </nav>
 
 <!-- FOOTER -->
+
 <footer class="site-footer">
+
   <div class="footer-inner">
 
     <div>
-      <div class="footer-brand">PHRINUSOMYIS™</div>
+      <div class="footer-brand">
+        PHRINUSOMYIS™
+      </div>
+
       <div class="footer-copy">
         An international sports organization.
       </div>
@@ -1409,9 +1864,11 @@ html {
     </a>
 
   </div>
+
 </footer>
 
 <script>
+
 /* =====================================================
    THE LEGACY OF SPORT
    28 HISTORICAL FIGURES
@@ -1419,182 +1876,213 @@ html {
 ===================================================== */
 
 const legendsCollectionOne = [
+
   {
     name:"Abebe Bikila",
     country:"Ethiopia · Africa",
     sport:"Athletics · Marathon",
     image:"abebe-bikila.jpg"
   },
+
   {
     name:"Henry Rono",
     country:"Kenya · Africa",
     sport:"Athletics · Long-distance running",
     image:"henry-rono.jpg"
   },
+
   {
     name:"Mohamed Latif",
     country:"Egypt · Africa",
     sport:"Football",
     image:"mohamed-latif.jpg"
   },
+
   {
     name:"Larbi Benbarek",
     country:"Morocco · Africa",
     sport:"Football",
     image:"larbi-benbarek.jpg"
   },
+
   {
     name:"Dhyan Chand",
     country:"India · Asia",
     sport:"Field hockey",
     image:"dhyan-chand.jpg"
   },
+
   {
     name:"Shigeo Nagashima",
     country:"Japan · Asia",
     sport:"Baseball",
     image:"shigeo-nagashima.jpg"
   },
+
   {
     name:"Nasser Hejazi",
     country:"Iran · Asia",
     sport:"Football · Goalkeeping",
     image:"nasser-hejazi.jpg"
   },
+
   {
     name:"Gabriel Elorde",
     country:"Philippines · Asia",
     sport:"Boxing",
     image:"gabriel-elorde.jpg"
   },
+
   {
     name:"Johan Cruyff",
     country:"Netherlands · Europe",
     sport:"Football",
     image:"johan-cruyff.jpg"
   },
+
   {
     name:"Franz Beckenbauer",
     country:"Germany · Europe",
     sport:"Football",
     image:"franz-beckenbauer.jpg"
   },
+
   {
     name:"Sir Bobby Charlton",
     country:"United Kingdom · Europe",
     sport:"Football",
     image:"bobby-charlton.jpg"
   },
+
   {
     name:"Jesse Owens",
     country:"United States · North America",
     sport:"Athletics · Track and field",
     image:"jesse-owens.jpg"
   },
+
   {
     name:"Eusébio",
     country:"Portugal · Europe",
     sport:"Football",
     image:"eusebio.jpg"
   },
+
   {
     name:"Joe Frazier",
     country:"United States · North America",
     sport:"Boxing",
     image:"joe-frazier.jpg"
   }
+
 ];
 
 const legendsCollectionTwo = [
+
   {
     name:"Niki Lauda",
     country:"Austria · Europe",
     sport:"Motorsport · Formula One",
     image:"niki-lauda.jpg"
   },
+
   {
     name:"André the Giant",
     country:"France · Europe",
     sport:"Professional wrestling",
     image:"andre-the-giant.jpg"
   },
+
   {
     name:"Muhammad Ali",
     country:"United States · North America",
     sport:"Boxing",
     image:"muhammad-ali.jpg"
   },
+
   {
     name:"Terry Fox",
     country:"Canada · North America",
     sport:"Running · Athletics",
     image:"terry-fox.jpg"
   },
+
   {
     name:"Teófilo Stevenson",
     country:"Cuba · Caribbean",
     sport:"Boxing",
     image:"teofilo-stevenson.jpg"
   },
+
   {
     name:"Salvador Sánchez",
     country:"Mexico · North America",
     sport:"Boxing",
     image:"salvador-sanchez.jpg"
   },
+
   {
     name:"Pelé",
     country:"Brazil · South America",
     sport:"Football",
     image:"pele.jpg"
   },
+
   {
     name:"Diego Maradona",
     country:"Argentina · South America",
     sport:"Football",
     image:"diego-maradona.jpg"
   },
+
   {
     name:"Alcides Ghiggia",
     country:"Uruguay · South America",
     sport:"Football",
     image:"alcides-ghiggia.jpg"
   },
+
   {
     name:"Sir Donald Bradman",
     country:"Australia · Oceania",
     sport:"Cricket",
     image:"don-bradman.jpg"
   },
+
   {
     name:"Jonah Lomu",
     country:"New Zealand · Oceania",
     sport:"Rugby union",
     image:"jonah-lomu.jpg"
   },
+
   {
     name:"The Ultimate Warrior",
     country:"United States · North America",
     sport:"Professional wrestling",
     image:"ultimate-warrior.jpg"
   },
+
   {
     name:"Arnold Palmer",
     country:"United States · North America",
     sport:"Golf",
     image:"arnold-palmer.jpg"
   },
+
   {
     name:"Bill Russell",
     country:"United States · North America",
     sport:"Basketball",
     image:"bill-russell.jpg"
   }
+
 ];
 
 /* CREATE PORTRAIT CARDS */
 
 function createLegendCard(person,index) {
+
   const article = document.createElement("article");
   article.className = "legend-card";
 
@@ -1612,12 +2100,15 @@ function createLegendCard(person,index) {
   image.loading = "lazy";
 
   image.addEventListener("error",() => {
+
     imageWrap.style.background = "#292821";
     image.style.display = "none";
+
     imageWrap.setAttribute(
       "aria-label",
       "Portrait image not yet uploaded: " + person.image
     );
+
   });
 
   imageWrap.append(number,image);
@@ -1641,17 +2132,21 @@ function createLegendCard(person,index) {
   article.append(imageWrap,info);
 
   return article;
+
 }
 
 /* POPULATE BOTH COLLECTIONS */
 
 function populateCollection(id,people) {
+
   const track = document.getElementById(id);
+
   if (!track) return;
 
   people.forEach((person,index) => {
     track.appendChild(createLegendCard(person,index));
   });
+
 }
 
 populateCollection("legendsOne",legendsCollectionOne);
@@ -1662,13 +2157,18 @@ populateCollection("legendsTwo",legendsCollectionTwo);
 const carouselInstances = {};
 
 function visibleCards() {
+
   if (window.innerWidth <= 600) return 1;
   if (window.innerWidth <= 900) return 2;
+
   return 3;
+
 }
 
 function updateCarousel(id) {
+
   const track = document.getElementById(id);
+
   if (!track || !track.children.length) return;
 
   const cards = Array.from(track.children);
@@ -1677,6 +2177,7 @@ function updateCarousel(id) {
   const maxIndex = Math.max(0,total-visible);
 
   let index = carouselInstances[id]?.index || 0;
+
   index = Math.min(index,maxIndex);
 
   carouselInstances[id] = {index};
@@ -1690,16 +2191,21 @@ function updateCarousel(id) {
   const progress = document.getElementById("progress-"+id);
 
   if (progress) {
+
     const percentage = total <= visible
       ? 100
       : ((index+visible)/total)*100;
 
     progress.style.width = percentage+"%";
+
   }
+
 }
 
 function moveCarousel(id,direction) {
+
   const track = document.getElementById(id);
+
   if (!track || !track.children.length) return;
 
   const total = track.children.length;
@@ -1707,38 +2213,56 @@ function moveCarousel(id,direction) {
   const maxIndex = Math.max(0,total-visible);
 
   let index = carouselInstances[id]?.index || 0;
+
   index += direction;
 
   if (index > maxIndex) index = 0;
   if (index < 0) index = maxIndex;
 
   carouselInstances[id] = {index};
+
   updateCarousel(id);
+
 }
 
+/* INITIALISE CAROUSELS */
+
 ["legendsOne","legendsTwo"].forEach(id => {
+
   carouselInstances[id] = {index:0};
+
   updateCarousel(id);
+
 });
 
 /* PREVIOUS AND NEXT BUTTONS */
 
 document.querySelectorAll("[data-carousel-prev]").forEach(button => {
+
   button.addEventListener("click",() => {
+
     moveCarousel(button.dataset.carouselPrev,-1);
+
   });
+
 });
 
 document.querySelectorAll("[data-carousel-next]").forEach(button => {
+
   button.addEventListener("click",() => {
+
     moveCarousel(button.dataset.carouselNext,1);
+
   });
+
 });
 
 /* RESIZE SUPPORT */
 
 window.addEventListener("resize",() => {
+
   ["legendsOne","legendsTwo"].forEach(updateCarousel);
+
 });
 
 /* AUTOMATIC SLIDING */
@@ -1748,8 +2272,11 @@ const reducedMotion = window.matchMedia(
 ).matches;
 
 if (!reducedMotion) {
+
   window.setInterval(() => {
+
     ["legendsOne","legendsTwo"].forEach(id => {
+
       const section = document.getElementById(
         id === "legendsOne"
           ? "first-collection"
@@ -1759,19 +2286,28 @@ if (!reducedMotion) {
       if (section && !section.matches(":hover")) {
         moveCarousel(id,1);
       }
+
     });
+
   },6500);
+
 }
 
 /* GOOGLE TRANSLATE */
 
 function googleTranslateElementInit() {
+
   new google.translate.TranslateElement({
+
     pageLanguage:"en",
+
     includedLanguages:
       "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+
     autoDisplay:false
+
   },"google_translate_element");
+
 }
 
 /* LANGUAGE SELECTOR */
@@ -1779,17 +2315,23 @@ function googleTranslateElementInit() {
 const languageSelector = document.getElementById("siteLanguage");
 
 languageSelector.addEventListener("change",function() {
+
   const selectedLanguage = this.value;
 
   function applyLanguage() {
+
     const combo = document.querySelector(".goog-te-combo");
 
     if (!combo) return false;
 
-    combo.value = selectedLanguage === "en" ? "" : selectedLanguage;
+    combo.value = selectedLanguage === "en"
+      ? ""
+      : selectedLanguage;
+
     combo.dispatchEvent(new Event("change"));
 
     return true;
+
   }
 
   if (applyLanguage()) return;
@@ -1797,19 +2339,24 @@ languageSelector.addEventListener("change",function() {
   let attempts = 0;
 
   const retry = window.setInterval(() => {
+
     attempts++;
 
     if (applyLanguage() || attempts >= 20) {
       window.clearInterval(retry);
     }
+
   },300);
+
 });
 
 /* GOOGLE BANNER AND POP-OUT SUPPRESSION */
 
 function suppressGoogleTranslateElements() {
+
   document.documentElement.style.marginTop = "0";
   document.documentElement.style.paddingTop = "0";
+
   document.body.style.top = "0";
   document.body.style.marginTop = "0";
   document.body.style.paddingTop = "0";
@@ -1817,9 +2364,13 @@ function suppressGoogleTranslateElements() {
   document.querySelectorAll(
     ".goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt"
   ).forEach(element => {
+
     element.style.setProperty("display","none","important");
+
     element.style.setProperty("visibility","hidden","important");
+
   });
+
 }
 
 const translateObserver = new MutationObserver(
@@ -1827,10 +2378,12 @@ const translateObserver = new MutationObserver(
 );
 
 translateObserver.observe(document.documentElement,{
+
   childList:true,
   subtree:true,
   attributes:true,
   attributeFilter:["style","class"]
+
 });
 
 window.addEventListener("load",suppressGoogleTranslateElements);
