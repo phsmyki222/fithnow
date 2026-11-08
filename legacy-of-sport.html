@@ -1,2401 +1,1597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
-<meta name="description" content="PHRINUSOMYIS™ honours the figures who shaped sporting history and explores the meaning of legacy, human potential and what every generation carries forward.">
-<meta name="theme-color" content="#171715">
-<meta name="robots" content="index,follow">
-
-<link rel="canonical" href="https://phrinusomyis.com/legacy-of-sport.html">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
-<meta property="og:description" content="Recognising sporting history. Exploring what remains. Understanding what every generation carries forward.">
-<meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
-<meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --black:#171715;
-  --charcoal:#25241f;
-  --ivory:#f2eee5;
-  --ivory-light:#f8f5ee;
-  --stone:#e5ded1;
-  --bronze:#a9824d;
-  --gold:#c5a36b;
-  --text:#24231f;
-  --muted:#69665f;
-  --line:rgba(169,130,77,.25);
-  --content:1360px;
-  --heading:"Barlow Condensed","Segoe UI",Arial,sans-serif;
-  --body:"DM Sans","Segoe UI",Arial,sans-serif;
-  --editorial:"Playfair Display",Georgia,serif;
-}
-
-* {box-sizing:border-box}
-
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
-  margin-top:0!important;
-  padding-top:0!important;
-}
-
-body {
-  margin:0;
-  padding:0;
-  top:0!important;
-  max-width:100%;
-  overflow-x:hidden;
-  background:var(--ivory-light);
-  color:var(--text);
-  font-family:var(--body);
-  -webkit-font-smoothing:antialiased;
-}
-
-img {display:block;max-width:100%}
-a {color:inherit;text-decoration:none}
-button,select {font:inherit}
-button {cursor:pointer}
-
-.site-topline {
-  height:5px;
-  background:var(--gold);
-}
-
-/* HEADER */
-
-.site-header {
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(23,23,21,.97);
-  border-bottom:1px solid rgba(197,163,107,.25);
-  backdrop-filter:blur(14px);
-}
-
-.header-inner {
-  width:min(calc(100% - 48px),var(--content));
-  min-height:84px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:14px;
-  min-width:0;
-}
-
-.brand img {
-  width:48px;
-  height:48px;
-  object-fit:contain;
-}
-
-.brand-copy {
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-}
-
-.brand-name {
-  color:var(--ivory-light);
-  font-family:var(--heading);
-  font-size:23px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  line-height:1;
-  white-space:nowrap;
-}
-
-.brand-tagline {
-  color:var(--gold);
-  font-size:8px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.header-right {
-  display:flex;
-  align-items:center;
-  gap:24px;
-}
-
-.back-link {
-  color:var(--ivory);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  transition:color .25s ease;
-}
-
-.back-link:hover {color:var(--gold)}
-
-.language-control {
-  display:flex;
-  align-items:center;
-  gap:9px;
-  color:var(--gold);
-}
-
-.language-control label {
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
-.language-control select {
-  max-width:155px;
-  padding:10px 30px 10px 11px;
-  color:var(--ivory);
-  background:#292821;
-  border:1px solid rgba(197,163,107,.45);
-  border-radius:0;
-  outline:none;
-  font-size:11px;
-  cursor:pointer;
-}
-
-/* HERO */
-
-.hero {
-  position:relative;
-  min-height:610px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  color:var(--ivory-light);
-  background:
-    linear-gradient(90deg,rgba(18,18,16,.98),rgba(18,18,16,.83) 52%,rgba(18,18,16,.42)),
-    url("/legacy-hero.jpg") center 42%/cover no-repeat,
-    var(--black);
-}
-
-.hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(135deg,transparent 45%,rgba(197,163,107,.08) 45.1%,transparent 45.4%),
-    linear-gradient(0deg,rgba(23,23,21,.45),transparent 55%);
-  pointer-events:none;
-}
-
-.hero::after {
-  content:"";
-  position:absolute;
-  width:1px;
-  height:72%;
-  top:14%;
-  right:12%;
-  background:linear-gradient(transparent,rgba(197,163,107,.55),transparent);
-}
-
-.hero-inner {
-  position:relative;
-  z-index:1;
-  width:min(calc(100% - 48px),var(--content));
-  margin:auto;
-  padding:105px 0 115px;
-}
-
-.eyebrow {
-  display:flex;
-  align-items:center;
-  gap:13px;
-  color:var(--gold);
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-.eyebrow::before {
-  content:"";
-  width:38px;
-  height:1px;
-  background:var(--gold);
-}
-
-.hero h1 {
-  max-width:850px;
-  margin:25px 0 18px;
-  color:var(--ivory-light);
-  font-family:var(--heading);
-  font-size:clamp(58px,9vw,116px);
-  font-weight:800;
-  letter-spacing:-1.5px;
-  line-height:.88;
-  text-transform:uppercase;
-}
-
-.hero h1 span {
-  display:block;
-  color:var(--gold);
-}
-
-.hero-description {
-  max-width:650px;
-  margin:28px 0 0;
-  color:rgba(248,245,238,.78);
-  font-family:var(--editorial);
-  font-size:clamp(17px,2vw,21px);
-  line-height:1.8;
-}
-
-.hero-bottom {
-  display:flex;
-  align-items:center;
-  gap:20px;
-  margin-top:44px;
-}
-
-.hero-line {
-  width:62px;
-  height:1px;
-  background:var(--gold);
-}
-
-.hero-note {
-  color:rgba(248,245,238,.62);
-  font-size:9px;
-  font-weight:600;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-}
-
-/* INTRODUCTION */
-
-.intro-section {
-  padding:105px 24px 100px;
-  background:var(--ivory-light);
-}
-
-.intro-inner {
-  max-width:920px;
-  margin:auto;
-  text-align:center;
-}
-
-.section-label {
-  color:var(--bronze);
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-.intro-inner h2 {
-  margin:20px 0 22px;
-  color:var(--black);
-  font-family:var(--editorial);
-  font-size:clamp(31px,5vw,48px);
-  font-weight:400;
-  line-height:1.2;
-}
-
-.intro-inner p {
-  max-width:790px;
-  margin:auto;
-  color:var(--muted);
-  font-size:15px;
-  line-height:2;
-}
-
-.gold-divider {
-  width:65px;
-  height:2px;
-  margin:35px auto 0;
-  background:var(--gold);
-}
-
-/* COLLECTIONS */
-
-.collection-section {
-  padding:100px 0 110px;
-  overflow:hidden;
-  background:var(--stone);
-}
-
-.collection-section.dark {
-  color:var(--ivory-light);
-  background:var(--black);
-}
-
-.collection-inner {
-  width:min(calc(100% - 48px),var(--content));
-  margin:auto;
-}
-
-.collection-heading {
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:30px;
-  margin-bottom:45px;
-}
-
-.collection-heading h2 {
-  margin:12px 0 0;
-  color:var(--black);
-  font-family:var(--heading);
-  font-size:clamp(38px,5vw,62px);
-  font-weight:700;
-  letter-spacing:.5px;
-  line-height:.98;
-  text-transform:uppercase;
-}
-
-.dark .collection-heading h2 {color:var(--ivory-light)}
-
-.collection-heading p {
-  max-width:370px;
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.9;
-}
-
-.dark .collection-heading p {
-  color:rgba(248,245,238,.58);
-}
-
-.carousel-controls {
-  display:flex;
-  align-items:center;
-  gap:9px;
-  flex-shrink:0;
-}
-
-.carousel-button {
-  width:46px;
-  height:46px;
-  display:grid;
-  place-items:center;
-  color:var(--black);
-  background:transparent;
-  border:1px solid rgba(36,35,31,.35);
-  transition:.25s ease;
-}
-
-.carousel-button:hover {
-  color:var(--ivory-light);
-  background:var(--black);
-  border-color:var(--black);
-}
-
-.dark .carousel-button {
-  color:var(--gold);
-  border-color:rgba(197,163,107,.5);
-}
-
-.dark .carousel-button:hover {
-  color:var(--black);
-  background:var(--gold);
-  border-color:var(--gold);
-}
-
-.carousel-button svg {
-  width:17px;
-  height:17px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.carousel-window {
-  width:100%;
-  overflow:hidden;
-}
-
-.carousel-track {
-  display:flex;
-  gap:22px;
-  transition:transform .7s cubic-bezier(.22,.61,.36,1);
-  will-change:transform;
-}
-
-.legend-card {
-  flex:0 0 calc((100% - 44px)/3);
-  min-width:0;
-}
-
-.legend-image-wrap {
-  position:relative;
-  aspect-ratio:4/5;
-  overflow:hidden;
-  background:#d2c9b9;
-}
-
-.legend-image-wrap::after {
-  content:"";
-  position:absolute;
-  inset:45% 0 0;
-  background:linear-gradient(transparent,rgba(0,0,0,.25));
-  pointer-events:none;
-}
-
-.legend-image {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-  filter:saturate(.78);
-  transition:transform .8s ease,filter .8s ease;
-}
-
-.legend-card:hover .legend-image {
-  transform:scale(1.045);
-  filter:saturate(1);
-}
-
-.legend-number {
-  position:absolute;
-  z-index:2;
-  top:15px;
-  left:15px;
-  display:grid;
-  place-items:center;
-  min-width:34px;
-  height:34px;
-  padding:0 8px;
-  color:var(--ivory-light);
-  background:rgba(23,23,21,.85);
-  border:1px solid rgba(197,163,107,.65);
-  font-family:var(--heading);
-  font-size:15px;
-  font-weight:700;
-}
-
-.legend-info {padding:21px 2px 0}
-
-.legend-country {
-  color:var(--bronze);
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.legend-name {
-  margin:8px 0 5px;
-  color:var(--black);
-  font-family:var(--heading);
-  font-size:clamp(23px,2.5vw,31px);
-  font-weight:700;
-  line-height:1.05;
-  text-transform:uppercase;
-}
-
-.legend-discipline {
-  color:var(--muted);
-  font-size:11px;
-  letter-spacing:.3px;
-}
-
-.dark .legend-name {color:var(--ivory-light)}
-.dark .legend-discipline {color:rgba(248,245,238,.58)}
-.dark .legend-country {color:var(--gold)}
-
-.carousel-footer {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  margin-top:37px;
-  padding-top:20px;
-  border-top:1px solid var(--line);
-}
-
-.carousel-count {
-  color:var(--muted);
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.dark .carousel-count {color:rgba(248,245,238,.55)}
-
-.carousel-progress {
-  width:min(260px,40%);
-  height:2px;
-  overflow:hidden;
-  background:rgba(169,130,77,.2);
-}
-
-.carousel-progress span {
-  display:block;
-  width:0;
-  height:100%;
-  background:var(--bronze);
-  transition:width .5s ease;
-}
-
-.dark .carousel-progress span {background:var(--gold)}
-
-/* LEGACY INTERLUDE */
-
-.legacy-interlude {
-  position:relative;
-  padding:125px 24px;
-  overflow:hidden;
-  color:var(--ivory-light);
-  text-align:center;
-  background:
-    linear-gradient(rgba(23,23,21,.90),rgba(23,23,21,.95)),
-    url("/legacy-interlude.jpg") center/cover no-repeat,
-    var(--black);
-}
-
-.legacy-interlude::before,
-.legacy-interlude::after {
-  content:"";
-  position:absolute;
-  left:50%;
-  width:min(72%,720px);
-  height:1px;
-  transform:translateX(-50%);
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-
-.legacy-interlude::before {top:55px}
-.legacy-interlude::after {bottom:55px}
-
-.interlude-inner {
-  position:relative;
-  max-width:960px;
-  margin:auto;
-}
-
-.interlude-mark {
-  color:var(--gold);
-  font-family:var(--editorial);
-  font-size:56px;
-  line-height:1;
-}
-
-.interlude-inner h2 {
-  margin:25px 0 20px;
-  font-family:var(--editorial);
-  font-size:clamp(30px,5vw,50px);
-  font-weight:400;
-  line-height:1.35;
-}
-
-.interlude-inner p {
-  max-width:760px;
-  margin:auto;
-  color:rgba(248,245,238,.68);
-  font-size:14px;
-  line-height:2;
-}
-
-.interlude-emphasis {
-  display:block;
-  margin-top:30px;
-  color:var(--gold);
-  font-family:var(--heading);
-  font-size:clamp(20px,3vw,29px);
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-/* QUESTIONS OF LEGACY */
-
-.questions-section {
-  padding:110px 24px 120px;
-  background:var(--ivory-light);
-}
-
-.questions-inner {
-  width:min(100%,1050px);
-  margin:auto;
-}
-
-.questions-header {
-  max-width:790px;
-  margin:0 auto 65px;
-  text-align:center;
-}
-
-.questions-header h2 {
-  margin:20px 0;
-  color:var(--black);
-  font-family:var(--editorial);
-  font-size:clamp(34px,5vw,52px);
-  font-weight:400;
-  line-height:1.2;
-}
-
-.questions-header p {
-  color:var(--muted);
-  font-size:14px;
-  line-height:2;
-}
-
-.question-list {
-  border-top:1px solid var(--line);
-}
-
-.question-item {
-  display:grid;
-  grid-template-columns:70px 1fr;
-  gap:25px;
-  padding:34px 10px;
-  border-bottom:1px solid var(--line);
-}
-
-.question-number {
-  color:var(--bronze);
-  font-family:var(--heading);
-  font-size:25px;
-  font-weight:700;
-}
-
-.question-content h3 {
-  margin:0 0 16px;
-  color:var(--black);
-  font-family:var(--heading);
-  font-size:clamp(25px,3.5vw,34px);
-  font-weight:700;
-  line-height:1.15;
-}
-
-.question-answer {
-  max-width:810px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:2;
-}
-
-.question-importance {
-  max-width:810px;
-  margin-top:17px;
-  padding-left:18px;
-  border-left:2px solid var(--gold);
-  color:var(--text);
-  font-size:13px;
-  line-height:1.9;
-}
-
-.question-importance strong {
-  display:block;
-  margin-bottom:5px;
-  color:var(--bronze);
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-/* PERSONAL REFLECTION */
-
-.reflection-section {
-  padding:95px 24px;
-  background:var(--stone);
-}
-
-.reflection-inner {
-  width:min(100%,1000px);
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1.1fr;
-  gap:55px;
-  align-items:center;
-}
-
-.reflection-label {
-  color:var(--bronze);
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-.reflection-heading {
-  margin:17px 0;
-  color:var(--black);
-  font-family:var(--heading);
-  font-size:clamp(35px,5vw,55px);
-  font-weight:700;
-  line-height:1;
-  text-transform:uppercase;
-}
-
-.reflection-description {
-  color:var(--muted);
-  font-size:13px;
-  line-height:2;
-}
-
-.reflection-card {
-  position:relative;
-  padding:38px 35px;
-  color:var(--ivory-light);
-  background:var(--charcoal);
-  border-left:3px solid var(--gold);
-}
-
-.reflection-card .reflection-question {
-  display:block;
-  margin-bottom:19px;
-  color:var(--gold);
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.reflection-card h3 {
-  margin:0 0 18px;
-  color:var(--ivory-light);
-  font-family:var(--editorial);
-  font-size:clamp(22px,3vw,30px);
-  font-weight:400;
-  line-height:1.5;
-}
-
-.reflection-card p {
-  margin:0;
-  color:rgba(248,245,238,.66);
-  font-size:13px;
-  line-height:2;
-}
-
-/* CLOSING */
-
-.closing {
-  padding:105px 24px;
-  color:var(--ivory-light);
-  background:var(--charcoal);
-  text-align:center;
-}
-
-.closing-inner {
-  max-width:900px;
-  margin:auto;
-}
-
-.closing .section-label {color:var(--gold)}
-
-.closing h2 {
-  margin:22px 0;
-  font-family:var(--heading);
-  font-size:clamp(40px,7vw,76px);
-  font-weight:800;
-  line-height:.98;
-  text-transform:uppercase;
-}
-
-.closing h2 span {
-  display:block;
-  color:var(--gold);
-}
-
-.closing p {
-  max-width:720px;
-  margin:25px auto 0;
-  color:rgba(248,245,238,.68);
-  font-family:var(--editorial);
-  font-size:17px;
-  line-height:1.9;
-}
-
-.closing-rule {
-  width:55px;
-  height:2px;
-  margin:36px auto;
-  background:var(--gold);
-}
-
-.closing-signature {
-  color:var(--gold);
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-/* BOTTOM NAVIGATION */
-
-.site-navigation {
-  padding:34px 24px;
-  background:#201f1b;
-  border-top:1px solid rgba(197,163,107,.25);
-}
-
-.navigation-inner {
-  width:min(100%,var(--content));
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.navigation-link {
-  min-width:145px;
-  padding:14px 18px;
-  color:var(--ivory);
-  background:transparent;
-  border:1px solid rgba(197,163,107,.35);
-  text-align:center;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  transition:.25s ease;
-}
-
-.navigation-link:hover {
-  color:var(--black);
-  background:var(--gold);
-  border-color:var(--gold);
-}
-
-/* FOOTER */
-
-.site-footer {
-  padding:35px 24px;
-  color:rgba(248,245,238,.55);
-  background:var(--black);
-  border-top:1px solid rgba(197,163,107,.2);
-}
-
-.footer-inner {
-  width:min(100%,var(--content));
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.footer-brand {
-  color:var(--ivory-light);
-  font-family:var(--heading);
-  font-size:16px;
-  font-weight:700;
-  letter-spacing:1.5px;
-}
-
-.footer-copy {
-  font-size:10px;
-  line-height:1.8;
-}
-
-.footer-top {
-  color:var(--gold);
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
-/* GOOGLE TRANSLATE PROTECTION */
-
-#google_translate_element {
-  position:absolute!important;
-  left:-10000px!important;
-  top:0!important;
-  width:1px!important;
-  height:1px!important;
-  overflow:hidden!important;
-  opacity:0!important;
-  pointer-events:none!important;
-}
-
-.goog-te-banner-frame,
-.goog-te-balloon-frame,
-.goog-te-menu-frame,
-.goog-te-menu2,
-.goog-te-gadget,
-.goog-te-spinner-pos,
-.goog-tooltip,
-.goog-tooltip:hover,
-.goog-text-highlight,
-#goog-gt-tt,
-.VIpgJd-ZVi9od-ORHb-OEVmcd,
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-.skiptranslate iframe {
-  display:none!important;
-  visibility:hidden!important;
-}
-
-body {
-  top:0!important;
-  margin-top:0!important;
-  padding-top:0!important;
-}
-
-html {
-  margin-top:0!important;
-  padding-top:0!important;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px) {
-  .legend-card {
-    flex-basis:calc((100% - 22px)/2);
-  }
-
-  .collection-heading {
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .collection-heading p {max-width:600px}
-
-  .reflection-inner {
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-}
-
-@media(max-width:600px) {
-  .header-inner {
-    width:calc(100% - 28px);
-    min-height:72px;
-    gap:10px;
-  }
-
-  .brand {gap:8px}
-
-  .brand img {
-    width:36px;
-    height:36px;
-  }
-
-  .brand-name {
-    font-size:17px;
-    letter-spacing:.8px;
-  }
-
-  .brand-tagline {
-    font-size:7px;
-    letter-spacing:1px;
-  }
-
-  .header-right {gap:10px}
-  .back-link {display:none}
-  .language-control {gap:5px}
-  .language-control label {display:none}
-
-  .language-control select {
-    max-width:125px;
-    padding:9px 22px 9px 7px;
-    font-size:10px;
-  }
-
-  .hero {
-    min-height:540px;
-    background-position:58% center;
-  }
-
-  .hero-inner {
-    width:calc(100% - 36px);
-    padding:90px 0;
-  }
-
-  .hero h1 {
-    font-size:clamp(53px,15vw,78px);
-  }
-
-  .hero-description {font-size:17px}
-
-  .intro-section {padding:75px 22px}
-
-  .collection-section {padding:75px 0 85px}
-
-  .collection-inner {width:calc(100% - 36px)}
-
-  .collection-heading {margin-bottom:30px}
-
-  .collection-heading h2 {font-size:43px}
-
-  .collection-heading p {font-size:11px}
-
-  .legend-card {flex-basis:84%}
-
-  .legend-image-wrap {aspect-ratio:4/5}
-
-  .legend-name {font-size:28px}
-
-  .carousel-button {
-    width:40px;
-    height:40px;
-  }
-
-  .legacy-interlude {padding:95px 22px}
-
-  .questions-section {padding:80px 22px}
-
-  .questions-header {margin-bottom:40px}
-
-  .question-item {
-    grid-template-columns:36px 1fr;
-    gap:12px;
-    padding:27px 0;
-  }
-
-  .question-number {font-size:21px}
-
-  .question-content h3 {font-size:27px}
-
-  .question-answer,
-  .question-importance {font-size:12px}
-
-  .reflection-section {padding:75px 22px}
-
-  .reflection-card {padding:30px 25px}
-
-  .closing {padding:80px 22px}
-
-  .navigation-inner {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-  }
-
-  .navigation-link {
-    min-width:0;
-    padding:13px 7px;
-    font-size:9px;
-  }
-
-  .footer-inner {
-    align-items:flex-start;
-    flex-direction:column;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html {scroll-behavior:auto}
-
-  *,
-  *::before,
-  *::after {
-    animation-duration:.01ms!important;
-    transition-duration:.01ms!important;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
+  <meta name="description" content="THE LEGACY OF SPORT™ — a PHRINUSOMYIS™ editorial tribute featuring 28 sporting figures whose achievements became part of sporting history.">
+  <meta name="theme-color" content="#171715">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://phrinusomyis.com/legacy-of-sport.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
+  <meta property="og:description" content="A historical editorial collection featuring 28 figures from international sport.">
+  <meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
+  <meta property="og:image" content="https://phrinusomyis.com/legacy-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #171715;
+      --charcoal: #25241f;
+      --ivory: #f2eee5;
+      --ivory-light: #f8f5ee;
+      --stone: #e5ded1;
+      --bronze: #a9824d;
+      --gold: #c5a36b;
+      --text: #24231f;
+      --muted: #69665f;
+      --line: rgba(169,130,77,.25);
+      --content: 1360px;
+      --heading: "Barlow Condensed", "Segoe UI", Arial, sans-serif;
+      --body: "DM Sans", "Segoe UI", Arial, sans-serif;
+      --editorial: "Playfair Display", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+      max-width: 100%;
+    }
+
+    body {
+      margin: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      background: var(--ivory-light);
+      color: var(--text);
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .site-topline {
+      height: 5px;
+      background: var(--gold);
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(23,23,21,.97);
+      border-bottom: 1px solid rgba(197,163,107,.25);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 48px), var(--content));
+      min-height: 80px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand-name {
+      color: var(--ivory-light);
+      font-family: var(--heading);
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .brand-tagline {
+      color: var(--gold);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .language-control {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold);
+    }
+
+    .language-control label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .language-control select {
+      max-width: 155px;
+      padding: 10px 30px 10px 11px;
+      color: var(--ivory);
+      background: #292821;
+      border: 1px solid rgba(197,163,107,.45);
+      border-radius: 0;
+      outline: none;
+      font-size: 11px;
+    }
+
+    .language-control select:focus {
+      border-color: var(--gold);
+    }
+
+    /* PAGE NAVIGATION */
+
+    .page-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      min-height: 49px;
+      padding: 0 16px;
+      background: #211f1a;
+      border-bottom: 1px solid rgba(197,163,107,.22);
+    }
+
+    .page-navigation a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 49px;
+      padding: 0 27px;
+      color: rgba(248,245,238,.78);
+      border-right: 1px solid rgba(197,163,107,.16);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      transition: color .25s ease, background .25s ease;
+    }
+
+    .page-navigation a:first-child {
+      border-left: 1px solid rgba(197,163,107,.16);
+    }
+
+    .page-navigation a:hover,
+    .page-navigation a[aria-current="page"] {
+      color: var(--gold);
+      background: rgba(197,163,107,.07);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: var(--ivory-light);
+      background:
+        linear-gradient(90deg, rgba(18,18,16,.98) 0%, rgba(18,18,16,.88) 48%, rgba(18,18,16,.45) 100%),
+        url("/legacy-hero.jpg") center 42% / cover no-repeat,
+        var(--black);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, transparent 45%, rgba(197,163,107,.08) 45.1%, transparent 45.4%),
+        linear-gradient(0deg, rgba(23,23,21,.45), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 72%;
+      top: 14%;
+      right: 12%;
+      background: linear-gradient(transparent, rgba(197,163,107,.55), transparent);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 48px), var(--content));
+      margin: auto;
+      padding: 105px 0 115px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 25px 0 18px;
+      color: var(--ivory-light);
+      font-family: var(--heading);
+      font-size: clamp(58px, 9vw, 116px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: .88;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold);
+    }
+
+    .hero-description {
+      max-width: 590px;
+      margin: 28px 0 0;
+      color: rgba(248,245,238,.78);
+      font-family: var(--editorial);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.8;
+    }
+
+    .hero-bottom {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    .hero-line {
+      width: 62px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-note {
+      color: rgba(248,245,238,.62);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    /* INTRODUCTION */
+
+    .intro-section {
+      padding: 100px 24px;
+      background: var(--ivory-light);
+    }
+
+    .intro-inner {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-label {
+      color: var(--bronze);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .intro-inner h2 {
+      margin: 20px 0 22px;
+      color: var(--black);
+      font-family: var(--editorial);
+      font-size: clamp(31px, 5vw, 48px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .intro-inner p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .gold-divider {
+      width: 65px;
+      height: 2px;
+      margin: 35px auto 0;
+      background: var(--gold);
+    }
+
+    /* COLLECTIONS */
+
+    .collection-section {
+      padding: 100px 0 110px;
+      overflow: hidden;
+      background: var(--stone);
+    }
+
+    .collection-section.dark {
+      color: var(--ivory-light);
+      background: var(--black);
+    }
+
+    .collection-inner {
+      width: min(calc(100% - 48px), var(--content));
+      margin: auto;
+    }
+
+    .collection-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .collection-heading h2 {
+      margin: 12px 0 0;
+      color: var(--black);
+      font-family: var(--heading);
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 700;
+      letter-spacing: .5px;
+      line-height: .98;
+      text-transform: uppercase;
+    }
+
+    .dark .collection-heading h2 {
+      color: var(--ivory-light);
+    }
+
+    .collection-heading p {
+      max-width: 370px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .dark .collection-heading p {
+      color: rgba(248,245,238,.58);
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-shrink: 0;
+    }
+
+    .carousel-button {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      color: var(--black);
+      background: transparent;
+      border: 1px solid rgba(36,35,31,.35);
+      transition: .25s ease;
+    }
+
+    .carousel-button:hover {
+      color: var(--ivory-light);
+      background: var(--black);
+      border-color: var(--black);
+    }
+
+    .dark .carousel-button {
+      color: var(--gold);
+      border-color: rgba(197,163,107,.5);
+    }
+
+    .dark .carousel-button:hover {
+      color: var(--black);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .carousel-button svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .carousel-window {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 22px;
+      transition: transform .7s cubic-bezier(.22,.61,.36,1);
+      will-change: transform;
+    }
+
+    .legend-card {
+      flex: 0 0 calc((100% - 44px) / 3);
+      min-width: 0;
+    }
+
+    .legend-image-wrap {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #d2c9b9;
+    }
+
+    .legend-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.25));
+      pointer-events: none;
+    }
+
+    .legend-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(.78);
+      transition: transform .8s ease, filter .8s ease;
+    }
+
+    .legend-card:hover .legend-image {
+      transform: scale(1.045);
+      filter: saturate(1);
+    }
+
+    .legend-number {
+      position: absolute;
+      z-index: 2;
+      top: 15px;
+      left: 15px;
+      display: grid;
+      place-items: center;
+      min-width: 34px;
+      height: 34px;
+      padding: 0 8px;
+      color: var(--ivory-light);
+      background: rgba(23,23,21,.85);
+      border: 1px solid rgba(197,163,107,.65);
+      font-family: var(--heading);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .legend-info {
+      padding: 21px 2px 0;
+    }
+
+    .legend-country {
+      color: var(--bronze);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .legend-name {
+      margin: 8px 0 5px;
+      color: var(--black);
+      font-family: var(--heading);
+      font-size: clamp(23px, 2.5vw, 31px);
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .legend-discipline {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .3px;
+    }
+
+    .dark .legend-name { color: var(--ivory-light); }
+    .dark .legend-discipline { color: rgba(248,245,238,.58); }
+    .dark .legend-country { color: var(--gold); }
+
+    .carousel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 37px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .carousel-count {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .dark .carousel-count {
+      color: rgba(248,245,238,.55);
+    }
+
+    .carousel-progress {
+      width: min(260px, 40%);
+      height: 2px;
+      overflow: hidden;
+      background: rgba(169,130,77,.2);
+    }
+
+    .carousel-progress span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: var(--bronze);
+      transition: width .5s ease;
+    }
+
+    .dark .carousel-progress span {
+      background: var(--gold);
+    }
+
+    /* EDITORIAL DIVIDER */
+
+    .legacy-interlude {
+      position: relative;
+      padding: 85px 24px;
+      overflow: hidden;
+      color: var(--ivory-light);
+      text-align: center;
+      background:
+        linear-gradient(rgba(23,23,21,.91), rgba(23,23,21,.94)),
+        url("/legacy-interlude.jpg") center / cover no-repeat,
+        var(--black);
+    }
+
+    .legacy-interlude::before,
+    .legacy-interlude::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: min(72%, 720px);
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .legacy-interlude::before { top: 35px; }
+    .legacy-interlude::after { bottom: 35px; }
+
+    .interlude-inner {
+      position: relative;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .interlude-inner .section-label {
+      color: var(--gold);
+    }
+
+    .interlude-inner h2 {
+      margin: 20px 0 0;
+      font-family: var(--heading);
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* CLOSING */
+
+    .closing {
+      padding: 95px 24px 100px;
+      color: var(--ivory-light);
+      background: var(--charcoal);
+      text-align: center;
+    }
+
+    .closing-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .closing .section-label { color: var(--gold); }
+
+    .closing h2 {
+      margin: 22px 0;
+      font-family: var(--heading);
+      font-size: clamp(40px, 7vw, 76px);
+      font-weight: 800;
+      line-height: .98;
+      text-transform: uppercase;
+    }
+
+    .closing h2 span {
+      display: block;
+      color: var(--gold);
+    }
+
+    .closing p {
+      max-width: 650px;
+      margin: 25px auto 0;
+      color: rgba(248,245,238,.65);
+      font-family: var(--editorial);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .closing-rule {
+      width: 55px;
+      height: 2px;
+      margin: 36px auto;
+      background: var(--gold);
+    }
+
+    .closing-signature {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      padding: 35px 24px;
+      color: rgba(248,245,238,.55);
+      background: var(--black);
+      border-top: 1px solid rgba(197,163,107,.25);
+    }
+
+    .footer-inner {
+      width: min(100%, var(--content));
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      color: var(--ivory-light);
+      font-family: var(--heading);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .footer-copy {
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .footer-top {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* GOOGLE TRANSLATE PROTECTION */
+
+    #google_translate_element {
+      position: absolute !important;
+      left: -10000px !important;
+      top: 0 !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    .goog-te-menu-frame,
+    .goog-te-menu2,
+    .goog-te-gadget,
+    .goog-te-spinner-pos,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-text-highlight,
+    #goog-gt-tt,
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+    .skiptranslate iframe {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    body,
+    html {
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .legend-card {
+        flex-basis: calc((100% - 22px) / 2);
+      }
+
+      .collection-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .collection-heading p {
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        width: calc(100% - 28px);
+        min-height: 70px;
+        gap: 10px;
+      }
+
+      .brand { gap: 8px; }
+
+      .brand img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+        letter-spacing: .8px;
+      }
+
+      .brand-tagline {
+        font-size: 7px;
+        letter-spacing: 1px;
+      }
+
+      .language-control { gap: 5px; }
+      .language-control label { display: none; }
+
+      .language-control select {
+        max-width: 112px;
+        padding: 9px 20px 9px 7px;
+        font-size: 10px;
+      }
+
+      .page-navigation {
+        min-height: 45px;
+        padding: 0 5px;
+      }
+
+      .page-navigation a {
+        flex: 1;
+        min-height: 45px;
+        padding: 0 8px;
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        min-height: 540px;
+        background-position: 58% center;
+      }
+
+      .hero-inner {
+        width: calc(100% - 36px);
+        padding: 90px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(53px, 15vw, 78px);
+      }
+
+      .hero-description { font-size: 17px; }
+
+      .intro-section { padding: 75px 22px; }
+
+      .collection-section { padding: 75px 0 85px; }
+
+      .collection-inner { width: calc(100% - 36px); }
+
+      .collection-heading { margin-bottom: 30px; }
+
+      .collection-heading h2 { font-size: 43px; }
+
+      .collection-heading p { font-size: 11px; }
+
+      .legend-card { flex-basis: 84%; }
+
+      .legend-image-wrap { aspect-ratio: 4 / 5; }
+
+      .legend-name { font-size: 28px; }
+
+      .carousel-button {
+        width: 40px;
+        height: 40px;
+      }
+
+      .legacy-interlude { padding: 75px 22px; }
+
+      .closing { padding: 80px 22px; }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body id="top">
 
-<div class="site-topline"></div>
-<div id="google_translate_element" aria-hidden="true"></div>
+  <div class="site-topline"></div>
 
-<header class="site-header">
-  <div class="header-inner">
+  <!-- GOOGLE TRANSLATE ENGINE -->
+  <div id="google_translate_element" aria-hidden="true"></div>
 
-    <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
-      <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
 
-      <span class="brand-copy">
-        <span class="brand-name">PHRINUSOMYIS™</span>
-        <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
-      </span>
-    </a>
-
-    <div class="header-right">
-
-      <a class="back-link" href="/">
-        Return to PHRINUSOMYIS
+      <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS homepage">
+        <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+        <span class="brand-copy">
+          <span class="brand-name">PHRINUSOMYIS™</span>
+          <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
+        </span>
       </a>
 
-      <div class="language-control">
-        <label for="siteLanguage">Language</label>
-
-        <select id="siteLanguage" aria-label="Select language">
-          <option value="en" selected>English</option>
-          <option value="fr">Français</option>
-          <option value="es">Español</option>
-          <option value="de">Deutsch</option>
-          <option value="ar">العربية</option>
-          <option value="zh-CN">中文</option>
-          <option value="ru">Русский</option>
-          <option value="pt">Português</option>
-          <option value="ja">日本語</option>
-          <option value="ko">한국어</option>
-          <option value="it">Italiano</option>
-          <option value="nl">Nederlands</option>
-          <option value="tr">Türkçe</option>
-          <option value="hi">हिन्दी</option>
-          <option value="id">Bahasa Indonesia</option>
-          <option value="vi">Tiếng Việt</option>
-          <option value="th">ไทย</option>
-          <option value="pl">Polski</option>
-          <option value="sv">Svenska</option>
-          <option value="fi">Suomi</option>
-          <option value="da">Dansk</option>
-        </select>
-      </div>
-
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-inner">
-
-      <div class="eyebrow">
-        A PHRINUSOMYIS™ Editorial Tribute
-      </div>
-
-      <h1>
-        The Legacy
-        <span>of Sport.</span>
-      </h1>
-
-      <p class="hero-description">
-        Honouring the people who shaped sporting history
-        and exploring what their achievements continue
-        to mean for generations beyond their own.
-      </p>
-
-      <div class="hero-bottom">
-        <span class="hero-line"></span>
-        <span class="hero-note">
-          Recognition · Responsibility · Continuity
-        </span>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- INTRODUCTION -->
-
-  <section class="intro-section">
-
-    <div class="intro-inner">
-
-      <div class="section-label">
-        Beyond the Moment
-      </div>
-
-      <h2>
-        Greatness is remembered. Its meaning travels further.
-      </h2>
-
-      <p>
-        Sporting history is shaped by individuals whose achievements
-        reach beyond the competitions in which they occurred.
-        Their discipline, courage, decisions and contributions
-        become part of a much larger human story.
-
-        But remembering the past is only one part of understanding
-        a legacy. What matters equally is what people learn from it,
-        what they choose to carry forward and what they make possible
-        for those who follow.
-
-        This collection recognises the figures who shaped sport
-        while inviting every visitor to consider the wider meaning
-        of what one generation leaves for another.
-      </p>
-
-      <div class="gold-divider"></div>
-
-    </div>
-
-  </section>
-
-  <!-- FIRST COLLECTION -->
-
-  <section class="collection-section" id="first-collection">
-
-    <div class="collection-inner">
-
-      <div class="collection-heading">
-
-        <div>
-          <div class="section-label">
-            The Historical Collection · 01
-          </div>
-
-          <h2>Names That Endure</h2>
+      <div class="header-right">
+        <div class="language-control">
+          <label for="siteLanguage">Language</label>
+          <select id="siteLanguage" aria-label="Select language">
+            <option value="en" selected>English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+            <option value="ar">العربية</option>
+            <option value="zh-CN">中文</option>
+            <option value="ru">Русский</option>
+            <option value="pt">Português</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="it">Italiano</option>
+            <option value="nl">Nederlands</option>
+            <option value="tr">Türkçe</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="th">ไทย</option>
+            <option value="pl">Polski</option>
+            <option value="sv">Svenska</option>
+            <option value="fi">Suomi</option>
+            <option value="da">Dansk</option>
+          </select>
         </div>
+      </div>
 
-        <p>
-          From Africa to Europe and Asia, these figures
-          left lasting marks on their respective sporting
-          disciplines and became part of sporting history.
+    </div>
+  </header>
+
+  <!-- HOME / NEWSWIRE / MAGAZINE NAVIGATION -->
+  <nav class="page-navigation" aria-label="Main navigation">
+    <a href="https://phrinusomyis.com/">Home</a>
+    <a href="https://phrinusomyis.com/newswire/news">Newswire</a>
+    <a href="https://phrinusomyis.com/magazine/news">Magazine</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div class="eyebrow">A PHRINUSOMYIS™ Editorial Tribute</div>
+
+        <h1>
+          The Legacy
+          <span>of Sport.</span>
+        </h1>
+
+        <p class="hero-description">
+          A historical collection recognizing 28 figures from international sport.
         </p>
 
-        <div class="carousel-controls">
-
-          <button class="carousel-button" type="button"
-            data-carousel-prev="legendsOne"
-            aria-label="Previous legends">
-
-            <svg viewBox="0 0 24 24">
-              <path d="M15 18l-6-6 6-6"/>
-            </svg>
-
-          </button>
-
-          <button class="carousel-button" type="button"
-            data-carousel-next="legendsOne"
-            aria-label="Next legends">
-
-            <svg viewBox="0 0 24 24">
-              <path d="M9 18l6-6-6-6"/>
-            </svg>
-
-          </button>
-
+        <div class="hero-bottom">
+          <span class="hero-line"></span>
+          <span class="hero-note">An international sporting record</span>
         </div>
 
       </div>
+    </section>
 
-      <div class="carousel-window">
-        <div class="carousel-track" id="legendsOne"></div>
-      </div>
+    <!-- INTRODUCTION -->
+    <section class="intro-section">
+      <div class="intro-inner">
 
-      <div class="carousel-footer">
+        <div class="section-label">The Historical Record</div>
 
-        <div class="carousel-count">
-          Collection 01 / 02
-        </div>
-
-        <div class="carousel-progress">
-          <span id="progress-legendsOne"></span>
-        </div>
-
-        <div class="carousel-count">
-          14 Historical Figures
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SECOND COLLECTION -->
-
-  <section class="collection-section dark" id="second-collection">
-
-    <div class="collection-inner">
-
-      <div class="collection-heading">
-
-        <div>
-          <div class="section-label">
-            The Historical Collection · 02
-          </div>
-
-          <h2>Across the World</h2>
-        </div>
+        <h2>Figures in Sporting History.</h2>
 
         <p>
-          From the Americas to Oceania and Europe,
-          their achievements remain part of the
-          international story of sport.
+          Across continents and sporting disciplines, these individuals
+          recorded achievements that became part of the history of sport.
+          This editorial collection brings together 28 sporting figures
+          from different eras, countries and disciplines.
         </p>
 
-        <div class="carousel-controls">
+        <div class="gold-divider"></div>
 
-          <button class="carousel-button" type="button"
-            data-carousel-prev="legendsTwo"
-            aria-label="Previous legends">
+      </div>
+    </section>
 
-            <svg viewBox="0 0 24 24">
-              <path d="M15 18l-6-6 6-6"/>
-            </svg>
+    <!-- FIRST COLLECTION -->
+    <section class="collection-section" id="first-collection">
+      <div class="collection-inner">
 
-          </button>
+        <div class="collection-heading">
+          <div>
+            <div class="section-label">The Historical Collection · 01</div>
+            <h2>Names That Endure</h2>
+          </div>
 
-          <button class="carousel-button" type="button"
-            data-carousel-next="legendsTwo"
-            aria-label="Next legends">
+          <p>
+            A selection of sporting figures from Africa, Asia, Europe
+            and the international sporting record.
+          </p>
 
-            <svg viewBox="0 0 24 24">
-              <path d="M9 18l6-6-6-6"/>
-            </svg>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button"
+              data-carousel-prev="legendsOne" aria-label="Previous legends">
+              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-button" type="button"
+              data-carousel-next="legendsOne" aria-label="Next legends">
+              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
 
-          </button>
+        <div class="carousel-window">
+          <div class="carousel-track" id="legendsOne"></div>
+        </div>
 
+        <div class="carousel-footer">
+          <div class="carousel-count">Collection 01 / 02</div>
+          <div class="carousel-progress"><span id="progress-legendsOne"></span></div>
+          <div class="carousel-count">14 Historical Figures</div>
         </div>
 
       </div>
+    </section>
 
-      <div class="carousel-window">
-        <div class="carousel-track" id="legendsTwo"></div>
+    <!-- SECOND COLLECTION -->
+    <section class="collection-section dark" id="second-collection">
+      <div class="collection-inner">
+
+        <div class="collection-heading">
+          <div>
+            <div class="section-label">The Historical Collection · 02</div>
+            <h2>Across the World</h2>
+          </div>
+
+          <p>
+            A further selection of sporting figures representing
+            the Americas, Europe and Oceania.
+          </p>
+
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button"
+              data-carousel-prev="legendsTwo" aria-label="Previous legends">
+              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-button" type="button"
+              data-carousel-next="legendsTwo" aria-label="Next legends">
+              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-window">
+          <div class="carousel-track" id="legendsTwo"></div>
+        </div>
+
+        <div class="carousel-footer">
+          <div class="carousel-count">Collection 02 / 02</div>
+          <div class="carousel-progress"><span id="progress-legendsTwo"></span></div>
+          <div class="carousel-count">14 Historical Figures</div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="carousel-footer">
-
-        <div class="carousel-count">
-          Collection 02 / 02
-        </div>
-
-        <div class="carousel-progress">
-          <span id="progress-legendsTwo"></span>
-        </div>
-
-        <div class="carousel-count">
-          14 Historical Figures
-        </div>
-
+    <!-- EDITORIAL DIVIDER -->
+    <section class="legacy-interlude">
+      <div class="interlude-inner">
+        <div class="section-label">THE LEGACY OF SPORT™</div>
+        <h2>28 Sporting Figures · One Historical Collection</h2>
       </div>
+    </section>
 
-    </div>
+    <!-- CLOSING -->
+    <section class="closing">
+      <div class="closing-inner">
 
-  </section>
-
-  <!-- THE MEANING OF LEGACY -->
-
-  <section class="legacy-interlude">
-
-    <div class="interlude-inner">
-
-      <div class="interlude-mark">“</div>
-
-      <h2>
-        What one generation achieves<br>
-        can become the foundation<br>
-        of another.
-      </h2>
-
-      <p>
-        No generation exists entirely on its own.
-        Every period of progress is connected to people,
-        knowledge, experiences and opportunities that came before it.
-
-        In sport, one athlete can change how a discipline is understood.
-        One achievement can alter expectations.
-        One example can influence someone who has never met
-        the person responsible for it.
-
-        The same principle extends far beyond sport.
-        In every area of human life, what is learned, created,
-        protected and shared can influence people yet to come.
-
-        A legacy becomes meaningful when its value does not
-        end with the person who created it.
-      </p>
-
-      <span class="interlude-emphasis">
-        The value of a legacy is also found in what follows.
-      </span>
-
-    </div>
-
-  </section>
-
-  <!-- QUESTIONS OF LEGACY -->
-
-  <section class="questions-section">
-
-    <div class="questions-inner">
-
-      <div class="questions-header">
-
-        <div class="section-label">
-          Questions of Legacy
-        </div>
+        <div class="section-label">PHRINUSOMYIS™</div>
 
         <h2>
-          What does the past have to do with your future?
+          The Legacy
+          <span>of Sport.</span>
         </h2>
 
         <p>
-          These questions extend beyond the sporting arena.
-          They concern how people understand achievement,
-          recognise the contributions of others and decide
-          what they will carry into the world around them.
+          An editorial tribute to the people, performances and
+          achievements recorded in sporting history.
         </p>
 
-      </div>
+        <div class="closing-rule"></div>
 
-      <div class="question-list">
-
-        <!-- QUESTION 01 -->
-
-        <article class="question-item">
-
-          <div class="question-number">01</div>
-
-          <div class="question-content">
-
-            <h3>
-              What does it really mean to leave a legacy?
-            </h3>
-
-            <div class="question-answer">
-              A legacy is what remains meaningful beyond the
-              moment of achievement. It can be a contribution,
-              an example, a body of knowledge, a standard of
-              excellence, an opportunity created or a difference
-              made in another person's life.
-
-              It does not have to be recognised by the entire world.
-              A person can leave something valuable through their
-              work, their decisions, their relationships and the
-              positive influence they have on others.
-            </div>
-
-            <div class="question-importance">
-              <strong>Why this matters</strong>
-              It changes how we understand success.
-              Life is not measured only by what someone accumulates
-              or accomplishes personally, but also by the value
-              their actions create beyond themselves.
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- QUESTION 02 -->
-
-        <article class="question-item">
-
-          <div class="question-number">02</div>
-
-          <div class="question-content">
-
-            <h3>
-              Why should we remember people who came before us?
-            </h3>
-
-            <div class="question-answer">
-              Because the present did not appear without a history.
-              The opportunities, standards and possibilities
-              available today have been influenced by people
-              who made contributions before us.
-
-              Remembering them allows us to understand the effort
-              behind progress, recognise achievements that might
-              otherwise be overlooked and learn from experiences
-              that still have something to teach.
-            </div>
-
-            <div class="question-importance">
-              <strong>Why this matters</strong>
-              Recognition gives history its proper place.
-              It also prevents each generation from treating
-              everything it inherits as though it began with them.
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- QUESTION 03 -->
-
-        <article class="question-item">
-
-          <div class="question-number">03</div>
-
-          <div class="question-content">
-
-            <h3>
-              What should one generation pass to the next?
-            </h3>
-
-            <div class="question-answer">
-              More than names, records, possessions or achievements.
-
-              Every generation has the opportunity to pass on
-              knowledge, experience, principles, opportunities
-              and lessons learned through both success and failure.
-
-              It can also pass on institutions that work,
-              ideas worth developing, standards worth protecting
-              and the freedom for others to take things further.
-            </div>
-
-            <div class="question-importance">
-              <strong>Why this matters</strong>
-              Progress becomes stronger when people do not have
-              to begin from nothing. What is shared today can
-              become the starting point for someone else's
-              achievement tomorrow.
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- QUESTION 04 -->
-
-        <article class="question-item">
-
-          <div class="question-number">04</div>
-
-          <div class="question-content">
-
-            <h3>
-              Does legacy belong only to champions and famous people?
-            </h3>
-
-            <div class="question-answer">
-              No. Sporting champions provide visible examples
-              of what dedication, preparation and achievement
-              can produce. But the meaning of legacy is not
-              reserved for people whose names appear in history books.
-
-              It belongs equally to the teacher who changes
-              a student's direction, the parent who creates
-              a better foundation for a family, the professional
-              who improves an industry, the leader who creates
-              opportunities and the individual who makes a
-              meaningful contribution to their community.
-            </div>
-
-            <div class="question-importance">
-              <strong>Why this matters</strong>
-              Every person has the capacity to contribute something
-              of value. Recognition may differ, but meaningful
-              contribution is not limited by fame, occupation
-              or public attention.
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- QUESTION 05 -->
-
-        <article class="question-item">
-
-          <div class="question-number">05</div>
-
-          <div class="question-content">
-
-            <h3>
-              Is there an age at which a person stops having
-              something to build or contribute?
-            </h3>
-
-            <div class="question-answer">
-              Human potential is not confined to a particular age.
-              Different stages of life bring different experiences,
-              responsibilities and opportunities.
-
-              A young person may be discovering what is possible.
-              Someone in the middle of their journey may be building,
-              leading or changing direction. An older person may
-              still be creating, teaching, sharing knowledge
-              and opening doors for others.
-
-              There is no single timetable for making a contribution
-              that matters.
-            </div>
-
-            <div class="question-importance">
-              <strong>Why this matters</strong>
-              It reminds us that opportunity and purpose do not
-              belong to one age group. Every stage of life can
-              have meaning, and every generation has something
-              valuable to offer.
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- QUESTION 06 -->
-
-        <article class="question-item">
-
-          <div class="question-number">06</div>
-
-          <div class="question-content">
-
-            <h3>
-              What happens when a person inherits an opportunity?
-            </h3>
-
-            <div class="question-answer">
-              An opportunity is not simply something to receive.
-              It carries the possibility of development and
-              the responsibility to make meaningful use of it.
-
-              Someone may inherit education, knowledge, resources,
-              experience, a business, an institution or a chance
-              that was unavailable to those before them.
-
-              What follows depends on how that opportunity is
-              understood, developed and used.
-            </div>
-
-            <div class="question-importance">
-              <strong>Why this matters</strong>
-              Receiving something valuable is only one part
-              of the journey. Developing it, improving it and
-              making it accessible to others can give it a
-              much longer life.
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- QUESTION 07 -->
-
-        <article class="question-item">
-
-          <div class="question-number">07</div>
-
-          <div class="question-content">
-
-            <h3>
-              What should remain after we have moved on?
-            </h3>
-
-            <div class="question-answer">
-              Ideally, something that continues to serve a purpose.
-              It may be knowledge that helps another person,
-              work that improves an industry, an institution
-              that continues to function, an opportunity that
-              changes someone's circumstances or an example
-              that influences decisions long after its creator
-              is no longer present.
-
-              The form will differ from one person to another.
-              What matters is that the contribution has value
-              beyond its original moment.
-            </div>
-
-            <div class="question-importance">
-              <strong>Why this matters</strong>
-              It gives us a broader understanding of the lives
-              we lead. Our actions can have consequences and
-              create possibilities that extend further than
-              we may ever personally witness.
-            </div>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- A PERSONAL REFLECTION -->
-
-  <section class="reflection-section">
-
-    <div class="reflection-inner">
-
-      <div>
-
-        <div class="reflection-label">
-          A Reflection for Every Visitor
+        <div class="closing-signature">
+          COMMANDING THE WORLD STAGE™
         </div>
 
-        <h2 class="reflection-heading">
-          Your place<br>
-          in the story.
-        </h2>
-
-        <p class="reflection-description">
-          You may recognise the names in this collection.
-          You may be discovering some of them for the first time.
-
-          You may be an athlete, a student, a professional,
-          an entrepreneur, a parent, a teacher, a leader
-          or someone still deciding what direction to take.
-
-          Whatever your circumstances, the question of legacy
-          is not distant from your own life.
-
-          It concerns what you are learning, what you are creating,
-          what you are contributing and what others may one day
-          be able to build upon.
-        </p>
-
       </div>
+    </section>
 
-      <div class="reflection-card">
+  </main>
 
-        <span class="reflection-question">
-          One Question Worth Considering
-        </span>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
 
-        <h3>
-          When someone looks back at the part of the world
-          you have influenced, what will they find that
-          is worth carrying forward?
-        </h3>
-
-        <p>
-          The answer does not need to be a trophy, a title,
-          a public achievement or a name remembered by millions.
-
-          It may be something you built, something you taught,
-          a person you helped, a standard you upheld or an
-          opportunity you made possible.
-
-          Your contribution does not have to resemble anyone
-          else's. It only needs to have meaning beyond the moment
-          in which it was made.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CLOSING -->
-
-  <section class="closing">
-
-    <div class="closing-inner">
-
-      <div class="section-label">
-        The Legacy Continues
-      </div>
-
-      <h2>
-        The past has its place.
-        <span>What follows has its own.</span>
-      </h2>
-
-      <p>
-        Those who came before us deserve recognition for
-        what they achieved and what they contributed.
-
-        Those living today have their own opportunities,
-        responsibilities and possibilities.
-
-        Those who come after deserve more than the memory
-        of what once existed. They deserve the benefit of
-        what has been learned, developed and passed forward.
-
-        This is why sporting history matters.
-        And this is why legacy extends beyond sport.
-      </p>
-
-      <div class="closing-rule"></div>
-
-      <div class="closing-signature">
-        PHRINUSOMYIS™ · COMMANDING THE WORLD STAGE™
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
-
-<!-- BOTTOM NAVIGATION -->
-
-<nav class="site-navigation"
-  aria-label="PHRINUSOMYIS website navigation">
-
-  <div class="navigation-inner">
-
-    <a class="navigation-link" href="/">
-      Homepage
-    </a>
-
-    <a class="navigation-link"
-      href="/newsroom/newswire.html">
-      Newswire
-    </a>
-
-    <a class="navigation-link"
-      href="/magazine/news">
-      Magazine
-    </a>
-
-  </div>
-
-</nav>
-
-<!-- FOOTER -->
-
-<footer class="site-footer">
-
-  <div class="footer-inner">
-
-    <div>
-      <div class="footer-brand">
-        PHRINUSOMYIS™
+      <div>
+        <div class="footer-brand">PHRINUSOMYIS™</div>
+        <div class="footer-copy">
+          An international sports organization.
+        </div>
       </div>
 
       <div class="footer-copy">
-        An international sports organization.
+        THE LEGACY OF SPORT™<br>
+        A historical editorial tribute.
       </div>
+
+      <a class="footer-top" href="#top">
+        Back to top ↑
+      </a>
+
     </div>
-
-    <div class="footer-copy">
-      THE LEGACY OF SPORT™<br>
-      A historical editorial tribute.
-    </div>
-
-    <a class="footer-top" href="#top">
-      Back to top ↑
-    </a>
-
-  </div>
-
-</footer>
-
-<script>
-
-/* =====================================================
-   THE LEGACY OF SPORT
-   28 HISTORICAL FIGURES
-   TWO INDEPENDENT SLIDING COLLECTIONS
-===================================================== */
-
-const legendsCollectionOne = [
-
-  {
-    name:"Abebe Bikila",
-    country:"Ethiopia · Africa",
-    sport:"Athletics · Marathon",
-    image:"abebe-bikila.jpg"
-  },
-
-  {
-    name:"Henry Rono",
-    country:"Kenya · Africa",
-    sport:"Athletics · Long-distance running",
-    image:"henry-rono.jpg"
-  },
-
-  {
-    name:"Mohamed Latif",
-    country:"Egypt · Africa",
-    sport:"Football",
-    image:"mohamed-latif.jpg"
-  },
-
-  {
-    name:"Larbi Benbarek",
-    country:"Morocco · Africa",
-    sport:"Football",
-    image:"larbi-benbarek.jpg"
-  },
-
-  {
-    name:"Dhyan Chand",
-    country:"India · Asia",
-    sport:"Field hockey",
-    image:"dhyan-chand.jpg"
-  },
-
-  {
-    name:"Shigeo Nagashima",
-    country:"Japan · Asia",
-    sport:"Baseball",
-    image:"shigeo-nagashima.jpg"
-  },
-
-  {
-    name:"Nasser Hejazi",
-    country:"Iran · Asia",
-    sport:"Football · Goalkeeping",
-    image:"nasser-hejazi.jpg"
-  },
-
-  {
-    name:"Gabriel Elorde",
-    country:"Philippines · Asia",
-    sport:"Boxing",
-    image:"gabriel-elorde.jpg"
-  },
-
-  {
-    name:"Johan Cruyff",
-    country:"Netherlands · Europe",
-    sport:"Football",
-    image:"johan-cruyff.jpg"
-  },
-
-  {
-    name:"Franz Beckenbauer",
-    country:"Germany · Europe",
-    sport:"Football",
-    image:"franz-beckenbauer.jpg"
-  },
-
-  {
-    name:"Sir Bobby Charlton",
-    country:"United Kingdom · Europe",
-    sport:"Football",
-    image:"bobby-charlton.jpg"
-  },
-
-  {
-    name:"Jesse Owens",
-    country:"United States · North America",
-    sport:"Athletics · Track and field",
-    image:"jesse-owens.jpg"
-  },
-
-  {
-    name:"Eusébio",
-    country:"Portugal · Europe",
-    sport:"Football",
-    image:"eusebio.jpg"
-  },
-
-  {
-    name:"Joe Frazier",
-    country:"United States · North America",
-    sport:"Boxing",
-    image:"joe-frazier.jpg"
-  }
-
-];
-
-const legendsCollectionTwo = [
-
-  {
-    name:"Niki Lauda",
-    country:"Austria · Europe",
-    sport:"Motorsport · Formula One",
-    image:"niki-lauda.jpg"
-  },
-
-  {
-    name:"André the Giant",
-    country:"France · Europe",
-    sport:"Professional wrestling",
-    image:"andre-the-giant.jpg"
-  },
-
-  {
-    name:"Muhammad Ali",
-    country:"United States · North America",
-    sport:"Boxing",
-    image:"muhammad-ali.jpg"
-  },
-
-  {
-    name:"Terry Fox",
-    country:"Canada · North America",
-    sport:"Running · Athletics",
-    image:"terry-fox.jpg"
-  },
-
-  {
-    name:"Teófilo Stevenson",
-    country:"Cuba · Caribbean",
-    sport:"Boxing",
-    image:"teofilo-stevenson.jpg"
-  },
-
-  {
-    name:"Salvador Sánchez",
-    country:"Mexico · North America",
-    sport:"Boxing",
-    image:"salvador-sanchez.jpg"
-  },
-
-  {
-    name:"Pelé",
-    country:"Brazil · South America",
-    sport:"Football",
-    image:"pele.jpg"
-  },
-
-  {
-    name:"Diego Maradona",
-    country:"Argentina · South America",
-    sport:"Football",
-    image:"diego-maradona.jpg"
-  },
-
-  {
-    name:"Alcides Ghiggia",
-    country:"Uruguay · South America",
-    sport:"Football",
-    image:"alcides-ghiggia.jpg"
-  },
-
-  {
-    name:"Sir Donald Bradman",
-    country:"Australia · Oceania",
-    sport:"Cricket",
-    image:"don-bradman.jpg"
-  },
-
-  {
-    name:"Jonah Lomu",
-    country:"New Zealand · Oceania",
-    sport:"Rugby union",
-    image:"jonah-lomu.jpg"
-  },
-
-  {
-    name:"The Ultimate Warrior",
-    country:"United States · North America",
-    sport:"Professional wrestling",
-    image:"ultimate-warrior.jpg"
-  },
-
-  {
-    name:"Arnold Palmer",
-    country:"United States · North America",
-    sport:"Golf",
-    image:"arnold-palmer.jpg"
-  },
-
-  {
-    name:"Bill Russell",
-    country:"United States · North America",
-    sport:"Basketball",
-    image:"bill-russell.jpg"
-  }
-
-];
-
-/* CREATE PORTRAIT CARDS */
-
-function createLegendCard(person,index) {
-
-  const article = document.createElement("article");
-  article.className = "legend-card";
-
-  const imageWrap = document.createElement("div");
-  imageWrap.className = "legend-image-wrap";
-
-  const number = document.createElement("span");
-  number.className = "legend-number";
-  number.textContent = String(index + 1).padStart(2,"0");
-
-  const image = document.createElement("img");
-  image.className = "legend-image";
-  image.src = "/" + person.image;
-  image.alt = person.name + ", " + person.country + ", " + person.sport;
-  image.loading = "lazy";
-
-  image.addEventListener("error",() => {
-
-    imageWrap.style.background = "#292821";
-    image.style.display = "none";
-
-    imageWrap.setAttribute(
-      "aria-label",
-      "Portrait image not yet uploaded: " + person.image
-    );
-
-  });
-
-  imageWrap.append(number,image);
-
-  const info = document.createElement("div");
-  info.className = "legend-info";
-
-  const country = document.createElement("div");
-  country.className = "legend-country";
-  country.textContent = person.country;
-
-  const name = document.createElement("h3");
-  name.className = "legend-name";
-  name.textContent = person.name;
-
-  const sport = document.createElement("div");
-  sport.className = "legend-discipline";
-  sport.textContent = person.sport;
-
-  info.append(country,name,sport);
-  article.append(imageWrap,info);
-
-  return article;
-
-}
-
-/* POPULATE BOTH COLLECTIONS */
-
-function populateCollection(id,people) {
-
-  const track = document.getElementById(id);
-
-  if (!track) return;
-
-  people.forEach((person,index) => {
-    track.appendChild(createLegendCard(person,index));
-  });
-
-}
-
-populateCollection("legendsOne",legendsCollectionOne);
-populateCollection("legendsTwo",legendsCollectionTwo);
-
-/* SLIDESHOW ENGINE */
-
-const carouselInstances = {};
-
-function visibleCards() {
-
-  if (window.innerWidth <= 600) return 1;
-  if (window.innerWidth <= 900) return 2;
-
-  return 3;
-
-}
-
-function updateCarousel(id) {
-
-  const track = document.getElementById(id);
-
-  if (!track || !track.children.length) return;
-
-  const cards = Array.from(track.children);
-  const total = cards.length;
-  const visible = visibleCards();
-  const maxIndex = Math.max(0,total-visible);
-
-  let index = carouselInstances[id]?.index || 0;
-
-  index = Math.min(index,maxIndex);
-
-  carouselInstances[id] = {index};
-
-  const cardWidth = cards[0].getBoundingClientRect().width;
-  const gap = parseFloat(getComputedStyle(track).gap) || 0;
-
-  track.style.transform =
-    `translateX(-${index*(cardWidth+gap)}px)`;
-
-  const progress = document.getElementById("progress-"+id);
-
-  if (progress) {
-
-    const percentage = total <= visible
-      ? 100
-      : ((index+visible)/total)*100;
-
-    progress.style.width = percentage+"%";
-
-  }
-
-}
-
-function moveCarousel(id,direction) {
-
-  const track = document.getElementById(id);
-
-  if (!track || !track.children.length) return;
-
-  const total = track.children.length;
-  const visible = visibleCards();
-  const maxIndex = Math.max(0,total-visible);
-
-  let index = carouselInstances[id]?.index || 0;
-
-  index += direction;
-
-  if (index > maxIndex) index = 0;
-  if (index < 0) index = maxIndex;
-
-  carouselInstances[id] = {index};
-
-  updateCarousel(id);
-
-}
-
-/* INITIALISE CAROUSELS */
-
-["legendsOne","legendsTwo"].forEach(id => {
-
-  carouselInstances[id] = {index:0};
-
-  updateCarousel(id);
-
-});
-
-/* PREVIOUS AND NEXT BUTTONS */
-
-document.querySelectorAll("[data-carousel-prev]").forEach(button => {
-
-  button.addEventListener("click",() => {
-
-    moveCarousel(button.dataset.carouselPrev,-1);
-
-  });
-
-});
-
-document.querySelectorAll("[data-carousel-next]").forEach(button => {
-
-  button.addEventListener("click",() => {
-
-    moveCarousel(button.dataset.carouselNext,1);
-
-  });
-
-});
-
-/* RESIZE SUPPORT */
-
-window.addEventListener("resize",() => {
-
-  ["legendsOne","legendsTwo"].forEach(updateCarousel);
-
-});
-
-/* AUTOMATIC SLIDING */
-
-const reducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-).matches;
-
-if (!reducedMotion) {
-
-  window.setInterval(() => {
-
-    ["legendsOne","legendsTwo"].forEach(id => {
-
-      const section = document.getElementById(
-        id === "legendsOne"
-          ? "first-collection"
-          : "second-collection"
-      );
-
-      if (section && !section.matches(":hover")) {
-        moveCarousel(id,1);
+  </footer>
+
+  <script>
+    /* THE 28 SPORTING FIGURES */
+
+    const collectionOne = [
+      {
+        number: "01",
+        name: "Abebe Bikila",
+        country: "Ethiopia · Africa",
+        discipline: "Athletics · Marathon",
+        image: "abebe-bikila.jpg",
+        alt: "Abebe Bikila, Ethiopian athletics legend"
+      },
+      {
+        number: "02",
+        name: "Henry Rono",
+        country: "Kenya · Africa",
+        discipline: "Athletics · Long-distance running",
+        image: "henry-rono.jpg",
+        alt: "Henry Rono, Kenyan athletics legend"
+      },
+      {
+        number: "03",
+        name: "Mohamed Latif",
+        country: "Egypt · Africa",
+        discipline: "Football",
+        image: "mohamed-latif.jpg",
+        alt: "Mohamed Latif, Egyptian football legend"
+      },
+      {
+        number: "04",
+        name: "Larbi Benbarek",
+        country: "Morocco · Africa",
+        discipline: "Football",
+        image: "larbi-benbarek.jpg",
+        alt: "Larbi Benbarek, Moroccan football legend"
+      },
+      {
+        number: "05",
+        name: "Dhyan Chand",
+        country: "India · Asia",
+        discipline: "Field hockey",
+        image: "dhyan-chand.jpg",
+        alt: "Dhyan Chand, Indian field hockey legend"
+      },
+      {
+        number: "06",
+        name: "Shigeo Nagashima",
+        country: "Japan · Asia",
+        discipline: "Baseball",
+        image: "shigeo-nagashima.jpg",
+        alt: "Shigeo Nagashima, Japanese baseball legend"
+      },
+      {
+        number: "07",
+        name: "Nasser Hejazi",
+        country: "Iran · Asia",
+        discipline: "Football · Goalkeeping",
+        image: "nasser-hejazi.jpg",
+        alt: "Nasser Hejazi, Iranian football legend"
+      },
+      {
+        number: "08",
+        name: "Gabriel Elorde",
+        country: "Philippines · Asia",
+        discipline: "Boxing",
+        image: "gabriel-elorde.jpg",
+        alt: "Gabriel Elorde, Filipino boxing legend"
+      },
+      {
+        number: "09",
+        name: "Johan Cruyff",
+        country: "Netherlands · Europe",
+        discipline: "Football",
+        image: "johan-cruyff.jpg",
+        alt: "Johan Cruyff, Dutch football legend"
+      },
+      {
+        number: "10",
+        name: "Franz Beckenbauer",
+        country: "Germany · Europe",
+        discipline: "Football",
+        image: "franz-beckenbauer.jpg",
+        alt: "Franz Beckenbauer, German football legend"
+      },
+      {
+        number: "11",
+        name: "Sir Bobby Charlton",
+        country: "United Kingdom · Europe",
+        discipline: "Football",
+        image: "bobby-charlton.jpg",
+        alt: "Sir Bobby Charlton, English football legend"
+      },
+      {
+        number: "23",
+        name: "The Ultimate Warrior",
+        country: "United States · North America",
+        discipline: "Professional wrestling · WWE",
+        image: "ultimate-warrior.jpg",
+        alt: "The Ultimate Warrior, professional wrestling figure"
+      },
+      {
+        number: "24",
+        name: "Jesse Owens",
+        country: "United States · North America",
+        discipline: "Athletics · Track and field",
+        image: "jesse-owens.jpg",
+        alt: "Jesse Owens, American athletics legend"
+      },
+      {
+        number: "25",
+        name: "Joe Frazier",
+        country: "United States · North America",
+        discipline: "Boxing",
+        image: "joe-frazier.jpg",
+        alt: "Joe Frazier, American boxing legend"
       }
+    ];
 
-    });
+    const collectionTwo = [
+      {
+        number: "12",
+        name: "Niki Lauda",
+        country: "Austria · Europe",
+        discipline: "Motorsport · Formula One",
+        image: "niki-lauda.jpg",
+        alt: "Niki Lauda, Austrian motorsport legend"
+      },
+      {
+        number: "13",
+        name: "André the Giant",
+        country: "France · Europe",
+        discipline: "Professional wrestling",
+        image: "andre-the-giant.jpg",
+        alt: "André the Giant, French professional wrestling figure"
+      },
+      {
+        number: "14",
+        name: "Muhammad Ali",
+        country: "United States · North America",
+        discipline: "Boxing",
+        image: "muhammad-ali.jpg",
+        alt: "Muhammad Ali, American boxing legend"
+      },
+      {
+        number: "15",
+        name: "Terry Fox",
+        country: "Canada · North America",
+        discipline: "Running · Athletics",
+        image: "terry-fox.jpg",
+        alt: "Terry Fox, Canadian runner"
+      },
+      {
+        number: "16",
+        name: "Teófilo Stevenson",
+        country: "Cuba · Caribbean",
+        discipline: "Boxing",
+        image: "teofilo-stevenson.jpg",
+        alt: "Teófilo Stevenson, Cuban boxing legend"
+      },
+      {
+        number: "17",
+        name: "Salvador Sánchez",
+        country: "Mexico · North America",
+        discipline: "Boxing",
+        image: "salvador-sanchez.jpg",
+        alt: "Salvador Sánchez, Mexican boxing legend"
+      },
+      {
+        number: "18",
+        name: "Pelé",
+        country: "Brazil · South America",
+        discipline: "Football",
+        image: "pele.jpg",
+        alt: "Pelé, Brazilian football legend"
+      },
+      {
+        number: "19",
+        name: "Diego Maradona",
+        country: "Argentina · South America",
+        discipline: "Football",
+        image: "diego-maradona.jpg",
+        alt: "Diego Maradona, Argentine football legend"
+      },
+      {
+        number: "20",
+        name: "Alcides Ghiggia",
+        country: "Uruguay · South America",
+        discipline: "Football",
+        image: "alcides-ghiggia.jpg",
+        alt: "Alcides Ghiggia, Uruguayan football legend"
+      },
+      {
+        number: "21",
+        name: "Sir Donald Bradman",
+        country: "Australia · Oceania",
+        discipline: "Cricket",
+        image: "don-bradman.jpg",
+        alt: "Sir Donald Bradman, Australian cricket legend"
+      },
+      {
+        number: "22",
+        name: "Jonah Lomu",
+        country: "New Zealand · Oceania",
+        discipline: "Rugby union",
+        image: "jonah-lomu.jpg",
+        alt: "Jonah Lomu, New Zealand rugby legend"
+      },
+      {
+        number: "26",
+        name: "Arnold Palmer",
+        country: "United States · North America",
+        discipline: "Golf",
+        image: "arnold-palmer.jpg",
+        alt: "Arnold Palmer, American golf legend"
+      },
+      {
+        number: "27",
+        name: "Eusébio",
+        country: "Portugal · Europe",
+        discipline: "Football",
+        image: "eusebio.jpg",
+        alt: "Eusébio, Portuguese football legend"
+      },
+      {
+        number: "28",
+        name: "Bill Russell",
+        country: "United States · North America",
+        discipline: "Basketball",
+        image: "bill-russell.jpg",
+        alt: "Bill Russell, American basketball legend"
+      }
+    ];
 
-  },6500);
+    /* BUILD THE LEGEND CARDS */
 
-}
+    function createLegendCard(person) {
+      const card = document.createElement("article");
+      card.className = "legend-card";
 
-/* GOOGLE TRANSLATE */
+      card.innerHTML = `
+        <div class="legend-image-wrap">
+          <span class="legend-number">${person.number}</span>
+          <img
+            class="legend-image"
+            src="/${person.image}"
+            alt="${person.alt}"
+            loading="lazy">
+        </div>
 
-function googleTranslateElementInit() {
+        <div class="legend-info">
+          <div class="legend-country">${person.country}</div>
+          <h3 class="legend-name">${person.name}</h3>
+          <div class="legend-discipline">${person.discipline}</div>
+        </div>
+      `;
 
-  new google.translate.TranslateElement({
-
-    pageLanguage:"en",
-
-    includedLanguages:
-      "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-
-    autoDisplay:false
-
-  },"google_translate_element");
-
-}
-
-/* LANGUAGE SELECTOR */
-
-const languageSelector = document.getElementById("siteLanguage");
-
-languageSelector.addEventListener("change",function() {
-
-  const selectedLanguage = this.value;
-
-  function applyLanguage() {
-
-    const combo = document.querySelector(".goog-te-combo");
-
-    if (!combo) return false;
-
-    combo.value = selectedLanguage === "en"
-      ? ""
-      : selectedLanguage;
-
-    combo.dispatchEvent(new Event("change"));
-
-    return true;
-
-  }
-
-  if (applyLanguage()) return;
-
-  let attempts = 0;
-
-  const retry = window.setInterval(() => {
-
-    attempts++;
-
-    if (applyLanguage() || attempts >= 20) {
-      window.clearInterval(retry);
+      return card;
     }
 
-  },300);
+    function renderCollection(id, people) {
+      const track = document.getElementById(id);
+      if (!track) return;
 
-});
+      people.forEach(person => {
+        track.appendChild(createLegendCard(person));
+      });
+    }
 
-/* GOOGLE BANNER AND POP-OUT SUPPRESSION */
+    renderCollection("legendsOne", collectionOne);
+    renderCollection("legendsTwo", collectionTwo);
 
-function suppressGoogleTranslateElements() {
+    /* TWO INDEPENDENT SLIDING COLLECTIONS */
 
-  document.documentElement.style.marginTop = "0";
-  document.documentElement.style.paddingTop = "0";
+    const carouselInstances = {};
 
-  document.body.style.top = "0";
-  document.body.style.marginTop = "0";
-  document.body.style.paddingTop = "0";
+    function visibleCards() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 900) return 2;
+      return 3;
+    }
 
-  document.querySelectorAll(
-    ".goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt"
-  ).forEach(element => {
+    function updateCarousel(id) {
+      const track = document.getElementById(id);
+      if (!track || !track.children.length) return;
 
-    element.style.setProperty("display","none","important");
+      const cards = Array.from(track.children);
+      const total = cards.length;
+      const visible = visibleCards();
+      const maxIndex = Math.max(0, total - visible);
 
-    element.style.setProperty("visibility","hidden","important");
+      let index = carouselInstances[id]?.index || 0;
+      index = Math.min(index, maxIndex);
 
-  });
+      carouselInstances[id] = { index };
 
-}
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-const translateObserver = new MutationObserver(
-  suppressGoogleTranslateElements
-);
+      track.style.transform =
+        `translateX(-${index * (cardWidth + gap)}px)`;
 
-translateObserver.observe(document.documentElement,{
+      const progress = document.getElementById(`progress-${id}`);
 
-  childList:true,
-  subtree:true,
-  attributes:true,
-  attributeFilter:["style","class"]
+      if (progress) {
+        const percentage = total <= visible
+          ? 100
+          : ((index + visible) / total) * 100;
 
-});
+        progress.style.width = `${percentage}%`;
+      }
+    }
 
-window.addEventListener("load",suppressGoogleTranslateElements);
+    function moveCarousel(id, direction) {
+      const track = document.getElementById(id);
+      if (!track) return;
 
-window.setInterval(suppressGoogleTranslateElements,1000);
+      const total = track.children.length;
+      const visible = visibleCards();
+      const maxIndex = Math.max(0, total - visible);
 
-</script>
+      let index = carouselInstances[id]?.index || 0;
+      index += direction;
 
-<script
-  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-  async>
-</script>
+      if (index > maxIndex) index = 0;
+      if (index < 0) index = maxIndex;
+
+      carouselInstances[id] = { index };
+      updateCarousel(id);
+    }
+
+    document.querySelectorAll("[data-carousel-prev]").forEach(button => {
+      button.addEventListener("click", () => {
+        moveCarousel(button.dataset.carouselPrev, -1);
+      });
+    });
+
+    document.querySelectorAll("[data-carousel-next]").forEach(button => {
+      button.addEventListener("click", () => {
+        moveCarousel(button.dataset.carouselNext, 1);
+      });
+    });
+
+    ["legendsOne", "legendsTwo"].forEach(id => {
+      carouselInstances[id] = { index: 0 };
+      updateCarousel(id);
+    });
+
+    window.addEventListener("resize", () => {
+      ["legendsOne", "legendsTwo"].forEach(updateCarousel);
+    });
+
+    /* AUTOMATIC SLIDING */
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (!reducedMotion) {
+      window.setInterval(() => {
+        ["legendsOne", "legendsTwo"].forEach(id => {
+          const section = document.getElementById(
+            id === "legendsOne"
+              ? "first-collection"
+              : "second-collection"
+          );
+
+          if (section && !section.matches(":hover")) {
+            moveCarousel(id, 1);
+          }
+        });
+      }, 6500);
+    }
+
+    /* GOOGLE TRANSLATE INITIALIZATION */
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "en",
+        includedLanguages:
+          "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+        autoDisplay: false
+      }, "google_translate_element");
+    }
+
+    const languageSelector = document.getElementById("siteLanguage");
+
+    languageSelector.addEventListener("change", function () {
+      const selectedLanguage = this.value;
+
+      function applyLanguage() {
+        const translateCombo = document.querySelector(".goog-te-combo");
+        if (!translateCombo) return false;
+
+        translateCombo.value =
+          selectedLanguage === "en" ? "" : selectedLanguage;
+
+        translateCombo.dispatchEvent(new Event("change"));
+        return true;
+      }
+
+      if (applyLanguage()) return;
+
+      let attempts = 0;
+
+      const retry = window.setInterval(() => {
+        attempts++;
+
+        if (applyLanguage() || attempts >= 20) {
+          window.clearInterval(retry);
+        }
+      }, 300);
+    });
+
+    /* SUPPRESS GOOGLE TRANSLATE BANNER AND PAGE DISPLACEMENT */
+
+    function suppressGoogleTranslateElements() {
+      document.documentElement.style.setProperty(
+        "margin-top", "0", "important"
+      );
+
+      document.documentElement.style.setProperty(
+        "padding-top", "0", "important"
+      );
+
+      document.body.style.setProperty("top", "0", "important");
+      document.body.style.setProperty("margin-top", "0", "important");
+      document.body.style.setProperty("padding-top", "0", "important");
+
+      document.querySelectorAll(
+        ".goog-te-banner-frame, " +
+        ".goog-te-balloon-frame, " +
+        ".goog-te-menu-frame, " +
+        "#goog-gt-tt, " +
+        ".goog-tooltip, " +
+        ".VIpgJd-ZVi9od-ORHb-OEVmcd, " +
+        ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf"
+      ).forEach(element => {
+        element.style.setProperty("display", "none", "important");
+        element.style.setProperty("visibility", "hidden", "important");
+      });
+    }
+
+    const translateObserver = new MutationObserver(
+      suppressGoogleTranslateElements
+    );
+
+    translateObserver.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["style", "class"]
+    });
+
+    window.addEventListener("load", suppressGoogleTranslateElements);
+
+    window.setInterval(suppressGoogleTranslateElements, 1000);
+  </script>
+
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async>
+  </script>
 
 </body>
 </html>
