@@ -2,1728 +2,1847 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
-  <meta name="description" content="THE LEGACY OF SPORT™ — a PHRINUSOMYIS™ tribute to extraordinary sporting figures whose achievements, courage and influence became part of sporting history.">
-  <meta name="theme-color" content="#171715">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://phrinusomyis.com/legacy-of-sport.html">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
-  <meta property="og:description" content="Honouring the figures who shaped sporting history.">
-  <meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
-  <meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --black: #171715;
-      --charcoal: #25241f;
-      --ivory: #f2eee5;
-      --ivory-light: #f8f5ee;
-      --stone: #e5ded1;
-      --stone-deep: #d8cebd;
-      --bronze: #a9824d;
-      --gold: #c5a36b;
-      --text: #24231f;
-      --muted: #69665f;
-      --line: rgba(169,130,77,.25);
-      --content: 1360px;
-      --heading: "Barlow Condensed", "Segoe UI", Arial, sans-serif;
-      --body: "DM Sans", "Segoe UI", Arial, sans-serif;
-      --editorial: "Playfair Display", Georgia, serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--ivory-light);
-      color: var(--text);
-      font-family: var(--body);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body, html {
-      max-width: 100%;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    .site-topline {
-      height: 5px;
-      background: var(--gold);
-    }
-
-    /* HEADER */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(23,23,21,.97);
-      border-bottom: 1px solid rgba(197,163,107,.25);
-      backdrop-filter: blur(14px);
-    }
-
-    .header-inner {
-      width: min(calc(100% - 48px), var(--content));
-      min-height: 84px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    .brand-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .brand-name {
-      color: var(--ivory-light);
-      font-family: var(--heading);
-      font-size: 23px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .brand-tagline {
-      color: var(--gold);
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .back-link {
-      color: var(--ivory);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: color .25s ease;
-    }
-
-    .back-link:hover {
-      color: var(--gold);
-    }
-
-    .language-control {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--gold);
-    }
-
-    .language-control label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .language-control select {
-      max-width: 155px;
-      padding: 10px 30px 10px 11px;
-      color: var(--ivory);
-      background: #292821;
-      border: 1px solid rgba(197,163,107,.45);
-      border-radius: 0;
-      outline: none;
-      font-size: 11px;
-      cursor: pointer;
-    }
-
-    .language-control select:focus {
-      border-color: var(--gold);
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      min-height: 610px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      color: var(--ivory-light);
-      background:
-        linear-gradient(90deg, rgba(18,18,16,.98) 0%, rgba(18,18,16,.88) 48%, rgba(18,18,16,.45) 100%),
-        url("/legacy-hero.jpg") center 42% / cover no-repeat,
-        var(--black);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, transparent 45%, rgba(197,163,107,.08) 45.1%, transparent 45.4%),
-        linear-gradient(0deg, rgba(23,23,21,.45), transparent 55%);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 1px;
-      height: 72%;
-      top: 14%;
-      right: 12%;
-      background: linear-gradient(transparent, rgba(197,163,107,.55), transparent);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(calc(100% - 48px), var(--content));
-      margin: auto;
-      padding: 105px 0 115px;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      max-width: 850px;
-      margin: 25px 0 18px;
-      color: var(--ivory-light);
-      font-family: var(--heading);
-      font-size: clamp(58px, 9vw, 116px);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: .88;
-      text-transform: uppercase;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: var(--gold);
-    }
-
-    .hero-description {
-      max-width: 590px;
-      margin: 28px 0 0;
-      color: rgba(248,245,238,.78);
-      font-family: var(--editorial);
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.8;
-    }
-
-    .hero-bottom {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 44px;
-    }
-
-    .hero-line {
-      width: 62px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero-note {
-      color: rgba(248,245,238,.62);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-    }
-
-    /* INTRODUCTION */
-
-    .intro-section {
-      padding: 105px 24px 100px;
-      background: var(--ivory-light);
-    }
-
-    .intro-inner {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .section-label {
-      color: var(--bronze);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .intro-inner h2 {
-      margin: 20px 0 22px;
-      color: var(--black);
-      font-family: var(--editorial);
-      font-size: clamp(31px, 5vw, 48px);
-      font-weight: 400;
-      line-height: 1.2;
-    }
-
-    .intro-inner p {
-      max-width: 760px;
-      margin: auto;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 2;
-    }
-
-    .gold-divider {
-      width: 65px;
-      height: 2px;
-      margin: 35px auto 0;
-      background: var(--gold);
-    }
-
-    /* COLLECTIONS */
-
-    .collection-section {
-      padding: 100px 0 110px;
-      overflow: hidden;
-      background: var(--stone);
-    }
-
-    .collection-section.dark {
-      color: var(--ivory-light);
-      background: var(--black);
-    }
-
-    .collection-inner {
-      width: min(calc(100% - 48px), var(--content));
-      margin: auto;
-    }
-
-    .collection-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 30px;
-      margin-bottom: 45px;
-    }
-
-    .collection-heading h2 {
-      margin: 12px 0 0;
-      color: var(--black);
-      font-family: var(--heading);
-      font-size: clamp(38px, 5vw, 62px);
-      font-weight: 700;
-      letter-spacing: .5px;
-      line-height: .98;
-      text-transform: uppercase;
-    }
-
-    .dark .collection-heading h2 {
-      color: var(--ivory-light);
-    }
-
-    .collection-heading p {
-      max-width: 370px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .dark .collection-heading p {
-      color: rgba(248,245,238,.58);
-    }
-
-    .carousel-controls {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      flex-shrink: 0;
-    }
-
-    .carousel-button {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      color: var(--black);
-      background: transparent;
-      border: 1px solid rgba(36,35,31,.35);
-      transition: .25s ease;
-    }
-
-    .carousel-button:hover {
-      color: var(--ivory-light);
-      background: var(--black);
-      border-color: var(--black);
-    }
-
-    .dark .carousel-button {
-      color: var(--gold);
-      border-color: rgba(197,163,107,.5);
-    }
-
-    .dark .carousel-button:hover {
-      color: var(--black);
-      background: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .carousel-button svg {
-      width: 17px;
-      height: 17px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .carousel-window {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 22px;
-      transition: transform .7s cubic-bezier(.22,.61,.36,1);
-      will-change: transform;
-    }
-
-    .legend-card {
-      flex: 0 0 calc((100% - 44px) / 3);
-      min-width: 0;
-    }
-
-    .legend-image-wrap {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background: #d2c9b9;
-    }
-
-    .legend-image-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.25));
-      pointer-events: none;
-    }
-
-    .legend-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(.78);
-      transition: transform .8s ease, filter .8s ease;
-    }
-
-    .legend-card:hover .legend-image {
-      transform: scale(1.045);
-      filter: saturate(1);
-    }
-
-    .legend-number {
-      position: absolute;
-      z-index: 2;
-      top: 15px;
-      left: 15px;
-      display: grid;
-      place-items: center;
-      min-width: 34px;
-      height: 34px;
-      padding: 0 8px;
-      color: var(--ivory-light);
-      background: rgba(23,23,21,.85);
-      border: 1px solid rgba(197,163,107,.65);
-      font-family: var(--heading);
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .legend-info {
-      padding: 21px 2px 0;
-    }
-
-    .legend-country {
-      color: var(--bronze);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .legend-name {
-      margin: 8px 0 5px;
-      color: var(--black);
-      font-family: var(--heading);
-      font-size: clamp(23px, 2.5vw, 31px);
-      font-weight: 700;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-
-    .legend-discipline {
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .3px;
-    }
-
-    .dark .legend-name {
-      color: var(--ivory-light);
-    }
-
-    .dark .legend-discipline {
-      color: rgba(248,245,238,.58);
-    }
-
-    .dark .legend-country {
-      color: var(--gold);
-    }
-
-    .carousel-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-top: 37px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-    }
-
-    .carousel-count {
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .dark .carousel-count {
-      color: rgba(248,245,238,.55);
-    }
-
-    .carousel-progress {
-      width: min(260px, 40%);
-      height: 2px;
-      overflow: hidden;
-      background: rgba(169,130,77,.2);
-    }
-
-    .carousel-progress span {
-      display: block;
-      width: 0;
-      height: 100%;
-      background: var(--bronze);
-      transition: width .5s ease;
-    }
-
-    .dark .carousel-progress span {
-      background: var(--gold);
-    }
-
-    /* INTERLUDE */
-
-    .legacy-interlude {
-      position: relative;
-      padding: 115px 24px;
-      overflow: hidden;
-      color: var(--ivory-light);
-      text-align: center;
-      background:
-        linear-gradient(rgba(23,23,21,.93), rgba(23,23,21,.96)),
-        url("/legacy-interlude.jpg") center / cover no-repeat,
-        var(--black);
-    }
-
-    .legacy-interlude::before,
-    .legacy-interlude::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      width: min(72%, 720px);
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .legacy-interlude::before {
-      top: 55px;
-    }
-
-    .legacy-interlude::after {
-      bottom: 55px;
-    }
-
-    .interlude-inner {
-      position: relative;
-      max-width: 950px;
-      margin: auto;
-    }
-
-    .interlude-mark {
-      color: var(--gold);
-      font-family: var(--editorial);
-      font-size: 56px;
-      line-height: 1;
-    }
-
-    .interlude-inner h2 {
-      margin: 25px 0 20px;
-      font-family: var(--editorial);
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 400;
-      line-height: 1.35;
-    }
-
-    .interlude-inner p {
-      max-width: 650px;
-      margin: auto;
-      color: rgba(248,245,238,.65);
-      font-size: 13px;
-      line-height: 2;
-    }
-
-    .interlude-emphasis {
-      display: block;
-      margin-top: 28px;
-      color: var(--gold);
-      font-family: var(--heading);
-      font-size: clamp(19px, 3vw, 27px);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* NEXT GENERATION */
-
-    .next-generation {
-      padding: 115px 24px 120px;
-      background: var(--ivory-light);
-    }
-
-    .next-inner {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .next-inner h2 {
-      margin: 20px 0;
-      color: var(--black);
-      font-family: var(--editorial);
-      font-size: clamp(34px, 5vw, 54px);
-      font-weight: 400;
-      line-height: 1.2;
-    }
-
-    .next-inner > p {
-      max-width: 760px;
-      margin: auto;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 2;
-    }
-
-    .next-statement {
-      margin: 48px auto 0;
-      padding: 28px 20px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      color: var(--bronze);
-      font-family: var(--heading);
-      font-size: clamp(20px, 3vw, 30px);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      line-height: 1.45;
-      text-transform: uppercase;
-    }
-
-    /* CLOSING */
-
-    .closing {
-      padding: 100px 24px 105px;
-      color: var(--ivory-light);
-      background: var(--charcoal);
-      text-align: center;
-    }
-
-    .closing-inner {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .closing .section-label {
-      color: var(--gold);
-    }
-
-    .closing h2 {
-      margin: 22px 0;
-      font-family: var(--heading);
-      font-size: clamp(40px, 7vw, 76px);
-      font-weight: 800;
-      line-height: .98;
-      text-transform: uppercase;
-    }
-
-    .closing h2 span {
-      display: block;
-      color: var(--gold);
-    }
-
-    .closing p {
-      max-width: 650px;
-      margin: 25px auto 0;
-      color: rgba(248,245,238,.65);
-      font-family: var(--editorial);
-      font-size: 17px;
-      line-height: 1.9;
-    }
-
-    .closing-rule {
-      width: 55px;
-      height: 2px;
-      margin: 36px auto;
-      background: var(--gold);
-    }
-
-    .closing-signature {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    /* FOOTER */
-
-    .site-footer {
-      padding: 35px 24px;
-      color: rgba(248,245,238,.55);
-      background: var(--black);
-      border-top: 1px solid rgba(197,163,107,.25);
-    }
-
-    .footer-inner {
-      width: min(100%, var(--content));
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      color: var(--ivory-light);
-      font-family: var(--heading);
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-
-    .footer-copy {
-      font-size: 10px;
-      line-height: 1.8;
-    }
-
-    .footer-top {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    /* GOOGLE TRANSLATE PROTECTION */
-
-    #google_translate_element {
-      position: absolute !important;
-      left: -10000px !important;
-      top: 0 !important;
-      width: 1px !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-    .goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    .goog-te-menu-frame,
-    .goog-te-menu2,
-    .goog-te-gadget,
-    .goog-te-spinner-pos,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-text-highlight,
-    #goog-gt-tt,
-    .VIpgJd-ZVi9od-ORHb-OEVmcd,
-    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-    .skiptranslate iframe {
-      display: none !important;
-      visibility: hidden !important;
-    }
-
-    body {
-      top: 0 !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-
-    html {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .legend-card {
-        flex-basis: calc((100% - 22px) / 2);
-      }
-
-      .collection-heading {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .collection-heading p {
-        max-width: 600px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header-inner {
-        width: calc(100% - 28px);
-        min-height: 72px;
-        gap: 10px;
-      }
-
-      .brand {
-        gap: 8px;
-      }
-
-      .brand img {
-        width: 36px;
-        height: 36px;
-      }
-
-      .brand-name {
-        font-size: 17px;
-        letter-spacing: .8px;
-      }
-
-      .brand-tagline {
-        font-size: 7px;
-        letter-spacing: 1px;
-      }
-
-      .header-right {
-        gap: 10px;
-      }
-
-      .back-link {
-        display: none;
-      }
-
-      .language-control {
-        gap: 5px;
-      }
-
-      .language-control label {
-        display: none;
-      }
-
-      .language-control select {
-        max-width: 125px;
-        padding: 9px 22px 9px 7px;
-        font-size: 10px;
-      }
-
-      .hero {
-        min-height: 540px;
-        background-position: 58% center;
-      }
-
-      .hero-inner {
-        width: calc(100% - 36px);
-        padding: 90px 0;
-      }
-
-      .hero h1 {
-        font-size: clamp(53px, 15vw, 78px);
-      }
-
-      .hero-description {
-        font-size: 17px;
-      }
-
-      .intro-section {
-        padding: 75px 22px;
-      }
-
-      .collection-section {
-        padding: 75px 0 85px;
-      }
-
-      .collection-inner {
-        width: calc(100% - 36px);
-      }
-
-      .collection-heading {
-        margin-bottom: 30px;
-      }
-
-      .collection-heading h2 {
-        font-size: 43px;
-      }
-
-      .collection-heading p {
-        font-size: 11px;
-      }
-
-      .legend-card {
-        flex-basis: 84%;
-      }
-
-      .legend-image-wrap {
-        aspect-ratio: 4 / 5;
-      }
-
-      .legend-name {
-        font-size: 28px;
-      }
-
-      .carousel-button {
-        width: 40px;
-        height: 40px;
-      }
-
-      .legacy-interlude {
-        padding: 95px 22px;
-      }
-
-      .next-generation {
-        padding: 85px 22px;
-      }
-
-      .closing {
-        padding: 80px 22px;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
+<meta name="description" content="A PHRINUSOMYIS™ tribute to extraordinary sporting figures whose achievements, courage and influence became part of sporting history.">
+<meta name="theme-color" content="#171715">
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="https://phrinusomyis.com/legacy-of-sport.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
+<meta property="og:description" content="Honouring the figures who shaped sporting history.">
+<meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
+<meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#171715;
+  --charcoal:#25241f;
+  --ivory:#f2eee5;
+  --ivory-light:#f8f5ee;
+  --stone:#e5ded1;
+  --bronze:#a9824d;
+  --gold:#c5a36b;
+  --text:#24231f;
+  --muted:#69665f;
+  --line:rgba(169,130,77,.25);
+  --content:1360px;
+  --heading:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+  --body:"DM Sans","Segoe UI",Arial,sans-serif;
+  --editorial:"Playfair Display",Georgia,serif;
+}
+
+* {box-sizing:border-box}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+body {
+  margin:0;
+  padding:0;
+  top:0!important;
+  max-width:100%;
+  overflow-x:hidden;
+  background:var(--ivory-light);
+  color:var(--text);
+  font-family:var(--body);
+  -webkit-font-smoothing:antialiased;
+}
+
+img {display:block;max-width:100%}
+a {color:inherit;text-decoration:none}
+button,select {font:inherit}
+button {cursor:pointer}
+
+/* TOP LINE */
+
+.site-topline {
+  height:5px;
+  background:var(--gold);
+}
+
+/* HEADER */
+
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(23,23,21,.97);
+  border-bottom:1px solid rgba(197,163,107,.25);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner {
+  width:min(calc(100% - 48px),var(--content));
+  min-height:84px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.brand img {
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+.brand-copy {
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.brand-name {
+  color:var(--ivory-light);
+  font-family:var(--heading);
+  font-size:23px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.brand-tagline {
+  color:var(--gold);
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.header-right {
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.back-link {
+  color:var(--ivory);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:color .25s ease;
+}
+
+.back-link:hover {color:var(--gold)}
+
+.language-control {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:var(--gold);
+}
+
+.language-control label {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.language-control select {
+  max-width:155px;
+  padding:10px 30px 10px 11px;
+  color:var(--ivory);
+  background:#292821;
+  border:1px solid rgba(197,163,107,.45);
+  border-radius:0;
+  outline:none;
+  font-size:11px;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero {
+  position:relative;
+  min-height:610px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:var(--ivory-light);
+  background:
+    linear-gradient(90deg,rgba(18,18,16,.98),rgba(18,18,16,.83) 52%,rgba(18,18,16,.42)),
+    url("/legacy-hero.jpg") center 42%/cover no-repeat,
+    var(--black);
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg,transparent 45%,rgba(197,163,107,.08) 45.1%,transparent 45.4%),
+    linear-gradient(0deg,rgba(23,23,21,.45),transparent 55%);
+  pointer-events:none;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  width:1px;
+  height:72%;
+  top:14%;
+  right:12%;
+  background:linear-gradient(transparent,rgba(197,163,107,.55),transparent);
+}
+
+.hero-inner {
+  position:relative;
+  z-index:1;
+  width:min(calc(100% - 48px),var(--content));
+  margin:auto;
+  padding:105px 0 115px;
+}
+
+.eyebrow {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.eyebrow::before {
+  content:"";
+  width:38px;
+  height:1px;
+  background:var(--gold);
+}
+
+.hero h1 {
+  max-width:850px;
+  margin:25px 0 18px;
+  color:var(--ivory-light);
+  font-family:var(--heading);
+  font-size:clamp(58px,9vw,116px);
+  font-weight:800;
+  letter-spacing:-1.5px;
+  line-height:.88;
+  text-transform:uppercase;
+}
+
+.hero h1 span {
+  display:block;
+  color:var(--gold);
+}
+
+.hero-description {
+  max-width:620px;
+  margin:28px 0 0;
+  color:rgba(248,245,238,.78);
+  font-family:var(--editorial);
+  font-size:clamp(17px,2vw,21px);
+  line-height:1.8;
+}
+
+.hero-bottom {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-top:44px;
+}
+
+.hero-line {
+  width:62px;
+  height:1px;
+  background:var(--gold);
+}
+
+.hero-note {
+  color:rgba(248,245,238,.62);
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+
+/* INTRODUCTION */
+
+.intro-section {
+  padding:105px 24px 100px;
+  background:var(--ivory-light);
+}
+
+.intro-inner {
+  max-width:920px;
+  margin:auto;
+  text-align:center;
+}
+
+.section-label {
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.intro-inner h2 {
+  margin:20px 0 22px;
+  color:var(--black);
+  font-family:var(--editorial);
+  font-size:clamp(31px,5vw,48px);
+  font-weight:400;
+  line-height:1.2;
+}
+
+.intro-inner p {
+  max-width:790px;
+  margin:auto;
+  color:var(--muted);
+  font-size:15px;
+  line-height:2;
+}
+
+.gold-divider {
+  width:65px;
+  height:2px;
+  margin:35px auto 0;
+  background:var(--gold);
+}
+
+/* COLLECTIONS */
+
+.collection-section {
+  padding:100px 0 110px;
+  overflow:hidden;
+  background:var(--stone);
+}
+
+.collection-section.dark {
+  color:var(--ivory-light);
+  background:var(--black);
+}
+
+.collection-inner {
+  width:min(calc(100% - 48px),var(--content));
+  margin:auto;
+}
+
+.collection-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:45px;
+}
+
+.collection-heading h2 {
+  margin:12px 0 0;
+  color:var(--black);
+  font-family:var(--heading);
+  font-size:clamp(38px,5vw,62px);
+  font-weight:700;
+  letter-spacing:.5px;
+  line-height:.98;
+  text-transform:uppercase;
+}
+
+.dark .collection-heading h2 {color:var(--ivory-light)}
+
+.collection-heading p {
+  max-width:370px;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.9;
+}
+
+.dark .collection-heading p {
+  color:rgba(248,245,238,.58);
+}
+
+.carousel-controls {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  flex-shrink:0;
+}
+
+.carousel-button {
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  color:var(--black);
+  background:transparent;
+  border:1px solid rgba(36,35,31,.35);
+  transition:.25s ease;
+}
+
+.carousel-button:hover {
+  color:var(--ivory-light);
+  background:var(--black);
+  border-color:var(--black);
+}
+
+.dark .carousel-button {
+  color:var(--gold);
+  border-color:rgba(197,163,107,.5);
+}
+
+.dark .carousel-button:hover {
+  color:var(--black);
+  background:var(--gold);
+  border-color:var(--gold);
+}
+
+.carousel-button svg {
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.carousel-window {
+  width:100%;
+  overflow:hidden;
+}
+
+.carousel-track {
+  display:flex;
+  gap:22px;
+  transition:transform .7s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+
+.legend-card {
+  flex:0 0 calc((100% - 44px)/3);
+  min-width:0;
+}
+
+.legend-image-wrap {
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:#d2c9b9;
+}
+
+.legend-image-wrap::after {
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  background:linear-gradient(transparent,rgba(0,0,0,.25));
+  pointer-events:none;
+}
+
+.legend-image {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.78);
+  transition:transform .8s ease,filter .8s ease;
+}
+
+.legend-card:hover .legend-image {
+  transform:scale(1.045);
+  filter:saturate(1);
+}
+
+.legend-number {
+  position:absolute;
+  z-index:2;
+  top:15px;
+  left:15px;
+  display:grid;
+  place-items:center;
+  min-width:34px;
+  height:34px;
+  padding:0 8px;
+  color:var(--ivory-light);
+  background:rgba(23,23,21,.85);
+  border:1px solid rgba(197,163,107,.65);
+  font-family:var(--heading);
+  font-size:15px;
+  font-weight:700;
+}
+
+.legend-info {padding:21px 2px 0}
+
+.legend-country {
+  color:var(--bronze);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.legend-name {
+  margin:8px 0 5px;
+  color:var(--black);
+  font-family:var(--heading);
+  font-size:clamp(23px,2.5vw,31px);
+  font-weight:700;
+  line-height:1.05;
+  text-transform:uppercase;
+}
+
+.legend-discipline {
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.3px;
+}
+
+.dark .legend-name {color:var(--ivory-light)}
+.dark .legend-discipline {color:rgba(248,245,238,.58)}
+.dark .legend-country {color:var(--gold)}
+
+.carousel-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:37px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+
+.carousel-count {
+  color:var(--muted);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.dark .carousel-count {color:rgba(248,245,238,.55)}
+
+.carousel-progress {
+  width:min(260px,40%);
+  height:2px;
+  overflow:hidden;
+  background:rgba(169,130,77,.2);
+}
+
+.carousel-progress span {
+  display:block;
+  width:0;
+  height:100%;
+  background:var(--bronze);
+  transition:width .5s ease;
+}
+
+.dark .carousel-progress span {background:var(--gold)}
+
+/* PASSING THE LEGACY */
+
+.legacy-interlude {
+  position:relative;
+  padding:125px 24px;
+  overflow:hidden;
+  color:var(--ivory-light);
+  text-align:center;
+  background:
+    linear-gradient(rgba(23,23,21,.90),rgba(23,23,21,.95)),
+    url("/legacy-interlude.jpg") center/cover no-repeat,
+    var(--black);
+}
+
+.legacy-interlude::before,
+.legacy-interlude::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  width:min(72%,720px);
+  height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.legacy-interlude::before {top:55px}
+.legacy-interlude::after {bottom:55px}
+
+.interlude-inner {
+  position:relative;
+  max-width:960px;
+  margin:auto;
+}
+
+.interlude-mark {
+  color:var(--gold);
+  font-family:var(--editorial);
+  font-size:56px;
+  line-height:1;
+}
+
+.interlude-inner h2 {
+  margin:25px 0 20px;
+  font-family:var(--editorial);
+  font-size:clamp(30px,5vw,50px);
+  font-weight:400;
+  line-height:1.35;
+}
+
+.interlude-inner p {
+  max-width:720px;
+  margin:auto;
+  color:rgba(248,245,238,.68);
+  font-size:14px;
+  line-height:2;
+}
+
+.interlude-emphasis {
+  display:block;
+  margin-top:30px;
+  color:var(--gold);
+  font-family:var(--heading);
+  font-size:clamp(20px,3vw,29px);
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* NEXT GENERATION */
+
+.next-generation {
+  padding:115px 24px 120px;
+  background:var(--ivory-light);
+}
+
+.next-inner {
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+}
+
+.next-inner h2 {
+  margin:20px 0;
+  color:var(--black);
+  font-family:var(--editorial);
+  font-size:clamp(34px,5vw,54px);
+  font-weight:400;
+  line-height:1.2;
+}
+
+.next-inner > p {
+  max-width:790px;
+  margin:auto;
+  color:var(--muted);
+  font-size:14px;
+  line-height:2;
+}
+
+.next-statement {
+  margin:48px auto 0;
+  padding:28px 20px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  color:var(--bronze);
+  font-family:var(--heading);
+  font-size:clamp(20px,3vw,30px);
+  font-weight:700;
+  letter-spacing:1.5px;
+  line-height:1.5;
+  text-transform:uppercase;
+}
+
+/* PERSONAL MOTIVATIONAL MESSAGE */
+
+.inheritance-section {
+  padding:90px 24px;
+  background:var(--stone);
+}
+
+.inheritance-inner {
+  width:min(100%,1000px);
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.inheritance-label {
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.inheritance-heading {
+  margin:17px 0;
+  color:var(--black);
+  font-family:var(--heading);
+  font-size:clamp(35px,5vw,55px);
+  font-weight:700;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.inheritance-description {
+  color:var(--muted);
+  font-size:13px;
+  line-height:2;
+}
+
+.personal-quote {
+  position:relative;
+  padding:38px 35px;
+  color:var(--ivory-light);
+  background:var(--charcoal);
+  border-left:3px solid var(--gold);
+}
+
+.personal-quote::before {
+  content:"“";
+  display:block;
+  margin-bottom:10px;
+  color:var(--gold);
+  font-family:var(--editorial);
+  font-size:55px;
+  line-height:.7;
+}
+
+.personal-quote blockquote {
+  margin:0;
+  color:var(--ivory-light);
+  font-family:var(--editorial);
+  font-size:clamp(21px,3vw,29px);
+  line-height:1.55;
+}
+
+.personal-quote cite {
+  display:block;
+  margin-top:25px;
+  color:var(--gold);
+  font-family:var(--body);
+  font-size:9px;
+  font-style:normal;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* CLOSING */
+
+.closing {
+  padding:105px 24px;
+  color:var(--ivory-light);
+  background:var(--charcoal);
+  text-align:center;
+}
+
+.closing-inner {
+  max-width:900px;
+  margin:auto;
+}
+
+.closing .section-label {color:var(--gold)}
+
+.closing h2 {
+  margin:22px 0;
+  font-family:var(--heading);
+  font-size:clamp(40px,7vw,76px);
+  font-weight:800;
+  line-height:.98;
+  text-transform:uppercase;
+}
+
+.closing h2 span {
+  display:block;
+  color:var(--gold);
+}
+
+.closing p {
+  max-width:690px;
+  margin:25px auto 0;
+  color:rgba(248,245,238,.68);
+  font-family:var(--editorial);
+  font-size:17px;
+  line-height:1.9;
+}
+
+.closing-rule {
+  width:55px;
+  height:2px;
+  margin:36px auto;
+  background:var(--gold);
+}
+
+.closing-signature {
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+/* BOTTOM SITE NAVIGATION */
+
+.site-navigation {
+  padding:34px 24px;
+  background:#201f1b;
+  border-top:1px solid rgba(197,163,107,.25);
+}
+
+.navigation-inner {
+  width:min(100%,var(--content));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.navigation-link {
+  min-width:145px;
+  padding:14px 18px;
+  color:var(--ivory);
+  background:transparent;
+  border:1px solid rgba(197,163,107,.35);
+  text-align:center;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:.25s ease;
+}
+
+.navigation-link:hover {
+  color:var(--black);
+  background:var(--gold);
+  border-color:var(--gold);
+}
+
+.navigation-link.current {
+  color:var(--gold);
+  border-color:var(--gold);
+}
+
+/* FOOTER */
+
+.site-footer {
+  padding:35px 24px;
+  color:rgba(248,245,238,.55);
+  background:var(--black);
+  border-top:1px solid rgba(197,163,107,.2);
+}
+
+.footer-inner {
+  width:min(100%,var(--content));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-brand {
+  color:var(--ivory-light);
+  font-family:var(--heading);
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1.5px;
+}
+
+.footer-copy {
+  font-size:10px;
+  line-height:1.8;
+}
+
+.footer-top {
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+/* GOOGLE TRANSLATE PROTECTION */
+
+#google_translate_element {
+  position:absolute!important;
+  left:-10000px!important;
+  top:0!important;
+  width:1px!important;
+  height:1px!important;
+  overflow:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-menu-frame,
+.goog-te-menu2,
+.goog-te-gadget,
+.goog-te-spinner-pos,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+#goog-gt-tt,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.skiptranslate iframe {
+  display:none!important;
+  visibility:hidden!important;
+}
+
+body {
+  top:0!important;
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+html {
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+  .legend-card {
+    flex-basis:calc((100% - 22px)/2);
+  }
+
+  .collection-heading {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .collection-heading p {max-width:600px}
+
+  .inheritance-inner {
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+}
+
+@media(max-width:600px) {
+  .header-inner {
+    width:calc(100% - 28px);
+    min-height:72px;
+    gap:10px;
+  }
+
+  .brand {gap:8px}
+
+  .brand img {
+    width:36px;
+    height:36px;
+  }
+
+  .brand-name {
+    font-size:17px;
+    letter-spacing:.8px;
+  }
+
+  .brand-tagline {
+    font-size:7px;
+    letter-spacing:1px;
+  }
+
+  .header-right {gap:10px}
+  .back-link {display:none}
+  .language-control {gap:5px}
+  .language-control label {display:none}
+
+  .language-control select {
+    max-width:125px;
+    padding:9px 22px 9px 7px;
+    font-size:10px;
+  }
+
+  .hero {
+    min-height:540px;
+    background-position:58% center;
+  }
+
+  .hero-inner {
+    width:calc(100% - 36px);
+    padding:90px 0;
+  }
+
+  .hero h1 {
+    font-size:clamp(53px,15vw,78px);
+  }
+
+  .hero-description {font-size:17px}
+
+  .intro-section {padding:75px 22px}
+
+  .collection-section {padding:75px 0 85px}
+
+  .collection-inner {width:calc(100% - 36px)}
+
+  .collection-heading {margin-bottom:30px}
+
+  .collection-heading h2 {font-size:43px}
+
+  .collection-heading p {font-size:11px}
+
+  .legend-card {flex-basis:84%}
+
+  .legend-image-wrap {aspect-ratio:4/5}
+
+  .legend-name {font-size:28px}
+
+  .carousel-button {
+    width:40px;
+    height:40px;
+  }
+
+  .legacy-interlude {padding:95px 22px}
+
+  .next-generation {padding:85px 22px}
+
+  .inheritance-section {padding:75px 22px}
+
+  .personal-quote {padding:30px 25px}
+
+  .closing {padding:80px 22px}
+
+  .navigation-inner {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .navigation-link {
+    min-width:0;
+    padding:13px 7px;
+    font-size:9px;
+  }
+
+  .footer-inner {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
 </head>
 
-<body>
+<body id="top">
 
-  <div class="site-topline"></div>
+<div class="site-topline"></div>
+<div id="google_translate_element" aria-hidden="true"></div>
 
-  <!-- GOOGLE TRANSLATE ENGINE -->
-  <div id="google_translate_element" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="header-inner">
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
+    <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
+      <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+      <span class="brand-copy">
+        <span class="brand-name">PHRINUSOMYIS™</span>
+        <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
+      </span>
+    </a>
 
-      <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
-        <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
-        <span class="brand-copy">
-          <span class="brand-name">PHRINUSOMYIS™</span>
-          <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
-        </span>
-      </a>
+    <div class="header-right">
+      <a class="back-link" href="/">Return to PHRINUSOMYIS</a>
 
-      <div class="header-right">
-        <a class="back-link" href="/">Return to PHRINUSOMYIS</a>
+      <div class="language-control">
+        <label for="siteLanguage">Language</label>
+        <select id="siteLanguage" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="ar">العربية</option>
+          <option value="zh-CN">中文</option>
+          <option value="ru">Русский</option>
+          <option value="pt">Português</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="th">ไทย</option>
+          <option value="pl">Polski</option>
+          <option value="sv">Svenska</option>
+          <option value="fi">Suomi</option>
+          <option value="da">Dansk</option>
+        </select>
+      </div>
+    </div>
 
-        <div class="language-control">
-          <label for="siteLanguage">Language</label>
-          <select id="siteLanguage" aria-label="Select language">
-            <option value="en" selected>English</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-            <option value="ar">العربية</option>
-            <option value="zh-CN">中文</option>
-            <option value="ru">Русский</option>
-            <option value="pt">Português</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="it">Italiano</option>
-            <option value="nl">Nederlands</option>
-            <option value="tr">Türkçe</option>
-            <option value="hi">हिन्दी</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="th">ไทย</option>
-            <option value="pl">Polski</option>
-            <option value="sv">Svenska</option>
-            <option value="fi">Suomi</option>
-            <option value="da">Dansk</option>
-          </select>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">A PHRINUSOMYIS™ Editorial Tribute</div>
+
+      <h1>
+        The Legacy
+        <span>of Sport.</span>
+      </h1>
+
+      <p class="hero-description">
+        Honouring the figures whose achievements, courage and influence
+        became part of sporting history.
+      </p>
+
+      <div class="hero-bottom">
+        <span class="hero-line"></span>
+        <span class="hero-note">A tribute across generations and continents</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="intro-section">
+    <div class="intro-inner">
+      <div class="section-label">Beyond the Moment</div>
+
+      <h2>Greatness never leaves the stage.</h2>
+
+      <p>
+        Sporting history is shaped by individuals whose performances
+        transcend the moment in which they occurred. Across disciplines,
+        nations and generations, their achievements established
+        enduring points of reference in the story of sport.
+
+        This collection recognizes their contribution and preserves
+        a place for their names in the wider sporting narrative.
+      </p>
+
+      <div class="gold-divider"></div>
+    </div>
+  </section>
+
+  <!-- FIRST COLLECTION -->
+  <section class="collection-section" id="first-collection">
+    <div class="collection-inner">
+
+      <div class="collection-heading">
+        <div>
+          <div class="section-label">The Historical Collection · 01</div>
+          <h2>Names That Endure</h2>
         </div>
+
+        <p>
+          From Africa to Europe and Asia, these figures left a lasting
+          mark on their respective sporting disciplines.
+        </p>
+
+        <div class="carousel-controls">
+          <button class="carousel-button" type="button"
+            data-carousel-prev="legendsOne" aria-label="Previous legends">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <button class="carousel-button" type="button"
+            data-carousel-next="legendsOne" aria-label="Next legends">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-window">
+        <div class="carousel-track" id="legendsOne"></div>
+      </div>
+
+      <div class="carousel-footer">
+        <div class="carousel-count">Collection 01 / 02</div>
+        <div class="carousel-progress"><span id="progress-legendsOne"></span></div>
+        <div class="carousel-count">14 Historical Figures</div>
       </div>
 
     </div>
-  </header>
+  </section>
 
-  <main>
+  <!-- SECOND COLLECTION -->
+  <section class="collection-section dark" id="second-collection">
+    <div class="collection-inner">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-
-        <div class="eyebrow">A PHRINUSOMYIS™ Editorial Tribute</div>
-
-        <h1>
-          The Legacy
-          <span>of Sport.</span>
-        </h1>
-
-        <p class="hero-description">
-          Honouring the figures whose achievements, courage and influence
-          became part of sporting history.
-        </p>
-
-        <div class="hero-bottom">
-          <span class="hero-line"></span>
-          <span class="hero-note">A tribute across generations and continents</span>
+      <div class="collection-heading">
+        <div>
+          <div class="section-label">The Historical Collection · 02</div>
+          <h2>Across the World</h2>
         </div>
-
-      </div>
-    </section>
-
-    <!-- INTRODUCTION -->
-    <section class="intro-section">
-      <div class="intro-inner">
-
-        <div class="section-label">Beyond the Moment</div>
-
-        <h2>Greatness never leaves the stage.</h2>
 
         <p>
-          Sporting history is shaped by individuals whose performances
-          transcend the moment in which they occurred. Across disciplines,
-          nations and generations, their achievements established
-          enduring points of reference in the story of sport.
-          This collection recognizes their contribution and preserves
-          a place for their names in the wider sporting narrative.
+          From the Americas to Oceania and Europe, their achievements
+          remain part of the international story of sport.
         </p>
 
-        <div class="gold-divider"></div>
+        <div class="carousel-controls">
+          <button class="carousel-button" type="button"
+            data-carousel-prev="legendsTwo" aria-label="Previous legends">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
 
+          <button class="carousel-button" type="button"
+            data-carousel-next="legendsTwo" aria-label="Next legends">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
-    </section>
 
-    <!-- FIRST SLIDING COLLECTION -->
-    <section class="collection-section" id="first-collection">
-      <div class="collection-inner">
-
-        <div class="collection-heading">
-          <div>
-            <div class="section-label">The Historical Collection · 01</div>
-            <h2>Names That Endure</h2>
-          </div>
-
-          <p>
-            From Africa to Europe and Asia, these figures left
-            a lasting mark on their respective sporting disciplines.
-          </p>
-
-          <div class="carousel-controls">
-            <button class="carousel-button" type="button"
-              data-carousel-prev="legendsOne" aria-label="Previous legends">
-              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="carousel-button" type="button"
-              data-carousel-next="legendsOne" aria-label="Next legends">
-              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="carousel-window" id="window-legendsOne">
-          <div class="carousel-track" id="legendsOne">
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">01</span>
-                <img class="legend-image" src="/abebe-bikila.jpg" alt="Abebe Bikila, Ethiopian athletics legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Ethiopia · Africa</div>
-                <h3 class="legend-name">Abebe Bikila</h3>
-                <div class="legend-discipline">Athletics · Marathon</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">02</span>
-                <img class="legend-image" src="/henry-rono.jpg" alt="Henry Rono, Kenyan athletics legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Kenya · Africa</div>
-                <h3 class="legend-name">Henry Rono</h3>
-                <div class="legend-discipline">Athletics · Long-distance running</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">03</span>
-                <img class="legend-image" src="/mohamed-latif.jpg" alt="Mohamed Latif, Egyptian football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Egypt · Africa</div>
-                <h3 class="legend-name">Mohamed Latif</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">04</span>
-                <img class="legend-image" src="/larbi-benbarek.jpg" alt="Larbi Benbarek, Moroccan football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Morocco · Africa</div>
-                <h3 class="legend-name">Larbi Benbarek</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">05</span>
-                <img class="legend-image" src="/dhyan-chand.jpg" alt="Dhyan Chand, Indian field hockey legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">India · Asia</div>
-                <h3 class="legend-name">Dhyan Chand</h3>
-                <div class="legend-discipline">Field hockey</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">06</span>
-                <img class="legend-image" src="/shigeo-nagashima.jpg" alt="Shigeo Nagashima, Japanese baseball legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Japan · Asia</div>
-                <h3 class="legend-name">Shigeo Nagashima</h3>
-                <div class="legend-discipline">Baseball</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">07</span>
-                <img class="legend-image" src="/nasser-hejazi.jpg" alt="Nasser Hejazi, Iranian football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Iran · Asia</div>
-                <h3 class="legend-name">Nasser Hejazi</h3>
-                <div class="legend-discipline">Football · Goalkeeping</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">08</span>
-                <img class="legend-image" src="/gabriel-elorde.jpg" alt="Gabriel Elorde, Filipino boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Philippines · Asia</div>
-                <h3 class="legend-name">Gabriel Elorde</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">09</span>
-                <img class="legend-image" src="/johan-cruyff.jpg" alt="Johan Cruyff, Dutch football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Netherlands · Europe</div>
-                <h3 class="legend-name">Johan Cruyff</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">10</span>
-                <img class="legend-image" src="/franz-beckenbauer.jpg" alt="Franz Beckenbauer, German football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Germany · Europe</div>
-                <h3 class="legend-name">Franz Beckenbauer</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">11</span>
-                <img class="legend-image" src="/bobby-charlton.jpg" alt="Sir Bobby Charlton, English football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">United Kingdom · Europe</div>
-                <h3 class="legend-name">Sir Bobby Charlton</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="carousel-footer">
-          <div class="carousel-count">Collection 01 / 02</div>
-          <div class="carousel-progress"><span id="progress-legendsOne"></span></div>
-          <div class="carousel-count">11 Historical Figures</div>
-        </div>
-
+      <div class="carousel-window">
+        <div class="carousel-track" id="legendsTwo"></div>
       </div>
-    </section>
 
-    <!-- SECOND SLIDING COLLECTION -->
-    <section class="collection-section dark" id="second-collection">
-      <div class="collection-inner">
-
-        <div class="collection-heading">
-          <div>
-            <div class="section-label">The Historical Collection · 02</div>
-            <h2>Across the World</h2>
-          </div>
-
-          <p>
-            From the Americas to Oceania and Europe, their achievements
-            remain part of the international story of sport.
-          </p>
-
-          <div class="carousel-controls">
-            <button class="carousel-button" type="button"
-              data-carousel-prev="legendsTwo" aria-label="Previous legends">
-              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="carousel-button" type="button"
-              data-carousel-next="legendsTwo" aria-label="Next legends">
-              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="carousel-window" id="window-legendsTwo">
-          <div class="carousel-track" id="legendsTwo">
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">12</span>
-                <img class="legend-image" src="/niki-lauda.jpg" alt="Niki Lauda, Austrian motorsport legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Austria · Europe</div>
-                <h3 class="legend-name">Niki Lauda</h3>
-                <div class="legend-discipline">Motorsport · Formula One</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">13</span>
-                <img class="legend-image" src="/andre-the-giant.jpg" alt="André the Giant, French professional wrestling figure" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">France · Europe</div>
-                <h3 class="legend-name">André the Giant</h3>
-                <div class="legend-discipline">Professional wrestling</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">14</span>
-                <img class="legend-image" src="/muhammad-ali.jpg" alt="Muhammad Ali, American boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">United States · North America</div>
-                <h3 class="legend-name">Muhammad Ali</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">15</span>
-                <img class="legend-image" src="/terry-fox.jpg" alt="Terry Fox, Canadian runner and humanitarian" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Canada · North America</div>
-                <h3 class="legend-name">Terry Fox</h3>
-                <div class="legend-discipline">Running · Athletics</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">16</span>
-                <img class="legend-image" src="/teofilo-stevenson.jpg" alt="Teófilo Stevenson, Cuban boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Cuba · Caribbean</div>
-                <h3 class="legend-name">Teófilo Stevenson</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">17</span>
-                <img class="legend-image" src="/salvador-sanchez.jpg" alt="Salvador Sánchez, Mexican boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Mexico · North America</div>
-                <h3 class="legend-name">Salvador Sánchez</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">18</span>
-                <img class="legend-image" src="/pele.jpg" alt="Pelé, Brazilian football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Brazil · South America</div>
-                <h3 class="legend-name">Pelé</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">19</span>
-                <img class="legend-image" src="/diego-maradona.jpg" alt="Diego Maradona, Argentine football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Argentina · South America</div>
-                <h3 class="legend-name">Diego Maradona</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">20</span>
-                <img class="legend-image" src="/alcides-ghiggia.jpg" alt="Alcides Ghiggia, Uruguayan football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Uruguay · South America</div>
-                <h3 class="legend-name">Alcides Ghiggia</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">21</span>
-                <img class="legend-image" src="/don-bradman.jpg" alt="Sir Donald Bradman, Australian cricket legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Australia · Oceania</div>
-                <h3 class="legend-name">Sir Donald Bradman</h3>
-                <div class="legend-discipline">Cricket</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">22</span>
-                <img class="legend-image" src="/jonah-lomu.jpg" alt="Jonah Lomu, New Zealand rugby legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">New Zealand · Oceania</div>
-                <h3 class="legend-name">Jonah Lomu</h3>
-                <div class="legend-discipline">Rugby union</div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="carousel-footer">
-          <div class="carousel-count">Collection 02 / 02</div>
-          <div class="carousel-progress"><span id="progress-legendsTwo"></span></div>
-          <div class="carousel-count">11 Historical Figures</div>
-        </div>
-
+      <div class="carousel-footer">
+        <div class="carousel-count">Collection 02 / 02</div>
+        <div class="carousel-progress"><span id="progress-legendsTwo"></span></div>
+        <div class="carousel-count">14 Historical Figures</div>
       </div>
-    </section>
 
-    <!-- THE TRANSITION -->
-    <section class="legacy-interlude">
-      <div class="interlude-inner">
+    </div>
+  </section>
 
-        <div class="interlude-mark">“</div>
+  <!-- THE PASSING OF THE LEGACY -->
+  <section class="legacy-interlude">
+    <div class="interlude-inner">
 
-        <h2>
-          Legends pass.<br>
-          Their legacy lives on.
-        </h2>
+      <div class="interlude-mark">“</div>
 
-        <p>
-          Every era leaves something behind. Achievements become history,
-          history becomes inspiration, and inspiration finds expression
-          in those who follow.
-        </p>
+      <h2>
+        Legends pass.<br>
+        Their legacy lives on.
+      </h2>
 
-        <span class="interlude-emphasis">
-          The next generation carries it forward.
-        </span>
+      <p>
+        A generation may reach the end of its journey, but what it has
+        built does not have to end with it. Knowledge, values, experience,
+        responsibility and opportunity move forward.
 
+        Just as a baton passes from one runner to another, every generation
+        receives something it must carry with purpose. The responsibility
+        is not simply to inherit what came before, but to give what follows
+        something worthy of carrying.
+      </p>
+
+      <span class="interlude-emphasis">
+        The next generation carries it forward.
+      </span>
+
+    </div>
+  </section>
+
+  <!-- NEXT GENERATION -->
+  <section class="next-generation">
+    <div class="next-inner">
+
+      <div class="section-label">The Next Generation</div>
+
+      <h2>The story does not end here.</h2>
+
+      <p>
+        Every generation inherits a legacy. Those who came before
+        established their place in history through dedication, courage,
+        discipline and the choices they made.
+
+        Those who follow inherit more than achievements. They inherit
+        responsibility: to learn, to build, to protect what has value,
+        to improve what can be improved and to create opportunities
+        that did not exist before.
+
+        The next chapter belongs to those prepared to carry it forward.
+      </p>
+
+      <div class="next-statement">
+        Yesterday's champions.<br>
+        Today's inspiration.<br>
+        Tomorrow's greatness.
       </div>
-    </section>
 
-    <!-- NEXT GENERATION -->
-    <section class="next-generation">
-      <div class="next-inner">
+    </div>
+  </section>
 
-        <div class="section-label">The Next Generation</div>
-
-        <h2>The story does not end here.</h2>
-
-        <p>
-          Every generation inherits a legacy. Those who came before
-          established their place in sporting history. Those who follow
-          carry the responsibility of taking their own achievements
-          further, defining new moments and giving the future of sport
-          its own character.
-        </p>
-
-        <div class="next-statement">
-          Yesterday's champions.<br>
-          Today's inspiration.<br>
-          Tomorrow's greatness.
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CLOSING -->
-    <section class="closing">
-      <div class="closing-inner">
-
-        <div class="section-label">The Legacy Continues</div>
-
-        <h2>
-          History remembers.
-          <span>The future moves.</span>
-        </h2>
-
-        <p>
-          The achievements of the past remain part of the story.
-          The generations ahead will write their own chapters.
-          Sport continues, and every era has its defining moment.
-        </p>
-
-        <div class="closing-rule"></div>
-
-        <div class="closing-signature">
-          PHRINUSOMYIS™ · COMMANDING THE WORLD STAGE™
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
+  <!-- A MESSAGE BEYOND SPORT -->
+  <section class="inheritance-section">
+    <div class="inheritance-inner">
 
       <div>
-        <div class="footer-brand">PHRINUSOMYIS™</div>
-        <div class="footer-copy">
-          An international sports organization.
-        </div>
+        <div class="inheritance-label">A Message to Every Generation</div>
+
+        <h2 class="inheritance-heading">
+          What you receive.<br>
+          What you become.
+        </h2>
+
+        <p class="inheritance-description">
+          Legacy is not limited to a stadium, a competition or a trophy.
+          It lives in families, institutions, businesses, communities
+          and in the opportunities one generation leaves for another.
+
+          Whatever has been entrusted to you, carry it with care.
+          Build with purpose. Lead with integrity. Make room for those
+          who will follow.
+        </p>
       </div>
 
-      <div class="footer-copy">
-        THE LEGACY OF SPORT™<br>
-        A historical editorial tribute.
-      </div>
+      <div class="personal-quote">
+        <blockquote>
+          You do not have to begin where the previous generation began.
+          You have the responsibility to take what you have received
+          further than it has ever gone.
+        </blockquote>
 
-      <a class="footer-top" href="#top"
-        onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-        Back to top ↑
-      </a>
+        <cite>
+          A PHRINUSOMYIS™ Reflection
+        </cite>
+      </div>
 
     </div>
-  </footer>
+  </section>
 
-  <script>
-    /* TWO INDEPENDENT SLIDING COLLECTIONS */
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="closing-inner">
 
-    const carouselInstances = {};
+      <div class="section-label">The Legacy Continues</div>
 
-    function visibleCards(track) {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 900) return 2;
-      return 3;
-    }
+      <h2>
+        History remembers.
+        <span>The future moves.</span>
+      </h2>
 
-    function updateCarousel(id) {
-      const track = document.getElementById(id);
-      if (!track) return;
+      <p>
+        The achievements of the past remain part of the story.
+        The generations ahead will write their own chapters.
 
-      const cards = Array.from(track.children);
-      const total = cards.length;
-      const visible = visibleCards(track);
-      const maxIndex = Math.max(0, total - visible);
+        What was carried before us deserves recognition.
+        What we carry today deserves responsibility.
+        What we leave behind deserves purpose.
+      </p>
 
-      let index = carouselInstances[id]?.index || 0;
-      index = Math.min(index, maxIndex);
-      carouselInstances[id] = { index };
+      <div class="closing-rule"></div>
 
-      const cardWidth = cards[0].getBoundingClientRect().width;
-      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      <div class="closing-signature">
+        PHRINUSOMYIS™ · COMMANDING THE WORLD STAGE™
+      </div>
 
-      track.style.transform =
-        `translateX(-${index * (cardWidth + gap)}px)`;
+    </div>
+  </section>
 
-      const progress = document.getElementById(`progress-${id}`);
-      if (progress) {
-        const percentage = total <= visible
-          ? 100
-          : ((index + visible) / total) * 100;
-        progress.style.width = `${percentage}%`;
-      }
-    }
+</main>
 
-    function moveCarousel(id, direction) {
-      const track = document.getElementById(id);
-      if (!track) return;
+<!-- BOTTOM NAVIGATION -->
+<nav class="site-navigation" aria-label="PHRINUSOMYIS website navigation">
+  <div class="navigation-inner">
 
-      const total = track.children.length;
-      const visible = visibleCards(track);
-      const maxIndex = Math.max(0, total - visible);
+    <a class="navigation-link" href="/">
+      Homepage
+    </a>
 
-      let index = carouselInstances[id]?.index || 0;
-      index += direction;
+    <a class="navigation-link" href="/newsroom/newswire.html">
+      Newswire
+    </a>
 
-      if (index > maxIndex) index = 0;
-      if (index < 0) index = maxIndex;
+    <a class="navigation-link" href="/newsletter.html">
+      Newsletter
+    </a>
 
-      carouselInstances[id] = { index };
-      updateCarousel(id);
-    }
+    <a class="navigation-link" href="/magazine/news">
+      Magazine
+    </a>
 
-    document.querySelectorAll("[data-carousel-prev]").forEach(button => {
-      button.addEventListener("click", () => {
-        moveCarousel(button.dataset.carouselPrev, -1);
-      });
-    });
+    <a class="navigation-link current" href="/legacy-of-sport.html" aria-current="page">
+      Legacy of Sport
+    </a>
 
-    document.querySelectorAll("[data-carousel-next]").forEach(button => {
-      button.addEventListener("click", () => {
-        moveCarousel(button.dataset.carouselNext, 1);
-      });
-    });
+  </div>
+</nav>
 
-    ["legendsOne", "legendsTwo"].forEach(id => {
-      carouselInstances[id] = { index: 0 };
-      updateCarousel(id);
-    });
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
 
-    window.addEventListener("resize", () => {
-      ["legendsOne", "legendsTwo"].forEach(updateCarousel);
-    });
+    <div>
+      <div class="footer-brand">PHRINUSOMYIS™</div>
+      <div class="footer-copy">
+        An international sports organization.
+      </div>
+    </div>
 
-    /* AUTOMATIC SLIDING — EACH COLLECTION RUNS INDEPENDENTLY */
+    <div class="footer-copy">
+      THE LEGACY OF SPORT™<br>
+      A historical editorial tribute.
+    </div>
 
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    <a class="footer-top" href="#top">
+      Back to top ↑
+    </a>
 
-    if (!reducedMotion) {
-      window.setInterval(() => {
-        ["legendsOne", "legendsTwo"].forEach(id => {
-          const section = document.getElementById(
-            id === "legendsOne" ? "first-collection" : "second-collection"
-          );
+  </div>
+</footer>
 
-          if (section && !section.matches(":hover")) {
-            moveCarousel(id, 1);
-          }
-        });
-      }, 6500);
-    }
+<script>
+/* =====================================================
+   THE LEGACY OF SPORT
+   28 HISTORICAL FIGURES
+   TWO INDEPENDENT SLIDING COLLECTIONS
+===================================================== */
 
-    /* GOOGLE TRANSLATE INITIALIZATION */
+const legendsCollectionOne = [
+  {
+    name:"Abebe Bikila",
+    country:"Ethiopia · Africa",
+    sport:"Athletics · Marathon",
+    image:"abebe-bikila.jpg"
+  },
+  {
+    name:"Henry Rono",
+    country:"Kenya · Africa",
+    sport:"Athletics · Long-distance running",
+    image:"henry-rono.jpg"
+  },
+  {
+    name:"Mohamed Latif",
+    country:"Egypt · Africa",
+    sport:"Football",
+    image:"mohamed-latif.jpg"
+  },
+  {
+    name:"Larbi Benbarek",
+    country:"Morocco · Africa",
+    sport:"Football",
+    image:"larbi-benbarek.jpg"
+  },
+  {
+    name:"Dhyan Chand",
+    country:"India · Asia",
+    sport:"Field hockey",
+    image:"dhyan-chand.jpg"
+  },
+  {
+    name:"Shigeo Nagashima",
+    country:"Japan · Asia",
+    sport:"Baseball",
+    image:"shigeo-nagashima.jpg"
+  },
+  {
+    name:"Nasser Hejazi",
+    country:"Iran · Asia",
+    sport:"Football · Goalkeeping",
+    image:"nasser-hejazi.jpg"
+  },
+  {
+    name:"Gabriel Elorde",
+    country:"Philippines · Asia",
+    sport:"Boxing",
+    image:"gabriel-elorde.jpg"
+  },
+  {
+    name:"Johan Cruyff",
+    country:"Netherlands · Europe",
+    sport:"Football",
+    image:"johan-cruyff.jpg"
+  },
+  {
+    name:"Franz Beckenbauer",
+    country:"Germany · Europe",
+    sport:"Football",
+    image:"franz-beckenbauer.jpg"
+  },
+  {
+    name:"Sir Bobby Charlton",
+    country:"United Kingdom · Europe",
+    sport:"Football",
+    image:"bobby-charlton.jpg"
+  },
+  {
+    name:"Jesse Owens",
+    country:"United States · North America",
+    sport:"Athletics · Track and field",
+    image:"jesse-owens.jpg"
+  },
+  {
+    name:"Eusébio",
+    country:"Portugal · Europe",
+    sport:"Football",
+    image:"eusebio.jpg"
+  },
+  {
+    name:"Joe Frazier",
+    country:"United States · North America",
+    sport:"Boxing",
+    image:"joe-frazier.jpg"
+  }
+];
 
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: "en",
-        includedLanguages:
-          "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-        autoDisplay: false
-      }, "google_translate_element");
-    }
+const legendsCollectionTwo = [
+  {
+    name:"Niki Lauda",
+    country:"Austria · Europe",
+    sport:"Motorsport · Formula One",
+    image:"niki-lauda.jpg"
+  },
+  {
+    name:"André the Giant",
+    country:"France · Europe",
+    sport:"Professional wrestling",
+    image:"andre-the-giant.jpg"
+  },
+  {
+    name:"Muhammad Ali",
+    country:"United States · North America",
+    sport:"Boxing",
+    image:"muhammad-ali.jpg"
+  },
+  {
+    name:"Terry Fox",
+    country:"Canada · North America",
+    sport:"Running · Athletics",
+    image:"terry-fox.jpg"
+  },
+  {
+    name:"Teófilo Stevenson",
+    country:"Cuba · Caribbean",
+    sport:"Boxing",
+    image:"teofilo-stevenson.jpg"
+  },
+  {
+    name:"Salvador Sánchez",
+    country:"Mexico · North America",
+    sport:"Boxing",
+    image:"salvador-sanchez.jpg"
+  },
+  {
+    name:"Pelé",
+    country:"Brazil · South America",
+    sport:"Football",
+    image:"pele.jpg"
+  },
+  {
+    name:"Diego Maradona",
+    country:"Argentina · South America",
+    sport:"Football",
+    image:"diego-maradona.jpg"
+  },
+  {
+    name:"Alcides Ghiggia",
+    country:"Uruguay · South America",
+    sport:"Football",
+    image:"alcides-ghiggia.jpg"
+  },
+  {
+    name:"Sir Donald Bradman",
+    country:"Australia · Oceania",
+    sport:"Cricket",
+    image:"don-bradman.jpg"
+  },
+  {
+    name:"Jonah Lomu",
+    country:"New Zealand · Oceania",
+    sport:"Rugby union",
+    image:"jonah-lomu.jpg"
+  },
+  {
+    name:"The Ultimate Warrior",
+    country:"United States · North America",
+    sport:"Professional wrestling",
+    image:"ultimate-warrior.jpg"
+  },
+  {
+    name:"Arnold Palmer",
+    country:"United States · North America",
+    sport:"Golf",
+    image:"arnold-palmer.jpg"
+  },
+  {
+    name:"Bill Russell",
+    country:"United States · North America",
+    sport:"Basketball",
+    image:"bill-russell.jpg"
+  }
+];
 
-    const languageSelector = document.getElementById("siteLanguage");
+/* CREATE PORTRAIT CARDS */
 
-    languageSelector.addEventListener("change", function () {
-      const selectedLanguage = this.value;
+function createLegendCard(person,index) {
+  const article = document.createElement("article");
+  article.className = "legend-card";
 
-      const applyLanguage = () => {
-        const translateCombo = document.querySelector(".goog-te-combo");
+  const imageWrap = document.createElement("div");
+  imageWrap.className = "legend-image-wrap";
 
-        if (!translateCombo) return false;
+  const number = document.createElement("span");
+  number.className = "legend-number";
+  number.textContent = String(index + 1).padStart(2,"0");
 
-        translateCombo.value =
-          selectedLanguage === "en" ? "" : selectedLanguage;
+  const image = document.createElement("img");
+  image.className = "legend-image";
+  image.src = "/" + person.image;
+  image.alt = person.name + ", " + person.country + ", " + person.sport;
+  image.loading = "lazy";
 
-        translateCombo.dispatchEvent(new Event("change"));
-        return true;
-      };
-
-      if (applyLanguage()) return;
-
-      let attempts = 0;
-      const retry = window.setInterval(() => {
-        attempts++;
-
-        if (applyLanguage() || attempts >= 20) {
-          window.clearInterval(retry);
-        }
-      }, 300);
-    });
-
-    /* KEEP GOOGLE'S INJECTED BANNER FROM MOVING THE PAGE */
-
-    function suppressGoogleTranslateElements() {
-      document.documentElement.style.marginTop = "0";
-      document.documentElement.style.paddingTop = "0";
-      document.body.style.top = "0";
-      document.body.style.marginTop = "0";
-      document.body.style.paddingTop = "0";
-
-      document.querySelectorAll(
-        ".goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt"
-      ).forEach(element => {
-        element.style.setProperty("display", "none", "important");
-        element.style.setProperty("visibility", "hidden", "important");
-      });
-    }
-
-    const translateObserver = new MutationObserver(
-      suppressGoogleTranslateElements
+  image.addEventListener("error",() => {
+    imageWrap.style.background = "#292821";
+    image.style.display = "none";
+    imageWrap.setAttribute(
+      "aria-label",
+      "Portrait image not yet uploaded: " + person.image
     );
+  });
 
-    translateObserver.observe(document.documentElement, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ["style", "class"]
+  imageWrap.append(number,image);
+
+  const info = document.createElement("div");
+  info.className = "legend-info";
+
+  const country = document.createElement("div");
+  country.className = "legend-country";
+  country.textContent = person.country;
+
+  const name = document.createElement("h3");
+  name.className = "legend-name";
+  name.textContent = person.name;
+
+  const sport = document.createElement("div");
+  sport.className = "legend-discipline";
+  sport.textContent = person.sport;
+
+  info.append(country,name,sport);
+  article.append(imageWrap,info);
+
+  return article;
+}
+
+/* POPULATE BOTH COLLECTIONS */
+
+function populateCollection(id,people) {
+  const track = document.getElementById(id);
+  if (!track) return;
+
+  people.forEach((person,index) => {
+    track.appendChild(createLegendCard(person,index));
+  });
+}
+
+populateCollection("legendsOne",legendsCollectionOne);
+populateCollection("legendsTwo",legendsCollectionTwo);
+
+/* SLIDESHOW ENGINE */
+
+const carouselInstances = {};
+
+function visibleCards() {
+  if (window.innerWidth <= 600) return 1;
+  if (window.innerWidth <= 900) return 2;
+  return 3;
+}
+
+function updateCarousel(id) {
+  const track = document.getElementById(id);
+  if (!track || !track.children.length) return;
+
+  const cards = Array.from(track.children);
+  const total = cards.length;
+  const visible = visibleCards();
+  const maxIndex = Math.max(0,total-visible);
+
+  let index = carouselInstances[id]?.index || 0;
+  index = Math.min(index,maxIndex);
+
+  carouselInstances[id] = {index};
+
+  const cardWidth = cards[0].getBoundingClientRect().width;
+  const gap = parseFloat(getComputedStyle(track).gap) || 0;
+
+  track.style.transform =
+    `translateX(-${index*(cardWidth+gap)}px)`;
+
+  const progress = document.getElementById("progress-"+id);
+
+  if (progress) {
+    const percentage = total <= visible
+      ? 100
+      : ((index+visible)/total)*100;
+
+    progress.style.width = percentage+"%";
+  }
+}
+
+function moveCarousel(id,direction) {
+  const track = document.getElementById(id);
+  if (!track || !track.children.length) return;
+
+  const total = track.children.length;
+  const visible = visibleCards();
+  const maxIndex = Math.max(0,total-visible);
+
+  let index = carouselInstances[id]?.index || 0;
+  index += direction;
+
+  if (index > maxIndex) index = 0;
+  if (index < 0) index = maxIndex;
+
+  carouselInstances[id] = {index};
+  updateCarousel(id);
+}
+
+["legendsOne","legendsTwo"].forEach(id => {
+  carouselInstances[id] = {index:0};
+  updateCarousel(id);
+});
+
+/* PREVIOUS AND NEXT BUTTONS */
+
+document.querySelectorAll("[data-carousel-prev]").forEach(button => {
+  button.addEventListener("click",() => {
+    moveCarousel(button.dataset.carouselPrev,-1);
+  });
+});
+
+document.querySelectorAll("[data-carousel-next]").forEach(button => {
+  button.addEventListener("click",() => {
+    moveCarousel(button.dataset.carouselNext,1);
+  });
+});
+
+/* RESIZE SUPPORT */
+
+window.addEventListener("resize",() => {
+  ["legendsOne","legendsTwo"].forEach(updateCarousel);
+});
+
+/* AUTOMATIC SLIDING */
+
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!reducedMotion) {
+  window.setInterval(() => {
+    ["legendsOne","legendsTwo"].forEach(id => {
+      const section = document.getElementById(
+        id === "legendsOne"
+          ? "first-collection"
+          : "second-collection"
+      );
+
+      if (section && !section.matches(":hover")) {
+        moveCarousel(id,1);
+      }
     });
+  },6500);
+}
 
-    window.addEventListener("load", suppressGoogleTranslateElements);
-    window.setInterval(suppressGoogleTranslateElements, 1000);
-  </script>
+/* GOOGLE TRANSLATE */
 
-  <script
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async>
-  </script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage:"en",
+    includedLanguages:
+      "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+    autoDisplay:false
+  },"google_translate_element");
+}
+
+/* LANGUAGE SELECTOR */
+
+const languageSelector = document.getElementById("siteLanguage");
+
+languageSelector.addEventListener("change",function() {
+  const selectedLanguage = this.value;
+
+  function applyLanguage() {
+    const combo = document.querySelector(".goog-te-combo");
+
+    if (!combo) return false;
+
+    combo.value = selectedLanguage === "en" ? "" : selectedLanguage;
+    combo.dispatchEvent(new Event("change"));
+
+    return true;
+  }
+
+  if (applyLanguage()) return;
+
+  let attempts = 0;
+
+  const retry = window.setInterval(() => {
+    attempts++;
+
+    if (applyLanguage() || attempts >= 20) {
+      window.clearInterval(retry);
+    }
+  },300);
+});
+
+/* GOOGLE BANNER AND POP-OUT SUPPRESSION */
+
+function suppressGoogleTranslateElements() {
+  document.documentElement.style.marginTop = "0";
+  document.documentElement.style.paddingTop = "0";
+  document.body.style.top = "0";
+  document.body.style.marginTop = "0";
+  document.body.style.paddingTop = "0";
+
+  document.querySelectorAll(
+    ".goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt"
+  ).forEach(element => {
+    element.style.setProperty("display","none","important");
+    element.style.setProperty("visibility","hidden","important");
+  });
+}
+
+const translateObserver = new MutationObserver(
+  suppressGoogleTranslateElements
+);
+
+translateObserver.observe(document.documentElement,{
+  childList:true,
+  subtree:true,
+  attributes:true,
+  attributeFilter:["style","class"]
+});
+
+window.addEventListener("load",suppressGoogleTranslateElements);
+
+window.setInterval(suppressGoogleTranslateElements,1000);
+
+</script>
+
+<script
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  async>
+</script>
 
 </body>
 </html>
