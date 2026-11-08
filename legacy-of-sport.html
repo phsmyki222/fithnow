@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
-  <meta name="description" content="THE LEGACY OF SPORT™ — a PHRINUSOMYIS™ editorial tribute featuring 28 sporting figures whose achievements became part of sporting history.">
+  <meta name="description" content="THE LEGACY OF SPORT™ — a PHRINUSOMYIS™ tribute to extraordinary sporting figures whose achievements, courage and influence became part of sporting history.">
   <meta name="theme-color" content="#171715">
   <meta name="robots" content="index, follow">
 
@@ -13,7 +13,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
-  <meta property="og:description" content="A historical editorial collection featuring 28 figures from international sport.">
+  <meta property="og:description" content="Honouring the figures who shaped sporting history.">
   <meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
   <meta property="og:image" content="https://phrinusomyis.com/legacy-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -29,6 +29,7 @@
       --ivory: #f2eee5;
       --ivory-light: #f8f5ee;
       --stone: #e5ded1;
+      --stone-deep: #d8cebd;
       --bronze: #a9824d;
       --gold: #c5a36b;
       --text: #24231f;
@@ -44,17 +45,20 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 110px;
-      max-width: 100%;
+      scroll-padding-top: 90px;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
 
     body {
       margin: 0;
+      padding: 0 !important;
+      top: 0 !important;
       max-width: 100%;
-      overflow-x: hidden;
       background: var(--ivory-light);
       color: var(--text);
       font-family: var(--body);
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -81,7 +85,7 @@
 
     .header-inner {
       width: min(calc(100% - 48px), var(--content));
-      min-height: 80px;
+      min-height: 84px;
       margin: auto;
       display: flex;
       align-items: center;
@@ -97,8 +101,8 @@
     }
 
     .brand img {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
     }
 
@@ -129,8 +133,19 @@
     .header-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 24px;
     }
+
+    .back-link {
+      color: var(--ivory);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color .25s ease;
+    }
+
+    .back-link:hover { color: var(--gold); }
 
     .language-control {
       display: flex;
@@ -155,49 +170,10 @@
       border-radius: 0;
       outline: none;
       font-size: 11px;
+      cursor: pointer;
     }
 
-    .language-control select:focus {
-      border-color: var(--gold);
-    }
-
-    /* PAGE NAVIGATION */
-
-    .page-navigation {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      min-height: 49px;
-      padding: 0 16px;
-      background: #211f1a;
-      border-bottom: 1px solid rgba(197,163,107,.22);
-    }
-
-    .page-navigation a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 49px;
-      padding: 0 27px;
-      color: rgba(248,245,238,.78);
-      border-right: 1px solid rgba(197,163,107,.16);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      transition: color .25s ease, background .25s ease;
-    }
-
-    .page-navigation a:first-child {
-      border-left: 1px solid rgba(197,163,107,.16);
-    }
-
-    .page-navigation a:hover,
-    .page-navigation a[aria-current="page"] {
-      color: var(--gold);
-      background: rgba(197,163,107,.07);
-    }
+    .language-control select:focus { border-color: var(--gold); }
 
     /* HERO */
 
@@ -310,7 +286,7 @@
     /* INTRODUCTION */
 
     .intro-section {
-      padding: 100px 24px;
+      padding: 105px 24px 100px;
       background: var(--ivory-light);
     }
 
@@ -389,9 +365,7 @@
       text-transform: uppercase;
     }
 
-    .dark .collection-heading h2 {
-      color: var(--ivory-light);
-    }
+    .dark .collection-heading h2 { color: var(--ivory-light); }
 
     .collection-heading p {
       max-width: 370px;
@@ -401,9 +375,7 @@
       line-height: 1.9;
     }
 
-    .dark .collection-heading p {
-      color: rgba(248,245,238,.58);
-    }
+    .dark .collection-heading p { color: rgba(248,245,238,.58); }
 
     .carousel-controls {
       display: flex;
@@ -514,9 +486,7 @@
       font-weight: 700;
     }
 
-    .legend-info {
-      padding: 21px 2px 0;
-    }
+    .legend-info { padding: 21px 2px 0; }
 
     .legend-country {
       color: var(--bronze);
@@ -564,9 +534,7 @@
       text-transform: uppercase;
     }
 
-    .dark .carousel-count {
-      color: rgba(248,245,238,.55);
-    }
+    .dark .carousel-count { color: rgba(248,245,238,.55); }
 
     .carousel-progress {
       width: min(260px, 40%);
@@ -583,20 +551,18 @@
       transition: width .5s ease;
     }
 
-    .dark .carousel-progress span {
-      background: var(--gold);
-    }
+    .dark .carousel-progress span { background: var(--gold); }
 
-    /* EDITORIAL DIVIDER */
+    /* INTERLUDE */
 
     .legacy-interlude {
       position: relative;
-      padding: 85px 24px;
+      padding: 115px 24px;
       overflow: hidden;
       color: var(--ivory-light);
       text-align: center;
       background:
-        linear-gradient(rgba(23,23,21,.91), rgba(23,23,21,.94)),
+        linear-gradient(rgba(23,23,21,.93), rgba(23,23,21,.96)),
         url("/legacy-interlude.jpg") center / cover no-repeat,
         var(--black);
     }
@@ -612,8 +578,8 @@
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
-    .legacy-interlude::before { top: 35px; }
-    .legacy-interlude::after { bottom: 35px; }
+    .legacy-interlude::before { top: 55px; }
+    .legacy-interlude::after { bottom: 55px; }
 
     .interlude-inner {
       position: relative;
@@ -621,23 +587,88 @@
       margin: auto;
     }
 
-    .interlude-inner .section-label {
+    .interlude-mark {
       color: var(--gold);
+      font-family: var(--editorial);
+      font-size: 56px;
+      line-height: 1;
     }
 
     .interlude-inner h2 {
-      margin: 20px 0 0;
+      margin: 25px 0 20px;
+      font-family: var(--editorial);
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .interlude-inner p {
+      max-width: 650px;
+      margin: auto;
+      color: rgba(248,245,238,.65);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .interlude-emphasis {
+      display: block;
+      margin-top: 28px;
+      color: var(--gold);
       font-family: var(--heading);
-      font-size: clamp(30px, 5vw, 48px);
+      font-size: clamp(19px, 3vw, 27px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* NEXT GENERATION */
+
+    .next-generation {
+      padding: 115px 24px 120px;
+      background: var(--ivory-light);
+    }
+
+    .next-inner {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .next-inner h2 {
+      margin: 20px 0;
+      color: var(--black);
+      font-family: var(--editorial);
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .next-inner > p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .next-statement {
+      margin: 48px auto 0;
+      padding: 28px 20px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--bronze);
+      font-family: var(--heading);
+      font-size: clamp(20px, 3vw, 30px);
       font-weight: 700;
       letter-spacing: 1.5px;
+      line-height: 1.45;
       text-transform: uppercase;
     }
 
     /* CLOSING */
 
     .closing {
-      padding: 95px 24px 100px;
+      padding: 100px 24px 105px;
       color: var(--ivory-light);
       background: var(--charcoal);
       text-align: center;
@@ -686,6 +717,49 @@
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
+    }
+
+    /* BOTTOM NAVIGATION */
+
+    .legacy-navigation {
+      padding: 42px 24px;
+      background: #201f1b;
+      border-top: 1px solid rgba(197,163,107,.25);
+      border-bottom: 1px solid rgba(197,163,107,.25);
+    }
+
+    .legacy-navigation-inner {
+      width: min(100%, 900px);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .legacy-nav-link {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 12px;
+      color: var(--ivory-light);
+      background: transparent;
+      border: 1px solid rgba(197,163,107,.5);
+      font-family: var(--heading);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: background .25s ease, color .25s ease, border-color .25s ease;
+    }
+
+    .legacy-nav-link:hover,
+    .legacy-nav-link:focus-visible {
+      color: var(--black);
+      background: var(--gold);
+      border-color: var(--gold);
+      outline: none;
     }
 
     /* FOOTER */
@@ -757,9 +831,13 @@
       visibility: hidden !important;
     }
 
-    body,
-    html {
+    body {
       top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    html {
       margin-top: 0 !important;
       padding-top: 0 !important;
     }
@@ -776,15 +854,13 @@
         flex-direction: column;
       }
 
-      .collection-heading p {
-        max-width: 600px;
-      }
+      .collection-heading p { max-width: 600px; }
     }
 
     @media (max-width: 600px) {
       .header-inner {
         width: calc(100% - 28px);
-        min-height: 70px;
+        min-height: 72px;
         gap: 10px;
       }
 
@@ -805,26 +881,15 @@
         letter-spacing: 1px;
       }
 
+      .header-right { gap: 10px; }
+      .back-link { display: none; }
       .language-control { gap: 5px; }
       .language-control label { display: none; }
 
       .language-control select {
-        max-width: 112px;
-        padding: 9px 20px 9px 7px;
+        max-width: 125px;
+        padding: 9px 22px 9px 7px;
         font-size: 10px;
-      }
-
-      .page-navigation {
-        min-height: 45px;
-        padding: 0 5px;
-      }
-
-      .page-navigation a {
-        flex: 1;
-        min-height: 45px;
-        padding: 0 8px;
-        font-size: 9px;
-        letter-spacing: 1px;
       }
 
       .hero {
@@ -837,28 +902,19 @@
         padding: 90px 0;
       }
 
-      .hero h1 {
-        font-size: clamp(53px, 15vw, 78px);
-      }
-
+      .hero h1 { font-size: clamp(53px, 15vw, 78px); }
       .hero-description { font-size: 17px; }
 
       .intro-section { padding: 75px 22px; }
-
       .collection-section { padding: 75px 0 85px; }
 
       .collection-inner { width: calc(100% - 36px); }
-
       .collection-heading { margin-bottom: 30px; }
-
       .collection-heading h2 { font-size: 43px; }
-
       .collection-heading p { font-size: 11px; }
 
       .legend-card { flex-basis: 84%; }
-
       .legend-image-wrap { aspect-ratio: 4 / 5; }
-
       .legend-name { font-size: 28px; }
 
       .carousel-button {
@@ -866,9 +922,21 @@
         height: 40px;
       }
 
-      .legacy-interlude { padding: 75px 22px; }
-
+      .legacy-interlude { padding: 95px 22px; }
+      .next-generation { padding: 85px 22px; }
       .closing { padding: 80px 22px; }
+
+      .legacy-navigation { padding: 30px 18px; }
+
+      .legacy-navigation-inner {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .legacy-nav-link {
+        min-height: 52px;
+        font-size: 16px;
+      }
 
       .footer-inner {
         align-items: flex-start;
@@ -900,7 +968,7 @@
   <header class="site-header">
     <div class="header-inner">
 
-      <a class="brand" href="https://phrinusomyis.com/" aria-label="PHRINUSOMYIS homepage">
+      <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
         <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
         <span class="brand-copy">
           <span class="brand-name">PHRINUSOMYIS™</span>
@@ -909,6 +977,8 @@
       </a>
 
       <div class="header-right">
+        <a class="back-link" href="/">Return to PHRINUSOMYIS</a>
+
         <div class="language-control">
           <label for="siteLanguage">Language</label>
           <select id="siteLanguage" aria-label="Select language">
@@ -940,13 +1010,6 @@
     </div>
   </header>
 
-  <!-- HOME / NEWSWIRE / MAGAZINE NAVIGATION -->
-  <nav class="page-navigation" aria-label="Main navigation">
-    <a href="https://phrinusomyis.com/">Home</a>
-    <a href="https://phrinusomyis.com/newswire/news">Newswire</a>
-    <a href="https://phrinusomyis.com/magazine/news">Magazine</a>
-  </nav>
-
   <main>
 
     <!-- HERO -->
@@ -961,12 +1024,13 @@
         </h1>
 
         <p class="hero-description">
-          A historical collection recognizing 28 figures from international sport.
+          Honouring the figures whose achievements, courage and influence
+          became part of sporting history.
         </p>
 
         <div class="hero-bottom">
           <span class="hero-line"></span>
-          <span class="hero-note">An international sporting record</span>
+          <span class="hero-note">A tribute across generations and continents</span>
         </div>
 
       </div>
@@ -976,15 +1040,17 @@
     <section class="intro-section">
       <div class="intro-inner">
 
-        <div class="section-label">The Historical Record</div>
+        <div class="section-label">Beyond the Moment</div>
 
-        <h2>Figures in Sporting History.</h2>
+        <h2>Greatness never leaves the stage.</h2>
 
         <p>
-          Across continents and sporting disciplines, these individuals
-          recorded achievements that became part of the history of sport.
-          This editorial collection brings together 28 sporting figures
-          from different eras, countries and disciplines.
+          Sporting history is shaped by individuals whose performances
+          transcend the moment in which they occurred. Across disciplines,
+          nations and generations, their achievements established
+          enduring points of reference in the story of sport.
+          This collection recognizes their contribution and preserves
+          a place for their names in the wider sporting narrative.
         </p>
 
         <div class="gold-divider"></div>
@@ -992,7 +1058,7 @@
       </div>
     </section>
 
-    <!-- FIRST COLLECTION -->
+    <!-- FIRST SLIDING COLLECTION -->
     <section class="collection-section" id="first-collection">
       <div class="collection-inner">
 
@@ -1003,8 +1069,8 @@
           </div>
 
           <p>
-            A selection of sporting figures from Africa, Asia, Europe
-            and the international sporting record.
+            From Africa to Europe and Asia, these figures left
+            a lasting mark on their respective sporting disciplines.
           </p>
 
           <div class="carousel-controls">
@@ -1019,20 +1085,154 @@
           </div>
         </div>
 
-        <div class="carousel-window">
-          <div class="carousel-track" id="legendsOne"></div>
+        <div class="carousel-window" id="window-legendsOne">
+          <div class="carousel-track" id="legendsOne">
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">01</span>
+                <img class="legend-image" src="/abebe-bikila.jpg" alt="Abebe Bikila, Ethiopian athletics legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Ethiopia · Africa</div>
+                <h3 class="legend-name">Abebe Bikila</h3>
+                <div class="legend-discipline">Athletics · Marathon</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">02</span>
+                <img class="legend-image" src="/henry-rono.jpg" alt="Henry Rono, Kenyan athletics legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Kenya · Africa</div>
+                <h3 class="legend-name">Henry Rono</h3>
+                <div class="legend-discipline">Athletics · Long-distance running</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">03</span>
+                <img class="legend-image" src="/mohamed-latif.jpg" alt="Mohamed Latif, Egyptian football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Egypt · Africa</div>
+                <h3 class="legend-name">Mohamed Latif</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">04</span>
+                <img class="legend-image" src="/larbi-benbarek.jpg" alt="Larbi Benbarek, Moroccan football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Morocco · Africa</div>
+                <h3 class="legend-name">Larbi Benbarek</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">05</span>
+                <img class="legend-image" src="/dhyan-chand.jpg" alt="Dhyan Chand, Indian field hockey legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">India · Asia</div>
+                <h3 class="legend-name">Dhyan Chand</h3>
+                <div class="legend-discipline">Field hockey</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">06</span>
+                <img class="legend-image" src="/shigeo-nagashima.jpg" alt="Shigeo Nagashima, Japanese baseball legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Japan · Asia</div>
+                <h3 class="legend-name">Shigeo Nagashima</h3>
+                <div class="legend-discipline">Baseball</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">07</span>
+                <img class="legend-image" src="/nasser-hejazi.jpg" alt="Nasser Hejazi, Iranian football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Iran · Asia</div>
+                <h3 class="legend-name">Nasser Hejazi</h3>
+                <div class="legend-discipline">Football · Goalkeeping</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">08</span>
+                <img class="legend-image" src="/gabriel-elorde.jpg" alt="Gabriel Elorde, Filipino boxing legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Philippines · Asia</div>
+                <h3 class="legend-name">Gabriel Elorde</h3>
+                <div class="legend-discipline">Boxing</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">09</span>
+                <img class="legend-image" src="/johan-cruyff.jpg" alt="Johan Cruyff, Dutch football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Netherlands · Europe</div>
+                <h3 class="legend-name">Johan Cruyff</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">10</span>
+                <img class="legend-image" src="/franz-beckenbauer.jpg" alt="Franz Beckenbauer, German football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Germany · Europe</div>
+                <h3 class="legend-name">Franz Beckenbauer</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">11</span>
+                <img class="legend-image" src="/bobby-charlton.jpg" alt="Sir Bobby Charlton, English football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">United Kingdom · Europe</div>
+                <h3 class="legend-name">Sir Bobby Charlton</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+          </div>
         </div>
 
         <div class="carousel-footer">
           <div class="carousel-count">Collection 01 / 02</div>
           <div class="carousel-progress"><span id="progress-legendsOne"></span></div>
-          <div class="carousel-count">14 Historical Figures</div>
+          <div class="carousel-count">11 Historical Figures</div>
         </div>
 
       </div>
     </section>
 
-    <!-- SECOND COLLECTION -->
+    <!-- SECOND SLIDING COLLECTION -->
     <section class="collection-section dark" id="second-collection">
       <div class="collection-inner">
 
@@ -1043,8 +1243,8 @@
           </div>
 
           <p>
-            A further selection of sporting figures representing
-            the Americas, Europe and Oceania.
+            From the Americas to Oceania and Europe, their achievements
+            remain part of the international story of sport.
           </p>
 
           <div class="carousel-controls">
@@ -1059,24 +1259,240 @@
           </div>
         </div>
 
-        <div class="carousel-window">
-          <div class="carousel-track" id="legendsTwo"></div>
+        <div class="carousel-window" id="window-legendsTwo">
+          <div class="carousel-track" id="legendsTwo">
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">12</span>
+                <img class="legend-image" src="/niki-lauda.jpg" alt="Niki Lauda, Austrian motorsport legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Austria · Europe</div>
+                <h3 class="legend-name">Niki Lauda</h3>
+                <div class="legend-discipline">Motorsport · Formula One</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">13</span>
+                <img class="legend-image" src="/andre-the-giant.jpg" alt="André the Giant, French professional wrestling figure" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">France · Europe</div>
+                <h3 class="legend-name">André the Giant</h3>
+                <div class="legend-discipline">Professional wrestling</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">14</span>
+                <img class="legend-image" src="/muhammad-ali.jpg" alt="Muhammad Ali, American boxing legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">United States · North America</div>
+                <h3 class="legend-name">Muhammad Ali</h3>
+                <div class="legend-discipline">Boxing</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">15</span>
+                <img class="legend-image" src="/terry-fox.jpg" alt="Terry Fox, Canadian runner and humanitarian" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Canada · North America</div>
+                <h3 class="legend-name">Terry Fox</h3>
+                <div class="legend-discipline">Running · Athletics</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">16</span>
+                <img class="legend-image" src="/teofilo-stevenson.jpg" alt="Teófilo Stevenson, Cuban boxing legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Cuba · Caribbean</div>
+                <h3 class="legend-name">Teófilo Stevenson</h3>
+                <div class="legend-discipline">Boxing</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">17</span>
+                <img class="legend-image" src="/salvador-sanchez.jpg" alt="Salvador Sánchez, Mexican boxing legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Mexico · North America</div>
+                <h3 class="legend-name">Salvador Sánchez</h3>
+                <div class="legend-discipline">Boxing</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">18</span>
+                <img class="legend-image" src="/pele.jpg" alt="Pelé, Brazilian football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Brazil · South America</div>
+                <h3 class="legend-name">Pelé</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">19</span>
+                <img class="legend-image" src="/diego-maradona.jpg" alt="Diego Maradona, Argentine football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Argentina · South America</div>
+                <h3 class="legend-name">Diego Maradona</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">20</span>
+                <img class="legend-image" src="/alcides-ghiggia.jpg" alt="Alcides Ghiggia, Uruguayan football legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Uruguay · South America</div>
+                <h3 class="legend-name">Alcides Ghiggia</h3>
+                <div class="legend-discipline">Football</div>
+              </div>
+            </article>
+
+            <!-- UPDATED IMAGE 22 -->
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">22</span>
+                <img class="legend-image" src="/don-bradman.jpg" alt="Sir Donald Bradman, Australian cricket legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">Australia · Oceania</div>
+                <h3 class="legend-name">Sir Donald Bradman</h3>
+                <div class="legend-discipline">Cricket</div>
+              </div>
+            </article>
+
+            <!-- UPDATED IMAGE 23 -->
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">23</span>
+                <img class="legend-image" src="/jonah-lomu.jpg" alt="Jonah Lomu, New Zealand rugby legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">New Zealand · Oceania</div>
+                <h3 class="legend-name">Jonah Lomu</h3>
+                <div class="legend-discipline">Rugby union</div>
+              </div>
+            </article>
+
+            <!-- NEW IMAGE 24 -->
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">24</span>
+                <img class="legend-image" src="/ultimate-warrior.jpg" alt="The Ultimate Warrior, American professional wrestling figure" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">United States · North America</div>
+                <h3 class="legend-name">The Ultimate Warrior</h3>
+                <div class="legend-discipline">Professional wrestling</div>
+              </div>
+            </article>
+
+            <!-- NEW IMAGE 25 -->
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">25</span>
+                <img class="legend-image" src="/arnold-palmer.jpg" alt="Arnold Palmer, American golf legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">United States · North America</div>
+                <h3 class="legend-name">Arnold Palmer</h3>
+                <div class="legend-discipline">Golf</div>
+              </div>
+            </article>
+
+            <!-- NEW IMAGE 26 -->
+            <article class="legend-card">
+              <div class="legend-image-wrap">
+                <span class="legend-number">26</span>
+                <img class="legend-image" src="/bill-russell.jpg" alt="Bill Russell, American basketball legend" loading="lazy">
+              </div>
+              <div class="legend-info">
+                <div class="legend-country">United States · North America</div>
+                <h3 class="legend-name">Bill Russell</h3>
+                <div class="legend-discipline">Basketball</div>
+              </div>
+            </article>
+
+          </div>
         </div>
 
         <div class="carousel-footer">
           <div class="carousel-count">Collection 02 / 02</div>
           <div class="carousel-progress"><span id="progress-legendsTwo"></span></div>
-          <div class="carousel-count">14 Historical Figures</div>
+          <div class="carousel-count">15 Historical Figures</div>
         </div>
 
       </div>
     </section>
 
-    <!-- EDITORIAL DIVIDER -->
+    <!-- THE TRANSITION -->
     <section class="legacy-interlude">
       <div class="interlude-inner">
-        <div class="section-label">THE LEGACY OF SPORT™</div>
-        <h2>28 Sporting Figures · One Historical Collection</h2>
+
+        <div class="interlude-mark">“</div>
+
+        <h2>
+          Legends pass.<br>
+          Their legacy lives on.
+        </h2>
+
+        <p>
+          Every era leaves something behind. Achievements become history,
+          history becomes inspiration, and inspiration finds expression
+          in those who follow.
+        </p>
+
+        <span class="interlude-emphasis">
+          The next generation carries it forward.
+        </span>
+
+      </div>
+    </section>
+
+    <!-- NEXT GENERATION -->
+    <section class="next-generation">
+      <div class="next-inner">
+
+        <div class="section-label">The Next Generation</div>
+
+        <h2>The story does not end here.</h2>
+
+        <p>
+          Every generation inherits a legacy. Those who came before
+          established their place in sporting history. Those who follow
+          carry the responsibility of taking their own achievements
+          further, defining new moments and giving the future of sport
+          its own character.
+        </p>
+
+        <div class="next-statement">
+          Yesterday's champions.<br>
+          Today's inspiration.<br>
+          Tomorrow's greatness.
+        </div>
+
       </div>
     </section>
 
@@ -1084,28 +1500,48 @@
     <section class="closing">
       <div class="closing-inner">
 
-        <div class="section-label">PHRINUSOMYIS™</div>
+        <div class="section-label">The Legacy Continues</div>
 
         <h2>
-          The Legacy
-          <span>of Sport.</span>
+          History remembers.
+          <span>The future moves.</span>
         </h2>
 
         <p>
-          An editorial tribute to the people, performances and
-          achievements recorded in sporting history.
+          The achievements of the past remain part of the story.
+          The generations ahead will write their own chapters.
+          Sport continues, and every era has its defining moment.
         </p>
 
         <div class="closing-rule"></div>
 
         <div class="closing-signature">
-          COMMANDING THE WORLD STAGE™
+          PHRINUSOMYIS™ · COMMANDING THE WORLD STAGE™
         </div>
 
       </div>
     </section>
 
   </main>
+
+  <!-- BOTTOM PAGE NAVIGATION -->
+  <nav class="legacy-navigation" aria-label="Main website navigation">
+    <div class="legacy-navigation-inner">
+
+      <a class="legacy-nav-link" href="/">
+        Home
+      </a>
+
+      <a class="legacy-nav-link" href="/newsroom/newswire.html">
+        Newswire
+      </a>
+
+      <a class="legacy-nav-link" href="/magazine/news">
+        Magazine
+      </a>
+
+    </div>
+  </nav>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -1123,7 +1559,8 @@
         A historical editorial tribute.
       </div>
 
-      <a class="footer-top" href="#top">
+      <a class="footer-top" href="#top"
+        onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
         Back to top ↑
       </a>
 
@@ -1131,281 +1568,11 @@
   </footer>
 
   <script>
-    /* THE 28 SPORTING FIGURES */
-
-    const collectionOne = [
-      {
-        number: "01",
-        name: "Abebe Bikila",
-        country: "Ethiopia · Africa",
-        discipline: "Athletics · Marathon",
-        image: "abebe-bikila.jpg",
-        alt: "Abebe Bikila, Ethiopian athletics legend"
-      },
-      {
-        number: "02",
-        name: "Henry Rono",
-        country: "Kenya · Africa",
-        discipline: "Athletics · Long-distance running",
-        image: "henry-rono.jpg",
-        alt: "Henry Rono, Kenyan athletics legend"
-      },
-      {
-        number: "03",
-        name: "Mohamed Latif",
-        country: "Egypt · Africa",
-        discipline: "Football",
-        image: "mohamed-latif.jpg",
-        alt: "Mohamed Latif, Egyptian football legend"
-      },
-      {
-        number: "04",
-        name: "Larbi Benbarek",
-        country: "Morocco · Africa",
-        discipline: "Football",
-        image: "larbi-benbarek.jpg",
-        alt: "Larbi Benbarek, Moroccan football legend"
-      },
-      {
-        number: "05",
-        name: "Dhyan Chand",
-        country: "India · Asia",
-        discipline: "Field hockey",
-        image: "dhyan-chand.jpg",
-        alt: "Dhyan Chand, Indian field hockey legend"
-      },
-      {
-        number: "06",
-        name: "Shigeo Nagashima",
-        country: "Japan · Asia",
-        discipline: "Baseball",
-        image: "shigeo-nagashima.jpg",
-        alt: "Shigeo Nagashima, Japanese baseball legend"
-      },
-      {
-        number: "07",
-        name: "Nasser Hejazi",
-        country: "Iran · Asia",
-        discipline: "Football · Goalkeeping",
-        image: "nasser-hejazi.jpg",
-        alt: "Nasser Hejazi, Iranian football legend"
-      },
-      {
-        number: "08",
-        name: "Gabriel Elorde",
-        country: "Philippines · Asia",
-        discipline: "Boxing",
-        image: "gabriel-elorde.jpg",
-        alt: "Gabriel Elorde, Filipino boxing legend"
-      },
-      {
-        number: "09",
-        name: "Johan Cruyff",
-        country: "Netherlands · Europe",
-        discipline: "Football",
-        image: "johan-cruyff.jpg",
-        alt: "Johan Cruyff, Dutch football legend"
-      },
-      {
-        number: "10",
-        name: "Franz Beckenbauer",
-        country: "Germany · Europe",
-        discipline: "Football",
-        image: "franz-beckenbauer.jpg",
-        alt: "Franz Beckenbauer, German football legend"
-      },
-      {
-        number: "11",
-        name: "Sir Bobby Charlton",
-        country: "United Kingdom · Europe",
-        discipline: "Football",
-        image: "bobby-charlton.jpg",
-        alt: "Sir Bobby Charlton, English football legend"
-      },
-      {
-        number: "23",
-        name: "The Ultimate Warrior",
-        country: "United States · North America",
-        discipline: "Professional wrestling · WWE",
-        image: "ultimate-warrior.jpg",
-        alt: "The Ultimate Warrior, professional wrestling figure"
-      },
-      {
-        number: "24",
-        name: "Jesse Owens",
-        country: "United States · North America",
-        discipline: "Athletics · Track and field",
-        image: "jesse-owens.jpg",
-        alt: "Jesse Owens, American athletics legend"
-      },
-      {
-        number: "25",
-        name: "Joe Frazier",
-        country: "United States · North America",
-        discipline: "Boxing",
-        image: "joe-frazier.jpg",
-        alt: "Joe Frazier, American boxing legend"
-      }
-    ];
-
-    const collectionTwo = [
-      {
-        number: "12",
-        name: "Niki Lauda",
-        country: "Austria · Europe",
-        discipline: "Motorsport · Formula One",
-        image: "niki-lauda.jpg",
-        alt: "Niki Lauda, Austrian motorsport legend"
-      },
-      {
-        number: "13",
-        name: "André the Giant",
-        country: "France · Europe",
-        discipline: "Professional wrestling",
-        image: "andre-the-giant.jpg",
-        alt: "André the Giant, French professional wrestling figure"
-      },
-      {
-        number: "14",
-        name: "Muhammad Ali",
-        country: "United States · North America",
-        discipline: "Boxing",
-        image: "muhammad-ali.jpg",
-        alt: "Muhammad Ali, American boxing legend"
-      },
-      {
-        number: "15",
-        name: "Terry Fox",
-        country: "Canada · North America",
-        discipline: "Running · Athletics",
-        image: "terry-fox.jpg",
-        alt: "Terry Fox, Canadian runner"
-      },
-      {
-        number: "16",
-        name: "Teófilo Stevenson",
-        country: "Cuba · Caribbean",
-        discipline: "Boxing",
-        image: "teofilo-stevenson.jpg",
-        alt: "Teófilo Stevenson, Cuban boxing legend"
-      },
-      {
-        number: "17",
-        name: "Salvador Sánchez",
-        country: "Mexico · North America",
-        discipline: "Boxing",
-        image: "salvador-sanchez.jpg",
-        alt: "Salvador Sánchez, Mexican boxing legend"
-      },
-      {
-        number: "18",
-        name: "Pelé",
-        country: "Brazil · South America",
-        discipline: "Football",
-        image: "pele.jpg",
-        alt: "Pelé, Brazilian football legend"
-      },
-      {
-        number: "19",
-        name: "Diego Maradona",
-        country: "Argentina · South America",
-        discipline: "Football",
-        image: "diego-maradona.jpg",
-        alt: "Diego Maradona, Argentine football legend"
-      },
-      {
-        number: "20",
-        name: "Alcides Ghiggia",
-        country: "Uruguay · South America",
-        discipline: "Football",
-        image: "alcides-ghiggia.jpg",
-        alt: "Alcides Ghiggia, Uruguayan football legend"
-      },
-      {
-        number: "21",
-        name: "Sir Donald Bradman",
-        country: "Australia · Oceania",
-        discipline: "Cricket",
-        image: "don-bradman.jpg",
-        alt: "Sir Donald Bradman, Australian cricket legend"
-      },
-      {
-        number: "22",
-        name: "Jonah Lomu",
-        country: "New Zealand · Oceania",
-        discipline: "Rugby union",
-        image: "jonah-lomu.jpg",
-        alt: "Jonah Lomu, New Zealand rugby legend"
-      },
-      {
-        number: "26",
-        name: "Arnold Palmer",
-        country: "United States · North America",
-        discipline: "Golf",
-        image: "arnold-palmer.jpg",
-        alt: "Arnold Palmer, American golf legend"
-      },
-      {
-        number: "27",
-        name: "Eusébio",
-        country: "Portugal · Europe",
-        discipline: "Football",
-        image: "eusebio.jpg",
-        alt: "Eusébio, Portuguese football legend"
-      },
-      {
-        number: "28",
-        name: "Bill Russell",
-        country: "United States · North America",
-        discipline: "Basketball",
-        image: "bill-russell.jpg",
-        alt: "Bill Russell, American basketball legend"
-      }
-    ];
-
-    /* BUILD THE LEGEND CARDS */
-
-    function createLegendCard(person) {
-      const card = document.createElement("article");
-      card.className = "legend-card";
-
-      card.innerHTML = `
-        <div class="legend-image-wrap">
-          <span class="legend-number">${person.number}</span>
-          <img
-            class="legend-image"
-            src="/${person.image}"
-            alt="${person.alt}"
-            loading="lazy">
-        </div>
-
-        <div class="legend-info">
-          <div class="legend-country">${person.country}</div>
-          <h3 class="legend-name">${person.name}</h3>
-          <div class="legend-discipline">${person.discipline}</div>
-        </div>
-      `;
-
-      return card;
-    }
-
-    function renderCollection(id, people) {
-      const track = document.getElementById(id);
-      if (!track) return;
-
-      people.forEach(person => {
-        track.appendChild(createLegendCard(person));
-      });
-    }
-
-    renderCollection("legendsOne", collectionOne);
-    renderCollection("legendsTwo", collectionTwo);
-
     /* TWO INDEPENDENT SLIDING COLLECTIONS */
 
     const carouselInstances = {};
 
-    function visibleCards() {
+    function visibleCards(track) {
       if (window.innerWidth <= 600) return 1;
       if (window.innerWidth <= 900) return 2;
       return 3;
@@ -1413,16 +1580,17 @@
 
     function updateCarousel(id) {
       const track = document.getElementById(id);
-      if (!track || !track.children.length) return;
+      if (!track) return;
 
       const cards = Array.from(track.children);
+      if (!cards.length) return;
+
       const total = cards.length;
-      const visible = visibleCards();
+      const visible = visibleCards(track);
       const maxIndex = Math.max(0, total - visible);
 
       let index = carouselInstances[id]?.index || 0;
       index = Math.min(index, maxIndex);
-
       carouselInstances[id] = { index };
 
       const cardWidth = cards[0].getBoundingClientRect().width;
@@ -1447,7 +1615,7 @@
       if (!track) return;
 
       const total = track.children.length;
-      const visible = visibleCards();
+      const visible = visibleCards(track);
       const maxIndex = Math.max(0, total - visible);
 
       let index = carouselInstances[id]?.index || 0;
@@ -1481,7 +1649,7 @@
       ["legendsOne", "legendsTwo"].forEach(updateCarousel);
     });
 
-    /* AUTOMATIC SLIDING */
+    /* AUTOMATIC SLIDING — EACH COLLECTION RUNS INDEPENDENTLY */
 
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -1491,9 +1659,7 @@
       window.setInterval(() => {
         ["legendsOne", "legendsTwo"].forEach(id => {
           const section = document.getElementById(
-            id === "legendsOne"
-              ? "first-collection"
-              : "second-collection"
+            id === "legendsOne" ? "first-collection" : "second-collection"
           );
 
           if (section && !section.matches(":hover")) {
@@ -1519,8 +1685,9 @@
     languageSelector.addEventListener("change", function () {
       const selectedLanguage = this.value;
 
-      function applyLanguage() {
+      const applyLanguage = () => {
         const translateCombo = document.querySelector(".goog-te-combo");
+
         if (!translateCombo) return false;
 
         translateCombo.value =
@@ -1528,7 +1695,7 @@
 
         translateCombo.dispatchEvent(new Event("change"));
         return true;
-      }
+      };
 
       if (applyLanguage()) return;
 
@@ -1543,29 +1710,17 @@
       }, 300);
     });
 
-    /* SUPPRESS GOOGLE TRANSLATE BANNER AND PAGE DISPLACEMENT */
+    /* KEEP GOOGLE'S INJECTED BANNER FROM MOVING THE PAGE */
 
     function suppressGoogleTranslateElements() {
-      document.documentElement.style.setProperty(
-        "margin-top", "0", "important"
-      );
-
-      document.documentElement.style.setProperty(
-        "padding-top", "0", "important"
-      );
-
-      document.body.style.setProperty("top", "0", "important");
-      document.body.style.setProperty("margin-top", "0", "important");
-      document.body.style.setProperty("padding-top", "0", "important");
+      document.documentElement.style.marginTop = "0";
+      document.documentElement.style.paddingTop = "0";
+      document.body.style.top = "0";
+      document.body.style.marginTop = "0";
+      document.body.style.paddingTop = "0";
 
       document.querySelectorAll(
-        ".goog-te-banner-frame, " +
-        ".goog-te-balloon-frame, " +
-        ".goog-te-menu-frame, " +
-        "#goog-gt-tt, " +
-        ".goog-tooltip, " +
-        ".VIpgJd-ZVi9od-ORHb-OEVmcd, " +
-        ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf"
+        ".goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt"
       ).forEach(element => {
         element.style.setProperty("display", "none", "important");
         element.style.setProperty("visibility", "hidden", "important");
@@ -1584,7 +1739,6 @@
     });
 
     window.addEventListener("load", suppressGoogleTranslateElements);
-
     window.setInterval(suppressGoogleTranslateElements, 1000);
   </script>
 
