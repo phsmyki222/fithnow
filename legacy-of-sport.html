@@ -1,1729 +1,2465 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
-  <meta name="description" content="THE LEGACY OF SPORT™ — a PHRINUSOMYIS™ tribute to extraordinary sporting figures whose achievements, courage and influence became part of sporting history.">
-  <meta name="theme-color" content="#171715">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://phrinusomyis.com/legacy-of-sport.html">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
-  <meta property="og:description" content="Honouring the figures who shaped sporting history.">
-  <meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
-  <meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --black: #171715;
-      --charcoal: #25241f;
-      --ivory: #f2eee5;
-      --ivory-light: #f8f5ee;
-      --stone: #e5ded1;
-      --stone-deep: #d8cebd;
-      --bronze: #a9824d;
-      --gold: #c5a36b;
-      --text: #24231f;
-      --muted: #69665f;
-      --line: rgba(169,130,77,.25);
-      --content: 1360px;
-      --heading: "Barlow Condensed", "Segoe UI", Arial, sans-serif;
-      --body: "DM Sans", "Segoe UI", Arial, sans-serif;
-      --editorial: "Playfair Display", Georgia, serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--ivory-light);
-      color: var(--text);
-      font-family: var(--body);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body, html {
-      max-width: 100%;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    .site-topline {
-      height: 5px;
-      background: var(--gold);
-    }
-
-    /* HEADER */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(23,23,21,.97);
-      border-bottom: 1px solid rgba(197,163,107,.25);
-      backdrop-filter: blur(14px);
-    }
-
-    .header-inner {
-      width: min(calc(100% - 48px), var(--content));
-      min-height: 84px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    .brand-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .brand-name {
-      color: var(--ivory-light);
-      font-family: var(--heading);
-      font-size: 23px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .brand-tagline {
-      color: var(--gold);
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .back-link {
-      color: var(--ivory);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: color .25s ease;
-    }
-
-    .back-link:hover {
-      color: var(--gold);
-    }
-
-    .language-control {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--gold);
-    }
-
-    .language-control label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .language-control select {
-      max-width: 155px;
-      padding: 10px 30px 10px 11px;
-      color: var(--ivory);
-      background: #292821;
-      border: 1px solid rgba(197,163,107,.45);
-      border-radius: 0;
-      outline: none;
-      font-size: 11px;
-      cursor: pointer;
-    }
-
-    .language-control select:focus {
-      border-color: var(--gold);
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      min-height: 610px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      color: var(--ivory-light);
-      background:
-        linear-gradient(90deg, rgba(18,18,16,.98) 0%, rgba(18,18,16,.88) 48%, rgba(18,18,16,.45) 100%),
-        url("/legacy-hero.jpg") center 42% / cover no-repeat,
-        var(--black);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, transparent 45%, rgba(197,163,107,.08) 45.1%, transparent 45.4%),
-        linear-gradient(0deg, rgba(23,23,21,.45), transparent 55%);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 1px;
-      height: 72%;
-      top: 14%;
-      right: 12%;
-      background: linear-gradient(transparent, rgba(197,163,107,.55), transparent);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(calc(100% - 48px), var(--content));
-      margin: auto;
-      padding: 105px 0 115px;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      max-width: 850px;
-      margin: 25px 0 18px;
-      color: var(--ivory-light);
-      font-family: var(--heading);
-      font-size: clamp(58px, 9vw, 116px);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: .88;
-      text-transform: uppercase;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: var(--gold);
-    }
-
-    .hero-description {
-      max-width: 590px;
-      margin: 28px 0 0;
-      color: rgba(248,245,238,.78);
-      font-family: var(--editorial);
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.8;
-    }
-
-    .hero-bottom {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 44px;
-    }
-
-    .hero-line {
-      width: 62px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero-note {
-      color: rgba(248,245,238,.62);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-    }
-
-    /* INTRODUCTION */
-
-    .intro-section {
-      padding: 105px 24px 100px;
-      background: var(--ivory-light);
-    }
-
-    .intro-inner {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .section-label {
-      color: var(--bronze);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .intro-inner h2 {
-      margin: 20px 0 22px;
-      color: var(--black);
-      font-family: var(--editorial);
-      font-size: clamp(31px, 5vw, 48px);
-      font-weight: 400;
-      line-height: 1.2;
-    }
-
-    .intro-inner p {
-      max-width: 760px;
-      margin: auto;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 2;
-    }
-
-    .gold-divider {
-      width: 65px;
-      height: 2px;
-      margin: 35px auto 0;
-      background: var(--gold);
-    }
-
-    /* COLLECTIONS */
-
-    .collection-section {
-      padding: 100px 0 110px;
-      overflow: hidden;
-      background: var(--stone);
-    }
-
-    .collection-section.dark {
-      color: var(--ivory-light);
-      background: var(--black);
-    }
-
-    .collection-inner {
-      width: min(calc(100% - 48px), var(--content));
-      margin: auto;
-    }
-
-    .collection-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 30px;
-      margin-bottom: 45px;
-    }
-
-    .collection-heading h2 {
-      margin: 12px 0 0;
-      color: var(--black);
-      font-family: var(--heading);
-      font-size: clamp(38px, 5vw, 62px);
-      font-weight: 700;
-      letter-spacing: .5px;
-      line-height: .98;
-      text-transform: uppercase;
-    }
-
-    .dark .collection-heading h2 {
-      color: var(--ivory-light);
-    }
-
-    .collection-heading p {
-      max-width: 370px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .dark .collection-heading p {
-      color: rgba(248,245,238,.58);
-    }
-
-    .carousel-controls {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      flex-shrink: 0;
-    }
-
-    .carousel-button {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      color: var(--black);
-      background: transparent;
-      border: 1px solid rgba(36,35,31,.35);
-      transition: .25s ease;
-    }
-
-    .carousel-button:hover {
-      color: var(--ivory-light);
-      background: var(--black);
-      border-color: var(--black);
-    }
-
-    .dark .carousel-button {
-      color: var(--gold);
-      border-color: rgba(197,163,107,.5);
-    }
-
-    .dark .carousel-button:hover {
-      color: var(--black);
-      background: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .carousel-button svg {
-      width: 17px;
-      height: 17px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .carousel-window {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 22px;
-      transition: transform .7s cubic-bezier(.22,.61,.36,1);
-      will-change: transform;
-    }
-
-    .legend-card {
-      flex: 0 0 calc((100% - 44px) / 3);
-      min-width: 0;
-    }
-
-    .legend-image-wrap {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background: #d2c9b9;
-    }
-
-    .legend-image-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.25));
-      pointer-events: none;
-    }
-
-    .legend-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(.78);
-      transition: transform .8s ease, filter .8s ease;
-    }
-
-    .legend-card:hover .legend-image {
-      transform: scale(1.045);
-      filter: saturate(1);
-    }
-
-    .legend-number {
-      position: absolute;
-      z-index: 2;
-      top: 15px;
-      left: 15px;
-      display: grid;
-      place-items: center;
-      min-width: 34px;
-      height: 34px;
-      padding: 0 8px;
-      color: var(--ivory-light);
-      background: rgba(23,23,21,.85);
-      border: 1px solid rgba(197,163,107,.65);
-      font-family: var(--heading);
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .legend-info {
-      padding: 21px 2px 0;
-    }
-
-    .legend-country {
-      color: var(--bronze);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .legend-name {
-      margin: 8px 0 5px;
-      color: var(--black);
-      font-family: var(--heading);
-      font-size: clamp(23px, 2.5vw, 31px);
-      font-weight: 700;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-
-    .legend-discipline {
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .3px;
-    }
-
-    .dark .legend-name {
-      color: var(--ivory-light);
-    }
-
-    .dark .legend-discipline {
-      color: rgba(248,245,238,.58);
-    }
-
-    .dark .legend-country {
-      color: var(--gold);
-    }
-
-    .carousel-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-top: 37px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-    }
-
-    .carousel-count {
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .dark .carousel-count {
-      color: rgba(248,245,238,.55);
-    }
-
-    .carousel-progress {
-      width: min(260px, 40%);
-      height: 2px;
-      overflow: hidden;
-      background: rgba(169,130,77,.2);
-    }
-
-    .carousel-progress span {
-      display: block;
-      width: 0;
-      height: 100%;
-      background: var(--bronze);
-      transition: width .5s ease;
-    }
-
-    .dark .carousel-progress span {
-      background: var(--gold);
-    }
-
-    /* INTERLUDE */
-
-    .legacy-interlude {
-      position: relative;
-      padding: 115px 24px;
-      overflow: hidden;
-      color: var(--ivory-light);
-      text-align: center;
-      background:
-        linear-gradient(rgba(23,23,21,.93), rgba(23,23,21,.96)),
-        url("/legacy-interlude.jpg") center / cover no-repeat,
-        var(--black);
-    }
-
-    .legacy-interlude::before,
-    .legacy-interlude::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      width: min(72%, 720px);
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .legacy-interlude::before {
-      top: 55px;
-    }
-
-    .legacy-interlude::after {
-      bottom: 55px;
-    }
-
-    .interlude-inner {
-      position: relative;
-      max-width: 950px;
-      margin: auto;
-    }
-
-    .interlude-mark {
-      color: var(--gold);
-      font-family: var(--editorial);
-      font-size: 56px;
-      line-height: 1;
-    }
-
-    .interlude-inner h2 {
-      margin: 25px 0 20px;
-      font-family: var(--editorial);
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 400;
-      line-height: 1.35;
-    }
-
-    .interlude-inner p {
-      max-width: 650px;
-      margin: auto;
-      color: rgba(248,245,238,.65);
-      font-size: 13px;
-      line-height: 2;
-    }
-
-    .interlude-emphasis {
-      display: block;
-      margin-top: 28px;
-      color: var(--gold);
-      font-family: var(--heading);
-      font-size: clamp(19px, 3vw, 27px);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* NEXT GENERATION */
-
-    .next-generation {
-      padding: 115px 24px 120px;
-      background: var(--ivory-light);
-    }
-
-    .next-inner {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .next-inner h2 {
-      margin: 20px 0;
-      color: var(--black);
-      font-family: var(--editorial);
-      font-size: clamp(34px, 5vw, 54px);
-      font-weight: 400;
-      line-height: 1.2;
-    }
-
-    .next-inner > p {
-      max-width: 760px;
-      margin: auto;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 2;
-    }
-
-    .next-statement {
-      margin: 48px auto 0;
-      padding: 28px 20px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      color: var(--bronze);
-      font-family: var(--heading);
-      font-size: clamp(20px, 3vw, 30px);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      line-height: 1.45;
-      text-transform: uppercase;
-    }
-
-    /* CLOSING */
-
-    .closing {
-      padding: 100px 24px 105px;
-      color: var(--ivory-light);
-      background: var(--charcoal);
-      text-align: center;
-    }
-
-    .closing-inner {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .closing .section-label {
-      color: var(--gold);
-    }
-
-    .closing h2 {
-      margin: 22px 0;
-      font-family: var(--heading);
-      font-size: clamp(40px, 7vw, 76px);
-      font-weight: 800;
-      line-height: .98;
-      text-transform: uppercase;
-    }
-
-    .closing h2 span {
-      display: block;
-      color: var(--gold);
-    }
-
-    .closing p {
-      max-width: 650px;
-      margin: 25px auto 0;
-      color: rgba(248,245,238,.65);
-      font-family: var(--editorial);
-      font-size: 17px;
-      line-height: 1.9;
-    }
-
-    .closing-rule {
-      width: 55px;
-      height: 2px;
-      margin: 36px auto;
-      background: var(--gold);
-    }
-
-    .closing-signature {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    /* FOOTER */
-
-    .site-footer {
-      padding: 35px 24px;
-      color: rgba(248,245,238,.55);
-      background: var(--black);
-      border-top: 1px solid rgba(197,163,107,.25);
-    }
-
-    .footer-inner {
-      width: min(100%, var(--content));
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      color: var(--ivory-light);
-      font-family: var(--heading);
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-
-    .footer-copy {
-      font-size: 10px;
-      line-height: 1.8;
-    }
-
-    .footer-top {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    /* GOOGLE TRANSLATE PROTECTION */
-
-    #google_translate_element {
-      position: absolute !important;
-      left: -10000px !important;
-      top: 0 !important;
-      width: 1px !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-    .goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    .goog-te-menu-frame,
-    .goog-te-menu2,
-    .goog-te-gadget,
-    .goog-te-spinner-pos,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-text-highlight,
-    #goog-gt-tt,
-    .VIpgJd-ZVi9od-ORHb-OEVmcd,
-    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-    .skiptranslate iframe {
-      display: none !important;
-      visibility: hidden !important;
-    }
-
-    body {
-      top: 0 !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-
-    html {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .legend-card {
-        flex-basis: calc((100% - 22px) / 2);
-      }
-
-      .collection-heading {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .collection-heading p {
-        max-width: 600px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header-inner {
-        width: calc(100% - 28px);
-        min-height: 72px;
-        gap: 10px;
-      }
-
-      .brand {
-        gap: 8px;
-      }
-
-      .brand img {
-        width: 36px;
-        height: 36px;
-      }
-
-      .brand-name {
-        font-size: 17px;
-        letter-spacing: .8px;
-      }
-
-      .brand-tagline {
-        font-size: 7px;
-        letter-spacing: 1px;
-      }
-
-      .header-right {
-        gap: 10px;
-      }
-
-      .back-link {
-        display: none;
-      }
-
-      .language-control {
-        gap: 5px;
-      }
-
-      .language-control label {
-        display: none;
-      }
-
-      .language-control select {
-        max-width: 125px;
-        padding: 9px 22px 9px 7px;
-        font-size: 10px;
-      }
-
-      .hero {
-        min-height: 540px;
-        background-position: 58% center;
-      }
-
-      .hero-inner {
-        width: calc(100% - 36px);
-        padding: 90px 0;
-      }
-
-      .hero h1 {
-        font-size: clamp(53px, 15vw, 78px);
-      }
-
-      .hero-description {
-        font-size: 17px;
-      }
-
-      .intro-section {
-        padding: 75px 22px;
-      }
-
-      .collection-section {
-        padding: 75px 0 85px;
-      }
-
-      .collection-inner {
-        width: calc(100% - 36px);
-      }
-
-      .collection-heading {
-        margin-bottom: 30px;
-      }
-
-      .collection-heading h2 {
-        font-size: 43px;
-      }
-
-      .collection-heading p {
-        font-size: 11px;
-      }
-
-      .legend-card {
-        flex-basis: 84%;
-      }
-
-      .legend-image-wrap {
-        aspect-ratio: 4 / 5;
-      }
-
-      .legend-name {
-        font-size: 28px;
-      }
-
-      .carousel-button {
-        width: 40px;
-        height: 40px;
-      }
-
-      .legacy-interlude {
-        padding: 95px 22px;
-      }
-
-      .next-generation {
-        padding: 85px 22px;
-      }
-
-      .closing {
-        padding: 80px 22px;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE LEGACY OF SPORT™ | PHRINUSOMYIS™</title>
+<meta name="description" content="THE LEGACY OF SPORT™ — an institutional editorial tribute by PHRINUSOMYIS™, recognising the sporting disciplines, distinguished figures and generations whose contributions form part of the international legacy of sport.">
+<meta name="theme-color" content="#171715">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://phrinusomyis.com/legacy-of-sport.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="THE LEGACY OF SPORT™ | PHRINUSOMYIS™">
+<meta property="og:description" content="Sport. Its disciplines. Its distinguished figures. Its international legacy.">
+<meta property="og:url" content="https://phrinusomyis.com/legacy-of-sport.html">
+<meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#171715;
+  --charcoal:#25241f;
+  --ivory:#f2eee5;
+  --ivory-light:#f8f5ee;
+  --stone:#e5ded1;
+  --bronze:#a9824d;
+  --gold:#c5a36b;
+  --text:#24231f;
+  --muted:#69665f;
+  --line:rgba(169,130,77,.25);
+  --content:1360px;
+  --heading:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+  --body:"DM Sans","Segoe UI",Arial,sans-serif;
+  --editorial:"Playfair Display",Georgia,serif;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
+body{
+  margin:0;
+  max-width:100%;
+  overflow-x:hidden;
+  background:var(--ivory-light);
+  color:var(--text);
+  font-family:var(--body);
+  -webkit-font-smoothing:antialiased;
+}
+
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit}
+button{cursor:pointer}
+
+.site-topline{
+  height:5px;
+  background:var(--gold);
+}
+
+/* HEADER */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(23,23,21,.97);
+  border-bottom:1px solid rgba(197,163,107,.25);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{
+  width:min(calc(100% - 48px),var(--content));
+  min-height:84px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.brand img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+.brand-copy{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.brand-name{
+  color:var(--ivory-light);
+  font-family:var(--heading);
+  font-size:23px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.brand-tagline{
+  color:var(--gold);
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.back-link{
+  color:var(--ivory);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.back-link:hover{color:var(--gold)}
+
+.language-control{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:var(--gold);
+}
+
+.language-control label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.language-control select{
+  max-width:155px;
+  padding:10px 30px 10px 11px;
+  color:var(--ivory);
+  background:#292821;
+  border:1px solid rgba(197,163,107,.45);
+  border-radius:0;
+  outline:none;
+  font-size:11px;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  min-height:610px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:var(--ivory-light);
+  background:
+    linear-gradient(90deg,rgba(18,18,16,.98) 0%,rgba(18,18,16,.88) 48%,rgba(18,18,16,.45) 100%),
+    url("/legacy-hero.jpg") center 42%/cover no-repeat,
+    var(--black);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg,transparent 45%,rgba(197,163,107,.08) 45.1%,transparent 45.4%),
+    linear-gradient(0deg,rgba(23,23,21,.45),transparent 55%);
+  pointer-events:none;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:1px;
+  height:72%;
+  top:14%;
+  right:12%;
+  background:linear-gradient(transparent,rgba(197,163,107,.55),transparent);
+}
+
+.hero-inner{
+  position:relative;
+  z-index:1;
+  width:min(calc(100% - 48px),var(--content));
+  margin:auto;
+  padding:105px 0 115px;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.eyebrow::before{
+  content:"";
+  width:38px;
+  height:1px;
+  background:var(--gold);
+}
+
+.hero h1{
+  max-width:850px;
+  margin:25px 0 18px;
+  color:var(--ivory-light);
+  font-family:var(--heading);
+  font-size:clamp(58px,9vw,116px);
+  font-weight:800;
+  letter-spacing:-1.5px;
+  line-height:.88;
+  text-transform:uppercase;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:690px;
+  margin:28px 0 0;
+  color:rgba(248,245,238,.78);
+  font-family:var(--editorial);
+  font-size:clamp(17px,2vw,21px);
+  line-height:1.8;
+}
+
+.hero-bottom{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-top:44px;
+}
+
+.hero-line{
+  width:62px;
+  height:1px;
+  background:var(--gold);
+}
+
+.hero-note{
+  color:rgba(248,245,238,.62);
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+
+/* INTRODUCTION */
+
+.intro-section{
+  padding:105px 24px 100px;
+  background:var(--ivory-light);
+}
+
+.intro-inner{
+  max-width:940px;
+  margin:auto;
+  text-align:center;
+}
+
+.section-label{
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.intro-inner h2{
+  margin:20px 0 22px;
+  color:var(--black);
+  font-family:var(--editorial);
+  font-size:clamp(31px,5vw,48px);
+  font-weight:400;
+  line-height:1.2;
+}
+
+.intro-inner p{
+  max-width:850px;
+  margin:auto;
+  color:var(--muted);
+  font-size:15px;
+  line-height:2;
+}
+
+.gold-divider{
+  width:65px;
+  height:2px;
+  margin:35px auto 0;
+  background:var(--gold);
+}
+
+/* EDITORIAL COLLECTIONS */
+
+.collection-section{
+  padding:100px 0 110px;
+  overflow:hidden;
+  background:var(--stone);
+}
+
+.collection-section.dark{
+  color:var(--ivory-light);
+  background:var(--black);
+}
+
+.collection-inner{
+  width:min(calc(100% - 48px),var(--content));
+  margin:auto;
+}
+
+.collection-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:45px;
+}
+
+.collection-heading h2{
+  margin:12px 0 0;
+  color:var(--black);
+  font-family:var(--heading);
+  font-size:clamp(38px,5vw,62px);
+  font-weight:700;
+  letter-spacing:.5px;
+  line-height:.98;
+  text-transform:uppercase;
+}
+
+.dark .collection-heading h2{color:var(--ivory-light)}
+
+.collection-heading p{
+  max-width:390px;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.9;
+}
+
+.dark .collection-heading p{
+  color:rgba(248,245,238,.65);
+}
+
+.carousel-controls{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  flex-shrink:0;
+}
+
+.carousel-button{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  color:var(--black);
+  background:transparent;
+  border:1px solid rgba(36,35,31,.35);
+  transition:.25s ease;
+}
+
+.carousel-button:hover{
+  color:var(--ivory-light);
+  background:var(--black);
+  border-color:var(--black);
+}
+
+.dark .carousel-button{
+  color:var(--gold);
+  border-color:rgba(197,163,107,.5);
+}
+
+.dark .carousel-button:hover{
+  color:var(--black);
+  background:var(--gold);
+  border-color:var(--gold);
+}
+
+.carousel-button svg{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.carousel-window{
+  width:100%;
+  overflow:hidden;
+}
+
+.carousel-track{
+  display:flex;
+  gap:22px;
+  transition:transform .7s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+
+.legend-card{
+  flex:0 0 calc((100% - 44px)/3);
+  min-width:0;
+  cursor:pointer;
+  outline:none;
+}
+
+.legend-image-wrap{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:#d2c9b9;
+}
+
+.legend-image-wrap::after{
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  background:linear-gradient(transparent,rgba(0,0,0,.3));
+  pointer-events:none;
+}
+
+.legend-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.82);
+  transition:transform .8s ease,filter .8s ease;
+}
+
+.legend-card:hover .legend-image,
+.legend-card:focus-visible .legend-image{
+  transform:scale(1.045);
+  filter:saturate(1);
+}
+
+.legend-number{
+  position:absolute;
+  z-index:2;
+  top:15px;
+  left:15px;
+  display:grid;
+  place-items:center;
+  min-width:34px;
+  height:34px;
+  padding:0 8px;
+  color:var(--ivory-light);
+  background:rgba(23,23,21,.88);
+  border:1px solid rgba(197,163,107,.65);
+  font-family:var(--heading);
+  font-size:15px;
+  font-weight:700;
+}
+
+.legend-open{
+  position:absolute;
+  z-index:3;
+  right:15px;
+  bottom:15px;
+  color:white;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.9;
+}
+
+.legend-info{padding:21px 2px 0}
+
+.legend-country{
+  color:var(--bronze);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.legend-name{
+  margin:8px 0 5px;
+  color:var(--black);
+  font-family:var(--heading);
+  font-size:clamp(23px,2.5vw,31px);
+  font-weight:700;
+  line-height:1.05;
+  text-transform:uppercase;
+}
+
+.legend-discipline{
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.3px;
+}
+
+.dark .legend-name{color:var(--ivory-light)}
+.dark .legend-discipline{color:rgba(248,245,238,.65)}
+.dark .legend-country{color:var(--gold)}
+
+.carousel-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:37px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+
+.carousel-count{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.dark .carousel-count{color:rgba(248,245,238,.6)}
+
+.carousel-progress{
+  width:min(260px,40%);
+  height:2px;
+  overflow:hidden;
+  background:rgba(169,130,77,.2);
+}
+
+.carousel-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:var(--bronze);
+  transition:width .5s ease;
+}
+
+.dark .carousel-progress span{background:var(--gold)}
+
+/* INDIVIDUAL LEGACY POP-UP */
+
+.legacy-modal{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(10,10,9,.88);
+  backdrop-filter:blur(9px);
+}
+
+.legacy-modal.active{display:flex}
+
+.modal-panel{
+  position:relative;
+  width:min(100%,1000px);
+  max-height:90vh;
+  overflow-y:auto;
+  background:var(--ivory-light);
+  box-shadow:0 25px 100px rgba(0,0,0,.45);
+  animation:modalEnter .35s ease;
+}
+
+@keyframes modalEnter{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.modal-close{
+  position:absolute;
+  z-index:5;
+  top:15px;
+  right:15px;
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  color:white;
+  background:rgba(23,23,21,.9);
+  border:1px solid rgba(197,163,107,.55);
+  font-size:25px;
+  line-height:1;
+}
+
+.modal-layout{
+  display:grid;
+  grid-template-columns:minmax(260px,.82fr) 1.18fr;
+  min-height:540px;
+}
+
+.modal-image-side{
+  position:relative;
+  min-height:540px;
+  background:#d4cbbb;
+}
+
+.modal-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+
+.modal-image-caption{
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  padding:30px 25px 22px;
+  color:white;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.modal-content{
+  padding:52px 45px 38px;
+}
+
+.modal-kicker{
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.modal-sport{
+  margin:12px 0 0;
+  color:var(--black);
+  font-family:var(--heading);
+  font-size:clamp(38px,5vw,55px);
+  font-weight:800;
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.modal-name{
+  margin:17px 0 8px;
+  color:var(--charcoal);
+  font-family:var(--editorial);
+  font-size:clamp(23px,3vw,32px);
+  font-weight:400;
+  line-height:1.25;
+}
+
+.modal-location{
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.modal-rule{
+  width:55px;
+  height:2px;
+  margin:25px 0;
+  background:var(--gold);
+}
+
+.modal-subtitle{
+  margin:0 0 15px;
+  color:var(--black);
+  font-family:var(--editorial);
+  font-size:21px;
+  font-weight:400;
+  line-height:1.4;
+}
+
+.modal-description{
+  color:#555148;
+  font-size:13px;
+  line-height:2;
+}
+
+.modal-description p{margin:0 0 16px}
+
+.modal-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+
+.modal-signature{
+  color:var(--bronze);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  line-height:1.7;
+  text-transform:uppercase;
+}
+
+.share-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 19px;
+  color:var(--ivory-light);
+  background:var(--black);
+  border:1px solid var(--black);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:.25s ease;
+}
+
+.share-button:hover{
+  color:var(--black);
+  background:transparent;
+}
+
+.share-button svg{
+  width:15px;
+  height:15px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* INTERLUDE */
+
+.legacy-interlude{
+  position:relative;
+  padding:115px 24px;
+  overflow:hidden;
+  color:var(--ivory-light);
+  text-align:center;
+  background:
+    linear-gradient(rgba(23,23,21,.91),rgba(23,23,21,.94)),
+    url("/legacy-interlude.jpg") center/cover no-repeat,
+    var(--black);
+}
+
+.legacy-interlude::before,
+.legacy-interlude::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  width:min(72%,720px);
+  height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.legacy-interlude::before{top:55px}
+.legacy-interlude::after{bottom:55px}
+
+.interlude-inner{
+  position:relative;
+  max-width:950px;
+  margin:auto;
+}
+
+.interlude-mark{
+  color:var(--gold);
+  font-family:var(--editorial);
+  font-size:56px;
+  line-height:1;
+}
+
+.interlude-inner h2{
+  margin:25px 0 20px;
+  font-family:var(--editorial);
+  font-size:clamp(28px,5vw,48px);
+  font-weight:400;
+  line-height:1.35;
+}
+
+.interlude-inner p{
+  max-width:760px;
+  margin:auto;
+  color:rgba(248,245,238,.72);
+  font-size:13px;
+  line-height:2;
+}
+
+.interlude-emphasis{
+  display:block;
+  margin-top:28px;
+  color:var(--gold);
+  font-family:var(--heading);
+  font-size:clamp(19px,3vw,27px);
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* NEXT GENERATION */
+
+.next-generation{
+  padding:115px 24px 120px;
+  background:var(--ivory-light);
+}
+
+.next-inner{
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+}
+
+.next-inner h2{
+  margin:20px 0;
+  color:var(--black);
+  font-family:var(--editorial);
+  font-size:clamp(34px,5vw,54px);
+  font-weight:400;
+  line-height:1.2;
+}
+
+.next-inner>p{
+  max-width:830px;
+  margin:auto;
+  color:var(--muted);
+  font-size:14px;
+  line-height:2;
+}
+
+.next-statement{
+  margin:48px auto 0;
+  padding:28px 20px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  color:var(--bronze);
+  font-family:var(--heading);
+  font-size:clamp(20px,3vw,30px);
+  font-weight:700;
+  letter-spacing:1.5px;
+  line-height:1.5;
+  text-transform:uppercase;
+}
+
+/* CLOSING */
+
+.closing{
+  padding:100px 24px 85px;
+  color:var(--ivory-light);
+  background:var(--charcoal);
+  text-align:center;
+}
+
+.closing-inner{
+  max-width:900px;
+  margin:auto;
+}
+
+.closing .section-label{color:var(--gold)}
+
+.closing h2{
+  margin:22px 0;
+  font-family:var(--heading);
+  font-size:clamp(40px,7vw,76px);
+  font-weight:800;
+  line-height:.98;
+  text-transform:uppercase;
+}
+
+.closing h2 span{
+  display:block;
+  color:var(--gold);
+}
+
+.closing p{
+  max-width:720px;
+  margin:25px auto 0;
+  color:rgba(248,245,238,.72);
+  font-family:var(--editorial);
+  font-size:17px;
+  line-height:1.9;
+}
+
+.closing-rule{
+  width:55px;
+  height:2px;
+  margin:36px auto;
+  background:var(--gold);
+}
+
+.closing-signature{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.closing-nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:40px;
+}
+
+.closing-nav a{
+  min-width:145px;
+  padding:16px 22px;
+  color:var(--ivory-light);
+  background:transparent;
+  border:1px solid rgba(197,163,107,.55);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  transition:.25s ease;
+}
+
+.closing-nav a:hover{
+  color:var(--black);
+  background:var(--gold);
+  border-color:var(--gold);
+}
+
+/* FOOTER */
+
+.site-footer{
+  padding:35px 24px;
+  color:rgba(248,245,238,.6);
+  background:var(--black);
+  border-top:1px solid rgba(197,163,107,.25);
+}
+
+.footer-inner{
+  width:min(100%,var(--content));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-brand{
+  color:var(--ivory-light);
+  font-family:var(--heading);
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1.5px;
+}
+
+.footer-copy{
+  font-size:10px;
+  line-height:1.8;
+}
+
+.footer-top{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+/* GOOGLE TRANSLATE PROTECTION */
+
+#google_translate_element{
+  position:absolute!important;
+  left:-10000px!important;
+  top:0!important;
+  width:1px!important;
+  height:1px!important;
+  overflow:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-menu-frame,
+.goog-te-menu2,
+.goog-te-gadget,
+.goog-te-spinner-pos,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+#goog-gt-tt,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.skiptranslate iframe{
+  display:none!important;
+  visibility:hidden!important;
+}
+
+html,body{
+  top:0!important;
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .legend-card{flex-basis:calc((100% - 22px)/2)}
+  .collection-heading{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .collection-heading p{max-width:600px}
+  .modal-layout{grid-template-columns:minmax(220px,.8fr) 1.2fr}
+  .modal-content{padding:40px 30px 30px}
+}
+
+@media(max-width:600px){
+  .header-inner{
+    width:calc(100% - 28px);
+    min-height:72px;
+    gap:10px;
+  }
+
+  .brand{gap:8px}
+  .brand img{width:36px;height:36px}
+  .brand-name{font-size:17px;letter-spacing:.8px}
+  .brand-tagline{font-size:7px;letter-spacing:1px}
+  .header-right{gap:10px}
+  .back-link{display:none}
+  .language-control{gap:5px}
+  .language-control label{display:none}
+  .language-control select{
+    max-width:125px;
+    padding:9px 22px 9px 7px;
+    font-size:10px;
+  }
+
+  .hero{
+    min-height:540px;
+    background-position:58% center;
+  }
+
+  .hero-inner{
+    width:calc(100% - 36px);
+    padding:90px 0;
+  }
+
+  .hero h1{font-size:clamp(53px,15vw,78px)}
+  .hero-description{font-size:17px}
+  .intro-section{padding:75px 22px}
+  .collection-section{padding:75px 0 85px}
+  .collection-inner{width:calc(100% - 36px)}
+  .collection-heading{margin-bottom:30px}
+  .collection-heading h2{font-size:43px}
+  .collection-heading p{font-size:11px}
+  .legend-card{flex-basis:84%}
+  .legend-image-wrap{aspect-ratio:4/5}
+  .legend-name{font-size:28px}
+  .carousel-button{width:40px;height:40px}
+
+  .legacy-interlude{padding:95px 22px}
+  .next-generation{padding:85px 22px}
+  .closing{padding:80px 22px 65px}
+
+  .modal{
+    padding:10px;
+  }
+
+  .legacy-modal{padding:10px}
+
+  .modal-panel{
+    max-height:94vh;
+    width:100%;
+  }
+
+  .modal-layout{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .modal-image-side{
+    min-height:0;
+    height:330px;
+    flex:none;
+  }
+
+  .modal-content{
+    padding:30px 23px 25px;
+  }
+
+  .modal-sport{font-size:43px}
+  .modal-footer{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .closing-nav{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .closing-nav a{min-width:0}
+  .closing-nav a:last-child{grid-column:1/-1}
+
+  .footer-inner{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
 </head>
 
-<body>
+<body id="top">
 
-  <div class="site-topline"></div>
+<div class="site-topline"></div>
+<div id="google_translate_element" aria-hidden="true"></div>
 
-  <!-- GOOGLE TRANSLATE ENGINE -->
-  <div id="google_translate_element" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="header-inner">
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
+    <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
+      <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+      <span class="brand-copy">
+        <span class="brand-name">PHRINUSOMYIS™</span>
+        <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
+      </span>
+    </a>
 
-      <a class="brand" href="/" aria-label="PHRINUSOMYIS homepage">
-        <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
-        <span class="brand-copy">
-          <span class="brand-name">PHRINUSOMYIS™</span>
-          <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
-        </span>
-      </a>
+    <div class="header-right">
+      <a class="back-link" href="/">Return to PHRINUSOMYIS</a>
 
-      <div class="header-right">
-        <a class="back-link" href="/">Return to PHRINUSOMYIS</a>
-
-        <div class="language-control">
-          <label for="siteLanguage">Language</label>
-          <select id="siteLanguage" aria-label="Select language">
-            <option value="en" selected>English</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-            <option value="ar">العربية</option>
-            <option value="zh-CN">中文</option>
-            <option value="ru">Русский</option>
-            <option value="pt">Português</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="it">Italiano</option>
-            <option value="nl">Nederlands</option>
-            <option value="tr">Türkçe</option>
-            <option value="hi">हिन्दी</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="th">ไทย</option>
-            <option value="pl">Polski</option>
-            <option value="sv">Svenska</option>
-            <option value="fi">Suomi</option>
-            <option value="da">Dansk</option>
-          </select>
-        </div>
+      <div class="language-control">
+        <label for="siteLanguage">Language</label>
+        <select id="siteLanguage" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="ar">العربية</option>
+          <option value="zh-CN">中文</option>
+          <option value="ru">Русский</option>
+          <option value="pt">Português</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="th">ไทย</option>
+          <option value="pl">Polski</option>
+          <option value="sv">Svenska</option>
+          <option value="fi">Suomi</option>
+          <option value="da">Dansk</option>
+        </select>
       </div>
-
     </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-
-        <div class="eyebrow">A PHRINUSOMYIS™ Editorial Tribute</div>
-
-        <h1>
-          The Legacy
-          <span>of Sport.</span>
-        </h1>
-
-        <p class="hero-description">
-          Honouring the figures whose achievements, courage and influence
-          became part of sporting history.
-        </p>
-
-        <div class="hero-bottom">
-          <span class="hero-line"></span>
-          <span class="hero-note">A tribute across generations and continents</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- INTRODUCTION -->
-    <section class="intro-section">
-      <div class="intro-inner">
-
-        <div class="section-label">Beyond the Moment</div>
-
-        <h2>Greatness never leaves the stage.</h2>
-
-        <p>
-          Sporting history is shaped by individuals whose performances
-          transcend the moment in which they occurred. Across disciplines,
-          nations and generations, their achievements established
-          enduring points of reference in the story of sport.
-          This collection recognizes their contribution and preserves
-          a place for their names in the wider sporting narrative.
-        </p>
-
-        <div class="gold-divider"></div>
-
-      </div>
-    </section>
-
-    <!-- FIRST SLIDING COLLECTION -->
-    <section class="collection-section" id="first-collection">
-      <div class="collection-inner">
-
-        <div class="collection-heading">
-          <div>
-            <div class="section-label">The Historical Collection · 01</div>
-            <h2>Names That Endure</h2>
-          </div>
-
-          <p>
-            From Africa to Europe and Asia, these figures left
-            a lasting mark on their respective sporting disciplines.
-          </p>
-
-          <div class="carousel-controls">
-            <button class="carousel-button" type="button"
-              data-carousel-prev="legendsOne" aria-label="Previous legends">
-              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="carousel-button" type="button"
-              data-carousel-next="legendsOne" aria-label="Next legends">
-              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="carousel-window" id="window-legendsOne">
-          <div class="carousel-track" id="legendsOne">
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">01</span>
-                <img class="legend-image" src="/abebe-bikila.jpg" alt="Abebe Bikila, Ethiopian athletics legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Ethiopia · Africa</div>
-                <h3 class="legend-name">Abebe Bikila</h3>
-                <div class="legend-discipline">Athletics · Marathon</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">02</span>
-                <img class="legend-image" src="/henry-rono.jpg" alt="Henry Rono, Kenyan athletics legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Kenya · Africa</div>
-                <h3 class="legend-name">Henry Rono</h3>
-                <div class="legend-discipline">Athletics · Long-distance running</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">03</span>
-                <img class="legend-image" src="/mohamed-latif.jpg" alt="Mohamed Latif, Egyptian football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Egypt · Africa</div>
-                <h3 class="legend-name">Mohamed Latif</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">04</span>
-                <img class="legend-image" src="/larbi-benbarek.jpg" alt="Larbi Benbarek, Moroccan football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Morocco · Africa</div>
-                <h3 class="legend-name">Larbi Benbarek</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">05</span>
-                <img class="legend-image" src="/dhyan-chand.jpg" alt="Dhyan Chand, Indian field hockey legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">India · Asia</div>
-                <h3 class="legend-name">Dhyan Chand</h3>
-                <div class="legend-discipline">Field hockey</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">06</span>
-                <img class="legend-image" src="/shigeo-nagashima.jpg" alt="Shigeo Nagashima, Japanese baseball legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Japan · Asia</div>
-                <h3 class="legend-name">Shigeo Nagashima</h3>
-                <div class="legend-discipline">Baseball</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">07</span>
-                <img class="legend-image" src="/nasser-hejazi.jpg" alt="Nasser Hejazi, Iranian football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Iran · Asia</div>
-                <h3 class="legend-name">Nasser Hejazi</h3>
-                <div class="legend-discipline">Football · Goalkeeping</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">08</span>
-                <img class="legend-image" src="/gabriel-elorde.jpg" alt="Gabriel Elorde, Filipino boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Philippines · Asia</div>
-                <h3 class="legend-name">Gabriel Elorde</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">09</span>
-                <img class="legend-image" src="/johan-cruyff.jpg" alt="Johan Cruyff, Dutch football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Netherlands · Europe</div>
-                <h3 class="legend-name">Johan Cruyff</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">10</span>
-                <img class="legend-image" src="/franz-beckenbauer.jpg" alt="Franz Beckenbauer, German football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Germany · Europe</div>
-                <h3 class="legend-name">Franz Beckenbauer</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">11</span>
-                <img class="legend-image" src="/bobby-charlton.jpg" alt="Sir Bobby Charlton, English football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">United Kingdom · Europe</div>
-                <h3 class="legend-name">Sir Bobby Charlton</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="carousel-footer">
-          <div class="carousel-count">Collection 01 / 02</div>
-          <div class="carousel-progress"><span id="progress-legendsOne"></span></div>
-          <div class="carousel-count">11 Historical Figures</div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECOND SLIDING COLLECTION -->
-    <section class="collection-section dark" id="second-collection">
-      <div class="collection-inner">
-
-        <div class="collection-heading">
-          <div>
-            <div class="section-label">The Historical Collection · 02</div>
-            <h2>Across the World</h2>
-          </div>
-
-          <p>
-            From the Americas to Oceania and Europe, their achievements
-            remain part of the international story of sport.
-          </p>
-
-          <div class="carousel-controls">
-            <button class="carousel-button" type="button"
-              data-carousel-prev="legendsTwo" aria-label="Previous legends">
-              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="carousel-button" type="button"
-              data-carousel-next="legendsTwo" aria-label="Next legends">
-              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="carousel-window" id="window-legendsTwo">
-          <div class="carousel-track" id="legendsTwo">
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">12</span>
-                <img class="legend-image" src="/niki-lauda.jpg" alt="Niki Lauda, Austrian motorsport legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Austria · Europe</div>
-                <h3 class="legend-name">Niki Lauda</h3>
-                <div class="legend-discipline">Motorsport · Formula One</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">13</span>
-                <img class="legend-image" src="/andre-the-giant.jpg" alt="André the Giant, French professional wrestling figure" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">France · Europe</div>
-                <h3 class="legend-name">André the Giant</h3>
-                <div class="legend-discipline">Professional wrestling</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">14</span>
-                <img class="legend-image" src="/muhammad-ali.jpg" alt="Muhammad Ali, American boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">United States · North America</div>
-                <h3 class="legend-name">Muhammad Ali</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">15</span>
-                <img class="legend-image" src="/terry-fox.jpg" alt="Terry Fox, Canadian runner and humanitarian" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Canada · North America</div>
-                <h3 class="legend-name">Terry Fox</h3>
-                <div class="legend-discipline">Running · Athletics</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">16</span>
-                <img class="legend-image" src="/teofilo-stevenson.jpg" alt="Teófilo Stevenson, Cuban boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Cuba · Caribbean</div>
-                <h3 class="legend-name">Teófilo Stevenson</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">17</span>
-                <img class="legend-image" src="/salvador-sanchez.jpg" alt="Salvador Sánchez, Mexican boxing legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Mexico · North America</div>
-                <h3 class="legend-name">Salvador Sánchez</h3>
-                <div class="legend-discipline">Boxing</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">18</span>
-                <img class="legend-image" src="/pele.jpg" alt="Pelé, Brazilian football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Brazil · South America</div>
-                <h3 class="legend-name">Pelé</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">19</span>
-                <img class="legend-image" src="/diego-maradona.jpg" alt="Diego Maradona, Argentine football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Argentina · South America</div>
-                <h3 class="legend-name">Diego Maradona</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">20</span>
-                <img class="legend-image" src="/alcides-ghiggia.jpg" alt="Alcides Ghiggia, Uruguayan football legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Uruguay · South America</div>
-                <h3 class="legend-name">Alcides Ghiggia</h3>
-                <div class="legend-discipline">Football</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">21</span>
-                <img class="legend-image" src="/don-bradman.jpg" alt="Sir Donald Bradman, Australian cricket legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">Australia · Oceania</div>
-                <h3 class="legend-name">Sir Donald Bradman</h3>
-                <div class="legend-discipline">Cricket</div>
-              </div>
-            </article>
-
-            <article class="legend-card">
-              <div class="legend-image-wrap">
-                <span class="legend-number">22</span>
-                <img class="legend-image" src="/jonah-lomu.jpg" alt="Jonah Lomu, New Zealand rugby legend" loading="lazy">
-              </div>
-              <div class="legend-info">
-                <div class="legend-country">New Zealand · Oceania</div>
-                <h3 class="legend-name">Jonah Lomu</h3>
-                <div class="legend-discipline">Rugby union</div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="carousel-footer">
-          <div class="carousel-count">Collection 02 / 02</div>
-          <div class="carousel-progress"><span id="progress-legendsTwo"></span></div>
-          <div class="carousel-count">11 Historical Figures</div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- THE TRANSITION -->
-    <section class="legacy-interlude">
-      <div class="interlude-inner">
-
-        <div class="interlude-mark">“</div>
-
-        <h2>
-          Legends pass.<br>
-          Their legacy lives on.
-        </h2>
-
-        <p>
-          Every era leaves something behind. Achievements become history,
-          history becomes inspiration, and inspiration finds expression
-          in those who follow.
-        </p>
-
-        <span class="interlude-emphasis">
-          The next generation carries it forward.
-        </span>
-
-      </div>
-    </section>
-
-    <!-- NEXT GENERATION -->
-    <section class="next-generation">
-      <div class="next-inner">
-
-        <div class="section-label">The Next Generation</div>
-
-        <h2>The story does not end here.</h2>
-
-        <p>
-          Every generation inherits a legacy. Those who came before
-          established their place in sporting history. Those who follow
-          carry the responsibility of taking their own achievements
-          further, defining new moments and giving the future of sport
-          its own character.
-        </p>
-
-        <div class="next-statement">
-          Yesterday's champions.<br>
-          Today's inspiration.<br>
-          Tomorrow's greatness.
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CLOSING -->
-    <section class="closing">
-      <div class="closing-inner">
-
-        <div class="section-label">The Legacy Continues</div>
-
-        <h2>
-          History remembers.
-          <span>The future moves.</span>
-        </h2>
-
-        <p>
-          The achievements of the past remain part of the story.
-          The generations ahead will write their own chapters.
-          Sport continues, and every era has its defining moment.
-        </p>
-
-        <div class="closing-rule"></div>
-
-        <div class="closing-signature">
-          PHRINUSOMYIS™ · COMMANDING THE WORLD STAGE™
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
+  </div>
+</header>
 
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">A PHRINUSOMYIS™ Editorial Tribute</div>
+
+    <h1>
+      The Legacy
+      <span>of Sport.</span>
+    </h1>
+
+    <p class="hero-description">
+      A considered recognition of sport, its disciplines and the
+      distinguished figures whose careers and contributions form
+      part of its international legacy.
+    </p>
+
+    <div class="hero-bottom">
+      <span class="hero-line"></span>
+      <span class="hero-note">Across disciplines, generations and continents</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="section-label">The Wider Sporting Record</div>
+
+    <h2>Sport is greater than any single moment.</h2>
+
+    <p>
+      Sport represents a broad and enduring field of human endeavour,
+      bringing together disciplines, institutions, competitors and
+      communities across the world. Within this wider landscape,
+      individual careers acquire significance through their relationship
+      with the sports they represent and the generations that sustain them.
+
+      <br><br>
+
+      The history of sport is therefore not defined by individual
+      recognition alone. It is shaped by the disciplines themselves,
+      the standards they establish, the people who contribute to their
+      development and the influence they carry across national and
+      generational boundaries.
+
+      <br><br>
+
+      THE LEGACY OF SPORT™ recognises distinguished sporting figures
+      within that wider context. Each individual is presented as part
+      of a larger sporting tradition, with attention to the discipline,
+      the career and the contribution that remains part of its
+      international identity.
+    </p>
+
+    <div class="gold-divider"></div>
+  </div>
+</section>
+
+<!-- FIRST COLLECTION -->
+
+<section class="collection-section" id="first-collection">
+  <div class="collection-inner">
+
+    <div class="collection-heading">
       <div>
-        <div class="footer-brand">PHRINUSOMYIS™</div>
-        <div class="footer-copy">
-          An international sports organization.
+        <div class="section-label">The Historical Collection · 01</div>
+        <h2>Sport Has Legacy</h2>
+      </div>
+
+      <p>
+        Across continents and sporting disciplines, the individuals
+        presented in this collection form part of a wider record of
+        sporting contribution. Their careers are recognised within
+        the traditions and international standing of their respective
+        sports.
+      </p>
+
+      <div class="carousel-controls">
+        <button class="carousel-button" type="button"
+          data-carousel-prev="legendsOne" aria-label="Previous figures">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-button" type="button"
+          data-carousel-next="legendsOne" aria-label="Next figures">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-window">
+      <div class="carousel-track" id="legendsOne"></div>
+    </div>
+
+    <div class="carousel-footer">
+      <div class="carousel-count">Collection 01 / 02</div>
+      <div class="carousel-progress"><span id="progress-legendsOne"></span></div>
+      <div class="carousel-count">11 Sporting Figures</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECOND COLLECTION -->
+
+<section class="collection-section dark" id="second-collection">
+  <div class="collection-inner">
+
+    <div class="collection-heading">
+      <div>
+        <div class="section-label">The Historical Collection · 02</div>
+        <h2>The International Sporting Record</h2>
+      </div>
+
+      <p>
+        A further recognition of the disciplines and figures whose
+        careers occupy a place in the international sporting record.
+        From the Americas to Europe, Africa, Asia and Oceania,
+        each contribution is considered within the wider identity
+        of its sport.
+      </p>
+
+      <div class="carousel-controls">
+        <button class="carousel-button" type="button"
+          data-carousel-prev="legendsTwo" aria-label="Previous figures">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-button" type="button"
+          data-carousel-next="legendsTwo" aria-label="Next figures">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-window">
+      <div class="carousel-track" id="legendsTwo"></div>
+    </div>
+
+    <div class="carousel-footer">
+      <div class="carousel-count">Collection 02 / 02</div>
+      <div class="carousel-progress"><span id="progress-legendsTwo"></span></div>
+      <div class="carousel-count">19 Sporting Figures</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INTERLUDE -->
+
+<section class="legacy-interlude">
+  <div class="interlude-inner">
+
+    <div class="interlude-mark">“</div>
+
+    <h2>
+      Every era leaves a record.<br>
+      Every generation inherits a responsibility.
+    </h2>
+
+    <p>
+      The significance of sport extends beyond the duration of a
+      competition or the career of an individual. Its disciplines
+      retain their identity through the standards, knowledge,
+      traditions and contributions carried from one generation
+      to another.
+
+      <br><br>
+
+      The figures recognised in this collection occupy their
+      respective places within that wider sporting record.
+      Their contributions form part of the context through which
+      the disciplines are understood, respected and represented
+      around the world.
+    </p>
+
+    <span class="interlude-emphasis">
+      The legacy belongs to the wider world of sport.
+    </span>
+
+  </div>
+</section>
+
+<!-- NEXT GENERATION -->
+
+<section class="next-generation">
+  <div class="next-inner">
+
+    <div class="section-label">The Next Generation</div>
+
+    <h2>The responsibility of sport extends forward.</h2>
+
+    <p>
+      Every generation enters a sporting environment shaped by
+      established disciplines, recognised standards and the
+      contributions of those who came before. That inheritance
+      provides context, but it does not determine the limits
+      of what follows.
+
+      <br><br>
+
+      The next generation carries its own responsibility:
+      to understand the disciplines it enters, respect the
+      standards of competition, develop its capabilities and
+      contribute meaningfully to the continued standing of sport.
+
+      <br><br>
+
+      Across professional and developing sporting environments,
+      the continuity of sport depends upon more than individual
+      performance. It requires the participation of athletes,
+      coaches, institutions, officials, communities and the
+      wider structures through which each discipline is sustained.
+
+      <br><br>
+
+      The future of sport is shaped by the quality of those
+      contributions and by the standards maintained across
+      generations.
+    </p>
+
+    <div class="next-statement">
+      Established disciplines.<br>
+      Enduring standards.<br>
+      New generations of contribution.
+    </div>
+
+  </div>
+</section>
+
+<!-- CLOSING -->
+
+<section class="closing">
+  <div class="closing-inner">
+
+    <div class="section-label">The Continuing Record of Sport</div>
+
+    <h2>
+      Sport carries its history.
+      <span>Every generation adds to it.</span>
+    </h2>
+
+    <p>
+      The sporting record is larger than any one individual,
+      discipline or generation. Its identity is established
+      through the collective contribution of those who participate,
+      administer, preserve and advance sport across the world.
+
+      <br><br>
+
+      THE LEGACY OF SPORT™ stands as a recognition of that wider
+      record — its disciplines, its distinguished figures and
+      the generations whose contributions remain part of the
+      international sporting landscape.
+    </p>
+
+    <div class="closing-rule"></div>
+
+    <div class="closing-signature">
+      PHRINUSOMYIS™ · COMMANDING THE WORLD STAGE™
+    </div>
+
+    <nav class="closing-nav" aria-label="Main navigation">
+      <a href="/">Homepage</a>
+      <a href="/magazine/news">Magazine</a>
+      <a href="/newsroom/newswire.html">Newswire</a>
+    </nav>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div>
+      <div class="footer-brand">PHRINUSOMYIS™</div>
+      <div class="footer-copy">
+        An international sports organization.
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      THE LEGACY OF SPORT™<br>
+      An editorial recognition of the international sporting record.
+    </div>
+
+    <a class="footer-top" href="#top">
+      Back to top ↑
+    </a>
+
+  </div>
+</footer>
+
+<!-- INDIVIDUAL LEGACY MODAL -->
+
+<div class="legacy-modal" id="legacyModal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="modalName" aria-hidden="true">
+
+  <div class="modal-panel">
+    <button class="modal-close" id="modalClose"
+            type="button" aria-label="Close tribute">×</button>
+
+    <div class="modal-layout">
+
+      <div class="modal-image-side">
+        <img class="modal-image" id="modalImage" src="" alt="">
+        <div class="modal-image-caption">
+          PHRINUSOMYIS™ · THE LEGACY OF SPORT™
         </div>
       </div>
 
-      <div class="footer-copy">
-        THE LEGACY OF SPORT™<br>
-        A historical editorial tribute.
+      <div class="modal-content">
+
+        <div class="modal-kicker">The Sporting Record</div>
+
+        <h2 class="modal-sport" id="modalSport">SPORT</h2>
+
+        <h3 class="modal-name" id="modalName"></h3>
+
+        <div class="modal-location" id="modalLocation"></div>
+
+        <div class="modal-rule"></div>
+
+        <h4 class="modal-subtitle" id="modalSubtitle">
+          Career, contribution and legacy
+        </h4>
+
+        <div class="modal-description" id="modalDescription"></div>
+
+        <div class="modal-footer">
+          <div class="modal-signature">
+            PHRINUSOMYIS™<br>
+            THE LEGACY OF SPORT™
+          </div>
+
+          <button class="share-button" id="shareButton" type="button">
+            <svg viewBox="0 0 24 24">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <path d="M8.7 10.7l6.6-4.4M8.7 13.3l6.6 4.4"/>
+            </svg>
+            Share tribute
+          </button>
+        </div>
+
       </div>
-
-      <a class="footer-top" href="#top"
-        onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-        Back to top ↑
-      </a>
-
     </div>
-  </footer>
+  </div>
+</div>
 
-  <script>
-    /* TWO INDEPENDENT SLIDING COLLECTIONS */
+<script>
+/* =========================================================
+   SPORTING FIGURES AND EDITORIAL TRIBUTES
+   ========================================================= */
 
-    const carouselInstances = {};
+const figures = [
 
-    function visibleCards(track) {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 900) return 2;
-      return 3;
+{
+ id:1, collection:1,
+ name:"Abebe Bikila",
+ country:"Ethiopia",
+ region:"Africa",
+ sport:"Athletics",
+ discipline:"Marathon",
+ image:"/abebe-bikila.jpg",
+ subtitle:"A distinguished place in international distance running",
+ paragraphs:[
+  "Athletics occupies a central place in international sport, bringing together disciplines that test endurance, speed, technique and physical preparation. Marathon running represents one of its most demanding forms, requiring sustained performance, strategic judgement and exceptional discipline over distance.",
+  "Abebe Bikila holds a distinguished position within the international history of the marathon. His career became an important reference point for Ethiopian athletics and for the wider recognition of African distance running on the international sporting stage.",
+  "His legacy belongs to a much broader community of distance runners whose performances have strengthened the standing of athletics across generations. His place in the sporting record provides recognition not only of an individual career, but also of the discipline and the wider tradition of endurance running."
+ ]
+},
+
+{
+ id:2, collection:1,
+ name:"Henry Rono",
+ country:"Kenya",
+ region:"Africa",
+ sport:"Athletics",
+ discipline:"Long-distance running",
+ image:"/henry-rono.jpg",
+ subtitle:"A significant contribution to the international record of athletics",
+ paragraphs:[
+  "Athletics is an international sporting discipline built around measurable performance, technical preparation and the development of human physical capability. Long-distance running occupies an important place within that structure, demanding endurance, pace management and sustained competitive discipline.",
+  "Henry Rono is recognised within the history of Kenyan and international distance running. His career established a notable reference in the development and international recognition of Kenyan athletics, contributing to the wider standing of distance running as a highly competitive discipline.",
+  "His legacy is connected to the generations of runners who have represented Kenya and the wider international athletics community. His place in the sport reflects the contribution of athletes whose careers become part of a discipline's continuing record."
+ ]
+},
+
+{
+ id:3, collection:1,
+ name:"Mohamed Latif",
+ country:"Egypt",
+ region:"Africa",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/mohamed-latif.jpg",
+ subtitle:"A place within the development of Egyptian football",
+ paragraphs:[
+  "Football is one of the world's most widely represented sporting disciplines. Its international identity is sustained by clubs, national teams, governing structures and generations of players whose contributions shape the character of the game across different regions.",
+  "Mohamed Latif is recognised within the history of Egyptian football. His association with the game forms part of an important period in the development of football in Egypt and its place within the wider African and international sporting environment.",
+  "His legacy is considered within the broader history of Egyptian football and the generations of players, coaches and sporting figures who have contributed to the discipline. His place in this collection recognises that contribution as part of football's wider international record."
+ ]
+},
+
+{
+ id:4, collection:1,
+ name:"Larbi Benbarek",
+ country:"Morocco",
+ region:"Africa",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/larbi-benbarek.jpg",
+ subtitle:"An enduring reference within international football",
+ paragraphs:[
+  "Football is a global sporting discipline whose development has been shaped by different playing traditions, tactical approaches and generations of competitors. Its international character is reflected in the many countries and communities that have contributed to its development.",
+  "Larbi Benbarek holds a distinguished place in the history of Moroccan and international football. His career became associated with a period in which players from North Africa gained wider recognition within the international game.",
+  "His legacy forms part of the wider record of footballers whose careers helped establish lasting connections between national football traditions and the international sporting landscape. His recognition belongs within the history of the discipline and the generations that continue to represent it."
+ ]
+},
+
+{
+ id:5, collection:1,
+ name:"Dhyan Chand",
+ country:"India",
+ region:"Asia",
+ sport:"Field hockey",
+ discipline:"Hockey",
+ image:"/dhyan-chand.jpg",
+ subtitle:"A defining reference in the history of field hockey",
+ paragraphs:[
+  "Field hockey is an established international team sport requiring technical control, coordination, tactical awareness and collective discipline. Its identity has been shaped by generations of players and teams whose contributions have strengthened the sport across continents.",
+  "Dhyan Chand occupies a distinguished position in the history of Indian field hockey. His career became closely associated with the international recognition of the discipline and with the development of India's standing in the sport.",
+  "His legacy extends into the wider hockey community, representing a significant chapter in the sport's international record. His name remains connected to the generations of players who have contributed to field hockey and its continued presence within world sport."
+ ]
+},
+
+{
+ id:6, collection:1,
+ name:"Shigeo Nagashima",
+ country:"Japan",
+ region:"Asia",
+ sport:"Baseball",
+ discipline:"Professional baseball",
+ image:"/shigeo-nagashima.jpg",
+ subtitle:"A recognised figure in the international story of baseball",
+ paragraphs:[
+  "Baseball is a major sporting discipline with established traditions across Asia, the Americas and other regions. Its character is defined by technical execution, strategic decision-making, teamwork and the distinctive relationship between individual responsibility and collective performance.",
+  "Shigeo Nagashima holds a prominent place in Japanese baseball. His career became closely associated with the development and public standing of the sport in Japan, contributing to a period of significant recognition for professional baseball.",
+  "His legacy forms part of the wider story of baseball in Japan and the international community of players, coaches and supporters who have sustained the discipline. His place in the sporting record reflects the importance of national sporting traditions within the wider game."
+ ]
+},
+
+{
+ id:7, collection:1,
+ name:"Nasser Hejazi",
+ country:"Iran",
+ region:"Asia",
+ sport:"Football",
+ discipline:"Goalkeeping",
+ image:"/nasser-hejazi.jpg",
+ subtitle:"A recognised contribution to football and goalkeeping",
+ paragraphs:[
+  "Football is built upon a range of specialised positions and responsibilities. Goalkeeping occupies a distinctive place within the discipline, requiring anticipation, positioning, technical control, communication and the ability to make decisions under competitive pressure.",
+  "Nasser Hejazi is recognised as a significant figure in Iranian football and within the wider history of goalkeeping in Asia. His career contributed to the sporting identity of Iranian football and its representation in international competition.",
+  "His legacy forms part of the wider development of goalkeeping and the generations of players who have represented the position across the world. His place in the sporting record recognises the importance of every role through which football is played and sustained."
+ ]
+},
+
+{
+ id:8, collection:1,
+ name:"Gabriel Elorde",
+ country:"Philippines",
+ region:"Asia",
+ sport:"Boxing",
+ discipline:"Professional boxing",
+ image:"/gabriel-elorde.jpg",
+ subtitle:"A distinguished contribution to the international history of boxing",
+ paragraphs:[
+  "Boxing occupies an established position within international sport. It is a discipline defined by technical ability, preparation, controlled movement, competitive judgement and the demanding standards of the ring. Across countries and generations, its development has been shaped by athletes who have contributed to its identity and international standing.",
+  "Gabriel Elorde holds a distinguished place in the history of Philippine and international boxing. His professional career brought recognition to Filipino boxing and formed part of the wider development of the sport across Asia and the international boxing community.",
+  "His legacy belongs to the wider history of boxing and to the generations of boxers whose dedication and technical contribution have sustained the discipline across continents. His place in the sporting record represents a significant chapter in the international story of the sport."
+ ]
+},
+
+{
+ id:9, collection:1,
+ name:"Johan Cruyff",
+ country:"Netherlands",
+ region:"Europe",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/johan-cruyff.jpg",
+ subtitle:"A lasting influence within the wider football tradition",
+ paragraphs:[
+  "Football is an international discipline shaped by technical development, tactical understanding and different schools of play. Its evolution reflects the contribution of players, coaches and sporting institutions across generations.",
+  "Johan Cruyff holds a distinguished place in the history of Dutch and international football. His playing career and later influence became closely associated with the development of modern football thought and the wider understanding of the game.",
+  "His legacy extends beyond his individual playing career into the broader football environment. His contribution remains part of the international record through which the development of the sport, its tactical traditions and its generations of participants are understood."
+ ]
+},
+
+{
+ id:10, collection:1,
+ name:"Franz Beckenbauer",
+ country:"Germany",
+ region:"Europe",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/franz-beckenbauer.jpg",
+ subtitle:"A recognised contribution to the international football record",
+ paragraphs:[
+  "Football is an established international sporting institution, sustained by its competitions, national traditions, professional structures and generations of participants. Its development reflects the different roles and responsibilities that contribute to the organisation and performance of the game.",
+  "Franz Beckenbauer occupies a distinguished place in German and international football. His career as a player and his subsequent work within the sport connected him to important areas of football's competitive and institutional environment.",
+  "His legacy forms part of the wider history of the game, recognising the contribution of those whose involvement extends across playing, leadership and the development of football. His place in the sporting record is considered within the continuing identity of the discipline."
+ ]
+},
+
+{
+ id:11, collection:1,
+ name:"Sir Bobby Charlton",
+ country:"United Kingdom",
+ region:"Europe",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/bobby-charlton.jpg",
+ subtitle:"A distinguished place in the history of English football",
+ paragraphs:[
+  "Football's international standing has been established through the development of national competitions, professional clubs and generations of players whose careers have contributed to the wider identity of the game.",
+  "Sir Bobby Charlton holds a distinguished place in the history of English football. His career became associated with an important period in the development of the national game and with the international recognition of English football.",
+  "His legacy forms part of the wider sporting record of football in the United Kingdom and the international community. His contribution is recognised within the history of a discipline whose identity continues to be shaped by players and institutions across generations."
+ ]
+},
+
+{
+ id:12, collection:2,
+ name:"Niki Lauda",
+ country:"Austria",
+ region:"Europe",
+ sport:"Motorsport",
+ discipline:"Formula One",
+ image:"/phrinusomyis-niki-lauda.jpeg",
+ subtitle:"A defining contribution to the standards of Formula One",
+ paragraphs:[
+  "Motorsport is a highly specialised sporting discipline combining engineering, technical preparation, driver judgement, team coordination and competitive performance. Formula One represents one of its most internationally recognised categories, operating at the intersection of sporting skill and advanced technology.",
+  "Niki Lauda holds a distinguished place in the history of Formula One. His career, competitive record and later involvement in the wider motorsport environment made him a recognised figure in the development and international identity of the discipline.",
+  "His legacy belongs to the wider Formula One community, including drivers, engineers, teams and generations of competitors whose work has shaped the sport. His career remains part of the international record of motorsport and its demanding standards."
+ ]
+},
+
+{
+ id:13, collection:2,
+ name:"André the Giant",
+ country:"France",
+ region:"Europe",
+ sport:"Professional wrestling",
+ discipline:"Professional wrestling",
+ image:"/phrinusomyis-andre-the-giant.jpeg",
+ subtitle:"A lasting place in the international history of professional wrestling",
+ paragraphs:[
+  "Professional wrestling is a distinctive form of sports entertainment built around physical performance, athletic ability, character, presentation and the relationship between performers and audiences. Its international identity has been shaped by generations of performers, promoters and organisations that established its place within popular sporting culture.",
+  "André the Giant occupies a recognised place in the history of professional wrestling. His international career and unmistakable presence became part of the discipline's global identity. His recognition includes his place in the inaugural WWE Hall of Fame class, an institutional acknowledgement of his standing within professional wrestling.",
+  "His legacy extends beyond an individual career. He remains a point of recognition for generations of professional wrestling performers and audiences across the world. His place in the sport's record reflects the wider contribution of those whose careers helped establish professional wrestling as an internationally recognised form of sports entertainment."
+ ]
+},
+
+{
+ id:14, collection:2,
+ name:"Muhammad Ali",
+ country:"United States",
+ region:"North America",
+ sport:"Boxing",
+ discipline:"Professional boxing",
+ image:"/phrinusomyis-muhammad-ali.jpeg",
+ subtitle:"A defining presence in the international world of boxing",
+ paragraphs:[
+  "Sport represents a broad international institution encompassing numerous disciplines, each with its own competitive structure, standards and traditions. Within this wider sporting landscape, boxing holds a distinct position. It is a discipline built upon technical mastery, preparation, controlled movement, competitive intelligence and the demands placed upon those who enter the ring.",
+  "Muhammad Ali holds a distinguished place within the history of professional boxing. His career became closely associated with the identity of the discipline, while his distinctive approach, competitive presence and influence extended the significance of his place in boxing beyond the boundaries of individual contests.",
+  "His legacy forms part of a much larger international story: the story of boxing as a discipline represented by generations of athletes across continents. His career provides a point of recognition for the wider community of boxers, including those whose contributions established the sport's traditions and those who continue to represent it today.",
+  "Muhammad Ali is therefore recognised within the wider history of boxing, not apart from it. His place in the sporting record connects his individual career to the international discipline, its generations of competitors and the communities whose participation sustains its standing throughout the world."
+ ]
+},
+
+{
+ id:15, collection:2,
+ name:"Terry Fox",
+ country:"Canada",
+ region:"North America",
+ sport:"Running",
+ discipline:"Distance running",
+ image:"/phrinusomyis-terry-fox.jpeg",
+ subtitle:"A legacy recognised across sport and international public life",
+ paragraphs:[
+  "Running is one of the foundational disciplines of athletics. It encompasses different distances, competitive formats and levels of participation, with its identity shaped by physical endurance, preparation and the determination required to pursue a demanding objective.",
+  "Terry Fox is recognised for a contribution that connected running with an international public cause. His Marathon of Hope became a significant part of his legacy, bringing widespread attention to cancer research and demonstrating how sporting participation can reach beyond the boundaries of competition.",
+  "His legacy is recognised within the wider world of running and public life. It represents the capacity of sport to connect individuals and communities through participation, purpose and collective recognition. His place in this collection reflects a contribution whose influence reached far beyond an individual athletic undertaking."
+ ]
+},
+
+{
+ id:16, collection:2,
+ name:"Teófilo Stevenson",
+ country:"Cuba",
+ region:"Caribbean",
+ sport:"Boxing",
+ discipline:"Amateur boxing",
+ image:"/phrinusomyis-teofilo-stevenson.jpeg",
+ subtitle:"A distinguished figure in the international history of amateur boxing",
+ paragraphs:[
+  "Boxing is an established international discipline with distinct competitive structures and traditions. Amateur boxing places particular emphasis on technical execution, tactical awareness, preparation and the application of sporting rules within a structured competitive environment.",
+  "Teófilo Stevenson holds a distinguished place in the history of Cuban and international amateur boxing. His career became closely associated with Cuba's standing in the discipline and with the development of a recognised boxing tradition that attracted international attention.",
+  "His legacy forms part of the wider history of amateur boxing and the generations of athletes who have represented the discipline through national and international competition. His place in the sporting record recognises the contribution of Cuban boxing to the wider international identity of the sport."
+ ]
+},
+
+{
+ id:17, collection:2,
+ name:"Salvador Sánchez",
+ country:"Mexico",
+ region:"North America",
+ sport:"Boxing",
+ discipline:"Professional boxing",
+ image:"/phrinusomyis-salvador-sanchez.jpeg",
+ subtitle:"A respected chapter in the history of Mexican boxing",
+ paragraphs:[
+  "Professional boxing is an international discipline defined by preparation, technical skill, competitive judgement and the demanding standards of the ring. Its traditions are sustained by generations of athletes whose careers contribute to the development and recognition of boxing across countries.",
+  "Salvador Sánchez holds a distinguished place in the history of Mexican professional boxing. His career became an important part of the country's boxing tradition and contributed to the international recognition of Mexican fighters within the discipline.",
+  "His legacy belongs to the wider history of boxing and the generations of athletes who have represented Mexico and the international boxing community. His place in the sporting record recognises the significance of his career within a discipline whose standing is sustained by many generations of competitors."
+ ]
+},
+
+{
+ id:18, collection:2,
+ name:"Pelé",
+ country:"Brazil",
+ region:"South America",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/phrinusomyis-pele.jpeg",
+ subtitle:"A distinguished figure in the international history of football",
+ paragraphs:[
+  "Football is a global sporting discipline whose identity extends across national borders, cultures and generations. Its international structure brings together clubs, national teams, competitions and communities whose participation sustains the game as one of the world's most widely represented sports.",
+  "Pelé holds a distinguished place in the history of Brazilian and international football. His career became closely associated with Brazil's footballing identity and with the international recognition of the country's contribution to the development of the game.",
+  "His legacy forms part of football's wider international record. His name provides a point of recognition for generations of players and supporters, while his career remains connected to the broader sporting tradition of Brazilian football and the international discipline as a whole."
+ ]
+},
+
+{
+ id:19, collection:2,
+ name:"Diego Maradona",
+ country:"Argentina",
+ region:"South America",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/phrinusomyis-diego-maradona.jpeg",
+ subtitle:"An enduring figure in the international football record",
+ paragraphs:[
+  "Football is an international discipline shaped by technical ability, tactical understanding, collective organisation and the traditions developed by different footballing nations. Its identity is carried forward by players, coaches, institutions and communities across generations.",
+  "Diego Maradona holds a distinguished place in the history of Argentine and international football. His career became closely associated with Argentina's sporting identity and with a distinctive chapter in the international development of the game.",
+  "His legacy forms part of the wider history of football and its international community. His place in the sporting record is recognised within the traditions of Argentine football and the generations of players whose careers continue to shape the discipline."
+ ]
+},
+
+{
+ id:20, collection:2,
+ name:"Alcides Ghiggia",
+ country:"Uruguay",
+ region:"South America",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/phrinusomyis-alcides-ghiggia.jpeg",
+ subtitle:"A recognised figure in the history of Uruguayan football",
+ paragraphs:[
+  "Football's international record is shaped by national traditions, major competitions and the generations of players whose contributions become part of the history of the game. South American football occupies an important place within that international development.",
+  "Alcides Ghiggia holds a recognised place in the history of Uruguayan football. His career became associated with a defining period in Uruguay's international football record and with the country's long-standing contribution to the discipline.",
+  "His legacy forms part of the wider sporting history of Uruguay and the international football community. His place in this collection recognises the role of individual careers in a larger national and international sporting tradition."
+ ]
+},
+
+{
+ id:21, collection:2,
+ name:"Sir Donald Bradman",
+ country:"Australia",
+ region:"Oceania",
+ sport:"Cricket",
+ discipline:"International cricket",
+ image:"/phrinusomyis-donald-bradman.jpeg",
+ subtitle:"A central figure in the historical record of cricket",
+ paragraphs:[
+  "Cricket is an established international sport with a rich competitive structure spanning different formats, national systems and generations. Its identity is sustained by technical skill, strategic judgement, team organisation and the traditions of its international and domestic competitions.",
+  "Sir Donald Bradman holds a distinguished place in the history of Australian and international cricket. His career became one of the most recognised reference points in the sport's historical record and contributed to the international standing of Australian cricket.",
+  "His legacy belongs to the wider history of cricket and to the generations of players, officials and institutions that have developed the game. His place in the sporting record reflects the importance of Australia's contribution to the international cricketing tradition."
+ ]
+},
+
+{
+ id:22, collection:2,
+ name:"Jonah Lomu",
+ country:"New Zealand",
+ region:"Oceania",
+ sport:"Rugby union",
+ discipline:"Rugby",
+ image:"/phrinusomyis-jonah-lomu.jpeg",
+ subtitle:"A major figure in the international recognition of rugby",
+ paragraphs:[
+  "Rugby union is an international team sport defined by physical commitment, tactical organisation, technical skill and collective responsibility. Its international identity has been shaped by national traditions and generations of players who have contributed to the development of the game.",
+  "Jonah Lomu holds a distinguished place in the history of New Zealand and international rugby. His career became closely associated with a period of increased global attention for the sport and with the international recognition of New Zealand rugby.",
+  "His legacy forms part of the wider story of rugby union and the generations of players who have represented the discipline across the world. His place in the sporting record reflects the contribution of athletes whose careers have helped shape the international profile of their sport."
+ ]
+},
+
+{
+ id:23, collection:2,
+ name:"The Ultimate Warrior",
+ country:"United States",
+ region:"North America",
+ sport:"Professional wrestling",
+ discipline:"Professional wrestling",
+ image:"/phrinusomyis-ultimate-warrior.jpeg",
+ subtitle:"A recognised presence in the international culture of professional wrestling",
+ paragraphs:[
+  "Professional wrestling is a distinctive form of sports entertainment combining physical performance, athletic preparation, character development and live presentation. Its international culture has been shaped by performers and organisations whose work established recognisable eras and traditions within the discipline.",
+  "The Ultimate Warrior became a widely recognised figure within professional wrestling. His distinctive presentation and career formed part of an important period in the international visibility of the discipline and its connection with audiences across different markets.",
+  "His legacy is considered within the wider history of professional wrestling and the generations of performers whose contributions have shaped its presentation and international reach. His place in this collection recognises his role within the broader culture of the sport."
+ ]
+},
+
+{
+ id:24, collection:2,
+ name:"Arnold Palmer",
+ country:"United States",
+ region:"North America",
+ sport:"Golf",
+ discipline:"Professional golf",
+ image:"/phrinusomyis-arnold-palmer.jpeg",
+ subtitle:"A distinguished contribution to the international standing of golf",
+ paragraphs:[
+  "Golf is an international sporting discipline built around technical precision, strategic judgement, consistency and individual responsibility. Its professional structure connects players, courses, tournaments and audiences across countries and generations.",
+  "Arnold Palmer holds a distinguished place in the history of professional golf. His career and public presence contributed to the growth of the sport's international profile and to a period of increased recognition for professional golf among wider audiences.",
+  "His legacy extends into the broader development of the discipline, including its professional culture and international following. His place in the sporting record recognises the contribution of figures whose careers helped shape the modern public identity of golf."
+ ]
+},
+
+{
+ id:25, collection:2,
+ name:"Bill Russell",
+ country:"United States",
+ region:"North America",
+ sport:"Basketball",
+ discipline:"Professional basketball",
+ image:"/phrinusomyis-bill-russell.jpeg",
+ subtitle:"A defining figure in the history and development of basketball",
+ paragraphs:[
+  "Basketball is an international team sport whose development depends on technical skill, collective organisation, tactical awareness and disciplined execution. Its professional and international structures have been shaped by generations of players, coaches and institutions.",
+  "Bill Russell holds a distinguished place in the history of American professional basketball. His career became closely associated with team achievement, defensive influence and an important period in the development of the professional game.",
+  "His legacy forms part of the wider history of basketball and its international community. His career provides a point of recognition for generations of players and teams whose contributions have developed the discipline into a major international sport."
+ ]
+},
+
+{
+ id:26, collection:2,
+ name:"George Male",
+ country:"United Kingdom",
+ region:"Europe",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/phrinusomyis-george-male.jpeg",
+ subtitle:"A place in the historical record of English football",
+ paragraphs:[
+  "Football's development is recorded through the careers of players who represented their clubs and national teams during different periods of the game's evolution. The history of the discipline includes the development of playing positions, team structures and professional standards.",
+  "George Male is recognised within the historical record of English football. His career as a defender and his association with Arsenal and the England national team place him within an important period of the development of professional football in the United Kingdom.",
+  "His legacy belongs to the wider history of English football and to the generations of players whose work helped establish the professional traditions of the game. His recognition in this collection forms part of the broader sporting record."
+ ]
+},
+
+{
+ id:27, collection:2,
+ name:"Arthur Wharton",
+ country:"Ghana / United Kingdom",
+ region:"Africa and Europe",
+ sport:"Football",
+ discipline:"Association football",
+ image:"/phrinusomyis-arthur-wharton.jpeg",
+ subtitle:"A significant place in the history of football and sporting representation",
+ paragraphs:[
+  "Football is an international discipline whose history includes the development of professional competition and the changing representation of players within the game. Its wider record reflects the contributions of individuals from different backgrounds and sporting communities.",
+  "Arthur Wharton is recognised as one of the earliest Black professional footballers in Britain. Born in what is now Ghana, his career in English football gives him a significant place in the historical record of the sport and in the wider history of representation within professional competition.",
+  "His legacy extends beyond the record of an individual playing career. It forms part of the broader history of football, recognising the generations of players whose participation and contribution have shaped the international character of the game."
+ ]
+},
+
+{
+ id:28, collection:2,
+ name:"Rong Guotuan",
+ country:"China",
+ region:"Asia",
+ sport:"Table tennis",
+ discipline:"International table tennis",
+ image:"/phrinusomyis-rong-guotuan.jpeg",
+ subtitle:"A significant figure in the international development of Chinese table tennis",
+ paragraphs:[
+  "Table tennis is an internationally established sporting discipline requiring precision, reaction, coordination, tactical awareness and technical consistency. Its competitive structure brings together national associations, clubs and international events across a wide range of countries.",
+  "Rong Guotuan holds a distinguished place in the history of Chinese table tennis. His career is associated with China's early emergence as a major force in international competition and with an important stage in the development of the country's sporting identity in the discipline.",
+  "His legacy forms part of the wider history of table tennis and the generations of athletes who have represented China and the international sport. His contribution is recognised within the development of a discipline whose competitive standards continue to be shaped across the world."
+ ]
+},
+
+{
+ id:29, collection:2,
+ name:"Gertrude Ederle",
+ country:"United States",
+ region:"North America",
+ sport:"Swimming",
+ discipline:"Open-water swimming",
+ image:"/phrinusomyis-gertrude-ederle.jpeg",
+ subtitle:"A distinguished place in the history of international swimming",
+ paragraphs:[
+  "Swimming is a foundational international sporting discipline encompassing pool competition, open-water events and different forms of aquatic performance. Its standards are shaped by technical efficiency, endurance, preparation and the demands of competing in varied environments.",
+  "Gertrude Ederle holds a distinguished place in the history of swimming. Her achievement in becoming the first woman to swim across the English Channel placed her within an important chapter of international open-water swimming and the wider history of women's participation in endurance sport.",
+  "Her legacy forms part of the broader development of swimming and the generations of athletes who have contributed to the discipline. Her place in the sporting record recognises the importance of endurance, preparation and the continued development of international swimming."
+ ]
+},
+
+{
+ id:30, collection:2,
+ name:"Kene Ndoye",
+ country:"Senegal",
+ region:"Africa",
+ sport:"Athletics",
+ discipline:"Long jump and triple jump",
+ image:"/phrinusomyis-kene-ndoye.jpeg",
+ subtitle:"A recognised contribution to Senegalese and African athletics",
+ paragraphs:[
+  "Athletics is an international sporting discipline encompassing track and field events that test speed, strength, endurance, coordination and technical execution. The jumping events require a particular combination of approach speed, timing, control and specialised preparation.",
+  "Kene Ndoye is recognised within Senegalese and African athletics for her contribution to the long jump and triple jump. Her career forms part of the wider record of African athletes whose participation has strengthened the representation of the continent in international track and field competition.",
+  "Her legacy belongs to the broader history of women's athletics and the generations of athletes who have represented Senegal, Africa and the international sporting community. Her place in this collection recognises that contribution within the continuing development of athletics."
+ ]
+}
+
+];
+
+/* =========================================================
+   BUILD THE TWO SLIDESHOWS
+   ========================================================= */
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,char=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
+  })[char]);
+}
+
+function createCard(person){
+  const card=document.createElement("article");
+  card.className="legend-card";
+  card.tabIndex=0;
+  card.setAttribute("role","button");
+  card.setAttribute("aria-label","Open tribute for "+person.name);
+
+  card.innerHTML=`
+    <div class="legend-image-wrap">
+      <span class="legend-number">${String(person.id).padStart(2,"0")}</span>
+      <img class="legend-image"
+           src="${escapeHTML(person.image)}"
+           alt="${escapeHTML(person.name)} — ${escapeHTML(person.country)}, ${escapeHTML(person.sport)}"
+           loading="lazy">
+      <span class="legend-open">View tribute +</span>
+    </div>
+
+    <div class="legend-info">
+      <div class="legend-country">
+        ${escapeHTML(person.country)} · ${escapeHTML(person.region)}
+      </div>
+      <h3 class="legend-name">${escapeHTML(person.name)}</h3>
+      <div class="legend-discipline">
+        ${escapeHTML(person.sport)} · ${escapeHTML(person.discipline)}
+      </div>
+    </div>
+  `;
+
+  card.addEventListener("click",()=>openTribute(person));
+
+  card.addEventListener("keydown",event=>{
+    if(event.key==="Enter" || event.key===" "){
+      event.preventDefault();
+      openTribute(person);
     }
+  });
 
-    function updateCarousel(id) {
-      const track = document.getElementById(id);
-      if (!track) return;
+  return card;
+}
 
-      const cards = Array.from(track.children);
-      const total = cards.length;
-      const visible = visibleCards(track);
-      const maxIndex = Math.max(0, total - visible);
+function buildCollections(){
+  const first=document.getElementById("legendsOne");
+  const second=document.getElementById("legendsTwo");
 
-      let index = carouselInstances[id]?.index || 0;
-      index = Math.min(index, maxIndex);
-      carouselInstances[id] = { index };
+  figures.forEach(person=>{
+    const card=createCard(person);
 
-      const cardWidth = cards[0].getBoundingClientRect().width;
-      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    if(person.collection===1){
+      first.appendChild(card);
+    }else{
+      second.appendChild(card);
+    }
+  });
+}
 
-      track.style.transform =
-        `translateX(-${index * (cardWidth + gap)}px)`;
+/* =========================================================
+   CAROUSEL ENGINE
+   ========================================================= */
 
-      const progress = document.getElementById(`progress-${id}`);
-      if (progress) {
-        const percentage = total <= visible
-          ? 100
-          : ((index + visible) / total) * 100;
-        progress.style.width = `${percentage}%`;
+const carouselInstances={};
+
+function visibleCards(track){
+  if(window.innerWidth<=600)return 1;
+  if(window.innerWidth<=900)return 2;
+  return 3;
+}
+
+function updateCarousel(id){
+  const track=document.getElementById(id);
+  if(!track || !track.children.length)return;
+
+  const cards=Array.from(track.children);
+  const total=cards.length;
+  const visible=visibleCards(track);
+  const maxIndex=Math.max(0,total-visible);
+
+  let index=carouselInstances[id]?.index||0;
+  index=Math.min(index,maxIndex);
+
+  carouselInstances[id]={index};
+
+  const cardWidth=cards[0].getBoundingClientRect().width;
+  const gap=parseFloat(getComputedStyle(track).gap)||0;
+
+  track.style.transform=
+    `translateX(-${index*(cardWidth+gap)}px)`;
+
+  const progress=document.getElementById(`progress-${id}`);
+
+  if(progress){
+    const percentage=total<=visible
+      ?100
+      :((index+visible)/total)*100;
+
+    progress.style.width=`${percentage}%`;
+  }
+}
+
+function moveCarousel(id,direction){
+  const track=document.getElementById(id);
+  if(!track)return;
+
+  const total=track.children.length;
+  const visible=visibleCards(track);
+  const maxIndex=Math.max(0,total-visible);
+
+  let index=carouselInstances[id]?.index||0;
+  index+=direction;
+
+  if(index>maxIndex)index=0;
+  if(index<0)index=maxIndex;
+
+  carouselInstances[id]={index};
+  updateCarousel(id);
+}
+
+document.querySelectorAll("[data-carousel-prev]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    moveCarousel(button.dataset.carouselPrev,-1);
+  });
+});
+
+document.querySelectorAll("[data-carousel-next]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    moveCarousel(button.dataset.carouselNext,1);
+  });
+});
+
+buildCollections();
+
+["legendsOne","legendsTwo"].forEach(id=>{
+  carouselInstances[id]={index:0};
+  updateCarousel(id);
+});
+
+window.addEventListener("resize",()=>{
+  ["legendsOne","legendsTwo"].forEach(updateCarousel);
+});
+
+/* =========================================================
+   INDEPENDENT AUTOMATIC SLIDESHOWS
+   ========================================================= */
+
+const reducedMotion=window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+const pausedCarousels={
+  legendsOne:false,
+  legendsTwo:false
+};
+
+["first-collection","second-collection"].forEach((sectionId,index)=>{
+  const section=document.getElementById(sectionId);
+  const carouselId=index===0?"legendsOne":"legendsTwo";
+
+  section.addEventListener("mouseenter",()=>{
+    pausedCarousels[carouselId]=true;
+  });
+
+  section.addEventListener("mouseleave",()=>{
+    pausedCarousels[carouselId]=false;
+  });
+
+  section.addEventListener("focusin",()=>{
+    pausedCarousels[carouselId]=true;
+  });
+
+  section.addEventListener("focusout",()=>{
+    pausedCarousels[carouselId]=false;
+  });
+});
+
+if(!reducedMotion){
+  window.setInterval(()=>{
+    ["legendsOne","legendsTwo"].forEach(id=>{
+      if(!pausedCarousels[id]){
+        moveCarousel(id,1);
       }
+    });
+  },6500);
+}
+
+/* =========================================================
+   INDIVIDUAL LEGACY POP-UP
+   ========================================================= */
+
+const modal=document.getElementById("legacyModal");
+const modalImage=document.getElementById("modalImage");
+const modalSport=document.getElementById("modalSport");
+const modalName=document.getElementById("modalName");
+const modalLocation=document.getElementById("modalLocation");
+const modalSubtitle=document.getElementById("modalSubtitle");
+const modalDescription=document.getElementById("modalDescription");
+const modalClose=document.getElementById("modalClose");
+const shareButton=document.getElementById("shareButton");
+
+let activePerson=null;
+let lastFocusedElement=null;
+
+function openTribute(person){
+  activePerson=person;
+  lastFocusedElement=document.activeElement;
+
+  modalImage.src=person.image;
+  modalImage.alt=person.name+" — "+person.sport;
+
+  modalSport.textContent=person.sport;
+  modalName.textContent=person.name;
+
+  modalLocation.textContent=
+    person.country+" · "+person.region+" · "+person.discipline;
+
+  modalSubtitle.textContent=person.subtitle;
+
+  modalDescription.innerHTML="";
+
+  person.paragraphs.forEach(paragraph=>{
+    const p=document.createElement("p");
+    p.textContent=paragraph;
+    modalDescription.appendChild(p);
+  });
+
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
+
+  modalClose.focus();
+}
+
+function closeTribute(){
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+
+  activePerson=null;
+
+  if(lastFocusedElement){
+    lastFocusedElement.focus();
+  }
+}
+
+modalClose.addEventListener("click",closeTribute);
+
+modal.addEventListener("click",event=>{
+  if(event.target===modal){
+    closeTribute();
+  }
+});
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape" && modal.classList.contains("active")){
+    closeTribute();
+  }
+});
+
+/* =========================================================
+   SHARE INDIVIDUAL TRIBUTES
+   ========================================================= */
+
+function getTributeURL(person){
+  const url=new URL(window.location.href);
+  url.hash="tribute-"+person.id;
+  return url.toString();
+}
+
+shareButton.addEventListener("click",async()=>{
+  if(!activePerson)return;
+
+  const person=activePerson;
+  const shareURL=getTributeURL(person);
+
+  const shareData={
+    title:person.name+" | THE LEGACY OF SPORT™",
+    text:
+      person.sport+" — "+person.name+
+      ", "+person.country+". A PHRINUSOMYIS™ editorial tribute.",
+    url:shareURL
+  };
+
+  try{
+    if(navigator.share){
+      await navigator.share(shareData);
+    }else if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(shareURL);
+      shareButton.innerHTML="LINK COPIED";
+      window.setTimeout(()=>{
+        shareButton.innerHTML=`
+          <svg viewBox="0 0 24 24">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <path d="M8.7 10.7l6.6-4.4M8.7 13.3l6.6 4.4"/>
+          </svg>
+          Share tribute
+        `;
+      },2200);
+    }else{
+      window.prompt("Copy this tribute link:",shareURL);
     }
-
-    function moveCarousel(id, direction) {
-      const track = document.getElementById(id);
-      if (!track) return;
-
-      const total = track.children.length;
-      const visible = visibleCards(track);
-      const maxIndex = Math.max(0, total - visible);
-
-      let index = carouselInstances[id]?.index || 0;
-      index += direction;
-
-      if (index > maxIndex) index = 0;
-      if (index < 0) index = maxIndex;
-
-      carouselInstances[id] = { index };
-      updateCarousel(id);
+  }catch(error){
+    if(error.name!=="AbortError"){
+      window.prompt("Copy this tribute link:",shareURL);
     }
+  }
+});
 
-    document.querySelectorAll("[data-carousel-prev]").forEach(button => {
-      button.addEventListener("click", () => {
-        moveCarousel(button.dataset.carouselPrev, -1);
-      });
-    });
+/* OPEN A TRIBUTE DIRECTLY FROM A SHARED LINK */
 
-    document.querySelectorAll("[data-carousel-next]").forEach(button => {
-      button.addEventListener("click", () => {
-        moveCarousel(button.dataset.carouselNext, 1);
-      });
-    });
+function openTributeFromHash(){
+  const match=window.location.hash.match(/^#tribute-(\d+)$/);
+  if(!match)return;
 
-    ["legendsOne", "legendsTwo"].forEach(id => {
-      carouselInstances[id] = { index: 0 };
-      updateCarousel(id);
-    });
+  const person=figures.find(item=>item.id===Number(match[1]));
 
-    window.addEventListener("resize", () => {
-      ["legendsOne", "legendsTwo"].forEach(updateCarousel);
-    });
+  if(person){
+    openTribute(person);
+  }
+}
 
-    /* AUTOMATIC SLIDING — EACH COLLECTION RUNS INDEPENDENTLY */
+window.addEventListener("load",openTributeFromHash);
 
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+/* =========================================================
+   GOOGLE TRANSLATE
+   ========================================================= */
 
-    if (!reducedMotion) {
-      window.setInterval(() => {
-        ["legendsOne", "legendsTwo"].forEach(id => {
-          const section = document.getElementById(
-            id === "legendsOne" ? "first-collection" : "second-collection"
-          );
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:"en",
+    includedLanguages:
+      "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+    autoDisplay:false
+  },"google_translate_element");
+}
 
-          if (section && !section.matches(":hover")) {
-            moveCarousel(id, 1);
-          }
-        });
-      }, 6500);
+const languageSelector=document.getElementById("siteLanguage");
+
+languageSelector.addEventListener("change",function(){
+  const selectedLanguage=this.value;
+
+  const applyLanguage=()=>{
+    const translateCombo=document.querySelector(".goog-te-combo");
+
+    if(!translateCombo)return false;
+
+    translateCombo.value=
+      selectedLanguage==="en"?"":selectedLanguage;
+
+    translateCombo.dispatchEvent(new Event("change"));
+    return true;
+  };
+
+  if(applyLanguage())return;
+
+  let attempts=0;
+
+  const retry=window.setInterval(()=>{
+    attempts++;
+
+    if(applyLanguage() || attempts>=20){
+      window.clearInterval(retry);
     }
+  },300);
+});
 
-    /* GOOGLE TRANSLATE INITIALIZATION */
+/* =========================================================
+   GOOGLE TRANSLATE BANNER AND POP-OUT PROTECTION
+   ========================================================= */
 
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: "en",
-        includedLanguages:
-          "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-        autoDisplay: false
-      }, "google_translate_element");
-    }
+function suppressGoogleTranslateElements(){
+  document.documentElement.style.setProperty("margin-top","0","important");
+  document.documentElement.style.setProperty("padding-top","0","important");
 
-    const languageSelector = document.getElementById("siteLanguage");
+  document.body.style.setProperty("top","0","important");
+  document.body.style.setProperty("margin-top","0","important");
+  document.body.style.setProperty("padding-top","0","important");
 
-    languageSelector.addEventListener("change", function () {
-      const selectedLanguage = this.value;
+  document.querySelectorAll(
+    ".goog-te-banner-frame,"+
+    ".goog-te-balloon-frame,"+
+    ".goog-te-menu-frame,"+
+    "#goog-gt-tt,"+
+    ".goog-tooltip"
+  ).forEach(element=>{
+    element.style.setProperty("display","none","important");
+    element.style.setProperty("visibility","hidden","important");
+  });
+}
 
-      const applyLanguage = () => {
-        const translateCombo = document.querySelector(".goog-te-combo");
+const translateObserver=new MutationObserver(()=>{
+  suppressGoogleTranslateElements();
+});
 
-        if (!translateCombo) return false;
+translateObserver.observe(document.documentElement,{
+  childList:true,
+  subtree:true,
+  attributes:true,
+  attributeFilter:["style","class"]
+});
 
-        translateCombo.value =
-          selectedLanguage === "en" ? "" : selectedLanguage;
+window.addEventListener("load",suppressGoogleTranslateElements);
+window.setInterval(suppressGoogleTranslateElements,1000);
 
-        translateCombo.dispatchEvent(new Event("change"));
-        return true;
-      };
+</script>
 
-      if (applyLanguage()) return;
-
-      let attempts = 0;
-      const retry = window.setInterval(() => {
-        attempts++;
-
-        if (applyLanguage() || attempts >= 20) {
-          window.clearInterval(retry);
-        }
-      }, 300);
-    });
-
-    /* KEEP GOOGLE'S INJECTED BANNER FROM MOVING THE PAGE */
-
-    function suppressGoogleTranslateElements() {
-      document.documentElement.style.marginTop = "0";
-      document.documentElement.style.paddingTop = "0";
-      document.body.style.top = "0";
-      document.body.style.marginTop = "0";
-      document.body.style.paddingTop = "0";
-
-      document.querySelectorAll(
-        ".goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt"
-      ).forEach(element => {
-        element.style.setProperty("display", "none", "important");
-        element.style.setProperty("visibility", "hidden", "important");
-      });
-    }
-
-    const translateObserver = new MutationObserver(
-      suppressGoogleTranslateElements
-    );
-
-    translateObserver.observe(document.documentElement, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ["style", "class"]
-    });
-
-    window.addEventListener("load", suppressGoogleTranslateElements);
-    window.setInterval(suppressGoogleTranslateElements, 1000);
-  </script>
-
-  <script
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async>
-  </script>
+<script
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  async>
+</script>
 
 </body>
 </html>
