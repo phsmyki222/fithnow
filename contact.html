@@ -89,6 +89,14 @@ html,body {
     font-weight:800;
 }
 
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    position:relative!important;
+}
+
 .contact-page {
     width:100%;
     overflow:hidden;
@@ -102,9 +110,14 @@ html,body {
     text-decoration:none;
 }
 
-.contact-page a:hover { color:var(--contact-accent); }
+.contact-page a:hover {
+    color:var(--contact-accent);
+}
 
-.contact-page p { margin-top:0; font-weight:800; }
+.contact-page p {
+    margin-top:0;
+    font-weight:800;
+}
 
 /* GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION */
 
@@ -114,10 +127,6 @@ body.translated-rtl {
     top:0!important;
     margin-top:0!important;
     padding-top:0!important;
-}
-
-body {
-    position:relative!important;
 }
 
 /* Keep the translation engine available but off-screen. */
@@ -213,8 +222,6 @@ iframe.goog-te-menu-frame,
     visibility:hidden!important;
 }
 
-/* Remove Google gadget styling. */
-
 .goog-te-gadget {
     color:transparent!important;
     font-size:0!important;
@@ -270,10 +277,13 @@ iframe.goog-te-menu-frame,
     font-size:13px;
     font-weight:900;
     color:#fff;
+    transition:color .2s ease;
 }
 
 .main-navigation a:hover,
-.main-navigation a.active { color:var(--contact-accent); }
+.main-navigation a.active {
+    color:var(--contact-accent);
+}
 
 .header-right {
     display:flex;
@@ -367,7 +377,7 @@ iframe.goog-te-menu-frame,
     font-weight:800;
 }
 
-/* MAIN OFFICE IMAGE */
+/* MAIN OFFICE IMAGE — FIRST IMAGE PRESERVED */
 
 .contact-image-section {
     width:100%;
@@ -475,7 +485,9 @@ iframe.goog-te-menu-frame,
 
 /* SECTION HEADINGS */
 
-.contact-section { margin-bottom:90px; }
+.contact-section {
+    margin-bottom:90px;
+}
 
 .contact-section-heading {
     text-align:center;
@@ -531,9 +543,16 @@ iframe.goog-te-menu-frame,
     width:100%;
     height:100%;
     object-fit:cover;
+    transition:transform .6s ease;
 }
 
-.department-card-content { padding:30px 35px 35px; }
+.department-card:hover .department-image img {
+    transform:scale(1.035);
+}
+
+.department-card-content {
+    padding:30px 35px 35px;
+}
 
 .department-icon {
     width:48px;
@@ -580,7 +599,9 @@ iframe.goog-te-menu-frame,
 
 /* NEWSWIRE AND MAGAZINE */
 
-.platform-section { margin-bottom:90px; }
+.platform-section {
+    margin-bottom:90px;
+}
 
 .platform-grid {
     display:grid;
@@ -636,6 +657,7 @@ iframe.goog-te-menu-frame,
     border-radius:4px;
     font-size:12px;
     font-weight:900;
+    transition:background .2s ease;
 }
 
 .platform-button:hover {
@@ -739,7 +761,9 @@ iframe.goog-te-menu-frame,
     margin:auto;
 }
 
-.footer-logo { margin-bottom:40px; }
+.footer-logo {
+    margin-bottom:40px;
+}
 
 .footer-logo img {
     width:155px;
@@ -769,7 +793,9 @@ iframe.goog-te-menu-frame,
     margin-bottom:15px;
 }
 
-.footer-group a:hover { color:var(--contact-accent); }
+.footer-group a:hover {
+    color:var(--contact-accent);
+}
 
 .footer-bottom {
     border-top:1px solid var(--contact-border);
@@ -797,21 +823,37 @@ iframe.goog-te-menu-frame,
 /* RESPONSIVE DESIGN */
 
 @media(max-width:1050px) {
-    .header-inner { flex-wrap:wrap; }
+    .header-inner {
+        flex-wrap:wrap;
+    }
+
     .main-navigation {
         order:3;
         width:100%;
         gap:17px;
     }
-    .footer-groups { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .contact-image-frame { height:500px; }
+
+    .footer-groups {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .contact-image-frame {
+        height:500px;
+    }
 }
 
 @media(max-width:650px) {
-    .header-inner { padding:15px; }
-    .company-logo img { width:135px; }
+    .header-inner {
+        padding:15px;
+    }
 
-    .mobile-menu-button { display:block; }
+    .company-logo img {
+        width:135px;
+    }
+
+    .mobile-menu-button {
+        display:block;
+    }
 
     .main-navigation {
         display:none;
@@ -824,7 +866,9 @@ iframe.goog-te-menu-frame,
         border-radius:7px;
     }
 
-    .main-navigation.navigation-open { display:flex; }
+    .main-navigation.navigation-open {
+        display:flex;
+    }
 
     .main-navigation a {
         width:100%;
@@ -832,21 +876,43 @@ iframe.goog-te-menu-frame,
         border-bottom:1px solid var(--contact-border);
     }
 
-    .header-right { margin-left:auto; }
+    .main-navigation a:last-child {
+        border-bottom:0;
+    }
+
+    .header-right {
+        margin-left:auto;
+    }
 
     .language-control select {
         max-width:125px;
         font-size:11px;
     }
 
-    .contact-hero { padding:65px 20px 40px; }
-    .contact-hero p { font-size:14px; }
+    .contact-hero {
+        padding:65px 20px 40px;
+    }
 
-    .contact-image-section { padding:10px 15px 60px; }
-    .contact-image-frame { height:360px; }
-    .contact-image-caption { padding:22px; font-size:10px; }
+    .contact-hero p {
+        font-size:14px;
+    }
 
-    .contact-container { padding:0 17px; }
+    .contact-image-section {
+        padding:10px 15px 60px;
+    }
+
+    .contact-image-frame {
+        height:360px;
+    }
+
+    .contact-image-caption {
+        padding:22px;
+        font-size:10px;
+    }
+
+    .contact-container {
+        padding:0 17px;
+    }
 
     .general-contact {
         padding:32px 20px;
@@ -854,23 +920,43 @@ iframe.goog-te-menu-frame,
     }
 
     .department-grid,
-    .platform-grid { grid-template-columns:1fr; }
+    .platform-grid {
+        grid-template-columns:1fr;
+    }
 
-    .department-image { height:210px; }
-    .department-card-content { padding:25px; }
+    .department-image {
+        height:210px;
+    }
 
-    .platform-card { padding:30px; }
-    .platform-card p { min-height:auto; }
+    .department-card-content {
+        padding:25px;
+    }
+
+    .platform-card {
+        padding:30px;
+    }
+
+    .platform-card p {
+        min-height:auto;
+    }
 
     .social-section {
         padding:52px 15px;
         margin-bottom:65px;
     }
 
-    .social-icons { gap:12px; }
-    .social-link { width:48px; height:48px; }
+    .social-icons {
+        gap:12px;
+    }
 
-    .office-section { padding:0 20px; }
+    .social-link {
+        width:48px;
+        height:48px;
+    }
+
+    .office-section {
+        padding:0 20px;
+    }
 
     .footer-groups {
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -884,9 +970,30 @@ iframe.goog-te-menu-frame,
 }
 
 @media(max-width:380px) {
-    .footer-groups { grid-template-columns:1fr; }
-    .header-inner { gap:12px; }
-    .company-logo img { width:120px; }
+    .footer-groups {
+        grid-template-columns:1fr;
+    }
+
+    .header-inner {
+        gap:12px;
+    }
+
+    .company-logo img {
+        width:120px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition:none!important;
+        animation:none!important;
+    }
 }
 </style>
 </head>
@@ -926,20 +1033,26 @@ function applyGoogleLanguage(language) {
 
         attempts++;
 
-        if(attempts >= 30) clearInterval(languageInterval);
+        if(attempts >= 30) {
+            clearInterval(languageInterval);
+        }
     },300);
 }
 
 document.addEventListener('DOMContentLoaded',function() {
+
     const languageSelector = document.getElementById('siteLanguage');
 
     if(languageSelector) {
         const savedLanguage = localStorage.getItem('site_lang');
 
-        if(savedLanguage) languageSelector.value = savedLanguage;
+        if(savedLanguage) {
+            languageSelector.value = savedLanguage;
+        }
 
         languageSelector.addEventListener('change',function() {
             const selectedLanguage = this.value;
+
             localStorage.setItem('site_lang',selectedLanguage);
 
             if(selectedLanguage === 'en') {
@@ -952,13 +1065,17 @@ document.addEventListener('DOMContentLoaded',function() {
         });
     }
 
+    /* MOBILE NAVIGATION */
+
     const menuButton = document.querySelector('.mobile-menu-button');
     const navigation = document.querySelector('.main-navigation');
 
     if(menuButton && navigation) {
         menuButton.addEventListener('click',function() {
             const isOpen = navigation.classList.toggle('navigation-open');
+
             this.setAttribute('aria-expanded',isOpen);
+            this.textContent = isOpen ? 'CLOSE' : 'MENU';
         });
     }
 
@@ -1040,6 +1157,7 @@ Please attach your CV.`
                 + '&body=' + encodeURIComponent(details.body);
         }
     });
+
 });
 
 /* GOOGLE TRANSLATE — AUTOMATIC BANNER AND POP-OUT PROTECTION */
@@ -1051,32 +1169,30 @@ Please attach your CV.`
         const html = document.documentElement;
         const body = document.body;
 
-        if (!html || !body) {
-            return;
+        if(!html || !body) return;
+
+        if(html.style.top !== "0px") {
+            html.style.setProperty("top","0px","important");
         }
 
-        if (html.style.top !== "0px") {
-            html.style.setProperty("top", "0px", "important");
+        if(html.style.marginTop !== "0px") {
+            html.style.setProperty("margin-top","0px","important");
         }
 
-        if (html.style.marginTop !== "0px") {
-            html.style.setProperty("margin-top", "0px", "important");
+        if(html.style.paddingTop !== "0px") {
+            html.style.setProperty("padding-top","0px","important");
         }
 
-        if (html.style.paddingTop !== "0px") {
-            html.style.setProperty("padding-top", "0px", "important");
+        if(body.style.top !== "0px") {
+            body.style.setProperty("top","0px","important");
         }
 
-        if (body.style.top !== "0px") {
-            body.style.setProperty("top", "0px", "important");
+        if(body.style.marginTop !== "0px") {
+            body.style.setProperty("margin-top","0px","important");
         }
 
-        if (body.style.marginTop !== "0px") {
-            body.style.setProperty("margin-top", "0px", "important");
-        }
-
-        if (body.style.paddingTop !== "0px") {
-            body.style.setProperty("padding-top", "0px", "important");
+        if(body.style.paddingTop !== "0px") {
+            body.style.setProperty("padding-top","0px","important");
         }
     }
 
@@ -1090,11 +1206,11 @@ Please attach your CV.`
             ".goog-tooltip"
         ];
 
-        unwantedSelectors.forEach(selector => {
+        unwantedSelectors.forEach(function(selector) {
 
-            document.querySelectorAll(selector).forEach(element => {
+            document.querySelectorAll(selector).forEach(function(element) {
 
-                if (!element.closest("#google_translate_element")) {
+                if(!element.closest("#google_translate_element")) {
                     element.remove();
                 }
 
@@ -1105,30 +1221,22 @@ Please attach your CV.`
         restorePagePosition();
     }
 
-    /* Initial protection. */
-
     removeGooglePopouts();
 
-    /* Monitor Google's injected elements and layout changes. */
-
-    const observer = new MutationObserver(() => {
+    const observer = new MutationObserver(function() {
         removeGooglePopouts();
     });
 
-    observer.observe(document.documentElement, {
+    observer.observe(document.documentElement,{
         childList:true,
         subtree:true,
         attributes:true,
         attributeFilter:["style","class"]
     });
 
-    /* Additional protection. */
-
-    window.addEventListener("load", removeGooglePopouts);
-
-    window.addEventListener("resize", removeGooglePopouts);
-
-    window.addEventListener("scroll", restorePagePosition);
+    window.addEventListener("load",removeGooglePopouts);
+    window.addEventListener("resize",removeGooglePopouts);
+    window.addEventListener("scroll",restorePagePosition);
 
 })();
 </script>
@@ -1184,7 +1292,8 @@ Please attach your CV.`
 
             <button class="mobile-menu-button"
                     type="button"
-                    aria-expanded="false">
+                    aria-expanded="false"
+                    aria-controls="mainNavigation">
                 MENU
             </button>
 
@@ -1206,11 +1315,15 @@ Please attach your CV.`
 
 <section class="contact-image-section">
     <div class="contact-image-frame">
+
+        <!-- FIRST IMAGE: PRESERVED EXACTLY AS SUPPLIED -->
+
         <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
             alt="Modern office building exterior"
             loading="eager"
         >
+
         <div class="contact-image-caption">
             PHRINUSOMYIS™ — COMMANDING THE WORLD STAGE™
         </div>
@@ -1250,11 +1363,16 @@ Please attach your CV.`
         <div class="department-grid">
 
             <article class="department-card">
+
                 <div class="department-image">
+
+                    <!-- SECOND IMAGE: THE TAKEOVER -->
+
                     <img
-                        src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1000&q=85"
-                        alt="Press and media professionals"
-                        loading="lazy">
+                        src="/the-takeover.jpg"
+                        alt="THE TAKEOVER — PHRINUSOMYIS Magazine"
+                        loading="lazy"
+                    >
                 </div>
 
                 <div class="department-card-content">
@@ -1558,7 +1676,6 @@ Please attach your CV.`
                 <h3>POLICIES</h3>
                 <a href="/policy">Privacy Policy</a>
                 <a href="/accessibility">Accessibility &amp; Captions</a>
-                <a href="/cookies">Cookies</a>
             </div>
 
             <div class="footer-group">
@@ -1575,7 +1692,7 @@ Please attach your CV.`
             </div>
 
             <div class="footer-copyright">
-                ©2026 PHRINUSOMYIS™. All Rights Reserved.
+                © <span id="copyrightYear">2026</span> PHRINUSOMYIS™. All Rights Reserved.
             </div>
         </div>
 
@@ -1584,6 +1701,21 @@ Please attach your CV.`
 </footer>
 
 </div>
+
+<script>
+/* AUTOMATIC COPYRIGHT YEAR */
+
+document.getElementById('copyrightYear').textContent =
+    new Date().getFullYear();
+
+/* ACCESSIBILITY: NAVIGATION CONTROL */
+
+const mainNavigation = document.querySelector('.main-navigation');
+
+if(mainNavigation) {
+    mainNavigation.id = 'mainNavigation';
+}
+</script>
 
 </body>
 </html>
