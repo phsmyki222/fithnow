@@ -131,6 +131,7 @@
 :root {
     --black:#171715;
     --charcoal:#25241f;
+    --charcoal-soft:#302e28;
     --ivory:#f2eee5;
     --ivory-light:#f8f5ee;
     --stone:#e5ded1;
@@ -139,32 +140,39 @@
     --gold:#c5a36b;
     --text:#24231f;
     --muted:#69665f;
-    --line:rgba(37,36,31,.13);
-    --white:#fffdf9;
-    --serif:Georgia,"Times New Roman",serif;
-    --sans:"DM Sans",Arial,sans-serif;
-    --display:"Manrope",Arial,sans-serif;
-    --container:1240px;
+    --line:rgba(169,130,77,.25);
+    --line-dark:rgba(242,238,229,.16);
+    --white:#fffdf8;
+    --serif:"Playfair Display",Georgia,serif;
+    --sans:"Manrope","DM Sans",Arial,sans-serif;
+    --body:"DM Sans",Arial,sans-serif;
+    --container:1440px;
+    --shadow:0 24px 70px rgba(23,23,21,.10);
 }
 
 * {
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html {
     scroll-behavior:smooth;
-    scroll-padding-top:100px;
+    scroll-padding-top:110px;
+    background:var(--ivory-light);
 }
 
 body {
-    background:var(--ivory-light);
+    font-family:var(--body);
     color:var(--text);
-    font-family:var(--sans);
+    background:var(--ivory-light);
     line-height:1.7;
     overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
+}
+
+body,button,input {
+    font-family:var(--body);
 }
 
 a {
@@ -172,166 +180,164 @@ a {
     text-decoration:none;
 }
 
-button,input {
-    font:inherit;
+button {
+    cursor:pointer;
 }
 
 img {
-    max-width:100%;
     display:block;
+    max-width:100%;
 }
 
 ::selection {
-    background:var(--gold);
-    color:var(--black);
+    background:var(--bronze);
+    color:white;
 }
 
 .container {
-    width:min(var(--container),calc(100% - 64px));
-    margin:auto;
+    width:min(var(--container), calc(100% - 100px));
+    margin-inline:auto;
 }
 
 .eyebrow {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:var(--sans);
     font-size:10px;
-    font-weight:700;
+    font-weight:800;
     letter-spacing:2.5px;
     text-transform:uppercase;
     color:var(--bronze);
 }
 
-.gold-line {
-    width:42px;
-    height:2px;
-    background:var(--gold);
-}
-
-/* =================================
-   GOOGLE TRANSLATE PROTECTION
-================================= */
-
-#google_translate_element {
-    position:fixed;
-    left:-10000px;
-    top:0;
-    width:1px;
+.eyebrow::before {
+    content:"";
+    width:28px;
     height:1px;
-    overflow:hidden;
-    opacity:0;
-    pointer-events:none;
+    background:var(--bronze);
 }
 
-.goog-te-banner-frame,
-.goog-te-balloon-frame,
-.goog-te-menu-frame,
-.goog-tooltip,
-.goog-tooltip:hover,
-.goog-text-highlight,
-#goog-gt-tt,
-.goog-te-spinner-pos {
-    display:none!important;
-    visibility:hidden!important;
+.section-kicker {
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:800;
 }
 
-.goog-te-gadget,
-.goog-logo-link,
-.goog-te-gadget span {
-    display:none!important;
-}
-
-body {
-    top:0!important;
-    position:relative!important;
-}
-
-html {
-    margin-top:0!important;
-    top:0!important;
-}
-
-.skip-link {
-    position:absolute;
-    left:-10000px;
-    top:10px;
-    z-index:99999;
-    background:var(--gold);
+.section-heading {
+    font-family:var(--sans);
+    font-size:clamp(34px,4vw,58px);
+    line-height:1.08;
+    letter-spacing:-2.4px;
+    font-weight:700;
     color:var(--black);
-    padding:12px 20px;
 }
 
-.skip-link:focus {
-    left:10px;
+.section-intro {
+    max-width:570px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.9;
 }
 
-/* =================================
+.gold-rule {
+    height:1px;
+    background:linear-gradient(90deg,var(--bronze),rgba(169,130,77,0));
+}
+
+/* =====================================================
    TOP NAVIGATION
-================================= */
+===================================================== */
 
 .topbar {
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(248,245,238,.96);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid var(--line);
+    height:86px;
+    background:var(--black);
+    color:var(--ivory);
+    display:flex;
+    align-items:center;
+    position:relative;
+    z-index:100;
+    border-bottom:1px solid rgba(197,163,107,.22);
 }
 
 .topbar-inner {
-    width:min(1380px,calc(100% - 64px));
-    min-height:82px;
+    width:min(1540px, calc(100% - 90px));
     margin:auto;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:25px;
+    align-items:center;
+    gap:30px;
+}
+
+.topbar-left,
+.topbar-right {
+    display:flex;
+    align-items:center;
+    gap:28px;
 }
 
 .topbar-brand {
     display:flex;
     align-items:center;
-    gap:12px;
-    flex-shrink:0;
+    gap:13px;
+    color:var(--ivory);
+    font-family:var(--sans);
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:1.1px;
+    white-space:nowrap;
 }
 
 .topbar-brand img {
-    width:38px;
-    height:38px;
+    width:36px;
+    height:36px;
     object-fit:contain;
-}
-
-.topbar-brand span {
-    font-family:var(--display);
-    font-size:15px;
-    font-weight:800;
-    letter-spacing:1.2px;
-}
-
-.topbar-actions {
-    display:flex;
-    align-items:center;
-    gap:32px;
 }
 
 .translate-area {
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:11px;
+    min-height:36px;
 }
 
 .translate-label {
-    color:var(--muted);
-    font-size:11px;
-    letter-spacing:1px;
+    font-size:10px;
+    letter-spacing:1.5px;
     text-transform:uppercase;
+    color:#b9b1a2;
+    font-weight:700;
 }
 
-.translate-select {
-    border:1px solid var(--stone-deep);
-    background:transparent;
-    padding:9px 12px;
-    font-size:11px;
-    color:var(--text);
-    cursor:pointer;
-    max-width:150px;
+#google_translate_element {
+    display:inline-flex;
+    min-width:100px;
+    min-height:28px;
+    align-items:center;
+}
+
+.goog-te-gadget {
+    font-family:var(--body)!important;
+    color:var(--ivory)!important;
+    font-size:11px!important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    background:#25241f!important;
+    color:var(--ivory)!important;
+    border:1px solid rgba(197,163,107,.35)!important;
+    padding:7px 10px!important;
+    border-radius:0!important;
+    font-size:11px!important;
+    outline:none!important;
+    margin:0!important;
+}
+
+.goog-logo-link,
+.goog-te-gadget span {
+    display:none!important;
 }
 
 .top-menu {
@@ -340,14 +346,16 @@ html {
 
 .top-menu summary {
     list-style:none;
-    cursor:pointer;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:1px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--ivory);
+    font-size:10px;
     text-transform:uppercase;
-    border:1px solid var(--stone-deep);
-    padding:12px 20px;
-    transition:.25s;
+    letter-spacing:1.8px;
+    font-weight:800;
+    cursor:pointer;
+    padding:13px 0;
 }
 
 .top-menu summary::-webkit-details-marker {
@@ -355,38 +363,36 @@ html {
 }
 
 .top-menu summary::after {
-    content:"＋";
-    margin-left:15px;
-    color:var(--bronze);
+    content:"+";
+    color:var(--gold);
+    font-size:20px;
+    font-weight:400;
+    line-height:1;
 }
 
 .top-menu[open] summary::after {
     content:"−";
 }
 
-.top-menu summary:hover {
-    background:var(--black);
-    color:var(--ivory);
-}
-
 .top-menu-list {
     position:absolute;
+    top:calc(100% + 17px);
     right:0;
-    top:calc(100% + 12px);
-    width:245px;
-    background:var(--ivory-light);
-    border:1px solid var(--stone);
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-    padding:10px;
+    width:250px;
+    padding:13px;
+    background:var(--charcoal);
+    border:1px solid rgba(197,163,107,.3);
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
     display:grid;
-    z-index:100;
+    z-index:200;
 }
 
 .top-menu-list a {
+    padding:12px 13px;
     font-size:12px;
-    padding:11px 13px;
-    border-bottom:1px solid var(--line);
-    transition:.2s;
+    color:#ded7ca;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    transition:.25s ease;
 }
 
 .top-menu-list a:last-child {
@@ -394,875 +400,1107 @@ html {
 }
 
 .top-menu-list a:hover {
-    background:var(--ivory);
-    color:var(--bronze);
+    background:rgba(197,163,107,.12);
+    color:var(--gold);
     padding-left:19px;
 }
 
-/* =================================
+/* =====================================================
    INTRODUCTORY HERO
-================================= */
+===================================================== */
 
 .hero {
-    padding:85px 0 55px;
-    background:var(--ivory);
+    background:var(--black);
+    color:var(--ivory);
+    position:relative;
+    overflow:hidden;
+    padding:95px 0 85px;
+}
+
+.hero::before {
+    content:"";
+    position:absolute;
+    width:680px;
+    height:680px;
+    border:1px solid rgba(197,163,107,.10);
+    border-radius:50%;
+    right:-210px;
+    top:-360px;
+}
+
+.hero::after {
+    content:"";
+    position:absolute;
+    width:480px;
+    height:480px;
+    border:1px solid rgba(197,163,107,.08);
+    border-radius:50%;
+    right:-110px;
+    top:-260px;
 }
 
 .hero-inner {
+    position:relative;
+    z-index:2;
     display:grid;
-    grid-template-columns:1fr .8fr;
+    grid-template-columns:180px 1fr;
+    gap:55px;
     align-items:center;
-    gap:65px;
 }
 
-.hero-logo {
-    width:76px;
-    height:76px;
+.hero-emblem {
+    width:155px;
+    height:155px;
+    border:1px solid rgba(197,163,107,.36);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.hero-emblem::before {
+    content:"";
+    position:absolute;
+    inset:9px;
+    border:1px solid rgba(197,163,107,.15);
+}
+
+.hero-emblem img {
+    width:100px;
+    height:100px;
     object-fit:contain;
-    margin-bottom:32px;
-}
-
-.hero h1 {
-    font-family:var(--display);
-    font-size:clamp(48px,7vw,88px);
-    font-weight:500;
-    letter-spacing:-5px;
-    line-height:.98;
-    margin:22px 0;
-}
-
-.hero h1 span {
-    display:block;
-    font-family:var(--serif);
-    font-weight:400;
-    font-style:italic;
-    color:var(--bronze);
 }
 
 .hero-copy {
-    max-width:570px;
-    font-size:15px;
-    color:var(--muted);
+    max-width:850px;
+}
+
+.hero .eyebrow {
+    color:var(--gold);
+    margin-bottom:23px;
+}
+
+.hero h1 {
+    font-family:var(--sans);
+    font-size:clamp(54px,8vw,108px);
+    line-height:.98;
+    letter-spacing:-6px;
+    font-weight:700;
+    color:var(--ivory);
+    margin-bottom:28px;
+}
+
+.hero h1 span {
+    color:var(--gold);
+    font-family:var(--serif);
+    font-weight:500;
+    font-style:italic;
+}
+
+.hero-description {
+    max-width:690px;
+    color:#bdb6a9;
+    font-size:16px;
     line-height:1.95;
 }
 
 .hero-bottom {
     display:flex;
-    align-items:center;
-    gap:18px;
-    margin-top:34px;
-}
-
-.hero-bottom .gold-line {
-    width:48px;
-}
-
-.hero-bottom span {
-    font-size:10px;
-    letter-spacing:1.8px;
-    text-transform:uppercase;
-    font-weight:700;
-}
-
-.hero-side {
-    border-left:1px solid var(--stone-deep);
-    padding:20px 0 20px 28px;
-}
-
-.hero-side-number {
-    font-family:var(--serif);
-    font-size:65px;
-    color:var(--gold);
-    line-height:1;
-}
-
-.hero-side p {
-    margin-top:16px;
-    font-size:13px;
-    line-height:1.9;
-    color:var(--muted);
-    max-width:300px;
-}
-
-/* =================================
-   MAIN IMAGE FEATURE
-================================= */
-
-.hero-visual {
-    padding-bottom:70px;
-    background:var(--ivory);
-}
-
-.hero-visual-frame {
-    position:relative;
-    min-height:460px;
-    height:min(57vw,600px);
-    overflow:hidden;
-    background:var(--charcoal);
-}
-
-.hero-visual-frame > img {
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    opacity:.66;
-}
-
-.hero-visual-frame::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        90deg,
-        rgba(18,18,16,.88),
-        rgba(18,18,16,.35) 65%,
-        rgba(18,18,16,.15)
-    );
-}
-
-.hero-visual-content {
-    position:absolute;
-    z-index:2;
-    left:8%;
-    bottom:12%;
-    max-width:590px;
-    color:white;
-}
-
-.hero-visual-content .eyebrow {
-    color:var(--gold);
-}
-
-.hero-visual-content h2 {
-    font-family:var(--display);
-    font-size:clamp(36px,5vw,67px);
-    font-weight:500;
-    letter-spacing:-2.5px;
-    line-height:1.08;
-    margin:20px 0;
-}
-
-.hero-visual-content p {
-    max-width:470px;
-    font-size:14px;
-    color:rgba(255,255,255,.77);
-    line-height:1.9;
-}
-
-.hero-strip {
-    display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:23px 0;
-    border-bottom:1px solid var(--line);
-    gap:20px;
+    margin-top:75px;
+    padding-top:23px;
+    border-top:1px solid var(--line-dark);
 }
 
-.hero-strip span {
+.hero-bottom-label {
+    color:#a8a093;
     font-size:10px;
-    letter-spacing:1.5px;
+    letter-spacing:2px;
     text-transform:uppercase;
     font-weight:700;
 }
 
-.hero-strip a {
-    font-size:11px;
-    font-weight:700;
-    color:var(--bronze);
+.hero-bottom-mark {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:800;
 }
 
-/* =================================
-   SEARCH CENTRE
-================================= */
+.hero-bottom-mark::before {
+    content:"";
+    width:35px;
+    height:1px;
+    background:var(--gold);
+}
+
+/* =====================================================
+   CHRONICLE IMAGE FEATURE
+===================================================== */
+
+.visual-intro {
+    padding:0 0 110px;
+    background:var(--black);
+}
+
+.visual-frame {
+    position:relative;
+    min-height:510px;
+    overflow:hidden;
+    background:#292720;
+}
+
+.visual-frame > a {
+    position:absolute;
+    inset:0;
+    display:block;
+}
+
+.visual-frame img {
+    width:100%;
+    height:100%;
+    min-height:510px;
+    object-fit:cover;
+    object-position:center 43%;
+    opacity:.72;
+    transition:transform 1s ease, opacity .7s ease;
+}
+
+.visual-frame:hover img {
+    transform:scale(1.035);
+    opacity:.85;
+}
+
+.visual-overlay {
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,rgba(23,23,21,.96) 0%,rgba(23,23,21,.72) 42%,rgba(23,23,21,.10) 100%),
+        linear-gradient(0deg,rgba(23,23,21,.45),transparent 50%);
+    pointer-events:none;
+}
+
+.visual-content {
+    position:absolute;
+    left:8%;
+    top:50%;
+    transform:translateY(-50%);
+    width:min(540px,75%);
+    color:var(--ivory);
+    z-index:2;
+    pointer-events:none;
+}
+
+.visual-content .eyebrow {
+    color:var(--gold);
+    margin-bottom:24px;
+}
+
+.visual-content h2 {
+    font-family:var(--serif);
+    font-size:clamp(42px,5.8vw,76px);
+    font-weight:500;
+    line-height:1.05;
+    letter-spacing:-1.5px;
+    margin-bottom:23px;
+}
+
+.visual-content p {
+    color:#d1c9bb;
+    max-width:470px;
+    font-size:14px;
+    line-height:1.95;
+}
+
+.visual-strip {
+    position:absolute;
+    left:8%;
+    bottom:34px;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:800;
+    pointer-events:none;
+}
+
+.visual-strip::before {
+    content:"";
+    width:40px;
+    height:1px;
+    background:var(--gold);
+}
+
+.visual-action {
+    position:absolute;
+    right:7%;
+    bottom:32px;
+    z-index:4;
+    color:var(--ivory);
+    font-size:10px;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    pointer-events:none;
+}
+
+.visual-action span {
+    color:var(--gold);
+    font-size:20px;
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-section {
-    padding:110px 0;
-    background:var(--ivory-light);
+    background:var(--ivory);
+    padding:105px 0 110px;
+    position:relative;
 }
 
-.search-heading {
-    max-width:700px;
-    margin-bottom:38px;
+.search-layout {
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+    align-items:center;
+}
+
+.search-heading .eyebrow {
+    margin-bottom:20px;
 }
 
 .search-heading h2 {
-    font-family:var(--display);
-    font-size:clamp(32px,4vw,49px);
+    font-family:var(--sans);
+    font-size:clamp(35px,4vw,57px);
+    line-height:1.08;
     letter-spacing:-2px;
-    font-weight:600;
-    margin:13px 0;
+    margin-bottom:22px;
 }
 
 .search-heading p {
+    max-width:430px;
     color:var(--muted);
     font-size:14px;
+    line-height:1.9;
 }
 
-.search-control {
+.search-panel {
+    background:var(--ivory-light);
+    border:1px solid var(--stone-deep);
+    padding:35px;
+    box-shadow:0 20px 55px rgba(23,23,21,.045);
+}
+
+.search-box {
     display:flex;
-    border-bottom:2px solid var(--charcoal);
     align-items:center;
+    border-bottom:2px solid var(--black);
+    padding:0 0 15px;
+    gap:16px;
 }
 
-.search-control input {
-    flex:1;
-    min-width:0;
-    padding:21px 5px;
+.search-icon {
+    width:22px;
+    height:22px;
+    color:var(--bronze);
+    flex-shrink:0;
+}
+
+.search-box input {
+    width:100%;
     background:transparent;
     border:0;
     outline:none;
-    font-size:16px;
-    color:var(--text);
+    color:var(--black);
+    font-size:15px;
+    min-width:0;
 }
 
-.search-control input::placeholder {
-    color:#99948a;
+.search-box input::placeholder {
+    color:#969083;
 }
 
-.search-control button {
-    background:var(--black);
-    color:var(--ivory);
+.clear-search {
+    background:none;
     border:0;
-    padding:14px 28px;
-    font-size:11px;
-    font-weight:700;
+    color:var(--bronze);
+    font-size:10px;
+    letter-spacing:1.5px;
+    font-weight:800;
     text-transform:uppercase;
-    letter-spacing:1px;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.search-control button:hover {
-    background:var(--bronze);
+    white-space:nowrap;
 }
 
 .search-meta {
     display:flex;
     justify-content:space-between;
-    gap:20px;
+    gap:15px;
     padding-top:17px;
-    font-size:10px;
     color:var(--muted);
+    font-size:10px;
+    letter-spacing:.5px;
 }
 
-.search-results {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:25px;
+#searchResults {
+    margin-top:20px;
+    display:none;
+    border-top:1px solid var(--stone);
+    padding-top:15px;
+}
+
+#searchResults.active {
+    display:block;
 }
 
 .search-result {
-    display:block;
-    padding:20px 23px;
-    border:1px solid var(--stone);
-    background:var(--white);
-    transition:.25s;
+    padding:13px 0;
+    border-bottom:1px solid var(--stone);
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
 }
 
-.search-result:hover {
-    border-color:var(--gold);
-    transform:translateY(-2px);
+.search-result a {
+    color:var(--black);
+    font-size:13px;
+    font-weight:700;
+}
+
+.search-result a:hover {
+    color:var(--bronze);
 }
 
 .search-result small {
-    display:block;
-    color:var(--bronze);
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    margin-bottom:8px;
-}
-
-.search-result strong {
-    font-family:var(--display);
-    font-size:14px;
-}
-
-.search-result p {
-    margin-top:6px;
     color:var(--muted);
-    font-size:12px;
+    font-size:9px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    white-space:nowrap;
 }
 
 .search-empty {
-    grid-column:1/-1;
-    border:1px solid var(--stone);
-    padding:25px;
-    font-size:13px;
     color:var(--muted);
+    font-size:13px;
+    padding:10px 0;
 }
 
-/* =================================
+/* =====================================================
    OFFICIAL DIRECTORY
-================================= */
+===================================================== */
 
 .directory-section {
-    background:var(--ivory);
-    padding:100px 0 115px;
+    background:var(--ivory-light);
+    padding:110px 0 125px;
 }
 
-.section-topline {
+.directory-heading {
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
-    gap:30px;
-    padding-bottom:35px;
-    border-bottom:1px solid var(--line);
+    gap:40px;
+    margin-bottom:60px;
 }
 
-.section-title {
-    font-family:var(--display);
-    font-size:clamp(34px,4vw,52px);
-    font-weight:600;
-    letter-spacing:-2px;
-    margin-top:12px;
+.directory-heading-left .eyebrow {
+    margin-bottom:20px;
 }
 
-.section-description {
-    font-size:13px;
-    color:var(--muted);
-    margin-top:12px;
+.directory-heading .section-intro {
+    max-width:370px;
+    padding-bottom:5px;
 }
 
-.section-index {
-    font-size:9px;
-    letter-spacing:1.5px;
-    color:var(--bronze);
-    font-weight:700;
-    white-space:nowrap;
-    padding-bottom:9px;
-}
-
-.destination-grid {
+.directory-grid {
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    border-top:0;
+    border-top:1px solid var(--stone-deep);
+    border-left:1px solid var(--stone-deep);
 }
 
-.destination-card {
+.directory-card {
+    min-height:260px;
+    padding:29px 27px 25px;
+    border-right:1px solid var(--stone-deep);
+    border-bottom:1px solid var(--stone-deep);
     position:relative;
-    min-height:220px;
-    padding:29px 23px;
-    border-right:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    transition:.3s;
     display:flex;
     flex-direction:column;
+    justify-content:space-between;
+    background:transparent;
+    transition:background .3s ease, transform .3s ease;
 }
 
-.destination-card:nth-child(4n+1) {
-    border-left:1px solid var(--line);
+.directory-card:hover {
+    background:var(--ivory);
+    transform:translateY(-4px);
 }
 
-.destination-card:hover {
+.directory-card-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.directory-number {
+    color:var(--bronze);
+    font-family:var(--serif);
+    font-size:19px;
+}
+
+.directory-category {
+    font-size:9px;
+    letter-spacing:1.7px;
+    color:var(--muted);
+    font-weight:800;
+}
+
+.directory-card h3 {
+    font-family:var(--sans);
+    font-size:23px;
+    letter-spacing:-.7px;
+    line-height:1.2;
+    font-weight:700;
+    margin:30px 0 12px;
+}
+
+.directory-card p {
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.8;
+    max-width:260px;
+}
+
+.directory-link {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:28px;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    color:var(--black);
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:800;
+}
+
+.directory-link span {
+    color:var(--bronze);
+    font-size:18px;
+    transition:transform .3s ease;
+}
+
+.directory-card:hover .directory-link span {
+    transform:translateX(5px);
+}
+
+/* =====================================================
+   FAQ INTRO
+===================================================== */
+
+.faq-section {
     background:var(--black);
     color:var(--ivory);
+    padding:115px 0 125px;
 }
 
-.destination-number {
-    font-size:9px;
-    letter-spacing:1.3px;
-    color:var(--bronze);
-    font-weight:700;
-}
-
-.destination-card h3 {
-    font-family:var(--display);
-    font-size:17px;
-    font-weight:700;
-    margin-top:34px;
-}
-
-.destination-card p {
-    color:var(--muted);
-    font-size:11px;
-    line-height:1.8;
-    margin-top:9px;
-}
-
-.destination-card:hover p {
-    color:rgba(255,255,255,.65);
-}
-
-.destination-card::after {
-    content:"↗";
-    position:absolute;
-    bottom:22px;
-    right:22px;
-    color:var(--bronze);
-    font-size:17px;
-}
-
-/* =================================
-   FAQ AREA
-================================= */
-
-.faq-area {
+.faq-intro {
     display:grid;
-    grid-template-columns:.65fr 1.35fr;
+    grid-template-columns:.7fr 1.3fr;
     gap:90px;
-    padding:120px max(32px,calc((100% - var(--container))/2));
-    background:var(--ivory-light);
+    padding-bottom:65px;
+    border-bottom:1px solid var(--line-dark);
 }
 
 .faq-aside {
-    position:sticky;
-    top:125px;
-    align-self:start;
+    border-left:2px solid var(--bronze);
+    padding-left:23px;
 }
 
-.faq-aside h2 {
-    font-family:var(--display);
-    font-size:clamp(36px,4vw,54px);
-    line-height:1.1;
-    letter-spacing:-2.5px;
-    margin:18px 0;
-    font-weight:600;
-}
-
-.faq-aside p {
-    font-size:13px;
-    color:var(--muted);
-    line-height:2;
-}
-
-.faq-aside-line {
-    width:65px;
-    height:2px;
-    background:var(--gold);
-    margin-top:32px;
-}
-
-.faq-content {
-    min-width:0;
-}
-
-.faq-section {
-    margin-bottom:65px;
-    scroll-margin-top:110px;
-}
-
-.faq-section-heading {
-    padding-bottom:25px;
-    margin-bottom:8px;
-    border-bottom:1px solid var(--line);
-}
-
-.faq-section-heading > span {
-    font-size:9px;
-    letter-spacing:1.6px;
-    text-transform:uppercase;
-    color:var(--bronze);
-    font-weight:700;
-}
-
-.faq-section-heading h3 {
-    font-family:var(--display);
-    font-size:24px;
-    font-weight:700;
-    letter-spacing:-.8px;
-    margin-top:9px;
-}
-
-.faq-section-heading p {
-    font-size:12px;
-    color:var(--muted);
-    margin-top:6px;
-}
-
-.faq-item {
-    border-bottom:1px solid var(--line);
-}
-
-.faq-item summary {
-    position:relative;
-    list-style:none;
-    padding:21px 42px 21px 0;
-    font-size:13px;
-    font-weight:700;
-    cursor:pointer;
-    line-height:1.6;
-    transition:.2s;
-}
-
-.faq-item summary::-webkit-details-marker {
-    display:none;
-}
-
-.faq-item summary::after {
-    content:"+";
-    position:absolute;
-    right:5px;
-    top:50%;
-    transform:translateY(-50%);
-    width:26px;
-    height:26px;
-    display:grid;
-    place-items:center;
-    border:1px solid var(--stone-deep);
-    border-radius:50%;
-    font-size:17px;
-    font-weight:400;
-    color:var(--bronze);
-}
-
-.faq-item[open] summary::after {
-    content:"−";
-    background:var(--black);
+.faq-aside .section-kicker {
     color:var(--gold);
-    border-color:var(--black);
-}
-
-.faq-item summary:hover {
-    color:var(--bronze);
-}
-
-.faq-answer {
-    padding:0 38px 22px 0;
-    animation:answerIn .25s ease;
-}
-
-@keyframes answerIn {
-    from {opacity:0;transform:translateY(-5px);}
-    to {opacity:1;transform:translateY(0);}
-}
-
-.faq-answer p {
-    font-size:12px;
-    color:var(--muted);
-    line-height:1.95;
-    margin-bottom:10px;
-}
-
-.faq-answer p:last-child {
-    margin-bottom:0;
-}
-
-.faq-answer a {
-    display:inline-block;
-    color:var(--bronze);
-    font-size:11px;
-    font-weight:700;
-    border-bottom:1px solid var(--gold);
-    padding-bottom:2px;
-}
-
-/* =================================
-   MAGAZINE EDITORIAL FEATURE
-================================= */
-
-.editorial-feature {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    min-height:480px;
-    background:var(--black);
-    color:var(--ivory);
-}
-
-.editorial-image {
-    position:relative;
-    overflow:hidden;
-    min-height:400px;
-}
-
-.editorial-image img {
-    width:100%;
-    height:100%;
-    position:absolute;
-    inset:0;
-    object-fit:cover;
-    transition:transform .8s ease;
-}
-
-.editorial-image:hover img {
-    transform:scale(1.04);
-}
-
-.editorial-copy {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:flex-start;
-    padding:70px clamp(35px,7vw,100px);
-}
-
-.editorial-copy .eyebrow {
-    color:var(--gold);
-}
-
-.editorial-copy h2 {
-    font-family:var(--display);
-    font-size:clamp(37px,5vw,64px);
-    line-height:1.08;
-    letter-spacing:-2.5px;
-    font-weight:500;
-    margin:22px 0;
-}
-
-.editorial-copy p {
-    color:rgba(255,255,255,.64);
-    font-size:13px;
-    line-height:2;
-    max-width:440px;
-}
-
-.editorial-copy a {
-    margin-top:32px;
-    display:inline-flex;
-    gap:25px;
-    align-items:center;
-    padding:14px 21px;
-    border:1px solid var(--gold);
-    color:var(--ivory);
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:.7px;
-    transition:.25s;
-}
-
-.editorial-copy a:hover {
-    background:var(--gold);
-    color:var(--black);
-}
-
-/* =================================
-   CONTACT PANEL
-================================= */
-
-.contact-panel {
-    position:relative;
-    text-align:center;
-    padding:115px 30px;
-    background:var(--ivory);
-    overflow:hidden;
-}
-
-.contact-panel::before,
-.contact-panel::after {
-    content:"";
-    position:absolute;
-    width:280px;
-    height:280px;
-    border:1px solid rgba(169,130,77,.13);
-    border-radius:50%;
-    pointer-events:none;
-}
-
-.contact-panel::before {
-    left:-180px;
-    top:-100px;
-}
-
-.contact-panel::after {
-    right:-180px;
-    bottom:-120px;
-}
-
-.contact-panel h2 {
-    font-family:var(--display);
-    font-size:clamp(36px,5vw,63px);
-    line-height:1.1;
-    letter-spacing:-2.5px;
-    font-weight:600;
-    margin:20px 0;
-}
-
-.contact-panel p {
-    max-width:580px;
-    margin:0 auto;
-    color:var(--muted);
-    font-size:13px;
-    line-height:2;
-}
-
-.contact-panel a {
-    display:inline-flex;
-    gap:25px;
-    align-items:center;
-    margin-top:33px;
-    padding:16px 25px;
-    background:var(--black);
-    color:var(--ivory);
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:.8px;
-    transition:.25s;
-}
-
-.contact-panel a:hover {
-    background:var(--bronze);
-}
-
-/* =================================
-   FOOTER
-================================= */
-
-.footer {
-    background:var(--black);
-    color:var(--ivory);
-    padding:75px 0 25px;
-}
-
-.footer-inner {
-    width:min(var(--container),calc(100% - 64px));
-    margin:auto;
-}
-
-.footer-top {
-    display:grid;
-    grid-template-columns:1.6fr 1fr 1fr 1fr;
-    gap:45px;
-    padding-bottom:55px;
-}
-
-.footer-brand img {
-    width:48px;
-    height:48px;
-    object-fit:contain;
     margin-bottom:15px;
 }
 
-.footer-brand strong {
-    display:block;
-    font-family:var(--display);
-    font-size:15px;
-    letter-spacing:1px;
+.faq-aside h3 {
+    font-family:var(--serif);
+    font-size:29px;
+    line-height:1.2;
+    font-weight:500;
+    margin-bottom:15px;
 }
 
-.footer-brand p {
-    font-size:11px;
-    color:rgba(255,255,255,.52);
-    line-height:2;
-    margin-top:13px;
-    max-width:230px;
+.faq-aside p {
+    color:#aaa396;
+    font-size:12px;
+    line-height:1.9;
+    max-width:300px;
 }
 
-.footer-column h3 {
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
+.faq-main-heading .eyebrow {
     color:var(--gold);
     margin-bottom:20px;
 }
 
-.footer-column ul {
-    list-style:none;
+.faq-main-heading h2 {
+    font-family:var(--sans);
+    font-size:clamp(38px,5vw,68px);
+    letter-spacing:-2.8px;
+    line-height:1.05;
+    margin-bottom:22px;
 }
 
-.footer-column li {
+.faq-main-heading p {
+    color:#bdb6a9;
+    font-size:14px;
+    line-height:1.9;
+    max-width:620px;
+}
+
+/* FAQ categories */
+
+.faq-category {
+    display:grid;
+    grid-template-columns:290px 1fr;
+    gap:65px;
+    padding:62px 0;
+    border-bottom:1px solid var(--line-dark);
+}
+
+.faq-category:last-child {
+    border-bottom:0;
+}
+
+.faq-category-label {
+    position:relative;
+    padding-left:23px;
+    align-self:start;
+}
+
+.faq-category-label::before {
+    content:"";
+    position:absolute;
+    top:5px;
+    bottom:4px;
+    left:0;
+    width:1px;
+    background:var(--bronze);
+}
+
+.faq-category-label .number {
+    font-family:var(--serif);
+    color:var(--gold);
+    font-size:27px;
+    margin-bottom:17px;
+}
+
+.faq-category-label .category-type {
+    display:block;
+    color:#aaa396;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
     margin-bottom:12px;
 }
 
-.footer-column a {
-    font-size:11px;
-    color:rgba(255,255,255,.64);
-    transition:.2s;
+.faq-category-label h3 {
+    font-family:var(--sans);
+    font-size:22px;
+    line-height:1.3;
+    letter-spacing:-.6px;
+    color:var(--ivory);
 }
 
-.footer-column a:hover {
+.faq-list {
+    border-top:1px solid rgba(255,255,255,.13);
+}
+
+.faq-item {
+    border-bottom:1px solid rgba(255,255,255,.13);
+}
+
+.faq-question {
+    width:100%;
+    border:0;
+    background:transparent;
+    color:var(--ivory);
+    text-align:left;
+    padding:23px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    font-family:var(--sans);
+    font-size:14px;
+    line-height:1.5;
+    font-weight:600;
+}
+
+.faq-question span:first-child {
+    max-width:800px;
+}
+
+.faq-toggle {
+    width:27px;
+    height:27px;
+    border:1px solid rgba(197,163,107,.5);
     color:var(--gold);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    font-size:17px;
+    font-weight:400;
+    transition:.25s ease;
 }
 
-.footer-motto {
-    text-align:center;
-    font-family:var(--display);
+.faq-item.open .faq-toggle {
+    background:var(--bronze);
+    color:white;
+    transform:rotate(45deg);
+}
+
+.faq-answer {
+    display:none;
+    padding:0 55px 24px 0;
+    color:#bdb6a9;
+    font-size:13px;
+    line-height:1.95;
+    max-width:850px;
+}
+
+.faq-item.open .faq-answer {
+    display:block;
+}
+
+.faq-answer a {
+    color:var(--gold);
+    border-bottom:1px solid rgba(197,163,107,.4);
+    font-weight:700;
+}
+
+.faq-answer a:hover {
+    color:var(--ivory);
+}
+
+/* =====================================================
+   MAGAZINE EDITORIAL FEATURE
+===================================================== */
+
+.magazine-section {
+    background:var(--stone);
+    padding:120px 0;
+}
+
+.magazine-layout {
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:80px;
+}
+
+.magazine-image {
+    position:relative;
+    min-height:540px;
+    overflow:hidden;
+    background:var(--charcoal);
+}
+
+.magazine-image a {
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:540px;
+    overflow:hidden;
+}
+
+.magazine-image img {
+    width:100%;
+    height:100%;
+    min-height:540px;
+    object-fit:cover;
+    transition:transform .9s ease;
+}
+
+.magazine-image:hover img {
+    transform:scale(1.04);
+}
+
+.magazine-image::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    border:1px solid rgba(197,163,107,.35);
+    pointer-events:none;
+    margin:17px;
+}
+
+.magazine-image-label {
+    position:absolute;
+    left:35px;
+    bottom:35px;
+    color:white;
+    z-index:2;
+    pointer-events:none;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
     font-weight:800;
-    font-size:clamp(19px,4vw,38px);
-    letter-spacing:3px;
-    color:rgba(197,163,107,.75);
-    padding:30px 0;
-    border-top:1px solid rgba(255,255,255,.12);
-    border-bottom:1px solid rgba(255,255,255,.12);
+    text-shadow:0 2px 15px rgba(0,0,0,.5);
 }
 
-.footer-bottom {
+.magazine-copy {
+    padding:20px 0;
+}
+
+.magazine-copy .eyebrow {
+    margin-bottom:24px;
+}
+
+.magazine-copy h2 {
+    font-family:var(--serif);
+    font-size:clamp(43px,5.4vw,76px);
+    line-height:1.04;
+    letter-spacing:-1.5px;
+    font-weight:500;
+    margin-bottom:28px;
+    color:var(--black);
+}
+
+.magazine-copy p {
+    color:#5f5a50;
+    font-size:14px;
+    line-height:2;
+    max-width:500px;
+}
+
+.magazine-meta {
+    margin-top:38px;
+    padding-top:20px;
+    border-top:1px solid rgba(169,130,77,.4);
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:20px;
-    padding-top:24px;
+    color:#6c655a;
     font-size:9px;
-    color:rgba(255,255,255,.43);
-    letter-spacing:.7px;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    font-weight:800;
 }
 
-/* =================================
-   ACCESSIBILITY AND ANIMATION
-================================= */
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-summary:focus-visible,
-select:focus-visible {
-    outline:2px solid var(--bronze);
-    outline-offset:4px;
+.text-link {
+    display:inline-flex;
+    align-items:center;
+    gap:20px;
+    margin-top:40px;
+    padding:17px 23px;
+    background:var(--black);
+    color:var(--ivory);
+    font-size:10px;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    font-weight:800;
+    transition:background .3s ease;
 }
 
-@media (prefers-reduced-motion:reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior:auto!important;
-        animation-duration:.01ms!important;
-        animation-iteration-count:1!important;
-        transition-duration:.01ms!important;
+.text-link span {
+    color:var(--gold);
+    font-size:18px;
+    line-height:1;
+}
+
+.text-link:hover {
+    background:var(--bronze);
+}
+
+/* =====================================================
+   CONTACT PANEL
+===================================================== */
+
+.contact-section {
+    background:var(--ivory-light);
+    padding:110px 0;
+}
+
+.contact-panel {
+    background:var(--black);
+    color:var(--ivory);
+    padding:75px 8%;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:55px;
+    position:relative;
+    overflow:hidden;
+}
+
+.contact-panel::after {
+    content:"";
+    position:absolute;
+    width:390px;
+    height:390px;
+    border:1px solid rgba(197,163,107,.13);
+    border-radius:50%;
+    right:150px;
+    top:-270px;
+    pointer-events:none;
+}
+
+.contact-copy {
+    position:relative;
+    z-index:1;
+}
+
+.contact-copy .eyebrow {
+    color:var(--gold);
+    margin-bottom:22px;
+}
+
+.contact-copy h2 {
+    font-family:var(--sans);
+    font-size:clamp(35px,4.5vw,60px);
+    letter-spacing:-2px;
+    line-height:1.08;
+    margin-bottom:22px;
+}
+
+.contact-copy p {
+    color:#bdb6a9;
+    max-width:650px;
+    font-size:13px;
+    line-height:1.95;
+}
+
+.contact-button {
+    position:relative;
+    z-index:1;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    padding:19px 24px;
+    background:var(--bronze);
+    color:white;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:800;
+    white-space:nowrap;
+    transition:.3s ease;
+}
+
+.contact-button:hover {
+    background:var(--gold);
+    color:var(--black);
+}
+
+.contact-button span {
+    font-size:19px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    background:var(--black);
+    color:var(--ivory);
+    padding:85px 0 30px;
+    border-top:1px solid rgba(197,163,107,.22);
+}
+
+.footer-main {
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:65px;
+    padding-bottom:70px;
+}
+
+.footer-brand {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:23px;
+    font-family:var(--sans);
+    font-size:16px;
+    letter-spacing:1px;
+    font-weight:800;
+}
+
+.footer-brand img {
+    width:43px;
+    height:43px;
+    object-fit:contain;
+}
+
+.footer-description {
+    max-width:310px;
+    color:#aaa396;
+    font-size:12px;
+    line-height:1.9;
+}
+
+.footer-slogan {
+    margin-top:24px;
+    color:var(--gold);
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:2px;
+    line-height:1.8;
+}
+
+.footer-column h3 {
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:23px;
+}
+
+.footer-column a {
+    display:block;
+    color:#bdb6a9;
+    font-size:12px;
+    margin-bottom:13px;
+    transition:.2s ease;
+}
+
+.footer-column a:hover {
+    color:var(--gold);
+    transform:translateX(3px);
+}
+
+.footer-bottom {
+    border-top:1px solid var(--line-dark);
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    color:#8f897e;
+    font-size:10px;
+    letter-spacing:.5px;
+}
+
+.footer-bottom strong {
+    color:var(--gold);
+    font-weight:600;
+}
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+.back-top {
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:43px;
+    height:43px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--bronze);
+    color:white;
+    border:0;
+    z-index:50;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:.3s ease;
+    font-size:18px;
+}
+
+.back-top.visible {
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.back-top:hover {
+    background:var(--black);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px) {
+    .container {
+        width:min(100% - 60px, var(--container));
     }
-}
 
-/* =================================
-   TABLET
-================================= */
-
-@media(max-width:950px) {
-    .hero-inner {
-        grid-template-columns:1fr .55fr;
-        gap:35px;
-    }
-
-    .destination-grid {
+    .directory-grid {
         grid-template-columns:repeat(2,1fr);
     }
 
-    .destination-card:nth-child(4n+1) {
-        border-left:0;
-    }
-
-    .destination-card:nth-child(2n+1) {
-        border-left:1px solid var(--line);
-    }
-
-    .faq-area {
+    .search-layout {
         gap:45px;
     }
 
-    .footer-top {
-        grid-template-columns:repeat(2,1fr);
+    .faq-category {
+        grid-template-columns:230px 1fr;
+        gap:40px;
+    }
+
+    .magazine-layout {
+        gap:45px;
+    }
+
+    .footer-main {
+        gap:35px;
     }
 }
 
-/* =================================
-   MOBILE
-================================= */
+@media(max-width:760px) {
+    .container {
+        width:calc(100% - 38px);
+    }
 
-@media(max-width:650px) {
-    .container,
-    .footer-inner {
-        width:calc(100% - 36px);
+    .topbar {
+        height:auto;
+        min-height:76px;
+        padding:14px 0;
     }
 
     .topbar-inner {
-        width:calc(100% - 30px);
-        min-height:68px;
-        gap:10px;
+        width:calc(100% - 34px);
+        gap:12px;
+        flex-wrap:wrap;
+    }
+
+    .topbar-left {
+        order:2;
+        width:100%;
+        justify-content:space-between;
+        border-top:1px solid rgba(255,255,255,.1);
+        padding-top:10px;
+    }
+
+    .topbar-right {
+        order:1;
+        width:100%;
+        justify-content:space-between;
     }
 
     .topbar-brand {
-        gap:7px;
+        font-size:13px;
     }
 
     .topbar-brand img {
@@ -1270,274 +1508,284 @@ select:focus-visible {
         height:30px;
     }
 
-    .topbar-brand span {
-        font-size:11px;
-        letter-spacing:.5px;
-    }
-
-    .topbar-actions {
-        gap:10px;
-    }
-
-    .translate-area {
-        gap:5px;
-    }
-
     .translate-label {
-        display:none;
-    }
-
-    .translate-select {
-        max-width:105px;
-        padding:8px 5px;
-        font-size:10px;
+        font-size:9px;
     }
 
     .top-menu summary {
-        padding:10px 11px;
         font-size:9px;
-        letter-spacing:.5px;
-    }
-
-    .top-menu summary::after {
-        margin-left:6px;
     }
 
     .top-menu-list {
-        width:215px;
+        top:calc(100% + 10px);
+        width:230px;
     }
 
     .hero {
-        padding:60px 0 35px;
+        padding:68px 0 55px;
     }
 
     .hero-inner {
-        display:block;
+        grid-template-columns:1fr;
+        gap:28px;
     }
 
-    .hero-logo {
-        width:60px;
-        height:60px;
-        margin-bottom:25px;
+    .hero-emblem {
+        width:92px;
+        height:92px;
+    }
+
+    .hero-emblem img {
+        width:62px;
+        height:62px;
+    }
+
+    .hero-emblem::before {
+        inset:6px;
     }
 
     .hero h1 {
-        font-size:57px;
+        font-size:clamp(48px,13vw,76px);
         letter-spacing:-3px;
     }
 
-    .hero-copy {
-        font-size:13px;
+    .hero-description {
+        font-size:14px;
     }
 
-    .hero-side {
-        margin-top:40px;
-        padding-left:20px;
+    .hero-bottom {
+        margin-top:48px;
+        align-items:flex-start;
+        flex-direction:column;
+        gap:14px;
     }
 
-    .hero-side-number {
-        font-size:45px;
+    .visual-intro {
+        padding-bottom:65px;
     }
 
-    .hero-visual {
-        padding-bottom:40px;
+    .visual-frame,
+    .visual-frame img {
+        min-height:520px;
     }
 
-    .hero-visual-frame {
-        height:470px;
-        min-height:0;
-    }
-
-    .hero-visual-frame > img {
+    .visual-frame img {
         object-position:60% center;
     }
 
-    .hero-visual-content {
+    .visual-overlay {
+        background:linear-gradient(90deg,rgba(23,23,21,.88),rgba(23,23,21,.3)),
+                   linear-gradient(0deg,rgba(23,23,21,.65),transparent 70%);
+    }
+
+    .visual-content {
         left:25px;
-        right:20px;
-        bottom:35px;
+        width:calc(100% - 50px);
+        top:43%;
     }
 
-    .hero-visual-content h2 {
-        font-size:43px;
-        letter-spacing:-1.5px;
+    .visual-content h2 {
+        font-size:48px;
     }
 
-    .hero-visual-content p {
-        font-size:12px;
+    .visual-content p {
+        font-size:13px;
     }
 
-    .hero-strip {
-        align-items:flex-start;
-        flex-direction:column;
-        gap:12px;
+    .visual-strip {
+        left:25px;
+        bottom:28px;
+        max-width:65%;
+        line-height:1.8;
+        font-size:8px;
     }
 
-    .hero-strip span {
-        font-size:9px;
+    .visual-action {
+        right:22px;
+        bottom:28px;
+        font-size:8px;
+        gap:7px;
     }
 
-    .search-section {
+    .search-section,
+    .directory-section,
+    .faq-section,
+    .magazine-section,
+    .contact-section {
         padding:75px 0;
     }
 
-    .search-heading h2 {
-        font-size:36px;
+    .search-layout {
+        grid-template-columns:1fr;
+        gap:35px;
     }
 
-    .search-control input {
-        font-size:12px;
-    }
-
-    .search-control button {
-        padding:13px 15px;
-        font-size:9px;
+    .search-panel {
+        padding:23px 19px;
     }
 
     .search-meta {
         flex-direction:column;
-        gap:7px;
     }
 
-    .search-results {
+    .directory-heading {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+        margin-bottom:38px;
+    }
+
+    .directory-grid {
         grid-template-columns:1fr;
     }
 
-    .directory-section {
-        padding:75px 0;
+    .directory-card {
+        min-height:220px;
+        padding:25px 22px;
     }
 
-    .section-topline {
-        flex-direction:column;
-        align-items:flex-start;
-        gap:12px;
+    .faq-intro {
+        grid-template-columns:1fr;
+        gap:40px;
+        padding-bottom:45px;
     }
 
-    .section-index {
-        padding:0;
+    .faq-category {
+        grid-template-columns:1fr;
+        gap:25px;
+        padding:42px 0;
     }
 
-    .destination-grid {
-        grid-template-columns:1fr 1fr;
+    .faq-category-label {
+        max-width:400px;
     }
 
-    .destination-card {
-        min-height:195px;
-        padding:19px 13px;
-    }
-
-    .destination-card h3 {
-        font-size:14px;
-        margin-top:27px;
-    }
-
-    .destination-card p {
-        font-size:10px;
-    }
-
-    .destination-number {
-        font-size:8px;
-    }
-
-    .destination-card::after {
-        bottom:12px;
-        right:12px;
-    }
-
-    .faq-area {
-        display:block;
-        padding:80px 18px;
-    }
-
-    .faq-aside {
-        position:static;
-        margin-bottom:55px;
-    }
-
-    .faq-aside h2 {
-        font-size:43px;
-    }
-
-    .faq-section {
-        margin-bottom:50px;
-    }
-
-    .faq-section-heading h3 {
-        font-size:21px;
-    }
-
-    .faq-item summary {
-        font-size:12px;
+    .faq-question {
+        font-size:13px;
+        padding:20px 0;
     }
 
     .faq-answer {
-        padding-right:8px;
+        font-size:12px;
+        padding-right:20px;
     }
 
-    .faq-answer p {
-        font-size:11px;
-    }
-
-    .editorial-feature {
+    .magazine-layout {
         grid-template-columns:1fr;
+        gap:40px;
     }
 
-    .editorial-image {
-        min-height:340px;
+    .magazine-image,
+    .magazine-image a,
+    .magazine-image img {
+        min-height:430px;
     }
 
-    .editorial-copy {
-        padding:55px 25px 65px;
-    }
-
-    .editorial-copy h2 {
-        font-size:45px;
+    .magazine-copy h2 {
+        font-size:52px;
     }
 
     .contact-panel {
-        padding:85px 23px;
+        grid-template-columns:1fr;
+        padding:48px 27px;
+        gap:30px;
     }
 
-    .contact-panel h2 {
-        font-size:43px;
+    .contact-button {
+        justify-self:start;
     }
 
     .footer {
-        padding-top:55px;
+        padding-top:65px;
     }
 
-    .footer-top {
-        grid-template-columns:1fr 1fr;
-        gap:35px 20px;
+    .footer-main {
+        grid-template-columns:repeat(2,1fr);
+        gap:40px 25px;
+        padding-bottom:45px;
     }
 
-    .footer-brand {
+    .footer-brand-column {
         grid-column:1/-1;
-    }
-
-    .footer-motto {
-        font-size:20px;
-        letter-spacing:1.5px;
     }
 
     .footer-bottom {
         flex-direction:column;
         align-items:flex-start;
-        gap:8px;
+        line-height:1.8;
     }
 }
 
-@media(max-width:370px) {
-    .topbar-brand span {
-        font-size:9px;
+@media(max-width:420px) {
+    .hero h1 {
+        font-size:46px;
     }
 
-    .translate-select {
-        max-width:90px;
+    .visual-content h2 {
+        font-size:41px;
     }
 
-    .top-menu summary {
-        padding:9px 8px;
+    .visual-action {
+        display:none;
+    }
+
+    .footer-main {
+        grid-template-columns:1fr 1fr;
+        gap:35px 18px;
+    }
+
+    .footer-brand-column {
+        grid-column:1/-1;
+    }
+}
+
+/* =====================================================
+   GOOGLE TRANSLATE PROTECTION
+===================================================== */
+
+html {
+    top:0!important;
+}
+
+body {
+    top:0!important;
+    margin-top:0!important;
+    padding-top:0!important;
+}
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+#goog-gt-tt,
+.goog-te-menu-frame,
+iframe.goog-te-banner-frame,
+.skiptranslate iframe {
+    display:none!important;
+    visibility:hidden!important;
+}
+
+.goog-text-highlight {
+    background:transparent!important;
+    box-shadow:none!important;
+}
+
+body > .skiptranslate {
+    display:none!important;
+}
+
+#google_translate_element {
+    position:relative;
+    z-index:10;
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:auto!important;
+        transition:none!important;
+        animation:none!important;
     }
 }
 </style>
@@ -1545,62 +1793,31 @@ select:focus-visible {
 
 <body>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
-<div id="google_translate_element"></div>
-
-<!-- =================================
-     TOP NAVIGATION
-================================= -->
+<!-- ===================================================
+     HEADER
+=================================================== -->
 
 <header class="topbar">
-
     <div class="topbar-inner">
 
-        <a href="/" class="topbar-brand">
-            <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
-            <span>PHRINUSOMYIS™</span>
-        </a>
-
-        <div class="topbar-actions">
-
+        <div class="topbar-left">
             <div class="translate-area">
                 <span class="translate-label">Language</span>
-
-                <select
-                    class="translate-select"
-                    id="languageSelector"
-                    aria-label="Select language"
-                >
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                    <option value="es">Español</option>
-                    <option value="de">Deutsch</option>
-                    <option value="ar">العربية</option>
-                    <option value="zh-CN">中文</option>
-                    <option value="ru">Русский</option>
-                    <option value="pt">Português</option>
-                    <option value="ja">日本語</option>
-                    <option value="ko">한국어</option>
-                    <option value="it">Italiano</option>
-                    <option value="nl">Nederlands</option>
-                    <option value="tr">Türkçe</option>
-                    <option value="hi">हिन्दी</option>
-                    <option value="id">Bahasa Indonesia</option>
-                    <option value="vi">Tiếng Việt</option>
-                    <option value="th">ไทย</option>
-                    <option value="pl">Polski</option>
-                    <option value="sv">Svenska</option>
-                    <option value="fi">Suomi</option>
-                    <option value="da">Dansk</option>
-                </select>
+                <div id="google_translate_element"></div>
             </div>
+        </div>
+
+        <div class="topbar-right">
+
+            <a href="/" class="topbar-brand">
+                <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+                <span>PHRINUSOMYIS™</span>
+            </a>
 
             <details class="top-menu">
-
                 <summary>Explore</summary>
 
-                <div class="top-menu-list">
+                <nav class="top-menu-list" aria-label="Main navigation">
                     <a href="/">Homepage</a>
                     <a href="/newswire/news">Newswire</a>
                     <a href="/magazine/news">Magazine</a>
@@ -1610,103 +1827,93 @@ select:focus-visible {
                     <a href="/copyright">Copyright</a>
                     <a href="/policy">Privacy Policy</a>
                     <a href="/help">Help Centre</a>
-                </div>
-
+                </nav>
             </details>
 
         </div>
-
     </div>
-
 </header>
 
-<main id="main-content">
 
-<!-- =================================
-     INTRODUCTORY HERO
-================================= -->
+<main>
+
+<!-- ===================================================
+     HERO
+=================================================== -->
 
 <section class="hero">
-
     <div class="container">
 
         <div class="hero-inner">
 
-            <div>
+            <div class="hero-emblem">
+                <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS emblem">
+            </div>
 
-                <img
-                    src="/phrinusomyis_logo.png"
-                    class="hero-logo"
-                    alt="PHRINUSOMYIS emblem"
-                >
+            <div class="hero-copy">
 
                 <div class="eyebrow">
                     Official Information &amp; Assistance
                 </div>
 
                 <h1>
-                    The Help
+                    The Help<br>
                     <span>Centre.</span>
                 </h1>
 
-                <p class="hero-copy">
+                <p class="hero-description">
                     Information, guidance and official resources from
                     PHRINUSOMYIS™. Find the answers you need and navigate
-                    the organization's publications, policies and
-                    contact channels.
-                </p>
-
-                <div class="hero-bottom">
-                    <div class="gold-line"></div>
-                    <span>Official Information. Established Authority.</span>
-                </div>
-
-            </div>
-
-            <div class="hero-side">
-
-                <div class="hero-side-number">01</div>
-
-                <div class="eyebrow">Information &amp; Access</div>
-
-                <p>
-                    One official destination for organizational
-                    information, sporting identity, publications,
-                    policies and assistance.
+                    the organization's publications, policies and contact
+                    channels.
                 </p>
 
             </div>
 
         </div>
 
-    </div>
+        <div class="hero-bottom">
+            <span class="hero-bottom-label">
+                Official Information · Direct Access · Clear Answers
+            </span>
 
+            <span class="hero-bottom-mark">
+                PHRINUSOMYIS™
+            </span>
+        </div>
+
+    </div>
 </section>
 
-<!-- =================================
-     MAIN IMAGE FEATURE
-================================= -->
 
-<section class="hero-visual">
+<!-- ===================================================
+     CHRONICLE IMAGE HERO
+=================================================== -->
+
+<section class="visual-intro">
 
     <div class="container">
 
-        <div class="hero-visual-frame">
+        <div class="visual-frame">
 
-            <img
-                src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
-                alt="PHRINUSOMYIS Magazine — The Chronicle, Edition 001"
-                fetchpriority="high"
-            >
+            <a href="/magazine/news" aria-label="Explore PHRINUSOMYIS Magazine">
+                <img
+                    src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
+                    alt="PHRINUSOMYIS Magazine — The Chronicle"
+                    fetchpriority="high"
+                >
+            </a>
 
-            <div class="hero-visual-content">
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
 
                 <div class="eyebrow">
                     PHRINUSOMYIS™ Help Centre
                 </div>
 
                 <h2>
-                    Clarity Across
+                    Clarity Across<br>
                     Every Direction.
                 </h2>
 
@@ -1717,155 +1924,314 @@ select:focus-visible {
 
             </div>
 
-        </div>
+            <div class="visual-strip">
+                Official information. Direct access. Clear answers.
+            </div>
 
-        <div class="hero-strip">
-            <span>Official information. Direct access. Clear answers.</span>
-            <a href="#official-directory">
-                Explore the directory &nbsp; ↘
+            <a href="#official-directory" class="visual-action">
+                Explore the directory <span>↗</span>
             </a>
+
         </div>
 
     </div>
 
 </section>
 
-<!-- =================================
-     SEARCH CENTRE
-================================= -->
+
+<!-- ===================================================
+     SEARCH
+=================================================== -->
 
 <section class="search-section" id="help-search">
 
     <div class="container">
 
-        <div class="search-heading">
+        <div class="search-layout">
 
-            <div class="eyebrow">Find What You Need</div>
+            <div class="search-heading">
 
-            <h2>Search the Help Centre</h2>
+                <div class="eyebrow">
+                    Information Access
+                </div>
 
-            <p>
-                Search in your selected language to find relevant
-                information and answers.
-            </p>
+                <h2>
+                    Find What<br>
+                    You Need.
+                </h2>
+
+                <p>
+                    Search in your selected language to find relevant
+                    information and answers across the Help Centre.
+                </p>
+
+            </div>
+
+            <div class="search-panel">
+
+                <div class="section-kicker" style="margin-bottom:23px;">
+                    Search the Help Centre
+                </div>
+
+                <div class="search-box">
+
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.7"
+                         aria-hidden="true">
+                        <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                        <path d="m16 16 5 5"></path>
+                    </svg>
+
+                    <input
+                        type="search"
+                        id="helpSearch"
+                        placeholder="Search information, publications, policies..."
+                        autocomplete="off"
+                        aria-label="Search Help Centre"
+                        aria-controls="searchResults"
+                    >
+
+                    <button class="clear-search" id="clearSearch" type="button">
+                        Clear
+                    </button>
+
+                </div>
+
+                <div class="search-meta">
+                    <span>
+                        Search across official destinations and frequently asked questions.
+                    </span>
+
+                    <span id="searchStatus" aria-live="polite">
+                        Ready to search.
+                    </span>
+                </div>
+
+                <div id="searchResults" aria-live="polite"></div>
+
+            </div>
 
         </div>
-
-        <div class="search-control">
-
-            <input
-                type="search"
-                id="helpSearch"
-                placeholder="Search information, publications, policies..."
-                autocomplete="off"
-                aria-label="Search Help Centre"
-                aria-controls="searchResults"
-            >
-
-            <button type="button" id="clearSearch">
-                Clear
-            </button>
-
-        </div>
-
-        <div class="search-meta">
-
-            <span>
-                Search across official destinations and frequently
-                asked questions.
-            </span>
-
-            <span id="searchStatus" role="status" aria-live="polite">
-                Ready to search.
-            </span>
-
-        </div>
-
-        <div
-            id="searchResults"
-            class="search-results"
-            aria-live="polite"
-        ></div>
 
     </div>
 
 </section>
 
-<!-- =================================
+
+<!-- ===================================================
      OFFICIAL DIRECTORY
-================================= -->
+=================================================== -->
 
 <section class="directory-section" id="official-directory">
 
     <div class="container">
 
-        <div class="section-topline">
+        <div class="directory-heading">
 
-            <div>
-                <div class="eyebrow">Navigate PHRINUSOMYIS™</div>
+            <div class="directory-heading-left">
 
-                <h2 class="section-title">Official Directory</h2>
+                <div class="eyebrow">
+                    Official Destinations
+                </div>
 
-                <p class="section-description">
-                    Direct access to the organization's active
-                    information, publication and policy pages.
-                </p>
+                <h2 class="section-heading">
+                    The Official<br>
+                    Directory.
+                </h2>
+
             </div>
 
-            <span class="section-index">
-                01 — 08 / DIRECTORY
-            </span>
+            <p class="section-intro">
+                Direct access to the principal information, publication,
+                enquiry and policy destinations of PHRINUSOMYIS™.
+            </p>
 
         </div>
 
-        <div class="destination-grid">
 
-            <a href="/" class="destination-card">
-                <span class="destination-number">01 / ORGANIZATION</span>
-                <h3>PHRINUSOMYIS™</h3>
-                <p>Official organizational information and identity.</p>
+        <div class="directory-grid">
+
+            <a href="/" class="directory-card searchable-item"
+               data-search="organization phrinusomyis official organizational information identity homepage">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">01</span>
+                    <span class="directory-category">Organization</span>
+                </div>
+
+                <div>
+                    <h3>PHRINUSOMYIS™</h3>
+                    <p>
+                        Official organizational information and identity.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
-            <a href="/newswire/news" class="destination-card">
-                <span class="destination-number">02 / NEWS</span>
-                <h3>Newswire</h3>
-                <p>Official announcements, news releases and statements.</p>
+
+            <a href="/newswire/news" class="directory-card searchable-item"
+               data-search="news newswire announcements releases statements">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">02</span>
+                    <span class="directory-category">News</span>
+                </div>
+
+                <div>
+                    <h3>Newswire</h3>
+                    <p>
+                        Official announcements, news releases and statements.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
-            <a href="/magazine/news" class="destination-card">
-                <span class="destination-number">03 / EDITORIAL</span>
-                <h3>Magazine</h3>
-                <p>Editorial features, stories and photography.</p>
+
+            <a href="/magazine/news" class="directory-card searchable-item"
+               data-search="editorial magazine stories photography sporting perspectives features">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">03</span>
+                    <span class="directory-category">Editorial</span>
+                </div>
+
+                <div>
+                    <h3>Magazine</h3>
+                    <p>
+                        Editorial features, stories and photography.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
-            <a href="/contact" class="destination-card">
-                <span class="destination-number">04 / ENQUIRIES</span>
-                <h3>Contact</h3>
-                <p>Official contact channels and departmental enquiries.</p>
+
+            <a href="/contact" class="directory-card searchable-item"
+               data-search="enquiries contact departments official contact channels">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">04</span>
+                    <span class="directory-category">Enquiries</span>
+                </div>
+
+                <div>
+                    <h3>Contact</h3>
+                    <p>
+                        Official contact channels and departmental enquiries.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
-            <a href="/terms" class="destination-card">
-                <span class="destination-number">05 / LEGAL</span>
-                <h3>Terms of Use</h3>
-                <p>Terms governing the use of official pages and content.</p>
+
+            <a href="/terms" class="directory-card searchable-item"
+               data-search="legal terms use conditions website content">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">05</span>
+                    <span class="directory-category">Legal</span>
+                </div>
+
+                <div>
+                    <h3>Terms of Use</h3>
+                    <p>
+                        Terms governing the use of official pages and content.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
-            <a href="/accessibility" class="destination-card">
-                <span class="destination-number">06 / ACCESS</span>
-                <h3>Accessibility</h3>
-                <p>Accessibility information and related guidance.</p>
+
+            <a href="/accessibility" class="directory-card searchable-item"
+               data-search="accessibility access guidance website information">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">06</span>
+                    <span class="directory-category">Access</span>
+                </div>
+
+                <div>
+                    <h3>Accessibility</h3>
+                    <p>
+                        Accessibility information and related guidance.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
-            <a href="/copyright" class="destination-card">
-                <span class="destination-number">07 / OWNERSHIP</span>
-                <h3>Copyright</h3>
-                <p>Copyright and intellectual property information.</p>
+
+            <a href="/copyright" class="directory-card searchable-item"
+               data-search="ownership copyright intellectual property rights">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">07</span>
+                    <span class="directory-category">Ownership</span>
+                </div>
+
+                <div>
+                    <h3>Copyright</h3>
+                    <p>
+                        Copyright and intellectual property information.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
-            <a href="/policy" class="destination-card">
-                <span class="destination-number">08 / PRIVACY</span>
-                <h3>Privacy Policy</h3>
-                <p>Privacy information and personal data practices.</p>
+
+            <a href="/policy" class="directory-card searchable-item"
+               data-search="privacy policy personal data information practices">
+
+                <div class="directory-card-top">
+                    <span class="directory-number">08</span>
+                    <span class="directory-category">Privacy</span>
+                </div>
+
+                <div>
+                    <h3>Privacy Policy</h3>
+                    <p>
+                        Privacy information and personal data practices.
+                    </p>
+                </div>
+
+                <div class="directory-link">
+                    <span>Visit destination</span>
+                    <span>↗</span>
+                </div>
+
             </a>
 
         </div>
@@ -1874,540 +2240,630 @@ select:focus-visible {
 
 </section>
 
-<!-- =================================
-     FAQ CONTENT
-================================= -->
 
-<section class="faq-area" aria-label="Frequently asked questions">
+<!-- ===================================================
+     QUESTIONS AND ANSWERS
+=================================================== -->
 
-    <aside class="faq-aside">
+<section class="faq-section" id="questions">
 
-        <div class="eyebrow">Information Centre</div>
+    <div class="container">
 
-        <h2>Questions &amp; Answers.</h2>
+        <div class="faq-intro">
 
-        <p>
-            Explore essential information about PHRINUSOMYIS™,
-            its sporting identity, official publications,
-            organizational enquiries and policies.
-        </p>
+            <aside class="faq-aside">
 
-        <div class="faq-aside-line"></div>
+                <div class="section-kicker">
+                    Information Centre
+                </div>
 
-    </aside>
+                <h3>
+                    Questions &amp;<br>
+                    Answers.
+                </h3>
 
-    <div class="faq-content">
+                <p>
+                    Explore essential information about PHRINUSOMYIS™,
+                    its sporting identity, official publications,
+                    organizational enquiries and policies.
+                </p>
 
-        <!-- ORGANIZATION -->
+            </aside>
 
-        <section class="faq-section" id="organization">
 
-            <div class="faq-section-heading">
-                <span>01 / Organization</span>
+            <div class="faq-main-heading">
+
+                <div class="eyebrow">
+                    Help &amp; Guidance
+                </div>
+
+                <h2>
+                    Information.<br>
+                    Without Ambiguity.
+                </h2>
+
+                <p>
+                    The Help Centre brings together essential answers
+                    and official information across the organization.
+                    Select a subject to explore its related guidance.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORY 01 -->
+
+        <div class="faq-category searchable-item"
+             data-search="organization about phrinusomyis international sports organization headquarters new york information contact">
+
+            <div class="faq-category-label">
+                <div class="number">01</div>
+                <span class="category-type">Organization</span>
                 <h3>About PHRINUSOMYIS™</h3>
-                <p>General information about the organization.</p>
             </div>
 
-            <details class="faq-item">
-                <summary>What is PHRINUSOMYIS™?</summary>
-                <div class="faq-answer">
-                    <p>
-                        PHRINUSOMYIS™ is an international sports
-                        organization that develops, owns and administers
-                        sports competitions and ZEAVIQ SPORTS™ worldwide.
-                    </p>
-                </div>
-            </details>
+            <div class="faq-list">
 
-            <details class="faq-item">
-                <summary>What does PHRINUSOMYIS™ do?</summary>
-                <div class="faq-answer">
-                    <p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What is PHRINUSOMYIS™?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        PHRINUSOMYIS™ is an international sports organization
+                        that develops, owns and administers sports competitions
+                        and ZEAVIQ SPORTS™ worldwide.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What does PHRINUSOMYIS™ do?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
                         PHRINUSOMYIS™ develops and administers sports
-                        competitions, creates original sports formats
-                        and leads ZEAVIQ SPORTS™.
-                    </p>
+                        competitions, creates original sports formats and
+                        leads ZEAVIQ SPORTS™.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Where is PHRINUSOMYIS™ headquartered?</summary>
-                <div class="faq-answer">
-                    <p>
-                        New York, USA, is the headquarters of
-                        PHRINUSOMYIS™.
-                    </p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where is PHRINUSOMYIS™ headquartered?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        New York, USA is the headquarters of PHRINUSOMYIS™.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Where can I find official information about PHRINUSOMYIS™?</summary>
-                <div class="faq-answer">
-                    <p>
-                        The official homepage provides organizational
-                        information and direct access to the organization's
-                        active publication and information pages.
-                    </p>
-                    <p><a href="/">Visit the official homepage</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I find official information about PHRINUSOMYIS™?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The <a href="/">official homepage</a> provides
+                        organizational information and access to the active
+                        publication and information pages.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>How can I contact the organization?</summary>
-                <div class="faq-answer">
-                    <p>
-                        General enquiries and department-specific
-                        enquiries can be directed through the official
-                        Contact page.
-                    </p>
-                    <p><a href="/contact">Visit Contact</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>How can I contact the organization?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        General and department enquiries can be directed
+                        through the official
+                        <a href="/contact">Contact page</a>.
+                    </div>
                 </div>
-            </details>
 
-        </section>
-
-        <!-- SPORTING IDENTITY -->
-
-        <section class="faq-section" id="sporting-identity">
-
-            <div class="faq-section-heading">
-                <span>02 / Sporting Identity</span>
-                <h3>ZEAVIQ SPORTS™ &amp; VIKQUATHEL™</h3>
-                <p>Information about the organization's sporting identity.</p>
             </div>
 
-            <details class="faq-item">
-                <summary>What is ZEAVIQ SPORTS™?</summary>
-                <div class="faq-answer">
-                    <p>
-                        ZEAVIQ SPORTS™ is part of the sporting identity
+        </div>
+
+
+        <!-- CATEGORY 02 -->
+
+        <div class="faq-category searchable-item"
+             data-search="sporting identity zeaviq sports vikquathel competitions sports formats participation">
+
+            <div class="faq-category-label">
+                <div class="number">02</div>
+                <span class="category-type">Sporting Identity</span>
+                <h3>ZEAVIQ SPORTS™ &amp; VIKQUATHEL™</h3>
+            </div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What is ZEAVIQ SPORTS™?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        ZEAVIQ SPORTS™ forms part of the sporting identity
                         and activities of PHRINUSOMYIS™, encompassing
                         original sports formats and competitive experiences.
-                    </p>
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Is ZEAVIQ SPORTS™ part of PHRINUSOMYIS™?</summary>
-                <div class="faq-answer">
-                    <p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Is ZEAVIQ SPORTS™ part of PHRINUSOMYIS™?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
                         Yes. ZEAVIQ SPORTS™ is part of PHRINUSOMYIS™
                         and its sporting activities.
-                    </p>
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>What is VIKQUATHEL™?</summary>
-                <div class="faq-answer">
-                    <p>
-                        VIKQUATHEL™ is a competition within the
-                        ZEAVIQ SPORTS™ sporting identity.
-                    </p>
-                    <p>
-                        Official information and announcements are
-                        communicated through PHRINUSOMYIS™ channels.
-                    </p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What is VIKQUATHEL™?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        VIKQUATHEL™ is a competition within the ZEAVIQ
+                        SPORTS™ sporting identity. Official information
+                        and announcements are communicated through
+                        PHRINUSOMYIS™ channels.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Where can I find information about sports and competitions?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Visit the official homepage and Newswire
-                        for organizational information and published
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I find information about sports and competitions?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The <a href="/">homepage</a> and
+                        <a href="/newswire/news">Newswire</a> provide
+                        organizational information and published
                         competition announcements.
-                    </p>
-                    <p>
-                        <a href="/">Homepage</a> &nbsp;|&nbsp;
-                        <a href="/newswire/news">Newswire</a>
-                    </p>
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>How can I make a competition or participation enquiry?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Direct your enquiry through the official
-                        Contact page and identify the competition
-                        or participation subject.
-                    </p>
-                    <p><a href="/contact">Contact PHRINUSOMYIS™</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>How can I make a competition or participation enquiry?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Use the official <a href="/contact">Contact page</a>
+                        and identify the competition or participation
+                        subject of your enquiry.
+                    </div>
                 </div>
-            </details>
 
-        </section>
+            </div>
 
-        <!-- NEWSWIRE AND MAGAZINE -->
+        </div>
 
-        <section class="faq-section" id="publications">
 
-            <div class="faq-section-heading">
-                <span>03 / Publications</span>
+        <!-- CATEGORY 03 -->
+
+        <div class="faq-category searchable-item"
+             data-search="publications newswire magazine editorial announcements news releases stories photography media">
+
+            <div class="faq-category-label">
+                <div class="number">03</div>
+                <span class="category-type">Publications</span>
                 <h3>Newswire &amp; Magazine</h3>
-                <p>Official announcements and editorial publications.</p>
             </div>
 
-            <details class="faq-item">
-                <summary>What is the PHRINUSOMYIS™ Newswire?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Newswire is the organization's publication
-                        channel for official announcements, news
-                        releases and organizational statements.
-                    </p>
-                    <p><a href="/newswire/news">Visit Newswire</a></p>
-                </div>
-            </details>
+            <div class="faq-list">
 
-            <details class="faq-item">
-                <summary>What is the PHRINUSOMYIS™ Magazine?</summary>
-                <div class="faq-answer">
-                    <p>
-                        PHRINUSOMYIS™ Magazine presents sporting
-                        perspectives, editorial features, stories,
-                        photography and selected editorial coverage.
-                    </p>
-                    <p><a href="/magazine/news">Visit Magazine</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What is the PHRINUSOMYIS™ Newswire?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The PHRINUSOMYIS™ Newswire is the publication
+                        channel for official announcements, news releases
+                        and organizational statements.
+                        <a href="/newswire/news">Visit Newswire.</a>
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>What is the difference between Newswire and Magazine?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Newswire is dedicated to official announcements,
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What is PHRINUSOMYIS™ Magazine?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        PHRINUSOMYIS™ Magazine presents sporting perspectives,
+                        editorial features, stories, photography and selected
+                        editorial coverage.
+                        <a href="/magazine/news">Explore Magazine.</a>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What is the difference between Newswire and Magazine?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Newswire communicates official announcements,
                         news releases and organizational statements.
-                        Magazine is dedicated to editorial features,
-                        photography, stories and selected coverage.
-                    </p>
+                        Magazine presents editorial features, photography,
+                        stories and selected coverage.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Where can I find the latest official announcements?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Official announcements and organizational
-                        statements are published through Newswire.
-                    </p>
-                    <p><a href="/newswire/news">Read Newswire</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I find the latest official announcements?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Official announcements are published through
+                        the <a href="/newswire/news">PHRINUSOMYIS™ Newswire</a>.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>How can journalists and media representatives contact PHRINUSOMYIS™?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Press and media enquiries can be directed
-                        through the official Contact page.
-                    </p>
-                    <p><a href="/contact">Visit Contact</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>How can journalists and media representatives contact PHRINUSOMYIS™?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Press and media enquiries can be directed through
+                        the official <a href="/contact">Contact page</a>.
+                    </div>
                 </div>
-            </details>
 
-        </section>
+            </div>
 
-        <!-- EVENTS, PARTNERSHIPS AND EMPLOYMENT -->
+        </div>
 
-        <section class="faq-section" id="enquiries">
 
-            <div class="faq-section-heading">
-                <span>04 / Organizational Enquiries</span>
+        <!-- CATEGORY 04 -->
+
+        <div class="faq-category searchable-item"
+             data-search="organizational enquiries events partnerships employment recruitment professional cooperation">
+
+            <div class="faq-category-label">
+                <div class="number">04</div>
+                <span class="category-type">Organizational Enquiries</span>
                 <h3>Events, Partnerships &amp; Employment</h3>
-                <p>
-                    Official enquiry routes for organizations,
-                    professionals and interested parties.
-                </p>
             </div>
 
-            <details class="faq-item">
-                <summary>Where can I find confirmed event information?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Refer to official PHRINUSOMYIS™ announcements.
-                        Confirmed event dates, locations and other
-                        details should be taken from the relevant
-                        published communication.
-                    </p>
-                    <p><a href="/newswire/news">Visit Newswire</a></p>
-                </div>
-            </details>
+            <div class="faq-list">
 
-            <details class="faq-item">
-                <summary>How can I make an event-related enquiry?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Event-related enquiries can be directed
-                        through the official Contact page.
-                        Identify the event or subject of your enquiry.
-                    </p>
-                    <p><a href="/contact">Contact the organization</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I find confirmed event information?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Confirmed event information is communicated through
+                        official announcements. Dates, locations and event
+                        details should be taken from published
+                        <a href="/newswire/news">PHRINUSOMYIS™ communications</a>.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Can organizations approach PHRINUSOMYIS™ about partnerships?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Organizations may direct partnership and
-                        cooperation enquiries through the official
-                        Contact page. Include the organization name,
-                        proposed area of cooperation and relevant
-                        contact information.
-                    </p>
-                    <p><a href="/contact">Submit a partnership enquiry</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>How can I make an event-related enquiry?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Event-related enquiries can be submitted through
+                        the <a href="/contact">Contact page</a>.
+                        Identify the event and the subject of your enquiry.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Where can I direct an employment or recruitment enquiry?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Employment and recruitment enquiries can
-                        be directed through the official Contact page.
-                        Include your professional background and
-                        the area of work concerned.
-                    </p>
-                    <p><a href="/contact">Visit Contact</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Can organizations approach PHRINUSOMYIS™ about partnerships?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Organizations may submit partnership and cooperation
+                        enquiries through the <a href="/contact">Contact page</a>.
+                        Include the organization name, proposed cooperation
+                        and relevant contact information.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>What should I include in a professional enquiry?</summary>
-                <div class="faq-answer">
-                    <p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I direct an employment or recruitment enquiry?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Employment and recruitment enquiries may be directed
+                        through the <a href="/contact">Contact page</a>.
+                        Include your professional background and area of work.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What should I include in a professional enquiry?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
                         Include your name, organization where relevant,
-                        the purpose of your enquiry and a concise
-                        description of the matter. Provide relevant
-                        supporting information where appropriate.
-                    </p>
+                        purpose of the enquiry, a concise description
+                        and any relevant supporting information.
+                    </div>
                 </div>
-            </details>
 
-        </section>
-
-        <!-- POLICIES AND ACCESSIBILITY -->
-
-        <section class="faq-section" id="policies">
-
-            <div class="faq-section-heading">
-                <span>05 / Policies &amp; Information</span>
-                <h3>Privacy, Copyright &amp; Accessibility</h3>
-                <p>Official policies and information about the website.</p>
             </div>
 
-            <details class="faq-item">
-                <summary>Where can I read the Privacy Policy?</summary>
-                <div class="faq-answer">
-                    <p>
-                        The organization's published Privacy Policy
-                        provides information about privacy and
-                        personal data practices.
-                    </p>
-                    <p><a href="/policy">Read the Privacy Policy</a></p>
-                </div>
-            </details>
+        </div>
 
-            <details class="faq-item">
-                <summary>Where can I read the Terms of Use?</summary>
-                <div class="faq-answer">
-                    <p>
-                        The Terms of Use are available through
-                        the organization's official Terms page.
-                    </p>
-                    <p><a href="/terms">Read Terms of Use</a></p>
-                </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Where can I find copyright and intellectual property information?</summary>
-                <div class="faq-answer">
-                    <p>
+        <!-- CATEGORY 05 -->
+
+        <div class="faq-category searchable-item"
+             data-search="policies privacy copyright accessibility terms personal data intellectual property report problem">
+
+            <div class="faq-category-label">
+                <div class="number">05</div>
+                <span class="category-type">Policies &amp; Information</span>
+                <h3>Privacy, Copyright &amp; Accessibility</h3>
+            </div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I read the Privacy Policy?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The official <a href="/policy">Privacy Policy</a>
+                        provides information about privacy and personal
+                        data practices.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I read the Terms of Use?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The official <a href="/terms">Terms of Use</a>
+                        page contains the terms governing the use
+                        of official pages and content.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I find copyright and intellectual property information?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
                         Copyright and intellectual property information
-                        is available through the official Copyright page.
-                    </p>
-                    <p><a href="/copyright">Read Copyright Information</a></p>
+                        is available on the official
+                        <a href="/copyright">Copyright page</a>.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>Where can I find accessibility information?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Visit the Accessibility page for published
-                        accessibility information and related guidance.
-                    </p>
-                    <p><a href="/accessibility">Visit Accessibility</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Where can I find accessibility information?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Accessibility information and related guidance
+                        are available on the official
+                        <a href="/accessibility">Accessibility page</a>.
+                    </div>
                 </div>
-            </details>
 
-            <details class="faq-item">
-                <summary>How can I report a problem with an official page?</summary>
-                <div class="faq-answer">
-                    <p>
-                        Identify the page, describe the issue and
-                        provide any relevant details through the
-                        official Contact page.
-                    </p>
-                    <p><a href="/contact">Report an issue</a></p>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>How can I report a problem with an official page?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Identify the page, describe the issue and provide
+                        relevant details through the official
+                        <a href="/contact">Contact page</a>.
+                    </div>
                 </div>
-            </details>
 
-        </section>
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
-<!-- =================================
-     EDITORIAL IMAGE FEATURE
-================================= -->
 
-<section class="editorial-feature">
+<!-- ===================================================
+     MAGAZINE FEATURE
+=================================================== -->
 
-    <div class="editorial-image">
+<section class="magazine-section">
 
-        <a
-            href="/magazine/news"
-            aria-label="Explore PHRINUSOMYIS Magazine"
-        >
-            <img
-                src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
-                alt="PHRINUSOMYIS Magazine — The MOMINANTS, Edition 001"
-                loading="lazy"
-            >
-        </a>
+    <div class="container">
 
-    </div>
+        <div class="magazine-layout">
 
-    <div class="editorial-copy">
+            <div class="magazine-image">
 
-        <div class="eyebrow">Explore the Publication</div>
+                <a href="/magazine/news"
+                   aria-label="Open PHRINUSOMYIS Magazine">
 
-        <h2>
-            Beyond the
-            Announcement.
-        </h2>
+                    <img
+                        src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
+                        alt="PHRINUSOMYIS Magazine — The Mominants"
+                        loading="lazy"
+                    >
 
-        <p>
-            Discover the editorial perspective of PHRINUSOMYIS™
-            Magazine, alongside official announcements and
-            organizational statements published through Newswire.
-        </p>
+                </a>
 
-        <a href="/magazine/news">
-            Explore Magazine <span>↗</span>
-        </a>
+                <div class="magazine-image-label">
+                    PHRINUSOMYIS™ Magazine · Edition 001
+                </div>
+
+            </div>
+
+
+            <div class="magazine-copy">
+
+                <div class="eyebrow">
+                    Explore the Publication
+                </div>
+
+                <h2>
+                    Beyond the<br>
+                    Announcement.
+                </h2>
+
+                <p>
+                    Discover the editorial perspective of PHRINUSOMYIS™
+                    Magazine, alongside official announcements and
+                    organizational statements published through Newswire.
+                </p>
+
+                <div class="magazine-meta">
+                    <span>Sporting Perspectives</span>
+                    <span>Editorial Coverage</span>
+                </div>
+
+                <a href="/magazine/news" class="text-link">
+                    Explore Magazine <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
-<!-- =================================
+
+<!-- ===================================================
      CONTACT
-================================= -->
+=================================================== -->
 
-<section class="contact-panel">
+<section class="contact-section">
 
-    <div class="eyebrow">Direct Assistance</div>
+    <div class="container">
 
-    <h2>
-        Your Enquiry.
-        <br>
-        The Right Channel.
-    </h2>
+        <div class="contact-panel">
 
-    <p>
-        For questions not addressed in this Help Centre,
-        contact PHRINUSOMYIS™ through its official contact page.
-        Select the relevant department and provide the details
-        of your enquiry.
-    </p>
+            <div class="contact-copy">
 
-    <a href="/contact">
-        Contact PHRINUSOMYIS™ <span>↗</span>
-    </a>
+                <div class="eyebrow">
+                    Direct Assistance
+                </div>
+
+                <h2>
+                    Your Enquiry.<br>
+                    The Right Channel.
+                </h2>
+
+                <p>
+                    For questions not addressed in this Help Centre,
+                    contact PHRINUSOMYIS™ through its official contact page.
+                    Select the relevant department and provide the details
+                    of your enquiry.
+                </p>
+
+            </div>
+
+            <a href="/contact" class="contact-button">
+                Contact PHRINUSOMYIS™ <span>↗</span>
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 </main>
 
-<!-- =================================
+
+<!-- ===================================================
      FOOTER
-================================= -->
+=================================================== -->
 
 <footer class="footer">
 
-    <div class="footer-inner">
+    <div class="container">
 
-        <div class="footer-top">
+        <div class="footer-main">
 
-            <div class="footer-brand">
+            <div class="footer-brand-column">
 
-                <img
-                    src="/phrinusomyis_logo.png"
-                    alt="PHRINUSOMYIS logo"
-                >
+                <a href="/" class="footer-brand">
+                    <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+                    <span>PHRINUSOMYIS™</span>
+                </a>
 
-                <strong>PHRINUSOMYIS™</strong>
-
-                <p>
+                <p class="footer-description">
                     An international sports organization.
-                    COMMANDING THE WORLD STAGE™
                 </p>
 
+                <div class="footer-slogan">
+                    COMMANDING THE WORLD STAGE™
+                </div>
+
             </div>
 
-            <div class="footer-column">
 
+            <div class="footer-column">
                 <h3>Organization</h3>
-
-                <ul>
-                    <li><a href="/">Homepage</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/help">Help Centre</a></li>
-                </ul>
-
+                <a href="/">Homepage</a>
+                <a href="/contact">Contact</a>
+                <a href="/help">Help Centre</a>
             </div>
 
-            <div class="footer-column">
 
+            <div class="footer-column">
                 <h3>Publications</h3>
-
-                <ul>
-                    <li><a href="/newswire/news">Newswire</a></li>
-                    <li><a href="/magazine/news">Magazine</a></li>
-                </ul>
-
+                <a href="/newswire/news">Newswire</a>
+                <a href="/magazine/news">Magazine</a>
             </div>
+
 
             <div class="footer-column">
-
                 <h3>Information</h3>
-
-                <ul>
-                    <li><a href="/policy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Use</a></li>
-                    <li><a href="/copyright">Copyright</a></li>
-                    <li><a href="/accessibility">Accessibility</a></li>
-                </ul>
-
+                <a href="/policy">Privacy Policy</a>
+                <a href="/terms">Terms of Use</a>
+                <a href="/copyright">Copyright</a>
+                <a href="/accessibility">Accessibility</a>
             </div>
 
         </div>
 
-        <div class="footer-motto">
-            COMMANDING THE WORLD STAGE™
-        </div>
 
         <div class="footer-bottom">
 
-            <span>© PHRINUSOMYIS™. All Rights Reserved.</span>
+            <span>
+                © PHRINUSOMYIS™. All Rights Reserved.
+            </span>
 
-            <span>Official Help Centre</span>
+            <strong>
+                COMMANDING THE WORLD STAGE™
+            </strong>
+
+            <span>
+                Official Help Centre
+            </span>
 
         </div>
 
@@ -2415,307 +2871,338 @@ select:focus-visible {
 
 </footer>
 
-<!-- =================================
-     HELP CENTRE SEARCH FUNCTION
-================================= -->
+
+<button class="back-top" id="backTop" type="button"
+        aria-label="Back to top">
+    ↑
+</button>
+
+
+<!-- ===================================================
+     FUNCTIONALITY
+=================================================== -->
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+/* -----------------------------------------------------
+   FAQ ACCORDION
+----------------------------------------------------- */
 
-    const searchInput = document.getElementById("helpSearch");
-    const clearButton = document.getElementById("clearSearch");
-    const resultsContainer = document.getElementById("searchResults");
-    const searchStatus = document.getElementById("searchStatus");
+document.querySelectorAll(".faq-question").forEach(function(button) {
 
-    const searchableItems = [];
+    button.addEventListener("click", function() {
 
-    // Register FAQ questions and answers.
+        const item = this.closest(".faq-item");
+        const wasOpen = item.classList.contains("open");
 
-    document.querySelectorAll(".faq-item").forEach(function (item) {
-
-        const section = item.closest(".faq-section");
-        const summary = item.querySelector("summary");
-
-        searchableItems.push({
-            title: summary.innerText.trim(),
-            content: item.innerText.trim(),
-            category: section.querySelector(".faq-section-heading h3").innerText,
-            element: item,
-            href: "#" + section.id
-        });
-
-    });
-
-    // Register official directory destinations.
-
-    document.querySelectorAll(".destination-card").forEach(function (card) {
-
-        searchableItems.push({
-            title: card.querySelector("h3").innerText.trim(),
-            content: card.innerText.trim(),
-            category: "Official Directory",
-            element: card,
-            href: card.getAttribute("href")
-        });
-
-    });
-
-    function normalize(value) {
-        return value
-            .toLocaleLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .trim();
-    }
-
-    function performSearch() {
-
-        const query = normalize(searchInput.value);
-
-        resultsContainer.innerHTML = "";
-
-        if (!query) {
-            searchStatus.textContent = "Ready to search.";
-            return;
-        }
-
-        const words = query.split(/\s+/).filter(Boolean);
-
-        const matches = searchableItems.filter(function (item) {
-
-            const searchableText = normalize(
-                item.title + " " + item.content + " " + item.category
-            );
-
-            return words.every(function (word) {
-                return searchableText.includes(word);
-            });
-
-        });
-
-        if (matches.length === 0) {
-
-            resultsContainer.innerHTML =
-                '<div class="search-empty">' +
-                'No matching information was found. Try another search term or visit the official directory.' +
-                '</div>';
-
-            searchStatus.textContent = "No results found.";
-            return;
-        }
-
-        searchStatus.textContent =
-            matches.length + " matching result(s) found.";
-
-        matches.slice(0, 20).forEach(function (item) {
-
-            const result = document.createElement("a");
-
-            result.className = "search-result";
-            result.href = item.href;
-
-            const category = document.createElement("small");
-            category.textContent = item.category;
-
-            const title = document.createElement("strong");
-            title.textContent = item.title;
-
-            const description = document.createElement("p");
-            description.textContent = item.content
-                .replace(/\s+/g, " ")
-                .slice(0, 155);
-
-            result.appendChild(category);
-            result.appendChild(title);
-            result.appendChild(description);
-
-            result.addEventListener("click", function () {
-
-                if (item.element.matches(".faq-item")) {
-                    item.element.open = true;
-                }
-
-            });
-
-            resultsContainer.appendChild(result);
-
-        });
-
-    }
-
-    searchInput.addEventListener("input", performSearch);
-
-    clearButton.addEventListener("click", function () {
-
-        searchInput.value = "";
-        resultsContainer.innerHTML = "";
-        searchStatus.textContent = "Ready to search.";
-        searchInput.focus();
-
-    });
-
-    searchInput.addEventListener("keydown", function (event) {
-
-        if (event.key === "Escape") {
-            clearButton.click();
-        }
-
-    });
-
-    // Allow only one FAQ answer to remain open
-    // within each FAQ category.
-
-    document.querySelectorAll(".faq-section").forEach(function (section) {
-
-        section.querySelectorAll(".faq-item").forEach(function (item) {
-
-            item.addEventListener("toggle", function () {
-
-                if (!item.open) return;
-
-                section.querySelectorAll(".faq-item").forEach(function (other) {
-
-                    if (other !== item) {
-                        other.open = false;
-                    }
-
-                });
-
-            });
-
-        });
-
-    });
-
-    // Close the Explore menu after selecting a destination.
-
-    const menu = document.querySelector(".top-menu");
-
-    document.querySelectorAll(".top-menu-list a").forEach(function (link) {
-
-        link.addEventListener("click", function () {
-            menu.removeAttribute("open");
-        });
+        item.classList.toggle("open", !wasOpen);
+        this.setAttribute("aria-expanded", String(!wasOpen));
 
     });
 
 });
-</script>
 
-<!-- =================================
-     GOOGLE TRANSLATE INITIALIZATION
-================================= -->
 
-<script>
-function googleTranslateElementInit() {
+/* -----------------------------------------------------
+   HELP CENTRE SEARCH
+----------------------------------------------------- */
 
-    new google.translate.TranslateElement({
+const searchInput = document.getElementById("helpSearch");
+const clearSearch = document.getElementById("clearSearch");
+const searchResults = document.getElementById("searchResults");
+const searchStatus = document.getElementById("searchStatus");
 
-        pageLanguage: "en",
+const searchableEntries = [
 
-        includedLanguages:
-            "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+    {
+        title:"PHRINUSOMYIS™ — Official Organization",
+        category:"Organization",
+        url:"/",
+        keywords:"organization phrinusomyis international sports organization identity headquarters new york"
+    },
 
-        autoDisplay: false
+    {
+        title:"Newswire — Official Announcements",
+        category:"News",
+        url:"/newswire/news",
+        keywords:"news newswire announcements news releases statements media"
+    },
 
-    }, "google_translate_element");
+    {
+        title:"PHRINUSOMYIS™ Magazine",
+        category:"Editorial",
+        url:"/magazine/news",
+        keywords:"magazine editorial sporting perspectives stories photography features chronicle mominants"
+    },
 
-}
-</script>
+    {
+        title:"Contact PHRINUSOMYIS™",
+        category:"Enquiries",
+        url:"/contact",
+        keywords:"contact enquiries department partnership event employment recruitment professional"
+    },
 
-<script
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async
-></script>
+    {
+        title:"Terms of Use",
+        category:"Legal",
+        url:"/terms",
+        keywords:"terms use legal conditions website pages content"
+    },
 
-<script>
-(function () {
+    {
+        title:"Accessibility",
+        category:"Access",
+        url:"/accessibility",
+        keywords:"accessibility access guidance"
+    },
 
-    const selector = document.getElementById("languageSelector");
+    {
+        title:"Copyright",
+        category:"Ownership",
+        url:"/copyright",
+        keywords:"copyright intellectual property ownership rights"
+    },
 
-    function applyLanguage(language) {
+    {
+        title:"Privacy Policy",
+        category:"Privacy",
+        url:"/policy",
+        keywords:"privacy policy personal data information practices"
+    },
 
-        const select = document.querySelector(".goog-te-combo");
+    {
+        title:"About PHRINUSOMYIS™",
+        category:"Questions & Answers",
+        url:"#questions",
+        keywords:"what is phrinusomyis what does organization do headquarters official information"
+    },
 
-        if (!select) return false;
+    {
+        title:"ZEAVIQ SPORTS™ & VIKQUATHEL™",
+        category:"Sporting Identity",
+        url:"#questions",
+        keywords:"zeaviq sports vikquathel competition sporting identity original sports formats participation"
+    },
 
-        select.value = language;
-        select.dispatchEvent(new Event("change"));
+    {
+        title:"Events, Partnerships & Employment",
+        category:"Organizational Enquiries",
+        url:"#questions",
+        keywords:"events partnerships employment recruitment cooperation professional enquiries"
+    },
 
-        return true;
-
+    {
+        title:"Privacy, Copyright & Accessibility",
+        category:"Policies",
+        url:"#questions",
+        keywords:"privacy copyright accessibility terms personal data intellectual property"
     }
 
-    selector.addEventListener("change", function () {
+];
 
-        const language = this.value;
 
-        if (language === "en") {
+function performSearch() {
 
-            const select = document.querySelector(".goog-te-combo");
+    const query = searchInput.value.trim().toLowerCase();
 
-            if (select) {
-                select.value = "en";
-                select.dispatchEvent(new Event("change"));
-            }
+    searchResults.innerHTML = "";
 
-            document.cookie =
-                "googtrans=/en/en;path=/;max-age=31536000";
+    if (!query) {
+        searchResults.classList.remove("active");
+        searchStatus.textContent = "Ready to search.";
+        return;
+    }
 
-            location.reload();
-            return;
+    const terms = query.split(/\s+/).filter(Boolean);
 
-        }
+    const matches = searchableEntries.filter(function(entry) {
 
-        if (!applyLanguage(language)) {
+        const searchableText = (
+            entry.title + " " +
+            entry.category + " " +
+            entry.keywords
+        ).toLowerCase();
 
-            const observer = new MutationObserver(function () {
-
-                if (applyLanguage(language)) {
-                    observer.disconnect();
-                }
-
-            });
-
-            observer.observe(document.body, {
-                childList:true,
-                subtree:true
-            });
-
-        }
+        return terms.every(function(term) {
+            return searchableText.includes(term);
+        });
 
     });
 
-    // Remove unwanted Google Translate page displacement
-    // and injected banner elements.
+    searchResults.classList.add("active");
 
-    function protectLayout() {
+    if (matches.length === 0) {
 
-        document.documentElement.style.setProperty("margin-top","0","important");
-        document.documentElement.style.setProperty("top","0","important");
+        searchStatus.textContent = "No matching results.";
 
-        document.body.style.setProperty("top","0","important");
-        document.body.style.setProperty("margin-top","0","important");
-        document.body.style.setProperty("padding-top","0","important");
+        searchResults.innerHTML =
+            '<div class="search-empty">No results found. Try another search term or browse the official directory below.</div>';
+
+        return;
+    }
+
+    searchStatus.textContent =
+        matches.length + (matches.length === 1 ? " result found." : " results found.");
+
+    matches.forEach(function(entry) {
+
+        const result = document.createElement("div");
+        result.className = "search-result";
+
+        const link = document.createElement("a");
+        link.href = entry.url;
+        link.textContent = entry.title;
+
+        const category = document.createElement("small");
+        category.textContent = entry.category;
+
+        result.appendChild(link);
+        result.appendChild(category);
+
+        searchResults.appendChild(result);
+
+    });
+
+}
+
+
+searchInput.addEventListener("input", performSearch);
+
+clearSearch.addEventListener("click", function() {
+
+    searchInput.value = "";
+    performSearch();
+    searchInput.focus();
+
+});
+
+
+searchInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        searchInput.value = "";
+        performSearch();
+    }
+
+});
+
+
+/* -----------------------------------------------------
+   BACK TO TOP
+----------------------------------------------------- */
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 450) {
+        backTop.classList.add("visible");
+    } else {
+        backTop.classList.remove("visible");
+    }
+
+}, { passive:true });
+
+
+backTop.addEventListener("click", function() {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* -----------------------------------------------------
+   CLOSE EXPLORE MENU WHEN CLICKING OUTSIDE
+----------------------------------------------------- */
+
+document.addEventListener("click", function(event) {
+
+    const menu = document.querySelector(".top-menu");
+
+    if (menu && !menu.contains(event.target)) {
+        menu.removeAttribute("open");
+    }
+
+});
+
+
+/* -----------------------------------------------------
+   GOOGLE TRANSLATE INITIALIZATION
+----------------------------------------------------- */
+
+function googleTranslateElementInit() {
+
+    if (
+        window.google &&
+        google.translate &&
+        google.translate.TranslateElement
+    ) {
+
+        new google.translate.TranslateElement(
+            {
+                pageLanguage:"en",
+                autoDisplay:false,
+                layout:google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            "google_translate_element"
+        );
+
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   GOOGLE TRANSLATE BANNER / PAGE SHIFT PROTECTION
+----------------------------------------------------- */
+
+(function() {
+
+    function restorePagePosition() {
+
+        document.documentElement.style.top = "0px";
+        document.documentElement.style.marginTop = "0px";
+        document.documentElement.style.paddingTop = "0px";
+
+        document.body.style.top = "0px";
+        document.body.style.marginTop = "0px";
+        document.body.style.paddingTop = "0px";
 
         document.querySelectorAll(
-            ".goog-te-banner-frame, .goog-te-balloon-frame"
-        ).forEach(function (element) {
+            ".goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-tooltip"
+        ).forEach(function(element) {
             element.remove();
         });
 
     }
 
-    const observer = new MutationObserver(protectLayout);
+    restorePagePosition();
+
+    const observer = new MutationObserver(function() {
+        restorePagePosition();
+    });
 
     observer.observe(document.documentElement, {
         childList:true,
-        subtree:true
+        subtree:true,
+        attributes:true,
+        attributeFilter:["style"]
     });
 
-    protectLayout();
+    window.addEventListener("load", restorePagePosition);
+
+    window.addEventListener("resize", restorePagePosition);
 
 })();
+
+</script>
+
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async>
 </script>
 
 </body>
