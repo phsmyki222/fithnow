@@ -127,6 +127,7 @@
 
 </script>
 
+
 <style>
 :root {
     --black:#171715;
@@ -171,7 +172,7 @@ body {
     -webkit-font-smoothing:antialiased;
 }
 
-body,button,input {
+body,button,input,select {
     font-family:var(--body);
 }
 
@@ -311,11 +312,47 @@ img {
     font-weight:700;
 }
 
+/* Visible custom language selector */
+.language-select {
+    min-width:145px;
+    min-height:34px;
+    padding:7px 30px 7px 11px;
+    border:1px solid rgba(197,163,107,.35);
+    border-radius:0;
+    outline:none;
+    background-color:var(--charcoal);
+    color:var(--ivory);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.2px;
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23c5a36b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+}
+
+.language-select:focus {
+    border-color:var(--gold);
+}
+
+.language-select option {
+    background:var(--charcoal);
+    color:var(--ivory);
+}
+
+/* Google Translate engine stays available off-screen.
+   The custom selector above controls the translation. */
 #google_translate_element {
-    display:inline-flex;
-    min-width:100px;
-    min-height:28px;
-    align-items:center;
+    position:absolute!important;
+    width:1px!important;
+    height:1px!important;
+    overflow:hidden!important;
+    left:-10000px!important;
+    top:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
 }
 
 .goog-te-gadget {
@@ -1512,6 +1549,11 @@ img {
         font-size:9px;
     }
 
+    .language-select {
+        min-width:135px;
+        max-width:calc(100vw - 130px);
+    }
+
     .top-menu summary {
         font-size:9px;
     }
@@ -1740,7 +1782,7 @@ img {
 }
 
 /* =====================================================
-   GOOGLE TRANSLATE PROTECTION
+   GOOGLE TRANSLATE BANNER / POP-OUT PROTECTION
 ===================================================== */
 
 html {
@@ -1753,6 +1795,7 @@ body {
     padding-top:0!important;
 }
 
+/* Hide Google's injected banner, pop-outs and tooltips */
 .goog-te-banner-frame,
 .goog-te-balloon-frame,
 .goog-tooltip,
@@ -1770,13 +1813,19 @@ iframe.goog-te-banner-frame,
     box-shadow:none!important;
 }
 
+/* Prevent the injected translation banner from occupying page space */
 body > .skiptranslate {
     display:none!important;
 }
 
+iframe.goog-te-menu-frame {
+    display:none!important;
+    visibility:hidden!important;
+}
+
 #google_translate_element {
-    position:relative;
-    z-index:10;
+    position:absolute!important;
+    z-index:-1!important;
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -1803,7 +1852,39 @@ body > .skiptranslate {
         <div class="topbar-left">
             <div class="translate-area">
                 <span class="translate-label">Language</span>
-                <div id="google_translate_element"></div>
+
+                <!-- Visible 21-language selector -->
+                <select
+                    id="languageSelect"
+                    class="language-select"
+                    aria-label="Select website language"
+                    title="Select language"
+                >
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ar">العربية</option>
+                    <option value="zh-CN">中文</option>
+                    <option value="ru">Русский</option>
+                    <option value="pt">Português</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="it">Italiano</option>
+                    <option value="nl">Nederlands</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="th">ไทย</option>
+                    <option value="pl">Polski</option>
+                    <option value="sv">Svenska</option>
+                    <option value="fi">Suomi</option>
+                    <option value="da">Dansk</option>
+                </select>
+
+                <!-- Hidden Google Translate engine -->
+                <div id="google_translate_element" aria-hidden="true"></div>
             </div>
         </div>
 
@@ -3129,9 +3210,135 @@ document.addEventListener("click", function(event) {
 
 
 /* -----------------------------------------------------
-   GOOGLE TRANSLATE INITIALIZATION
+   GOOGLE TRANSLATE — 21 LANGUAGE SUPPORT
 ----------------------------------------------------- */
 
+const supportedLanguages = [
+    "en",
+    "fr",
+    "es",
+    "de",
+    "ar",
+    "zh-CN",
+    "ru",
+    "pt",
+    "ja",
+    "ko",
+    "it",
+    "nl",
+    "tr",
+    "hi",
+    "id",
+    "vi",
+    "th",
+    "pl",
+    "sv",
+    "fi",
+    "da"
+];
+
+
+/* Set or remove the Google Translate language cookie */
+function setGoogleTranslateCookie(language) {
+
+    const cookieName = "googtrans";
+    const cookiePath = "/";
+
+    if (language === "en") {
+
+        document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=" + cookiePath;
+
+        if (location.hostname) {
+            document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=" + cookiePath + "; domain=" + location.hostname;
+        }
+
+        const hostParts = location.hostname.split(".");
+
+        if (hostParts.length > 2) {
+            const rootDomain = "." + hostParts.slice(-2).join(".");
+            document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=" + cookiePath + "; domain=" + rootDomain;
+        }
+
+        return;
+    }
+
+    const cookieValue = "/en/" + language;
+
+    document.cookie = cookieName + "=" + cookieValue + "; path=/; max-age=31536000; SameSite=Lax";
+
+    if (location.hostname) {
+        document.cookie = cookieName + "=" + cookieValue + "; path=/; domain=" + location.hostname + "; max-age=31536000; SameSite=Lax";
+    }
+
+    const parts = location.hostname.split(".");
+
+    if (parts.length > 2) {
+        const root = "." + parts.slice(-2).join(".");
+        document.cookie = cookieName + "=" + cookieValue + "; path=/; domain=" + root + "; max-age=31536000; SameSite=Lax";
+    }
+}
+
+
+/* Read the current Google Translate language cookie */
+function getGoogleTranslateLanguage() {
+
+    const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
+
+    if (!match) {
+        return "en";
+    }
+
+    try {
+        const value = decodeURIComponent(match[1]);
+        const parts = value.split("/");
+
+        return parts.length >= 3 ? parts[2] : "en";
+
+    } catch (error) {
+        return "en";
+    }
+}
+
+
+/* Keep the visible selector synchronized with the active language */
+function synchronizeLanguageSelector() {
+
+    const selector = document.getElementById("languageSelect");
+
+    if (!selector) {
+        return;
+    }
+
+    const currentLanguage = getGoogleTranslateLanguage();
+
+    selector.value = supportedLanguages.includes(currentLanguage)
+        ? currentLanguage
+        : "en";
+}
+
+
+/* Change language when a visitor selects an option */
+document.getElementById("languageSelect").addEventListener("change", function() {
+
+    const selectedLanguage = this.value;
+
+    if (!supportedLanguages.includes(selectedLanguage)) {
+        this.value = "en";
+        return;
+    }
+
+    setGoogleTranslateCookie(selectedLanguage);
+
+    /*
+       Reload allows Google Translate to read the selected language
+       cookie and translate the page from its original English version.
+    */
+    window.location.reload();
+
+});
+
+
+/* Initialize Google Translate with all 21 supported languages */
 function googleTranslateElementInit() {
 
     if (
@@ -3143,11 +3350,15 @@ function googleTranslateElementInit() {
         new google.translate.TranslateElement(
             {
                 pageLanguage:"en",
+                includedLanguages:supportedLanguages.join(","),
                 autoDisplay:false,
+                multilanguagePage:true,
                 layout:google.translate.TranslateElement.InlineLayout.SIMPLE
             },
             "google_translate_element"
         );
+
+        synchronizeLanguageSelector();
 
     }
 
@@ -3171,7 +3382,7 @@ function googleTranslateElementInit() {
         document.body.style.paddingTop = "0px";
 
         document.querySelectorAll(
-            ".goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-tooltip"
+            ".goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-tooltip, .goog-te-menu-frame, iframe.goog-te-banner-frame"
         ).forEach(function(element) {
             element.remove();
         });
@@ -3195,7 +3406,23 @@ function googleTranslateElementInit() {
 
     window.addEventListener("resize", restorePagePosition);
 
+    /* Reapply page-position protection after translation changes */
+    document.addEventListener("DOMContentLoaded", function() {
+        synchronizeLanguageSelector();
+        restorePagePosition();
+    });
+
 })();
+
+
+/* Synchronize selector when the page is restored from browser cache */
+window.addEventListener("pageshow", function() {
+    synchronizeLanguageSelector();
+});
+
+
+/* Set the selector to the current language on initial page load */
+synchronizeLanguageSelector();
 
 </script>
 
