@@ -65,71 +65,137 @@
   }
 }
 </script>
-
 <style>
 :root {
-    --contact-bg:#000000;
-    --contact-panel:#111111;
-    --contact-panel-light:#1c1c1c;
-    --contact-dark:#050505;
-    --contact-white:#ffffff;
-    --contact-muted:#d0d0d0;
-    --contact-accent:#b8c5d1;
-    --contact-border:rgba(255,255,255,.16);
+    --black:#171715;
+    --black-deep:#10100f;
+    --charcoal:#25241f;
+    --charcoal-light:#302e28;
+    --ivory:#f2eee5;
+    --ivory-light:#f8f5ee;
+    --stone:#e5ded1;
+    --stone-deep:#d8cebd;
+    --bronze:#a9824d;
+    --gold:#c5a36b;
+    --text:#24231f;
+    --muted:#aaa398;
+    --line:rgba(197,163,107,.25);
+    --white:#fff;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:Arial,Helvetica,sans-serif;
 }
 
-* { box-sizing:border-box; }
-
-html,body {
-    margin:0;
-    padding:0;
-    background:#000;
-    color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
-    font-weight:800;
+* {
+    box-sizing:border-box;
 }
 
 html {
     scroll-behavior:smooth;
+    background:var(--black);
 }
 
 body {
-    position:relative!important;
+    margin:0;
+    padding:0;
+    background:var(--black);
+    color:var(--ivory);
+    font-family:var(--sans);
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
 }
 
-.contact-page {
-    width:100%;
-    overflow:hidden;
-    background:var(--contact-bg);
-    color:var(--contact-white);
-    font-weight:800;
-}
-
-.contact-page a {
-    color:inherit;
-    text-decoration:none;
-}
-
-.contact-page a:hover {
-    color:var(--contact-accent);
-}
-
-.contact-page p {
-    margin-top:0;
-    font-weight:800;
-}
-
-/* GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION */
-
-html,body,
+body,
 body.translated-ltr,
-body.translated-rtl {
+body.translated-rtl,
+html {
     top:0!important;
     margin-top:0!important;
     padding-top:0!important;
 }
 
-/* Keep the translation engine available but off-screen. */
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+select {
+    font:inherit;
+}
+
+img {
+    max-width:100%;
+}
+
+.contact-page {
+    width:100%;
+    overflow:hidden;
+    background:var(--black);
+    color:var(--ivory);
+}
+
+.contact-page a {
+    transition:color .25s ease,background .25s ease,border-color .25s ease;
+}
+
+.contact-page a:hover {
+    color:var(--gold);
+}
+
+.container {
+    width:min(1280px,calc(100% - 64px));
+    margin:0 auto;
+}
+
+.eyebrow {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:4px;
+    line-height:1.6;
+    text-transform:uppercase;
+}
+
+.eyebrow::before {
+    content:"";
+    display:block;
+    width:29px;
+    height:1px;
+    background:var(--bronze);
+}
+
+.section-heading {
+    margin-bottom:42px;
+}
+
+.section-heading .eyebrow {
+    justify-content:center;
+}
+
+.section-heading h2 {
+    margin:16px 0 15px;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:clamp(32px,4vw,49px);
+    font-weight:400;
+    line-height:1.12;
+    letter-spacing:-1px;
+    text-align:center;
+}
+
+.section-heading p {
+    max-width:700px;
+    margin:0 auto;
+    color:var(--muted);
+    font-size:14px;
+    line-height:2;
+    text-align:center;
+}
+
+/* GOOGLE TRANSLATE PROTECTION */
 
 #google_translate_element {
     display:block!important;
@@ -147,8 +213,6 @@ body.translated-rtl {
     z-index:-1!important;
 }
 
-/* Hide Google's top translation banner. */
-
 .goog-te-banner-frame,
 iframe.goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
@@ -156,23 +220,7 @@ iframe.goog-te-banner-frame,
 .VIpgJd-ZVi9od-ORHb,
 .VIpgJd-ZVi9od-ORHb-KE6vqe,
 .goog-te-balloon-frame,
-iframe.goog-te-balloon-frame {
-    display:none!important;
-    visibility:hidden!important;
-    opacity:0!important;
-    height:0!important;
-    width:0!important;
-    max-height:0!important;
-    max-width:0!important;
-    pointer-events:none!important;
-    position:fixed!important;
-    left:-10000px!important;
-    top:-10000px!important;
-    border:0!important;
-}
-
-/* Hide translation menus, tooltips and pop-out interfaces. */
-
+iframe.goog-te-balloon-frame,
 .goog-te-menu-frame,
 iframe.goog-te-menu-frame,
 #goog-gt-tt,
@@ -197,9 +245,8 @@ iframe.goog-te-menu-frame,
     max-width:0!important;
     max-height:0!important;
     z-index:-9999!important;
+    border:0!important;
 }
-
-/* Remove translation highlights. */
 
 .goog-text-highlight {
     background:transparent!important;
@@ -208,8 +255,6 @@ iframe.goog-te-menu-frame,
     border:none!important;
     color:inherit!important;
 }
-
-/* Hide Google branding and unwanted gadget interfaces. */
 
 .goog-logo-link,
 .goog-te-gadget-icon,
@@ -240,162 +285,206 @@ iframe.goog-te-menu-frame,
 /* HEADER */
 
 .contact-header {
-    width:100%;
-    background:#050505;
-    border-bottom:1px solid var(--contact-border);
     position:relative;
     z-index:1000;
+    background:var(--black-deep);
+    border-bottom:1px solid var(--line);
 }
 
 .header-inner {
-    max-width:1300px;
+    width:min(1380px,calc(100% - 64px));
+    min-height:94px;
     margin:auto;
-    padding:19px 25px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:25px;
+    gap:35px;
+}
+
+.company-logo {
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
 }
 
 .company-logo img {
-    width:165px;
-    height:auto;
+    display:block;
+    width:164px;
     max-height:70px;
     object-fit:contain;
-    display:block;
 }
 
 .main-navigation {
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:22px;
-    flex-wrap:wrap;
+    gap:clamp(16px,2.2vw,31px);
 }
 
 .main-navigation a {
-    font-size:13px;
-    font-weight:900;
-    color:#fff;
-    transition:color .2s ease;
+    position:relative;
+    padding:12px 0;
+    color:#d9d2c6;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.1px;
+    text-transform:uppercase;
+}
+
+.main-navigation a::after {
+    position:absolute;
+    right:0;
+    bottom:3px;
+    left:0;
+    height:1px;
+    background:var(--gold);
+    content:"";
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
 }
 
 .main-navigation a:hover,
 .main-navigation a.active {
-    color:var(--contact-accent);
+    color:var(--gold);
+}
+
+.main-navigation a:hover::after,
+.main-navigation a.active::after {
+    transform:scaleX(1);
 }
 
 .header-right {
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:14px;
 }
-
-/* LANGUAGE SELECTOR */
 
 .language-control {
     position:relative;
-    z-index:2000;
 }
 
 .language-control select {
     appearance:none;
     -webkit-appearance:none;
-    background:#181818;
-    border:1px solid rgba(255,255,255,.3);
-    color:#fff;
-    padding:11px 35px 11px 13px;
-    border-radius:5px;
-    font-size:12px;
-    font-weight:900;
-    cursor:pointer;
+    min-width:120px;
+    padding:11px 32px 11px 12px;
+    border:1px solid rgba(197,163,107,.38);
+    border-radius:0;
     outline:none;
-    max-width:150px;
+    background:var(--charcoal);
+    color:var(--ivory);
+    font-size:11px;
+    font-weight:700;
+    cursor:pointer;
 }
 
 .language-control::after {
-    content:"⌄";
     position:absolute;
-    right:12px;
     top:7px;
-    color:#fff;
-    pointer-events:none;
+    right:11px;
+    color:var(--gold);
+    content:"⌄";
     font-size:17px;
+    pointer-events:none;
 }
 
 .language-control select option {
-    background:#111;
-    color:#fff;
-    font-weight:800;
+    background:var(--charcoal);
+    color:var(--ivory);
 }
-
-/* MOBILE MENU */
 
 .mobile-menu-button {
     display:none;
-    border:1px solid var(--contact-border);
-    background:#181818;
-    color:white;
-    padding:9px 13px;
-    border-radius:5px;
-    font-weight:900;
+    padding:10px 13px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ivory);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.5px;
     cursor:pointer;
 }
 
-/* CONTACT HERO */
+/* HERO */
 
 .contact-hero {
-    max-width:1200px;
-    margin:auto;
-    padding:95px 25px 55px;
+    position:relative;
+    padding:105px 24px 73px;
+    overflow:hidden;
+    background:
+        radial-gradient(ellipse at 50% 0%,rgba(169,130,77,.12),transparent 55%),
+        var(--black);
     text-align:center;
 }
 
+.contact-hero::before,
+.contact-hero::after {
+    position:absolute;
+    top:50%;
+    width:14%;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--bronze));
+    content:"";
+    opacity:.55;
+}
+
+.contact-hero::before {
+    left:0;
+}
+
+.contact-hero::after {
+    right:0;
+    transform:rotate(180deg);
+}
+
 .contact-hero .eyebrow {
-    color:var(--contact-accent);
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    margin-bottom:20px;
+    justify-content:center;
+    margin-bottom:24px;
 }
 
 .contact-hero h1 {
-    font-size:clamp(42px,6vw,72px);
-    line-height:1.05;
-    font-weight:900;
-    margin:0 0 25px;
-    letter-spacing:-1.5px;
+    margin:0;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:clamp(56px,9vw,112px);
+    font-weight:400;
+    line-height:.98;
+    letter-spacing:2px;
+}
+
+.hero-rule {
+    width:72px;
+    height:2px;
+    margin:31px auto 26px;
+    background:linear-gradient(90deg,var(--bronze),var(--gold));
 }
 
 .contact-hero p {
-    max-width:850px;
-    margin:auto;
-    color:var(--contact-muted);
-    font-size:16px;
-    line-height:2;
-    font-weight:800;
+    max-width:790px;
+    margin:0 auto;
+    color:#c5beb2;
+    font-size:15px;
+    line-height:2.05;
 }
 
-/* MAIN OFFICE IMAGE — FIRST IMAGE PRESERVED */
+/* FIRST IMAGE — OFFICE */
 
-.contact-image-section {
-    width:100%;
-    padding:15px 25px 85px;
+.office-image-section {
+    padding:0 32px;
 }
 
-.contact-image-frame {
-    max-width:1450px;
-    height:620px;
-    margin:auto;
-    background:#111;
-    border:1px solid var(--contact-border);
-    border-radius:8px;
-    overflow:hidden;
+.office-image-frame {
     position:relative;
+    width:min(1450px,100%);
+    height:clamp(370px,49vw,660px);
+    margin:0 auto;
+    overflow:hidden;
+    border:1px solid rgba(197,163,107,.35);
+    background:var(--charcoal);
 }
 
-.contact-image-frame img {
+.office-image-frame img {
     display:block;
     width:100%;
     height:100%;
@@ -403,291 +492,408 @@ iframe.goog-te-menu-frame,
     object-position:center;
 }
 
-.contact-image-frame::after {
-    content:"";
+.office-image-frame::after {
     position:absolute;
     inset:0;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.85),
-        rgba(0,0,0,.05) 60%,
-        rgba(0,0,0,.08)
-    );
+    background:
+        linear-gradient(0deg,rgba(16,16,15,.86),transparent 57%),
+        linear-gradient(90deg,rgba(16,16,15,.2),transparent 70%);
+    content:"";
     pointer-events:none;
 }
 
-.contact-image-caption {
+.office-image-caption {
     position:absolute;
-    left:0;
+    z-index:2;
     right:0;
     bottom:0;
-    padding:35px;
-    z-index:2;
-    color:#fff;
-    font-size:13px;
-    font-weight:900;
-    letter-spacing:3px;
+    left:0;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:25px;
+    padding:38px 45px;
+}
+
+.office-image-caption strong {
+    display:block;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:clamp(20px,3vw,34px);
+    font-weight:400;
+    letter-spacing:.5px;
+}
+
+.office-image-caption span {
+    color:var(--gold);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
     text-transform:uppercase;
+}
+
+/* SECOND IMAGE — THE TAKEOVER */
+
+.takeover-section {
+    padding:105px 0 110px;
+    background:var(--ivory);
+    color:var(--text);
+}
+
+.takeover-layout {
+    display:grid;
+    grid-template-columns:.78fr 1.22fr;
+    align-items:center;
+    gap:65px;
+}
+
+.takeover-copy {
+    padding:15px 0;
+}
+
+.takeover-copy .eyebrow {
+    color:#88663a;
+}
+
+.takeover-copy h2 {
+    margin:22px 0 22px;
+    color:var(--text);
+    font-family:var(--serif);
+    font-size:clamp(36px,5vw,64px);
+    font-weight:400;
+    line-height:1.04;
+    letter-spacing:-1.5px;
+}
+
+.takeover-copy p {
+    max-width:420px;
+    margin:0;
+    color:#625d54;
+    font-size:14px;
+    line-height:2;
+}
+
+.takeover-edition {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-top:35px;
+    color:#80613b;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+}
+
+.takeover-edition::before {
+    width:35px;
+    height:1px;
+    background:var(--bronze);
+    content:"";
+}
+
+.takeover-image-frame {
+    position:relative;
+    min-height:390px;
+    height:clamp(390px,43vw,570px);
+    overflow:hidden;
+    background:var(--stone);
+    border:1px solid rgba(169,130,77,.45);
+    box-shadow:18px 18px 0 rgba(169,130,77,.13);
+}
+
+.takeover-image-frame img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.takeover-image-frame::after {
+    position:absolute;
+    inset:0;
+    border:1px solid rgba(255,255,255,.12);
+    content:"";
+    pointer-events:none;
 }
 
 /* MAIN CONTENT */
 
 .contact-container {
-    max-width:1150px;
-    margin:auto;
-    padding:0 25px;
+    width:min(1160px,calc(100% - 64px));
+    margin:0 auto;
 }
 
-/* GENERAL CORRESPONDENCE */
+/* GENERAL ENQUIRIES */
 
 .general-contact {
-    background:var(--contact-panel);
-    border:1px solid var(--contact-border);
-    border-radius:8px;
-    padding:48px 38px;
+    position:relative;
+    margin:100px 0 115px;
+    padding:65px 45px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:
+        linear-gradient(125deg,rgba(169,130,77,.1),transparent 48%),
+        var(--charcoal);
     text-align:center;
-    margin-bottom:85px;
+}
+
+.general-contact::before,
+.general-contact::after {
+    position:absolute;
+    width:90px;
+    height:90px;
+    border-color:rgba(197,163,107,.45);
+    border-style:solid;
+    content:"";
+}
+
+.general-contact::before {
+    top:15px;
+    left:15px;
+    border-width:1px 0 0 1px;
+}
+
+.general-contact::after {
+    right:15px;
+    bottom:15px;
+    border-width:0 1px 1px 0;
 }
 
 .section-label {
-    color:var(--contact-accent);
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:3px;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:3.5px;
+    line-height:1.6;
     text-transform:uppercase;
-    margin-bottom:17px;
 }
 
 .general-contact h2 {
-    font-size:30px;
-    font-weight:900;
-    margin:0 0 20px;
+    margin:17px 0 17px;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:clamp(32px,4vw,45px);
+    font-weight:400;
 }
 
 .general-contact p {
-    color:var(--contact-muted);
+    max-width:680px;
+    margin:0 auto 28px;
+    color:#bdb5a8;
     font-size:14px;
     line-height:2;
-    font-weight:800;
-    max-width:800px;
-    margin:0 auto 28px;
 }
 
 .general-email {
     display:inline-block;
-    font-size:clamp(19px,3vw,27px);
-    font-weight:900;
-    color:#fff!important;
-    border-bottom:2px solid var(--contact-accent);
-    padding-bottom:8px;
+    padding:0 0 9px;
+    border-bottom:1px solid var(--gold);
+    color:var(--ivory)!important;
+    font-family:var(--serif);
+    font-size:clamp(20px,3vw,29px);
     overflow-wrap:anywhere;
 }
 
-/* SECTION HEADINGS */
-
-.contact-section {
-    margin-bottom:90px;
-}
-
-.contact-section-heading {
-    text-align:center;
-    margin-bottom:42px;
-}
-
-.contact-section-heading h2 {
-    font-size:32px;
-    font-weight:900;
-    margin:0 0 17px;
-}
-
-.contact-section-heading p {
-    color:var(--contact-muted);
-    font-size:14px;
-    line-height:2;
-    font-weight:800;
-    max-width:850px;
-    margin:auto;
+.general-email:hover {
+    color:var(--gold)!important;
 }
 
 /* DEPARTMENT DIRECTORY */
 
+.contact-section {
+    margin-bottom:115px;
+}
+
 .department-grid {
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:22px;
+    gap:1px;
+    border:1px solid var(--line);
+    background:var(--line);
 }
 
 .department-card {
-    background:var(--contact-panel);
-    border:1px solid var(--contact-border);
-    border-radius:8px;
-    overflow:hidden;
-    min-height:100%;
-    transition:background .2s ease,transform .2s ease;
+    position:relative;
+    min-height:290px;
+    padding:39px 39px 42px;
+    background:var(--charcoal);
+    transition:background .25s ease;
 }
 
 .department-card:hover {
-    background:var(--contact-panel-light);
-    transform:translateY(-3px);
+    background:#302d26;
 }
 
-.department-image {
-    width:100%;
-    height:230px;
-    overflow:hidden;
-    background:#181818;
+.department-card-top {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:32px;
 }
 
-.department-image img {
-    display:block;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:transform .6s ease;
-}
-
-.department-card:hover .department-image img {
-    transform:scale(1.035);
-}
-
-.department-card-content {
-    padding:30px 35px 35px;
+.department-number {
+    color:var(--gold);
+    font-family:var(--serif);
+    font-size:25px;
+    font-weight:400;
 }
 
 .department-icon {
-    width:48px;
-    height:48px;
-    border-radius:7px;
-    background:#292929;
-    border:1px solid var(--contact-border);
     display:flex;
+    width:45px;
+    height:45px;
     align-items:center;
     justify-content:center;
-    margin-bottom:23px;
-    color:#fff;
+    border:1px solid rgba(197,163,107,.38);
+    color:var(--gold);
 }
 
 .department-icon svg {
-    width:23px;
-    height:23px;
+    width:21px;
+    height:21px;
 }
 
 .department-card h3 {
-    font-size:21px;
-    font-weight:900;
-    margin:0 0 16px;
+    margin:0 0 15px;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:26px;
+    font-weight:400;
 }
 
 .department-card p {
-    color:var(--contact-muted);
+    max-width:490px;
+    min-height:83px;
+    margin:0 0 25px;
+    color:#b9b1a5;
     font-size:13px;
-    font-weight:800;
     line-height:2;
-    margin:0 0 24px;
 }
 
 .department-link {
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    font-size:12px;
-    font-weight:900;
-    color:#fff!important;
-    border-bottom:1px solid var(--contact-accent);
-    padding-bottom:7px;
+    gap:12px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--bronze);
+    color:var(--ivory)!important;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
 }
 
-/* NEWSWIRE AND MAGAZINE */
+.department-link:hover {
+    color:var(--gold)!important;
+}
+
+/* PUBLICATIONS */
 
 .platform-section {
-    margin-bottom:90px;
+    margin-bottom:115px;
 }
 
 .platform-grid {
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:24px;
+    gap:22px;
 }
 
 .platform-card {
-    background:var(--contact-panel);
-    border:1px solid var(--contact-border);
-    border-radius:8px;
-    padding:40px;
-    transition:background .2s ease,transform .2s ease;
+    position:relative;
+    min-height:300px;
+    padding:43px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:
+        linear-gradient(145deg,rgba(169,130,77,.1),transparent 55%),
+        var(--charcoal);
+    transition:border-color .25s ease,transform .25s ease;
 }
 
 .platform-card:hover {
-    background:var(--contact-panel-light);
-    transform:translateY(-3px);
+    border-color:rgba(197,163,107,.7);
+    transform:translateY(-4px);
 }
 
 .platform-number {
-    color:var(--contact-accent);
-    font-size:11px;
+    margin-bottom:35px;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:700;
     letter-spacing:3px;
-    font-weight:900;
-    margin-bottom:24px;
 }
 
 .platform-card h3 {
-    font-size:23px;
-    font-weight:900;
-    line-height:1.4;
-    margin:0 0 18px;
+    margin:0 0 16px;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:27px;
+    font-weight:400;
+    line-height:1.3;
 }
 
 .platform-card p {
-    color:var(--contact-muted);
-    font-size:14px;
-    font-weight:800;
-    line-height:2;
-    min-height:95px;
+    max-width:450px;
+    min-height:65px;
     margin:0 0 28px;
+    color:#b9b1a5;
+    font-size:13px;
+    line-height:2;
 }
 
 .platform-button {
     display:inline-flex;
     align-items:center;
-    justify-content:center;
-    gap:12px;
-    background:#fff;
-    color:#000!important;
-    padding:15px 22px;
-    border-radius:4px;
-    font-size:12px;
-    font-weight:900;
-    transition:background .2s ease;
+    gap:22px;
+    padding:14px 18px;
+    border:1px solid var(--bronze);
+    color:var(--ivory)!important;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.platform-button span {
+    color:var(--gold);
+    font-size:17px;
 }
 
 .platform-button:hover {
-    background:#d7d7d7;
-    color:#000!important;
+    background:var(--bronze);
+    color:#fff!important;
 }
 
-/* SOCIAL MEDIA */
+/* SOCIAL CHANNELS */
 
 .social-section {
+    position:relative;
+    padding:85px 25px 90px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:
+        radial-gradient(ellipse at 50% 100%,rgba(169,130,77,.12),transparent 60%),
+        var(--black-deep);
     text-align:center;
-    padding:75px 20px;
-    background:#101010;
-    border-top:1px solid var(--contact-border);
-    border-bottom:1px solid var(--contact-border);
-    margin-bottom:85px;
 }
 
 .social-section h2 {
-    font-size:29px;
-    font-weight:900;
-    margin:0 0 17px;
+    margin:17px 0;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:clamp(32px,4vw,44px);
+    font-weight:400;
 }
 
 .social-section p {
-    color:var(--contact-muted);
-    font-size:14px;
-    font-weight:800;
-    line-height:1.9;
     margin:0 auto 35px;
+    color:#b9b1a5;
+    font-size:13px;
+    line-height:1.9;
 }
 
 .social-icons {
@@ -695,77 +901,91 @@ iframe.goog-te-menu-frame,
     align-items:center;
     justify-content:center;
     flex-wrap:wrap;
-    gap:17px;
+    gap:13px;
 }
 
 .social-link {
-    width:56px;
-    height:56px;
     display:flex;
+    width:53px;
+    height:53px;
     align-items:center;
     justify-content:center;
-    background:#202020;
-    border:1px solid rgba(255,255,255,.22);
+    border:1px solid rgba(197,163,107,.35);
     border-radius:50%;
-    color:#fff!important;
-    transition:background .2s ease,transform .2s ease;
+    background:rgba(255,255,255,.025);
+    color:var(--ivory)!important;
 }
 
 .social-link:hover {
-    background:#383838;
     transform:translateY(-4px);
+    border-color:var(--gold);
+    background:rgba(169,130,77,.2);
+    color:var(--gold)!important;
 }
 
 .social-link svg {
-    width:25px;
-    height:25px;
+    width:22px;
+    height:22px;
 }
 
-/* OFFICE ADDRESS */
+/* HEAD OFFICE */
 
 .office-section {
-    max-width:1150px;
-    margin:0 auto 90px;
-    padding:0 25px;
+    width:min(1160px,calc(100% - 64px));
+    margin:0 auto;
+    padding:95px 0 105px;
 }
 
-.office-section h2 {
-    font-size:28px;
-    font-weight:900;
-    margin:0 0 22px;
+.office-address-layout {
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:35px;
+    padding:36px 0 0;
+    border-top:1px solid var(--line);
+}
+
+.office-address-heading h2 {
+    margin:12px 0 0;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:38px;
+    font-weight:400;
 }
 
 .office-address {
-    color:var(--contact-muted);
-    font-size:15px;
+    min-width:250px;
+    color:#b9b1a5;
+    font-size:14px;
     line-height:2.1;
-    font-weight:800;
 }
 
 .office-address strong {
-    color:#fff;
-    font-size:17px;
-    font-weight:900;
+    color:var(--ivory);
+    font-family:var(--serif);
+    font-size:20px;
+    font-weight:400;
 }
 
 /* FOOTER */
 
 .contact-bottom-navigation {
-    background:#080808;
-    border-top:1px solid var(--contact-border);
-    padding:65px 25px 40px;
+    padding:70px 32px 30px;
+    border-top:1px solid var(--line);
+    background:#10100f;
 }
 
 .footer-inner {
-    max-width:1200px;
-    margin:auto;
+    width:min(1280px,100%);
+    margin:0 auto;
 }
 
 .footer-logo {
-    margin-bottom:40px;
+    margin-bottom:48px;
 }
 
 .footer-logo img {
+    display:block;
     width:155px;
     max-height:65px;
     object-fit:contain;
@@ -774,96 +994,120 @@ iframe.goog-te-menu-frame,
 .footer-groups {
     display:grid;
     grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:32px;
+    gap:35px;
+    padding-bottom:48px;
 }
 
 .footer-group h3 {
-    color:var(--contact-accent);
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:2px;
-    margin:0 0 21px;
+    margin:0 0 24px;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
 }
 
 .footer-group a {
     display:block;
-    color:#fff;
-    font-size:13px;
-    font-weight:800;
-    margin-bottom:15px;
+    width:fit-content;
+    margin-bottom:16px;
+    color:#c8c0b4;
+    font-size:12px;
+    line-height:1.7;
 }
 
 .footer-group a:hover {
-    color:var(--contact-accent);
+    color:var(--gold);
 }
 
 .footer-bottom {
-    border-top:1px solid var(--contact-border);
-    margin-top:48px;
-    padding-top:28px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     flex-wrap:wrap;
-    gap:16px;
+    gap:18px;
+    padding-top:27px;
+    border-top:1px solid var(--line);
 }
 
 .footer-slogan {
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:2px;
+    color:var(--ivory);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
 }
 
 .footer-copyright {
-    color:var(--contact-muted);
-    font-size:11px;
-    font-weight:800;
+    color:#91897e;
+    font-size:10px;
+    letter-spacing:.3px;
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE */
 
 @media(max-width:1050px) {
     .header-inner {
         flex-wrap:wrap;
+        padding:17px 0;
     }
 
     .main-navigation {
         order:3;
         width:100%;
-        gap:17px;
+        padding-top:12px;
     }
 
-    .footer-groups {
-        grid-template-columns:repeat(2,minmax(0,1fr));
+    .takeover-layout {
+        gap:35px;
     }
 
-    .contact-image-frame {
-        height:500px;
+    .department-card {
+        padding:32px;
     }
 }
 
-@media(max-width:650px) {
+@media(max-width:700px) {
+    .container,
+    .contact-container,
+    .office-section {
+        width:calc(100% - 36px);
+    }
+
     .header-inner {
-        padding:15px;
+        width:calc(100% - 36px);
+        min-height:76px;
+        gap:12px;
     }
 
     .company-logo img {
-        width:135px;
+        width:130px;
     }
 
     .mobile-menu-button {
         display:block;
     }
 
+    .header-right {
+        margin-left:auto;
+        gap:8px;
+    }
+
+    .language-control select {
+        min-width:0;
+        max-width:112px;
+        padding:10px 25px 10px 9px;
+        font-size:10px;
+    }
+
     .main-navigation {
         display:none;
+        order:4;
+        width:100%;
         flex-direction:column;
-        align-items:flex-start;
+        align-items:stretch;
         gap:0;
-        background:#111;
-        padding:12px;
-        border:1px solid var(--contact-border);
-        border-radius:7px;
+        padding:8px 15px;
+        border:1px solid var(--line);
+        background:var(--charcoal);
     }
 
     .main-navigation.navigation-open {
@@ -871,52 +1115,106 @@ iframe.goog-te-menu-frame,
     }
 
     .main-navigation a {
-        width:100%;
-        padding:13px 8px;
-        border-bottom:1px solid var(--contact-border);
+        padding:14px 5px;
+        border-bottom:1px solid rgba(197,163,107,.14);
     }
 
     .main-navigation a:last-child {
         border-bottom:0;
     }
 
-    .header-right {
-        margin-left:auto;
-    }
-
-    .language-control select {
-        max-width:125px;
-        font-size:11px;
-    }
-
     .contact-hero {
-        padding:65px 20px 40px;
+        padding:76px 22px 55px;
+    }
+
+    .contact-hero::before,
+    .contact-hero::after {
+        width:8%;
+    }
+
+    .contact-hero h1 {
+        font-size:clamp(51px,13vw,78px);
     }
 
     .contact-hero p {
-        font-size:14px;
+        font-size:13px;
+        line-height:1.95;
     }
 
-    .contact-image-section {
-        padding:10px 15px 60px;
+    .office-image-section {
+        padding:0 14px;
     }
 
-    .contact-image-frame {
-        height:360px;
+    .office-image-frame {
+        height:390px;
     }
 
-    .contact-image-caption {
-        padding:22px;
-        font-size:10px;
+    .office-image-caption {
+        display:block;
+        padding:25px 20px;
     }
 
-    .contact-container {
-        padding:0 17px;
+    .office-image-caption strong {
+        font-size:23px;
+    }
+
+    .office-image-caption span {
+        display:block;
+        margin-top:12px;
+        font-size:9px;
+        letter-spacing:1.5px;
+    }
+
+    .takeover-section {
+        padding:70px 0 75px;
+    }
+
+    .takeover-layout {
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .takeover-copy h2 {
+        max-width:450px;
+        font-size:48px;
+    }
+
+    .takeover-copy p {
+        font-size:13px;
+    }
+
+    .takeover-image-frame {
+        min-height:0;
+        height:390px;
+        box-shadow:9px 9px 0 rgba(169,130,77,.13);
     }
 
     .general-contact {
-        padding:32px 20px;
-        margin-bottom:60px;
+        margin:65px 0 80px;
+        padding:49px 20px;
+    }
+
+    .general-contact::before,
+    .general-contact::after {
+        width:45px;
+        height:45px;
+    }
+
+    .contact-section,
+    .platform-section {
+        margin-bottom:80px;
+    }
+
+    .section-heading {
+        margin-bottom:30px;
+    }
+
+    .section-heading h2 {
+        font-size:35px;
+    }
+
+    .section-heading p {
+        font-size:13px;
     }
 
     .department-grid,
@@ -924,43 +1222,65 @@ iframe.goog-te-menu-frame,
         grid-template-columns:1fr;
     }
 
-    .department-image {
-        height:210px;
+    .department-card {
+        min-height:0;
+        padding:29px 25px 32px;
     }
 
-    .department-card-content {
-        padding:25px;
+    .department-card p {
+        min-height:0;
+    }
+
+    .department-card-top {
+        margin-bottom:24px;
+    }
+
+    .department-card h3 {
+        font-size:25px;
     }
 
     .platform-card {
-        padding:30px;
+        min-height:0;
+        padding:32px 27px;
+    }
+
+    .platform-number {
+        margin-bottom:25px;
     }
 
     .platform-card p {
-        min-height:auto;
+        min-height:0;
     }
 
     .social-section {
-        padding:52px 15px;
-        margin-bottom:65px;
-    }
-
-    .social-icons {
-        gap:12px;
+        padding:67px 18px 70px;
     }
 
     .social-link {
-        width:48px;
-        height:48px;
+        width:47px;
+        height:47px;
     }
 
     .office-section {
-        padding:0 20px;
+        padding:70px 0 75px;
+    }
+
+    .office-address-layout {
+        flex-direction:column;
+        gap:24px;
+    }
+
+    .office-address-heading h2 {
+        font-size:34px;
+    }
+
+    .contact-bottom-navigation {
+        padding:55px 20px 25px;
     }
 
     .footer-groups {
         grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:28px 15px;
+        gap:32px 18px;
     }
 
     .footer-bottom {
@@ -969,17 +1289,33 @@ iframe.goog-te-menu-frame,
     }
 }
 
-@media(max-width:380px) {
+@media(max-width:390px) {
+    .company-logo img {
+        width:112px;
+    }
+
+    .header-inner {
+        gap:8px;
+    }
+
+    .mobile-menu-button {
+        padding:9px 10px;
+    }
+
+    .language-control select {
+        max-width:100px;
+    }
+
     .footer-groups {
         grid-template-columns:1fr;
     }
 
-    .header-inner {
-        gap:12px;
+    .office-image-frame {
+        height:330px;
     }
 
-    .company-logo img {
-        width:120px;
+    .takeover-image-frame {
+        height:320px;
     }
 }
 
@@ -1165,7 +1501,6 @@ Please attach your CV.`
 (function protectPageFromGoogleInterface() {
 
     function restorePagePosition() {
-
         const html = document.documentElement;
         const body = document.body;
 
@@ -1197,7 +1532,6 @@ Please attach your CV.`
     }
 
     function removeGooglePopouts() {
-
         const unwantedSelectors = [
             "iframe.goog-te-banner-frame",
             ".goog-te-banner-frame",
@@ -1207,15 +1541,11 @@ Please attach your CV.`
         ];
 
         unwantedSelectors.forEach(function(selector) {
-
             document.querySelectorAll(selector).forEach(function(element) {
-
                 if(!element.closest("#google_translate_element")) {
                     element.remove();
                 }
-
             });
-
         });
 
         restorePagePosition();
@@ -1303,7 +1633,10 @@ Please attach your CV.`
 
 <section class="contact-hero">
     <div class="eyebrow">PHRINUSOMYIS™</div>
+
     <h1>CONTACT</h1>
+
+    <div class="hero-rule"></div>
 
     <p>
         Official contact channels for PHRINUSOMYIS™.
@@ -1313,10 +1646,10 @@ Please attach your CV.`
     </p>
 </section>
 
-<section class="contact-image-section">
-    <div class="contact-image-frame">
+<!-- FIRST PHOTOGRAPH: ORIGINAL OFFICE IMAGE -->
 
-        <!-- FIRST IMAGE: PRESERVED EXACTLY AS SUPPLIED -->
+<section class="office-image-section">
+    <div class="office-image-frame">
 
         <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
@@ -1324,17 +1657,55 @@ Please attach your CV.`
             loading="eager"
         >
 
-        <div class="contact-image-caption">
-            PHRINUSOMYIS™ — COMMANDING THE WORLD STAGE™
+        <div class="office-image-caption">
+            <strong>PHRINUSOMYIS™</strong>
+            <span>COMMANDING THE WORLD STAGE™</span>
         </div>
+
+    </div>
+</section>
+
+<!-- SECOND PHOTOGRAPH: THE TAKEOVER — EDITION 001 -->
+
+<section class="takeover-section">
+    <div class="container">
+
+        <div class="takeover-layout">
+
+            <div class="takeover-copy">
+                <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE</div>
+
+                <h2>THE<br>TAKEOVER</h2>
+
+                <p>
+                    Every new era has a defining moment.
+                </p>
+
+                <div class="takeover-edition">
+                    EDITION 001
+                </div>
+            </div>
+
+            <div class="takeover-image-frame">
+                <img
+                    src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg"
+                    alt="PHRINUSOMYIS Magazine — THE TAKEOVER, Edition 001"
+                    loading="lazy"
+                >
+            </div>
+
+        </div>
+
     </div>
 </section>
 
 <main>
+
 <div class="contact-container">
 
     <section class="general-contact">
         <div class="section-label">OFFICIAL COMMUNICATION</div>
+
         <h2>General Enquiries</h2>
 
         <p>
@@ -1351,9 +1722,11 @@ Please attach your CV.`
 
     <section class="contact-section">
 
-        <div class="contact-section-heading">
-            <div class="section-label">DIRECTORY</div>
+        <div class="section-heading">
+            <div class="eyebrow">DIRECTORY</div>
+
             <h2>Department Contacts</h2>
+
             <p>
                 Direct contact details for the principal departments
                 of PHRINUSOMYIS™.
@@ -1364,89 +1737,74 @@ Please attach your CV.`
 
             <article class="department-card">
 
-                <div class="department-image">
+                <div class="department-card-top">
+                    <span class="department-number">01</span>
 
-                    <!-- SECOND IMAGE: THE TAKEOVER -->
-
-                    <img
-                        src="/the-takeover.jpg"
-                        alt="THE TAKEOVER — PHRINUSOMYIS Magazine"
-                        loading="lazy"
-                    >
-                </div>
-
-                <div class="department-card-content">
                     <div class="department-icon">
                         <svg viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2"
+                             stroke="currentColor" stroke-width="1.7"
                              stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16v16H4z"/>
                             <path d="M8 8h8M8 12h8M8 16h5"/>
                         </svg>
                     </div>
-
-                    <h3>Press &amp; Media</h3>
-
-                    <p>
-                        For journalists, editors, publishers,
-                        broadcasters and media organizations seeking
-                        official statements, interviews, information
-                        or press materials from PHRINUSOMYIS™.
-                    </p>
-
-                    <a class="department-link"
-                       data-enquiry="media"
-                       href="mailto:press@phrinusomyis.com">
-                        Contact Press &amp; Media →
-                    </a>
                 </div>
+
+                <h3>Press &amp; Media</h3>
+
+                <p>
+                    For journalists, editors, publishers,
+                    broadcasters and media organizations seeking
+                    official statements, interviews, information
+                    or press materials from PHRINUSOMYIS™.
+                </p>
+
+                <a class="department-link"
+                   data-enquiry="media"
+                   href="mailto:press@phrinusomyis.com">
+                    Contact Press &amp; Media <span>→</span>
+                </a>
+
             </article>
 
             <article class="department-card">
-                <div class="department-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1000&q=85"
-                        alt="Basketball players competing on a court"
-                        loading="lazy">
-                </div>
 
-                <div class="department-card-content">
+                <div class="department-card-top">
+                    <span class="department-number">02</span>
+
                     <div class="department-icon">
                         <svg viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2"
+                             stroke="currentColor" stroke-width="1.7"
                              stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>
                         </svg>
                     </div>
-
-                    <h3>Events &amp; Competitions</h3>
-
-                    <p>
-                        For enquiries concerning ZEAVIQ SPORTS™,
-                        competitions, event participation and
-                        competition-related matters.
-                    </p>
-
-                    <a class="department-link"
-                       data-enquiry="events"
-                       href="mailto:events@phrinusomyis.com">
-                        Contact Events &amp; Competitions →
-                    </a>
                 </div>
+
+                <h3>Events &amp; Competitions</h3>
+
+                <p>
+                    For enquiries concerning ZEAVIQ SPORTS™,
+                    competitions, event participation and
+                    competition-related matters.
+                </p>
+
+                <a class="department-link"
+                   data-enquiry="events"
+                   href="mailto:events@phrinusomyis.com">
+                    Contact Events &amp; Competitions <span>→</span>
+                </a>
+
             </article>
 
             <article class="department-card">
-                <div class="department-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=85"
-                        alt="Professional partnership handshake"
-                        loading="lazy">
-                </div>
 
-                <div class="department-card-content">
+                <div class="department-card-top">
+                    <span class="department-number">03</span>
+
                     <div class="department-icon">
                         <svg viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2"
+                             stroke="currentColor" stroke-width="1.7"
                              stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 11a4 4 0 1 0-8 0"/>
                             <path d="M2 20c0-4 4-6 8-6"/>
@@ -1454,67 +1812,68 @@ Please attach your CV.`
                             <path d="M14 20h8"/>
                         </svg>
                     </div>
-
-                    <h3>Partnerships</h3>
-
-                    <p>
-                        For individuals, organizations, institutions
-                        and commercial entities submitting partnership
-                        proposals or enquiries concerning cooperation
-                        with PHRINUSOMYIS™.
-                    </p>
-
-                    <a class="department-link"
-                       data-enquiry="partnerships"
-                       href="mailto:partnerships@phrinusomyis.com">
-                        Contact Partnerships →
-                    </a>
                 </div>
+
+                <h3>Partnerships</h3>
+
+                <p>
+                    For individuals, organizations, institutions
+                    and commercial entities submitting partnership
+                    proposals or enquiries concerning cooperation
+                    with PHRINUSOMYIS™.
+                </p>
+
+                <a class="department-link"
+                   data-enquiry="partnerships"
+                   href="mailto:partnerships@phrinusomyis.com">
+                    Contact Partnerships <span>→</span>
+                </a>
+
             </article>
 
             <article class="department-card">
-                <div class="department-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
-                        alt="Professional workplace"
-                        loading="lazy">
-                </div>
 
-                <div class="department-card-content">
+                <div class="department-card-top">
+                    <span class="department-number">04</span>
+
                     <div class="department-icon">
                         <svg viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2"
+                             stroke="currentColor" stroke-width="1.7"
                              stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="7" width="18" height="14" rx="2"/>
                             <path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/>
                         </svg>
                     </div>
-
-                    <h3>Careers &amp; Employment</h3>
-
-                    <p>
-                        For professional opportunities, recruitment
-                        and employment enquiries. Applicants should
-                        include their relevant experience and attach
-                        a current CV to their email.
-                    </p>
-
-                    <a class="department-link"
-                       data-enquiry="careers"
-                       href="mailto:events@phrinusomyis.com">
-                        Contact Careers &amp; Employment →
-                    </a>
                 </div>
+
+                <h3>Careers &amp; Employment</h3>
+
+                <p>
+                    For professional opportunities, recruitment
+                    and employment enquiries. Applicants should
+                    include their relevant experience and attach
+                    a current CV to their email.
+                </p>
+
+                <a class="department-link"
+                   data-enquiry="careers"
+                   href="mailto:events@phrinusomyis.com">
+                    Contact Careers &amp; Employment <span>→</span>
+                </a>
+
             </article>
 
         </div>
+
     </section>
 
     <section class="platform-section">
 
-        <div class="contact-section-heading">
-            <div class="section-label">OFFICIAL PUBLICATIONS</div>
+        <div class="section-heading">
+            <div class="eyebrow">OFFICIAL PUBLICATIONS</div>
+
             <h2>PHRINUSOMYIS™ Publications</h2>
+
             <p>
                 Official announcements, news releases, editorial
                 features and published stories.
@@ -1525,6 +1884,7 @@ Please attach your CV.`
 
             <article class="platform-card">
                 <div class="platform-number">01 / NEWSWIRE</div>
+
                 <h3>PHRINUSOMYIS™ NEWSWIRE</h3>
 
                 <p>
@@ -1539,6 +1899,7 @@ Please attach your CV.`
 
             <article class="platform-card">
                 <div class="platform-number">02 / MAGAZINE</div>
+
                 <h3>PHRINUSOMYIS™ MAGAZINE</h3>
 
                 <p>
@@ -1552,6 +1913,7 @@ Please attach your CV.`
             </article>
 
         </div>
+
     </section>
 
 </div>
@@ -1559,6 +1921,7 @@ Please attach your CV.`
 <section class="social-section">
 
     <div class="section-label">OFFICIAL CHANNELS</div>
+
     <h2>PHRINUSOMYIS™</h2>
 
     <p>
@@ -1630,17 +1993,26 @@ Please attach your CV.`
         </a>
 
     </div>
+
 </section>
 
 <section class="office-section">
-    <div class="section-label">UNITED STATES</div>
-    <h2>Head Office</h2>
 
-    <div class="office-address">
-        <strong>PHRINUSOMYIS™</strong><br>
-        Brooklyn, New York<br>
-        United States
+    <div class="office-address-layout">
+
+        <div class="office-address-heading">
+            <div class="eyebrow">UNITED STATES</div>
+            <h2>Head Office</h2>
+        </div>
+
+        <div class="office-address">
+            <strong>PHRINUSOMYIS™</strong><br>
+            Brooklyn, New York<br>
+            United States
+        </div>
+
     </div>
+
 </section>
 
 </main>
@@ -1687,6 +2059,7 @@ Please attach your CV.`
         </div>
 
         <div class="footer-bottom">
+
             <div class="footer-slogan">
                 COMMANDING THE WORLD STAGE™
             </div>
@@ -1694,6 +2067,7 @@ Please attach your CV.`
             <div class="footer-copyright">
                 © <span id="copyrightYear">2026</span> PHRINUSOMYIS™. All Rights Reserved.
             </div>
+
         </div>
 
     </div>
