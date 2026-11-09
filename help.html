@@ -129,1458 +129,1415 @@
 
 <style>
 :root {
-    --black:#171715;--charcoal:#25241f;--ivory:#f2eee5;
-  --ivory-light:#f8f5ee;--stone:#e5ded1;--stone-deep:#d8cebd;
-  --bronze:#a9824d;--gold:#c5a36b;--text:#24231f;
-  --muted:#69665f;--line:rgba(169,130,77,.25);
-  --max-width:1360px;
-  --heading-font:"Aptos Display","Segoe UI",Arial,sans-serif;
-  --body-font:"Aptos","Segoe UI",Arial,sans-serif;
+    --black:#171715;
+    --charcoal:#25241f;
+    --ivory:#f2eee5;
+    --ivory-light:#f8f5ee;
+    --stone:#e5ded1;
+    --stone-deep:#d8cebd;
+    --bronze:#a9824d;
+    --gold:#c5a36b;
+    --text:#24231f;
+    --muted:#69665f;
+    --line:rgba(37,36,31,.13);
+    --white:#fffdf9;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:"DM Sans",Arial,sans-serif;
+    --display:"Manrope",Arial,sans-serif;
+    --container:1240px;
 }
 
 * {
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    background: var(--bg);
-    scroll-padding-top: 100px;
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;
 }
 
 body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--white);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    overflow-x: hidden;
-    top: 0 !important;
-}
-
-body, body * {
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
+    background:var(--ivory-light);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.7;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
 }
 
 a {
-    color: inherit;
+    color:inherit;
+    text-decoration:none;
 }
 
-button, input, select {
-    font: inherit;
+button,input {
+    font:inherit;
 }
 
-button, a, summary, select {
-    -webkit-tap-highlight-color: transparent;
+img {
+    max-width:100%;
+    display:block;
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-summary:focus-visible,
-select:focus-visible {
-    outline: 2px solid white;
-    outline-offset: 4px;
+::selection {
+    background:var(--gold);
+    color:var(--black);
 }
-
-/* GOOGLE TRANSLATE PROTECTION */
-
-html,
-html body,
-body.translated-ltr,
-body.translated-rtl {
-    top: 0 !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-body {
-    position: relative !important;
-}
-
-body > .skiptranslate,
-iframe.goog-te-banner-frame,
-.goog-te-banner-frame,
-.goog-te-balloon-frame,
-.goog-te-menu-frame,
-#goog-gt-tt,
-.goog-tooltip,
-.goog-te-tooltip-container,
-.goog-te-ftab,
-.VIpgJd-ZVi9od-ORHb-OEVmcd,
-.VIpgJd-ZVi9od-ORHb,
-.VIpgJd-ZVi9od-ORHb-KE6vqe,
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-.VIpgJd-ZVi9od-l4eHX,
-.VIpgJd-yAWNEb-L7lbkb,
-.VIpgJd-ZVi9od-vH1Gmf,
-.VIpgJd-ZVi9od-xl07Ob,
-.VIpgJd-ZVi9od-SmfZ {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    position: fixed !important;
-    left: -10000px !important;
-    top: -10000px !important;
-    width: 0 !important;
-    height: 0 !important;
-    max-width: 0 !important;
-    max-height: 0 !important;
-    border: 0 !important;
-    z-index: -9999 !important;
-}
-
-.goog-text-highlight {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-    color: inherit !important;
-}
-
-.goog-logo-link,
-.goog-te-gadget-icon,
-.goog-te-spinner-pos,
-.goog-te-menu2,
-.goog-te-menu2-item,
-.goog-te-gadget span {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-.goog-te-gadget {
-    color: transparent !important;
-    font-size: 0 !important;
-}
-
-.goog-te-gadget .goog-te-combo {
-    margin: 0 !important;
-    padding: 9px 30px 9px 11px !important;
-    max-width: 175px;
-    min-height: 38px;
-    background: #171717 !important;
-    color: #fff !important;
-    border: 1px solid #505050 !important;
-    border-radius: 0 !important;
-    font-size: 11px !important;
-    outline: none;
-}
-
-/* GENERAL */
 
 .container {
-    width: min(var(--max), calc(100% - 64px));
-    margin-inline: auto;
+    width:min(var(--container),calc(100% - 64px));
+    margin:auto;
 }
 
 .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--silver);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    line-height: 1.5;
-    text-transform: uppercase;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--bronze);
 }
 
-.eyebrow::before {
-    content: "";
-    width: 28px;
-    height: 1px;
-    background: #aaa;
+.gold-line {
+    width:42px;
+    height:2px;
+    background:var(--gold);
 }
 
-.section-title {
-    margin: 12px 0 10px;
-    color: #fff;
-    font-size: clamp(25px, 3.3vw, 40px);
-    line-height: 1.12;
-    letter-spacing: -1px;
-    font-weight: 800;
-    text-transform: uppercase;
+/* =================================
+   GOOGLE TRANSLATE PROTECTION
+================================= */
+
+#google_translate_element {
+    position:fixed;
+    left:-10000px;
+    top:0;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    opacity:0;
+    pointer-events:none;
 }
 
-.section-description {
-    max-width: 650px;
-    margin: 0;
-    color: #aaa;
-    font-size: 13px;
-    line-height: 1.9;
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-menu-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+#goog-gt-tt,
+.goog-te-spinner-pos {
+    display:none!important;
+    visibility:hidden!important;
 }
 
-/* TOP NAVIGATION */
+.goog-te-gadget,
+.goog-logo-link,
+.goog-te-gadget span {
+    display:none!important;
+}
 
-.help-topbar {
-    position: sticky;
-    top: 0;
-    z-index: 500;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    min-height: 76px;
-    padding: 12px max(32px, calc((100vw - var(--max))/2));
-    background: rgba(8,8,8,.96);
-    border-bottom: 1px solid var(--line);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+body {
+    top:0!important;
+    position:relative!important;
+}
+
+html {
+    margin-top:0!important;
+    top:0!important;
+}
+
+.skip-link {
+    position:absolute;
+    left:-10000px;
+    top:10px;
+    z-index:99999;
+    background:var(--gold);
+    color:var(--black);
+    padding:12px 20px;
+}
+
+.skip-link:focus {
+    left:10px;
+}
+
+/* =================================
+   TOP NAVIGATION
+================================= */
+
+.topbar {
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(248,245,238,.96);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+}
+
+.topbar-inner {
+    width:min(1380px,calc(100% - 64px));
+    min-height:82px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
 .topbar-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 13px;
-    color: white;
-    text-decoration: none;
-    white-space: nowrap;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
 }
 
 .topbar-brand img {
-    width: 39px;
-    height: 39px;
-    object-fit: contain;
+    width:38px;
+    height:38px;
+    object-fit:contain;
 }
 
 .topbar-brand span {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2.5px;
+    font-family:var(--display);
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:1.2px;
 }
 
 .topbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display:flex;
+    align-items:center;
+    gap:32px;
 }
 
 .translate-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .translate-label {
-    color: #aaa;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    color:var(--muted);
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
 }
 
-#google_translate_element {
-    min-width: 125px;
-    min-height: 38px;
-    overflow: hidden;
+.translate-select {
+    border:1px solid var(--stone-deep);
+    background:transparent;
+    padding:9px 12px;
+    font-size:11px;
+    color:var(--text);
+    cursor:pointer;
+    max-width:150px;
 }
 
 .top-menu {
-    position: relative;
+    position:relative;
 }
 
 .top-menu summary {
-    display: inline-flex;
-    align-items: center;
-    gap: 18px;
-    min-height: 40px;
-    padding: 9px 14px;
-    border: 1px solid var(--line-strong);
-    background: var(--surface-2);
-    color: #fff;
-    cursor: pointer;
-    list-style: none;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    list-style:none;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    border:1px solid var(--stone-deep);
+    padding:12px 20px;
+    transition:.25s;
 }
 
 .top-menu summary::-webkit-details-marker {
-    display: none;
+    display:none;
 }
 
 .top-menu summary::after {
-    content: "+";
-    font-size: 16px;
-    font-weight: 400;
+    content:"＋";
+    margin-left:15px;
+    color:var(--bronze);
 }
 
 .top-menu[open] summary::after {
-    content: "−";
+    content:"−";
+}
+
+.top-menu summary:hover {
+    background:var(--black);
+    color:var(--ivory);
 }
 
 .top-menu-list {
-    position: absolute;
-    top: calc(100% + 12px);
-    right: 0;
-    z-index: 600;
-    width: 255px;
-    padding: 9px;
-    background: #121212;
-    border: 1px solid var(--line-strong);
-    box-shadow: 0 20px 50px rgba(0,0,0,.65);
+    position:absolute;
+    right:0;
+    top:calc(100% + 12px);
+    width:245px;
+    background:var(--ivory-light);
+    border:1px solid var(--stone);
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    padding:10px;
+    display:grid;
+    z-index:100;
 }
 
 .top-menu-list a {
-    display: block;
-    padding: 12px 13px;
-    color: #eee;
-    text-decoration: none;
-    font-size: 11px;
-    border-bottom: 1px solid #292929;
-    transition: background var(--ease);
+    font-size:12px;
+    padding:11px 13px;
+    border-bottom:1px solid var(--line);
+    transition:.2s;
 }
 
 .top-menu-list a:last-child {
-    border-bottom: 0;
+    border-bottom:0;
 }
 
 .top-menu-list a:hover {
-    background: #292929;
+    background:var(--ivory);
+    color:var(--bronze);
+    padding-left:19px;
 }
 
-/* HERO INTRO */
+/* =================================
+   INTRODUCTORY HERO
+================================= */
 
-.hero-intro {
-    position: relative;
-    padding: 85px 25px 55px;
-    text-align: center;
-    overflow: hidden;
-    background:
-        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.075), transparent 55%),
-        #080808;
+.hero {
+    padding:85px 0 55px;
+    background:var(--ivory);
 }
 
-.hero-intro::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: min(900px, 80%);
-    height: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, transparent, #555, transparent);
+.hero-inner {
+    display:grid;
+    grid-template-columns:1fr .8fr;
+    align-items:center;
+    gap:65px;
 }
 
 .hero-logo {
-    display: block;
-    width: 65px;
-    height: 65px;
-    margin: 0 auto 24px;
-    object-fit: contain;
+    width:76px;
+    height:76px;
+    object-fit:contain;
+    margin-bottom:32px;
 }
 
-.hero-intro .eyebrow {
-    justify-content: center;
+.hero h1 {
+    font-family:var(--display);
+    font-size:clamp(48px,7vw,88px);
+    font-weight:500;
+    letter-spacing:-5px;
+    line-height:.98;
+    margin:22px 0;
 }
 
-.hero-intro .eyebrow::before {
-    display: none;
+.hero h1 span {
+    display:block;
+    font-family:var(--serif);
+    font-weight:400;
+    font-style:italic;
+    color:var(--bronze);
 }
 
-.hero-intro h1 {
-    max-width: 950px;
-    margin: 17px auto 0;
-    color: white;
-    font-size: clamp(37px, 7vw, 78px);
-    line-height: .98;
-    letter-spacing: -3px;
-    font-weight: 900;
-    text-transform: uppercase;
+.hero-copy {
+    max-width:570px;
+    font-size:15px;
+    color:var(--muted);
+    line-height:1.95;
 }
 
-.hero-intro h1 span {
-    display: block;
-    color: #8f8f8f;
+.hero-bottom {
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-top:34px;
 }
 
-.hero-intro p {
-    max-width: 650px;
-    margin: 23px auto 0;
-    color: #c2c2c2;
-    font-size: 14px;
-    line-height: 1.9;
+.hero-bottom .gold-line {
+    width:48px;
 }
 
-/* MAIN HERO IMAGE */
+.hero-bottom span {
+    font-size:10px;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    font-weight:700;
+}
+
+.hero-side {
+    border-left:1px solid var(--stone-deep);
+    padding:20px 0 20px 28px;
+}
+
+.hero-side-number {
+    font-family:var(--serif);
+    font-size:65px;
+    color:var(--gold);
+    line-height:1;
+}
+
+.hero-side p {
+    margin-top:16px;
+    font-size:13px;
+    line-height:1.9;
+    color:var(--muted);
+    max-width:300px;
+}
+
+/* =================================
+   MAIN IMAGE FEATURE
+================================= */
 
 .hero-visual {
-    width: min(1500px, calc(100% - 48px));
-    margin: 0 auto;
+    padding-bottom:70px;
+    background:var(--ivory);
 }
 
 .hero-visual-frame {
-    position: relative;
-    min-height: 510px;
-    overflow: hidden;
-    background: #171717;
-    border: 1px solid #333;
+    position:relative;
+    min-height:460px;
+    height:min(57vw,600px);
+    overflow:hidden;
+    background:var(--charcoal);
 }
 
 .hero-visual-frame > img {
-    display: block;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 48%;
-    filter: brightness(.72) contrast(1.08);
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    opacity:.66;
 }
 
 .hero-visual-frame::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.42) 55%, rgba(0,0,0,.08)),
-        linear-gradient(0deg, rgba(0,0,0,.48), transparent 45%);
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(18,18,16,.88),
+        rgba(18,18,16,.35) 65%,
+        rgba(18,18,16,.15)
+    );
 }
 
 .hero-visual-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    min-height: 510px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 760px;
-    padding: clamp(30px, 7vw, 95px);
+    position:absolute;
+    z-index:2;
+    left:8%;
+    bottom:12%;
+    max-width:590px;
+    color:white;
 }
 
 .hero-visual-content .eyebrow {
-    color: #ddd;
+    color:var(--gold);
 }
 
 .hero-visual-content h2 {
-    margin: 22px 0 0;
-    color: #fff;
-    font-size: clamp(32px, 5.5vw, 65px);
-    line-height: 1.04;
-    letter-spacing: -1.8px;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-family:var(--display);
+    font-size:clamp(36px,5vw,67px);
+    font-weight:500;
+    letter-spacing:-2.5px;
+    line-height:1.08;
+    margin:20px 0;
 }
 
 .hero-visual-content p {
-    max-width: 490px;
-    margin: 20px 0 0;
-    color: #e1e1e1;
-    font-size: 13px;
-    line-height: 1.9;
+    max-width:470px;
+    font-size:14px;
+    color:rgba(255,255,255,.77);
+    line-height:1.9;
 }
 
-/* HERO FOOTER STRIP */
-
 .hero-strip {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 19px 22px;
-    background: #111;
-    border: 1px solid #303030;
-    border-top: 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:23px 0;
+    border-bottom:1px solid var(--line);
+    gap:20px;
 }
 
 .hero-strip span {
-    color: #aaa;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:700;
 }
 
 .hero-strip a {
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    text-transform: uppercase;
+    font-size:11px;
+    font-weight:700;
+    color:var(--bronze);
 }
 
-.hero-strip a:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-}
-
-/* SEARCH */
+/* =================================
+   SEARCH CENTRE
+================================= */
 
 .search-section {
-    position: relative;
-    z-index: 10;
-    width: min(900px, calc(100% - 40px));
-    margin: 75px auto 0;
+    padding:110px 0;
+    background:var(--ivory-light);
 }
 
 .search-heading {
-    margin-bottom: 18px;
-    text-align: center;
-}
-
-.search-heading .eyebrow {
-    justify-content: center;
-}
-
-.search-heading .eyebrow::before {
-    display: none;
+    max-width:700px;
+    margin-bottom:38px;
 }
 
 .search-heading h2 {
-    margin: 12px 0 8px;
-    color: #fff;
-    font-size: clamp(23px, 3vw, 32px);
-    font-weight: 800;
-    letter-spacing: -1px;
-    text-transform: uppercase;
+    font-family:var(--display);
+    font-size:clamp(32px,4vw,49px);
+    letter-spacing:-2px;
+    font-weight:600;
+    margin:13px 0;
 }
 
 .search-heading p {
-    margin: 0;
-    color: #999;
-    font-size: 12px;
+    color:var(--muted);
+    font-size:14px;
 }
 
 .search-control {
-    display: flex;
-    min-height: 66px;
-    background: #141414;
-    border: 1px solid #656565;
-    transition: border-color var(--ease);
-}
-
-.search-control:focus-within {
-    border-color: white;
+    display:flex;
+    border-bottom:2px solid var(--charcoal);
+    align-items:center;
 }
 
 .search-control input {
-    flex: 1;
-    min-width: 0;
-    padding: 18px 21px;
-    background: transparent;
-    color: white;
-    border: 0;
-    outline: none;
-    font-size: 14px;
+    flex:1;
+    min-width:0;
+    padding:21px 5px;
+    background:transparent;
+    border:0;
+    outline:none;
+    font-size:16px;
+    color:var(--text);
 }
 
 .search-control input::placeholder {
-    color: #888;
-    opacity: 1;
+    color:#99948a;
 }
 
 .search-control button {
-    min-width: 125px;
-    padding: 0 20px;
-    background: white;
-    color: #080808;
-    border: 0;
-    cursor: pointer;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: background var(--ease);
+    background:var(--black);
+    color:var(--ivory);
+    border:0;
+    padding:14px 28px;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:.25s;
 }
 
 .search-control button:hover {
-    background: #c8c8c8;
+    background:var(--bronze);
 }
 
 .search-meta {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 12px;
-    color: #777;
-    font-size: 10px;
-}
-
-#searchStatus {
-    min-height: 20px;
-    color: #aaa;
-    text-align: right;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding-top:17px;
+    font-size:10px;
+    color:var(--muted);
 }
 
 .search-results {
-    display: none;
-    margin-top: 17px;
-    background: #111;
-    border: 1px solid #444;
-}
-
-.search-results.active {
-    display: block;
-}
-
-.search-results-heading {
-    padding: 13px 17px;
-    background: #202020;
-    border-bottom: 1px solid #444;
-    color: #ddd;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:25px;
 }
 
 .search-result {
-    display: block;
-    padding: 17px 19px;
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid #303030;
-    transition: background var(--ease);
-}
-
-.search-result:last-child {
-    border-bottom: 0;
+    display:block;
+    padding:20px 23px;
+    border:1px solid var(--stone);
+    background:var(--white);
+    transition:.25s;
 }
 
 .search-result:hover {
-    background: #202020;
+    border-color:var(--gold);
+    transform:translateY(-2px);
 }
 
-.search-result-type {
-    display: block;
-    margin-bottom: 5px;
-    color: #999;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.search-result small {
+    display:block;
+    color:var(--bronze);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:8px;
 }
 
-.search-result-title {
-    display: block;
-    color: white;
-    font-size: 14px;
-    font-weight: 800;
+.search-result strong {
+    font-family:var(--display);
+    font-size:14px;
 }
 
-.search-result-description {
-    display: block;
-    margin-top: 5px;
-    color: #aaa;
-    font-size: 11px;
-    line-height: 1.7;
+.search-result p {
+    margin-top:6px;
+    color:var(--muted);
+    font-size:12px;
 }
 
-.search-result-arrow {
-    display: block;
-    margin-top: 8px;
-    color: #ddd;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+.search-empty {
+    grid-column:1/-1;
+    border:1px solid var(--stone);
+    padding:25px;
+    font-size:13px;
+    color:var(--muted);
 }
 
-.search-no-match {
-    padding: 22px;
-    color: #bbb;
-    font-size: 12px;
-    line-height: 1.8;
-}
-
-.search-no-match a {
-    display: inline-block;
-    margin-top: 8px;
-    color: white;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
-
-/* PAGE CONTENT */
-
-.main-content {
-    width: min(var(--max), calc(100% - 64px));
-    margin: 110px auto 120px;
-}
-
-/* DIRECTORY */
+/* =================================
+   OFFICIAL DIRECTORY
+================================= */
 
 .directory-section {
-    margin-bottom: 115px;
+    background:var(--ivory);
+    padding:100px 0 115px;
 }
 
 .section-topline {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 25px;
-    padding-bottom: 25px;
-    margin-bottom: 27px;
-    border-bottom: 1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    padding-bottom:35px;
+    border-bottom:1px solid var(--line);
+}
+
+.section-title {
+    font-family:var(--display);
+    font-size:clamp(34px,4vw,52px);
+    font-weight:600;
+    letter-spacing:-2px;
+    margin-top:12px;
+}
+
+.section-description {
+    font-size:13px;
+    color:var(--muted);
+    margin-top:12px;
 }
 
 .section-index {
-    color: #666;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    white-space: nowrap;
+    font-size:9px;
+    letter-spacing:1.5px;
+    color:var(--bronze);
+    font-weight:700;
+    white-space:nowrap;
+    padding-bottom:9px;
 }
 
 .destination-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 13px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:0;
 }
 
 .destination-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 205px;
-    padding: 23px 20px;
-    overflow: hidden;
-    background: linear-gradient(145deg, #191919, #101010);
-    border: 1px solid #333;
-    color: white;
-    text-decoration: none;
-    transition: transform var(--ease), border-color var(--ease), background var(--ease);
+    position:relative;
+    min-height:220px;
+    padding:29px 23px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
 }
 
-.destination-card::after {
-    content: "↗";
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #777;
-    font-size: 18px;
-    transition: transform var(--ease), color var(--ease);
+.destination-card:nth-child(4n+1) {
+    border-left:1px solid var(--line);
 }
 
 .destination-card:hover {
-    transform: translateY(-4px);
-    border-color: #aaa;
-    background: #202020;
-}
-
-.destination-card:hover::after {
-    color: white;
-    transform: translate(3px,-3px);
+    background:var(--black);
+    color:var(--ivory);
 }
 
 .destination-number {
-    margin-bottom: auto;
-    color: #777;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size:9px;
+    letter-spacing:1.3px;
+    color:var(--bronze);
+    font-weight:700;
 }
 
 .destination-card h3 {
-    margin: 27px 0 7px;
-    color: white;
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-family:var(--display);
+    font-size:17px;
+    font-weight:700;
+    margin-top:34px;
 }
 
 .destination-card p {
-    margin: 0;
-    color: #999;
-    font-size: 11px;
-    line-height: 1.7;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.8;
+    margin-top:9px;
 }
 
-/* FAQ AREA */
+.destination-card:hover p {
+    color:rgba(255,255,255,.65);
+}
+
+.destination-card::after {
+    content:"↗";
+    position:absolute;
+    bottom:22px;
+    right:22px;
+    color:var(--bronze);
+    font-size:17px;
+}
+
+/* =================================
+   FAQ AREA
+================================= */
 
 .faq-area {
-    display: grid;
-    grid-template-columns: 260px minmax(0,1fr);
-    gap: 65px;
-    align-items: start;
+    display:grid;
+    grid-template-columns:.65fr 1.35fr;
+    gap:90px;
+    padding:120px max(32px,calc((100% - var(--container))/2));
+    background:var(--ivory-light);
 }
 
 .faq-aside {
-    position: sticky;
-    top: 115px;
+    position:sticky;
+    top:125px;
+    align-self:start;
 }
 
 .faq-aside h2 {
-    margin: 13px 0;
-    color: white;
-    font-size: 27px;
-    line-height: 1.12;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-family:var(--display);
+    font-size:clamp(36px,4vw,54px);
+    line-height:1.1;
+    letter-spacing:-2.5px;
+    margin:18px 0;
+    font-weight:600;
 }
 
 .faq-aside p {
-    margin: 0;
-    color: #999;
-    font-size: 12px;
-    line-height: 1.9;
+    font-size:13px;
+    color:var(--muted);
+    line-height:2;
 }
 
 .faq-aside-line {
-    width: 55px;
-    height: 2px;
-    margin-top: 25px;
-    background: #aaa;
+    width:65px;
+    height:2px;
+    background:var(--gold);
+    margin-top:32px;
 }
 
 .faq-content {
-    min-width: 0;
+    min-width:0;
 }
 
 .faq-section {
-    margin-bottom: 62px;
-    scroll-margin-top: 110px;
-}
-
-.faq-section[hidden] {
-    display: none !important;
+    margin-bottom:65px;
+    scroll-margin-top:110px;
 }
 
 .faq-section-heading {
-    padding-bottom: 17px;
-    margin-bottom: 17px;
-    border-bottom: 1px solid var(--line);
+    padding-bottom:25px;
+    margin-bottom:8px;
+    border-bottom:1px solid var(--line);
 }
 
-.faq-section-heading span {
-    color: #777;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.faq-section-heading > span {
+    font-size:9px;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--bronze);
+    font-weight:700;
 }
 
 .faq-section-heading h3 {
-    margin: 7px 0 4px;
-    color: white;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: .5px;
-    text-transform: uppercase;
+    font-family:var(--display);
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:-.8px;
+    margin-top:9px;
 }
 
 .faq-section-heading p {
-    margin: 0;
-    color: #888;
-    font-size: 11px;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:6px;
 }
 
 .faq-item {
-    margin-bottom: 9px;
-    background: #131313;
-    border: 1px solid #303030;
-    transition: border-color var(--ease);
-}
-
-.faq-item:hover,
-.faq-item[open] {
-    border-color: #686868;
-}
-
-.faq-item[hidden] {
-    display: none !important;
+    border-bottom:1px solid var(--line);
 }
 
 .faq-item summary {
-    position: relative;
-    display: block;
-    padding: 18px 55px 18px 19px;
-    color: #eee;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.7;
-    cursor: pointer;
-    list-style: none;
+    position:relative;
+    list-style:none;
+    padding:21px 42px 21px 0;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    line-height:1.6;
+    transition:.2s;
 }
 
 .faq-item summary::-webkit-details-marker {
-    display: none;
+    display:none;
 }
 
 .faq-item summary::after {
-    content: "+";
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    color: #aaa;
-    font-size: 21px;
-    font-weight: 400;
+    content:"+";
+    position:absolute;
+    right:5px;
+    top:50%;
+    transform:translateY(-50%);
+    width:26px;
+    height:26px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--stone-deep);
+    border-radius:50%;
+    font-size:17px;
+    font-weight:400;
+    color:var(--bronze);
 }
 
 .faq-item[open] summary::after {
-    content: "−";
-    color: white;
+    content:"−";
+    background:var(--black);
+    color:var(--gold);
+    border-color:var(--black);
+}
+
+.faq-item summary:hover {
+    color:var(--bronze);
 }
 
 .faq-answer {
-    padding: 0 20px 21px;
-    color: #aaa;
-    font-size: 12px;
-    line-height: 1.9;
+    padding:0 38px 22px 0;
+    animation:answerIn .25s ease;
+}
+
+@keyframes answerIn {
+    from {opacity:0;transform:translateY(-5px);}
+    to {opacity:1;transform:translateY(0);}
 }
 
 .faq-answer p {
-    margin: 0 0 12px;
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.95;
+    margin-bottom:10px;
 }
 
 .faq-answer p:last-child {
-    margin-bottom: 0;
+    margin-bottom:0;
 }
 
 .faq-answer a {
-    color: white;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    display:inline-block;
+    color:var(--bronze);
+    font-size:11px;
+    font-weight:700;
+    border-bottom:1px solid var(--gold);
+    padding-bottom:2px;
 }
 
-.faq-answer ul {
-    padding-left: 20px;
-}
-
-/* EDITORIAL IMAGE FEATURE */
+/* =================================
+   MAGAZINE EDITORIAL FEATURE
+================================= */
 
 .editorial-feature {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 360px;
-    margin-top: 110px;
-    overflow: hidden;
-    background: #111;
-    border: 1px solid #383838;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:480px;
+    background:var(--black);
+    color:var(--ivory);
 }
 
 .editorial-image {
-    position: relative;
-    min-height: 360px;
-    overflow: hidden;
-    background: #1a1a1a;
+    position:relative;
+    overflow:hidden;
+    min-height:400px;
 }
 
 .editorial-image img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(.75) grayscale(20%);
-    transition: transform .7s ease;
+    width:100%;
+    height:100%;
+    position:absolute;
+    inset:0;
+    object-fit:cover;
+    transition:transform .8s ease;
 }
 
-.editorial-feature:hover .editorial-image img {
-    transform: scale(1.035);
+.editorial-image:hover img {
+    transform:scale(1.04);
 }
 
 .editorial-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: clamp(28px, 5vw, 65px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:70px clamp(35px,7vw,100px);
 }
 
 .editorial-copy .eyebrow {
-    color: #999;
+    color:var(--gold);
 }
 
 .editorial-copy h2 {
-    margin: 18px 0 12px;
-    color: white;
-    font-size: clamp(24px, 3.3vw, 39px);
-    line-height: 1.12;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-family:var(--display);
+    font-size:clamp(37px,5vw,64px);
+    line-height:1.08;
+    letter-spacing:-2.5px;
+    font-weight:500;
+    margin:22px 0;
 }
 
 .editorial-copy p {
-    max-width: 420px;
-    margin: 0;
-    color: #999;
-    font-size: 12px;
-    line-height: 1.9;
+    color:rgba(255,255,255,.64);
+    font-size:13px;
+    line-height:2;
+    max-width:440px;
 }
 
 .editorial-copy a {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 25px;
-    padding: 12px 17px;
-    border: 1px solid #777;
-    color: white;
-    text-decoration: none;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: background var(--ease), color var(--ease);
+    margin-top:32px;
+    display:inline-flex;
+    gap:25px;
+    align-items:center;
+    padding:14px 21px;
+    border:1px solid var(--gold);
+    color:var(--ivory);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.7px;
+    transition:.25s;
 }
 
 .editorial-copy a:hover {
-    background: white;
-    color: black;
+    background:var(--gold);
+    color:var(--black);
 }
 
-/* CONTACT */
+/* =================================
+   CONTACT PANEL
+================================= */
 
 .contact-panel {
-    position: relative;
-    margin-top: 115px;
-    padding: 75px 30px;
-    overflow: hidden;
-    background:
-        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.09), transparent 60%),
-        #111;
-    border: 1px solid #444;
-    text-align: center;
+    position:relative;
+    text-align:center;
+    padding:115px 30px;
+    background:var(--ivory);
+    overflow:hidden;
 }
 
-.contact-panel .eyebrow {
-    justify-content: center;
+.contact-panel::before,
+.contact-panel::after {
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border:1px solid rgba(169,130,77,.13);
+    border-radius:50%;
+    pointer-events:none;
 }
 
-.contact-panel .eyebrow::before {
-    display: none;
+.contact-panel::before {
+    left:-180px;
+    top:-100px;
+}
+
+.contact-panel::after {
+    right:-180px;
+    bottom:-120px;
 }
 
 .contact-panel h2 {
-    max-width: 760px;
-    margin: 17px auto 14px;
-    color: white;
-    font-size: clamp(28px, 4.5vw, 49px);
-    line-height: 1.1;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-family:var(--display);
+    font-size:clamp(36px,5vw,63px);
+    line-height:1.1;
+    letter-spacing:-2.5px;
+    font-weight:600;
+    margin:20px 0;
 }
 
 .contact-panel p {
-    max-width: 590px;
-    margin: 0 auto;
-    color: #aaa;
-    font-size: 13px;
-    line-height: 1.9;
+    max-width:580px;
+    margin:0 auto;
+    color:var(--muted);
+    font-size:13px;
+    line-height:2;
 }
 
 .contact-panel a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    min-height: 49px;
-    margin-top: 27px;
-    padding: 0 23px;
-    background: white;
-    color: black;
-    border: 1px solid white;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: background var(--ease), color var(--ease);
+    display:inline-flex;
+    gap:25px;
+    align-items:center;
+    margin-top:33px;
+    padding:16px 25px;
+    background:var(--black);
+    color:var(--ivory);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.8px;
+    transition:.25s;
 }
 
 .contact-panel a:hover {
-    background: transparent;
-    color: white;
+    background:var(--bronze);
 }
 
-/* FOOTER */
+/* =================================
+   FOOTER
+================================= */
 
-.site-footer {
-    padding: 70px 32px 25px;
-    background: #101010;
-    border-top: 1px solid #383838;
+.footer {
+    background:var(--black);
+    color:var(--ivory);
+    padding:75px 0 25px;
 }
 
 .footer-inner {
-    width: min(var(--max), 100%);
-    margin: 0 auto;
+    width:min(var(--container),calc(100% - 64px));
+    margin:auto;
 }
 
 .footer-top {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 45px;
-    padding-bottom: 55px;
+    display:grid;
+    grid-template-columns:1.6fr 1fr 1fr 1fr;
+    gap:45px;
+    padding-bottom:55px;
 }
 
 .footer-brand img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    margin-bottom: 15px;
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    margin-bottom:15px;
 }
 
 .footer-brand strong {
-    display: block;
-    color: white;
-    font-size: 12px;
-    letter-spacing: 2px;
+    display:block;
+    font-family:var(--display);
+    font-size:15px;
+    letter-spacing:1px;
 }
 
 .footer-brand p {
-    max-width: 260px;
-    margin: 12px 0 0;
-    color: #888;
-    font-size: 11px;
-    line-height: 1.9;
+    font-size:11px;
+    color:rgba(255,255,255,.52);
+    line-height:2;
+    margin-top:13px;
+    max-width:230px;
 }
 
 .footer-column h3 {
-    margin: 0 0 18px;
-    color: white;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--gold);
+    margin-bottom:20px;
 }
 
 .footer-column ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    list-style:none;
 }
 
 .footer-column li {
-    margin-bottom: 11px;
+    margin-bottom:12px;
 }
 
 .footer-column a {
-    color: #999;
-    font-size: 11px;
-    text-decoration: none;
-    transition: color var(--ease);
+    font-size:11px;
+    color:rgba(255,255,255,.64);
+    transition:.2s;
 }
 
 .footer-column a:hover {
-    color: white;
+    color:var(--gold);
 }
 
 .footer-motto {
-    padding: 26px 0;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-    color: #ddd;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+    text-align:center;
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(19px,4vw,38px);
+    letter-spacing:3px;
+    color:rgba(197,163,107,.75);
+    padding:30px 0;
+    border-top:1px solid rgba(255,255,255,.12);
+    border-bottom:1px solid rgba(255,255,255,.12);
 }
 
 .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding-top: 23px;
-    color: #777;
-    font-size: 9px;
-    letter-spacing: 1px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding-top:24px;
+    font-size:9px;
+    color:rgba(255,255,255,.43);
+    letter-spacing:.7px;
 }
 
-/* RESPONSIVE */
+/* =================================
+   ACCESSIBILITY AND ANIMATION
+================================= */
 
-@media (max-width: 1050px) {
-    .destination-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-
-    .faq-area {
-        grid-template-columns: 210px minmax(0,1fr);
-        gap: 35px;
-    }
-
-    .footer-top {
-        grid-template-columns: 1.3fr 1fr 1fr;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+select:focus-visible {
+    outline:2px solid var(--bronze);
+    outline-offset:4px;
 }
 
-@media (max-width: 700px) {
-    .container,
-    .main-content {
-        width: calc(100% - 36px);
-    }
-
-    .help-topbar {
-        min-height: 67px;
-        padding: 10px 16px;
-        gap: 10px;
-    }
-
-    .topbar-brand {
-        gap: 8px;
-    }
-
-    .topbar-brand img {
-        width: 31px;
-        height: 31px;
-    }
-
-    .topbar-brand span {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-    }
-
-    .topbar-actions {
-        gap: 9px;
-    }
-
-    .translate-label {
-        display: none;
-    }
-
-    #google_translate_element {
-        min-width: 90px;
-        max-width: 105px;
-    }
-
-    .goog-te-gadget .goog-te-combo {
-        max-width: 105px;
-        min-height: 35px;
-        padding: 7px 5px !important;
-        font-size: 10px !important;
-    }
-
-    .top-menu summary {
-        min-height: 35px;
-        padding: 7px 9px;
-        gap: 8px;
-        font-size: 9px;
-        letter-spacing: 1px;
-    }
-
-    .top-menu-list {
-        width: 220px;
-    }
-
-    .hero-intro {
-        padding: 58px 18px 38px;
-    }
-
-    .hero-logo {
-        width: 53px;
-        height: 53px;
-        margin-bottom: 19px;
-    }
-
-    .hero-intro h1 {
-        font-size: clamp(35px, 10vw, 54px);
-        letter-spacing: -1.5px;
-    }
-
-    .hero-intro p {
-        font-size: 12px;
-    }
-
-    .hero-visual {
-        width: calc(100% - 24px);
-    }
-
-    .hero-visual-frame,
-    .hero-visual-content {
-        min-height: 390px;
-    }
-
-    .hero-visual-content {
-        padding: 26px;
-    }
-
-    .hero-visual-content h2 {
-        font-size: clamp(31px, 8vw, 43px);
-    }
-
-    .hero-strip {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 9px;
-        padding: 15px;
-    }
-
-    .search-section {
-        margin-top: 55px;
-    }
-
-    .search-control {
-        min-height: 57px;
-    }
-
-    .search-control input {
-        padding: 13px;
-        font-size: 12px;
-    }
-
-    .search-control button {
-        min-width: 78px;
-        padding: 0 10px;
-        font-size: 9px;
-        letter-spacing: 1px;
-    }
-
-    .search-meta {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    #searchStatus {
-        text-align: left;
-    }
-
-    .main-content {
-        margin-top: 75px;
-        margin-bottom: 80px;
-    }
-
-    .section-topline {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 7px;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .destination-grid {
-        gap: 9px;
-    }
-
-    .destination-card {
-        min-height: 175px;
-        padding: 16px 13px;
-    }
-
-    .destination-card::after {
-        top: 13px;
-        right: 12px;
-    }
-
-    .destination-card h3 {
-        font-size: 11px;
-    }
-
-    .destination-card p {
-        font-size: 10px;
-    }
-
-    .directory-section {
-        margin-bottom: 80px;
-    }
-
-    .faq-area {
-        display: block;
-    }
-
-    .faq-aside {
-        position: static;
-        margin-bottom: 38px;
-    }
-
-    .faq-aside h2 {
-        font-size: 25px;
-    }
-
-    .faq-section {
-        margin-bottom: 45px;
-    }
-
-    .faq-item summary {
-        padding: 16px 42px 16px 14px;
-        font-size: 11px;
-    }
-
-    .faq-item summary::after {
-        right: 14px;
-    }
-
-    .faq-answer {
-        padding: 0 14px 17px;
-        font-size: 11px;
-    }
-
-    .editorial-feature {
-        grid-template-columns: 1fr;
-        margin-top: 70px;
-    }
-
-    .editorial-image {
-        min-height: 230px;
-    }
-
-    .editorial-copy {
-        padding: 29px 23px 35px;
-    }
-
-    .editorial-copy h2 {
-        font-size: 29px;
-    }
-
-    .contact-panel {
-        margin-top: 75px;
-        padding: 55px 20px;
-    }
-
-    .contact-panel h2 {
-        font-size: 30px;
-    }
-
-    .footer-top {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-        gap: 30px 18px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 380px) {
-    .topbar-brand span {
-        max-width: 90px;
-        white-space: normal;
-        line-height: 1.4;
-    }
-
-    .destination-card {
-        min-height: 190px;
-    }
-
-    .destination-card h3 {
-        font-size: 10px;
-    }
-
-    .destination-card p {
-        font-size: 9px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
+        scroll-behavior:auto!important;
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+    }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media(max-width:950px) {
+    .hero-inner {
+        grid-template-columns:1fr .55fr;
+        gap:35px;
+    }
+
+    .destination-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .destination-card:nth-child(4n+1) {
+        border-left:0;
+    }
+
+    .destination-card:nth-child(2n+1) {
+        border-left:1px solid var(--line);
+    }
+
+    .faq-area {
+        gap:45px;
+    }
+
+    .footer-top {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media(max-width:650px) {
+    .container,
+    .footer-inner {
+        width:calc(100% - 36px);
+    }
+
+    .topbar-inner {
+        width:calc(100% - 30px);
+        min-height:68px;
+        gap:10px;
+    }
+
+    .topbar-brand {
+        gap:7px;
+    }
+
+    .topbar-brand img {
+        width:30px;
+        height:30px;
+    }
+
+    .topbar-brand span {
+        font-size:11px;
+        letter-spacing:.5px;
+    }
+
+    .topbar-actions {
+        gap:10px;
+    }
+
+    .translate-area {
+        gap:5px;
+    }
+
+    .translate-label {
+        display:none;
+    }
+
+    .translate-select {
+        max-width:105px;
+        padding:8px 5px;
+        font-size:10px;
+    }
+
+    .top-menu summary {
+        padding:10px 11px;
+        font-size:9px;
+        letter-spacing:.5px;
+    }
+
+    .top-menu summary::after {
+        margin-left:6px;
+    }
+
+    .top-menu-list {
+        width:215px;
+    }
+
+    .hero {
+        padding:60px 0 35px;
+    }
+
+    .hero-inner {
+        display:block;
+    }
+
+    .hero-logo {
+        width:60px;
+        height:60px;
+        margin-bottom:25px;
+    }
+
+    .hero h1 {
+        font-size:57px;
+        letter-spacing:-3px;
+    }
+
+    .hero-copy {
+        font-size:13px;
+    }
+
+    .hero-side {
+        margin-top:40px;
+        padding-left:20px;
+    }
+
+    .hero-side-number {
+        font-size:45px;
+    }
+
+    .hero-visual {
+        padding-bottom:40px;
+    }
+
+    .hero-visual-frame {
+        height:470px;
+        min-height:0;
+    }
+
+    .hero-visual-frame > img {
+        object-position:60% center;
+    }
+
+    .hero-visual-content {
+        left:25px;
+        right:20px;
+        bottom:35px;
+    }
+
+    .hero-visual-content h2 {
+        font-size:43px;
+        letter-spacing:-1.5px;
+    }
+
+    .hero-visual-content p {
+        font-size:12px;
+    }
+
+    .hero-strip {
+        align-items:flex-start;
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .hero-strip span {
+        font-size:9px;
+    }
+
+    .search-section {
+        padding:75px 0;
+    }
+
+    .search-heading h2 {
+        font-size:36px;
+    }
+
+    .search-control input {
+        font-size:12px;
+    }
+
+    .search-control button {
+        padding:13px 15px;
+        font-size:9px;
+    }
+
+    .search-meta {
+        flex-direction:column;
+        gap:7px;
+    }
+
+    .search-results {
+        grid-template-columns:1fr;
+    }
+
+    .directory-section {
+        padding:75px 0;
+    }
+
+    .section-topline {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .section-index {
+        padding:0;
+    }
+
+    .destination-grid {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .destination-card {
+        min-height:195px;
+        padding:19px 13px;
+    }
+
+    .destination-card h3 {
+        font-size:14px;
+        margin-top:27px;
+    }
+
+    .destination-card p {
+        font-size:10px;
+    }
+
+    .destination-number {
+        font-size:8px;
+    }
+
+    .destination-card::after {
+        bottom:12px;
+        right:12px;
+    }
+
+    .faq-area {
+        display:block;
+        padding:80px 18px;
+    }
+
+    .faq-aside {
+        position:static;
+        margin-bottom:55px;
+    }
+
+    .faq-aside h2 {
+        font-size:43px;
+    }
+
+    .faq-section {
+        margin-bottom:50px;
+    }
+
+    .faq-section-heading h3 {
+        font-size:21px;
+    }
+
+    .faq-item summary {
+        font-size:12px;
+    }
+
+    .faq-answer {
+        padding-right:8px;
+    }
+
+    .faq-answer p {
+        font-size:11px;
+    }
+
+    .editorial-feature {
+        grid-template-columns:1fr;
+    }
+
+    .editorial-image {
+        min-height:340px;
+    }
+
+    .editorial-copy {
+        padding:55px 25px 65px;
+    }
+
+    .editorial-copy h2 {
+        font-size:45px;
+    }
+
+    .contact-panel {
+        padding:85px 23px;
+    }
+
+    .contact-panel h2 {
+        font-size:43px;
+    }
+
+    .footer {
+        padding-top:55px;
+    }
+
+    .footer-top {
+        grid-template-columns:1fr 1fr;
+        gap:35px 20px;
+    }
+
+    .footer-brand {
+        grid-column:1/-1;
+    }
+
+    .footer-motto {
+        font-size:20px;
+        letter-spacing:1.5px;
+    }
+
+    .footer-bottom {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+}
+
+@media(max-width:370px) {
+    .topbar-brand span {
+        font-size:9px;
+    }
+
+    .translate-select {
+        max-width:90px;
+    }
+
+    .top-menu summary {
+        padding:9px 8px;
     }
 }
 </style>
@@ -1588,161 +1545,277 @@ iframe.goog-te-banner-frame,
 
 <body>
 
-<!-- TOP NAVIGATION -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav class="help-topbar" aria-label="Help Centre navigation">
+<div id="google_translate_element"></div>
 
-    <a href="/" class="topbar-brand">
-        <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
-        <span>PHRINUSOMYIS™</span>
-    </a>
+<!-- =================================
+     TOP NAVIGATION
+================================= -->
 
-    <div class="topbar-actions">
+<header class="topbar">
 
-        <div class="translate-area">
-            <span class="translate-label">Language</span>
-            <div id="google_translate_element"></div>
+    <div class="topbar-inner">
+
+        <a href="/" class="topbar-brand">
+            <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+            <span>PHRINUSOMYIS™</span>
+        </a>
+
+        <div class="topbar-actions">
+
+            <div class="translate-area">
+                <span class="translate-label">Language</span>
+
+                <select
+                    class="translate-select"
+                    id="languageSelector"
+                    aria-label="Select language"
+                >
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ar">العربية</option>
+                    <option value="zh-CN">中文</option>
+                    <option value="ru">Русский</option>
+                    <option value="pt">Português</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="it">Italiano</option>
+                    <option value="nl">Nederlands</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="th">ไทย</option>
+                    <option value="pl">Polski</option>
+                    <option value="sv">Svenska</option>
+                    <option value="fi">Suomi</option>
+                    <option value="da">Dansk</option>
+                </select>
+            </div>
+
+            <details class="top-menu">
+
+                <summary>Explore</summary>
+
+                <div class="top-menu-list">
+                    <a href="/">Homepage</a>
+                    <a href="/newswire/news">Newswire</a>
+                    <a href="/magazine/news">Magazine</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/terms">Terms of Use</a>
+                    <a href="/accessibility">Accessibility</a>
+                    <a href="/copyright">Copyright</a>
+                    <a href="/policy">Privacy Policy</a>
+                    <a href="/help">Help Centre</a>
+                </div>
+
+            </details>
+
         </div>
 
-        <details class="top-menu">
-            <summary>Explore</summary>
-
-            <div class="top-menu-list">
-                <a href="/">Homepage</a>
-                <a href="/newswire/news">Newswire</a>
-                <a href="/magazine/news">Magazine</a>
-                <a href="/contact">Contact</a>
-                <a href="/terms">Terms of Use</a>
-                <a href="/accessibility">Accessibility</a>
-                <a href="/copyright">Copyright</a>
-                <a href="/policy">Privacy Policy</a>
-                <a href="/help">Help Centre</a>
-            </div>
-        </details>
-
     </div>
-</nav>
-
-<!-- INTRODUCTION -->
-
-<header class="hero-intro">
-
-    <img
-        src="/phrinusomyis_logo.png"
-        class="hero-logo"
-        alt="PHRINUSOMYIS emblem"
-    >
-
-    <div class="eyebrow">Official Information &amp; Assistance</div>
-
-    <h1>
-        The Help
-        <span>Centre.</span>
-    </h1>
-
-    <p>
-        Information, guidance and official resources from
-        PHRINUSOMYIS™. Find the answers you need and navigate
-        the organization's publications, policies and contact channels.
-    </p>
 
 </header>
 
-<!-- MAIN SPORTS IMAGE -->
+<main id="main-content">
 
-<section class="hero-visual" aria-label="PHRINUSOMYIS sports feature">
+<!-- =================================
+     INTRODUCTORY HERO
+================================= -->
 
-    <div class="hero-visual-frame">
+<section class="hero">
 
-        <!-- Replace this image URL whenever you choose a new official image. -->
-        <img
-            src="https://www.knup.com/assets/images/sports/wnba-predictions-default.jpg"
-            alt="Basketball on a professional sports court"
-            fetchpriority="high"
-        >
+    <div class="container">
 
-        <div class="hero-visual-content">
+        <div class="hero-inner">
 
-            <div class="eyebrow">PHRINUSOMYIS™ Help Centre</div>
+            <div>
 
-            <h2>
-                Clarity Across
-                Every Direction.
-            </h2>
+                <img
+                    src="/phrinusomyis_logo.png"
+                    class="hero-logo"
+                    alt="PHRINUSOMYIS emblem"
+                >
+
+                <div class="eyebrow">
+                    Official Information &amp; Assistance
+                </div>
+
+                <h1>
+                    The Help
+                    <span>Centre.</span>
+                </h1>
+
+                <p class="hero-copy">
+                    Information, guidance and official resources from
+                    PHRINUSOMYIS™. Find the answers you need and navigate
+                    the organization's publications, policies and
+                    contact channels.
+                </p>
+
+                <div class="hero-bottom">
+                    <div class="gold-line"></div>
+                    <span>Official Information. Established Authority.</span>
+                </div>
+
+            </div>
+
+            <div class="hero-side">
+
+                <div class="hero-side-number">01</div>
+
+                <div class="eyebrow">Information &amp; Access</div>
+
+                <p>
+                    One official destination for organizational
+                    information, sporting identity, publications,
+                    policies and assistance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     MAIN IMAGE FEATURE
+================================= -->
+
+<section class="hero-visual">
+
+    <div class="container">
+
+        <div class="hero-visual-frame">
+
+            <img
+                src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
+                alt="PHRINUSOMYIS Magazine — The Chronicle, Edition 001"
+                fetchpriority="high"
+            >
+
+            <div class="hero-visual-content">
+
+                <div class="eyebrow">
+                    PHRINUSOMYIS™ Help Centre
+                </div>
+
+                <h2>
+                    Clarity Across
+                    Every Direction.
+                </h2>
+
+                <p>
+                    Access official information about the organization,
+                    ZEAVIQ SPORTS™, publications, policies and enquiries.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="hero-strip">
+            <span>Official information. Direct access. Clear answers.</span>
+            <a href="#official-directory">
+                Explore the directory &nbsp; ↘
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SEARCH CENTRE
+================================= -->
+
+<section class="search-section" id="help-search">
+
+    <div class="container">
+
+        <div class="search-heading">
+
+            <div class="eyebrow">Find What You Need</div>
+
+            <h2>Search the Help Centre</h2>
 
             <p>
-                Access official information about the organization,
-                ZEAVIQ SPORTS™, publications, policies and enquiries.
+                Search in your selected language to find relevant
+                information and answers.
             </p>
 
         </div>
 
-    </div>
+        <div class="search-control">
 
-    <div class="hero-strip">
-        <span>Official information. Direct access. Clear answers.</span>
-        <a href="#official-directory">Explore the directory &nbsp; ↘</a>
+            <input
+                type="search"
+                id="helpSearch"
+                placeholder="Search information, publications, policies..."
+                autocomplete="off"
+                aria-label="Search Help Centre"
+                aria-controls="searchResults"
+            >
+
+            <button type="button" id="clearSearch">
+                Clear
+            </button>
+
+        </div>
+
+        <div class="search-meta">
+
+            <span>
+                Search across official destinations and frequently
+                asked questions.
+            </span>
+
+            <span id="searchStatus" role="status" aria-live="polite">
+                Ready to search.
+            </span>
+
+        </div>
+
+        <div
+            id="searchResults"
+            class="search-results"
+            aria-live="polite"
+        ></div>
+
     </div>
 
 </section>
 
-<!-- SEARCH -->
+<!-- =================================
+     OFFICIAL DIRECTORY
+================================= -->
 
-<section class="search-section" aria-label="Search the Help Centre">
+<section class="directory-section" id="official-directory">
 
-    <div class="search-heading">
-        <div class="eyebrow">Find What You Need</div>
-        <h2>Search the Help Centre</h2>
-        <p>Search in your selected language to find relevant information and answers.</p>
-    </div>
-
-    <div class="search-control">
-
-        <input
-            type="search"
-            id="helpSearch"
-            placeholder="Search information, publications, policies..."
-            autocomplete="off"
-            aria-label="Search Help Centre"
-            aria-controls="searchResults"
-        >
-
-        <button type="button" id="clearSearch">Clear</button>
-
-    </div>
-
-    <div class="search-meta">
-        <span>Search across official destinations and frequently asked questions.</span>
-        <span id="searchStatus" role="status" aria-live="polite">
-            Ready to search.
-        </span>
-    </div>
-
-    <div
-        id="searchResults"
-        class="search-results"
-        aria-live="polite"
-    ></div>
-
-</section>
-
-<main class="main-content">
-
-    <!-- OFFICIAL DIRECTORY -->
-
-    <section class="directory-section" id="official-directory">
+    <div class="container">
 
         <div class="section-topline">
+
             <div>
                 <div class="eyebrow">Navigate PHRINUSOMYIS™</div>
+
                 <h2 class="section-title">Official Directory</h2>
+
                 <p class="section-description">
-                    Direct access to the organization's active information,
-                    publication and policy pages.
+                    Direct access to the organization's active
+                    information, publication and policy pages.
                 </p>
             </div>
 
-            <span class="section-index">01 — 08 / DIRECTORY</span>
+            <span class="section-index">
+                01 — 08 / DIRECTORY
+            </span>
+
         </div>
 
         <div class="destination-grid">
@@ -1797,491 +1870,531 @@ iframe.goog-te-banner-frame,
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- FAQ CONTENT -->
+</section>
 
-    <section class="faq-area" aria-label="Frequently asked questions">
+<!-- =================================
+     FAQ CONTENT
+================================= -->
 
-        <aside class="faq-aside">
-            <div class="eyebrow">Information Centre</div>
-            <h2>Questions &amp; Answers.</h2>
-            <p>
-                Explore essential information about PHRINUSOMYIS™,
-                its sporting identity, official publications,
-                organizational enquiries and policies.
-            </p>
-            <div class="faq-aside-line"></div>
-        </aside>
+<section class="faq-area" aria-label="Frequently asked questions">
 
-        <div class="faq-content">
+    <aside class="faq-aside">
 
-            <!-- ORGANIZATION -->
+        <div class="eyebrow">Information Centre</div>
 
-            <section class="faq-section" id="organization">
+        <h2>Questions &amp; Answers.</h2>
 
-                <div class="faq-section-heading">
-                    <span>01 / Organization</span>
-                    <h3>About PHRINUSOMYIS™</h3>
-                    <p>General information about the organization.</p>
-                </div>
+        <p>
+            Explore essential information about PHRINUSOMYIS™,
+            its sporting identity, official publications,
+            organizational enquiries and policies.
+        </p>
 
-                <details class="faq-item">
-                    <summary>What is PHRINUSOMYIS™?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            PHRINUSOMYIS™ is an international sports
-                            organization that develops, owns and administers
-                            sports competitions and ZEAVIQ SPORTS™ worldwide.
-                        </p>
-                    </div>
-                </details>
+        <div class="faq-aside-line"></div>
 
-                <details class="faq-item">
-                    <summary>What does PHRINUSOMYIS™ do?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            PHRINUSOMYIS™ develops and administers sports
-                            competitions, creates original sports formats
-                            and leads ZEAVIQ SPORTS™.
-                        </p>
-                    </div>
-                </details>
+    </aside>
 
-                <details class="faq-item">
-                    <summary>Where is PHRINUSOMYIS™ headquartered?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            New York, USA, is the headquarters of
-                            PHRINUSOMYIS™.
-                        </p>
-                    </div>
-                </details>
+    <div class="faq-content">
 
-                <details class="faq-item">
-                    <summary>Where can I find official information about PHRINUSOMYIS™?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            The official homepage provides organizational
-                            information and direct access to the organization's
-                            active publication and information pages.
-                        </p>
-                        <p><a href="/">Visit the official homepage</a></p>
-                    </div>
-                </details>
+        <!-- ORGANIZATION -->
 
-                <details class="faq-item">
-                    <summary>How can I contact the organization?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            General enquiries and department-specific
-                            enquiries can be directed through the official
-                            Contact page.
-                        </p>
-                        <p><a href="/contact">Visit Contact</a></p>
-                    </div>
-                </details>
+        <section class="faq-section" id="organization">
 
-            </section>
+            <div class="faq-section-heading">
+                <span>01 / Organization</span>
+                <h3>About PHRINUSOMYIS™</h3>
+                <p>General information about the organization.</p>
+            </div>
 
-            <!-- SPORTING IDENTITY -->
-
-            <section class="faq-section" id="sporting-identity">
-
-                <div class="faq-section-heading">
-                    <span>02 / Sporting Identity</span>
-                    <h3>ZEAVIQ SPORTS™ &amp; VIKQUATHEL™</h3>
-                    <p>Information about the organization's sporting identity.</p>
-                </div>
-
-                <details class="faq-item">
-                    <summary>What is ZEAVIQ SPORTS™?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            ZEAVIQ SPORTS™ is part of the sporting identity
-                            and activities of PHRINUSOMYIS™, encompassing
-                            original sports formats and competitive experiences.
-                        </p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Is ZEAVIQ SPORTS™ part of PHRINUSOMYIS™?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Yes. ZEAVIQ SPORTS™ is part of PHRINUSOMYIS™
-                            and its sporting activities.
-                        </p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What is VIKQUATHEL™?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            VIKQUATHEL™ is a competition within the
-                            ZEAVIQ SPORTS™ sporting identity.
-                        </p>
-                        <p>
-                            Official information and announcements are
-                            communicated through PHRINUSOMYIS™ channels.
-                        </p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Where can I find information about sports and competitions?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Visit the official homepage and Newswire
-                            for organizational information and published
-                            competition announcements.
-                        </p>
-                        <p>
-                            <a href="/">Homepage</a> &nbsp;|&nbsp;
-                            <a href="/newswire/news">Newswire</a>
-                        </p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>How can I make a competition or participation enquiry?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Direct your enquiry through the official
-                            Contact page and identify the competition
-                            or participation subject.
-                        </p>
-                        <p><a href="/contact">Contact PHRINUSOMYIS™</a></p>
-                    </div>
-                </details>
-
-            </section>
-
-            <!-- NEWSWIRE AND MAGAZINE -->
-
-            <section class="faq-section" id="publications">
-
-                <div class="faq-section-heading">
-                    <span>03 / Publications</span>
-                    <h3>Newswire &amp; Magazine</h3>
-                    <p>Official announcements and editorial publications.</p>
-                </div>
-
-                <details class="faq-item">
-                    <summary>What is the PHRINUSOMYIS™ Newswire?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Newswire is the organization's publication
-                            channel for official announcements, news
-                            releases and organizational statements.
-                        </p>
-                        <p><a href="/newswire/news">Visit Newswire</a></p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What is the PHRINUSOMYIS™ Magazine?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            PHRINUSOMYIS™ Magazine presents sporting
-                            perspectives, editorial features, stories,
-                            photography and selected editorial coverage.
-                        </p>
-                        <p><a href="/magazine/news">Visit Magazine</a></p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What is the difference between Newswire and Magazine?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Newswire is dedicated to official announcements,
-                            news releases and organizational statements.
-                            Magazine is dedicated to editorial features,
-                            photography, stories and selected coverage.
-                        </p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Where can I find the latest official announcements?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Official announcements and organizational
-                            statements are published through Newswire.
-                        </p>
-                        <p><a href="/newswire/news">Read Newswire</a></p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>How can journalists and media representatives contact PHRINUSOMYIS™?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Press and media enquiries can be directed
-                            through the official Contact page.
-                        </p>
-                        <p><a href="/contact">Visit Contact</a></p>
-                    </div>
-                </details>
-
-            </section>
-
-            <!-- EVENTS, PARTNERSHIPS AND EMPLOYMENT ENQUIRIES -->
-
-            <section class="faq-section" id="enquiries">
-
-                <div class="faq-section-heading">
-                    <span>04 / Organizational Enquiries</span>
-                    <h3>Events, Partnerships &amp; Employment</h3>
+            <details class="faq-item">
+                <summary>What is PHRINUSOMYIS™?</summary>
+                <div class="faq-answer">
                     <p>
-                        Official enquiry routes for organizations,
-                        professionals and interested parties.
+                        PHRINUSOMYIS™ is an international sports
+                        organization that develops, owns and administers
+                        sports competitions and ZEAVIQ SPORTS™ worldwide.
                     </p>
                 </div>
+            </details>
 
-                <details class="faq-item">
-                    <summary>Where can I find confirmed event information?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Refer to official PHRINUSOMYIS™ announcements.
-                            Confirmed event dates, locations and other
-                            details should be taken from the relevant
-                            published communication.
-                        </p>
-                        <p><a href="/newswire/news">Visit Newswire</a></p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>How can I make an event-related enquiry?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Event-related enquiries can be directed
-                            through the official Contact page.
-                            Identify the event or subject of your enquiry.
-                        </p>
-                        <p><a href="/contact">Contact the organization</a></p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Can organizations approach PHRINUSOMYIS™ about partnerships?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Organizations may direct partnership and
-                            cooperation enquiries through the official
-                            Contact page. Include the organization name,
-                            proposed area of cooperation and relevant
-                            contact information.
-                        </p>
-                        <p><a href="/contact">Submit a partnership enquiry</a></p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Where can I direct an employment or recruitment enquiry?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Employment and recruitment enquiries can
-                            be directed through the official Contact page.
-                            Include your professional background and
-                            the area of work concerned.
-                        </p>
-                        <p><a href="/contact">Visit Contact</a></p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What should I include in a professional enquiry?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Include your name, organization where relevant,
-                            the purpose of your enquiry and a concise
-                            description of the matter. Provide relevant
-                            supporting information where appropriate.
-                        </p>
-                    </div>
-                </details>
-
-            </section>
-
-            <!-- POLICIES AND ACCESSIBILITY -->
-
-            <section class="faq-section" id="policies">
-
-                <div class="faq-section-heading">
-                    <span>05 / Policies &amp; Information</span>
-                    <h3>Privacy, Copyright &amp; Accessibility</h3>
-                    <p>Official policies and information about the website.</p>
+            <details class="faq-item">
+                <summary>What does PHRINUSOMYIS™ do?</summary>
+                <div class="faq-answer">
+                    <p>
+                        PHRINUSOMYIS™ develops and administers sports
+                        competitions, creates original sports formats
+                        and leads ZEAVIQ SPORTS™.
+                    </p>
                 </div>
+            </details>
 
-                <details class="faq-item">
-                    <summary>Where can I read the Privacy Policy?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            The organization's published Privacy Policy
-                            provides information about privacy and
-                            personal data practices.
-                        </p>
-                        <p><a href="/policy">Read the Privacy Policy</a></p>
-                    </div>
-                </details>
+            <details class="faq-item">
+                <summary>Where is PHRINUSOMYIS™ headquartered?</summary>
+                <div class="faq-answer">
+                    <p>
+                        New York, USA, is the headquarters of
+                        PHRINUSOMYIS™.
+                    </p>
+                </div>
+            </details>
 
-                <details class="faq-item">
-                    <summary>Where can I read the Terms of Use?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            The Terms of Use are available through
-                            the organization's official Terms page.
-                        </p>
-                        <p><a href="/terms">Read Terms of Use</a></p>
-                    </div>
-                </details>
+            <details class="faq-item">
+                <summary>Where can I find official information about PHRINUSOMYIS™?</summary>
+                <div class="faq-answer">
+                    <p>
+                        The official homepage provides organizational
+                        information and direct access to the organization's
+                        active publication and information pages.
+                    </p>
+                    <p><a href="/">Visit the official homepage</a></p>
+                </div>
+            </details>
 
-                <details class="faq-item">
-                    <summary>Where can I find copyright and intellectual property information?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Copyright and intellectual property information
-                            is available through the official Copyright page.
-                        </p>
-                        <p><a href="/copyright">Read Copyright Information</a></p>
-                    </div>
-                </details>
+            <details class="faq-item">
+                <summary>How can I contact the organization?</summary>
+                <div class="faq-answer">
+                    <p>
+                        General enquiries and department-specific
+                        enquiries can be directed through the official
+                        Contact page.
+                    </p>
+                    <p><a href="/contact">Visit Contact</a></p>
+                </div>
+            </details>
 
-                <details class="faq-item">
-                    <summary>Where can I find accessibility information?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Visit the Accessibility page for published
-                            accessibility information and related guidance.
-                        </p>
-                        <p><a href="/accessibility">Visit Accessibility</a></p>
-                    </div>
-                </details>
+        </section>
 
-                <details class="faq-item">
-                    <summary>How can I report a problem with an official page?</summary>
-                    <div class="faq-answer">
-                        <p>
-                            Identify the page, describe the issue and
-                            provide any relevant details through the
-                            official Contact page.
-                        </p>
-                        <p><a href="/contact">Report an issue</a></p>
-                    </div>
-                </details>
+        <!-- SPORTING IDENTITY -->
 
-            </section>
+        <section class="faq-section" id="sporting-identity">
 
-        </div>
-    </section>
+            <div class="faq-section-heading">
+                <span>02 / Sporting Identity</span>
+                <h3>ZEAVIQ SPORTS™ &amp; VIKQUATHEL™</h3>
+                <p>Information about the organization's sporting identity.</p>
+            </div>
 
-    <!-- EDITORIAL IMAGE FEATURE -->
+            <details class="faq-item">
+                <summary>What is ZEAVIQ SPORTS™?</summary>
+                <div class="faq-answer">
+                    <p>
+                        ZEAVIQ SPORTS™ is part of the sporting identity
+                        and activities of PHRINUSOMYIS™, encompassing
+                        original sports formats and competitive experiences.
+                    </p>
+                </div>
+            </details>
 
-    <section class="editorial-feature">
+            <details class="faq-item">
+                <summary>Is ZEAVIQ SPORTS™ part of PHRINUSOMYIS™?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Yes. ZEAVIQ SPORTS™ is part of PHRINUSOMYIS™
+                        and its sporting activities.
+                    </p>
+                </div>
+            </details>
 
-        <div class="editorial-image">
+            <details class="faq-item">
+                <summary>What is VIKQUATHEL™?</summary>
+                <div class="faq-answer">
+                    <p>
+                        VIKQUATHEL™ is a competition within the
+                        ZEAVIQ SPORTS™ sporting identity.
+                    </p>
+                    <p>
+                        Official information and announcements are
+                        communicated through PHRINUSOMYIS™ channels.
+                    </p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where can I find information about sports and competitions?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Visit the official homepage and Newswire
+                        for organizational information and published
+                        competition announcements.
+                    </p>
+                    <p>
+                        <a href="/">Homepage</a> &nbsp;|&nbsp;
+                        <a href="/newswire/news">Newswire</a>
+                    </p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How can I make a competition or participation enquiry?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Direct your enquiry through the official
+                        Contact page and identify the competition
+                        or participation subject.
+                    </p>
+                    <p><a href="/contact">Contact PHRINUSOMYIS™</a></p>
+                </div>
+            </details>
+
+        </section>
+
+        <!-- NEWSWIRE AND MAGAZINE -->
+
+        <section class="faq-section" id="publications">
+
+            <div class="faq-section-heading">
+                <span>03 / Publications</span>
+                <h3>Newswire &amp; Magazine</h3>
+                <p>Official announcements and editorial publications.</p>
+            </div>
+
+            <details class="faq-item">
+                <summary>What is the PHRINUSOMYIS™ Newswire?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Newswire is the organization's publication
+                        channel for official announcements, news
+                        releases and organizational statements.
+                    </p>
+                    <p><a href="/newswire/news">Visit Newswire</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What is the PHRINUSOMYIS™ Magazine?</summary>
+                <div class="faq-answer">
+                    <p>
+                        PHRINUSOMYIS™ Magazine presents sporting
+                        perspectives, editorial features, stories,
+                        photography and selected editorial coverage.
+                    </p>
+                    <p><a href="/magazine/news">Visit Magazine</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What is the difference between Newswire and Magazine?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Newswire is dedicated to official announcements,
+                        news releases and organizational statements.
+                        Magazine is dedicated to editorial features,
+                        photography, stories and selected coverage.
+                    </p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where can I find the latest official announcements?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Official announcements and organizational
+                        statements are published through Newswire.
+                    </p>
+                    <p><a href="/newswire/news">Read Newswire</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How can journalists and media representatives contact PHRINUSOMYIS™?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Press and media enquiries can be directed
+                        through the official Contact page.
+                    </p>
+                    <p><a href="/contact">Visit Contact</a></p>
+                </div>
+            </details>
+
+        </section>
+
+        <!-- EVENTS, PARTNERSHIPS AND EMPLOYMENT -->
+
+        <section class="faq-section" id="enquiries">
+
+            <div class="faq-section-heading">
+                <span>04 / Organizational Enquiries</span>
+                <h3>Events, Partnerships &amp; Employment</h3>
+                <p>
+                    Official enquiry routes for organizations,
+                    professionals and interested parties.
+                </p>
+            </div>
+
+            <details class="faq-item">
+                <summary>Where can I find confirmed event information?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Refer to official PHRINUSOMYIS™ announcements.
+                        Confirmed event dates, locations and other
+                        details should be taken from the relevant
+                        published communication.
+                    </p>
+                    <p><a href="/newswire/news">Visit Newswire</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How can I make an event-related enquiry?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Event-related enquiries can be directed
+                        through the official Contact page.
+                        Identify the event or subject of your enquiry.
+                    </p>
+                    <p><a href="/contact">Contact the organization</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can organizations approach PHRINUSOMYIS™ about partnerships?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Organizations may direct partnership and
+                        cooperation enquiries through the official
+                        Contact page. Include the organization name,
+                        proposed area of cooperation and relevant
+                        contact information.
+                    </p>
+                    <p><a href="/contact">Submit a partnership enquiry</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where can I direct an employment or recruitment enquiry?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Employment and recruitment enquiries can
+                        be directed through the official Contact page.
+                        Include your professional background and
+                        the area of work concerned.
+                    </p>
+                    <p><a href="/contact">Visit Contact</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What should I include in a professional enquiry?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Include your name, organization where relevant,
+                        the purpose of your enquiry and a concise
+                        description of the matter. Provide relevant
+                        supporting information where appropriate.
+                    </p>
+                </div>
+            </details>
+
+        </section>
+
+        <!-- POLICIES AND ACCESSIBILITY -->
+
+        <section class="faq-section" id="policies">
+
+            <div class="faq-section-heading">
+                <span>05 / Policies &amp; Information</span>
+                <h3>Privacy, Copyright &amp; Accessibility</h3>
+                <p>Official policies and information about the website.</p>
+            </div>
+
+            <details class="faq-item">
+                <summary>Where can I read the Privacy Policy?</summary>
+                <div class="faq-answer">
+                    <p>
+                        The organization's published Privacy Policy
+                        provides information about privacy and
+                        personal data practices.
+                    </p>
+                    <p><a href="/policy">Read the Privacy Policy</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where can I read the Terms of Use?</summary>
+                <div class="faq-answer">
+                    <p>
+                        The Terms of Use are available through
+                        the organization's official Terms page.
+                    </p>
+                    <p><a href="/terms">Read Terms of Use</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where can I find copyright and intellectual property information?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Copyright and intellectual property information
+                        is available through the official Copyright page.
+                    </p>
+                    <p><a href="/copyright">Read Copyright Information</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where can I find accessibility information?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Visit the Accessibility page for published
+                        accessibility information and related guidance.
+                    </p>
+                    <p><a href="/accessibility">Visit Accessibility</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How can I report a problem with an official page?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Identify the page, describe the issue and
+                        provide any relevant details through the
+                        official Contact page.
+                    </p>
+                    <p><a href="/contact">Report an issue</a></p>
+                </div>
+            </details>
+
+        </section>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     EDITORIAL IMAGE FEATURE
+================================= -->
+
+<section class="editorial-feature">
+
+    <div class="editorial-image">
+
+        <a
+            href="/magazine/news"
+            aria-label="Explore PHRINUSOMYIS Magazine"
+        >
             <img
-                src="https://images.pexels.com/photos/35420838/pexels-photo-35420838.jpeg"
-                alt="Editorial sports photography"
+                src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
+                alt="PHRINUSOMYIS Magazine — The MOMINANTS, Edition 001"
                 loading="lazy"
             >
-        </div>
+        </a>
 
-        <div class="editorial-copy">
+    </div>
 
-            <div class="eyebrow">Explore the Publication</div>
+    <div class="editorial-copy">
 
-            <h2>
-                Beyond the
-                Announcement.
-            </h2>
-
-            <p>
-                Discover the editorial perspective of PHRINUSOMYIS™
-                Magazine, alongside official announcements and
-                organizational statements published through Newswire.
-            </p>
-
-            <a href="/magazine/news">
-                Explore Magazine <span>↗</span>
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- CONTACT -->
-
-    <section class="contact-panel">
-
-        <div class="eyebrow">Direct Assistance</div>
+        <div class="eyebrow">Explore the Publication</div>
 
         <h2>
-            Your Enquiry.
-            The Right Channel.
+            Beyond the
+            Announcement.
         </h2>
 
         <p>
-            For questions not addressed in this Help Centre,
-            contact PHRINUSOMYIS™ through its official contact page.
-            Select the relevant department and provide the details
-            of your enquiry.
+            Discover the editorial perspective of PHRINUSOMYIS™
+            Magazine, alongside official announcements and
+            organizational statements published through Newswire.
         </p>
 
-        <a href="/contact">
-            Contact PHRINUSOMYIS™ <span>↗</span>
+        <a href="/magazine/news">
+            Explore Magazine <span>↗</span>
         </a>
 
-    </section>
+    </div>
+
+</section>
+
+<!-- =================================
+     CONTACT
+================================= -->
+
+<section class="contact-panel">
+
+    <div class="eyebrow">Direct Assistance</div>
+
+    <h2>
+        Your Enquiry.
+        <br>
+        The Right Channel.
+    </h2>
+
+    <p>
+        For questions not addressed in this Help Centre,
+        contact PHRINUSOMYIS™ through its official contact page.
+        Select the relevant department and provide the details
+        of your enquiry.
+    </p>
+
+    <a href="/contact">
+        Contact PHRINUSOMYIS™ <span>↗</span>
+    </a>
+
+</section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- =================================
+     FOOTER
+================================= -->
 
-<footer class="site-footer">
+<footer class="footer">
 
     <div class="footer-inner">
 
         <div class="footer-top">
 
             <div class="footer-brand">
-                <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+
+                <img
+                    src="/phrinusomyis_logo.png"
+                    alt="PHRINUSOMYIS logo"
+                >
+
                 <strong>PHRINUSOMYIS™</strong>
+
                 <p>
                     An international sports organization.
                     COMMANDING THE WORLD STAGE™
                 </p>
+
             </div>
 
             <div class="footer-column">
+
                 <h3>Organization</h3>
+
                 <ul>
                     <li><a href="/">Homepage</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/help">Help Centre</a></li>
                 </ul>
+
             </div>
 
             <div class="footer-column">
+
                 <h3>Publications</h3>
+
                 <ul>
                     <li><a href="/newswire/news">Newswire</a></li>
                     <li><a href="/magazine/news">Magazine</a></li>
                 </ul>
+
             </div>
 
             <div class="footer-column">
+
                 <h3>Information</h3>
+
                 <ul>
                     <li><a href="/policy">Privacy Policy</a></li>
                     <li><a href="/terms">Terms of Use</a></li>
                     <li><a href="/copyright">Copyright</a></li>
                     <li><a href="/accessibility">Accessibility</a></li>
                 </ul>
+
             </div>
 
         </div>
@@ -2291,830 +2404,318 @@ iframe.goog-te-banner-frame,
         </div>
 
         <div class="footer-bottom">
+
             <span>© PHRINUSOMYIS™. All Rights Reserved.</span>
+
             <span>Official Help Centre</span>
+
         </div>
 
     </div>
 
 </footer>
 
-<!-- GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION -->
-
-<script>
-(function protectPageFromGoogleInterface() {
-
-    function restorePagePosition() {
-        const html = document.documentElement;
-        const body = document.body;
-
-        if (!html || !body) return;
-
-        [html, body].forEach(function (element) {
-            ["top", "margin-top", "padding-top"].forEach(function (property) {
-                if (element.style.getPropertyValue(property) !== "0px") {
-                    element.style.setProperty(property, "0px", "important");
-                }
-            });
-        });
-    }
-
-    function removeGooglePopouts() {
-        const selectors = [
-            "iframe.goog-te-banner-frame",
-            ".goog-te-banner-frame",
-            ".goog-te-balloon-frame",
-            "iframe.goog-te-balloon-frame",
-            ".goog-te-menu-frame",
-            "iframe.goog-te-menu-frame",
-            "#goog-gt-tt",
-            ".goog-tooltip",
-            ".goog-te-tooltip-container"
-        ];
-
-        selectors.forEach(function (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                if (!element.closest("#google_translate_element")) {
-                    element.remove();
-                }
-            });
-        });
-
-        restorePagePosition();
-    }
-
-    removeGooglePopouts();
-
-    const observer = new MutationObserver(function () {
-        removeGooglePopouts();
-    });
-
-    observer.observe(document.documentElement, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ["style", "class"]
-    });
-
-    window.addEventListener("load", removeGooglePopouts);
-    window.addEventListener("resize", removeGooglePopouts);
-    window.addEventListener("scroll", restorePagePosition);
-
-})();
-</script>
-
-<!-- MULTILINGUAL HELP CENTRE SEARCH -->
+<!-- =================================
+     HELP CENTRE SEARCH FUNCTION
+================================= -->
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
     const searchInput = document.getElementById("helpSearch");
     const clearButton = document.getElementById("clearSearch");
+    const resultsContainer = document.getElementById("searchResults");
     const searchStatus = document.getElementById("searchStatus");
-    const resultsBox = document.getElementById("searchResults");
 
-    const faqItems = Array.from(document.querySelectorAll(".faq-item"));
-    const faqSections = Array.from(document.querySelectorAll(".faq-section"));
+    const searchableItems = [];
 
-    /*
-      SEARCH DESTINATIONS
+    // Register FAQ questions and answers.
 
-      Only active official destinations are included.
-      Department-specific enquiries lead to Contact.
-    */
+    document.querySelectorAll(".faq-item").forEach(function (item) {
 
-    const pages = [
-        {
-            title: "PHRINUSOMYIS™ Homepage",
-            url: "/",
-            type: "Organization",
-            description: "Official organizational information and identity.",
-            terms: `
-                home homepage organization about main official company
-                accueil inicio inicio página principal organización
-                accueil organisation entreprise principal
-                startseite hauptseite organisation unternehmen
-                главная организация компания
-                首页 主页 组织 公司
-                الصفحة الرئيسية المنظمة المؤسسة
-                página inicial organização empresa
-                ホーム 組織 会社
-                홈 조직 회사
-                trang chủ tổ chức
-                beranda organisasi
-                मुख्य पृष्ठ संगठन
-                ana sayfa kurum kuruluş
-                hlavní stránka organizace
-                startpagina organisatie
-                huvud­sida organisation
-                hjemmeside organisation
-                kotisivu organisaatio
-                główna organizacja
-                หน้าแรก องค์กร
-            `
-        },
-        {
-            title: "Newswire",
-            url: "/newswire/news",
-            type: "Official News",
-            description: "Official announcements, news releases and organizational statements.",
-            terms: `
-                news newswire announcement announcements press release statement
-                media update official communication
-                actualités nouvelles annonce communiqué presse
-                noticias noticias oficiales comunicado prensa anuncio
-                nachrichten ankündigung pressemitteilung
-                новости объявление пресс-релиз
-                新闻 新闻稿 公告 声明
-                أخبار بيان إعلان صحفي
-                notícias comunicado anúncio imprensa
-                ニュース お知らせ 発表
-                뉴스 공지 보도자료
-                berita pengumuman siaran pers
-                tin tức thông báo
-                समाचार घोषणा प्रेस विज्ञप्ति
-                haberler duyuru basın açıklaması
-                nieuws aankondiging persbericht
-                nyheter meddelande pressmeddelande
-                nyheder pressemeddelelse
-                uutiset tiedote
-                wiadomości ogłoszenie komunikat
-                ข่าว ประกาศ
-            `
-        },
-        {
-            title: "PHRINUSOMYIS™ Magazine",
-            url: "/magazine/news",
-            type: "Editorial Publication",
-            description: "Sporting perspectives, editorial features, stories and photography.",
-            terms: `
-                magazine editorial article articles photography photograph pictures
-                stories features publication edition
-                magazine revue éditorial article photographie histoires
-                revista editorial artículos fotografía historias publicación
-                magazin artikel fotografie geschichten veröffentlichung
-                журнал статьи фотографии истории публикация
-                杂志 编辑 文章 摄影 故事 出版物
-                مجلة مقالات تحرير تصوير قصص منشورات
-                revista artigos fotografia histórias publicação
-                雑誌 記事 写真 特集
-                잡지 기사 사진 이야기
-                majalah artikel fotografi cerita
-                tạp chí bài viết nhiếp ảnh
-                पत्रिका लेख फोटोग्राफी कहानियां
-                dergi makale fotoğraf hikaye
-                tijdschrift artikelen fotografie verhalen
-                tidskrift artiklar fotografi berättelser
-                magasin artikler fotografi historier
-                aikakauslehti artikkelit valokuvaus
-                magazyn artykuły fotografia historie
-                περιοδικό άρθρα φωτογραφία
-                นิตยสาร บทความ ภาพถ่าย
-            `
-        },
-        {
-            title: "Contact PHRINUSOMYIS™",
-            url: "/contact",
-            type: "Contact & Enquiries",
-            description: "Official contact channels for general and department-specific enquiries.",
-            terms: `
-                contact enquiry enquiries email support assistance help
-                reach general press media event events partnership partner
-                cooperation careers employment recruitment job jobs
-                contact contacter demande aide assistance
-                contacto consulta consultas ayuda prensa asociación empleo
-                kontakt anfrage hilfe presse partnerschaft arbeit
-                контакт обращение помощь сотрудничество работа
-                联系 联系方式 咨询 帮助 合作 工作
-                اتصال تواصل استفسار مساعدة شراكة توظيف
-                contato consulta ajuda imprensa parceria emprego
-                お問い合わせ 連絡 支援 協力 採用
-                문의 연락 지원 협력 채용
-                liên hệ hỗ trợ hợp tác việc làm
-                liên hệ sự kiện báo chí
-                liênungi bantuan pertanyaan kerja kemitraan
-                संपर्क सहायता नौकरी साझेदारी
-                iletişim başvuru yardım ortaklık iş
-                contact opnemen vraag hulp samenwerking werk
-                kontakt fråga hjälp samarbete arbete
-                yhteystiedot kysymys apu yhteistyö työ
-                kontakt pytanie pomoc współpraca praca
-                ติดต่อ สอบถาม ช่วยเหลือ ความร่วมมือ
-            `
-        },
-        {
-            title: "Terms of Use",
-            url: "/terms",
-            type: "Legal Information",
-            description: "The organization's published Terms of Use.",
-            terms: `
-                terms conditions legal rules use agreement
-                conditions générales utilisation termes
-                términos condiciones uso legal
-                nutzungsbedingungen bedingungen rechtlich
-                условия использования правила
-                使用条款 条件 规则
-                شروط الاستخدام الأحكام
-                termos condições utilização
-                利用規約 条件
-                이용 약관 조건
-                điều khoản sử dụng
-                syarat ketentuan penggunaan
-                नियम शर्तें उपयोग
-                kullanım şartları koşullar
-                gebruiksvoorwaarden voorwaarden
-                användarvillkor villkor
-                brugervilkår betingelser
-                käyttöehdot ehdot
-                warunki użytkowania regulamin
-                ข้อกำหนด เงื่อนไข
-            `
-        },
-        {
-            title: "Accessibility",
-            url: "/accessibility",
-            type: "Accessibility",
-            description: "Accessibility information and related guidance.",
-            terms: `
-                accessibility accessible captions subtitles disability access
-                accessibilité accesso accesibilidad barrierefreiheit
-                доступность специальные возможности
-                无障碍 访问 辅助功能
-                إمكانية الوصول تسهيلات
-                acessibilidade legendas
-                アクセシビリティ 字幕
-                접근성 자막
-                khả năng tiếp cận phụ đề
-                aksesibilitas teks
-                सुगम्यता सुलभता
-                erişilebilirlik altyazı
-                toegankelijkheid ondertiteling
-                tillgänglighet undertexter
-                tilgængelighed undertekster
-                saavutettavuus tekstitys
-                dostępność napisy
-                การเข้าถึง คำบรรยาย
-            `
-        },
-        {
-            title: "Copyright & Intellectual Property",
-            url: "/copyright",
-            type: "Copyright",
-            description: "Copyright and intellectual property information.",
-            terms: `
-                copyright intellectual property ownership rights trademark
-                droit auteur propriété intellectuelle droits
-                derechos autor propiedad intelectual marca registrada
-                urheberrecht geistiges eigentum rechte
-                авторское право интеллектуальная собственность права
-                版权 知识产权 所有权 权利 商标
-                حقوق النشر الملكية الفكرية
-                direitos autorais propriedade intelectual
-                著作権 知的財産 権利
-                저작권 지적 재산권
-                bản quyền sở hữu trí tuệ
-                hak cipta kekayaan intelektual
-                कॉपीराइट बौद्धिक संपदा
-                telif hakkı fikri mülkiyet
-                auteursrecht intellectueel eigendom
-                upphovsrätt immateriella rättigheter
-                ophavsret intellektuel ejendom
-                tekijänoikeus immateriaalioikeudet
-                prawa autorskie własność intelektualna
-                ลิขสิทธิ์ ทรัพย์สินทางปัญญา
-            `
-        },
-        {
-            title: "Privacy Policy",
-            url: "/policy",
-            type: "Privacy",
-            description: "Privacy information and personal data practices.",
-            terms: `
-                privacy policy personal data information protection
-                confidentialité données personnelles politique
-                privacidad datos personales protección
-                datenschutz persönliche daten
-                конфиденциальность персональные данные
-                隐私政策 个人信息 数据保护
-                الخصوصية البيانات الشخصية
-                privacidade dados pessoais proteção
-                プライバシー 個人情報 保護方針
-                개인정보 보호 정책
-                quyền riêng tư dữ liệu cá nhân
-                privasi data pribadi
-                गोपनीयता व्यक्तिगत जानकारी
-                gizlilik kişisel veriler
-                privacy persoonsgegevens gegevensbescherming
-                integritet personuppgifter
-                privatliv personoplysninger
-                yksityisyys henkilötiedot
-                prywatność dane osobowe
-                ความเป็นส่วนตัว ข้อมูลส่วนบุคคล
-            `
-        },
-        {
-            title: "Help Centre",
-            url: "/help",
-            type: "Help",
-            description: "Frequently asked questions and official assistance.",
-            terms: `
-                help help centre help center faq frequently asked questions
-                assistance answers information support
-                aide centre aide questions fréquentes
-                ayuda centro ayuda preguntas frecuentes
-                hilfe hilfecenter häufige fragen
-                помощь справка часто задаваемые вопросы
-                帮助中心 常见问题 解答
-                مركز المساعدة الأسئلة الشائعة
-                ajuda perguntas frequentes
-                ヘルプ よくある質問
-                고객센터 자주 묻는 질문 도움말
-                trung tâm trợ giúp câu hỏi thường gặp
-                pusat bantuan pertanyaan umum
-                सहायता केंद्र अक्सर पूछे जाने वाले प्रश्न
-                yardım merkezi sık sorulan sorular
-                helpcentrum veelgestelde vragen
-                hjälpcenter vanliga frågor
-                hjælpecenter ofte stillede spørgsmål
-                ohjekeskus usein kysytyt kysymykset
-                centrum pomocy często zadawane pytania
-                ศูนย์ช่วยเหลือ คำถามที่พบบ่อย
-            `
-        }
-    ];
+        const section = item.closest(".faq-section");
+        const summary = item.querySelector("summary");
 
-    /*
-      BRAND AND SUBJECT ALIASES
+        searchableItems.push({
+            title: summary.innerText.trim(),
+            content: item.innerText.trim(),
+            category: section.querySelector(".faq-section-heading h3").innerText,
+            element: item,
+            href: "#" + section.id
+        });
 
-      Brand names remain unchanged across languages.
-      These aliases help multilingual queries find relevant FAQs.
-    */
+    });
 
-    const subjectAliases = `
-        zeaviq zeaviq sports sports sport
-        vikquathel competition competitions contest
-        event events activities
-        partnership partner cooperation collaboration
-        career careers employment recruitment job
-        press media journalist journalism
-        organization organisation company
-        magazine editorial photography stories
-        news newswire announcement
-        privacy policy data protection
-        terms conditions legal
-        copyright intellectual property rights
-        accessibility captions subtitles
-        ayuda aide hilfe помощь 帮助 帮助中心
-        contacto contactar تواصل 联系 联系方式 문의 연락
-        noticias actualités nachrichten новости 新闻 أخبار
-        revista magazine مجلة 雑誌 잡지
-        privacidad confidentialité datenschutz 隐私 隐私政策
-        copyright derechos autor urheberrecht 版权 حقوق النشر
-        accesibilidad accessibilité barrierefreiheit 无障碍 إمكانية الوصول
-        asociación partenariat partnerschaft 合作 شراكة 협력
-        empleo travail arbeit работа 工作 توظيف 채용
-        compétition compétition sport 运动 体育 比赛 رياضة منافسة
-        competición competición wedstrijd wedstrijd Wettbewerb
-    `;
+    // Register official directory destinations.
+
+    document.querySelectorAll(".destination-card").forEach(function (card) {
+
+        searchableItems.push({
+            title: card.querySelector("h3").innerText.trim(),
+            content: card.innerText.trim(),
+            category: "Official Directory",
+            element: card,
+            href: card.getAttribute("href")
+        });
+
+    });
 
     function normalize(value) {
-        return String(value || "")
+        return value
             .toLocaleLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
-            .replace(/[^\p{L}\p{N}]+/gu, " ")
-            .replace(/\s+/g, " ")
             .trim();
     }
 
-    function tokenize(value) {
-        const clean = normalize(value);
+    function performSearch() {
 
-        if (!clean) return [];
+        const query = normalize(searchInput.value);
 
-        if (window.Intl && Intl.Segmenter) {
-            try {
-                const segmenter = new Intl.Segmenter(undefined, {
-                    granularity: "word"
-                });
+        resultsContainer.innerHTML = "";
 
-                return Array.from(segmenter.segment(clean))
-                    .filter(function (part) {
-                        return part.isWordLike;
-                    })
-                    .map(function (part) {
-                        return part.segment;
-                    });
-            } catch (error) {
-                /* Use fallback below. */
-            }
-        }
-
-        return clean.split(/\s+/).filter(Boolean);
-    }
-
-    /*
-      Expand short brand and topic queries.
-      This helps a search for a brand or subject
-      find relevant answers even when the wording differs.
-    */
-
-    function expandQuery(query) {
-        const normalized = normalize(query);
-        const words = tokenize(normalized);
-        const expanded = new Set(words);
-
-        const groups = [
-            {
-                words: ["zeaviq", "vikquathel", "competition", "competitions"],
-                add: ["sport", "sports", "competition", "competitions", "sporting"]
-            },
-            {
-                words: ["news", "newswire", "announcement", "announcements"],
-                add: ["press", "media", "statement", "official", "publication"]
-            },
-            {
-                words: ["magazine", "editorial", "photography", "article"],
-                add: ["stories", "features", "publication", "editorial"]
-            },
-            {
-                words: ["contact", "email", "enquiry", "enquiries"],
-                add: ["assistance", "support", "organization", "department"]
-            },
-            {
-                words: ["partnership", "partner", "cooperation"],
-                add: ["contact", "organization", "collaboration", "business"]
-            },
-            {
-                words: ["career", "careers", "employment", "recruitment", "job"],
-                add: ["contact", "work", "professional", "organization"]
-            },
-            {
-                words: ["privacy", "confidentiality", "datenschutz"],
-                add: ["policy", "personal", "data", "protection"]
-            },
-            {
-                words: ["copyright", "rights", "trademark"],
-                add: ["intellectual", "property", "ownership"]
-            },
-            {
-                words: ["accessibility", "accessible", "captions"],
-                add: ["access", "subtitles", "assistance"]
-            },
-            {
-                words: ["help", "assistance", "support"],
-                add: ["faq", "questions", "answers", "contact"]
-            }
-        ];
-
-        groups.forEach(function (group) {
-            if (group.words.some(function (word) {
-                return normalized.includes(word);
-            })) {
-                group.add.forEach(function (word) {
-                    expanded.add(word);
-                });
-            }
-        });
-
-        return {
-            original: normalized,
-            words: Array.from(expanded),
-            tokens: words
-        };
-    }
-
-    function scoreText(searchable, query) {
-        const text = normalize(searchable);
-        if (!text) return 0;
-
-        let score = 0;
-
-        if (query.original.length >= 3 && text.includes(query.original)) {
-            score += 12;
-        }
-
-        query.words.forEach(function (word) {
-            if (!word || word.length < 1) return;
-
-            if (text.includes(word)) {
-                score += word.length > 4 ? 3 : 2;
-            }
-        });
-
-        return score;
-    }
-
-    function createResult(title, type, description, url) {
-        const link = document.createElement("a");
-        link.className = "search-result";
-        link.href = url;
-
-        const typeElement = document.createElement("span");
-        typeElement.className = "search-result-type";
-        typeElement.textContent = type;
-
-        const titleElement = document.createElement("span");
-        titleElement.className = "search-result-title";
-        titleElement.textContent = title;
-
-        const descriptionElement = document.createElement("span");
-        descriptionElement.className = "search-result-description";
-        descriptionElement.textContent = description;
-
-        const arrow = document.createElement("span");
-        arrow.className = "search-result-arrow";
-        arrow.textContent = "Open destination →";
-
-        link.append(typeElement, titleElement, descriptionElement, arrow);
-
-        return link;
-    }
-
-    function getPageMatches(query) {
-        return pages.map(function (page) {
-            return {
-                page: page,
-                score: scoreText(
-                    page.title + " " + page.description + " " + page.terms,
-                    query
-                )
-            };
-        })
-        .filter(function (item) {
-            return item.score > 0;
-        })
-        .sort(function (a, b) {
-            return b.score - a.score;
-        })
-        .slice(0, 5);
-    }
-
-    function getFaqMatches(query) {
-        return faqItems.map(function (item) {
-            const section = item.closest(".faq-section");
-            const sectionHeading = section
-                ? section.querySelector(".faq-section-heading").textContent
-                : "";
-
-            const searchable = [
-                item.textContent,
-                sectionHeading,
-                subjectAliases
-            ].join(" ");
-
-            return {
-                item: item,
-                section: section,
-                score: scoreText(searchable, query)
-            };
-        })
-        .filter(function (item) {
-            return item.score > 0;
-        })
-        .sort(function (a, b) {
-            return b.score - a.score;
-        })
-        .slice(0, 7);
-    }
-
-    function resetSearch() {
-        faqItems.forEach(function (item) {
-            item.hidden = false;
-            item.open = false;
-        });
-
-        faqSections.forEach(function (section) {
-            section.hidden = false;
-        });
-
-        resultsBox.innerHTML = "";
-        resultsBox.classList.remove("active");
-
-        searchStatus.textContent = "Ready to search.";
-    }
-
-    function searchWebsite() {
-        const rawQuery = searchInput.value.trim();
-
-        if (!rawQuery) {
-            resetSearch();
+        if (!query) {
+            searchStatus.textContent = "Ready to search.";
             return;
         }
 
-        const query = expandQuery(rawQuery);
-        const pageMatches = getPageMatches(query);
-        const faqMatches = getFaqMatches(query);
+        const words = query.split(/\s+/).filter(Boolean);
 
-        faqItems.forEach(function (item) {
-            item.hidden = true;
-            item.open = false;
-        });
+        const matches = searchableItems.filter(function (item) {
 
-        faqSections.forEach(function (section) {
-            section.hidden = true;
-        });
+            const searchableText = normalize(
+                item.title + " " + item.content + " " + item.category
+            );
 
-        faqMatches.forEach(function (match) {
-            match.item.hidden = false;
-            match.item.open = true;
-
-            if (match.section) {
-                match.section.hidden = false;
-            }
-        });
-
-        resultsBox.innerHTML = "";
-
-        let total = 0;
-
-        if (pageMatches.length) {
-            const heading = document.createElement("div");
-            heading.className = "search-results-heading";
-            heading.textContent = "Official Destinations";
-
-            resultsBox.appendChild(heading);
-
-            pageMatches.forEach(function (match) {
-                const page = match.page;
-
-                resultsBox.appendChild(
-                    createResult(
-                        page.title,
-                        page.type,
-                        page.description,
-                        page.url
-                    )
-                );
-
-                total++;
+            return words.every(function (word) {
+                return searchableText.includes(word);
             });
+
+        });
+
+        if (matches.length === 0) {
+
+            resultsContainer.innerHTML =
+                '<div class="search-empty">' +
+                'No matching information was found. Try another search term or visit the official directory.' +
+                '</div>';
+
+            searchStatus.textContent = "No results found.";
+            return;
         }
 
-        if (faqMatches.length) {
-            const heading = document.createElement("div");
-            heading.className = "search-results-heading";
-            heading.textContent = "Related Questions & Answers";
+        searchStatus.textContent =
+            matches.length + " matching result(s) found.";
 
-            resultsBox.appendChild(heading);
+        matches.slice(0, 20).forEach(function (item) {
 
-            faqMatches.forEach(function (match) {
-                const sectionTitle = match.section
-                    ? match.section.querySelector("h3").textContent
-                    : "Help Centre";
+            const result = document.createElement("a");
 
-                const question = match.item.querySelector("summary").textContent;
-                const answer = match.item.querySelector(".faq-answer");
+            result.className = "search-result";
+            result.href = item.href;
 
-                const description = answer
-                    ? answer.textContent.trim().replace(/\s+/g, " ").slice(0, 260)
-                    : "";
+            const category = document.createElement("small");
+            category.textContent = item.category;
 
-                const result = createResult(
-                    question,
-                    sectionTitle,
-                    description,
-                    "#" + (match.section ? match.section.id : "official-directory")
-                );
+            const title = document.createElement("strong");
+            title.textContent = item.title;
 
-                result.addEventListener("click", function () {
-                    match.item.hidden = false;
-                    match.item.open = true;
-                    if (match.section) match.section.hidden = false;
-                });
+            const description = document.createElement("p");
+            description.textContent = item.content
+                .replace(/\s+/g, " ")
+                .slice(0, 155);
 
-                resultsBox.appendChild(result);
-                total++;
+            result.appendChild(category);
+            result.appendChild(title);
+            result.appendChild(description);
+
+            result.addEventListener("click", function () {
+
+                if (item.element.matches(".faq-item")) {
+                    item.element.open = true;
+                }
+
             });
-        }
 
-        if (!total) {
-            const noMatch = document.createElement("div");
-            noMatch.className = "search-no-match";
-            noMatch.textContent =
-                "No matching result was found. Try another keyword or contact the organization.";
+            resultsContainer.appendChild(result);
 
-            const contact = document.createElement("a");
-            contact.href = "/contact";
-            contact.textContent = "Contact PHRINUSOMYIS™";
+        });
 
-            noMatch.appendChild(document.createElement("br"));
-            noMatch.appendChild(contact);
-
-            resultsBox.appendChild(noMatch);
-        }
-
-        resultsBox.classList.add("active");
-        searchStatus.textContent = total + " relevant result(s).";
     }
 
-    searchInput.addEventListener("input", searchWebsite);
-
-    searchInput.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            searchInput.value = "";
-            resetSearch();
-            searchInput.blur();
-        }
-
-        if (event.key === "Enter") {
-            searchWebsite();
-        }
-    });
+    searchInput.addEventListener("input", performSearch);
 
     clearButton.addEventListener("click", function () {
+
         searchInput.value = "";
-        resetSearch();
+        resultsContainer.innerHTML = "";
+        searchStatus.textContent = "Ready to search.";
         searchInput.focus();
+
     });
+
+    searchInput.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            clearButton.click();
+        }
+
+    });
+
+    // Allow only one FAQ answer to remain open
+    // within each FAQ category.
+
+    document.querySelectorAll(".faq-section").forEach(function (section) {
+
+        section.querySelectorAll(".faq-item").forEach(function (item) {
+
+            item.addEventListener("toggle", function () {
+
+                if (!item.open) return;
+
+                section.querySelectorAll(".faq-item").forEach(function (other) {
+
+                    if (other !== item) {
+                        other.open = false;
+                    }
+
+                });
+
+            });
+
+        });
+
+    });
+
+    // Close the Explore menu after selecting a destination.
+
+    const menu = document.querySelector(".top-menu");
 
     document.querySelectorAll(".top-menu-list a").forEach(function (link) {
+
         link.addEventListener("click", function () {
-            const menu = link.closest("details");
-            if (menu) menu.open = false;
+            menu.removeAttribute("open");
         });
-    });
 
-    /*
-      When a visitor follows a directory link,
-      clear any previous FAQ filtering.
-    */
-
-    document.querySelectorAll(".destination-card").forEach(function (link) {
-        link.addEventListener("click", resetSearch);
     });
 
 });
 </script>
 
-<!-- GOOGLE TRANSLATE -->
+<!-- =================================
+     GOOGLE TRANSLATE INITIALIZATION
+================================= -->
 
 <script>
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: "en",
-            includedLanguages:
-                "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-            autoDisplay: false
-        },
-        "google_translate_element"
-    );
 
-    addEnglishToGoogleMenu();
-}
+    new google.translate.TranslateElement({
 
-function addEnglishToGoogleMenu() {
-    let attempts = 0;
+        pageLanguage: "en",
 
-    const timer = setInterval(function () {
-        const menu = document.querySelector(
-            "#google_translate_element select.goog-te-combo"
-        );
+        includedLanguages:
+            "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
 
-        attempts++;
+        autoDisplay: false
 
-        if (menu) {
-            clearInterval(timer);
+    }, "google_translate_element");
 
-            if (!menu.querySelector('option[value="en"]')) {
-                const english = document.createElement("option");
-                english.value = "en";
-                english.textContent = "English";
-                menu.insertBefore(english, menu.firstChild);
-            }
-
-            menu.addEventListener("change", function () {
-                if (this.value === "en") {
-                    restoreEnglish();
-                }
-            });
-        }
-
-        if (attempts >= 40) {
-            clearInterval(timer);
-        }
-    }, 500);
-}
-
-function restoreEnglish() {
-    const hostname = window.location.hostname;
-
-    [
-        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/",
-        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" + hostname,
-        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=." + hostname
-    ].forEach(function (cookie) {
-        document.cookie = cookie;
-    });
-
-    window.location.reload();
 }
 </script>
 
 <script
-    type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async
+></script>
+
+<script>
+(function () {
+
+    const selector = document.getElementById("languageSelector");
+
+    function applyLanguage(language) {
+
+        const select = document.querySelector(".goog-te-combo");
+
+        if (!select) return false;
+
+        select.value = language;
+        select.dispatchEvent(new Event("change"));
+
+        return true;
+
+    }
+
+    selector.addEventListener("change", function () {
+
+        const language = this.value;
+
+        if (language === "en") {
+
+            const select = document.querySelector(".goog-te-combo");
+
+            if (select) {
+                select.value = "en";
+                select.dispatchEvent(new Event("change"));
+            }
+
+            document.cookie =
+                "googtrans=/en/en;path=/;max-age=31536000";
+
+            location.reload();
+            return;
+
+        }
+
+        if (!applyLanguage(language)) {
+
+            const observer = new MutationObserver(function () {
+
+                if (applyLanguage(language)) {
+                    observer.disconnect();
+                }
+
+            });
+
+            observer.observe(document.body, {
+                childList:true,
+                subtree:true
+            });
+
+        }
+
+    });
+
+    // Remove unwanted Google Translate page displacement
+    // and injected banner elements.
+
+    function protectLayout() {
+
+        document.documentElement.style.setProperty("margin-top","0","important");
+        document.documentElement.style.setProperty("top","0","important");
+
+        document.body.style.setProperty("top","0","important");
+        document.body.style.setProperty("margin-top","0","important");
+        document.body.style.setProperty("padding-top","0","important");
+
+        document.querySelectorAll(
+            ".goog-te-banner-frame, .goog-te-balloon-frame"
+        ).forEach(function (element) {
+            element.remove();
+        });
+
+    }
+
+    const observer = new MutationObserver(protectLayout);
+
+    observer.observe(document.documentElement, {
+        childList:true,
+        subtree:true
+    });
+
+    protectLayout();
+
+})();
 </script>
 
 </body>
