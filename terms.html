@@ -1,12 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Terms of Use governing access to and engagement with PHRINUSOMYIS™, its official channels, publications, sports competitions and ZEAVIQ SPORTS™.">
+
   <title>Terms of Use | PHRINUSOMYIS™</title>
 
-<style>
+  <meta name="description" content="The official Terms of Use governing PHRINUSOMYIS™, its international sports organization, competitions, ZEAVIQ SPORTS™, intellectual property, publications and authorized activities.">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <meta name="author" content="PHRINUSOMYIS™">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="canonical" href="https://phrinusomyis.com/terms">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PHRINUSOMYIS™">
+  <meta property="og:title" content="Terms of Use | PHRINUSOMYIS™">
+  <meta property="og:description" content="The official organizational terms governing access, intellectual property, competitions, publications and authorized relationships.">
+  <meta property="og:url" content="https://phrinusomyis.com/terms">
+  <meta property="og:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Terms of Use | PHRINUSOMYIS™">
+  <meta name="twitter:description" content="Official organizational terms of PHRINUSOMYIS™.">
+  <meta name="twitter:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://phrinusomyis.com/terms#webpage",
+    "url": "https://phrinusomyis.com/terms",
+    "name": "Terms of Use | PHRINUSOMYIS™",
+    "description": "Official Terms of Use governing PHRINUSOMYIS™, its competitions, ZEAVIQ SPORTS™, intellectual property, publications and authorized activities.",
+    "isPartOf": {
+      "@id": "https://phrinusomyis.com/#website"
+    },
+    "publisher": {
+      "@id": "https://phrinusomyis.com/#organization"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+
+  <style>
+    :root {
+      --black: #111111;
+      --deep-black: #080808;
+      --gold: #a17b2c;
+      --gold-light: #c4a45e;
+      --white: #ffffff;
+      --paper: #faf9f6;
+      --muted: #777777;
+      --line: #e7e4dd;
+      --content-width: 1120px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -15,107 +68,47 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+      overflow-x: hidden !important;
       top: 0 !important;
       margin-top: 0 !important;
-      overflow-x: hidden !important;
     }
 
     body {
-      background: #ffffff;
-      color: #171717;
+      background: var(--white);
+      color: var(--black);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.8;
-      top: 0 !important;
-      margin-top: 0 !important;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.85;
       position: relative !important;
       overflow-x: hidden !important;
-      left: 0 !important;
-      right: 0 !important;
+      top: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
       transform: none !important;
     }
 
     a {
-      color: #8a681d;
-      font-weight: 700;
+      color: inherit;
       text-decoration: none;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: var(--gold);
     }
 
-    .site-header {
-      width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #dedede;
-      padding: 22px 5%;
+    button,
+    select {
+      font: inherit;
     }
 
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+    ::selection {
+      background: var(--gold);
+      color: var(--white);
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .brand img {
-      width: 66px;
-      height: 66px;
-      object-fit: contain;
-    }
-
-    .brand-name {
-      font-size: 20px;
-      letter-spacing: 1.2px;
-      font-weight: 900;
-    }
-
-    .brand-slogan {
-      color: #8a681d;
-      font-size: 11px;
-      letter-spacing: 1.4px;
-      font-weight: 900;
-      margin-top: 3px;
-    }
-
-    .language-area {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .language-area label {
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    #siteLanguage {
-      min-width: 180px;
-      padding: 11px 13px;
-      border: 1px solid #b9b9b9;
-      border-radius: 3px;
-      background: #ffffff;
-      color: #171717;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    /* Hidden Google Translate engine.
-       Keep the engine present so it can initialize. */
+    /* LANGUAGE ENGINE */
 
     #google_translate_element {
       display: block !important;
@@ -135,154 +128,404 @@
       z-index: -1 !important;
     }
 
-    .page-intro {
+    /* HEADER */
+
+    .site-header {
+      position: relative;
+      z-index: 100;
+      width: 100%;
       background: #ffffff;
-      padding: 65px 5% 40px;
-      text-align: center;
+      border-bottom: 1px solid var(--line);
     }
 
-    .page-intro .eyebrow {
-      color: #8a681d;
-      font-size: 12px;
-      letter-spacing: 2px;
+    .header-inner {
+      max-width: 1320px;
+      width: 90%;
+      min-height: 105px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 19px;
       font-weight: 900;
+      letter-spacing: 1.3px;
+      line-height: 1.4;
+    }
+
+    .brand-slogan {
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1.6px;
+      margin-top: 4px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav a {
+      position: relative;
+      padding: 12px 0;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      white-space: nowrap;
+      color: #383838;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: var(--gold);
+    }
+
+    .main-nav a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 3px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .language-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .language-area label {
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    #siteLanguage {
+      min-width: 115px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: white;
+      color: var(--black);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+
+    #siteLanguage:focus {
+      border-color: var(--gold);
+    }
+
+    /* PAGE HERO */
+
+    .page-intro {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 5% 82px;
+      text-align: center;
+      background:
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(161,123,44,0.09),
+          transparent 58%
+        ),
+        linear-gradient(180deg, #ffffff 0%, #faf9f6 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      max-width: 950px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 23px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: var(--gold);
     }
 
     .page-intro h1 {
-      font-size: clamp(30px, 5vw, 48px);
-      line-height: 1.2;
+      font-size: clamp(39px, 7vw, 76px);
       font-weight: 900;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+      letter-spacing: 3px;
+      line-height: 1.1;
+      margin-bottom: 23px;
     }
 
-    .page-intro p {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 16px;
-      font-weight: 700;
-      color: #444444;
+    .hero-description {
+      max-width: 720px;
+      margin: auto;
+      color: #555555;
+      font-size: 15px;
+      line-height: 1.9;
     }
 
     .gold-line {
-      width: 75px;
+      width: 65px;
       height: 3px;
-      background: #a17b2c;
-      margin: 25px auto 0;
+      background: var(--gold);
+      margin: 31px auto 0;
     }
+
+    .hero-reference {
+      margin-top: 26px;
+      color: #858585;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* CONTENT */
 
     .content-wrap {
       width: 90%;
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 30px 0 75px;
+      max-width: var(--content-width);
+      margin: auto;
+      padding: 75px 0 95px;
     }
 
     .intro-note {
-      padding: 22px 25px;
-      border-left: 4px solid #a17b2c;
-      background: #f8f8f8;
-      margin-bottom: 35px;
-      font-weight: 700;
+      position: relative;
+      padding: 32px 36px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      margin-bottom: 55px;
+    }
+
+    .intro-note-label {
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 11px;
+    }
+
+    .intro-note p {
+      font-size: 14px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #333333;
     }
 
     .terms-section {
-      margin-bottom: 34px;
+      padding: 0 0 34px;
+      margin-bottom: 35px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 120px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 17px;
+    }
+
+    .section-number {
+      flex-shrink: 0;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding-top: 5px;
     }
 
     .terms-section h2 {
-      color: #171717;
-      font-size: 21px;
+      color: var(--black);
+      font-size: 19px;
       font-weight: 900;
-      line-height: 1.4;
-      margin-bottom: 12px;
+      line-height: 1.45;
+      letter-spacing: 0.3px;
     }
 
     .terms-section p {
-      margin-bottom: 13px;
-      font-weight: 700;
+      margin: 0 0 14px;
+      color: #454545;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .terms-section p:last-child {
+      margin-bottom: 0;
     }
 
     .terms-section ul {
-      padding-left: 25px;
-      margin: 10px 0 15px;
+      padding-left: 24px;
+      margin: 13px 0 18px;
     }
 
     .terms-section li {
-      margin-bottom: 8px;
-      padding-left: 4px;
-      font-weight: 700;
+      color: #454545;
+      font-size: 14px;
+      line-height: 1.85;
+      padding-left: 5px;
+      margin-bottom: 9px;
     }
+
+    .terms-section li::marker {
+      color: var(--gold);
+    }
+
+    .terms-section strong {
+      color: var(--black);
+      font-weight: 800;
+    }
+
+    /* CONTACT LINK */
+
+    .inline-link {
+      color: var(--gold);
+      font-weight: 800;
+      border-bottom: 1px solid rgba(161,123,44,0.4);
+    }
+
+    .inline-link:hover {
+      border-color: var(--gold);
+    }
+
+    /* BACK TO HOMEPAGE */
 
     .back-home-wrap {
       text-align: center;
-      margin: 55px 0 10px;
+      margin: 70px 0 0;
     }
 
     .back-home {
-      display: inline-block;
-      padding: 14px 30px;
-      background: #171717;
-      color: #ffffff;
-      border: 1px solid #171717;
-      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      min-width: 215px;
+      padding: 16px 28px;
+      background: var(--black);
+      color: white;
+      border: 1px solid var(--black);
+      font-size: 10px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      transition: 0.2s ease;
+      transition: all 0.25s ease;
+    }
+
+    .back-home::after {
+      content: "→";
+      font-size: 16px;
     }
 
     .back-home:hover {
-      background: #a17b2c;
-      border-color: #a17b2c;
-      color: #ffffff;
-      text-decoration: none;
+      background: var(--gold);
+      border-color: var(--gold);
+      color: white;
     }
 
+    /* FOOTER */
+
     .site-footer {
-      background: #ffffff;
-      border-top: 1px solid #dedede;
-      padding: 45px 5% 25px;
+      background: var(--deep-black);
+      color: white;
+      padding: 65px 5% 28px;
     }
 
     .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: 1320px;
+      margin: auto;
     }
 
-    .footer-brand {
-      margin-bottom: 30px;
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 35px;
+      padding-bottom: 45px;
+      border-bottom: 1px solid rgba(255,255,255,0.13);
     }
 
     .footer-brand strong {
-      font-size: 19px;
+      font-size: 22px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     .footer-brand p {
-      color: #8a681d;
-      font-size: 12px;
+      color: var(--gold-light);
+      font-size: 9px;
       font-weight: 900;
-      letter-spacing: 1.4px;
-      margin-top: 5px;
+      letter-spacing: 2px;
+      margin-top: 8px;
+    }
+
+    .footer-description {
+      max-width: 390px;
+      color: #aaaaaa;
+      font-size: 12px;
+      line-height: 1.9;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(130px, 1fr));
-      gap: 28px;
-      padding-bottom: 30px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 35px;
+      padding: 42px 0;
     }
 
     .footer-group h3 {
-      font-size: 13px;
+      color: white;
+      font-size: 10px;
       font-weight: 900;
-      margin-bottom: 13px;
+      letter-spacing: 1.8px;
+      margin-bottom: 20px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .footer-group ul {
@@ -290,33 +533,50 @@
     }
 
     .footer-group li {
-      margin-bottom: 8px;
-      font-size: 13px;
-      font-weight: 700;
+      margin-bottom: 12px;
     }
 
     .footer-group a {
-      color: #333333;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #dedede;
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
+      color: #a9a9a9;
       font-size: 12px;
-      font-weight: 700;
-      color: #555555;
+      font-weight: 500;
+      transition: color 0.2s ease;
     }
 
-    .footer-bottom strong {
-      color: #171717;
+    .footer-group a:hover,
+    .footer-group a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .footer-group a[aria-current="page"] {
       font-weight: 900;
     }
 
-    /* STRONG GOOGLE TRANSLATE POP-UP AND BANNER SUPPRESSION */
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.13);
+      padding-top: 24px;
+      color: #888888;
+      font-size: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    .footer-bottom strong {
+      color: white;
+      font-weight: 900;
+    }
+
+    .footer-motto {
+      color: var(--gold-light);
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+
+    /* GOOGLE TRANSLATE PROTECTION */
 
     html,
     html body {
@@ -335,9 +595,6 @@
       right: 0 !important;
     }
 
-    /* Hide Google's top banner and injected frames without deleting
-       the translation engine's own elements. */
-
     .goog-te-banner-frame,
     .goog-te-banner-frame.skiptranslate,
     iframe.goog-te-banner-frame,
@@ -353,19 +610,12 @@
       left: -10000px !important;
       width: 0 !important;
       height: 0 !important;
-      min-width: 0 !important;
-      min-height: 0 !important;
-      max-width: 0 !important;
-      max-height: 0 !important;
       border: 0 !important;
     }
-
-    /* Hide Google Translate tooltip and pop-up elements. */
 
     #goog-gt-tt,
     .goog-tooltip,
     .goog-tooltip:hover,
-    .goog-te-balloon-frame,
     .goog-te-spinner-pos,
     .goog-te-ftab,
     .goog-te-ftab-link,
@@ -380,8 +630,6 @@
       opacity: 0 !important;
       pointer-events: none !important;
     }
-
-    /* Hide Google's injected top spacing without deleting its elements. */
 
     body > .skiptranslate {
       display: none !important;
@@ -402,8 +650,6 @@
       border: 0 !important;
     }
 
-    /* Prevent translated pages from being shifted. */
-
     body.translated-ltr,
     body.translated-rtl {
       top: 0 !important;
@@ -411,19 +657,6 @@
       padding-top: 0 !important;
       position: relative !important;
     }
-
-    /* Prevent Google-injected elements from causing horizontal movement. */
-
-    iframe.goog-te-banner-frame,
-    iframe.goog-te-menu-frame,
-    .goog-te-banner-frame,
-    .goog-te-balloon-frame {
-      max-width: 0 !important;
-      max-height: 0 !important;
-      overflow: hidden !important;
-    }
-
-    /* Additional Google Translate interface protection. */
 
     .VIpgJd-ZVi9od-ORHb-OEVmcd,
     .VIpgJd-ZVi9od-ORHb,
@@ -473,36 +706,84 @@
       line-height: 0 !important;
     }
 
-    /* Keep the page layout within the screen. */
-
     html,
     body {
       max-width: 100% !important;
       overflow-x: hidden !important;
     }
 
-    @media (max-width: 850px) {
+    /* RESPONSIVE */
+
+    @media (max-width: 1100px) {
+      .header-inner {
+        width: 94%;
+      }
+
+      .header-right {
+        gap: 17px;
+      }
+
+      .main-nav {
+        gap: 15px;
+      }
+
+      .main-nav a {
+        font-size: 9px;
+      }
+
+      .language-area label {
+        display: none;
+      }
+
       .footer-grid {
-        grid-template-columns: repeat(3, minmax(130px, 1fr));
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .header-inner {
+        min-height: auto;
+        padding: 17px 0;
+        flex-wrap: wrap;
+      }
+
+      .header-right {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .main-nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .language-area label {
+        display: block;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 600px) {
       body {
-        font-size: 15px;
-      }
-
-      .site-header {
-        padding: 18px 5%;
+        font-size: 14px;
       }
 
       .header-inner {
-        align-items: flex-start;
+        width: 90%;
+        gap: 17px;
       }
 
       .brand img {
-        width: 54px;
-        height: 54px;
+        width: 49px;
+        height: 49px;
       }
 
       .brand-name {
@@ -510,49 +791,131 @@
       }
 
       .brand-slogan {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .header-right {
+        align-items: flex-start;
+        gap: 13px;
+      }
+
+      .main-nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px 17px;
+      }
+
+      .main-nav a {
         font-size: 9px;
+        padding: 7px 0;
       }
 
       .language-area {
         width: 100%;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 7px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .language-area label {
+        display: block;
+        font-size: 9px;
       }
 
       #siteLanguage {
-        width: 100%;
+        min-width: 0;
+        width: 155px;
+        padding: 9px;
       }
 
       .page-intro {
-        padding: 45px 5% 30px;
+        padding: 66px 6% 57px;
       }
 
-      .page-intro p {
-        font-size: 14px;
+      .page-intro h1 {
+        font-size: clamp(35px, 10vw, 51px);
+        letter-spacing: 1.5px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
       }
 
       .content-wrap {
-        width: 90%;
-        padding-top: 20px;
+        width: 89%;
+        padding: 45px 0 65px;
+      }
+
+      .intro-note {
+        padding: 23px 20px;
+        margin-bottom: 43px;
+      }
+
+      .intro-note p {
+        font-size: 13px;
+      }
+
+      .terms-section {
+        padding-bottom: 27px;
+        margin-bottom: 29px;
+      }
+
+      .section-heading {
+        gap: 12px;
       }
 
       .terms-section h2 {
-        font-size: 19px;
+        font-size: 16px;
       }
 
       .terms-section p,
       .terms-section li {
-        font-size: 14px;
+        font-size: 13px;
+      }
+
+      .back-home-wrap {
+        margin-top: 50px;
+      }
+
+      .site-footer {
+        padding: 48px 6% 25px;
       }
 
       .footer-grid {
-        grid-template-columns: repeat(2, minmax(120px, 1fr));
-        gap: 25px 15px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px 17px;
+      }
+
+      .footer-brand strong {
+        font-size: 19px;
+      }
+
+      .footer-description {
+        font-size: 11px;
       }
 
       .footer-bottom {
         flex-direction: column;
+        align-items: flex-start;
+        font-size: 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -578,571 +941,880 @@
 
   <div id="google_translate_element"></div>
 
+  <!-- HEADER -->
+
   <header class="site-header">
     <div class="header-inner">
 
       <a class="brand" href="/" aria-label="PHRINUSOMYIS Homepage">
         <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS logo">
+
         <div>
           <div class="brand-name">PHRINUSOMYIS™</div>
           <div class="brand-slogan">COMMANDING THE WORLD STAGE™</div>
         </div>
       </a>
 
-      <div class="language-area">
-        <label for="siteLanguage">SELECT LANGUAGE</label>
-        <select id="siteLanguage" aria-label="Select language">
-          <option value="en">English</option>
-          <option value="fr">French</option>
-          <option value="es">Spanish</option>
-          <option value="de">German</option>
-          <option value="ar">Arabic</option>
-          <option value="zh-CN">Chinese</option>
-          <option value="ru">Russian</option>
-          <option value="pt">Portuguese</option>
-          <option value="ja">Japanese</option>
-          <option value="ko">Korean</option>
-          <option value="it">Italian</option>
-          <option value="nl">Dutch</option>
-          <option value="tr">Turkish</option>
-          <option value="hi">Hindi</option>
-          <option value="id">Indonesian</option>
-          <option value="vi">Vietnamese</option>
-          <option value="th">Thai</option>
-          <option value="pl">Polish</option>
-          <option value="sv">Swedish</option>
-          <option value="fi">Finnish</option>
-          <option value="da">Danish</option>
-        </select>
-      </div>
+      <div class="header-right">
 
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/sports">Sports</a>
+          <a href="/newsroom/newswire.html">Newswire</a>
+          <a href="/magazine/news">Magazine</a>
+          <a href="/contact">Contact</a>
+          <a href="/terms" aria-current="page">Terms</a>
+        </nav>
+
+        <div class="language-area">
+          <label for="siteLanguage">LANGUAGE</label>
+
+          <select id="siteLanguage" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="de">German</option>
+            <option value="ar">Arabic</option>
+            <option value="zh-CN">Chinese</option>
+            <option value="ru">Russian</option>
+            <option value="pt">Portuguese</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="it">Italian</option>
+            <option value="nl">Dutch</option>
+            <option value="tr">Turkish</option>
+            <option value="hi">Hindi</option>
+            <option value="id">Indonesian</option>
+            <option value="vi">Vietnamese</option>
+            <option value="th">Thai</option>
+            <option value="pl">Polish</option>
+            <option value="sv">Swedish</option>
+            <option value="fi">Finnish</option>
+            <option value="da">Danish</option>
+          </select>
+        </div>
+
+      </div>
     </div>
   </header>
 
+  <!-- PAGE INTRODUCTION -->
+
   <section class="page-intro">
-    <div class="eyebrow">Official Organizational Terms</div>
-    <h1>TERMS OF USE</h1>
-    <p>
-      These Terms establish the conditions governing access to and
-      engagement with PHRINUSOMYIS™, its official channels, communications,
-      publications and authorized activities.
-    </p>
-    <div class="gold-line"></div>
+    <div class="hero-inner">
+
+      <div class="eyebrow">Official Organizational Framework</div>
+
+      <h1>TERMS OF USE</h1>
+
+      <p class="hero-description">
+        The terms governing the use of PHRINUSOMYIS™ official channels,
+        organizational materials, sports properties, publications
+        and authorized activities.
+      </p>
+
+      <div class="gold-line"></div>
+
+      <div class="hero-reference">
+        Official Organizational Terms
+      </div>
+
+    </div>
   </section>
+
+  <!-- MAIN CONTENT -->
 
   <main class="content-wrap">
 
     <div class="intro-note">
-      PHRINUSOMYIS™ is an international sports organization that develops,
-      owns and administers sports competitions and ZEAVIQ SPORTS™ worldwide.
-      These Terms protect the integrity of the organization, its activities,
-      intellectual property, official communications and authorized relationships.
+      <div class="intro-note-label">Organizational Authority</div>
+
+      <p>
+        PHRINUSOMYIS™ is an international sports organization that
+        develops, owns and administers sports competitions and
+        ZEAVIQ SPORTS™ worldwide. Its organizational identity,
+        intellectual property, official publications, competition
+        properties and authorized relationships are governed
+        by established standards of authority and accountability.
+        These Terms set out the conditions applicable to their use.
+      </p>
     </div>
 
+    <!-- 01 -->
+
     <section class="terms-section">
-      <h2>1. ACCEPTANCE OF THESE TERMS</h2>
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2>ACCEPTANCE OF THESE TERMS</h2>
+      </div>
+
       <p>
         These Terms of Use govern access to and use of the official
-        organizational information, publications, communications and
-        other materials made available by PHRINUSOMYIS™ through
-        its official channels.
+        digital properties, organizational information, publications,
+        communications and materials made available by PHRINUSOMYIS™.
       </p>
+
       <p>
-        By accessing or using an applicable official channel, submitting
-        information, or engaging in an activity expressly governed by these
-        Terms, the individual or entity concerned acknowledges and agrees
-        to comply with the applicable provisions.
+        By accessing or using an applicable official channel,
+        submitting information or participating in an activity
+        expressly governed by these Terms, the individual or entity
+        concerned agrees to comply with the applicable provisions.
       </p>
+
       <p>
         Where a separate written agreement, competition regulation,
-        participation agreement, commercial contract or other specific
-        instrument governs a relationship or activity, that instrument
-        applies to the extent of its subject matter. These Terms do not
-        replace or override such an agreement.
+        participation agreement, commercial contract or other
+        specific instrument governs a relationship or activity,
+        that instrument shall prevail within its defined subject matter.
+        These Terms do not replace or override such an agreement.
       </p>
     </section>
 
+    <!-- 02 -->
+
     <section class="terms-section">
-      <h2>2. THE ORGANIZATION</h2>
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2>THE ORGANIZATION</h2>
+      </div>
+
       <p>
-        PHRINUSOMYIS™ is an international sports organization responsible
-        for developing, owning and administering sports competitions
-        and ZEAVIQ SPORTS™ worldwide.
+        PHRINUSOMYIS™ is an international sports organization
+        headquartered in New York, United States, operating
+        across 21 countries.
       </p>
+
       <p>
-        The organization creates original sports formats and administers
-        associated competition properties, events, official communications,
-        publications and authorized commercial activities.
+        The organization develops, owns and administers sports
+        competitions, original sports formats and ZEAVIQ SPORTS™
+        worldwide. Its activities encompass competition administration,
+        sports properties, official publications, events and
+        authorized commercial operations.
       </p>
+
       <p>
-        References to PHRINUSOMYIS™ in these Terms include the organization
-        and, where applicable, its authorized representatives, personnel,
-        administrators and designated operating entities acting within
-        their respective authority.
+        References to PHRINUSOMYIS™ in these Terms include the
+        organization and, where applicable, its authorized
+        representatives, personnel, administrators and designated
+        operating entities acting within their respective authority.
       </p>
     </section>
 
+    <!-- 03 -->
+
     <section class="terms-section">
-      <h2>3. DEFINITIONS</h2>
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2>DEFINITIONS</h2>
+      </div>
+
       <p>For the purposes of these Terms:</p>
+
       <ul>
         <li><strong>Organization</strong> means PHRINUSOMYIS™.</li>
-        <li><strong>Official Channels</strong> means digital properties, online channels and other communication channels officially operated or authorized by the organization.</li>
-        <li><strong>Official Materials</strong> means content, documents, images, videos, publications, graphics, marks and other materials issued or authorized by the organization.</li>
-        <li><strong>ZEAVIQ SPORTS™</strong> means the sports identity, formats and associated properties administered by PHRINUSOMYIS™ under that name.</li>
-        <li><strong>Participant</strong> means an individual or team admitted to or involved in an activity governed by applicable participation terms or competition regulations.</li>
-        <li><strong>Authorized Representative</strong> means a person or entity expressly authorized to act on behalf of the organization within a defined scope of authority.</li>
-        <li><strong>User</strong> means any individual or entity accessing or using an applicable Official Channel.</li>
+
+        <li><strong>Official Channels</strong> means digital properties,
+        online platforms and other communication channels operated
+        or formally authorized by the organization.</li>
+
+        <li><strong>Official Materials</strong> means content,
+        documents, photographs, videos, publications, graphics,
+        marks and other materials issued or authorized by
+        the organization.</li>
+
+        <li><strong>ZEAVIQ SPORTS™</strong> means the sports identity,
+        formats and associated properties administered by
+        PHRINUSOMYIS™ under that name.</li>
+
+        <li><strong>Participant</strong> means an individual or team
+        admitted to or involved in an activity governed by applicable
+        participation terms or competition regulations.</li>
+
+        <li><strong>Authorized Representative</strong> means a person
+        or entity expressly authorized to act on behalf of the
+        organization within a defined scope of authority.</li>
+
+        <li><strong>User</strong> means any individual or entity
+        accessing or using an applicable Official Channel.</li>
+
+        <li><strong>Organizational Properties</strong> means the
+        organization's names, identities, sports formats, competitions,
+        publications, original materials and associated intellectual
+        property interests.</li>
       </ul>
     </section>
 
+    <!-- 04 -->
+
     <section class="terms-section">
-      <h2>4. SCOPE AND APPLICATION</h2>
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <h2>SCOPE AND APPLICATION</h2>
+      </div>
+
       <p>
-        These Terms apply to the use of applicable Official Channels
-        and materials and to activities expressly incorporating
-        these Terms. They may apply, where relevant, to interactions involving:
+        These Terms apply to the use of applicable Official Channels,
+        Official Materials and activities expressly incorporating
+        these provisions.
       </p>
+
+      <p>They extend, where relevant, to interactions involving:</p>
+
       <ul>
         <li>Official organizational information and communications;</li>
         <li>Sports competitions, events and ZEAVIQ SPORTS™;</li>
-        <li>Official publications, including Newswire and Magazine;</li>
-        <li>Media representatives, contributors and authorized publishers;</li>
+        <li>Newswire, Magazine and other official publications;</li>
+        <li>Media representatives, contributors and publishers;</li>
         <li>Commercial partners, sponsors, suppliers and licensees;</li>
-        <li>Authorized representatives and persons acting for the organization;</li>
-        <li>Individuals submitting inquiries, proposals or other materials.</li>
+        <li>Authorized representatives and operating entities;</li>
+        <li>Individuals submitting inquiries, proposals or materials.</li>
       </ul>
+
       <p>
-        The existence of these Terms does not itself establish employment,
+        These Terms do not independently establish employment,
         agency, partnership, sponsorship, licensing, competition-entry
-        or other contractual status. Such relationships require the
-        applicable authorization or separate agreement.
+        or other contractual status. Such relationships require
+        the relevant authorization or separate agreement.
       </p>
     </section>
 
+    <!-- 05 -->
+
     <section class="terms-section">
-      <h2>5. COMPETITIONS, EVENTS AND PARTICIPATION</h2>
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <h2>COMPETITIONS, EVENTS AND PARTICIPATION</h2>
+      </div>
+
       <p>
-        PHRINUSOMYIS™ develops, owns and administers sports competitions
-        and related activities. Participation, admission, accreditation
-        and access are governed by the applicable event requirements,
-        competition regulations, invitations, credentials and written agreements.
+        PHRINUSOMYIS™ develops, owns and administers sports
+        competitions and associated activities. Participation,
+        admission, accreditation and access are governed by the
+        applicable event requirements, competition regulations,
+        invitations, credentials and written agreements.
       </p>
+
       <p>
-        No person obtains a right to participate, compete, officiate,
-        represent the organization, enter restricted areas or use an
-        event identity merely by accessing an Official Channel or
-        expressing interest.
+        Access to an Official Channel, an expression of interest
+        or an informal communication does not confer a right
+        to participate, compete, officiate, represent the organization
+        or enter restricted areas.
       </p>
+
       <p>
-        Participants and other authorized persons must comply with
-        the rules, instructions, eligibility requirements and conduct
-        standards applicable to the specific activity in which they are involved.
+        Participants and authorized persons must comply with
+        the applicable eligibility requirements, competition rules,
+        event instructions and conduct standards.
       </p>
+
       <p>
-        The organization may establish, amend, administer, postpone,
-        suspend or discontinue an activity in accordance with its
-        applicable rules, agreements and legal obligations.
+        The organization retains the authority to establish,
+        administer, amend, postpone, suspend or discontinue
+        its activities in accordance with applicable rules,
+        agreements and legal obligations.
       </p>
     </section>
 
+    <!-- 06 -->
+
     <section class="terms-section">
-      <h2>6. CONDUCT AND RESPONSIBLE USE</h2>
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <h2>CONDUCT AND RESPONSIBLE USE</h2>
+      </div>
+
       <p>
-        Users must act lawfully and responsibly when accessing Official
-        Channels or engaging in activities governed by these Terms.
-        Users must not:
+        Users must act lawfully and responsibly when accessing
+        Official Channels or participating in activities governed
+        by these Terms.
       </p>
+
+      <p>Users must not:</p>
+
       <ul>
-        <li>Misrepresent their identity, authority, affiliation or relationship with the organization;</li>
-        <li>Impersonate PHRINUSOMYIS™, its President, representatives or authorized personnel;</li>
-        <li>Publish or circulate false statements purporting to be official organizational announcements;</li>
-        <li>Interfere with the operation, security or integrity of an Official Channel;</li>
-        <li>Attempt unauthorized access to restricted systems, accounts, records or materials;</li>
-        <li>Upload malicious code or use automated means to disrupt services;</li>
-        <li>Infringe intellectual property, privacy, confidentiality or other legal rights;</li>
-        <li>Use organizational names, marks or materials in a misleading, deceptive or unauthorized manner;</li>
-        <li>Engage in unlawful, abusive, threatening or fraudulent conduct.</li>
+        <li>Misrepresent their identity, authority, affiliation
+        or relationship with the organization;</li>
+
+        <li>Impersonate PHRINUSOMYIS™, its President,
+        representatives or authorized personnel;</li>
+
+        <li>Publish false statements presented as official
+        organizational announcements;</li>
+
+        <li>Interfere with the operation, security or integrity
+        of an Official Channel;</li>
+
+        <li>Attempt unauthorized access to restricted systems,
+        accounts, records or materials;</li>
+
+        <li>Upload malicious code or disrupt services
+        through automated or other unauthorized means;</li>
+
+        <li>Infringe intellectual property, privacy,
+        confidentiality or other legal rights;</li>
+
+        <li>Use organizational identities or materials
+        in a misleading or unauthorized manner;</li>
+
+        <li>Engage in unlawful, fraudulent, threatening
+        or abusive conduct.</li>
       </ul>
     </section>
 
+    <!-- 07 -->
+
     <section class="terms-section">
-      <h2>7. INTELLECTUAL PROPERTY AND ORGANIZATIONAL IDENTITY</h2>
+      <div class="section-heading">
+        <span class="section-number">07</span>
+        <h2>INTELLECTUAL PROPERTY AND ORGANIZATIONAL IDENTITY</h2>
+      </div>
+
       <p>
-        PHRINUSOMYIS™ retains or controls, as applicable, the rights
-        and interests it holds in its organizational identity, names,
-        logos, visual identity, original materials, publications,
-        competition properties and other protected intellectual property.
+        PHRINUSOMYIS™ retains or controls, as applicable,
+        the rights and interests it holds in its organizational
+        identity, names, logos, visual identity, original materials,
+        publications, competition properties and other protected
+        intellectual property.
       </p>
+
       <p>
-        These materials may be protected by copyright, trademark,
-        design, database, confidentiality, unfair competition or
-        other applicable laws. The precise protection available
-        depends on the nature of the material and the relevant jurisdiction.
+        Such materials may be protected under copyright,
+        trademark, design, database, confidentiality,
+        unfair competition and other applicable laws.
+        The nature and extent of protection depend on
+        the relevant material and jurisdiction.
       </p>
+
       <p>
-        Nothing in these Terms transfers ownership or grants a general
-        licence to use the organization's intellectual property.
-        Any permitted use must be expressly authorized or supported
-        by an applicable written licence or agreement.
+        Nothing in these Terms transfers ownership or grants
+        a general licence to use the organization's intellectual
+        property. Any permitted use requires express authorization
+        or an applicable written licence or agreement.
       </p>
+
       <p>
-        The appearance of the ™ symbol identifies a claimed mark.
-        It does not, by itself, represent that a mark is registered
-        in every jurisdiction.
+        The ™ symbol identifies a claimed mark and does not,
+        by itself, represent registration in every jurisdiction.
       </p>
+
       <p>
-        No person may register, reproduce, adapt, distribute,
-        commercially exploit or otherwise use organizational marks
-        or protected materials in a manner that implies authorization
-        or affiliation without the necessary permission.
+        No person may reproduce, adapt, distribute, register,
+        commercially exploit or otherwise use organizational
+        marks and protected materials in a manner that implies
+        authorization or affiliation without the required permission.
       </p>
     </section>
 
+    <!-- 08 -->
+
     <section class="terms-section">
-      <h2>8. ZEAVIQ SPORTS™ AND COMPETITION PROPERTIES</h2>
+      <div class="section-heading">
+        <span class="section-number">08</span>
+        <h2>ZEAVIQ SPORTS™ AND COMPETITION PROPERTIES</h2>
+      </div>
+
       <p>
-        ZEAVIQ SPORTS™ and the competition properties administered
-        by PHRINUSOMYIS™ form part of the organization's sports
-        identity and intellectual property interests.
+        ZEAVIQ SPORTS™ and the sports competition properties
+        administered by PHRINUSOMYIS™ form part of the
+        organization's sports identity and intellectual
+        property interests.
       </p>
+
       <p>
-        Public descriptions, images, announcements or other published
-        information do not grant access to confidential competition
-        documentation, proprietary methods, internal operating procedures,
-        unpublished formats, technical specifications or restricted materials.
+        Public descriptions, photographs, announcements
+        and published information do not confer access to
+        confidential competition documentation, proprietary
+        methods, internal operating procedures, unpublished
+        formats, technical specifications or restricted materials.
       </p>
+
       <p>
-        No person may claim ownership, authorization, official status
-        or representation rights in relation to ZEAVIQ SPORTS™ or
-        an organizational competition property without express authorization.
+        No individual or entity may claim ownership, official
+        status, authorization, representation or commercial
+        rights in relation to ZEAVIQ SPORTS™ or any organizational
+        competition property without express authorization.
       </p>
     </section>
 
+    <!-- 09 -->
+
     <section class="terms-section">
-      <h2>9. MEDIA, PHOTOGRAPHY AND RECORDINGS</h2>
+      <div class="section-heading">
+        <span class="section-number">09</span>
+        <h2>MEDIA, PHOTOGRAPHY AND RECORDINGS</h2>
+      </div>
+
       <p>
-        Official photographs, videos, broadcasts, recordings, graphics,
-        articles and other media materials may be protected by intellectual
-        property rights and may be subject to access, accreditation,
-        confidentiality or licensing conditions.
+        Official photographs, videos, broadcasts, recordings,
+        graphics, articles and other media materials may be
+        protected by intellectual property rights and subject
+        to access, accreditation, confidentiality or licensing conditions.
       </p>
+
       <p>
-        Media access, event recording, photography, filming, broadcasting,
-        publication and commercial distribution are governed by the
-        permissions and requirements applicable to the relevant event
-        or material.
+        Media access, event recording, photography, filming,
+        broadcasting, publication and commercial distribution
+        are governed by the permissions and requirements
+        applicable to the relevant event or material.
       </p>
+
       <p>
-        Access to publicly available content does not grant permission
-        to reproduce, modify, distribute, broadcast or commercially
-        exploit that content beyond what applicable law permits.
+        Access to publicly available content does not grant
+        permission to reproduce, modify, distribute, broadcast
+        or commercially exploit that content beyond what
+        applicable law permits.
       </p>
+
       <p>
-        Where event participation or accreditation involves photography,
-        filming or recording, the relevant notices, consent arrangements
-        and event-specific terms apply.
+        Where event participation or accreditation involves
+        photography, filming or recording, the relevant
+        notices, consent arrangements and event-specific
+        terms shall apply.
       </p>
     </section>
 
+    <!-- 10 -->
+
     <section class="terms-section">
-      <h2>10. NEWSWIRE, MAGAZINE AND OFFICIAL PUBLICATIONS</h2>
+      <div class="section-heading">
+        <span class="section-number">10</span>
+        <h2>NEWSWIRE, MAGAZINE AND OFFICIAL PUBLICATIONS</h2>
+      </div>
+
       <p>
-        PHRINUSOMYIS™ may issue official announcements, news materials,
-        editorial content, photographs, features and other publications
-        through its designated publication channels, including Newswire
-        and Magazine.
+        PHRINUSOMYIS™ issues official announcements,
+        news materials, editorial content, photographs,
+        features and other publications through its designated
+        publication channels, including Newswire and Magazine.
       </p>
+
       <p>
-        Publication, submission or distribution through these channels
-        does not automatically confer editorial approval, endorsement,
-        partnership status or authorization to speak on behalf of
-        the organization.
+        Publication, submission or distribution through
+        these channels does not automatically confer editorial
+        approval, endorsement, partnership status or authority
+        to speak on behalf of the organization.
       </p>
+
       <p>
-        Contributors and submitting parties are responsible for ensuring
-        that materials they provide are accurate and that they possess
-        the necessary rights, permissions and consents for their submission.
+        Contributors and submitting parties are responsible
+        for the accuracy and lawful use of materials they provide,
+        including obtaining the necessary rights, permissions
+        and consents.
       </p>
+
       <p>
-        The organization may review, edit, decline, remove or discontinue
-        publication of submitted or published materials, subject to
-        applicable law and any relevant written agreement.
+        The organization retains editorial authority over
+        its publications and may review, edit, decline, remove
+        or discontinue materials, subject to applicable law
+        and relevant written agreements.
       </p>
     </section>
 
+    <!-- 11 -->
+
     <section class="terms-section">
-      <h2>11. COMMERCIAL ACTIVITIES, PARTNERSHIPS AND LICENSING</h2>
+      <div class="section-heading">
+        <span class="section-number">11</span>
+        <h2>COMMERCIAL ACTIVITIES, PARTNERSHIPS AND LICENSING</h2>
+      </div>
+
       <p>
-        Commercial relationships involving PHRINUSOMYIS™, including
-        sponsorships, partnerships, supply arrangements, licensing,
-        distribution, representation and other commercial engagements,
-        require authorization and are governed by their applicable
-        contractual terms.
+        Commercial relationships involving PHRINUSOMYIS™,
+        including sponsorships, partnerships, supply arrangements,
+        licensing, distribution, representation and other
+        commercial engagements, require appropriate authorization
+        and are governed by their applicable contractual terms.
       </p>
+
       <p>
-        No person may represent that a commercial relationship,
-        sponsorship, endorsement, appointment, licence or partnership
-        exists unless the organization has formally authorized it.
+        No individual or entity may represent that a commercial
+        relationship, sponsorship, endorsement, appointment,
+        licence or partnership exists unless formally authorized
+        by the organization.
       </p>
+
       <p>
-        The use of organizational names, marks, competition identities
-        or official materials for commercial purposes requires the
-        appropriate written authorization.
+        The use of organizational names, marks, competition
+        identities or official materials for commercial purposes
+        requires the appropriate written authorization.
       </p>
+
       <p>
-        Inquiries, proposals and preliminary communications do not
-        create a binding commercial relationship unless the relevant
-        parties expressly establish one in accordance with applicable law.
+        Inquiries, proposals and preliminary communications
+        do not create a binding commercial relationship
+        unless the relevant parties expressly establish
+        one in accordance with applicable law.
       </p>
     </section>
 
+    <!-- 12 -->
+
     <section class="terms-section">
-      <h2>12. REPRESENTATION AND AUTHORITY</h2>
+      <div class="section-heading">
+        <span class="section-number">12</span>
+        <h2>REPRESENTATION AND AUTHORITY</h2>
+      </div>
+
       <p>
-        Only persons expressly authorized by PHRINUSOMYIS™ may act,
-        communicate or make commitments on behalf of the organization
-        within the scope of their authority.
+        Only persons expressly authorized by PHRINUSOMYIS™
+        may act, communicate or make commitments on behalf
+        of the organization within the scope of their authority.
       </p>
+
       <p>
-        Titles, email signatures, social media descriptions, business
-        cards or claims of association do not independently establish
-        authority to bind the organization.
+        Titles, email signatures, social media descriptions,
+        business cards or claims of association do not
+        independently establish authority to represent
+        or bind the organization.
       </p>
+
       <p>
-        Users and third parties should verify material claims of
-        organizational representation through official communication
-        channels before relying on them.
+        Third parties should verify material claims of
+        organizational representation through official
+        communication channels before relying on them.
       </p>
     </section>
 
+    <!-- 13 -->
+
     <section class="terms-section">
-      <h2>13. SUBMISSIONS AND COMMUNICATIONS</h2>
+      <div class="section-heading">
+        <span class="section-number">13</span>
+        <h2>SUBMISSIONS AND COMMUNICATIONS</h2>
+      </div>
+
       <p>
-        Information, proposals, inquiries, documents, photographs or
-        other materials submitted to PHRINUSOMYIS™ must be lawful
-        and must not infringe the rights of another person.
+        Information, proposals, inquiries, documents,
+        photographs and other materials submitted to
+        PHRINUSOMYIS™ must be lawful and must not
+        infringe another person's rights.
       </p>
+
       <p>
         Unless a separate written agreement provides otherwise,
-        submitting material does not transfer ownership of that
-        material to the organization or create an obligation to use,
+        submitting material does not transfer its ownership
+        to the organization or create an obligation to use,
         publish, review, accept or respond to it.
       </p>
+
       <p>
-        Confidential information should not be submitted through
-        a general contact channel unless the organization has expressly
-        designated that channel for confidential submissions or
-        the parties have agreed on appropriate confidentiality arrangements.
+        Confidential information should not be submitted
+        through a general contact channel unless that channel
+        has been expressly designated for confidential submissions
+        or appropriate confidentiality arrangements have been agreed.
       </p>
+
       <p>
-        The organization may retain and process communications as
-        necessary to respond, maintain records, protect its interests
-        and comply with applicable legal obligations, subject to
-        its Privacy Policy and applicable law.
+        The organization may retain and process communications
+        as necessary to respond, maintain records, protect
+        its interests and comply with applicable legal obligations,
+        subject to its Privacy Policy and applicable law.
       </p>
     </section>
 
+    <!-- 14 -->
+
     <section class="terms-section">
-      <h2>14. THIRD-PARTY SERVICES AND MATERIALS</h2>
+      <div class="section-heading">
+        <span class="section-number">14</span>
+        <h2>THIRD-PARTY SERVICES AND MATERIALS</h2>
+      </div>
+
       <p>
-        Official Channels or communications may refer to or provide
-        access to third-party services, products or materials.
-        Such references do not necessarily constitute endorsement,
-        ownership or control by PHRINUSOMYIS™.
+        Official Channels and organizational communications
+        may refer to or provide access to third-party services,
+        products, platforms or materials.
       </p>
+
       <p>
-        Third-party services are governed by their own terms,
-        privacy policies and applicable conditions. The organization
-        is not responsible for third-party content or services
-        to the extent permitted by applicable law.
+        Such references do not necessarily constitute
+        endorsement, ownership or control by PHRINUSOMYIS™.
+      </p>
+
+      <p>
+        Third-party services are governed by their own
+        terms, privacy policies and applicable conditions.
+        The organization is not responsible for third-party
+        content or services to the extent permitted by law.
       </p>
     </section>
 
+    <!-- 15 -->
+
     <section class="terms-section">
-      <h2>15. SECURITY AND INTEGRITY</h2>
+      <div class="section-heading">
+        <span class="section-number">15</span>
+        <h2>SECURITY AND INTEGRITY</h2>
+      </div>
+
       <p>
-        Users must not compromise or attempt to compromise the security,
-        availability or integrity of Official Channels, organizational
-        accounts, communications or restricted information.
+        Users must not compromise or attempt to compromise
+        the security, availability or integrity of Official
+        Channels, organizational accounts, communications
+        or restricted information.
       </p>
+
       <p>
-        Suspected unauthorized access, impersonation, fraudulent
-        communications or misuse of organizational identity may be
-        reported through the organization's official contact channels.
+        Suspected unauthorized access, impersonation,
+        fraudulent communications or misuse of organizational
+        identity may be reported through the official
+        contact channels.
       </p>
+
       <p>
-        PHRINUSOMYIS™ may take proportionate measures to investigate
-        and address suspected misuse, protect its systems and materials,
-        and preserve the integrity of its activities.
+        PHRINUSOMYIS™ may investigate suspected misuse
+        and take proportionate measures to protect its systems,
+        materials, activities and organizational interests.
       </p>
     </section>
 
+    <!-- 16 -->
+
     <section class="terms-section">
-      <h2>16. SUSPENSION, RESTRICTION AND TERMINATION</h2>
+      <div class="section-heading">
+        <span class="section-number">16</span>
+        <h2>SUSPENSION, RESTRICTION AND TERMINATION</h2>
+      </div>
+
       <p>
-        PHRINUSOMYIS™ may restrict or suspend access to an Official
-        Channel or discontinue a permission granted under these Terms
-        where reasonably necessary to protect the organization,
-        its users, its intellectual property, its activities or
-        its legal interests.
+        PHRINUSOMYIS™ may restrict or suspend access
+        to an Official Channel or discontinue a permission
+        granted under these Terms where reasonably necessary
+        to protect the organization, its users, intellectual
+        property, activities or legal interests.
       </p>
+
       <p>
-        Such action may be taken in response to suspected unlawful
-        conduct, material breach of these Terms, unauthorized use,
-        security risks or other legitimate grounds, subject to
-        applicable law and any relevant agreement.
+        Such measures may be taken in response to suspected
+        unlawful conduct, material breach of these Terms,
+        unauthorized use, security risks or other legitimate
+        grounds, subject to applicable law and relevant agreements.
       </p>
+
       <p>
-        Suspension or restriction under these Terms does not
-        automatically determine rights or obligations arising
-        under a separate contract, employment arrangement,
-        competition regulation or other agreement.
+        Suspension or restriction under these Terms does
+        not automatically determine rights or obligations
+        arising under a separate contract, employment
+        arrangement, competition regulation or other agreement.
       </p>
     </section>
 
+    <!-- 17 -->
+
     <section class="terms-section">
-      <h2>17. DISCLAIMERS AND LIMITATION OF LIABILITY</h2>
+      <div class="section-heading">
+        <span class="section-number">17</span>
+        <h2>DISCLAIMERS AND LIMITATION OF LIABILITY</h2>
+      </div>
+
       <p>
-        Official information and materials are provided for their
-        stated informational or operational purposes. The organization
-        takes reasonable care in preparing official communications
-        but does not guarantee that every item of information will
-        always be complete, current or free from error.
+        Official information and materials are provided
+        for their stated informational or operational purposes.
+        The organization takes reasonable care in preparing
+        official communications but does not guarantee
+        that every item of information will always be complete,
+        current or free from error.
       </p>
+
       <p>
-        To the fullest extent permitted by applicable law, PHRINUSOMYIS™
-        excludes implied warranties and conditions that may lawfully
-        be excluded in relation to access to and use of applicable
-        Official Channels and materials.
+        To the fullest extent permitted by applicable law,
+        PHRINUSOMYIS™ excludes implied warranties and
+        conditions that may lawfully be excluded in relation
+        to access to and use of applicable Official Channels
+        and materials.
       </p>
+
       <p>
-        Nothing in these Terms excludes or limits liability that
-        cannot lawfully be excluded or limited, including liability
-        for fraud, fraudulent misrepresentation or other liability
-        where exclusion is prohibited by law.
+        Nothing in these Terms excludes or limits liability
+        that cannot lawfully be excluded or limited, including
+        liability for fraud, fraudulent misrepresentation
+        or other liability where exclusion is prohibited by law.
       </p>
+
       <p>
-        Subject to those mandatory legal protections, the organization
-        shall not be liable for indirect or consequential losses
-        arising from the use of an Official Channel or material
-        where such exclusion is permitted by applicable law.
+        Subject to mandatory legal protections, the organization
+        shall not be liable for indirect or consequential
+        losses arising from the use of an Official Channel
+        or material where such exclusion is permitted
+        by applicable law.
       </p>
     </section>
 
+    <!-- 18 -->
+
     <section class="terms-section">
-      <h2>18. INDEMNITY</h2>
+      <div class="section-heading">
+        <span class="section-number">18</span>
+        <h2>INDEMNITY</h2>
+      </div>
+
       <p>
-        To the extent permitted by applicable law, a user or other
-        party responsible for a breach of these Terms may be
-        responsible for losses, claims, liabilities and reasonable
-        costs directly arising from that breach, unlawful conduct
-        or infringement of another person's rights.
+        To the extent permitted by applicable law,
+        a user or other party responsible for a breach
+        of these Terms may be responsible for losses,
+        claims, liabilities and reasonable costs directly
+        arising from that breach, unlawful conduct or
+        infringement of another person's rights.
       </p>
+
       <p>
-        This provision applies only to the extent that such
-        responsibility is legally enforceable and does not create
-        an indemnity where applicable law prohibits it.
+        This provision applies only to the extent that
+        such responsibility is legally enforceable and
+        does not create an indemnity where applicable
+        law prohibits it.
       </p>
     </section>
 
+    <!-- 19 -->
+
     <section class="terms-section">
-      <h2>19. PRIVACY AND PERSONAL INFORMATION</h2>
+      <div class="section-heading">
+        <span class="section-number">19</span>
+        <h2>PRIVACY AND PERSONAL INFORMATION</h2>
+      </div>
+
       <p>
-        Personal information collected through applicable Official
-        Channels or organizational communications is handled in
-        accordance with the organization's Privacy Policy and
-        applicable data protection laws.
+        Personal information collected through applicable
+        Official Channels or organizational communications
+        is handled in accordance with the organization's
+        Privacy Policy and applicable data protection laws.
       </p>
+
       <p>
-        These Terms should be read together with the relevant
-        Privacy Policy and any specific privacy notice provided
-        in connection with an event, competition, application
-        or other activity.
+        These Terms should be read together with the
+        relevant Privacy Policy and any specific privacy
+        notice provided in connection with an event,
+        competition, application or other activity.
       </p>
+
       <p>
-        For information about the handling of personal information,
-        users should consult the organization's Privacy Policy.
+        Further information concerning the handling
+        of personal information is available through
+        the <a class="inline-link" href="/policy">official Privacy Policy</a>.
       </p>
     </section>
 
+    <!-- 20 -->
+
     <section class="terms-section">
-      <h2>20. CHANGES TO THESE TERMS</h2>
+      <div class="section-heading">
+        <span class="section-number">20</span>
+        <h2>CHANGES TO THESE TERMS</h2>
+      </div>
+
       <p>
-        PHRINUSOMYIS™ may revise these Terms when necessary to reflect
+        PHRINUSOMYIS™ may revise these Terms to reflect
         changes in its activities, organizational requirements,
         applicable law, operational practices or the services
         and materials made available through its Official Channels.
       </p>
+
       <p>
-        The updated version will be published through the relevant
-        official channel with its revised effective or update date.
-        Continued use after an updated version takes effect constitutes
-        acceptance where such acceptance is legally recognized and required.
+        Revised Terms will be published through the relevant
+        official channel with an updated revision or effective date.
       </p>
+
       <p>
-        Where applicable law or a separate agreement requires
-        additional notice or express acceptance, those requirements
-        will apply.
+        Continued use after an updated version takes effect
+        constitutes acceptance where such acceptance is
+        legally recognized and required.
+      </p>
+
+      <p>
+        Where applicable law or a separate agreement
+        requires additional notice or express acceptance,
+        those requirements shall apply.
       </p>
     </section>
 
+    <!-- 21 -->
+
     <section class="terms-section">
-      <h2>21. GOVERNING LAW AND DISPUTE RESOLUTION</h2>
+      <div class="section-heading">
+        <span class="section-number">21</span>
+        <h2>GOVERNING LAW AND DISPUTE RESOLUTION</h2>
+      </div>
+
       <p>
-        These Terms are subject to the laws applicable to the relevant
-        relationship, transaction or activity, including any governing-law
-        provision contained in a separate written agreement.
+        These Terms are subject to the laws applicable
+        to the relevant relationship, transaction or activity,
+        including any governing-law provision contained
+        in a separate written agreement.
       </p>
+
       <p>
-        Where no separate governing-law provision applies, the
-        determination of applicable law and competent jurisdiction
-        shall be made in accordance with the relevant conflict-of-law
-        rules and mandatory legal requirements.
+        Where no separate governing-law provision applies,
+        the determination of applicable law and competent
+        jurisdiction shall be made in accordance with
+        the relevant conflict-of-law rules and mandatory
+        legal requirements.
       </p>
+
       <p>
-        Nothing in this section removes any non-waivable rights
-        or protections available under applicable law.
+        Nothing in this section removes any non-waivable
+        rights or protections available under applicable law.
       </p>
     </section>
 
+    <!-- 22 -->
+
     <section class="terms-section">
-      <h2>22. GENERAL PROVISIONS</h2>
+      <div class="section-heading">
+        <span class="section-number">22</span>
+        <h2>GENERAL PROVISIONS</h2>
+      </div>
+
       <p>
-        If any provision of these Terms is held to be invalid,
-        unlawful or unenforceable, the remaining provisions shall
-        continue to apply to the fullest extent permitted by law.
+        If any provision of these Terms is held to be
+        invalid, unlawful or unenforceable, the remaining
+        provisions shall continue to apply to the fullest
+        extent permitted by law.
       </p>
+
       <p>
-        A failure or delay by PHRINUSOMYIS™ to enforce a provision
-        does not constitute a waiver of its rights.
+        A failure or delay by PHRINUSOMYIS™ to enforce
+        a provision does not constitute a waiver of its rights.
       </p>
+
       <p>
         These Terms do not create an employment relationship,
-        partnership, joint venture, agency, fiduciary relationship
-        or other association between the organization and a user
-        unless such a relationship is separately and expressly established.
+        partnership, joint venture, agency, fiduciary
+        relationship or other association between the
+        organization and a user unless such a relationship
+        is separately and expressly established.
       </p>
+
       <p>
-        Where a separate agreement conflicts with these Terms
-        on a matter specifically addressed by that agreement,
-        the relevant agreement shall govern that matter to the
-        extent of the conflict.
+        Where a separate agreement conflicts with these
+        Terms on a matter specifically addressed by that
+        agreement, the relevant agreement shall govern
+        that matter to the extent of the conflict.
       </p>
     </section>
 
+    <!-- 23 -->
+
     <section class="terms-section">
-      <h2>23. OFFICIAL CONTACT</h2>
+      <div class="section-heading">
+        <span class="section-number">23</span>
+        <h2>OFFICIAL CONTACT</h2>
+      </div>
+
       <p>
-        Questions, formal notices or communications concerning
-        these Terms may be directed to PHRINUSOMYIS™ through
-        the official contact channels published by the organization.
+        Questions, formal notices or communications
+        concerning these Terms may be directed to
+        PHRINUSOMYIS™ through its designated official
+        communication channels.
       </p>
+
       <p>
-        <a href="/contact">Visit the official Contact page</a>
-        for the appropriate communication channels.
+        For organizational inquiries and formal correspondence,
+        consult the
+        <a class="inline-link" href="/contact">official Contact page</a>.
       </p>
     </section>
+
+    <!-- HOMEPAGE LINK -->
 
     <div class="back-home-wrap">
       <a href="/" class="back-home">Back to Homepage</a>
@@ -1150,12 +1822,24 @@
 
   </main>
 
+  <!-- FOOTER -->
+
   <footer class="site-footer">
     <div class="footer-inner">
 
-      <div class="footer-brand">
-        <strong>PHRINUSOMYIS™</strong>
-        <p>COMMANDING THE WORLD STAGE™</p>
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <strong>PHRINUSOMYIS™</strong>
+          <p>COMMANDING THE WORLD STAGE™</p>
+        </div>
+
+        <p class="footer-description">
+          An international sports organization developing,
+          owning and administering sports competitions
+          and ZEAVIQ SPORTS™ worldwide.
+        </p>
+
       </div>
 
       <div class="footer-grid">
@@ -1164,26 +1848,26 @@
           <h3>Main</h3>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/newswire/news">News</a></li>
-            <li><a href="/magazine/news">Press</a></li>
-            <li><a href="/">Events</a></li>
+            <li><a href="/sports">Sports</a></li>
+            <li><a href="/newsroom/newswire.html">News</a></li>
+            <li><a href="/magazine/news">Magazine</a></li>
           </ul>
         </div>
 
         <div class="footer-group">
           <h3>Sports</h3>
           <ul>
-            <li><a href="/">Sports</a></li>
-            <li><a href="/">ZEAVIQ SPORTS™</a></li>
-            <li><a href="/">Competitions</a></li>
-            <li><a href="/">Media</a></li>
+            <li><a href="/sports">Sports Overview</a></li>
+            <li><a href="/zeaviq">ZEAVIQ SPORTS™</a></li>
+            <li><a href="/competitions">Competitions</a></li>
+            <li><a href="/events">Events</a></li>
           </ul>
         </div>
 
         <div class="footer-group">
           <h3>Publications</h3>
           <ul>
-            <li><a href="/newswire/news">Newswire</a></li>
+            <li><a href="/newsroom/newswire.html">Newswire</a></li>
             <li><a href="/magazine/news">Magazine</a></li>
           </ul>
         </div>
@@ -1193,45 +1877,57 @@
           <ul>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/policy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms of Use</a></li>
+            <li><a href="/terms" aria-current="page">Terms of Use</a></li>
             <li><a href="/copyright">Copyright</a></li>
           </ul>
         </div>
 
         <div class="footer-group">
-          <h3>Other</h3>
+          <h3>Information</h3>
           <ul>
-            <li><a href="/policy">Privacy</a></li>
             <li><a href="/help">Help</a></li>
             <li><a href="/accessibility">Accessibility &amp; Captions</a></li>
-            <li><a href="/cookies">Cookies</a></li>
           </ul>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="currentYear"></span> <strong>PHRINUSOMYIS™</strong>. All rights reserved.</span>
-        <span>COMMANDING THE WORLD STAGE™</span>
+
+        <span>
+          © <span id="currentYear"></span>
+          <strong>PHRINUSOMYIS™</strong>.
+          All rights reserved.
+        </span>
+
+        <span class="footer-motto">
+          COMMANDING THE WORLD STAGE™
+        </span>
+
       </div>
 
     </div>
   </footer>
 
+  <!-- FUNCTIONALITY -->
+
   <script>
-    // Current copyright year
+
+    /* COPYRIGHT YEAR */
+
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
 
 
-    /* ============================================================
+    /* ==========================================================
        PHRINUSOMYIS CUSTOM LANGUAGE SELECTOR
        GOOGLE TRANSLATE CONNECTION
-       ============================================================ */
+       ========================================================== */
 
     (function () {
 
-      const languageSelect = document.getElementById("siteLanguage");
+      const languageSelect =
+        document.getElementById("siteLanguage");
 
       let requestedLanguage = null;
       let translationObserver = null;
@@ -1243,7 +1939,9 @@
         }
 
         const translateCombo =
-          document.querySelector("#google_translate_element select.goog-te-combo") ||
+          document.querySelector(
+            "#google_translate_element select.goog-te-combo"
+          ) ||
           document.querySelector("select.goog-te-combo");
 
         if (!translateCombo) {
@@ -1251,6 +1949,7 @@
         }
 
         if (translateCombo.value !== requestedLanguage) {
+
           translateCombo.value = requestedLanguage;
 
           translateCombo.dispatchEvent(
@@ -1258,26 +1957,32 @@
               bubbles: true
             })
           );
+
         }
 
         return true;
       }
 
-      // Make the function available to the Google Translate initializer.
-      window.phrinusomyisApplyLanguage = applySelectedLanguage;
+      window.phrinusomyisApplyLanguage =
+        applySelectedLanguage;
 
 
-      // Reset Google Translate and return to the original English page.
+      /* RESTORE ORIGINAL ENGLISH */
+
       function restoreOriginalLanguage() {
 
-        const currentUrl = new URL(window.location.href);
+        const currentUrl =
+          new URL(window.location.href);
 
         currentUrl.searchParams.delete("_x_tr_sl");
         currentUrl.searchParams.delete("_x_tr_tl");
         currentUrl.searchParams.delete("_x_tr_hl");
 
-        const hostname = window.location.hostname;
-        const domainParts = hostname.split(".");
+        const hostname =
+          window.location.hostname;
+
+        const domainParts =
+          hostname.split(".");
 
         document.cookie =
           "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
@@ -1287,57 +1992,68 @@
           hostname;
 
         if (domainParts.length > 1) {
-          const parentDomain = "." + domainParts.slice(-2).join(".");
+
+          const parentDomain =
+            "." + domainParts.slice(-2).join(".");
 
           document.cookie =
             "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" +
             parentDomain;
+
         }
 
-        window.location.href = currentUrl.toString();
+        window.location.href =
+          currentUrl.toString();
+
       }
 
 
-      // Listen for changes in the visible language selector.
-      languageSelect.addEventListener("change", function () {
+      /* LANGUAGE CHANGE */
 
-        requestedLanguage = this.value;
+      languageSelect.addEventListener(
+        "change",
+        function () {
 
-        if (requestedLanguage === "en") {
-          restoreOriginalLanguage();
-          return;
+          requestedLanguage = this.value;
+
+          if (requestedLanguage === "en") {
+            restoreOriginalLanguage();
+            return;
+          }
+
+          if (applySelectedLanguage()) {
+            return;
+          }
+
+          if (!translationObserver) {
+
+            translationObserver =
+              new MutationObserver(function () {
+
+                if (applySelectedLanguage()) {
+
+                  translationObserver.disconnect();
+
+                  translationObserver = null;
+
+                }
+
+              });
+
+            translationObserver.observe(
+              document.documentElement,
+              {
+                childList: true,
+                subtree: true
+              }
+            );
+
+          }
+
         }
-
-        // Try immediately in case Google Translate is already initialized.
-        if (applySelectedLanguage()) {
-          return;
-        }
-
-        // Keep waiting for Google's actual selector to appear.
-        // Do not delete or interfere with Google's injected elements.
-        if (!translationObserver) {
-
-          translationObserver = new MutationObserver(function () {
-
-            if (applySelectedLanguage()) {
-              translationObserver.disconnect();
-              translationObserver = null;
-            }
-
-          });
-
-          translationObserver.observe(document.documentElement, {
-            childList: true,
-            subtree: true
-          });
-
-        }
-
-      });
+      );
 
 
-      // If Google Translate initializes after the user makes a selection,
-      // apply the requested language when its selector becomes available.
       if (window.google && window.google.translate) {
         applySelectedLanguage();
       }
@@ -1345,44 +2061,72 @@
     })();
 
 
-    /* ============================================================
+    /* ==========================================================
        GOOGLE TRANSLATE BANNER AND POP-OUT PROTECTION
-       SAFE VERSION — DOES NOT DELETE GOOGLE'S TRANSLATION ENGINE
-       ============================================================ */
+       ========================================================== */
 
     (function protectPageFromGoogleInterface() {
 
       function restorePagePosition() {
 
-        const html = document.documentElement;
-        const body = document.body;
+        const html =
+          document.documentElement;
+
+        const body =
+          document.body;
 
         if (!html || !body) {
           return;
         }
 
-        html.style.setProperty("top", "0px", "important");
-        html.style.setProperty("margin-top", "0px", "important");
-        html.style.setProperty("padding-top", "0px", "important");
-        html.style.setProperty("transform", "none", "important");
+        html.style.setProperty(
+          "top", "0px", "important"
+        );
 
-        body.style.setProperty("top", "0px", "important");
-        body.style.setProperty("margin-top", "0px", "important");
-        body.style.setProperty("padding-top", "0px", "important");
-        body.style.setProperty("left", "0px", "important");
-        body.style.setProperty("right", "0px", "important");
-        body.style.setProperty("transform", "none", "important");
+        html.style.setProperty(
+          "margin-top", "0px", "important"
+        );
+
+        html.style.setProperty(
+          "padding-top", "0px", "important"
+        );
+
+        html.style.setProperty(
+          "transform", "none", "important"
+        );
+
+        body.style.setProperty(
+          "top", "0px", "important"
+        );
+
+        body.style.setProperty(
+          "margin-top", "0px", "important"
+        );
+
+        body.style.setProperty(
+          "padding-top", "0px", "important"
+        );
+
+        body.style.setProperty(
+          "left", "0px", "important"
+        );
+
+        body.style.setProperty(
+          "right", "0px", "important"
+        );
+
+        body.style.setProperty(
+          "transform", "none", "important"
+        );
+
       }
 
 
-      // This function only restores page positioning.
-      // It deliberately does not remove Google's injected elements.
       function protectPageLayout() {
         restorePagePosition();
       }
 
 
-      // Initial protection.
       if (document.readyState === "loading") {
 
         document.addEventListener(
@@ -1398,30 +2142,44 @@
       }
 
 
-      // Restore positioning after the page and translation engine load.
-      window.addEventListener("load", protectPageLayout);
+      window.addEventListener(
+        "load",
+        protectPageLayout
+      );
 
-      window.addEventListener("resize", protectPageLayout);
+      window.addEventListener(
+        "resize",
+        protectPageLayout
+      );
 
-      window.addEventListener("scroll", restorePagePosition);
+      window.addEventListener(
+        "scroll",
+        restorePagePosition
+      );
 
 
-      // Observe layout changes only.
-      // Do not remove Google Translate elements or interfere with its engine.
-      const layoutObserver = new MutationObserver(function () {
-        restorePagePosition();
-      });
+      const layoutObserver =
+        new MutationObserver(function () {
 
-      layoutObserver.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ["style"]
-      });
+          restorePagePosition();
+
+        });
+
+      layoutObserver.observe(
+        document.documentElement,
+        {
+          attributes: true,
+          attributeFilter: ["style"]
+        }
+      );
 
     })();
 
   </script>
 
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
 
 </body>
 </html>
