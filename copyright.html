@@ -1,1204 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Copyright & Intellectual Property | PHRINUSOMYIS™</title>
-<meta name="description" content="Official Copyright and Intellectual Property Notice of PHRINUSOMYIS™.">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#ffffff">
-
-<style>
-:root {
-    --background: #ffffff;
-    --surface: #f6f7f9;
-    --surface-dark: #17212b;
-    --text: #17212b;
-    --muted: #536170;
-    --accent: #526b83;
-    --border: #dce2e8;
-    --white: #ffffff;
-}
-
-* {
-    box-sizing: border-box;
-    font-weight: 700 !important;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background: var(--background);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    line-height: 1.8;
-    top: 0 !important;
-}
-
-a {
-    color: inherit;
-}
-
-/* HEADER */
-
-.site-header {
-    width: 100%;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 25px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    min-width: 0;
-    text-decoration: none;
-}
-
-.logo {
-    width: 68px;
-    height: auto;
-    object-fit: contain;
-}
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.brand-name {
-    font-size: 19px;
-    letter-spacing: 1.8px;
-    color: var(--text);
-    font-weight: 900 !important;
-}
-
-.brand-slogan {
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--accent);
-    font-weight: 800 !important;
-}
-
-/* VISIBLE LANGUAGE SWITCHER */
-
-.language-area {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.language-label {
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: var(--text);
-    white-space: nowrap;
-}
-
-#siteLanguage {
-    width: 205px;
-    max-width: 100%;
-    height: 44px;
-    padding: 8px 35px 8px 13px;
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    background: #ffffff;
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: 700 !important;
-    cursor: pointer;
-    outline-offset: 3px;
-}
-
-#siteLanguage:focus {
-    border-color: var(--accent);
-}
-
-/* ============================================================
-   GOOGLE TRANSLATE — BANNER AND POP-OUT PROTECTION
-   ============================================================ */
-
-/* Keep the translation engine available but off-screen. */
-
-#google_translate_element {
-    display: block !important;
-    position: fixed !important;
-    left: -10000px !important;
-    top: 0 !important;
-    width: 1px !important;
-    height: 1px !important;
-    max-width: 1px !important;
-    max-height: 1px !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    z-index: -1 !important;
-}
-
-/* Hide Google's top translation banner. */
-
-.goog-te-banner-frame,
-iframe.goog-te-banner-frame,
-.VIpgJd-ZVi9od-ORHb-OEVmcd,
-.VIpgJd-ZVi9od-ORHb,
-.VIpgJd-ZVi9od-ORHb-KE6vqe {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    width: 0 !important;
-    max-height: 0 !important;
-    max-width: 0 !important;
-    pointer-events: none !important;
-    position: fixed !important;
-    left: -10000px !important;
-    top: -10000px !important;
-    border: 0 !important;
-}
-
-/* Hide translation menus, tooltips and pop-out interfaces. */
-
-.goog-te-menu-frame,
-iframe.goog-te-menu-frame,
-.goog-te-balloon-frame,
-iframe.goog-te-balloon-frame,
-#goog-gt-tt,
-.goog-te-tooltip-container,
-.goog-tooltip,
-.goog-tooltip:hover,
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-.VIpgJd-ZVi9od-l4eHX,
-.VIpgJd-yAWNEb-L7lbkb,
-.VIpgJd-ZVi9od-vH1Gmf,
-.VIpgJd-ZVi9od-xl07Ob,
-.VIpgJd-ZVi9od-SmfZ {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    position: fixed !important;
-    left: -10000px !important;
-    top: -10000px !important;
-    width: 0 !important;
-    height: 0 !important;
-    max-width: 0 !important;
-    max-height: 0 !important;
-    z-index: -9999 !important;
-}
-
-/* Remove translation highlights. */
-
-.goog-text-highlight {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-    color: inherit !important;
-}
-
-/* Hide Google branding and unwanted gadget interfaces. */
-
-.goog-logo-link,
-.goog-te-gadget-icon,
-.goog-te-spinner-pos,
-.goog-te-ftab,
-.goog-te-ftab-link,
-.goog-te-menu2,
-.goog-te-menu2-item {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-/* Remove Google gadget styling. */
-
-.goog-te-gadget {
-    color: transparent !important;
-    font-size: 0 !important;
-    line-height: 0 !important;
-}
-
-/* Prevent Google's injected banner from moving the page. */
-
-html,
-body,
-body.translated-ltr,
-body.translated-rtl {
-    top: 0 !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-body {
-    position: relative !important;
-}
-
-/* HERO */
-
-.page-hero {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 65px 25px 55px;
-    text-align: center;
-}
-
-.breadcrumb {
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.hero-title {
-    max-width: 850px;
-    margin: auto;
-    color: var(--text);
-    font-size: clamp(34px, 5vw, 56px);
-    line-height: 1.16;
-    letter-spacing: -1px;
-    font-weight: 900 !important;
-    text-transform: uppercase;
-}
-
-.hero-subtitle {
-    max-width: 750px;
-    margin: 22px auto 0;
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.hero-rule {
-    width: 65px;
-    height: 3px;
-    background: var(--accent);
-    margin: 25px auto 0;
-}
-
-/* MAIN CONTENT */
-
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 55px 30px 70px;
-}
-
-.intro {
-    max-width: 950px;
-    margin: 0 auto 45px;
-    font-size: 17px;
-    color: var(--text);
-    line-height: 1.95;
-}
-
-.legal-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 25px;
-    padding: 20px;
-    margin-bottom: 45px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: .5px;
-}
-
-.legal-section {
-    padding: 0 0 32px;
-    margin-bottom: 34px;
-    border-bottom: 1px solid var(--border);
-}
-
-.section-number {
-    display: block;
-    color: var(--accent);
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-}
-
-.legal-section h2 {
-    margin: 0 0 17px;
-    font-size: 23px;
-    line-height: 1.4;
-    color: var(--text);
-    font-weight: 900 !important;
-}
-
-.legal-section p {
-    margin: 0 0 15px;
-    color: #364452;
-    font-size: 16px;
-    line-height: 1.95;
-}
-
-.legal-section ul {
-    padding-left: 25px;
-    margin: 14px 0;
-}
-
-.legal-section li {
-    color: #364452;
-    font-size: 16px;
-    margin-bottom: 10px;
-    line-height: 1.85;
-}
-
-.highlight-panel {
-    background: var(--surface);
-    border-left: 4px solid var(--accent);
-    padding: 25px;
-    margin: 25px 0 42px;
-    border-radius: 0 5px 5px 0;
-}
-
-.highlight-panel p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.95;
-}
-
-/* CONTACT PANEL */
-
-.contact-panel {
-    background: var(--surface-dark);
-    color: var(--white);
-    border-radius: 7px;
-    padding: 32px;
-    margin-top: 45px;
-}
-
-.contact-panel h2 {
-    margin: 0 0 14px;
-    font-size: 23px;
-    color: var(--white);
-}
-
-.contact-panel p {
-    margin: 0;
-    color: #e0e7ed;
-    font-size: 16px;
-    line-height: 1.9;
-}
-
-/* HOMEPAGE BUTTON */
-
-.home-action {
-    display: flex;
-    justify-content: center;
-    margin: 45px auto 10px;
-}
-
-.home-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 220px;
-    padding: 16px 26px;
-    background: var(--surface-dark);
-    color: var(--white);
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: background .2s ease, transform .2s ease;
-}
-
-.home-button:hover {
-    background: var(--accent);
-    transform: translateY(-2px);
-}
-
-/* FOOTER */
-
-.site-footer {
-    background: #f3f5f7;
-    border-top: 1px solid var(--border);
-    padding: 45px 30px 25px;
-}
-
-.footer-inner {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--border);
-}
-
-.footer-brand {
-    font-size: 18px;
-    letter-spacing: 2px;
-    color: var(--text);
-    font-weight: 900 !important;
-}
-
-.footer-slogan {
-    color: var(--accent);
-    font-size: 11px;
-    letter-spacing: 1.7px;
-}
-
-.footer-home {
-    display: inline-flex;
-    padding: 12px 21px;
-    background: var(--surface-dark);
-    color: var(--white);
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: .8px;
-}
-
-.footer-groups {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 30px;
-    padding: 35px 0;
-}
-
-.footer-group h3 {
-    color: var(--text);
-    font-size: 13px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    margin: 0 0 15px;
-}
-
-.footer-group a {
-    display: block;
-    width: fit-content;
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 13px;
-    margin: 10px 0;
-}
-
-.footer-group a:hover {
-    color: var(--accent);
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    border-top: 1px solid var(--border);
-    padding-top: 22px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    color: var(--muted);
-    font-size: 12px;
-}
-
-.footer-bottom a {
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-    .footer-groups {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 800px) {
-    .header-inner {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 22px 20px;
-    }
-
-    .brand {
-        justify-content: center;
-    }
-
-    .language-area {
-        justify-content: center;
-    }
-
-    .page-hero {
-        padding: 50px 20px 45px;
-    }
-
-    main {
-        padding: 42px 22px 55px;
-    }
-
-    .footer-groups {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        width: 55px;
-    }
-
-    .brand-name {
-        font-size: 15px;
-    }
-
-    .brand-slogan {
-        font-size: 9px;
-    }
-
-    .language-area {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-    }
-
-    #siteLanguage {
-        width: 100%;
-    }
-
-    .hero-title {
-        font-size: 30px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-    }
-
-    main {
-        padding: 35px 18px 45px;
-    }
-
-    .intro {
-        font-size: 15px;
-    }
-
-    .legal-section h2 {
-        font-size: 20px;
-    }
-
-    .legal-section p,
-    .legal-section li {
-        font-size: 15px;
-    }
-
-    .highlight-panel p,
-    .contact-panel p {
-        font-size: 15px;
-    }
-
-    .footer-top {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-groups {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 25px 18px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-    }
-
-    .home-button {
-        width: 100%;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header class="site-header">
-    <div class="header-inner">
-
-        <a class="brand" href="/" aria-label="PHRINUSOMYIS Homepage">
-            <img
-                src="/phrinusomyis_logo.png"
-                alt="PHRINUSOMYIS Official Logo"
-                class="logo"
-            >
-            <span class="brand-text">
-                <span class="brand-name">PHRINUSOMYIS™</span>
-                <span class="brand-slogan">COMMANDING THE WORLD STAGE™</span>
-            </span>
-        </a>
-
-        <div class="language-area">
-            <label class="language-label" for="siteLanguage">SELECT LANGUAGE</label>
-
-            <select id="siteLanguage" aria-label="Select language">
-                <option value="en" selected>English</option>
-                <option value="fr">French</option>
-                <option value="es">Spanish</option>
-                <option value="de">German</option>
-                <option value="ar">Arabic</option>
-                <option value="zh-CN">Chinese</option>
-                <option value="ru">Russian</option>
-                <option value="pt">Portuguese</option>
-                <option value="ja">Japanese</option>
-                <option value="ko">Korean</option>
-                <option value="it">Italian</option>
-                <option value="nl">Dutch</option>
-                <option value="tr">Turkish</option>
-                <option value="hi">Hindi</option>
-                <option value="id">Indonesian</option>
-                <option value="vi">Vietnamese</option>
-                <option value="th">Thai</option>
-                <option value="pl">Polish</option>
-                <option value="sv">Swedish</option>
-                <option value="fi">Finnish</option>
-                <option value="da">Danish</option>
-            </select>
-        </div>
-
-    </div>
-</header>
-
-<!-- Original Google Translate widget is retained but visually hidden -->
-<div id="google_translate_element" aria-hidden="true"></div>
-
-<section class="page-hero">
-    <div class="breadcrumb">PHRINUSOMYIS™ / LEGAL / COPYRIGHT</div>
-
-    <h1 class="hero-title">Copyright &<br>Intellectual Property</h1>
-
-    <p class="hero-subtitle">
-        Official notice concerning the intellectual property,
-        creative works, sports properties and commercial identities
-        of PHRINUSOMYIS™.
-    </p>
-
-    <div class="hero-rule"></div>
-</section>
-
-<main>
-
-    <div class="legal-meta">
-        <span>DOCUMENT: COPYRIGHT & INTELLECTUAL PROPERTY</span>
-        <span>ISSUED BY: PHRINUSOMYIS™</span>
-        <span>STATUS: OFFICIAL NOTICE</span>
-    </div>
-
-    <div class="intro">
-        PHRINUSOMYIS™ is an international sports organization
-        that develops, owns and administers sports competitions
-        and ZEAVIQ SPORTS™ worldwide. Its intellectual property
-        encompasses its corporate identity, sports properties,
-        competition and event identities, publications, commercial
-        properties and original creative materials.
-    </div>
-
-    <div class="highlight-panel">
-        <p>
-            © PHRINUSOMYIS™. All Rights Reserved. All intellectual
-            property rights belonging to PHRINUSOMYIS™ or lawfully
-            controlled by the organization are reserved. No general
-            permission to reproduce, distribute, publish, modify or
-            commercially exploit protected materials is granted
-            through access to the organization's official materials
-            and publications.
-        </p>
-    </div>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 01</span>
-        <h2>Copyright and Intellectual Property Ownership</h2>
-
-        <p>
-            This notice applies to original creative works and other
-            intellectual property owned by, assigned to, licensed to
-            or otherwise lawfully controlled by PHRINUSOMYIS™ and its
-            relevant affiliated entities.
-        </p>
-
-        <p>
-            Ownership of individual materials is determined by the
-            applicable agreements, assignments, licences and
-            intellectual property laws. Materials belonging to
-            independent creators, licensors or other third parties
-            remain subject to their respective ownership rights.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 02</span>
-        <h2>Corporate Identity and Trademarks</h2>
-
-        <p>
-            The PHRINUSOMYIS™ name, official logos, symbols,
-            corporate identifiers, slogans, visual identity and
-            associated brand elements form part of the organization's
-            intellectual property portfolio.
-        </p>
-
-        <p>
-            Trademark rights may protect names, logos, slogans and
-            other identifiers that distinguish the organization's
-            goods, services and activities. The ™ symbol identifies
-            a claimed trademark; it does not, by itself, establish
-            registration.
-        </p>
-
-        <p>
-            No party may use these identifiers in a misleading
-            manner or falsely suggest an official relationship,
-            authorization, sponsorship or endorsement.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 03</span>
-        <h2>Sports Properties and ZEAVIQ SPORTS™</h2>
-
-        <p>
-            PHRINUSOMYIS™ develops, owns and administers sports
-            competitions and ZEAVIQ SPORTS™. Its sports properties
-            include original competition identities, names, logos,
-            visual presentations, graphics, written materials,
-            audiovisual works and other eligible intellectual
-            property.
-        </p>
-
-        <p>
-            Original written, artistic, photographic and audiovisual
-            expressions may qualify for copyright protection.
-            Names and identifiers may be protected through trademark
-            law, while eligible designs and confidential materials
-            may be protected through other applicable legal rights
-            and agreements.
-        </p>
-
-        <p>
-            Confidential competition mechanics, internal methods,
-            restricted operating materials and non-public
-            organizational information are not disclosed through
-            this notice.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 04</span>
-        <h2>Flagship Events and Competition Identities</h2>
-
-        <p>
-            The organization's event properties include current
-            and future flagship event names, identities, logos,
-            promotional presentations, stage visuals, event
-            graphics, official recordings and related creative
-            materials.
-        </p>
-
-        <p>
-            The unauthorized copying, reproduction, imitation
-            or commercial exploitation of protected event
-            materials may infringe the rights of the relevant
-            rights holder.
-        </p>
-
-        <p>
-            The protection available for individual event names,
-            designs, presentations and materials depends on the
-            nature of the property and the applicable legal
-            protection available.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 05</span>
-        <h2>Merchandise and Commercial Properties</h2>
-
-        <p>
-            PHRINUSOMYIS™ commercial properties may include
-            merchandise identities, product names, logos,
-            labels, packaging, graphics, product imagery,
-            promotional materials and associated commercial
-            presentations.
-        </p>
-
-        <p>
-            Eligible materials may be protected through
-            copyright, trademark, design rights, contractual
-            arrangements and other applicable intellectual
-            property protections.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 06</span>
-        <h2>Product, Fragrance and Design Properties</h2>
-
-        <p>
-            Product and fragrance properties may include
-            product identities, bottle designs, packaging,
-            labels, visual artwork, product graphics and
-            distinctive commercial presentations developed
-            or commissioned for the organization.
-        </p>
-
-        <p>
-            Depending on the nature of each property and
-            applicable legal requirements, protection may
-            be available through registered designs, design
-            patents, copyright, trademarks, trade dress,
-            confidentiality arrangements or other legal
-            mechanisms.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 07</span>
-        <h2>Newswire, Magazine and Publications</h2>
-
-        <p>
-            PHRINUSOMYIS™ publication properties include
-            Newswire, Magazine and other official editorial
-            and publication channels operated or authorized
-            by the organization.
-        </p>
-
-        <p>
-            Original articles, editorial content, photographs,
-            illustrations, magazine covers, page layouts,
-            graphics, videos, publication designs and other
-            eligible creative materials may be protected by
-            copyright and other applicable intellectual
-            property rights.
-        </p>
-
-        <p>
-            The reproduction, republication, redistribution
-            or commercial use of protected publication
-            materials requires authorization from the
-            relevant rights holder unless otherwise
-            permitted by law.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 08</span>
-        <h2>Photography, Audiovisual and Digital Materials</h2>
-
-        <p>
-            Protected materials may include photographs,
-            films, videos, recordings, illustrations,
-            graphics, digital publications, software and
-            other original creative works.
-        </p>
-
-        <p>
-            Accessing or viewing these materials does not
-            transfer ownership or grant an unrestricted
-            licence to reproduce, alter, distribute,
-            publish or commercially exploit them.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 09</span>
-        <h2>Official Materials and Permitted Use</h2>
-
-        <p>
-            Unless expressly stated otherwise, materials
-            published through PHRINUSOMYIS™ official channels
-            are provided for personal, informational and
-            non-commercial viewing.
-        </p>
-
-        <p>
-            Without the required authorization or another
-            valid legal basis, visitors and other parties
-            must not:
-        </p>
-
-        <ul>
-            <li>Reproduce or republish protected materials.</li>
-            <li>Distribute protected materials for commercial use.</li>
-            <li>Modify or create derivative works from protected content.</li>
-            <li>Use official names or logos to imply false affiliation.</li>
-            <li>Remove or alter copyright or ownership notices.</li>
-            <li>Exploit protected materials in advertising or commercial promotions.</li>
-        </ul>
-
-        <p>
-            Any use permitted by law remains subject to the
-            limitations and conditions of that law.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 10</span>
-        <h2>Licensing and Authorization</h2>
-
-        <p>
-            Requests to reproduce, publish, distribute,
-            display, license or commercially use PHRINUSOMYIS™
-            intellectual property must be directed to the
-            organization through its official contact channels.
-        </p>
-
-        <p>
-            Permission must be obtained from the relevant
-            rights holder. Any licence or authorization
-            may be subject to written terms defining its
-            scope, duration, territory and permitted use.
-        </p>
-
-        <p>
-            No licence is implied merely because material
-            is accessible, downloadable or publicly visible
-            through an official organizational channel.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 11</span>
-        <h2>Third-Party Intellectual Property</h2>
-
-        <p>
-            PHRINUSOMYIS™ official materials may refer to
-            or display third-party names, trademarks,
-            photographs, publications, software and other
-            materials. Such rights remain with their
-            respective owners.
-        </p>
-
-        <p>
-            Their appearance in organizational materials
-            does not automatically establish ownership,
-            partnership, sponsorship, endorsement or
-            affiliation with PHRINUSOMYIS™.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 12</span>
-        <h2>Protection and Enforcement</h2>
-
-        <p>
-            PHRINUSOMYIS™ reserves the right to protect
-            intellectual property owned by or lawfully
-            controlled by the organization.
-        </p>
-
-        <p>
-            Where unauthorized use or infringement occurs,
-            the relevant rights holder may pursue
-            appropriate measures under applicable law.
-            Such measures may include removal requests,
-            licensing enforcement, contractual remedies,
-            administrative proceedings or legal action.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 13</span>
-        <h2>Reservation of Rights</h2>
-
-        <p>
-            All rights not expressly granted are reserved
-            by the relevant lawful rights holder. Nothing
-            in this notice transfers ownership or creates
-            an unrestricted right to use any protected
-            material.
-        </p>
-
-        <p>
-            The scope and availability of intellectual
-            property protection depend on the applicable
-            laws, ownership arrangements and registration
-            status of each individual property.
-        </p>
-    </section>
-
-    <section class="legal-section">
-        <span class="section-number">SECTION 14</span>
-        <h2>Updates to This Notice</h2>
-
-        <p>
-            PHRINUSOMYIS™ may revise this Copyright &
-            Intellectual Property Notice to reflect
-            changes in its intellectual property portfolio,
-            organizational materials, ownership arrangements
-            or applicable requirements.
-        </p>
-
-        <p>
-            The current version published through the
-            organization's official channels supersedes
-            earlier versions of this notice.
-        </p>
-    </section>
-
-    <section class="contact-panel">
-        <h2>Official Intellectual Property Enquiries</h2>
-        <p>
-            For copyright matters, licensing requests,
-            permissions, intellectual property concerns
-            or other official enquiries, contact
-            PHRINUSOMYIS™ through the organization's official
-            Contact page.
-        </p>
-    </section>
-
-    <div class="home-action">
-        <a href="/" class="home-button">BACK TO HOMEPAGE</a>
-    </div>
-
-</main>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-
-        <div class="footer-top">
-            <div>
-                <div class="footer-brand">PHRINUSOMYIS™</div>
-                <div class="footer-slogan">COMMANDING THE WORLD STAGE™</div>
-            </div>
-
-            <a href="/" class="footer-home">HOMEPAGE</a>
-        </div>
-
-        <div class="footer-groups">
-
-            <div class="footer-group">
-                <h3>Main</h3>
-                <a href="/">Home</a>
-                <a href="/newswire/news">News</a>
-                <a href="/magazine/news">Press</a>
-                <a href="/">Events</a>
-            </div>
-
-            <div class="footer-group">
-                <h3>Sports</h3>
-                <a href="/">Sports</a>
-                <a href="/">ZEAVIQ SPORTS™</a>
-                <a href="/">Competitions</a>
-                <a href="/">Media</a>
-            </div>
-
-            <div class="footer-group">
-                <h3>Publications</h3>
-                <a href="/newswire/news">Newswire</a>
-                <a href="/magazine/news">Magazine</a>
-            </div>
-
-            <div class="footer-group">
-                <h3>Organization</h3>
-                <a href="/contact">Contact</a>
-                <a href="/policy">Privacy Policy</a>
-                <a href="/terms">Terms of Use</a>
-                <a href="/copyright">Copyright</a>
-            </div>
-
-            <div class="footer-group">
-                <h3>Other</h3>
-                <a href="/policy">Privacy</a>
-                <a href="/help">Help</a>
-                <a href="/accessibility">Accessibility & Captions</a>
-                <a href="/cookies">Cookies</a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <span>© PHRINUSOMYIS™. All Rights Reserved.</span>
-            <span>
-                <a href="/policy">Privacy Choices</a> ·
-                <a href="/accessibility">Closed Captions</a>
-            </span>
-        </div>
-
-    </div>
-</footer>
-
-<!-- SCRIPTS: KEEP AT THE END OF THE HTML, BEFORE </body> -->
-
-<script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
-        autoDisplay: false
-    }, 'google_translate_element');
-}
-
-/* Connect the visible language selector to the original Google Translate widget */
-(function () {
-    const languageSelector = document.getElementById('siteLanguage');
-
-    function applySelectedLanguage() {
-        const googleCombo = document.querySelector('#google_translate_element select.goog-te-combo');
-
-        if (!googleCombo) {
-            return false;
-        }
-
-        googleCombo.value = languageSelector.value;
-        googleCombo.dispatchEvent(new Event('change', { bubbles: true }));
-
-        return true;
-    }
-
-    languageSelector.addEventListener('change', function () {
-        if (this.value === 'en') {
-            const googleCombo = document.querySelector('#google_translate_element select.goog-te-combo');
-
-            if (googleCombo) {
-                googleCombo.value = 'en';
-                googleCombo.dispatchEvent(new Event('change', { bubbles: true }));
-            } else {
-                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
-                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + location.hostname + ';';
-                location.reload();
-            }
-
-            return;
-        }
-
-        if (!applySelectedLanguage()) {
-            const retry = setInterval(function () {
-                if (applySelectedLanguage()) {
-                    clearInterval(retry);
-                }
-            }, 300);
-
-            setTimeout(function () {
-                clearInterval(retry);
-            }, 10000);
-        }
-    });
-})();
 
 <!DOCTYPE html>
 <html lang="en">
@@ -1208,13 +7,14 @@ function googleTranslateElementInit() {
 
 <title>Copyright & Intellectual Property | PHRINUSOMYIS™</title>
 
-<meta name="description" content="The official Copyright and Intellectual Property Notice of PHRINUSOMYIS™, covering its corporate identity, sporting properties, competitions, publications, creative works and commercial intellectual property.">
+<meta name="description" content="The official Copyright and Intellectual Property Notice of PHRINUSOMYIS™, covering its organizational identity, sporting properties, competitions, publications, original creative works and commercial intellectual property.">
 
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#ffffff">
 <meta name="author" content="PHRINUSOMYIS™">
 
 <link rel="canonical" href="https://phrinusomyis.com/copyright">
+<link rel="icon" href="/phrinusomyis_logo.png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Copyright & Intellectual Property | PHRINUSOMYIS™">
@@ -1228,19 +28,22 @@ function googleTranslateElementInit() {
 <meta name="twitter:description" content="Official Copyright and Intellectual Property Notice of PHRINUSOMYIS™.">
 <meta name="twitter:image" content="https://phrinusomyis.com/phrinusomyis_logo.png">
 
-<link rel="icon" href="/phrinusomyis_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
     --background: #ffffff;
-    --surface: #f5f7f9;
-    --surface-dark: #111c29;
-    --text: #152231;
-    --muted: #637181;
-    --accent: #526e8a;
-    --accent-light: #a8bacb;
-    --border: #dfe5eb;
+    --surface: #f5f5f2;
+    --surface-dark: #151515;
+    --text: #151515;
+    --muted: #686868;
+    --accent: #b18a43;
+    --border: #deded8;
     --white: #ffffff;
+    --gold-light: #d4bd91;
 }
 
 * {
@@ -1258,9 +61,8 @@ body {
     padding: 0;
     background: var(--background);
     color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
     line-height: 1.8;
-    font-weight: 700;
     top: 0 !important;
 }
 
@@ -1279,25 +81,25 @@ a {
 }
 
 .header-inner {
-    max-width: 1300px;
+    max-width: 1350px;
     margin: auto;
     padding: 21px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 13px;
     min-width: 0;
     text-decoration: none;
 }
 
 .logo {
-    width: 64px;
+    width: 62px;
     height: auto;
     object-fit: contain;
 }
@@ -1308,15 +110,15 @@ a {
 }
 
 .brand-name {
-    font-size: 19px;
+    font-size: 18px;
     letter-spacing: 1.8px;
     color: var(--text);
     font-weight: 900 !important;
 }
 
 .brand-slogan {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 9px;
+    letter-spacing: 1.8px;
     color: var(--accent);
     font-weight: 800 !important;
 }
@@ -1327,14 +129,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 23px;
+    gap: 17px;
 }
 
 .header-navigation a {
     color: var(--muted);
     text-decoration: none;
-    font-size: 11px;
-    letter-spacing: .8px;
+    font-size: 10px;
+    letter-spacing: .65px;
+    white-space: nowrap;
     transition: color .2s ease;
 }
 
@@ -1349,26 +152,26 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 11px;
+    gap: 10px;
 }
 
 .language-label {
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 1px;
     color: var(--text);
     white-space: nowrap;
 }
 
 #siteLanguage {
-    width: 155px;
-    height: 42px;
-    padding: 8px 12px;
+    width: 140px;
+    height: 40px;
+    padding: 8px 11px;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 3px;
     background: #ffffff;
     color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 11px;
     cursor: pointer;
     outline-offset: 3px;
 }
@@ -1487,7 +290,7 @@ body {
     overflow: hidden;
     background: var(--surface-dark);
     color: var(--white);
-    padding: 88px 25px 83px;
+    padding: 85px 25px 80px;
     text-align: center;
 }
 
@@ -1495,21 +298,21 @@ body {
 .page-hero::after {
     content: "";
     position: absolute;
-    width: 350px;
-    height: 350px;
-    border: 1px solid rgba(255,255,255,.07);
+    width: 370px;
+    height: 370px;
+    border: 1px solid rgba(177,138,67,.19);
     border-radius: 50%;
     pointer-events: none;
 }
 
 .page-hero::before {
-    top: -235px;
-    left: -100px;
+    top: -260px;
+    left: -120px;
 }
 
 .page-hero::after {
-    bottom: -270px;
-    right: -100px;
+    bottom: -280px;
+    right: -110px;
 }
 
 .hero-content {
@@ -1520,16 +323,16 @@ body {
 }
 
 .breadcrumb {
-    color: #b7c6d5;
-    font-size: 11px;
+    color: #c1b8a7;
+    font-size: 10px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
 .hero-overline {
-    color: var(--accent-light);
-    font-size: 11px;
+    color: var(--gold-light);
+    font-size: 10px;
     letter-spacing: 4px;
     margin-bottom: 17px;
 }
@@ -1538,26 +341,27 @@ body {
     max-width: 900px;
     margin: auto;
     color: var(--white);
-    font-size: clamp(36px, 5.5vw, 66px);
-    line-height: 1.13;
-    letter-spacing: -1.8px;
-    font-weight: 900 !important;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(43px, 6vw, 72px);
+    line-height: 1.08;
+    letter-spacing: 1px;
+    font-weight: 800 !important;
     text-transform: uppercase;
 }
 
 .hero-subtitle {
     max-width: 750px;
-    margin: 24px auto 0;
-    color: #c7d1dc;
-    font-size: 15px;
+    margin: 23px auto 0;
+    color: #c9c7c1;
+    font-size: 14px;
     line-height: 1.9;
 }
 
 .hero-rule {
-    width: 66px;
+    width: 65px;
     height: 3px;
-    background: var(--accent-light);
-    margin: 32px auto 0;
+    background: var(--accent);
+    margin: 30px auto 0;
 }
 
 /* MAIN CONTENT */
@@ -1568,14 +372,6 @@ main {
     padding: 65px 30px 85px;
 }
 
-.intro {
-    max-width: 960px;
-    margin: 0 auto 40px;
-    font-size: 17px;
-    color: var(--text);
-    line-height: 2;
-}
-
 .legal-meta {
     display: flex;
     flex-wrap: wrap;
@@ -1584,10 +380,34 @@ main {
     margin-bottom: 45px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 10px;
+    border-radius: 3px;
+    font-size: 9px;
     color: var(--muted);
     letter-spacing: 1px;
+}
+
+.intro {
+    max-width: 960px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: var(--text);
+    line-height: 2;
+}
+
+.highlight-panel {
+    position: relative;
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    padding: 27px 30px;
+    margin: 30px 0 52px;
+    border-radius: 0 3px 3px 0;
+}
+
+.highlight-panel p {
+    margin: 0;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 2;
 }
 
 .legal-section {
@@ -1606,16 +426,17 @@ main {
 
 .legal-section h2 {
     margin: 0 0 17px;
-    font-size: 23px;
-    line-height: 1.4;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 21px;
+    line-height: 1.45;
     color: var(--text);
-    font-weight: 900 !important;
+    font-weight: 800 !important;
 }
 
 .legal-section p {
     margin: 0 0 15px;
-    color: #394756;
-    font-size: 15px;
+    color: #444444;
+    font-size: 14px;
     line-height: 2;
 }
 
@@ -1625,26 +446,14 @@ main {
 }
 
 .legal-section li {
-    color: #394756;
-    font-size: 15px;
+    color: #444444;
+    font-size: 14px;
     margin-bottom: 10px;
-    line-height: 1.85;
+    line-height: 1.9;
 }
 
-.highlight-panel {
-    position: relative;
-    background: var(--surface);
-    border-left: 4px solid var(--accent);
-    padding: 27px 30px;
-    margin: 30px 0 52px;
-    border-radius: 0 4px 4px 0;
-}
-
-.highlight-panel p {
-    margin: 0;
-    color: var(--text);
-    font-size: 15px;
-    line-height: 2;
+.legal-section li::marker {
+    color: var(--accent);
 }
 
 /* CONTACT PANEL */
@@ -1654,7 +463,7 @@ main {
     overflow: hidden;
     background: var(--surface-dark);
     color: var(--white);
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 38px;
     margin-top: 55px;
 }
@@ -1666,7 +475,7 @@ main {
     bottom: -170px;
     width: 280px;
     height: 280px;
-    border: 1px solid rgba(255,255,255,.1);
+    border: 1px solid rgba(177,138,67,.2);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -1675,7 +484,7 @@ main {
     position: relative;
     z-index: 1;
     margin: 0 0 13px;
-    font-size: 23px;
+    font-size: 21px;
     color: var(--white);
 }
 
@@ -1684,8 +493,8 @@ main {
     z-index: 1;
     max-width: 800px;
     margin: 0;
-    color: #d4dee8;
-    font-size: 15px;
+    color: #d1d1ce;
+    font-size: 14px;
     line-height: 1.9;
 }
 
@@ -1695,15 +504,15 @@ main {
     z-index: 1;
     margin-top: 20px;
     padding-bottom: 5px;
-    border-bottom: 1px solid var(--accent-light);
+    border-bottom: 1px solid var(--accent);
     color: var(--white);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 1.5px;
 }
 
 .contact-link:hover {
-    color: var(--accent-light);
+    color: var(--gold-light);
 }
 
 /* HOMEPAGE BUTTON */
@@ -1724,7 +533,7 @@ main {
     color: var(--white);
     text-decoration: none;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 2px;
     font-size: 11px;
     letter-spacing: 1.5px;
     transition: background .2s ease, transform .2s ease;
@@ -1738,7 +547,7 @@ main {
 /* FOOTER */
 
 .site-footer {
-    background: #f3f5f7;
+    background: var(--surface);
     border-top: 1px solid var(--border);
     padding: 48px 30px 25px;
 }
@@ -1775,9 +584,9 @@ main {
     padding: 12px 23px;
     background: var(--surface-dark);
     color: var(--white);
-    border-radius: 3px;
+    border-radius: 2px;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 1px;
     transition: background .2s ease;
 }
@@ -1790,14 +599,14 @@ main {
 
 .footer-groups {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 30px;
     padding: 38px 0;
 }
 
 .footer-group h3 {
     color: var(--text);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin: 0 0 17px;
@@ -1808,7 +617,7 @@ main {
     width: fit-content;
     color: var(--muted);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 11px;
     margin: 11px 0;
     transition: color .2s ease;
 }
@@ -1831,7 +640,7 @@ main {
     flex-wrap: wrap;
     gap: 12px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .footer-bottom a {
@@ -1839,12 +648,13 @@ main {
 }
 
 .footer-bottom a:hover {
+    color: var(--accent);
     text-decoration: underline;
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
     .header-inner {
         flex-wrap: wrap;
     }
@@ -1853,8 +663,9 @@ main {
         order: 3;
         width: 100%;
         justify-content: center;
-        padding-top: 12px;
+        padding-top: 15px;
         border-top: 1px solid var(--border);
+        flex-wrap: wrap;
     }
 
     .footer-groups {
@@ -1864,7 +675,7 @@ main {
 
 @media (max-width: 800px) {
     .header-inner {
-        padding: 21px 20px;
+        padding: 20px;
     }
 
     .brand {
@@ -1917,11 +728,11 @@ main {
     .header-navigation {
         order: 3;
         flex-wrap: wrap;
-        gap: 15px 20px;
+        gap: 14px 18px;
     }
 
     .header-navigation a {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .logo {
@@ -1933,7 +744,7 @@ main {
     }
 
     .brand-slogan {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .page-hero {
@@ -1941,12 +752,12 @@ main {
     }
 
     .hero-title {
-        font-size: 34px;
-        letter-spacing: -1px;
+        font-size: 43px;
+        letter-spacing: 0;
     }
 
     .hero-subtitle {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .breadcrumb {
@@ -1958,7 +769,7 @@ main {
     }
 
     .intro {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .legal-meta {
@@ -1968,12 +779,12 @@ main {
     }
 
     .legal-section h2 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .legal-section p,
     .legal-section li {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .highlight-panel {
@@ -1985,7 +796,7 @@ main {
     }
 
     .contact-panel h2 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .footer-top {
@@ -2016,11 +827,12 @@ main {
     *::before,
     *::after {
         transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
     }
 }
 </style>
 
-<!-- ORGANIZATION IDENTITY -->
+<!-- STRUCTURED DATA -->
 
 <script type="application/ld+json">
 {
@@ -2058,6 +870,8 @@ main {
 
 <body>
 
+<!-- HEADER -->
+
 <header class="site-header">
 
     <div class="header-inner">
@@ -2077,15 +891,33 @@ main {
 
         </a>
 
+        <!-- TEN NAVIGATION DESTINATIONS -->
+
         <nav class="header-navigation" aria-label="Main navigation">
 
             <a href="/">HOME</a>
+
             <a href="/newsroom/newswire.html">NEWSWIRE</a>
+
             <a href="/magazine/news">MAGAZINE</a>
+
             <a href="/">ZEAVIQ SPORTS™</a>
+
             <a href="/contact">CONTACT</a>
 
+            <a href="/policy">PRIVACY</a>
+
+            <a href="/terms">TERMS</a>
+
+            <a href="/copyright" aria-current="page">COPYRIGHT</a>
+
+            <a href="/help">HELP</a>
+
+            <a href="/accessibility">ACCESSIBILITY</a>
+
         </nav>
+
+        <!-- LANGUAGE SELECTOR -->
 
         <div class="language-area">
 
@@ -2125,6 +957,8 @@ main {
 
 </header>
 
+<!-- HIDDEN GOOGLE TRANSLATE ENGINE -->
+
 <div id="google_translate_element" aria-hidden="true"></div>
 
 <!-- HERO -->
@@ -2158,7 +992,7 @@ main {
 
 </section>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 
 <main>
 
@@ -2180,31 +1014,786 @@ main {
 
         Its intellectual property encompasses its organizational
         identity, sporting properties, competition identities,
-       
- removeGooglePopouts();
+        publications, commercial properties and original
+        creative materials.
 
-    /* Monitor Google's injected elements and layout changes. */
+    </div>
 
-    const observer = new MutationObserver(() => {
+    <div class="highlight-panel">
+
+        <p>
+            © PHRINUSOMYIS™. All Rights Reserved. All intellectual
+            property rights belonging to PHRINUSOMYIS™ or lawfully
+            controlled by the organization are reserved. No general
+            permission to reproduce, distribute, publish, modify
+            or commercially exploit protected materials is granted
+            through access to the organization's official materials
+            and publications.
+        </p>
+
+    </div>
+
+    <!-- SECTION 01 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 01</span>
+
+        <h2>Copyright and Intellectual Property Ownership</h2>
+
+        <p>
+            This notice applies to original creative works and other
+            intellectual property owned by, assigned to, licensed to
+            or otherwise lawfully controlled by PHRINUSOMYIS™ and its
+            relevant affiliated entities.
+        </p>
+
+        <p>
+            Ownership of individual materials is determined by the
+            applicable agreements, assignments, licences and
+            intellectual property laws. Materials belonging to
+            independent creators, licensors or other third parties
+            remain subject to their respective ownership rights.
+        </p>
+
+    </section>
+
+    <!-- SECTION 02 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 02</span>
+
+        <h2>Corporate Identity and Trademarks</h2>
+
+        <p>
+            The PHRINUSOMYIS™ name, official logos, symbols,
+            corporate identifiers, slogans, visual identity and
+            associated brand elements form part of the organization's
+            intellectual property portfolio.
+        </p>
+
+        <p>
+            Trademark rights may protect names, logos, slogans and
+            other identifiers that distinguish the organization's
+            goods, services and activities. The ™ symbol identifies
+            a claimed trademark; it does not, by itself, establish
+            registration.
+        </p>
+
+        <p>
+            No party may use these identifiers in a misleading
+            manner or falsely suggest an official relationship,
+            authorization, sponsorship or endorsement.
+        </p>
+
+    </section>
+
+    <!-- SECTION 03 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 03</span>
+
+        <h2>Sports Properties and ZEAVIQ SPORTS™</h2>
+
+        <p>
+            PHRINUSOMYIS™ develops, owns and administers sports
+            competitions and ZEAVIQ SPORTS™. Its sports properties
+            include original competition identities, names, logos,
+            visual presentations, graphics, written materials,
+            audiovisual works and other eligible intellectual
+            property.
+        </p>
+
+        <p>
+            Original written, artistic, photographic and audiovisual
+            expressions may qualify for copyright protection.
+            Names and identifiers may be protected through trademark
+            law, while eligible designs and confidential materials
+            may be protected through other applicable legal rights
+            and agreements.
+        </p>
+
+        <p>
+            Confidential competition mechanics, internal methods,
+            restricted operating materials and non-public
+            organizational information are not disclosed through
+            this notice.
+        </p>
+
+    </section>
+
+    <!-- SECTION 04 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 04</span>
+
+        <h2>Flagship Events and Competition Identities</h2>
+
+        <p>
+            The organization's event properties include current
+            and future flagship event names, identities, logos,
+            promotional presentations, stage visuals, event
+            graphics, official recordings and related creative
+            materials.
+        </p>
+
+        <p>
+            The unauthorized copying, reproduction, imitation
+            or commercial exploitation of protected event
+            materials may infringe the rights of the relevant
+            rights holder.
+        </p>
+
+        <p>
+            The protection available for individual event names,
+            designs, presentations and materials depends on the
+            nature of the property and the applicable legal
+            protection available.
+        </p>
+
+    </section>
+
+    <!-- SECTION 05 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 05</span>
+
+        <h2>Merchandise and Commercial Properties</h2>
+
+        <p>
+            PHRINUSOMYIS™ commercial properties may include
+            merchandise identities, product names, logos,
+            labels, packaging, graphics, product imagery,
+            promotional materials and associated commercial
+            presentations.
+        </p>
+
+        <p>
+            Eligible materials may be protected through
+            copyright, trademark, design rights, contractual
+            arrangements and other applicable intellectual
+            property protections.
+        </p>
+
+    </section>
+
+    <!-- SECTION 06 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 06</span>
+
+        <h2>Product, Fragrance and Design Properties</h2>
+
+        <p>
+            Product and fragrance properties may include
+            product identities, bottle designs, packaging,
+            labels, visual artwork, product graphics and
+            distinctive commercial presentations developed
+            or commissioned for the organization.
+        </p>
+
+        <p>
+            Depending on the nature of each property and
+            applicable legal requirements, protection may
+            be available through registered designs, design
+            patents, copyright, trademarks, trade dress,
+            confidentiality arrangements or other legal
+            mechanisms.
+        </p>
+
+    </section>
+
+    <!-- SECTION 07 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 07</span>
+
+        <h2>Newswire, Magazine and Publications</h2>
+
+        <p>
+            PHRINUSOMYIS™ publication properties include
+            Newswire, Magazine and other official editorial
+            and publication channels operated or authorized
+            by the organization.
+        </p>
+
+        <p>
+            Original articles, editorial content, photographs,
+            illustrations, magazine covers, page layouts,
+            graphics, videos, publication designs and other
+            eligible creative materials may be protected by
+            copyright and other applicable intellectual
+            property rights.
+        </p>
+
+        <p>
+            The reproduction, republication, redistribution
+            or commercial use of protected publication
+            materials requires authorization from the
+            relevant rights holder unless otherwise
+            permitted by law.
+        </p>
+
+    </section>
+
+    <!-- SECTION 08 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 08</span>
+
+        <h2>Photography, Audiovisual and Digital Materials</h2>
+
+        <p>
+            Protected materials may include photographs,
+            films, videos, recordings, illustrations,
+            graphics, digital publications, software and
+            other original creative works.
+        </p>
+
+        <p>
+            Accessing or viewing these materials does not
+            transfer ownership or grant an unrestricted
+            licence to reproduce, alter, distribute,
+            publish or commercially exploit them.
+        </p>
+
+    </section>
+
+    <!-- SECTION 09 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 09</span>
+
+        <h2>Official Materials and Permitted Use</h2>
+
+        <p>
+            Unless expressly stated otherwise, materials
+            published through PHRINUSOMYIS™ official channels
+            are provided for personal, informational and
+            non-commercial viewing.
+        </p>
+
+        <p>
+            Without the required authorization or another
+            valid legal basis, visitors and other parties
+            must not:
+        </p>
+
+        <ul>
+
+            <li>
+                Reproduce or republish protected materials.
+            </li>
+
+            <li>
+                Distribute protected materials for commercial use.
+            </li>
+
+            <li>
+                Modify or create derivative works from protected content.
+            </li>
+
+            <li>
+                Use official names or logos to imply false affiliation.
+            </li>
+
+            <li>
+                Remove or alter copyright or ownership notices.
+            </li>
+
+            <li>
+                Exploit protected materials in advertising or commercial promotions.
+            </li>
+
+        </ul>
+
+        <p>
+            Any use permitted by law remains subject to the
+            limitations and conditions of that law.
+        </p>
+
+    </section>
+
+    <!-- SECTION 10 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 10</span>
+
+        <h2>Licensing and Authorization</h2>
+
+        <p>
+            Requests to reproduce, publish, distribute,
+            display, license or commercially use PHRINUSOMYIS™
+            intellectual property must be directed to the
+            organization through its official contact channels.
+        </p>
+
+        <p>
+            Permission must be obtained from the relevant
+            rights holder. Any licence or authorization
+            may be subject to written terms defining its
+            scope, duration, territory and permitted use.
+        </p>
+
+        <p>
+            No licence is implied merely because material
+            is accessible, downloadable or publicly visible
+            through an official organizational channel.
+        </p>
+
+    </section>
+
+    <!-- SECTION 11 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 11</span>
+
+        <h2>Third-Party Intellectual Property</h2>
+
+        <p>
+            PHRINUSOMYIS™ official materials may refer to
+            or display third-party names, trademarks,
+            photographs, publications, software and other
+            materials. Such rights remain with their
+            respective owners.
+        </p>
+
+        <p>
+            Their appearance in organizational materials
+            does not automatically establish ownership,
+            partnership, sponsorship, endorsement or
+            affiliation with PHRINUSOMYIS™.
+        </p>
+
+    </section>
+
+    <!-- SECTION 12 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 12</span>
+
+        <h2>Protection and Enforcement</h2>
+
+        <p>
+            PHRINUSOMYIS™ reserves the right to protect
+            intellectual property owned by or lawfully
+            controlled by the organization.
+        </p>
+
+        <p>
+            Where unauthorized use or infringement occurs,
+            the relevant rights holder may pursue
+            appropriate measures under applicable law.
+            Such measures may include removal requests,
+            licensing enforcement, contractual remedies,
+            administrative proceedings or legal action.
+        </p>
+
+    </section>
+
+    <!-- SECTION 13 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 13</span>
+
+        <h2>Reservation of Rights</h2>
+
+        <p>
+            All rights not expressly granted are reserved
+            by the relevant lawful rights holder. Nothing
+            in this notice transfers ownership or creates
+            an unrestricted right to use any protected
+            material.
+        </p>
+
+        <p>
+            The scope and availability of intellectual
+            property protection depend on the applicable
+            laws, ownership arrangements and registration
+            status of each individual property.
+        </p>
+
+    </section>
+
+    <!-- SECTION 14 -->
+
+    <section class="legal-section">
+
+        <span class="section-number">SECTION 14</span>
+
+        <h2>Updates to This Notice</h2>
+
+        <p>
+            PHRINUSOMYIS™ may revise this Copyright &
+            Intellectual Property Notice to reflect
+            changes in its intellectual property portfolio,
+            organizational materials, ownership arrangements
+            or applicable requirements.
+        </p>
+
+        <p>
+            The current version published through the
+            organization's official channels supersedes
+            earlier versions of this notice.
+        </p>
+
+    </section>
+
+    <!-- OFFICIAL CONTACT -->
+
+    <section class="contact-panel">
+
+        <h2>Official Intellectual Property Enquiries</h2>
+
+        <p>
+            For copyright matters, licensing requests,
+            permissions, intellectual property concerns
+            or other official enquiries, contact
+            PHRINUSOMYIS™ through the organization's official
+            Contact page.
+        </p>
+
+        <a href="/contact" class="contact-link">
+            OFFICIAL CONTACT PAGE →
+        </a>
+
+    </section>
+
+    <div class="home-action">
+
+        <a href="/" class="home-button">
+            BACK TO HOMEPAGE
+        </a>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="footer-brand">
+                    PHRINUSOMYIS™
+                </div>
+
+                <div class="footer-slogan">
+                    COMMANDING THE WORLD STAGE™
+                </div>
+
+            </div>
+
+            <a href="/" class="footer-home">
+                HOMEPAGE
+            </a>
+
+        </div>
+
+        <div class="footer-groups">
+
+            <div class="footer-group">
+
+                <h3>Main</h3>
+
+                <a href="/">Home</a>
+
+                <a href="/newsroom/newswire.html">Newswire</a>
+
+                <a href="/magazine/news">Magazine</a>
+
+            </div>
+
+            <div class="footer-group">
+
+                <h3>Sports</h3>
+
+                <a href="/">ZEAVIQ SPORTS™</a>
+
+                <a href="/">Sports Competitions</a>
+
+            </div>
+
+            <div class="footer-group">
+
+                <h3>Organization</h3>
+
+                <a href="/contact">Contact</a>
+
+                <a href="/help">Help</a>
+
+                <a href="/accessibility">Accessibility & Captions</a>
+
+            </div>
+
+            <div class="footer-group">
+
+                <h3>Legal</h3>
+
+                <a href="/policy">Privacy Policy</a>
+
+                <a href="/terms">Terms of Use</a>
+
+                <a href="/copyright" aria-current="page">Copyright</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © PHRINUSOMYIS™. All Rights Reserved.
+            </span>
+
+            <span>
+                <a href="/policy">Privacy Choices</a>
+                &nbsp; · &nbsp;
+                <a href="/accessibility">Closed Captions</a>
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- GOOGLE TRANSLATE INITIALIZATION -->
+
+<script>
+
+function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement({
+
+        pageLanguage: 'en',
+
+        includedLanguages: 'en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da',
+
+        autoDisplay: false
+
+    }, 'google_translate_element');
+
+}
+
+/* LANGUAGE SELECTOR */
+
+(function () {
+
+    const languageSelector =
+        document.getElementById('siteLanguage');
+
+    if (!languageSelector) return;
+
+    function applySelectedLanguage() {
+
+        const googleCombo = document.querySelector(
+            '#google_translate_element select.goog-te-combo'
+        );
+
+        if (!googleCombo) return false;
+
+        googleCombo.value = languageSelector.value;
+
+        googleCombo.dispatchEvent(
+            new Event('change', { bubbles: true })
+        );
+
+        return true;
+
+    }
+
+    languageSelector.addEventListener('change', function () {
+
+        if (this.value === 'en') {
+
+            const googleCombo = document.querySelector(
+                '#google_translate_element select.goog-te-combo'
+            );
+
+            if (googleCombo) {
+
+                googleCombo.value = 'en';
+
+                googleCombo.dispatchEvent(
+                    new Event('change', { bubbles: true })
+                );
+
+            } else {
+
+                document.cookie =
+                    'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
+
+                document.cookie =
+                    'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' +
+                    location.hostname + ';';
+
+                location.reload();
+
+            }
+
+            return;
+
+        }
+
+        if (!applySelectedLanguage()) {
+
+            const retry = setInterval(function () {
+
+                if (applySelectedLanguage()) {
+
+                    clearInterval(retry);
+
+                }
+
+            }, 300);
+
+            setTimeout(function () {
+
+                clearInterval(retry);
+
+            }, 10000);
+
+        }
+
+    });
+
+})();
+
+/* GOOGLE TRANSLATE BANNER AND POPOUT REMOVAL */
+
+(function () {
+
+    function removeGooglePopouts() {
+
+        const selectors = [
+
+            '.goog-te-banner-frame',
+            'iframe.goog-te-banner-frame',
+            '.goog-te-menu-frame',
+            'iframe.goog-te-menu-frame',
+            '.goog-te-balloon-frame',
+            'iframe.goog-te-balloon-frame',
+            '#goog-gt-tt',
+            '.goog-te-tooltip-container',
+            '.goog-tooltip',
+            '.VIpgJd-ZVi9od-ORHb-OEVmcd',
+            '.VIpgJd-ZVi9od-ORHb',
+            '.VIpgJd-ZVi9od-ORHb-KE6vqe',
+            '.VIpgJd-ZVi9od-aZ2wEe-wOHMyf',
+            '.VIpgJd-ZVi9od-l4eHX',
+            '.VIpgJd-yAWNEb-L7lbkb',
+            '.VIpgJd-ZVi9od-vH1Gmf',
+            '.VIpgJd-ZVi9od-xl07Ob',
+            '.VIpgJd-ZVi9od-SmfZ'
+
+        ];
+
+        document.querySelectorAll(selectors.join(',')).forEach(
+            function (element) {
+
+                element.style.setProperty(
+                    'display', 'none', 'important'
+                );
+
+                element.style.setProperty(
+                    'visibility', 'hidden', 'important'
+                );
+
+                element.style.setProperty(
+                    'pointer-events', 'none', 'important'
+                );
+
+            }
+        );
+
+        restorePagePosition();
+
+    }
+
+    function restorePagePosition() {
+
+        document.documentElement.style.setProperty(
+            'top', '0px', 'important'
+        );
+
+        document.documentElement.style.setProperty(
+            'margin-top', '0px', 'important'
+        );
+
+        document.documentElement.style.setProperty(
+            'padding-top', '0px', 'important'
+        );
+
+        document.body.style.setProperty(
+            'top', '0px', 'important'
+        );
+
+        document.body.style.setProperty(
+            'margin-top', '0px', 'important'
+        );
+
+        document.body.style.setProperty(
+            'padding-top', '0px', 'important'
+        );
+
+    }
+
+    /* Initial cleanup */
+
+    removeGooglePopouts();
+
+    /* Observe injected Google elements */
+
+    const observer = new MutationObserver(function () {
+
         removeGooglePopouts();
+
     });
 
     observer.observe(document.documentElement, {
+
         childList: true,
+
         subtree: true,
+
         attributes: true,
-        attributeFilter: ["style", "class"]
+
+        attributeFilter: ['style', 'class']
+
     });
 
-    /* Additional protection. */
+    window.addEventListener(
+        'load', removeGooglePopouts
+    );
 
-    window.addEventListener("load", removeGooglePopouts);
+    window.addEventListener(
+        'resize', removeGooglePopouts
+    );
 
-    window.addEventListener("resize", removeGooglePopouts);
-
-    window.addEventListener("scroll", restorePagePosition);
+    window.addEventListener(
+        'scroll', restorePagePosition
+    );
 
 })();
+
 </script>
 
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
