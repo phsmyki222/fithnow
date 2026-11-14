@@ -1,121 +1,197 @@
-from datetime import datetime
+
+import os
+import sys
+import json
+import base64
+import getpass
+import time
+from pathlib import Path
+
+from cryptography.fernet import Fernet, InvalidToken
+from cryptography.hazmat.primitives.kdf.scrypt import Scrypt
+
+VAULT = Path("PHRINUSOMYIS_SECURE_REGISTRY.vault")
+LOCKOUT = Path("PHRINUSOMYIS_SECURITY.lock")
+MAX_ATTEMPTS = 5
+LOCKOUT_SECONDS = 300
 
 
-class PhrinusomyisRegistry:
-    def __init__(self):
-        self.institutional_profile = {
-            "brand_name": "PHRINUSOMYIS",
-            "hq_status": "Worldwide / Global",
-            "founder_ceo": "Victor Seth A",
-            "positioning": "Top-tier Luxury & Stadium-Scale Entertainment",
-            "core_mission": "Engineering Legacy Moments through unparalleled luxury and world-stage production.",
-            "security_status": "Glass Shield Active"
+class PhrinusomyisSecureRegistry:
+
+    def derive_key(self, password, salt):
+        kdf = Scrypt(
+            salt=salt,
+            length=32,
+            n=2**15,
+            r=8,
+            p=1
+        )
+        return base64.urlsafe_b64encode(
+            kdf.derive(password.encode("utf-8"))
+        )
+
+    def initialize(self):
+        if VAULT.exists():
+            raise RuntimeError("A registry already exists.")
+
+        password = getpass.getpass(
+            "Create your private access code: "
+        )
+
+        if len(password) < 16:
+            raise ValueError(
+                "Use at least 16 characters."
+            )
+
+        confirmation = getpass.getpass(
+            "Confirm your access code: "
+        )
+
+        if password != confirmation:
+            raise ValueError("Access codes do not match.")
+
+        print("\nPaste your registry JSON below.")
+        print("Finish with Ctrl+D (Linux/Mac) or Ctrl+Z (Windows).")
+
+        raw_data = sys.stdin.read()
+        registry = json.loads(raw_data)
+
+        salt = os.urandom(16)
+        key = self.derive_key(password, salt)
+
+        encrypted = Fernet(key).encrypt(
+            json.dumps(
+                registry,
+                ensure_ascii=False
+            ).encode("utf-8")
+        )
+
+        payload = {
+            "version": 1,
+            "salt": base64.b64encode(salt).decode(),
+            "ciphertext": encrypted.decode()
         }
 
-        self.visual_identity = {
-            "server_assets": [
-                "Phrinusomyis_logo.png",
-                "phrinusomyis_logo_360.png",
-                "Phrinusomyis_logo 1.png",
-                "phrinusomyis_logo 2.png",
-                "phrinusomyis_logo 3.png"
-            ],
-            "visual_standard": "12K Premium Cinematic View",
-            "color_palette": "Monochromatic Gold on Obsidian",
-            "icon_logic": "Authoritative Lion (Left) + King (Right)"
-        }
+        temporary = VAULT.with_suffix(".tmp")
 
-        self.languages = {
-            "default": "en",
-            "supported": ["en", "zh", "hi", "es", "fr", "ar", "bn", "pt", "ru", "ja", "de", "ko", "tr", "vi", "yo", "ig"],
-            "translations": {
-                "en": {"tagline": "Engineering Legacy Moments"},
-                "zh": {"tagline": "工程传奇时刻"},
-                "hi": {"tagline": "इंजीनियरिंग लेगेसी मोमेंट्स"},
-                "ar": {"tagline": "هندسة لحظات الإرث"},
-                "ru": {"tagline": "Создание легендарных моментов"},
-                "ja": {"tagline": "レガシーな瞬間をエンジニアリングする"},
-                "ko": {"tagline": "레거시 모먼트 엔지니어링"},
-                "yo": {"tagline": "Ṣiṣẹ Awọn Akoko Arosọ"},
-                "ig": {"tagline": "Ịrụ Oge Ezigbo Akụkọ"}
-            }
-        }
+        temporary.write_text(
+            json.dumps(payload),
+            encoding="utf-8"
+        )
 
-        self.global_metrics = {
-            "weekly_impressions_target": 20000000,
-            "monthly_impressions_target": 80000000,
-            "active_markets": ["Global", "West Africa", "Russia", "China"]
-        }
+        os.chmod(temporary, 0o600)
+        temporary.replace(VAULT)
 
-        self.products = {
-            "PHRINUSOMYIS_cup": {
-                "units": 50,
-                "specs": "Dual-finish matte obsidian, 24K gold plate"
-            },
-            "exclusive_perfume": {
-                "units": 500,
-                "specs": "Black glass, gold stopper"
-            }
-        }
+        print("PHRINUSOMYIS registry encrypted.")
 
-        self.event_registry = {
-            "next_major_event": "2026-07-24",
-            "status": "Confirmed",
-            "system_status": "Synchronized"
-        }
+    def check_lockout(self):
+        if not LOCKOUT.exists():
+            return
 
-        self.seo = {
-            "meta_title": "PHRINUSOMYIS - Engineering Legacy Moments Worldwide",
-            "meta_description": "Experience luxury stadium-scale events with PHRINUSOMYIS.",
-            "keywords": [
-                "PHRINUSOMYIS",
-                "Luxury Entertainment",
-                "Global Events",
-                "Stadium Show",
-                "Legacy Moments"
-            ],
-            "open_graph": {
-                "title": "PHRINUSOMYIS Global Events",
-                "description": "Top-tier luxury and world-stage productions engineered to perfection.",
-                "image": "https://example.com/assets/logo.png"
-            },
-            "twitter_card": {
-                "title": "PHRINUSOMYIS - Engineering Legacy Moments",
-                "description": "Luxury and world-stage entertainment.",
-                "image": "https://example.com/assets/logo_360.png"
-            }
-        }
+        state = json.loads(
+            LOCKOUT.read_text(encoding="utf-8")
+        )
 
-    # -----------------------------
-    # SYSTEM FUNCTIONS
-    # -----------------------------
+        remaining = (
+            state["until"] - time.time()
+        )
 
-    def get_brand(self):
-        return self.institutional_profile["brand_name"]
+        if remaining > 0:
+            raise PermissionError(
+                f"Security lockout. Try again in "
+                f"{int(remaining)} seconds."
+            )
 
-    def get_event_date(self):
-        return self.event_registry["next_major_event"]
+        LOCKOUT.unlink(missing_ok=True)
 
-    def language_count(self):
-        return len(self.languages["supported"])
+    def read_registry(self):
+        self.check_lockout()
 
-    def system_status_report(self):
+        if not VAULT.exists():
+            raise FileNotFoundError("Registry not initialized.")
+
+        payload = json.loads(
+            VAULT.read_text(encoding="utf-8")
+        )
+
+        salt = base64.b64decode(payload["salt"])
+        key = self.derive_key(
+            getpass.getpass("Private access code: "),
+            salt
+        )
+
+        try:
+            decrypted = Fernet(key).decrypt(
+                payload["ciphertext"].encode()
+            )
+
+        except InvalidToken:
+            attempts = 1
+
+            if LOCKOUT.exists():
+                state = json.loads(
+                    LOCKOUT.read_text()
+                )
+                attempts = state["attempts"] + 1
+
+            if attempts >= MAX_ATTEMPTS:
+                LOCKOUT.write_text(
+                    json.dumps({
+                        "attempts": attempts,
+                        "until": time.time() + LOCKOUT_SECONDS
+                    })
+                )
+            else:
+                LOCKOUT.write_text(
+                    json.dumps({
+                        "attempts": attempts,
+                        "until": 0
+                    })
+                )
+
+            raise PermissionError(
+                "ACCESS DENIED: Invalid access code."
+            )
+
+        LOCKOUT.unlink(missing_ok=True)
+
+        return json.loads(decrypted.decode("utf-8"))
+
+    def security_status(self):
         return {
-            "brand": self.get_brand(),
-            "security": self.institutional_profile["security_status"],
-            "languages": self.language_count(),
-            "markets": self.global_metrics["active_markets"],
-            "event": self.get_event_date()
+            "organization": "PHRINUSOMYIS",
+            "encryption": "Scrypt + Fernet",
+            "authentication": "Required",
+            "unauthorized_access": "Denied",
+            "vault_exists": VAULT.exists()
         }
 
-    def export_json(self):
-        """Convert full registry to JSON-ready dictionary"""
-        return {
-            "institutional_profile": self.institutional_profile,
-            "visual_identity": self.visual_identity,
-            "languages": self.languages,
-            "global_metrics": self.global_metrics,
-            "products": self.products,
-            "event_registry": self.event_registry,
-            "seo": self.seo
-        }
+
+if __name__ == "__main__":
+
+    security = PhrinusomyisSecureRegistry()
+
+    if len(sys.argv) != 2:
+        print("Commands: init | read | status")
+        sys.exit(1)
+
+    command = sys.argv[1]
+
+    if command == "init":
+        security.initialize()
+
+    elif command == "read":
+        print(json.dumps(
+            security.read_registry(),
+            indent=4,
+            ensure_ascii=False
+        ))
+
+    elif command == "status":
+        print(json.dumps(
+            security.security_status(),
+            indent=4
+        ))
+
+    else:
+        print("Unknown command.")
