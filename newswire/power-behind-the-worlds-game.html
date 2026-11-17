@@ -34,17 +34,111 @@ a:hover{color:var(--link-hover)}
 button,select{font:inherit}
 button{cursor:pointer}
 img{max-width:100%;display:block}
-#google_translate_element{position:absolute!important;left:-10000px!important;top:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;visibility:hidden!important}
-.goog-te-banner-frame,.goog-te-balloon-frame,.goog-te-menu-frame,.goog-te-gadget,.goog-te-spinner-pos,
-.goog-tooltip,.goog-tooltip:hover,.goog-text-highlight,.VIpgJd-ZVi9od-ORHb-OEVmcd,
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,.VIpgJd-ZVi9od-xl07Ob-lTBxed,
-.VIpgJd-ZVi9od-ORHb,.VIpgJd-yAWNEb-L7lbkb,.VIpgJd-yAWNEb-hvhgNd,
-.VIpgJd-ZVi9od-vH1Gmf,.VIpgJd-ZVi9od-vH1Gmf-ibnC6b,
-.skiptranslate iframe{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
-body{top:0!important;position:static!important}
-html,body{min-height:100%;margin-top:0!important}
-font[style*="background-color: rgb(255, 255, 0)"],font[style*="background-color: yellow"]{background:transparent!important;box-shadow:none!important}
-#google_translate_element select{display:none!important}
+
+/* =========================================================
+   PHRINUSOMYIS™ — GOOGLE TRANSLATE PROTECTION STYLES
+   ========================================================= */
+#google_translate_element {
+    position: fixed !important;
+    left: -10000px !important;
+    top: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    max-width: 1px !important;
+    max-height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-menu-frame,
+.goog-te-spinner-pos,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-te-gadget-icon,
+.goog-te-menu-value,
+.goog-te-menu2,
+.goog-te-menu2-item,
+.goog-te-menu2-item div,
+.goog-te-menu2-item span,
+.goog-te-menu2-item-selected,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-gadget-simple,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-KE6vqe,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-xl07Ob-lTBxed,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-yAWNEb-hvhgNd,
+.VIpgJd-ZVi9od-vH1Gmf,
+.VIpgJd-ZVi9od-vH1Gmf-ibnC6b,
+.skiptranslate iframe {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+html,
+body {
+    top: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    min-height: 100%;
+}
+
+body {
+    position: static !important;
+}
+
+.goog-text-highlight,
+font[style*="background-color: rgb(255, 255, 0)"],
+font[style*="background-color: yellow"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#google_translate_element select,
+#google_translate_element .goog-te-combo {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+#languageSelect {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+}
+
+body > .skiptranslate {
+    position: fixed !important;
+    left: -10000px !important;
+    top: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+html.translated-ltr,
+html.translated-rtl,
+body.translated-ltr,
+body.translated-rtl {
+    top: 0 !important;
+    margin-top: 0 !important;
+}
+
 .site-shell{max-width:var(--content);width:calc(100% - 44px);margin:auto}
 .topline{height:5px;background:linear-gradient(90deg,var(--accent),var(--heading),var(--accent))}
 .masthead{border-bottom:1px solid var(--border);background:var(--page-bg)}
@@ -667,57 +761,257 @@ function setTheme(name){
 document.querySelectorAll(".theme-choice").forEach(b=>b.addEventListener("click",()=>setTheme(b.dataset.theme)));
 try{setTheme(localStorage.getItem("phrinusomyis-reading-theme")||"black")}catch(e){setTheme("black")}
 
-const translateLanguages="en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da";
-function googleTranslateElementInit(){
- if(window.google&&google.translate){
-  new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:translateLanguages,autoDisplay:false,layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element");
-  connectLanguageSelector();
- }
-}
-function connectLanguageSelector(){
- const selector=document.getElementById("languageSelect");
- if(!selector)return;
- selector.addEventListener("change",()=>{
-  const combo=document.querySelector(".goog-te-combo");
-  if(combo){combo.value=selector.value;combo.dispatchEvent(new Event("change"));}
- });
-}
-function protectPageFromGoogleInterface(){
- const removeSelectors=[
-  ".goog-te-banner-frame",".goog-te-balloon-frame",".goog-te-menu-frame",
-  ".goog-tooltip",".VIpgJd-ZVi9od-ORHb-OEVmcd",".VIpgJd-ZVi9od-aZ2wEe-wOHMyf",
-  ".VIpgJd-ZVi9od-xl07Ob-lTBxed",".VIpgJd-ZVi9od-ORHb",".VIpgJd-yAWNEb-L7lbkb",
-  ".VIpgJd-yAWNEb-hvhgNd",".VIpgJd-ZVi9od-vH1Gmf",".VIpgJd-ZVi9od-vH1Gmf-ibnC6b"
- ];
- removeSelectors.forEach(selector=>document.querySelectorAll(selector).forEach(el=>{
-  if(selector.includes("banner-frame")||selector.includes("skiptranslate")){
-   el.style.setProperty("position","fixed","important");
-   el.style.setProperty("top","-10000px","important");
-   el.style.setProperty("left","-10000px","important");
-  }else{el.style.setProperty("display","none","important");el.style.setProperty("visibility","hidden","important");}
- }));
- document.querySelectorAll("body > .skiptranslate").forEach(el=>{
-  el.style.setProperty("position","absolute","important");
-  el.style.setProperty("left","-10000px","important");
-  el.style.setProperty("top","-10000px","important");
-  el.style.setProperty("height","1px","important");
-  el.style.setProperty("overflow","hidden","important");
- });
- document.documentElement.style.setProperty("margin-top","0","important");
- document.body.style.setProperty("top","0","important");
- document.body.style.setProperty("position","static","important");
- document.querySelectorAll(".goog-text-highlight").forEach(el=>{
-  el.style.background="transparent";
-  el.style.boxShadow="none";
- });
-}
-const translateObserver=new MutationObserver(()=>protectPageFromGoogleInterface());
-translateObserver.observe(document.documentElement,{childList:true,subtree:true,attributes:true});
-window.addEventListener("load",protectPageFromGoogleInterface);
-window.addEventListener("resize",protectPageFromGoogleInterface);
-window.addEventListener("scroll",protectPageFromGoogleInterface);
-setInterval(protectPageFromGoogleInterface,1500);
+/* =========================================================
+   PHRINUSOMYIS™ — ROBUST GOOGLE TRANSLATE ENGINE
+   ========================================================= */
+(function () {
+    "use strict";
+
+    const translateLanguages = "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da";
+    const GOOGLE_TRANSLATE_CONTAINER = "google_translate_element";
+    const LANGUAGE_SELECTOR = "languageSelect";
+
+    let translateInitialized = false;
+    let languageListenerAttached = false;
+    let protectionObserver = null;
+    let retryCount = 0;
+    let retryTimer = null;
+
+    const MAX_RETRIES = 40;
+    const RETRY_INTERVAL = 300;
+
+    function restorePagePosition() {
+        const html = document.documentElement;
+        const body = document.body;
+        if (!html || !body) return;
+        html.style.setProperty("top", "0", "important");
+        html.style.setProperty("margin-top", "0", "important");
+        html.style.setProperty("padding-top", "0", "important");
+        body.style.setProperty("top", "0", "important");
+        body.style.setProperty("margin-top", "0", "important");
+        body.style.setProperty("padding-top", "0", "important");
+        body.style.setProperty("position", "static", "important");
+    }
+
+    function removeGooglePopouts() {
+        const selectors = [
+            ".goog-te-banner-frame", "iframe.goog-te-banner-frame", ".goog-te-balloon-frame",
+            ".goog-te-menu-frame", ".goog-tooltip", ".goog-tooltip:hover", ".goog-te-ftab",
+            ".goog-te-gadget-icon", ".VIpgJd-ZVi9od-ORHb-OEVmcd", ".VIpgJd-ZVi9od-ORHb",
+            ".VIpgJd-ZVi9od-ORHb-KE6vqe", ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf", ".VIpgJd-ZVi9od-xl07Ob-lTBxed",
+            ".VIpgJd-yAWNEb-L7lbkb", ".VIpgJd-yAWNEb-hvhgNd", ".VIpgJd-ZVi9od-vH1Gmf",
+            ".VIpgJd-ZVi9od-vH1Gmf-ibnC6b", ".skiptranslate iframe"
+        ];
+
+        selectors.forEach(function (selector) {
+            document.querySelectorAll(selector).forEach(function (element) {
+                if (element.closest && element.closest("#" + GOOGLE_TRANSLATE_CONTAINER)) return;
+                element.style.setProperty("display", "none", "important");
+                element.style.setProperty("visibility", "hidden", "important");
+                element.style.setProperty("opacity", "0", "important");
+                element.style.setProperty("pointer-events", "none", "important");
+            });
+        });
+
+        document.querySelectorAll("body > .skiptranslate").forEach(function (element) {
+            if (element.id === GOOGLE_TRANSLATE_CONTAINER) return;
+            element.style.setProperty("position", "fixed", "important");
+            element.style.setProperty("left", "-10000px", "important");
+            element.style.setProperty("top", "-10000px", "important");
+            element.style.setProperty("width", "1px", "important");
+            element.style.setProperty("height", "1px", "important");
+            element.style.setProperty("overflow", "hidden", "important");
+            element.style.setProperty("visibility", "hidden", "important");
+            element.style.setProperty("opacity", "0", "important");
+            element.style.setProperty("pointer-events", "none", "important");
+        });
+
+        document.querySelectorAll(".goog-text-highlight").forEach(function (element) {
+            element.style.setProperty("background", "transparent", "important");
+            element.style.setProperty("box-shadow", "none", "important");
+            element.style.setProperty("border", "none", "important");
+        });
+
+        restorePagePosition();
+    }
+
+    function getGoogleLanguageControl() {
+        return document.querySelector("#" + GOOGLE_TRANSLATE_CONTAINER + " .goog-te-combo") || document.querySelector(".goog-te-combo");
+    }
+
+    function setGoogleLanguage(language) {
+        const selector = document.getElementById(LANGUAGE_SELECTOR);
+        if (!language) return false;
+        const googleControl = getGoogleLanguageControl();
+        if (!googleControl) return false;
+        const supportedLanguages = translateLanguages.split(",");
+        if (!supportedLanguages.includes(language)) return false;
+
+        if (selector) selector.value = language;
+        googleControl.value = language;
+        googleControl.dispatchEvent(new Event("change", { bubbles: true }));
+
+        try {
+            sessionStorage.setItem("phrinusomyis-google-language", language);
+        } catch (error) {}
+        return true;
+    }
+
+    function connectLanguageSelector() {
+        const selector = document.getElementById(LANGUAGE_SELECTOR);
+        if (!selector || languageListenerAttached) return;
+
+        selector.addEventListener("change", function () {
+            const selectedLanguage = selector.value;
+            if (selectedLanguage === "en") {
+                restoreOriginalLanguage();
+                return;
+            }
+            if (!setGoogleLanguage(selectedLanguage)) {
+                retryLanguageSelection(selectedLanguage);
+            }
+        });
+
+        languageListenerAttached = true;
+
+        let savedLanguage = "en";
+        try {
+            savedLanguage = sessionStorage.getItem("phrinusomyis-google-language") || "en";
+        } catch (error) {
+            savedLanguage = "en";
+        }
+
+        selector.value = savedLanguage;
+        if (savedLanguage !== "en") {
+            retryLanguageSelection(savedLanguage);
+        }
+    }
+
+    function retryLanguageSelection(language) {
+        let attempts = 0;
+        const attempt = function () {
+            attempts++;
+            if (setGoogleLanguage(language)) return;
+            if (attempts < MAX_RETRIES) {
+                window.setTimeout(attempt, RETRY_INTERVAL);
+            }
+        };
+        attempt();
+    }
+
+    function restoreOriginalLanguage() {
+        const selector = document.getElementById(LANGUAGE_SELECTOR);
+        if (selector) selector.value = "en";
+        const googleControl = getGoogleLanguageControl();
+        if (googleControl) {
+            googleControl.value = "en";
+            googleControl.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+        try {
+            sessionStorage.setItem("phrinusomyis-google-language", "en");
+        } catch (error) {}
+
+        document.cookie = "googtrans=/en/en;path=/;SameSite=Lax";
+        const hostname = window.location.hostname;
+        if (hostname) {
+            document.cookie = "googtrans=/en/en;path=/;domain=" + hostname + ";SameSite=Lax";
+        }
+        window.location.reload();
+    }
+
+    function initializeGoogleTranslate() {
+        const container = document.getElementById(GOOGLE_TRANSLATE_CONTAINER);
+        if (!container) return;
+
+        if (!window.google || !window.google.translate || !window.google.translate.TranslateElement) {
+            startGoogleRetry();
+            return;
+        }
+
+        if (translateInitialized) {
+            connectLanguageSelector();
+            return;
+        }
+
+        try {
+            new window.google.translate.TranslateElement({
+                pageLanguage: "en",
+                includedLanguages: translateLanguages,
+                autoDisplay: false,
+                multilanguagePage: false
+            }, GOOGLE_TRANSLATE_CONTAINER);
+
+            translateInitialized = true;
+            connectLanguageSelector();
+            restorePagePosition();
+
+            window.setTimeout(removeGooglePopouts, 500);
+            window.setTimeout(removeGooglePopouts, 1500);
+            window.setTimeout(removeGooglePopouts, 3000);
+        } catch (error) {
+            startGoogleRetry();
+        }
+    }
+
+    function startGoogleRetry() {
+        if (retryTimer || translateInitialized) return;
+        retryTimer = window.setInterval(function () {
+            retryCount++;
+            if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+                window.clearInterval(retryTimer);
+                retryTimer = null;
+                initializeGoogleTranslate();
+                return;
+            }
+            if (retryCount >= MAX_RETRIES) {
+                window.clearInterval(retryTimer);
+                retryTimer = null;
+            }
+        }, RETRY_INTERVAL);
+    }
+
+    function startTranslationProtection() {
+        if (protectionObserver || !document.documentElement) return;
+        let protectionQueued = false;
+        protectionObserver = new MutationObserver(function () {
+            if (protectionQueued) return;
+            protectionQueued = true;
+            window.requestAnimationFrame(function () {
+                protectionQueued = false;
+                removeGooglePopouts();
+            });
+        });
+        protectionObserver.observe(document.documentElement, { childList: true, subtree: true });
+    }
+
+    window.googleTranslateElementInit = function () {
+        initializeGoogleTranslate();
+    };
+
+    function startGoogleTranslation() {
+        startTranslationProtection();
+        restorePagePosition();
+        removeGooglePopouts();
+        connectLanguageSelector();
+        initializeGoogleTranslate();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startGoogleTranslation, { once: true });
+    } else {
+        startGoogleTranslation();
+    }
+
+    window.addEventListener("load", function () {
+        initializeGoogleTranslate();
+        removeGooglePopouts();
+        restorePagePosition();
+    });
+
+    window.addEventListener("resize", restorePagePosition);
+    window.addEventListener("pageshow", restorePagePosition);
+})();
 </script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 </body>
 </html>
