@@ -91,8 +91,7 @@ iframe.goog-te-banner-frame,
     pointer-events: none !important;
 }
 
-html,
-body {
+html, body {
     top: 0 !important;
     margin-top: 0 !important;
     padding-top: 0 !important;
@@ -136,10 +135,8 @@ body > .skiptranslate {
     pointer-events: none !important;
 }
 
-html.translated-ltr,
-html.translated-rtl,
-body.translated-ltr,
-body.translated-rtl {
+html.translated-ltr, html.translated-rtl,
+body.translated-ltr, body.translated-rtl {
     top: 0 !important;
     margin-top: 0 !important;
 }
@@ -186,10 +183,6 @@ body.translated-rtl {
 .content-section{padding:42px 0;border-bottom:1px solid var(--border)}
 .story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
 .story-card{background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;min-width:0;box-shadow:var(--shadow-small)}
-.story-visual{height:155px;background:linear-gradient(135deg,var(--surface-raised),var(--surface-alt));border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.story-visual:before{content:"";position:absolute;width:170px;height:170px;border:1px solid var(--border-strong);transform:rotate(45deg)}
-.story-visual:after{content:"";position:absolute;width:110px;height:110px;border:1px solid var(--border);transform:rotate(45deg)}
-.visual-word{position:relative;z-index:1;font-family:var(--serif);font-size:33px;color:var(--heading);letter-spacing:2px}
 .story-body{padding:19px;display:flex;flex-direction:column;flex:1}
 .story-category{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent)}
 .story-body h3{font-family:var(--serif);font-size:24px;line-height:1.13;color:var(--heading);font-weight:500;margin:10px 0}
@@ -255,36 +248,35 @@ td strong{color:var(--heading)}
 .story-photo{width:100%;height:175px;object-fit:cover;border-bottom:1px solid var(--border)}
 
 /* =========================================================
-   2040 FUTURE-GRADE 3D CYLINDER STEREOSCOPIC MAGAZINE THEATER
-   WITH UNIQUE RAINBOW HUE DYNAMIC LIGHTING PER CARD
+   SOLO IMMERSIVE 1-UP MAGAZINE THEATER WITH UNIQUE RAINBOW AMBIENT GLOW
    ========================================================= */
 .mag-theater {
-  padding: 85px 0 95px;
-  background: radial-gradient(circle at 50% 50%, #171510 0%, #070707 80%);
+  padding: 90px 0 110px;
+  background: var(--theater-bg, radial-gradient(circle at 50% 50%, #171510 0%, #070707 85%));
   border-top: 1px solid var(--border-strong);
   border-bottom: 1px solid var(--border-strong);
   position: relative;
   overflow: hidden;
-  perspective: 2000px;
+  transition: background 0.6s ease;
 }
 .mag-theater::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 35%, rgba(201,166,70,0.15), transparent 65%);
+  background: radial-gradient(circle at 50% 40%, var(--theater-glow, rgba(201,166,70,0.22)), transparent 70%);
   pointer-events: none;
-  transition: background 0.8s ease;
+  transition: background 0.6s ease;
 }
 .mag-theater-inner {
-  width: min(100% - 40px, 1400px);
+  width: min(100% - 40px, 900px);
   margin: auto;
   position: relative;
   z-index: 2;
 }
 .mag-theater-header {
   text-align: center;
-  max-width: 820px;
-  margin: 0 auto 50px;
+  max-width: 780px;
+  margin: 0 auto 45px;
 }
 .mag-theater-header .eyebrow {
   color: var(--accent);
@@ -295,7 +287,7 @@ td strong{color:var(--heading)}
 }
 .mag-theater-header h2 {
   font-family: var(--serif);
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(32px, 4.5vw, 52px);
   color: var(--heading);
   margin: 12px 0 15px;
   font-weight: 500;
@@ -308,129 +300,122 @@ td strong{color:var(--heading)}
   line-height: 1.6;
 }
 
-/* 3D ROTATING STEREOSCOPIC STAGE */
-.stage-container {
+/* SOLO 1-UP MAGAZINE SHOWCASE STAGE */
+.solo-stage {
   width: 100%;
-  height: 540px;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  cursor: grab;
 }
-.stage-container:active {
-  cursor: grabbing;
-}
-.carousel-ring {
-  width: 320px;
-  height: 440px;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 0.15s cubic-bezier(0.1, 0.8, 0.2, 1);
-}
-
-/* INDIVIDUAL 3D MAGAZINE SLIDE CARD WITH RAINBOW GLOW THEMES */
-.mag-cube-card {
-  position: absolute;
-  width: 300px;
-  height: 430px;
-  left: 10px;
-  top: 5px;
-  transform-style: preserve-3d;
+.solo-mag-card {
+  width: 100%;
+  max-width: 580px;
   background: linear-gradient(145deg, #181714, #0e0e0d);
-  border: 1px solid var(--card-glow, rgba(201,166,70,0.5));
-  box-shadow: 0 30px 60px rgba(0,0,0,0.85), 0 0 25px var(--card-glow-soft, rgba(201,166,70,0.15));
-  border-radius: 8px;
+  border: 2px solid var(--card-glow, var(--accent));
+  box-shadow: 0 35px 80px rgba(0,0,0,0.9), 0 0 50px var(--card-glow-soft, rgba(201,166,70,0.3));
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
-  backface-visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: cardFadeIn 0.5s ease;
 }
-.mag-cube-card:hover {
-  border-color: var(--card-glow);
-  box-shadow: 0 35px 85px rgba(0,0,0,0.9), 0 0 45px var(--card-glow);
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(15px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
-.mag-cube-image-wrap {
+.solo-mag-card:hover {
+  box-shadow: 0 40px 100px rgba(0,0,0,0.95), 0 0 70px var(--card-glow, var(--accent));
+  transform: translateY(-4px);
+}
+.solo-mag-image-wrap {
   width: 100%;
-  height: 310px;
+  height: 520px;
   position: relative;
   overflow: hidden;
   background: #000;
 }
-.mag-cube-image-wrap img {
+.solo-mag-image-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.mag-cube-card:hover .mag-cube-image-wrap img {
-  transform: scale(1.08);
+.solo-mag-card:hover .solo-mag-image-wrap img {
+  transform: scale(1.04);
 }
-.mag-cube-badge {
+.solo-mag-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(8,8,8,0.88);
-  border: 1px solid var(--card-glow);
+  top: 16px;
+  left: 16px;
+  background: rgba(8,8,8,0.9);
+  border: 1px solid var(--card-glow, var(--accent));
   color: #fff;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 2px;
-  padding: 5px 10px;
-  border-radius: 3px;
-  backdrop-filter: blur(5px);
+  letter-spacing: 2.5px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  backdrop-filter: blur(6px);
 }
-.mag-cube-info {
-  padding: 18px 20px;
+.solo-mag-info {
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
-  background: linear-gradient(180deg, rgba(15,15,14,0.95), rgba(8,8,8,0.98));
+  background: linear-gradient(180deg, rgba(15,15,14,0.98), rgba(8,8,8,1));
 }
-.mag-cube-title {
+.solo-mag-title {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: clamp(26px, 3.2vw, 34px);
   color: var(--heading);
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 10px;
   letter-spacing: -0.5px;
 }
-.mag-cube-action {
+.solo-mag-quote {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+.solo-mag-action {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--card-glow);
+  letter-spacing: 2px;
+  color: var(--card-glow, var(--accent));
   font-weight: 700;
-  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
 }
-.mag-cube-action span {
-  font-size: 18px;
+.solo-mag-action span {
+  font-size: 20px;
   transition: transform 0.3s;
 }
-.mag-cube-card:hover .mag-cube-action span {
-  transform: translateX(6px);
+.solo-mag-card:hover .solo-mag-action span {
+  transform: translateX(8px);
 }
 
-/* STAGE CONTROLS */
-.stage-nav {
+/* CONTROLS */
+.solo-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   margin-top: 35px;
 }
-.stage-btn {
+.solo-btn {
   background: var(--surface);
   border: 1px solid var(--border-strong);
   color: var(--heading);
-  padding: 12px 24px;
+  padding: 12px 26px;
   font-family: var(--sans);
   font-size: 11px;
   letter-spacing: 2px;
@@ -438,19 +423,19 @@ td strong{color:var(--heading)}
   border-radius: var(--radius);
   transition: all 0.25s;
 }
-.stage-btn:hover {
+.solo-btn:hover {
   background: var(--accent);
   color: #080808;
   border-color: var(--accent);
   box-shadow: 0 0 20px rgba(201,166,70,0.4);
 }
-.stage-indicator {
+.solo-indicator {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-secondary);
   letter-spacing: 2px;
 }
-.stage-indicator strong {
+.solo-indicator strong {
   color: var(--heading);
 }
 
@@ -460,10 +445,7 @@ td strong{color:var(--heading)}
 .lead-image img{min-height:280px;max-height:440px}
 .story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .two-column{grid-template-columns:1fr}
-.stage-container { height: 440px; }
-.carousel-ring { width: 260px; height: 360px; }
-.mag-cube-card { width: 250px; height: 350px; }
-.mag-cube-image-wrap { height: 230px; }
+.solo-mag-image-wrap { height: 380px; }
 }
 @media(max-width:560px){
 .site-shell{width:calc(100% - 24px)}
@@ -479,10 +461,8 @@ td strong{color:var(--heading)}
 .story-card{max-width:100%}
 .section-heading{align-items:flex-start;flex-direction:column}
 .footer-grid{grid-template-columns:1fr}
-.stage-container { height: 380px; }
-.carousel-ring { width: 220px; height: 310px; }
-.mag-cube-card { width: 210px; height: 300px; }
-.mag-cube-image-wrap { height: 180px; }
+.solo-mag-image-wrap { height: 280px; }
+.solo-mag-info { padding: 20px; }
 }
 </style>
 </head>
@@ -530,7 +510,7 @@ td strong{color:var(--heading)}
   <a href="#lead">Lead Story</a><a href="#football">Football</a><a href="#fifa">Governance</a>
   <a href="#cricket">Cricket</a><a href="#tennis">Tennis</a><a href="#golf">Golf</a>
   <a href="#darts">Darts</a><a href="#basketball">Basketball</a><a href="#motorsport">Motorsport</a>
-  <a href="#roundup">Across Sport</a><a href="#perspective">Perspective</a><a href="#magazineTheater">3D Magazine</a>
+  <a href="#roundup">Across Sport</a><a href="#perspective">Perspective</a><a href="#magazineTheater">Magazine Collection</a>
  </div>
 </nav>
 
@@ -830,148 +810,41 @@ td strong{color:var(--heading)}
  </section>
 
  <!-- =========================================================
-      2040 FUTURE-GRADE 3D CYLINDER STEREOSCOPIC MAGAZINE THEATER
+      PHRINUSOMYIS™ MAGAZINE COLLECTION — SOLO 1-UP IMMERSIVE THEATER
       ========================================================= -->
  <section class="mag-theater" id="magazineTheater">
   <div class="mag-theater-inner">
    <div class="mag-theater-header">
     <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE COLLECTION</div>
     <h2>Ten Editions. A Living Collection of Sporting Perspectives.</h2>
-    <p>Explore the PHRINUSOMYIS™ Magazine collection through an immersive three-dimensional gallery. Discover each edition and enter its dedicated publication.</p>
+    <p>Explore the PHRINUSOMYIS™ Magazine collection through an immersive single-edition showcase. Discover each edition and click to enter its dedicated publication.</p>
    </div>
 
-   <!-- 3D STAGE -->
-   <div class="stage-container" id="stageContainer">
-    <div class="carousel-ring" id="carouselRing">
-     
-     <!-- 01 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-edgewise" style="--card-glow:#c9a646; --card-glow-soft:rgba(201,166,70,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 01</span>
-       <img src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="THE EDGEWISE" loading="lazy">
+   <!-- SOLO 1-UP DISPLAY STAGE -->
+   <div class="solo-stage" id="soloStage">
+    <a id="soloCard" class="solo-mag-card" href="https://phrinusomyis.com/magazine/the-edgewise">
+     <div class="solo-mag-image-wrap">
+      <span id="soloBadge" class="solo-mag-badge">Edition 01</span>
+      <img id="soloImg" src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="THE EDGEWISE" loading="lazy">
+     </div>
+     <div class="solo-mag-info">
+      <div>
+       <h3 id="soloTitle" class="solo-mag-title">THE EDGEWISE</h3>
+       <p id="soloQuote" class="solo-mag-quote">"Beyond the boundaries of the visible."</p>
       </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE EDGEWISE</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
+      <div class="solo-mag-action">
+       <span>Explore Edition Page</span>
+       <span>→</span>
       </div>
-     </a>
-
-     <!-- 02 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-big-story" style="--card-glow:#42bfd4; --card-glow-soft:rgba(66,191,212,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 02</span>
-       <img src="/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg" alt="THE BIG STORY" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE BIG STORY</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 03 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-apex" style="--card-glow:#e2c77e; --card-glow-soft:rgba(226,199,126,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 03</span>
-       <img src="/PHRINUSOMYIS-THE-APEX-Edition001.jpg" alt="THE APEX" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE APEX</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 04 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-chronicle" style="--card-glow:#c77b92; --card-glow-soft:rgba(199,123,146,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 04</span>
-       <img src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg" alt="THE CHRONICLE" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE CHRONICLE</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 05 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/lifeline" style="--card-glow:#55b987; --card-glow-soft:rgba(85,185,135,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 05</span>
-       <img src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg" alt="LIFELINE" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">LIFELINE</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 06 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-world-pulse" style="--card-glow:#3d91df; --card-glow-soft:rgba(61,145,223,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 06</span>
-       <img src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg" alt="THE WORLD PULSE" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE WORLD PULSE</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 07 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-mominants" style="--card-glow:#b85c70; --card-glow-soft:rgba(184,92,112,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 07</span>
-       <img src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg" alt="THE MOMINANTS™" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE MOMINANTS™</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 08 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-snow-journey" style="--card-glow:#8ce4f2; --card-glow-soft:rgba(140,228,242,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 08</span>
-       <img src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg" alt="THE SNOW JOURNEY" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE SNOW JOURNEY</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 09 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-powershift" style="--card-glow:#f2a154; --card-glow-soft:rgba(242,161,84,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 09</span>
-       <img src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg" alt="THE POWERSHIFT" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE POWERSHIFT</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-     <!-- 10 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-takeover" style="--card-glow:#a855f7; --card-glow-soft:rgba(168,85,247,0.25);">
-      <div class="mag-cube-image-wrap">
-       <span class="mag-cube-badge">Edition 10</span>
-       <img src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg" alt="THE TAKEOVER" loading="lazy">
-      </div>
-      <div class="mag-cube-info">
-       <h3 class="mag-cube-title">THE TAKEOVER</h3>
-       <div class="mag-cube-action">Explore Edition <span>→</span></div>
-      </div>
-     </a>
-
-    </div>
+     </div>
+    </a>
    </div>
 
    <!-- CONTROLS -->
-   <div class="stage-nav">
-    <button class="stage-btn" id="prevStage">← Rotate Left</button>
-    <div class="stage-indicator">Edition <strong id="activeMagNum">1</strong> of 10</div>
-    <button class="stage-btn" id="nextStage">Rotate Right →</button>
+   <div class="solo-nav">
+    <button class="solo-btn" id="prevMag">← Previous Edition</button>
+    <div class="solo-indicator">Edition <strong id="activeNum">1</strong> of 10</div>
+    <button class="solo-btn" id="nextMag">Next Edition →</button>
    </div>
   </div>
  </section>
@@ -1064,145 +937,158 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
 });
 
 /* =========================================================
-   2040 FUTURE-GRADE 3D STEREOSCOPIC CYLINDER ROTATION ENGINE
-   WITH REAL-TIME RAINBOW AMBIENT LIGHT SWITCHING
+   SOLO 1-UP IMMERSIVE MAGAZINE DATA & ENGINE WITH RAINBOW GLOW
    ========================================================= */
-(function() {
-  const ring = document.getElementById("carouselRing");
-  const cards = ring.querySelectorAll(".mag-cube-card");
-  const prevBtn = document.getElementById("prevStage");
-  const nextBtn = document.getElementById("nextStage");
-  const activeIndicator = document.getElementById("activeMagNum");
-  const container = document.getElementById("stageContainer");
-  const theater = document.getElementById("magazineTheater");
-
-  const totalCards = cards.length;
-  const theta = 360 / totalCards;
-  const getRadius = () => window.innerWidth < 768 ? 320 : 560;
-  let radius = getRadius();
-  let currentAngle = 0;
-  let isDragging = false;
-  let startX = 0;
-  let autoRotateTimer = null;
-
-  // Distinct ambient colors corresponding to each card's unique neon glow theme
-  const ambientColors = [
-    "rgba(201,166,70,0.18)",   // 01 Gold
-    "rgba(66,191,212,0.18)",   // 02 Cyan
-    "rgba(226,199,126,0.18)",  // 03 Champagne
-    "rgba(199,123,146,0.18)",  // 04 Rose
-    "rgba(85,185,135,0.18)",   // 05 Emerald
-    "rgba(61,145,223,0.18)",   // 06 Electric Blue
-    "rgba(184,92,112,0.18)",   // 07 Burgundy
-    "rgba(140,228,242,0.18)",  // 08 Ice White/Blue
-    "rgba(242,161,84,0.18)",   // 09 Amber
-    "rgba(168,85,247,0.18)"    // 10 Violet
-  ];
-
-  function positionCards() {
-    radius = getRadius();
-    cards.forEach((card, i) => {
-      const angle = theta * i;
-      card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
-    });
+const magazines = [
+  {
+    num: "01",
+    title: "THE EDGEWISE",
+    quote: "Beyond the boundaries of the visible.",
+    url: "https://phrinusomyis.com/magazine/the-edgewise",
+    img: "/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg",
+    glow: "#c9a646",
+    glowSoft: "rgba(201,166,70,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #1f1b12 0%, #070707 85%)"
+  },
+  {
+    num: "02",
+    title: "THE BIG STORY",
+    quote: "Where moments become history.",
+    url: "https://phrinusomyis.com/magazine/the-big-story",
+    img: "/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg",
+    glow: "#42bfd4",
+    glowSoft: "rgba(66,191,212,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #0d222b 0%, #070707 85%)"
+  },
+  {
+    num: "03",
+    title: "THE APEX",
+    quote: "At the limits of what is possible.",
+    url: "https://phrinusomyis.com/magazine/the-apex",
+    img: "/PHRINUSOMYIS-THE-APEX-Edition001.jpg",
+    glow: "#e2c77e",
+    glowSoft: "rgba(226,199,126,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #242013 0%, #070707 85%)"
+  },
+  {
+    num: "04",
+    title: "THE CHRONICLE",
+    quote: "Time leaves nothing without a trace.",
+    url: "https://phrinusomyis.com/magazine/the-chronicle",
+    img: "/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg",
+    glow: "#c77b92",
+    glowSoft: "rgba(199,123,146,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #2b151d 0%, #070707 85%)"
+  },
+  {
+    num: "05",
+    title: "LIFELINE",
+    quote: "The strength behind every tomorrow.",
+    url: "https://phrinusomyis.com/magazine/lifeline",
+    img: "/PHRINUSOMYIS-LIFELINE-Edition001.jpg",
+    glow: "#55b987",
+    glowSoft: "rgba(85,185,135,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #112d20 0%, #070707 85%)"
+  },
+  {
+    num: "06",
+    title: "THE WORLD PULSE",
+    quote: "One world, countless stories.",
+    url: "https://phrinusomyis.com/magazine/the-world-pulse",
+    img: "/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg",
+    glow: "#3d91df",
+    glowSoft: "rgba(61,145,223,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #0f2238 0%, #070707 85%)"
+  },
+  {
+    num: "07",
+    title: "THE MOMINANTS™",
+    quote: "The marks that time cannot erase.",
+    url: "https://phrinusomyis.com/magazine/the-mominants",
+    img: "/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg",
+    glow: "#b85c70",
+    glowSoft: "rgba(184,92,112,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #2c1219 0%, #070707 85%)"
+  },
+  {
+    num: "08",
+    title: "THE SNOW JOURNEY",
+    quote: "Where the extraordinary meets the unknown.",
+    url: "https://phrinusomyis.com/magazine/the-snow-journey",
+    img: "/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg",
+    glow: "#8ce4f2",
+    glowSoft: "rgba(140,228,242,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #102e35 0%, #070707 85%)"
+  },
+  {
+    num: "09",
+    title: "THE POWERSHIFT",
+    quote: "When influence finds a new direction.",
+    url: "https://phrinusomyis.com/magazine/the-powershift",
+    img: "/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg",
+    glow: "#f2a154",
+    glowSoft: "rgba(242,161,84,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #301d10 0%, #070707 85%)"
+  },
+  {
+    num: "10",
+    title: "THE TAKEOVER",
+    quote: "The moment everything changes.",
+    url: "https://phrinusomyis.com/magazine/the-takeover",
+    img: "/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg",
+    glow: "#a855f7",
+    glowSoft: "rgba(168,85,247,0.35)",
+    bg: "radial-gradient(circle at 50% 50%, #231238 0%, #070707 85%)"
   }
+];
 
-  function updateCarousel() {
-    ring.style.transform = `rotateY(${currentAngle}deg)`;
-    let normalized = (-currentAngle % 360);
-    if (normalized < 0) normalized += 360;
-    let activeIndex = Math.round(normalized / theta) % totalCards;
-    activeIndicator.textContent = activeIndex + 1;
+let currentIndex = 0;
+const theater = document.getElementById("magazineTheater");
+const soloCard = document.getElementById("soloCard");
+const soloBadge = document.getElementById("soloBadge");
+const soloImg = document.getElementById("soloImg");
+const soloTitle = document.getElementById("soloTitle");
+const soloQuote = document.getElementById("soloQuote");
+const activeNum = document.getElementById("activeNum");
+const prevBtn = document.getElementById("prevMag");
+const nextBtn = document.getElementById("nextMag");
 
-    // Dynamically shift the ambient backdrop lighting to match the active slide's unique color
-    theater.style.setProperty("--theater-ambient", ambientColors[activeIndex]);
-  }
+function renderMagazine(index) {
+  const mag = magazines[index];
+  
+  // Trigger smooth transition animation
+  soloCard.style.animation = "none";
+  soloCard.offsetHeight; // trigger reflow
+  soloCard.style.animation = "cardFadeIn 0.5s ease";
 
-  function rotateNext() {
-    currentAngle -= theta;
-    updateCarousel();
-  }
+  soloCard.href = mag.url;
+  soloBadge.textContent = `Edition ${mag.num}`;
+  soloBadge.style.borderColor = mag.glow;
+  soloImg.src = mag.img;
+  soloImg.alt = mag.title;
+  soloTitle.textContent = mag.title;
+  soloQuote.textContent = `"${mag.quote}"`;
+  activeNum.textContent = mag.num;
 
-  function rotatePrev() {
-    currentAngle += theta;
-    updateCarousel();
-  }
+  // Apply unique rainbow glow colors and dynamic background lighting
+  theater.style.setProperty("--theater-bg", mag.bg);
+  theater.style.setProperty("--theater-glow", mag.glowSoft);
+  soloCard.style.setProperty("--card-glow", mag.glow);
+  soloCard.style.setProperty("--card-glow-soft", mag.glowSoft);
+}
 
-  prevBtn.addEventListener("click", () => { rotatePrev(); resetAutoRotate(); });
-  nextBtn.addEventListener("click", () => { rotateNext(); resetAutoRotate(); });
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + magazines.length) % magazines.length;
+  renderMagazine(currentIndex);
+});
 
-  container.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    stopAutoRotate();
-  });
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % magazines.length;
+  renderMagazine(currentIndex);
+});
 
-  window.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    const deltaX = e.clientX - startX;
-    startX = e.clientX;
-    currentAngle += deltaX * 0.4;
-    updateCarousel();
-  });
-
-  window.addEventListener("mouseup", () => {
-    if (isDragging) {
-      isDragging = false;
-      let remainder = currentAngle % theta;
-      currentAngle -= remainder;
-      updateCarousel();
-      startAutoRotate();
-    }
-  });
-
-  container.addEventListener("touchstart", (e) => {
-    isDragging = true;
-    startX = e.touches[0].clientX;
-    stopAutoRotate();
-  }, {passive: true});
-
-  window.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    const deltaX = e.touches[0].clientX - startX;
-    startX = e.touches[0].clientX;
-    currentAngle += deltaX * 0.4;
-    updateCarousel();
-  }, {passive: true});
-
-  window.addEventListener("touchend", () => {
-    if (isDragging) {
-      isDragging = false;
-      let remainder = currentAngle % theta;
-      currentAngle -= remainder;
-      updateCarousel();
-      startAutoRotate();
-    }
-  });
-
-  function startAutoRotate() {
-    stopAutoRotate();
-    autoRotateTimer = setInterval(() => {
-      if (!isDragging) {
-        rotateNext();
-      }
-    }, 4500);
-  }
-
-  function stopAutoRotate() {
-    if (autoRotateTimer) {
-      clearInterval(autoRotateTimer);
-      autoRotateTimer = null;
-    }
-  }
-
-  container.addEventListener("mouseenter", stopAutoRotate);
-  container.addEventListener("mouseleave", startAutoRotate);
-  window.addEventListener("resize", positionCards);
-
-  positionCards();
-  updateCarousel();
-  startAutoRotate();
-})();
+// Initialize first magazine
+renderMagazine(0);
 
 const themes={
  black:{bg:"#080808",surface:"#111111",alt:"#191919",raised:"#202020",text:"#f3f0e8",muted:"#b9b4a8",heading:"#e6cb7a",accent:"#c9a646",border:"rgba(201,166,70,.30)",strong:"rgba(201,166,70,.60)",intro:"#17150f",label:"#282113",labelText:"#e6cb7a",button:"#c9a646",buttonText:"#080808"},
