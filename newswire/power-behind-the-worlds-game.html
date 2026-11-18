@@ -255,23 +255,25 @@ td strong{color:var(--heading)}
 .story-photo{width:100%;height:175px;object-fit:cover;border-bottom:1px solid var(--border)}
 
 /* =========================================================
-   2040 FUTURE-GRADE 3D CYLINDER STEREOSCOPIC MAGAZINE SHOWCASE
+   2040 FUTURE-GRADE 3D CYLINDER STEREOSCOPIC MAGAZINE THEATER
+   WITH UNIQUE RAINBOW HUE DYNAMIC LIGHTING PER CARD
    ========================================================= */
 .mag-theater {
-  padding: 80px 0 90px;
-  background: radial-gradient(circle at 50% 50%, #15130f 0%, #080808 80%);
+  padding: 85px 0 95px;
+  background: radial-gradient(circle at 50% 50%, #171510 0%, #070707 80%);
   border-top: 1px solid var(--border-strong);
   border-bottom: 1px solid var(--border-strong);
   position: relative;
   overflow: hidden;
-  perspective: 1800px;
+  perspective: 2000px;
 }
 .mag-theater::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(201,166,70,0.12), transparent 60%);
+  background: radial-gradient(circle at 50% 35%, rgba(201,166,70,0.15), transparent 65%);
   pointer-events: none;
+  transition: background 0.8s ease;
 }
 .mag-theater-inner {
   width: min(100% - 40px, 1400px);
@@ -281,7 +283,7 @@ td strong{color:var(--heading)}
 }
 .mag-theater-header {
   text-align: center;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto 50px;
 }
 .mag-theater-header .eyebrow {
@@ -293,7 +295,7 @@ td strong{color:var(--heading)}
 }
 .mag-theater-header h2 {
   font-family: var(--serif);
-  font-size: clamp(32px, 5vw, 54px);
+  font-size: clamp(32px, 5vw, 56px);
   color: var(--heading);
   margin: 12px 0 15px;
   font-weight: 500;
@@ -309,7 +311,7 @@ td strong{color:var(--heading)}
 /* 3D ROTATING STEREOSCOPIC STAGE */
 .stage-container {
   width: 100%;
-  height: 520px;
+  height: 540px;
   position: relative;
   display: flex;
   align-items: center;
@@ -325,10 +327,10 @@ td strong{color:var(--heading)}
   height: 440px;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 0.1s cubic-bezier(0.1, 0.8, 0.2, 1);
+  transition: transform 0.15s cubic-bezier(0.1, 0.8, 0.2, 1);
 }
 
-/* INDIVIDUAL 3D MAGAZINE SLIDE CARD */
+/* INDIVIDUAL 3D MAGAZINE SLIDE CARD WITH RAINBOW GLOW THEMES */
 .mag-cube-card {
   position: absolute;
   width: 300px;
@@ -337,19 +339,19 @@ td strong{color:var(--heading)}
   top: 5px;
   transform-style: preserve-3d;
   background: linear-gradient(145deg, #181714, #0e0e0d);
-  border: 1px solid rgba(201,166,70,0.45);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.85), inset 0 0 25px rgba(201,166,70,0.1);
-  border-radius: 6px;
+  border: 1px solid var(--card-glow, rgba(201,166,70,0.5));
+  box-shadow: 0 30px 60px rgba(0,0,0,0.85), 0 0 25px var(--card-glow-soft, rgba(201,166,70,0.15));
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  transition: border-color 0.4s, box-shadow 0.4s;
+  transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
   backface-visibility: hidden;
 }
 .mag-cube-card:hover {
-  border-color: var(--heading);
-  box-shadow: 0 35px 80px rgba(201,166,70,0.3), inset 0 0 35px rgba(201,166,70,0.25);
+  border-color: var(--card-glow);
+  box-shadow: 0 35px 85px rgba(0,0,0,0.9), 0 0 45px var(--card-glow);
 }
 .mag-cube-image-wrap {
   width: 100%;
@@ -371,9 +373,9 @@ td strong{color:var(--heading)}
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(8,8,8,0.85);
-  border: 1px solid var(--accent);
-  color: var(--heading);
+  background: rgba(8,8,8,0.88);
+  border: 1px solid var(--card-glow);
+  color: #fff;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -404,7 +406,7 @@ td strong{color:var(--heading)}
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--accent);
+  color: var(--card-glow);
   font-weight: 700;
   margin-top: 10px;
 }
@@ -528,7 +530,7 @@ td strong{color:var(--heading)}
   <a href="#lead">Lead Story</a><a href="#football">Football</a><a href="#fifa">Governance</a>
   <a href="#cricket">Cricket</a><a href="#tennis">Tennis</a><a href="#golf">Golf</a>
   <a href="#darts">Darts</a><a href="#basketball">Basketball</a><a href="#motorsport">Motorsport</a>
-  <a href="#roundup">Across Sport</a><a href="#perspective">Perspective</a><a href="#magazineTheater">3D Showcase</a>
+  <a href="#roundup">Across Sport</a><a href="#perspective">Perspective</a><a href="#magazineTheater">3D Magazine</a>
  </div>
 </nav>
 
@@ -833,9 +835,9 @@ td strong{color:var(--heading)}
  <section class="mag-theater" id="magazineTheater">
   <div class="mag-theater-inner">
    <div class="mag-theater-header">
-    <div class="eyebrow">PHRINUSOMYIS™ STEREOSCOPIC ARCHIVE</div>
-    <h2>The 10-Edition 3D Magazine Cylinder</h2>
-    <p>Experience the future of digital publishing. Click or drag to rotate the cylindrical gallery in 3D space, and click any edition to instantly open its dedicated publication page.</p>
+    <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE COLLECTION</div>
+    <h2>Ten Editions. A Living Collection of Sporting Perspectives.</h2>
+    <p>Explore the PHRINUSOMYIS™ Magazine collection through an immersive three-dimensional gallery. Discover each edition and enter its dedicated publication.</p>
    </div>
 
    <!-- 3D STAGE -->
@@ -843,7 +845,7 @@ td strong{color:var(--heading)}
     <div class="carousel-ring" id="carouselRing">
      
      <!-- 01 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-edgewise">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-edgewise" style="--card-glow:#c9a646; --card-glow-soft:rgba(201,166,70,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 01</span>
        <img src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="THE EDGEWISE" loading="lazy">
@@ -855,7 +857,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 02 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-big-story">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-big-story" style="--card-glow:#42bfd4; --card-glow-soft:rgba(66,191,212,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 02</span>
        <img src="/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg" alt="THE BIG STORY" loading="lazy">
@@ -867,7 +869,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 03 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-apex">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-apex" style="--card-glow:#e2c77e; --card-glow-soft:rgba(226,199,126,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 03</span>
        <img src="/PHRINUSOMYIS-THE-APEX-Edition001.jpg" alt="THE APEX" loading="lazy">
@@ -879,7 +881,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 04 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-chronicle">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-chronicle" style="--card-glow:#c77b92; --card-glow-soft:rgba(199,123,146,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 04</span>
        <img src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg" alt="THE CHRONICLE" loading="lazy">
@@ -891,7 +893,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 05 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/lifeline">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/lifeline" style="--card-glow:#55b987; --card-glow-soft:rgba(85,185,135,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 05</span>
        <img src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg" alt="LIFELINE" loading="lazy">
@@ -903,7 +905,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 06 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-world-pulse">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-world-pulse" style="--card-glow:#3d91df; --card-glow-soft:rgba(61,145,223,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 06</span>
        <img src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg" alt="THE WORLD PULSE" loading="lazy">
@@ -915,7 +917,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 07 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-mominants">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-mominants" style="--card-glow:#b85c70; --card-glow-soft:rgba(184,92,112,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 07</span>
        <img src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg" alt="THE MOMINANTS™" loading="lazy">
@@ -927,7 +929,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 08 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-snow-journey">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-snow-journey" style="--card-glow:#8ce4f2; --card-glow-soft:rgba(140,228,242,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 08</span>
        <img src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg" alt="THE SNOW JOURNEY" loading="lazy">
@@ -939,7 +941,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 09 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-powershift">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-powershift" style="--card-glow:#f2a154; --card-glow-soft:rgba(242,161,84,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 09</span>
        <img src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg" alt="THE POWERSHIFT" loading="lazy">
@@ -951,7 +953,7 @@ td strong{color:var(--heading)}
      </a>
 
      <!-- 10 -->
-     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-takeover">
+     <a class="mag-cube-card" href="https://phrinusomyis.com/magazine/the-takeover" style="--card-glow:#a855f7; --card-glow-soft:rgba(168,85,247,0.25);">
       <div class="mag-cube-image-wrap">
        <span class="mag-cube-badge">Edition 10</span>
        <img src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg" alt="THE TAKEOVER" loading="lazy">
@@ -1062,7 +1064,8 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
 });
 
 /* =========================================================
-   204 FUTURE-GRADE 3D STEREOSCOPIC CYLINDER ROTATION ENGINE
+   2040 FUTURE-GRADE 3D STEREOSCOPIC CYLINDER ROTATION ENGINE
+   WITH REAL-TIME RAINBOW AMBIENT LIGHT SWITCHING
    ========================================================= */
 (function() {
   const ring = document.getElementById("carouselRing");
@@ -1071,16 +1074,30 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
   const nextBtn = document.getElementById("nextStage");
   const activeIndicator = document.getElementById("activeMagNum");
   const container = document.getElementById("stageContainer");
+  const theater = document.getElementById("magazineTheater");
 
   const totalCards = cards.length;
   const theta = 360 / totalCards;
-  // Dynamic radius based on screen width
-  const getRadius = () => window.innerWidth < 768 ? 320 : 540;
+  const getRadius = () => window.innerWidth < 768 ? 320 : 560;
   let radius = getRadius();
   let currentAngle = 0;
   let isDragging = false;
   let startX = 0;
   let autoRotateTimer = null;
+
+  // Distinct ambient colors corresponding to each card's unique neon glow theme
+  const ambientColors = [
+    "rgba(201,166,70,0.18)",   // 01 Gold
+    "rgba(66,191,212,0.18)",   // 02 Cyan
+    "rgba(226,199,126,0.18)",  // 03 Champagne
+    "rgba(199,123,146,0.18)",  // 04 Rose
+    "rgba(85,185,135,0.18)",   // 05 Emerald
+    "rgba(61,145,223,0.18)",   // 06 Electric Blue
+    "rgba(184,92,112,0.18)",   // 07 Burgundy
+    "rgba(140,228,242,0.18)",  // 08 Ice White/Blue
+    "rgba(242,161,84,0.18)",   // 09 Amber
+    "rgba(168,85,247,0.18)"    // 10 Violet
+  ];
 
   function positionCards() {
     radius = getRadius();
@@ -1092,11 +1109,13 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
 
   function updateCarousel() {
     ring.style.transform = `rotateY(${currentAngle}deg)`;
-    // Calculate active index (1 to 10)
     let normalized = (-currentAngle % 360);
     if (normalized < 0) normalized += 360;
     let activeIndex = Math.round(normalized / theta) % totalCards;
     activeIndicator.textContent = activeIndex + 1;
+
+    // Dynamically shift the ambient backdrop lighting to match the active slide's unique color
+    theater.style.setProperty("--theater-ambient", ambientColors[activeIndex]);
   }
 
   function rotateNext() {
@@ -1112,7 +1131,6 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
   prevBtn.addEventListener("click", () => { rotatePrev(); resetAutoRotate(); });
   nextBtn.addEventListener("click", () => { rotateNext(); resetAutoRotate(); });
 
-  // Mouse / Touch Drag Support for 3D Space
   container.addEventListener("mousedown", (e) => {
     isDragging = true;
     startX = e.clientX;
@@ -1130,7 +1148,6 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
   window.addEventListener("mouseup", () => {
     if (isDragging) {
       isDragging = false;
-      // Snap to nearest card angle
       let remainder = currentAngle % theta;
       currentAngle -= remainder;
       updateCarousel();
@@ -1138,7 +1155,6 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
     }
   });
 
-  // Touch support for mobile
   container.addEventListener("touchstart", (e) => {
     isDragging = true;
     startX = e.touches[0].clientX;
@@ -1163,7 +1179,6 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
     }
   });
 
-  // Auto rotation engine
   function startAutoRotate() {
     stopAutoRotate();
     autoRotateTimer = setInterval(() => {
@@ -1182,10 +1197,8 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
 
   container.addEventListener("mouseenter", stopAutoRotate);
   container.addEventListener("mouseleave", startAutoRotate);
-
   window.addEventListener("resize", positionCards);
 
-  // Initialize
   positionCards();
   updateCarousel();
   startAutoRotate();
@@ -1241,10 +1254,8 @@ try{setTheme(localStorage.getItem("phrinusomyis-reading-theme")||"black")}catch(
     const LANGUAGE_SELECTOR = "languageSelect";
     let translateInitialized = false;
     let languageListenerAttached = false;
-    let protectionObserver = null;
     let retryCount = 0;
     let retryTimer = null;
-
     const MAX_RETRIES = 40;
     const RETRY_INTERVAL = 300;
 
@@ -1261,27 +1272,6 @@ try{setTheme(localStorage.getItem("phrinusomyis-reading-theme")||"black")}catch(
         body.style.setProperty("position", "static", "important");
     }
 
-    function removeGooglePopouts() {
-        const selectors = [
-            ".goog-te-banner-frame", "iframe.goog-te-banner-frame", ".goog-te-balloon-frame",
-            ".goog-te-menu-frame", ".goog-tooltip", ".goog-tooltip:hover", ".goog-te-ftab",
-            ".goog-te-gadget-icon", ".VIpgJd-ZVi9od-ORHb-OEVmcd", ".VIpgJd-ZVi9od-ORHb",
-            ".VIpgJd-ZVi9od-ORHb-KE6vqe", ".VIpgJd-ZVi9od-aZ2wEe-wOHMyf", ".VIpgJd-ZVi9od-xl07Ob-lTBxed",
-            ".VIpgJd-yAWNEb-L7lbkb", ".VIpgJd-yAWNEb-hvhgNd", ".VIpgJd-ZVi9od-vH1Gmf",
-            ".VIpgJd-ZVi9od-vH1Gmf-ibnC6b", ".skiptranslate iframe"
-        ];
-        selectors.forEach(function (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                if (element.closest && element.closest("#" + GOOGLE_TRANSLATE_CONTAINER)) return;
-                element.style.setProperty("display", "none", "important");
-                element.style.setProperty("visibility", "hidden", "important");
-                element.style.setProperty("opacity", "0", "important");
-                element.style.setProperty("pointer-events", "none", "important");
-            });
-        });
-        restorePagePosition();
-    }
-
     function getGoogleLanguageControl() {
         return document.querySelector("#" + GOOGLE_TRANSLATE_CONTAINER + " .goog-te-combo") || document.querySelector(".goog-te-combo");
     }
@@ -1293,63 +1283,39 @@ try{setTheme(localStorage.getItem("phrinusomyis-reading-theme")||"black")}catch(
         if (!googleControl) return false;
         const supportedLanguages = translateLanguages.split(",");
         if (!supportedLanguages.includes(language)) return false;
-
         if (selector) selector.value = language;
         googleControl.value = language;
         googleControl.dispatchEvent(new Event("change", { bubbles: true }));
-
-        try {
-            sessionStorage.setItem("phrinusomyis-google-language", language);
-        } catch (error) {}
         return true;
     }
 
     function connectLanguageSelector() {
         const selector = document.getElementById(LANGUAGE_SELECTOR);
         if (!selector || languageListenerAttached) return;
-
         selector.addEventListener("change", function () {
             const selectedLanguage = selector.value;
             if (selectedLanguage === "en") {
-                restoreOriginalLanguage();
+                window.location.reload();
                 return;
             }
-            if (!setGoogleLanguage(selectedLanguage)) {
-                retryLanguageSelection(selectedLanguage);
-            }
+            setGoogleLanguage(selectedLanguage);
         });
         languageListenerAttached = true;
-    }
-
-    function retryLanguageSelection(language) {
-        let attempts = 0;
-        const attempt = function () {
-            attempts++;
-            if (setGoogleLanguage(language)) return;
-            if (attempts < MAX_RETRIES) {
-                window.setTimeout(attempt, RETRY_INTERVAL);
-            }
-        };
-        attempt();
-    }
-
-    function restoreOriginalLanguage() {
-        const selector = document.getElementById(LANGUAGE_SELECTOR);
-        if (selector) selector.value = "en";
-        const googleControl = getGoogleLanguageControl();
-        if (googleControl) {
-            googleControl.value = "en";
-            googleControl.dispatchEvent(new Event("change", { bubbles: true }));
-        }
-        document.cookie = "googtrans=/en/en;path=/;SameSite=Lax";
-        window.location.reload();
     }
 
     function initializeGoogleTranslate() {
         const container = document.getElementById(GOOGLE_TRANSLATE_CONTAINER);
         if (!container) return;
         if (!window.google || !window.google.translate || !window.google.translate.TranslateElement) {
-            startGoogleRetry();
+            if (retryTimer || retryCount >= MAX_RETRIES) return;
+            retryTimer = window.setInterval(function () {
+                retryCount++;
+                if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+                    window.clearInterval(retryTimer);
+                    retryTimer = null;
+                    initializeGoogleTranslate();
+                }
+            }, RETRY_INTERVAL);
             return;
         }
         if (translateInitialized) {
@@ -1366,26 +1332,7 @@ try{setTheme(localStorage.getItem("phrinusomyis-reading-theme")||"black")}catch(
             translateInitialized = true;
             connectLanguageSelector();
             restorePagePosition();
-        } catch (error) {
-            startGoogleRetry();
-        }
-    }
-
-    function startGoogleRetry() {
-        if (retryTimer || translateInitialized) return;
-        retryTimer = window.setInterval(function () {
-            retryCount++;
-            if (window.google && window.google.translate && window.google.translate.TranslateElement) {
-                window.clearInterval(retryTimer);
-                retryTimer = null;
-                initializeGoogleTranslate();
-                return;
-            }
-            if (retryCount >= MAX_RETRIES) {
-                window.clearInterval(retryTimer);
-                retryTimer = null;
-            }
-        }, RETRY_INTERVAL);
+        } catch (error) {}
     }
 
     window.googleTranslateElementInit = function () {
