@@ -257,6 +257,84 @@ td strong{color:var(--heading)}
 .editorial-photo img{width:100%;height:auto;max-height:520px;object-fit:cover;cursor:zoom-in}
 .editorial-photo figcaption{padding:10px 13px;color:var(--text-secondary);font-size:10px;line-height:1.5}
 .story-photo{width:100%;height:175px;object-fit:cover;border-bottom:1px solid var(--border)}
+
+/* =========================================================
+   MAGAZINE SECTION STYLES (INTEGRATED)
+   ========================================================= */
+.magazine-showcase-section {
+  padding: 50px 0 60px;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+}
+.magazine-container {
+  width: min(100% - 44px, var(--content));
+  margin: auto;
+}
+.magazine-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+.magazine-intro h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--heading);
+  margin: 10px 0;
+  font-weight: 500;
+}
+.magazine-intro p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+.mag-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.mag-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+.mag-cover {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border: 1px solid rgba(201,166,70,0.2);
+  margin-bottom: 12px;
+  background: #000;
+}
+.mag-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+.mag-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--heading);
+  margin: 5px 0 0;
+  line-height: 1.2;
+}
+
+@media(max-width: 1024px) {
+  .magazine-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media(max-width: 600px) {
+  .magazine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
+
 @media(max-width:850px){
 .site-shell{width:calc(100% - 30px)}
 .lead-layout{grid-template-columns:1fr}
@@ -338,7 +416,7 @@ a{color:#111}
   <a href="#lead">Lead Story</a><a href="#football">Football</a><a href="#fifa">Governance</a>
   <a href="#cricket">Cricket</a><a href="#tennis">Tennis</a><a href="#golf">Golf</a>
   <a href="#darts">Darts</a><a href="#basketball">Basketball</a><a href="#motorsport">Motorsport</a>
-  <a href="#roundup">Across Sport</a><a href="#perspective">Perspective</a>
+  <a href="#roundup">Across Sport</a><a href="#perspective">Perspective</a><a href="#magazineCollection">Magazine</a>
  </div>
 </nav>
 
@@ -634,6 +712,69 @@ a{color:#111}
     <li><span>Motorsport</span><strong>Las Vegas, Qatar and Abu Dhabi</strong></li>
     <li><span>Golf</span><strong>Tour membership and post-LIV arrangements</strong></li>
    </ul>
+  </div>
+ </section>
+
+ <!-- TEN MAGAZINE EDITIONS SHOWCASE SECTION -->
+ <section class="magazine-showcase-section" id="magazineCollection">
+  <div class="magazine-container">
+   <div class="magazine-intro">
+    <div class="eyebrow">PHRINUSOMYIS™ PUBLICATIONS</div>
+    <h2>The Magazine Collection · Edition 001</h2>
+    <p>Explore the ten distinctive editorial editions presented across the PHRINUSOMYIS™ digital magazine library.</p>
+   </div>
+   <div class="magazine-grid">
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-edgewise">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg" alt="THE EDGEWISE" loading="lazy">
+     <span class="mag-number">Edition 01</span>
+     <h3 class="mag-title">THE EDGEWISE</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-big-story">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg" alt="THE BIG STORY" loading="lazy">
+     <span class="mag-number">Edition 02</span>
+     <h3 class="mag-title">THE BIG STORY</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-apex">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-APEX-Edition001.jpg" alt="THE APEX" loading="lazy">
+     <span class="mag-number">Edition 03</span>
+     <h3 class="mag-title">THE APEX</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-chronicle">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg" alt="THE CHRONICLE" loading="lazy">
+     <span class="mag-number">Edition 04</span>
+     <h3 class="mag-title">THE CHRONICLE</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/lifeline">
+     <img class="mag-cover" src="/PHRINUSOMYIS-LIFELINE-Edition001.jpg" alt="LIFELINE" loading="lazy">
+     <span class="mag-number">Edition 05</span>
+     <h3 class="mag-title">LIFELINE</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-world-pulse">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg" alt="THE WORLD PULSE" loading="lazy">
+     <span class="mag-number">Edition 06</span>
+     <h3 class="mag-title">THE WORLD PULSE</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-mominants">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg" alt="THE MOMINANTS™" loading="lazy">
+     <span class="mag-number">Edition 07</span>
+     <h3 class="mag-title">THE MOMINANTS™</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-snow-journey">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg" alt="THE SNOW JOURNEY" loading="lazy">
+     <span class="mag-number">Edition 08</span>
+     <h3 class="mag-title">THE SNOW JOURNEY</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-powershift">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg" alt="THE POWERSHIFT" loading="lazy">
+     <span class="mag-number">Edition 09</span>
+     <h3 class="mag-title">THE POWERSHIFT</h3>
+    </a>
+    <a class="mag-card" href="https://phrinusomyis.com/magazine/the-takeover">
+     <img class="mag-cover" src="/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg" alt="THE TAKEOVER" loading="lazy">
+     <span class="mag-number">Edition 10</span>
+     <h3 class="mag-title">THE TAKEOVER</h3>
+    </a>
+   </div>
   </div>
  </section>
 
