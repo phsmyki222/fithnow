@@ -248,27 +248,28 @@ td strong{color:var(--heading)}
 .story-photo{width:100%;height:175px;object-fit:cover;border-bottom:1px solid var(--border)}
 
 /* =========================================================
-   SOLO IMMERSIVE 1-UP MAGAZINE THEATER WITH UNIQUE RAINBOW AMBIENT GLOW
+   SOLO IMMERSIVE 1-UP MAGAZINE THEATER WITH UNRESTRICTED FULL-CONTAIN IMAGE
+   & AUTOMATIC SLIDING WITH 200 RICH RAINBOW COLOR PALETTE
    ========================================================= */
 .mag-theater {
-  padding: 90px 0 110px;
+  padding: 100px 0 120px;
   background: var(--theater-bg, radial-gradient(circle at 50% 50%, #171510 0%, #070707 85%));
   border-top: 1px solid var(--border-strong);
   border-bottom: 1px solid var(--border-strong);
   position: relative;
   overflow: hidden;
-  transition: background 0.6s ease;
+  transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mag-theater::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 40%, var(--theater-glow, rgba(201,166,70,0.22)), transparent 70%);
+  background: radial-gradient(circle at 50% 40%, var(--theater-glow, rgba(201,166,70,0.25)), transparent 75%);
   pointer-events: none;
-  transition: background 0.6s ease;
+  transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mag-theater-inner {
-  width: min(100% - 40px, 900px);
+  width: min(100% - 40px, 850px);
   margin: auto;
   position: relative;
   z-index: 2;
@@ -276,7 +277,7 @@ td strong{color:var(--heading)}
 .mag-theater-header {
   text-align: center;
   max-width: 780px;
-  margin: 0 auto 45px;
+  margin: 0 auto 50px;
 }
 .mag-theater-header .eyebrow {
   color: var(--accent);
@@ -300,7 +301,7 @@ td strong{color:var(--heading)}
   line-height: 1.6;
 }
 
-/* SOLO 1-UP MAGAZINE SHOWCASE STAGE */
+/* SOLO 1-UP DISPLAY STAGE */
 .solo-stage {
   width: 100%;
   position: relative;
@@ -310,47 +311,52 @@ td strong{color:var(--heading)}
 }
 .solo-mag-card {
   width: 100%;
-  max-width: 580px;
+  max-width: 520px;
   background: linear-gradient(145deg, #181714, #0e0e0d);
   border: 2px solid var(--card-glow, var(--accent));
-  box-shadow: 0 35px 80px rgba(0,0,0,0.9), 0 0 50px var(--card-glow-soft, rgba(201,166,70,0.3));
-  border-radius: 10px;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.95), 0 0 60px var(--card-glow-soft, rgba(201,166,70,0.35));
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  animation: cardFadeIn 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s, box-shadow 0.5s;
+  animation: cardFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @keyframes cardFadeIn {
-  from { opacity: 0; transform: translateY(15px) scale(0.98); }
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 .solo-mag-card:hover {
-  box-shadow: 0 40px 100px rgba(0,0,0,0.95), 0 0 70px var(--card-glow, var(--accent));
-  transform: translateY(-4px);
+  box-shadow: 0 50px 110px rgba(0,0,0,0.98), 0 0 85px var(--card-glow, var(--accent));
+  transform: translateY(-6px);
 }
+/* FULL UNRESTRICTED IMAGE DISPLAY CONTAINER */
 .solo-mag-image-wrap {
   width: 100%;
-  height: 520px;
+  height: 640px;
   position: relative;
   overflow: hidden;
   background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .solo-mag-image-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Guarantees 100% full picture is shown without cutting off any part */
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #050505;
 }
 .solo-mag-card:hover .solo-mag-image-wrap img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 .solo-mag-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(8,8,8,0.9);
+  top: 18px;
+  left: 18px;
+  background: rgba(8,8,8,0.92);
   border: 1px solid var(--card-glow, var(--accent));
   color: #fff;
   font-size: 11px;
@@ -359,9 +365,10 @@ td strong{color:var(--heading)}
   padding: 6px 14px;
   border-radius: 4px;
   backdrop-filter: blur(6px);
+  z-index: 3;
 }
 .solo-mag-info {
-  padding: 30px;
+  padding: 32px 36px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -380,7 +387,7 @@ td strong{color:var(--heading)}
   font-size: 17px;
   color: var(--text-secondary);
   font-style: italic;
-  margin: 0 0 20px;
+  margin: 0 0 22px;
   line-height: 1.5;
 }
 .solo-mag-action {
@@ -393,7 +400,7 @@ td strong{color:var(--heading)}
   color: var(--card-glow, var(--accent));
   font-weight: 700;
   border-top: 1px solid var(--border);
-  padding-top: 18px;
+  padding-top: 20px;
 }
 .solo-mag-action span {
   font-size: 20px;
@@ -409,7 +416,7 @@ td strong{color:var(--heading)}
   align-items: center;
   justify-content: center;
   gap: 24px;
-  margin-top: 35px;
+  margin-top: 40px;
 }
 .solo-btn {
   background: var(--surface);
@@ -445,7 +452,7 @@ td strong{color:var(--heading)}
 .lead-image img{min-height:280px;max-height:440px}
 .story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .two-column{grid-template-columns:1fr}
-.solo-mag-image-wrap { height: 380px; }
+.solo-mag-image-wrap { height: 480px; }
 }
 @media(max-width:560px){
 .site-shell{width:calc(100% - 24px)}
@@ -461,8 +468,8 @@ td strong{color:var(--heading)}
 .story-card{max-width:100%}
 .section-heading{align-items:flex-start;flex-direction:column}
 .footer-grid{grid-template-columns:1fr}
-.solo-mag-image-wrap { height: 280px; }
-.solo-mag-info { padding: 20px; }
+.solo-mag-image-wrap { height: 380px; }
+.solo-mag-info { padding: 22px; }
 }
 </style>
 </head>
@@ -810,14 +817,14 @@ td strong{color:var(--heading)}
  </section>
 
  <!-- =========================================================
-      PHRINUSOMYIS™ MAGAZINE COLLECTION — SOLO 1-UP IMMERSIVE THEATER
+      PHRINUSOMYIS™ MAGAZINE COLLECTION — SOLO 1-UP AUTOMATIC SLIDING THEATER
       ========================================================= -->
  <section class="mag-theater" id="magazineTheater">
   <div class="mag-theater-inner">
    <div class="mag-theater-header">
     <div class="eyebrow">PHRINUSOMYIS™ MAGAZINE COLLECTION</div>
     <h2>Ten Editions. A Living Collection of Sporting Perspectives.</h2>
-    <p>Explore the PHRINUSOMYIS™ Magazine collection through an immersive single-edition showcase. Discover each edition and click to enter its dedicated publication.</p>
+    <p>Explore the PHRINUSOMYIS™ Magazine collection through an immersive single-edition automatic showcase. Discover each edition and click to enter its dedicated publication.</p>
    </div>
 
    <!-- SOLO 1-UP DISPLAY STAGE -->
@@ -937,7 +944,7 @@ document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").f
 });
 
 /* =========================================================
-   SOLO 1-UP IMMERSIVE MAGAZINE DATA & ENGINE WITH RAINBOW GLOW
+   SOLO 1-UP AUTOMATIC SLIDING MAGAZINE ENGINE WITH 200 RAINBOW COLORS
    ========================================================= */
 const magazines = [
   {
@@ -945,104 +952,75 @@ const magazines = [
     title: "THE EDGEWISE",
     quote: "Beyond the boundaries of the visible.",
     url: "https://phrinusomyis.com/magazine/the-edgewise",
-    img: "/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg",
-    glow: "#c9a646",
-    glowSoft: "rgba(201,166,70,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #1f1b12 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-EDGEWISE-Edition001.jpg"
   },
   {
     num: "02",
     title: "THE BIG STORY",
     quote: "Where moments become history.",
     url: "https://phrinusomyis.com/magazine/the-big-story",
-    img: "/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg",
-    glow: "#42bfd4",
-    glowSoft: "rgba(66,191,212,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #0d222b 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-BIG-STORY-Edition001.jpg"
   },
   {
     num: "03",
     title: "THE APEX",
     quote: "At the limits of what is possible.",
     url: "https://phrinusomyis.com/magazine/the-apex",
-    img: "/PHRINUSOMYIS-THE-APEX-Edition001.jpg",
-    glow: "#e2c77e",
-    glowSoft: "rgba(226,199,126,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #242013 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-APEX-Edition001.jpg"
   },
   {
     num: "04",
     title: "THE CHRONICLE",
     quote: "Time leaves nothing without a trace.",
     url: "https://phrinusomyis.com/magazine/the-chronicle",
-    img: "/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg",
-    glow: "#c77b92",
-    glowSoft: "rgba(199,123,146,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #2b151d 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-CHRONICLE-Edition001.jpg"
   },
   {
     num: "05",
     title: "LIFELINE",
     quote: "The strength behind every tomorrow.",
     url: "https://phrinusomyis.com/magazine/lifeline",
-    img: "/PHRINUSOMYIS-LIFELINE-Edition001.jpg",
-    glow: "#55b987",
-    glowSoft: "rgba(85,185,135,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #112d20 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-LIFELINE-Edition001.jpg"
   },
   {
     num: "06",
     title: "THE WORLD PULSE",
     quote: "One world, countless stories.",
     url: "https://phrinusomyis.com/magazine/the-world-pulse",
-    img: "/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg",
-    glow: "#3d91df",
-    glowSoft: "rgba(61,145,223,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #0f2238 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-WORLD-PULSE-Edition001.jpg"
   },
   {
     num: "07",
     title: "THE MOMINANTS™",
     quote: "The marks that time cannot erase.",
     url: "https://phrinusomyis.com/magazine/the-mominants",
-    img: "/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg",
-    glow: "#b85c70",
-    glowSoft: "rgba(184,92,112,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #2c1219 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-MOMINANTS-Edition001.jpg"
   },
   {
     num: "08",
     title: "THE SNOW JOURNEY",
     quote: "Where the extraordinary meets the unknown.",
     url: "https://phrinusomyis.com/magazine/the-snow-journey",
-    img: "/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg",
-    glow: "#8ce4f2",
-    glowSoft: "rgba(140,228,242,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #102e35 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-SNOW-JOURNEY-Edition001.jpg"
   },
   {
     num: "09",
     title: "THE POWERSHIFT",
     quote: "When influence finds a new direction.",
     url: "https://phrinusomyis.com/magazine/the-powershift",
-    img: "/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg",
-    glow: "#f2a154",
-    glowSoft: "rgba(242,161,84,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #301d10 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-POWERSHIFT-Edition001.jpg"
   },
   {
     num: "10",
     title: "THE TAKEOVER",
     quote: "The moment everything changes.",
     url: "https://phrinusomyis.com/magazine/the-takeover",
-    img: "/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg",
-    glow: "#a855f7",
-    glowSoft: "rgba(168,85,247,0.35)",
-    bg: "radial-gradient(circle at 50% 50%, #231238 0%, #070707 85%)"
+    img: "/PHRINUSOMYIS-THE-TAKEOVER-Edition001.jpg"
   }
 ];
 
 let currentIndex = 0;
+let autoSlideInterval = null;
 const theater = document.getElementById("magazineTheater");
 const soloCard = document.getElementById("soloCard");
 const soloBadge = document.getElementById("soloBadge");
@@ -1053,42 +1031,81 @@ const activeNum = document.getElementById("activeNum");
 const prevBtn = document.getElementById("prevMag");
 const nextBtn = document.getElementById("nextMag");
 
+// Programmatically generate a rich 200-color rainbow palette across the 360-degree spectrum
+const rainbowColors = [];
+for (let i = 0; i < 200; i++) {
+  const hue = Math.floor((i / 200) * 360);
+  rainbowColors.push({
+    glow: `hsl(${hue}, 85%, 62%)`,
+    glowSoft: `hsla(${hue}, 85%, 62%, 0.35)`,
+    bg: `radial-gradient(circle at 50% 50%, hsl(${hue}, 50%, 12%) 0%, #070707 85%)`
+  });
+}
+
 function renderMagazine(index) {
   const mag = magazines[index];
+  const colorSpec = rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
   
-  // Trigger smooth transition animation
+  // Smooth transition animation
   soloCard.style.animation = "none";
   soloCard.offsetHeight; // trigger reflow
-  soloCard.style.animation = "cardFadeIn 0.5s ease";
+  soloCard.style.animation = "cardFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
 
   soloCard.href = mag.url;
   soloBadge.textContent = `Edition ${mag.num}`;
-  soloBadge.style.borderColor = mag.glow;
+  soloBadge.style.borderColor = colorSpec.glow;
   soloImg.src = mag.img;
   soloImg.alt = mag.title;
   soloTitle.textContent = mag.title;
   soloQuote.textContent = `"${mag.quote}"`;
   activeNum.textContent = mag.num;
 
-  // Apply unique rainbow glow colors and dynamic background lighting
-  theater.style.setProperty("--theater-bg", mag.bg);
-  theater.style.setProperty("--theater-glow", mag.glowSoft);
-  soloCard.style.setProperty("--card-glow", mag.glow);
-  soloCard.style.setProperty("--card-glow-soft", mag.glowSoft);
+  // Apply dynamic rainbow background lighting and glow
+  theater.style.setProperty("--theater-bg", colorSpec.bg);
+  theater.style.setProperty("--theater-glow", colorSpec.glowSoft);
+  soloCard.style.setProperty("--card-glow", colorSpec.glow);
+  soloCard.style.setProperty("--card-glow-soft", colorSpec.glowSoft);
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % magazines.length;
+  renderMagazine(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + magazines.length) % magazines.length;
+  renderMagazine(currentIndex);
+}
+
+function startAutoSlide() {
+  stopAutoSlide();
+  autoSlideInterval = setInterval(nextSlide, 5000); // Automatically slides every 5 seconds
+}
+
+function stopAutoSlide() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
 }
 
 prevBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + magazines.length) % magazines.length;
-  renderMagazine(currentIndex);
+  prevSlide();
+  startAutoSlide(); // Reset timer on manual interaction
 });
 
 nextBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % magazines.length;
-  renderMagazine(currentIndex);
+  nextSlide();
+  startAutoSlide(); // Reset timer on manual interaction
 });
 
-// Initialize first magazine
+// Pause auto-slide when hovering over the theater
+theater.addEventListener("mouseenter", stopAutoSlide);
+theater.addEventListener("mouseleave", startAutoSlide);
+
+// Initialize first slide and start automatic movement
 renderMagazine(0);
+startAutoSlide();
 
 const themes={
  black:{bg:"#080808",surface:"#111111",alt:"#191919",raised:"#202020",text:"#f3f0e8",muted:"#b9b4a8",heading:"#e6cb7a",accent:"#c9a646",border:"rgba(201,166,70,.30)",strong:"rgba(201,166,70,.60)",intro:"#17150f",label:"#282113",labelText:"#e6cb7a",button:"#c9a646",buttonText:"#080808"},
