@@ -498,6 +498,8 @@
       --text-silver: #bdb7aa;
       --text-muted: #847e72;
       --accent-soft: rgba(201, 166, 89, 0.14);
+      --rainbow-glow: rgba(201, 166, 89, 0.22);
+      --rainbow-border: rgba(201, 166, 89, 0.48);
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --container: 1520px;
@@ -1006,7 +1008,7 @@
     }
 
     /* =========================================================
-       COVER SHOWCASE: FULL UNCROPPED IMAGE + SOFT RAINBOW AROUND EDGES + CLEAN CAPTION BOX
+       MONUMENTAL SINGLE-CARD COVER STAGE WITH AUTO RAINBOW BACKDROP
        ========================================================= */
     .editions-section {
       padding: 120px 0 130px;
@@ -1054,99 +1056,111 @@
       color: var(--text-silver);
     }
 
-    .covers-monument {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(28px, 3.6vw, 56px);
-      align-items: stretch;
+    /* Outer stage with automatic cycling rainbow ambient backdrop */
+    .rainbow-stage-box {
+      position: relative;
+      max-width: 680px;
+      margin-inline: auto;
+      padding: clamp(24px, 4vw, 48px);
+      border: 1px solid var(--rainbow-border);
+      background:
+        radial-gradient(circle at 50% 35%, var(--rainbow-glow), transparent 72%),
+        var(--bg-panel);
+      box-shadow: 0 36px 95px rgba(0, 0, 0, 0.5);
+      transition: background 1.4s ease, border-color 1.4s ease;
     }
 
-    .cover-showcase {
+    .cover-monument-card {
+      position: relative;
+      z-index: 2;
+      background: var(--bg-obsidian);
+      border: 1px solid var(--gold-line);
+      padding: 18px;
+    }
+
+    .cover-image-frame {
+      width: 100%;
       background: var(--bg-panel);
-      border: 1px solid var(--gold-line);
-      padding: clamp(18px, 2.4vw, 32px);
-      box-shadow: 0 36px 95px rgba(0, 0, 0, 0.35);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: border-color 0.35s ease, transform 0.35s ease;
-    }
-
-    .cover-showcase:hover {
-      border-color: var(--gold-bright);
-      transform: translateY(-4px);
-    }
-
-    /* Full outer box holds soft low-tone rainbow color around the cover frame */
-    .cover-canvas {
-      position: relative;
-      width: 100%;
-      flex: 1;
-      background-color: var(--full-box-rainbow-bg, #e8ecea);
       border: 1px solid var(--gold-dim);
-      padding: clamp(20px, 2.6vw, 34px);
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 1.1s ease, border-color 0.35s ease;
     }
 
-    /* Inner frame directly behind the image displays its own soft rainbow edge without cropping */
-    .cover-backdrop-frame {
-      position: relative;
-      width: 100%;
-      padding: clamp(14px, 2vw, 24px);
-      background-color: var(--cover-rainbow-bg, #f2e2e2);
-      border: 1px solid var(--gold-line);
-      overflow: hidden;
-      transition: background-color 1.1s ease, border-color 0.35s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .cover-backdrop-frame img {
+    .cover-image-frame img {
       width: 100%;
       height: auto;
       object-fit: contain;
       cursor: zoom-in;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
-      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.5s ease;
     }
 
-    .cover-showcase:hover .cover-backdrop-frame img {
-      transform: scale(1.012);
+    .cover-image-frame img:hover {
+      transform: scale(1.01);
     }
 
-    /* Dedicated caption box below the image box so changing colors never wash over the text */
-    .cover-meta-bar {
-      position: relative;
-      z-index: 2;
-      background: var(--bg-panel);
+    .cover-caption-box {
+      background: var(--bg-obsidian);
+      padding: 22px 8px 6px;
+      border-top: 1px solid var(--gold-dim);
+      margin-top: 18px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
-      padding: 18px 20px;
-      margin-top: 20px;
-      border: 1px solid var(--gold-dim);
+      flex-wrap: wrap;
     }
 
-    .cover-meta-bar h3 {
+    .cover-caption-box h3 {
       margin: 0;
       font-family: var(--serif);
-      font-size: 26px;
+      font-size: clamp(26px, 3vw, 34px);
       font-weight: 400;
       color: var(--text-ivory);
     }
 
-    .cover-meta-bar span {
-      font-size: 10px;
+    .cover-caption-box p {
+      margin: 4px 0 0;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-bright);
+    }
+
+    .cover-switch-controls {
+      position: relative;
+      z-index: 2;
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .cover-switch-btn {
+      background: var(--bg-obsidian);
+      border: 1px solid var(--gold-line);
+      color: var(--gold-bright);
+      padding: 11px 18px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .cover-switch-btn:hover,
+    .cover-switch-btn.is-active {
+      background: var(--gold-bright);
+      color: var(--bg-void);
+      border-color: var(--gold-bright);
+    }
+
+    .cover-switch-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     /* Release Windows & Scheduled Download Desk */
@@ -1756,7 +1770,6 @@
         height: 43px;
         width: 43px;
       }
-      .covers-monument,
       .scope-matrix,
       .footer-top {
         grid-template-columns: 1fr;
@@ -1929,37 +1942,33 @@
           </div>
         </div>
 
-        <!-- Enlarged Cover Showcase: Full Uncropped Image + Soft Rainbow Edges + Clean Caption Box -->
-        <div class="covers-monument">
-          <article class="cover-showcase">
-            <div class="cover-canvas" data-box-column="0">
-              <div class="cover-backdrop-frame" data-cover-column="0">
-                <img
-                  src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
-                  alt="DAXYREN™ — THE WORLD CURRENT, November 2026 Edition Cover 01"
-                  loading="eager">
-              </div>
+        <!-- Single-Card Monumental Cover Stage with Auto-Cycling Rainbow Backdrop -->
+        <div class="rainbow-stage-box" id="rainbowStageBox">
+          <div class="cover-monument-card">
+            <div class="cover-image-frame">
+              <img
+                id="activeCoverImg"
+                src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
+                alt="DAXYREN™ — THE WORLD CURRENT, November 2026 Edition, Cover 01"
+                loading="eager">
             </div>
-            <div class="cover-meta-bar">
-              <h3>THE WORLD CURRENT — Cover 01</h3>
-              <span>November 2026 · Free PDF</span>
-            </div>
-          </article>
 
-          <article class="cover-showcase">
-            <div class="cover-canvas" data-box-column="1">
-              <div class="cover-backdrop-frame" data-cover-column="1">
-                <img
-                  src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
-                  alt="DAXYREN™ — THE WORLD CURRENT, November 2026 Edition Cover 02"
-                  loading="eager">
+            <div class="cover-caption-box">
+              <div>
+                <h3 id="activeCoverTitle">THE WORLD CURRENT — Cover 01</h3>
+                <p id="activeCoverMeta">November 2026 · Free PDF</p>
               </div>
+              <span id="activeCoverCounter" style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);">Cover 01 of 02</span>
             </div>
-            <div class="cover-meta-bar">
-              <h3>THE WORLD CURRENT — Cover 02</h3>
-              <span>November 2026 · Free PDF</span>
+          </div>
+
+          <div class="cover-switch-controls">
+            <div class="cover-switch-group">
+              <button type="button" class="cover-switch-btn is-active" data-cover-index="0">Cover 01</button>
+              <button type="button" class="cover-switch-btn" data-cover-index="1">Cover 02</button>
             </div>
-          </article>
+            <button type="button" class="cover-switch-btn" id="toggleCoverCycleBtn">Auto-Cycle: On</button>
+          </div>
         </div>
 
         <!-- Scheduled Release, Download & Hard Copy Desk -->
@@ -2426,10 +2435,8 @@
       document.getElementById("coverLightbox").classList.remove("open");
     }
 
-    document.querySelectorAll(".cover-backdrop-frame img").forEach(function (img) {
-      img.addEventListener("click", function () {
-        openCoverLightbox(img.src, img.alt);
-      });
+    document.getElementById("activeCoverImg").addEventListener("click", function () {
+      openCoverLightbox(this.src, this.alt);
     });
 
     document.addEventListener("keydown", function (e) {
@@ -2437,66 +2444,86 @@
     });
 
     /* =========================================================
-       SOFT, LOW-TONE RAINBOW EDGES BEHIND COVER + FULL BOX
-       - Changes automatically every 30 seconds (30000ms)
-       - Distinct soft rainbow color around each cover and each full box
-       - Caption area below stays cleanly separated and never overshadowed
+       SINGLE-CARD COVER SWITCHER + AUTO-CHANGING RAINBOW BOX GLOW
+       - Cover image stays crisp and uncropped inside its frame
+       - Rainbow backdrop color around the box changes automatically
        ========================================================= */
     (function () {
-      const RAINBOW_STEPS = 24;
-      const hues = Array.from({ length: RAINBOW_STEPS }, function (_, i) {
-        return Math.round((i * 360) / RAINBOW_STEPS);
+      const covers = [
+        {
+          src: "/daxyren-the-world-current-magazine-november-2026-cover-1.jpg",
+          title: "THE WORLD CURRENT — Cover 01",
+          meta: "November 2026 · Free PDF",
+          counter: "Cover 01 of 02",
+          alt: "DAXYREN™ — THE WORLD CURRENT, November 2026 Edition, Cover 01"
+        },
+        {
+          src: "/daxyren-the-world-current-magazine-november-2026-cover-2.jpg",
+          title: "THE WORLD CURRENT — Cover 02",
+          meta: "November 2026 · Free PDF",
+          counter: "Cover 02 of 02",
+          alt: "DAXYREN™ — THE WORLD CURRENT, November 2026 Edition, Cover 02"
+        }
+      ];
+
+      const imgEl = document.getElementById("activeCoverImg");
+      const titleEl = document.getElementById("activeCoverTitle");
+      const metaEl = document.getElementById("activeCoverMeta");
+      const counterEl = document.getElementById("activeCoverCounter");
+      const stageBox = document.getElementById("rainbowStageBox");
+      const switchBtns = document.querySelectorAll(".cover-switch-btn[data-cover-index]");
+      const cycleToggleBtn = document.getElementById("toggleCoverCycleBtn");
+
+      let coverIdx = 0;
+      let autoCycle = true;
+      let hue = 0;
+
+      function setCover(idx) {
+        coverIdx = (idx + covers.length) % covers.length;
+        const item = covers[coverIdx];
+        if (imgEl) {
+          imgEl.src = item.src;
+          imgEl.alt = item.alt;
+        }
+        if (titleEl) titleEl.textContent = item.title;
+        if (metaEl) metaEl.textContent = item.meta;
+        if (counterEl) counterEl.textContent = item.counter;
+
+        switchBtns.forEach(function (btn) {
+          btn.classList.toggle("is-active", Number(btn.getAttribute("data-cover-index")) === coverIdx);
+        });
+      }
+
+      switchBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setCover(Number(btn.getAttribute("data-cover-index")));
+        });
       });
 
-      const lightThemes = {
-        ivory: true,
-        whiteblue: true,
-        platinum: true
-      };
-
-      const coverFrames = document.querySelectorAll(".cover-backdrop-frame");
-      const fullBoxes = document.querySelectorAll(".cover-canvas");
-      if (!coverFrames.length && !fullBoxes.length) return;
-
-      let currentTheme = "black";
-      let stepIndex = 0;
-
-      function softCoverColor(hue, themeKey) {
-        if (lightThemes[themeKey]) {
-          return "hsl(" + hue + ", 26%, 86%)";
-        }
-        return "hsl(" + hue + ", 24%, 80%)";
-      }
-
-      function softFullBoxColor(hue, themeKey) {
-        if (lightThemes[themeKey]) {
-          return "hsl(" + hue + ", 18%, 92%)";
-        }
-        return "hsl(" + hue + ", 16%, 87%)";
-      }
-
-      function renderSoftRainbow() {
-        coverFrames.forEach(function (frame, colIdx) {
-          const coverHueIdx = (stepIndex + (colIdx * 7) + 2) % RAINBOW_STEPS;
-          frame.style.setProperty("--cover-rainbow-bg", softCoverColor(hues[coverHueIdx], currentTheme));
-        });
-
-        fullBoxes.forEach(function (box, colIdx) {
-          const boxHueIdx = (stepIndex + (colIdx * 11) + 13) % RAINBOW_STEPS;
-          box.style.setProperty("--full-box-rainbow-bg", softFullBoxColor(hues[boxHueIdx], currentTheme));
+      if (cycleToggleBtn) {
+        cycleToggleBtn.addEventListener("click", function () {
+          autoCycle = !autoCycle;
+          cycleToggleBtn.textContent = autoCycle ? "Auto-Cycle: On" : "Auto-Cycle: Paused";
+          cycleToggleBtn.classList.toggle("is-active", autoCycle);
         });
       }
 
-      window.daxyrenSyncCoverTheme = function (themeKey) {
-        currentTheme = themeKey || "black";
-        renderSoftRainbow();
-      };
+      function stepRainbowBackdrop() {
+        hue = (hue + 15) % 360;
+        if (stageBox) {
+          stageBox.style.setProperty("--rainbow-glow", "hsla(" + hue + ", 85%, 56%, 0.28)");
+          stageBox.style.setProperty("--rainbow-border", "hsla(" + hue + ", 80%, 62%, 0.65)");
+        }
+      }
 
-      renderSoftRainbow();
+      stepRainbowBackdrop();
+
       window.setInterval(function () {
-        stepIndex = (stepIndex + 1) % RAINBOW_STEPS;
-        renderSoftRainbow();
-      }, 30000);
+        stepRainbowBackdrop();
+        if (autoCycle) {
+          setCover(coverIdx + 1);
+        }
+      }, 4500);
     })();
 
     /* =========================================================
@@ -2613,10 +2640,6 @@
         document.querySelectorAll(".theme-btn").forEach(function (btn) {
           btn.classList.toggle("is-active", btn.getAttribute("data-theme") === key);
         });
-
-        if (typeof window.daxyrenSyncCoverTheme === "function") {
-          window.daxyrenSyncCoverTheme(key);
-        }
 
         try {
           localStorage.setItem("daxyren-appearance-theme", key);
