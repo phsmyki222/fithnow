@@ -6,7 +6,9 @@
   <meta name="theme-color" content="#080808">
   <meta name="color-scheme" content="dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>DAXYREN™ — THE WORLD CURRENT | November & December 2026 Editions</title>
+
   <meta
     name="description"
     content="DAXYREN™ is an independent international magazine covering the people, achievements, ideas and defining moments shaping the contemporary world across sport, business, culture, innovation and global affairs, with its magazine published under PHRINUSOMYIS™ (an international sports organization) and monthly releases from the 19th to the 28th. November and December 2026 digital PDF editions are free; hard copies arrive in December 2026 with expanded content; from January 2027, PDF and print editions return to paid."
@@ -110,6 +112,9 @@
         "name": "DAXYREN™",
         "alternateName": "DAXYREN™ — THE WORLD CURRENT",
         "url": "https://phrinusomyis.com/daxyren",
+        "sameAs": [
+          "https://www.linkedin.com/company/daxyren"
+        ],
         "logo": {
           "@type": "ImageObject",
           "url": "https://phrinusomyis.com/daxyren-logo.png"
@@ -651,7 +656,7 @@
 
     .masthead-inner {
       width: min(1580px, calc(100% - 56px));
-      min-height: 118px;
+      min-height: 122px;
       margin-inline: auto;
       display: grid;
       grid-template-columns: auto 1fr auto;
@@ -665,29 +670,28 @@
       gap: 22px;
     }
 
-    /* Enlarged Brand Logos */
     .daxyren-logo-link img {
-      height: 78px;
+      height: 86px;
       width: auto;
-      max-width: 300px;
+      max-width: 332px;
       object-fit: contain;
     }
 
     .crest-divider {
       width: 1px;
-      height: 48px;
+      height: 52px;
       background: var(--gold-line);
     }
 
     .under-badge {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 14px;
     }
 
     .under-badge img {
-      height: 48px;
-      width: 48px;
+      height: 55px;
+      width: 55px;
       object-fit: contain;
     }
 
@@ -983,12 +987,14 @@
     }
 
     /* =========================================================
-       COVER SHOWCASE WITH REFINED EDITORIAL MAT BACKGROUND & SCALE
+       COVER SHOWCASE WITH TALLER BOX & 50/50 MIRROR COLOR SECTION
        ========================================================= */
     .editions-section {
       padding: 120px 0 130px;
-      background: var(--bg-obsidian);
+      background:
+        linear-gradient(90deg, var(--mirror-left, #12110e) 0%, var(--mirror-left, #12110e) 50%, var(--mirror-right, #171510) 50%, var(--mirror-right, #171510) 100%);
       border-bottom: 1px solid var(--gold-dim);
+      transition: background 0.7s ease;
     }
 
     .editions-header {
@@ -1035,14 +1041,17 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: clamp(28px, 3.6vw, 56px);
-      align-items: start;
+      align-items: stretch;
     }
 
     .cover-showcase {
       background: var(--bg-panel);
       border: 1px solid var(--gold-line);
-      padding: clamp(16px, 2.2vw, 28px);
+      padding: clamp(18px, 2.4vw, 32px);
       box-shadow: 0 36px 95px rgba(0, 0, 0, 0.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: border-color 0.35s ease, transform 0.35s ease;
     }
 
@@ -1051,23 +1060,25 @@
       transform: translateY(-4px);
     }
 
-    /* Clean gallery mat with controlled editorial backdrop tone */
     .cover-canvas {
       position: relative;
-      background-color: var(--cover-mat, #171613);
+      min-height: clamp(560px, 68vw, 940px);
+      flex: 1;
+      background:
+        linear-gradient(90deg, var(--box-left, #181612) 0%, var(--box-left, #181612) 50%, var(--box-right, #121519) 50%, var(--box-right, #121519) 100%);
       border: 1px solid var(--gold-dim);
-      padding: clamp(14px, 2vw, 24px);
+      padding: clamp(20px, 2.6vw, 34px);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.65s ease;
+      transition: background 0.7s ease;
     }
 
     .cover-canvas img {
       width: 100%;
       height: auto;
-      max-height: 1120px;
+      max-height: 1180px;
       object-fit: contain;
       cursor: zoom-in;
       box-shadow: 0 22px 55px rgba(0, 0, 0, 0.48);
@@ -1518,14 +1529,14 @@
     }
 
     .crest-card-logos img.dax-mark {
-      height: 76px;
+      height: 84px;
       width: auto;
       object-fit: contain;
     }
 
     .crest-card-logos img.phr-mark {
-      height: 82px;
-      width: 82px;
+      height: 90px;
+      width: 90px;
       object-fit: contain;
     }
 
@@ -1560,7 +1571,7 @@
     }
 
     .footer-identity img {
-      height: 68px;
+      height: 75px;
       width: auto;
       object-fit: contain;
       margin-bottom: 20px;
@@ -1702,14 +1713,14 @@
       }
       .masthead-inner {
         width: calc(100% - 32px);
-        min-height: 96px;
+        min-height: 102px;
       }
       .daxyren-logo-link img {
-        height: 58px;
+        height: 64px;
       }
       .under-badge img {
-        height: 38px;
-        width: 38px;
+        height: 43px;
+        width: 43px;
       }
       .covers-monument,
       .scope-matrix,
@@ -1884,7 +1895,7 @@
           </div>
         </div>
 
-        <!-- Enlarged Cover Showcase with Subtle Editorial Gallery Mat -->
+        <!-- Enlarged Cover Showcase with 50/50 Mirror Color Display -->
         <div class="covers-monument">
           <article class="cover-showcase">
             <div class="cover-canvas">
@@ -2388,29 +2399,48 @@
     });
 
     /* =========================================================
-       SUBTLE EDITORIAL MAT PALETTE FOR COVER BACKDROPS
+       50/50 MIRROR COLOR SHIFT FOR SECTION & COVER BOXES
        ========================================================= */
     (function () {
-      const mats = [
-        "#171613", "#191713", "#14181d", "#131917", "#1a1417",
-        "#15181c", "#181612", "#13171b", "#171513", "#141918",
-        "#191514", "#15171a", "#181714", "#131817", "#1a1614",
-        "#14161a", "#171614", "#151917", "#181516", "#141719"
+      const mirrorPairs = [
+        ["#15130f", "#10151c"],
+        ["#0f1815", "#191216"],
+        ["#17131a", "#0f1718"],
+        ["#191510", "#11141f"],
+        ["#111914", "#1b1315"],
+        ["#14151c", "#191611"],
+        ["#181215", "#0f1816"],
+        ["#121719", "#1a1410"]
       ];
       let idx = 0;
+      const section = document.querySelector(".editions-section");
       const canvases = document.querySelectorAll(".cover-canvas");
-      if (!canvases.length) return;
+      if (!section && !canvases.length) return;
 
-      function cycleMat() {
-        const tone = mats[idx % mats.length];
-        canvases.forEach(function (el) {
-          el.style.setProperty("--cover-mat", tone);
+      function cycleMirrorColors() {
+        const [leftA, rightA] = mirrorPairs[idx % mirrorPairs.length];
+        const [leftB, rightB] = mirrorPairs[(idx + 3) % mirrorPairs.length];
+
+        if (section) {
+          section.style.setProperty("--mirror-left", leftA);
+          section.style.setProperty("--mirror-right", rightA);
+        }
+
+        canvases.forEach(function (el, cIdx) {
+          if (cIdx % 2 === 0) {
+            el.style.setProperty("--box-left", rightA);
+            el.style.setProperty("--box-right", leftA);
+          } else {
+            el.style.setProperty("--box-left", leftB);
+            el.style.setProperty("--box-right", rightB);
+          }
         });
+
         idx++;
       }
 
-      cycleMat();
-      window.setInterval(cycleMat, 5000);
+      cycleMirrorColors();
+      window.setInterval(cycleMirrorColors, 4200);
     })();
 
     /* =========================================================
