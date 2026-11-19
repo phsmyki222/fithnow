@@ -2,1623 +2,2000 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101317">
-
-<title>DAXYREN™ | THE WORLD CURRENT</title>
-<meta name="description" content="DAXYREN is an international monthly magazine bringing the people, events, ideas and achievements shaping our time into focus.">
-<meta name="robots" content="index, follow">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="DAXYREN | THE WORLD CURRENT">
-<meta property="og:description" content="The world is full of stories. DAXYREN brings you closer to the ones that matter.">
-<meta property="og:image" content="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg">
-
-<style>
-:root {
-  --black: #111417;
-  --black2: #1b2024;
-  --cream: #f3f0e8;
-  --cream2: #e9e4d9;
-  --gold: #b69a68;
-  --gold-light: #d5c09a;
-  --text: #252720;
-  --muted: #77766e;
-  --line: rgba(182,154,104,.35);
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
-
-body {
-  font-family: var(--sans);
-  background: var(--cream);
-  color: var(--text);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-body, button, select {
-  font-family: var(--sans);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-button, select {
-  font: inherit;
-}
-
-.container {
-  width: min(1240px, 91%);
-  margin: 0 auto;
-}
-
-.eyebrow {
-  color: var(--gold);
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 3px;
-  font-weight: 700;
-}
-
-.heading {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(38px, 5.5vw, 67px);
-  line-height: 1.12;
-  letter-spacing: -1.5px;
-}
-
-.gold-line {
-  width: 58px;
-  height: 1px;
-  background: var(--gold);
-  margin: 28px 0;
-}
-
-/* HEADER */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--black);
-  color: white;
-  border-bottom: 1px solid var(--line);
-}
-
-.topbar {
-  min-height: 37px;
-  padding: 5px 4.5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-}
-
-.topbar-label {
-  font-size: 9px;
-  letter-spacing: 1.8px;
-  color: #c4c0b6;
-  text-transform: uppercase;
-}
-
-.language-area {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 10px;
-  color: #d5d0c5;
-  letter-spacing: 1px;
-}
-
-.language-area select {
-  max-width: 150px;
-  padding: 6px 9px;
-  background: #20252a;
-  color: white;
-  border: 1px solid rgba(255,255,255,.24);
-  border-radius: 0;
-  font-size: 11px;
-  outline: none;
-}
-
-.navigation {
-  min-height: 82px;
-  padding: 10px 4.5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  flex-shrink: 0;
-}
-
-.brand-logo {
-  width: 54px;
-  height: 54px;
-  object-fit: contain;
-}
-
-.brand-name {
-  display: block;
-  font-family: var(--serif);
-  font-size: 25px;
-  letter-spacing: 2px;
-  line-height: 1.1;
-}
-
-.brand-tag {
-  display: block;
-  margin-top: 5px;
-  color: var(--gold-light);
-  font-size: 8px;
-  letter-spacing: 2.5px;
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 27px;
-}
-
-.nav-menu a {
-  color: #e7e4dc;
-  font-size: 10px;
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
-  transition: color .2s;
-}
-
-.nav-menu a:hover {
-  color: var(--gold-light);
-}
-
-.menu-button {
-  display: none;
-  background: transparent;
-  color: white;
-  border: 1px solid var(--line);
-  padding: 9px 13px;
-  font-size: 10px;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-/* HERO */
-
-.hero {
-  position: relative;
-  min-height: 650px;
-  background:
-    radial-gradient(ellipse at 83% 43%, rgba(182,154,104,.17), transparent 43%),
-    linear-gradient(115deg, #101316 10%, #1c2226 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 540px;
-  height: 540px;
-  border: 1px solid rgba(182,154,104,.11);
-  border-radius: 50%;
-  right: -170px;
-  top: 50%;
-  transform: translateY(-50%);
-  box-shadow: 0 0 0 55px rgba(182,154,104,.025),
-              0 0 0 110px rgba(182,154,104,.018);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 105px 0;
-  max-width: 900px;
-}
-
-.hero-kicker {
-  color: var(--gold-light);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: 10px;
-  margin-bottom: 26px;
-}
-
-.hero h1 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(68px, 12vw, 145px);
-  letter-spacing: -5px;
-  line-height: .94;
-}
-
-.hero-tagline {
-  font-family: var(--serif);
-  color: var(--gold-light);
-  font-size: clamp(18px, 3vw, 27px);
-  letter-spacing: 5px;
-  margin-top: 23px;
-}
-
-.hero-description {
-  max-width: 610px;
-  color: #d4d1c9;
-  font-family: var(--serif);
-  font-size: clamp(20px, 2.8vw, 27px);
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 13px;
-  flex-wrap: wrap;
-  margin-top: 38px;
-}
-
-.button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 46px;
-  padding: 12px 21px;
-  text-transform: uppercase;
-  font-size: 9px;
-  letter-spacing: 1.7px;
-  font-weight: 700;
-  transition: .25s;
-}
-
-.button-gold {
-  background: var(--gold);
-  color: var(--black);
-  border: 1px solid var(--gold);
-}
-
-.button-gold:hover {
-  background: var(--gold-light);
-}
-
-.button-outline {
-  border: 1px solid rgba(255,255,255,.4);
-  color: white;
-}
-
-.button-outline:hover {
-  border-color: var(--gold-light);
-  color: var(--gold-light);
-}
-
-/* EDITORIAL INTRODUCTION */
-
-.intro {
-  text-align: center;
-  padding: 110px 0;
-}
-
-.intro .heading {
-  max-width: 850px;
-  margin: 20px auto;
-}
-
-.intro-copy {
-  max-width: 720px;
-  margin: 25px auto 0;
-  font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.8;
-  color: #696960;
-}
-
-/* LATEST ISSUE */
-
-.latest-issue {
-  background: var(--black2);
-  color: white;
-  padding: 105px 0 100px;
-}
-
-.issue-heading {
-  text-align: center;
-  margin-bottom: 65px;
-}
-
-.issue-heading .heading {
-  margin-top: 15px;
-}
-
-.issue-heading p {
-  color: #c2beb5;
-  font-size: 13px;
-  margin-top: 13px;
-}
-
-.covers {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 48px;
-  max-width: 1060px;
-  margin: 0 auto;
-}
-
-.cover-item {
-  text-align: center;
-  min-width: 0;
-}
-
-.cover-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  background: #171a1d;
-  border: 1px solid rgba(182,154,104,.35);
-  padding: 7px;
-  transition: transform .3s;
-}
-
-.cover-image:hover {
-  transform: translateY(-5px);
-}
-
-.cover-caption {
-  padding-top: 20px;
-}
-
-.cover-caption h3 {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-}
-
-.cover-caption p {
-  margin-top: 6px;
-  color: #c3bcae;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.issue-language {
-  text-align: center;
-  margin-top: 55px;
-  font-size: 11px;
-  letter-spacing: 1.3px;
-  color: #d5d0c6;
-}
-
-.issue-language strong {
-  color: var(--gold-light);
-}
-
-/* EDITORIAL STATEMENT */
-
-.statement {
-  padding: 115px 0;
-  text-align: center;
-  background: var(--cream2);
-}
-
-.statement blockquote {
-  max-width: 900px;
-  margin: 25px auto;
-  font-family: var(--serif);
-  font-size: clamp(29px, 5vw, 53px);
-  line-height: 1.35;
-  color: #282922;
-}
-
-.statement blockquote span {
-  color: #927748;
-}
-
-.statement-signature {
-  margin-top: 30px;
-  color: #77756c;
-  font-size: 9px;
-  letter-spacing: 3px;
-}
-
-/* ABOUT */
-
-.about {
-  padding: 110px 0;
-  background: var(--cream);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: .7fr 1.3fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.about-heading {
-  position: sticky;
-  top: 130px;
-}
-
-.about-heading .heading {
-  margin-top: 18px;
-}
-
-.about-heading p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 20px;
-}
-
-.about-text {
-  font-family: var(--serif);
-  font-size: 18px;
-  line-height: 1.95;
-  color: #373830;
-}
-
-.about-text p {
-  margin-bottom: 23px;
-}
-
-.about-text .accent {
-  font-size: 25px;
-  line-height: 1.55;
-  color: #987c4e;
-}
-
-.about-text .closing {
-  border-top: 1px solid var(--line);
-  margin-top: 45px;
-  padding-top: 28px;
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 2;
-  letter-spacing: 2px;
-}
-
-/* OUR PERSPECTIVE */
-
-.perspective {
-  padding: 110px 0;
-  background: var(--black);
-  color: white;
-}
-
-.perspective-heading {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.perspective-heading .heading {
-  margin-top: 16px;
-}
-
-.perspective-text {
-  max-width: 760px;
-  margin: auto;
-  text-align: center;
-  font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.9;
-  color: #e2dfd7;
-}
-
-.perspective-text p {
-  margin-bottom: 21px;
-}
-
-.perspective-text strong {
-  color: var(--gold-light);
-  font-weight: 400;
-}
-
-.perspective-text .highlight {
-  font-size: 29px;
-  line-height: 1.5;
-  margin: 37px 0;
-  color: var(--gold-light);
-}
-
-.perspective-end {
-  border-top: 1px solid var(--line);
-  max-width: 430px;
-  margin: 55px auto 0;
-  padding-top: 35px;
-  text-align: center;
-}
-
-.perspective-end strong {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 37px;
-  letter-spacing: 3px;
-}
-
-.perspective-end span {
-  display: block;
-  color: var(--gold-light);
-  font-size: 10px;
-  letter-spacing: 3px;
-  margin-top: 10px;
-}
-
-/* ARCHIVE */
-
-.archive {
-  padding: 95px 0;
-  text-align: center;
-  background: var(--cream2);
-}
-
-.archive-box {
-  max-width: 760px;
-  margin: 35px auto 0;
-  padding: 38px;
-  background: rgba(255,255,255,.42);
-  border: 1px solid var(--line);
-}
-
-.archive-box h3 {
-  font-family: var(--serif);
-  font-size: 29px;
-  font-weight: 400;
-}
-
-.archive-box p {
-  color: #77766e;
-  font-size: 13px;
-  margin-top: 12px;
-}
-
-/* PUBLISHING ORGANIZATION */
-
-.publisher {
-  background: #e7e2d7;
-  padding: 65px 0;
-}
-
-.publisher-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 35px;
-}
-
-.publisher-copy {
-  max-width: 720px;
-}
-
-.publisher-copy h2 {
-  font-family: var(--serif);
-  font-size: 30px;
-  line-height: 1.3;
-  font-weight: 400;
-  margin-top: 11px;
-}
-
-.publisher-copy p {
-  color: #65645d;
-  font-size: 13px;
-  line-height: 1.8;
-  margin-top: 12px;
-}
-
-.publisher-logo {
-  width: 145px;
-  max-height: 115px;
-  object-fit: contain;
-}
-
-.publisher-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
-}
-
-.publisher-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--black);
-  color: white;
-  padding: 11px 14px;
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: .2s;
-}
-
-.publisher-links a:hover {
-  background: #8d744b;
-}
-
-/* FOOTER */
-
-.footer {
-  background: #0a0d10;
-  color: white;
-  padding: 65px 0 25px;
-}
-
-.footer-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 35px;
-  padding-bottom: 45px;
-}
-
-.footer-brand h2 {
-  font-family: var(--serif);
-  font-size: 38px;
-  font-weight: 400;
-  letter-spacing: 3px;
-}
-
-.footer-brand p {
-  font-size: 10px;
-  color: var(--gold-light);
-  letter-spacing: 3px;
-  margin-top: 6px;
-}
-
-.footer-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-navigation a {
-  color: #c9c6be;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer-navigation a:hover {
-  color: var(--gold-light);
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.13);
-  padding-top: 23px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 13px;
-  color: #96948c;
-  font-size: 10px;
-}
-
-.footer-bottom strong {
-  color: var(--gold-light);
-  font-weight: 400;
-}
-
-/* TRANSLATION WIDGET */
-
-#google_translate_element {
-  position: absolute;
-  left: -10000px;
-  top: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.goog-te-banner-frame,
-.goog-logo-link,
-.goog-te-gadget-icon {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  font-size: 0 !important;
-}
-
-body {
-  top: 0 !important;
-}
-
-.skiptranslate iframe {
-  visibility: hidden !important;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 950px) {
-  .nav-menu {
-    gap: 15px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>DAXYREN™ — THE WORLD CURRENT | November 2026</title>
+  <meta name="description" content="DAXYREN™ is an international monthly magazine exploring the people, events, ideas and achievements shaping our time. THE WORLD CURRENT.">
+  <meta name="keywords" content="DAXYREN, The World Current, international magazine, world affairs, business, sport, culture, innovation, contemporary life, November 2026">
+  <meta name="author" content="DAXYREN">
+  <meta name="publisher" content="PHRINUSOMYIS">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Replace this canonical URL only if the published page uses a different address. -->
+  <link rel="canonical" href="https://phrinusomys.com/daxyren/">
+
+  <link rel="icon" type="image/png" href="/daxyren-logo.png">
+  <link rel="apple-touch-icon" href="/daxyren-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://translate.google.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DAXYREN">
+  <meta property="og:title" content="DAXYREN™ — THE WORLD CURRENT">
+  <meta property="og:description" content="The people, events, ideas and achievements shaping our time. An international monthly magazine.">
+  <meta property="og:url" content="https://phrinusomys.com/daxyren/">
+  <meta property="og:image" content="https://phrinusomys.com/daxyren-the-world-current-magazine-november-2026-cover-1.jpg">
+  <meta property="og:image:alt" content="DAXYREN — The World Current, November 2026 magazine cover">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1600">
+  <meta property="og:locale" content="en_US">
+
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DAXYREN™ — THE WORLD CURRENT">
+  <meta name="twitter:description" content="An international monthly devoted to the people, events, ideas and achievements shaping our time.">
+  <meta name="twitter:image" content="https://phrinusomys.com/daxyren-the-world-current-magazine-november-2026-cover-1.jpg">
+  <meta name="twitter:image:alt" content="DAXYREN November 2026 magazine cover">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://phrinusomys.com/#organization",
+        "name": "PHRINUSOMYIS",
+        "url": "https://phrinusomys.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://phrinusomys.com/phrinusomys_logo.png"
+        },
+        "description": "An international sports organization."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://phrinusomys.com/daxyren/#website",
+        "url": "https://phrinusomys.com/daxyren/",
+        "name": "DAXYREN",
+        "alternateName": "DAXYREN — THE WORLD CURRENT",
+        "description": "An international monthly magazine exploring the people, events, ideas and achievements shaping our time.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://phrinusomys.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://phrinusomys.com/daxyren/#webpage",
+        "url": "https://phrinusomys.com/daxyren/",
+        "name": "DAXYREN — THE WORLD CURRENT",
+        "description": "The official DAXYREN magazine page featuring the November 2026 issue.",
+        "isPartOf": {
+          "@id": "https://phrinusomys.com/daxyren/#website"
+        },
+        "about": {
+          "@id": "https://phrinusomys.com/daxyren/#publication"
+        },
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://phrinusomys.com/#organization"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://phrinusomys.com/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
+        }
+      },
+      {
+        "@type": "Periodical",
+        "@id": "https://phrinusomys.com/daxyren/#publication",
+        "name": "DAXYREN",
+        "alternateName": [
+          "THE WORLD CURRENT",
+          "THE WORLD, WITHOUT PAUSE."
+        ],
+        "description": "DAXYREN is an international monthly magazine devoted to the people, events, ideas and achievements shaping our time. Its editorial interests span world affairs, business, sport, culture, innovation and contemporary life.",
+        "url": "https://phrinusomys.com/daxyren/",
+        "image": [
+          "https://phrinusomys.com/daxyren-the-world-current-magazine-november-2026-cover-1.jpg",
+          "https://phrinusomys.com/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
+        ],
+        "publisher": {
+          "@id": "https://phrinusomys.com/#organization"
+        },
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "issn": null
+      },
+      {
+        "@type": "PublicationIssue",
+        "@id": "https://phrinusomys.com/daxyren/#november-2026",
+        "headline": "DAXYREN — November 2026",
+        "name": "November 2026",
+        "issueNumber": "November 2026",
+        "datePublished": "2026-11",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://phrinusomys.com/daxyren/#publication"
+        },
+        "image": [
+          "https://phrinusomys.com/daxyren-the-world-current-magazine-november-2026-cover-1.jpg",
+          "https://phrinusomys.com/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
+        ],
+        "publisher": {
+          "@id": "https://phrinusomys.com/#organization"
+        }
+      }
+    ]
   }
+  </script>
 
-  .nav-menu a {
-    font-size: 9px;
-  }
+  <style>
+    :root {
+      --black: #080808;
+      --black-soft: #171715;
+      --charcoal: #25241f;
+      --gold: #C6A263;
+      --gold-light: #E4C58C;
+      --ivory: #F4EFE5;
+      --ivory-light: #FAF7F0;
+      --white: #FFFFFF;
+      --muted: #A9A397;
+      --ink: #24231F;
+      --ink-soft: #69665F;
+      --line: rgba(36,35,31,.15);
+      --line-dark: rgba(255,255,255,.15);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --page: 1440px;
+    }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  .about-heading {
-    position: static;
-  }
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-@media (max-width: 700px) {
-  .topbar {
-    padding: 6px 4%;
-  }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-  .topbar-label {
-    font-size: 8px;
-    letter-spacing: .8px;
-  }
+    body, button, select {
+      font-family: var(--sans);
+    }
 
-  .language-area {
-    gap: 5px;
-    font-size: 8px;
-  }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  .language-area select {
-    max-width: 118px;
-    font-size: 10px;
-    padding: 5px;
-  }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-  .navigation {
-    min-height: 70px;
-    padding: 9px 4%;
-  }
+    button, select {
+      font: inherit;
+    }
 
-  .brand-logo {
-    width: 43px;
-    height: 43px;
-  }
+    button:focus-visible,
+    a:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
 
-  .brand-name {
-    font-size: 20px;
-  }
+    .page-width {
+      width: min(var(--page), calc(100% - 100px));
+      margin-inline: auto;
+    }
 
-  .brand-tag {
-    font-size: 7px;
-  }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
 
-  .menu-button {
-    display: block;
-  }
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 1px;
+      background: currentColor;
+    }
 
-  .nav-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--black);
-    padding: 18px 5% 25px;
-    border-top: 1px solid var(--line);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
+    .section-heading {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 68px);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1.04;
+    }
 
-  .nav-menu.open {
-    display: flex;
-  }
+    .section-intro {
+      max-width: 550px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.9;
+    }
 
-  .nav-menu a {
-    font-size: 11px;
-  }
+    /* Announcement strip */
+    .topline {
+      min-height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 20px;
+      background: var(--black);
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .19em;
+      text-align: center;
+      text-transform: uppercase;
+    }
 
-  .hero {
-    min-height: 560px;
-  }
+    .topline span {
+      color: var(--gold-light);
+      margin-inline: 7px;
+    }
 
-  .hero-content {
-    padding: 85px 0;
-  }
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8,8,8,.97);
+      border-bottom: 1px solid rgba(198,162,99,.23);
+      backdrop-filter: blur(16px);
+    }
 
-  .hero h1 {
-    font-size: clamp(61px, 15vw, 100px);
-    letter-spacing: -3px;
-  }
+    .header-inner {
+      width: min(1540px, calc(100% - 80px));
+      min-height: 104px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 28px;
+    }
 
-  .hero-tagline {
-    letter-spacing: 3px;
-  }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-self: start;
+      min-width: 0;
+    }
 
-  .intro,
-  .latest-issue,
-  .about,
-  .perspective {
-    padding: 78px 0;
-  }
+    .brand img {
+      width: clamp(190px, 18vw, 245px);
+      height: 69px;
+      object-fit: contain;
+      object-position: left center;
+    }
 
-  .covers {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 45px;
-    max-width: 520px;
-  }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(18px, 2.4vw, 38px);
+    }
 
-  .cover-item {
-    width: 100%;
-  }
+    .main-nav a {
+      position: relative;
+      padding: 12px 0;
+      color: #E7E1D6;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      transition: color .25s ease;
+    }
 
-  .cover-image {
-    width: 100%;
-    height: auto;
-    padding: 5px;
-  }
+    .main-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      left: 0;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
 
-  .cover-caption h3 {
-    font-size: 21px;
-  }
+    .main-nav a:hover {
+      color: var(--gold-light);
+    }
 
-  .statement {
-    padding: 80px 0;
-  }
+    .main-nav a:hover::after {
+      transform: scaleX(1);
+    }
 
-  .about-text {
-    font-size: 17px;
-    line-height: 1.85;
-  }
+    .header-tools {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+    }
 
-  .perspective-text {
-    font-size: 18px;
-  }
+    .language-select {
+      max-width: 125px;
+      padding: 10px 25px 10px 4px;
+      border: 0;
+      border-bottom: 1px solid rgba(198,162,99,.45);
+      border-radius: 0;
+      background: transparent;
+      color: var(--ivory);
+      font-size: 10px;
+      letter-spacing: .08em;
+      cursor: pointer;
+    }
 
-  .publisher-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .language-select option {
+      background: var(--black);
+      color: var(--ivory);
+    }
 
-  .publisher-logo {
-    width: 110px;
-  }
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(198,162,99,.4);
+      background: transparent;
+      color: var(--ivory);
+      cursor: pointer;
+    }
 
-  .publisher-links {
-    flex-direction: column;
-    align-items: stretch;
-  }
+    .menu-toggle span {
+      display: block;
+      width: 17px;
+      height: 1px;
+      margin: 5px auto;
+      background: var(--gold-light);
+      transition: transform .2s ease;
+    }
 
-  .publisher-links a {
-    min-height: 42px;
-  }
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 670px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 82% 42%, rgba(198,162,99,.14), transparent 35%),
+        radial-gradient(ellipse at 8% 100%, rgba(198,162,99,.08), transparent 35%),
+        linear-gradient(115deg, #080808 0%, #171715 57%, #11100d 100%);
+      color: var(--ivory);
+    }
 
-  .footer-main {
-    flex-direction: column;
-  }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 74px 74px;
+      content: "";
+      mask-image: linear-gradient(90deg, black, transparent 90%);
+      pointer-events: none;
+    }
 
-  .footer-navigation {
-    gap: 16px;
-  }
+    .hero::after {
+      position: absolute;
+      top: 12%;
+      right: 8%;
+      width: min(39vw, 520px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(198,162,99,.17);
+      border-radius: 50%;
+      content: "";
+      box-shadow:
+        0 0 0 35px rgba(198,162,99,.025),
+        0 0 0 70px rgba(198,162,99,.02);
+      pointer-events: none;
+    }
 
-  .footer-bottom {
-    flex-direction: column;
-  }
-}
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--page), calc(100% - 100px));
+      margin: auto;
+      padding: 112px 0 125px;
+    }
 
-@media (max-width: 380px) {
-  .topbar-label {
-    max-width: 120px;
-  }
+    .hero-kicker {
+      margin-bottom: 33px;
+    }
 
-  .language-area label {
-    display: none;
-  }
+    .hero h1 {
+      max-width: 1020px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(68px, 11.2vw, 158px);
+      font-weight: 400;
+      letter-spacing: -.075em;
+      line-height: .86;
+    }
 
-  .hero h1 {
-    font-size: 58px;
-  }
-}
+    .hero h1 span {
+      display: block;
+      color: var(--gold-light);
+      font-style: italic;
+      font-size: .78em;
+      letter-spacing: -.06em;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+    .hero-rule {
+      width: 95px;
+      height: 1px;
+      margin: 45px 0 25px;
+      background: var(--gold);
+    }
 
-  *, *::before, *::after {
-    transition-duration: .01ms !important;
-  }
-}
-</style>
+    .hero-description {
+      max-width: 570px;
+      margin: 0;
+      color: #C6C0B5;
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.65;
+    }
+
+    .hero-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 75px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .hero-bottom p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .hero-bottom strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .hero-index {
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: 22px;
+    }
+
+    /* Editorial statement */
+    .opening {
+      position: relative;
+      padding: 125px 0 130px;
+      background: var(--ivory);
+    }
+
+    .opening-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 11%;
+      align-items: start;
+    }
+
+    .opening-label {
+      padding-top: 12px;
+    }
+
+    .opening-copy h2 {
+      max-width: 790px;
+      margin: 0 0 32px;
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.8vw, 64px);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1.14;
+    }
+
+    .opening-copy h2 em {
+      color: #987544;
+      font-weight: 400;
+    }
+
+    .opening-copy p {
+      max-width: 690px;
+      margin: 0 0 19px;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .opening-signature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .opening-signature::before {
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+    }
+
+    /* Editorial categories */
+    .worldline {
+      padding: 26px 0;
+      overflow: hidden;
+      background: var(--black);
+      color: var(--ivory);
+      border-top: 1px solid rgba(198,162,99,.32);
+      border-bottom: 1px solid rgba(198,162,99,.32);
+    }
+
+    .worldline-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      width: min(var(--page), calc(100% - 100px));
+      margin: auto;
+    }
+
+    .worldline span {
+      color: #E7DDCB;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .worldline i {
+      width: 4px;
+      height: 4px;
+      flex: 0 0 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* Current issue */
+    .current-issue {
+      padding: 130px 0 140px;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(198,162,99,.08), transparent 55%),
+        var(--ivory-light);
+    }
+
+    .issue-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 35px;
+      margin-bottom: 65px;
+    }
+
+    .issue-heading-wrap .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .issue-heading-wrap .section-heading {
+      max-width: 700px;
+    }
+
+    .issue-date {
+      flex: 0 0 auto;
+      padding: 0 0 9px 24px;
+      border-left: 1px solid var(--gold);
+      color: var(--ink-soft);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      line-height: 1.8;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .issue-date strong {
+      display: block;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: -.02em;
+    }
+
+    .cover-stage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: clamp(22px, 4vw, 60px);
+    }
+
+    .cover-item {
+      min-width: 0;
+    }
+
+    .cover-frame {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 300px;
+      padding: clamp(12px, 2.3vw, 30px);
+      background:
+        linear-gradient(145deg, #e9e2d5, #d8cebd);
+      border: 1px solid rgba(36,35,31,.12);
+      box-shadow: 0 24px 65px rgba(36,35,31,.12);
+    }
+
+    .cover-frame img {
+      width: 100%;
+      height: auto;
+      max-height: 860px;
+      object-fit: contain;
+      object-position: center;
+      box-shadow: 0 18px 45px rgba(0,0,0,.2);
+      transition: transform .65s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .cover-item:hover .cover-frame img {
+      transform: scale(1.018);
+    }
+
+    .cover-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 20px 2px 0;
+    }
+
+    .cover-caption strong {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+    }
+
+    .cover-caption span {
+      color: var(--ink-soft);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .issue-note {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin-top: 65px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+    }
+
+    .issue-note p {
+      max-width: 610px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .issue-language {
+      flex: 0 0 auto;
+      color: #8B7049;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    /* Editorial philosophy */
+    .perspective {
+      position: relative;
+      overflow: hidden;
+      padding: 135px 0 145px;
+      background:
+        radial-gradient(ellipse at 95% 5%, rgba(198,162,99,.12), transparent 36%),
+        linear-gradient(120deg, #11110f, #080808 70%);
+      color: var(--ivory);
+    }
+
+    .perspective::after {
+      position: absolute;
+      right: -160px;
+      bottom: -280px;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(198,162,99,.16);
+      border-radius: 50%;
+      content: "";
+      box-shadow: 0 0 0 45px rgba(198,162,99,.025), 0 0 0 90px rgba(198,162,99,.02);
+      pointer-events: none;
+    }
+
+    .perspective-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 10%;
+    }
+
+    .perspective-aside {
+      padding-top: 12px;
+    }
+
+    .perspective-aside .eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .perspective-aside p {
+      max-width: 280px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .perspective-main h2 {
+      max-width: 780px;
+      margin: 0 0 34px;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.2vw, 70px);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1.12;
+    }
+
+    .perspective-main h2 em {
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+
+    .perspective-main p {
+      max-width: 690px;
+      margin: 0 0 19px;
+      color: #BDB7AC;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .perspective-statement {
+      max-width: 680px;
+      margin-top: 50px;
+      padding: 27px 0 27px 27px;
+      border-left: 1px solid var(--gold);
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: clamp(23px, 3vw, 34px);
+      line-height: 1.45;
+    }
+
+    /* Editorial scope */
+    .scope {
+      padding: 120px 0 130px;
+      background: var(--ivory);
+    }
+
+    .scope-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 58px;
+    }
+
+    .scope-heading .section-intro {
+      margin: 0 0 5px;
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .scope-item {
+      min-height: 205px;
+      padding: 30px 30px 27px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background .25s ease;
+    }
+
+    .scope-item:hover {
+      background: rgba(198,162,99,.09);
+    }
+
+    .scope-number {
+      display: block;
+      margin-bottom: 28px;
+      color: #A9824D;
+      font-family: var(--serif);
+      font-size: 16px;
+    }
+
+    .scope-item h3 {
+      margin: 0 0 11px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .scope-item p {
+      max-width: 320px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* Editorial principle */
+    .closing-thought {
+      padding: 100px 0 105px;
+      background: #E9E1D4;
+      text-align: center;
+    }
+
+    .closing-thought .eyebrow {
+      justify-content: center;
+      margin-bottom: 27px;
+    }
+
+    .closing-thought .eyebrow::before {
+      display: none;
+    }
+
+    .closing-thought h2 {
+      max-width: 950px;
+      margin: auto;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(36px, 5.8vw, 76px);
+      font-weight: 400;
+      letter-spacing: -.05em;
+      line-height: 1.13;
+    }
+
+    .closing-thought h2 em {
+      color: #987544;
+      font-weight: 400;
+    }
+
+    .closing-thought p {
+      max-width: 580px;
+      margin: 27px auto 0;
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    /* Publisher identity */
+    .publisher {
+      padding: 100px 0 105px;
+      background: var(--black);
+      color: var(--ivory);
+    }
+
+    .publisher-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .publisher-copy .eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .publisher-copy h2 {
+      max-width: 720px;
+      margin: 0 0 20px;
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.4vw, 57px);
+      font-weight: 400;
+      letter-spacing: -.04em;
+      line-height: 1.15;
+    }
+
+    .publisher-copy p {
+      max-width: 600px;
+      margin: 0;
+      color: #B5AEA1;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .publisher-mark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 19px;
+      min-width: 230px;
+      padding: 30px;
+      border: 1px solid rgba(198,162,99,.3);
+      background: linear-gradient(145deg, rgba(198,162,99,.08), rgba(255,255,255,.015));
+    }
+
+    .publisher-mark img {
+      width: 175px;
+      height: 90px;
+      object-fit: contain;
+    }
+
+    .publisher-mark span {
+      color: var(--gold-light);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .publisher-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .publisher-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 43px;
+      padding: 0 19px;
+      border: 1px solid rgba(198,162,99,.45);
+      color: var(--ivory);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    .publisher-links a:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #050505;
+      color: var(--muted);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 60px;
+      padding: 62px 0 52px;
+    }
+
+    .footer-brand img {
+      width: 190px;
+      height: 58px;
+      object-fit: contain;
+      object-position: left center;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand p {
+      max-width: 410px;
+      margin: 0;
+      color: #89857D;
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .footer-nav-wrap {
+      display: flex;
+      justify-content: flex-end;
+      gap: clamp(35px, 7vw, 100px);
+    }
+
+    .footer-column h3 {
+      margin: 4px 0 20px;
+      color: var(--gold-light);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      display: block;
+      width: fit-content;
+      margin: 0 0 13px;
+      color: #B2ADA3;
+      font-size: 11px;
+      transition: color .2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 22px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: #77736B;
+      font-size: 9px;
+      letter-spacing: .08em;
+    }
+
+    .footer-bottom strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Google Translate: selector is visible; provider banner is suppressed. */
+    #google_translate_element {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    #goog-gt-tt,
+    .goog-tooltip,
+    .goog-tooltip:hover {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 15px;
+      z-index: 2000;
+      padding: 12px 16px;
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .skip-link:focus {
+      top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1050px) {
+      .header-inner {
+        width: calc(100% - 50px);
+        grid-template-columns: auto 1fr auto;
+      }
+
+      .brand img {
+        width: 205px;
+      }
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .main-nav a {
+        font-size: 9px;
+      }
+
+      .hero {
+        min-height: 610px;
+      }
+
+      .opening-grid,
+      .perspective-grid {
+        gap: 7%;
+      }
+
+      .publisher-inner {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 75px;
+      }
+
+      .page-width {
+        width: calc(100% - 42px);
+      }
+
+      .topline {
+        min-height: 31px;
+        font-size: 8px;
+        letter-spacing: .12em;
+      }
+
+      .header-inner {
+        width: calc(100% - 36px);
+        min-height: 78px;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 190px;
+        height: 58px;
+      }
+
+      .header-tools {
+        gap: 12px;
+      }
+
+      .language-select {
+        max-width: 103px;
+        font-size: 9px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 22px 20px;
+        background: rgba(8,8,8,.99);
+        border-bottom: 1px solid rgba(198,162,99,.28);
+      }
+
+      .main-nav.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-nav a {
+        padding: 15px 4px;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        font-size: 10px;
+      }
+
+      .main-nav a::after {
+        display: none;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero-inner {
+        width: calc(100% - 42px);
+        padding: 95px 0 65px;
+      }
+
+      .hero::after {
+        top: 12%;
+        right: -25%;
+        width: 70vw;
+      }
+
+      .hero h1 {
+        font-size: clamp(62px, 15vw, 105px);
+      }
+
+      .hero-rule {
+        margin: 34px 0 21px;
+      }
+
+      .hero-bottom {
+        margin-top: 55px;
+      }
+
+      .opening {
+        padding: 85px 0 90px;
+      }
+
+      .opening-grid,
+      .perspective-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .opening-label {
+        padding: 0;
+      }
+
+      .opening-copy h2 {
+        font-size: clamp(35px, 9vw, 53px);
+      }
+
+      .opening-copy p {
+        font-size: 13px;
+      }
+
+      .worldline-inner {
+        width: max-content;
+        min-width: 100%;
+        justify-content: flex-start;
+        gap: 23px;
+        padding: 0 21px;
+      }
+
+      .worldline {
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .worldline::-webkit-scrollbar {
+        display: none;
+      }
+
+      .worldline span {
+        font-size: 8px;
+      }
+
+      .current-issue {
+        padding: 90px 0 95px;
+      }
+
+      .issue-top {
+        align-items: start;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 38px;
+      }
+
+      .issue-date {
+        padding-left: 15px;
+      }
+
+      .cover-stage {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .cover-frame {
+        min-height: 0;
+        padding: 15px;
+      }
+
+      .cover-frame img {
+        width: 100%;
+        max-height: none;
+      }
+
+      .cover-caption {
+        padding-top: 14px;
+      }
+
+      .cover-caption strong {
+        font-size: 17px;
+      }
+
+      .issue-note {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 42px;
+      }
+
+      .perspective {
+        padding: 90px 0 100px;
+      }
+
+      .perspective-main h2 {
+        font-size: clamp(38px, 9vw, 56px);
+      }
+
+      .perspective-main p {
+        font-size: 13px;
+      }
+
+      .scope {
+        padding: 90px 0;
+      }
+
+      .scope-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 35px;
+      }
+
+      .scope-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .scope-item {
+        min-height: 190px;
+        padding: 23px 17px;
+      }
+
+      .scope-item h3 {
+        font-size: 21px;
+      }
+
+      .scope-item p {
+        font-size: 11px;
+      }
+
+      .closing-thought {
+        padding: 80px 21px;
+      }
+
+      .publisher {
+        padding: 80px 0;
+      }
+
+      .publisher-inner {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .publisher-mark {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .publisher-mark img {
+        width: 165px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 50px 0 40px;
+      }
+
+      .footer-nav-wrap {
+        justify-content: flex-start;
+        gap: 60px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+        line-height: 1.7;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .page-width {
+        width: calc(100% - 34px);
+      }
+
+      .header-inner {
+        width: calc(100% - 26px);
+      }
+
+      .brand img {
+        width: 166px;
+        height: 54px;
+      }
+
+      .language-select {
+        max-width: 88px;
+        padding-right: 12px;
+      }
+
+      .hero-inner {
+        width: calc(100% - 34px);
+      }
+
+      .hero h1 {
+        font-size: 59px;
+      }
+
+      .hero-description {
+        font-size: 18px;
+      }
+
+      .scope-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scope-item {
+        min-height: 0;
+        padding: 23px;
+      }
+
+      .scope-number {
+        margin-bottom: 17px;
+      }
+
+      .footer-nav-wrap {
+        gap: 35px;
+      }
+
+      .publisher-links a {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<div id="google_translate_element"></div>
-
-<header class="site-header">
-
-  <div class="topbar">
-    <span class="topbar-label">An international monthly magazine</span>
-
-    <div class="language-area">
-      <label for="languageSelect">LANGUAGE</label>
-      <select id="languageSelect" aria-label="Select preferred website language">
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-        <option value="es">Español</option>
-        <option value="de">Deutsch</option>
-        <option value="ar">العربية</option>
-        <option value="zh-CN">中文</option>
-        <option value="ru">Русский</option>
-        <option value="pt">Português</option>
-        <option value="ja">日本語</option>
-        <option value="ko">한국어</option>
-        <option value="it">Italiano</option>
-        <option value="nl">Nederlands</option>
-        <option value="tr">Türkçe</option>
-        <option value="hi">हिन्दी</option>
-        <option value="id">Bahasa Indonesia</option>
-        <option value="vi">Tiếng Việt</option>
-        <option value="th">ไทย</option>
-        <option value="pl">Polski</option>
-        <option value="sv">Svenska</option>
-        <option value="fi">Suomi</option>
-        <option value="da">Dansk</option>
-      </select>
-    </div>
+  <div class="topline">
+    An international monthly magazine <span>·</span> November 2026
   </div>
 
-  <div class="navigation">
-
-    <a href="#home" class="brand" aria-label="DAXYREN home">
-      <img src="/daxyren-logo.png" class="brand-logo" alt="DAXYREN">
-      <span>
-        <span class="brand-name">DAXYREN</span>
-        <span class="brand-tag">THE WORLD CURRENT</span>
-      </span>
-    </a>
-
-    <button class="menu-button" id="menuButton"
-      aria-expanded="false" aria-controls="navMenu">
-      MENU
-    </button>
-
-    <nav class="nav-menu" id="navMenu">
-      <a href="#home">Home</a>
-      <a href="#latest-issue">The Magazine</a>
-      <a href="#about">About</a>
-      <a href="#archive">Archive</a>
-      <a href="#publisher">PHRINUSOMYIS</a>
-    </nav>
-
-  </div>
-</header>
-
-<main>
-
-<!-- OPENING -->
-
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-
-      <div class="hero-kicker">An international monthly magazine</div>
-
-      <h1>DAXYREN</h1>
-
-      <div class="hero-tagline">THE WORLD CURRENT</div>
-
-      <div class="gold-line"></div>
-
-      <p class="hero-description">
-        The world is full of stories. DAXYREN brings you closer to the ones that matter.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#latest-issue" class="button button-gold">
-          Explore the Current Issue
-        </a>
-
-        <a href="#about" class="button button-outline">
-          Discover DAXYREN
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- EDITORIAL INTRODUCTION -->
-
-<section class="intro">
-  <div class="container">
-
-    <div class="eyebrow">The World Current</div>
-
-    <h2 class="heading">
-      The world is always becoming.
-    </h2>
-
-    <p class="intro-copy">
-      Power changes hands. Ideas cross borders. Records fall. Fortunes are made.
-      Cultures evolve. New voices emerge, and familiar places are seen anew.
-    </p>
-
-    <div class="gold-line" style="margin:30px auto"></div>
-
-    <p class="intro-copy">
-      Some moments pass. Others define their time.
-      DAXYREN exists to recognise the difference.
-    </p>
-
-  </div>
-</section>
-
-<!-- CURRENT MAGAZINE -->
-
-<section class="latest-issue" id="latest-issue">
-  <div class="container">
-
-    <div class="issue-heading">
-      <div class="eyebrow">The Monthly Edition</div>
-      <h2 class="heading">November 2026</h2>
-      <p>The current issue of DAXYREN</p>
-    </div>
-
-    <div class="covers">
-
-      <article class="cover-item">
-        <img
-          class="cover-image"
-          src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
-          alt="DAXYREN November 2026 magazine cover, first cover"
-          loading="eager">
-        <div class="cover-caption">
-          <h3>DAXYREN</h3>
-          <p>November 2026 · Cover One</p>
-        </div>
-      </article>
-
-      <article class="cover-item">
-        <img
-          class="cover-image"
-          src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
-          alt="DAXYREN November 2026 magazine cover, second cover"
-          loading="lazy">
-        <div class="cover-caption">
-          <h3>DAXYREN</h3>
-          <p>November 2026 · Cover Two</p>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="issue-language">
-      CURRENT EDITION: <strong>ENGLISH</strong>
-    </div>
-
-  </div>
-</section>
-
-<!-- CORE EDITORIAL IDEA -->
-
-<section class="statement">
-  <div class="container">
-
-    <div class="eyebrow">A Perspective on the World</div>
-
-    <blockquote>
-      Its interest is not in everything that happens.
-      <span>It is in what matters.</span>
-    </blockquote>
-
-    <div class="statement-signature">
-      DAXYREN · THE WORLD CURRENT
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT DAXYREN -->
-
-<section class="about" id="about">
-  <div class="container">
-
-    <div class="about-grid">
-
-      <div class="about-heading">
-        <div class="eyebrow">About DAXYREN</div>
-        <h2 class="heading">A world in motion. A wider perspective.</h2>
-
-        <p>
-          People, events, ideas and achievements shaping our time.
-        </p>
-      </div>
-
-      <article class="about-text">
-
-        <p>
-          DAXYREN is an international monthly devoted to the people, events,
-          ideas and achievements shaping our time.
-        </p>
-
-        <p>
-          Across world affairs, business, sport, culture, innovation and
-          contemporary life, DAXYREN brings the consequential, the remarkable
-          and the enduring into focus.
-        </p>
-
-        <p>
-          Not simply the story of the moment, but the meaning within it.
-        </p>
-
-        <p class="accent">This is THE WORLD CURRENT.</p>
-
-        <p>
-          A considered perspective on a world in motion, observed with discernment
-          and presented with clarity, intelligence and distinction.
-        </p>
-
-        <p>
-          Every edition looks beyond individual headlines to the forces,
-          personalities and achievements giving the present its character.
-          Different fields meet. Different places connect. Stories that might
-          otherwise appear separate become part of a wider picture.
-        </p>
-
-        <p>
-          Because the world does not unfold in categories.
-          Neither does DAXYREN.
-        </p>
-
-        <p>
-          An achievement in sport can transcend its arena. An idea can cross
-          continents. A business decision can alter industries. A cultural
-          moment can define a generation. A discovery can change what comes next.
-        </p>
-
-        <p>
-          DAXYREN follows these currents, recognising significance wherever it emerges.
-        </p>
-
-        <p>
-          It does not seek to capture everything. It seeks to capture
-          <strong>what deserves to endure.</strong>
-        </p>
-
-        <p>
-          Each issue stands on its own as a considered portrait of its time.
-          Together, the issues form something greater: a continuing chronicle
-          of a world in motion and the people, ideas and moments that shaped it.
-        </p>
-
-        <p>
-          Because the present does not wait to become history.
-          <strong>It is becoming history now.</strong>
-        </p>
-
-        <p>
-          DAXYREN exists within that space between the moment and its meaning.
-        </p>
-
-        <p>
-          To look beyond the noise. To recognise what matters.
-          To connect what may appear unconnected. And to bring the wider
-          world into perspective.
-        </p>
-
-        <p>
-          Month after month, DAXYREN records not simply what happened,
-          but what was worth understanding, remembering and revisiting.
-        </p>
-
-        <p>
-          The world will change. The stories will change.
-          The people shaping it will change.
-        </p>
-
-        <p class="accent">
-          The purpose remains. To recognise what matters.
-        </p>
-
-        <div class="closing">
-          <strong>DAXYREN</strong><br>
-          THE WORLD CURRENT<br>
-          THE WORLD, WITHOUT PAUSE.
-        </div>
-
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- EDITORIAL PRINCIPLES -->
-
-<section class="perspective">
-  <div class="container">
-
-    <div class="perspective-heading">
-      <div class="eyebrow">Our Perspective</div>
-      <h2 class="heading">What matters deserves to be recognised.</h2>
-    </div>
-
-    <article class="perspective-text">
-
-      <p>The world does not stand still.</p>
-
-      <p>Neither should our understanding of it.</p>
-
-      <p>Every day, something changes.</p>
-
-      <p>
-        An idea finds its moment.<br>
-        A record is broken.<br>
-        A voice rises.<br>
-        A boundary moves.<br>
-        A discovery opens a possibility.<br>
-        A decision changes a course.<br>
-        An achievement becomes part of history.
-      </p>
-
-      <p>Some of it will be forgotten.</p>
-
-      <p>Some of it will define our time.</p>
-
-      <p class="highlight"><strong>We believe the difference matters.</strong></p>
-
-      <p>We believe the world deserves more than attention.</p>
-
-      <p>It deserves perspective.</p>
-
-      <p>We believe knowing what happened is only the beginning.</p>
-
-      <p>
-        Understanding why it matters is where the story becomes meaningful.
-      </p>
-
-      <p>We believe no single subject explains the world.</p>
-
-      <p>
-        Business meets culture.<br>
-        Sport meets identity.<br>
-        Innovation meets everyday life.<br>
-        Ambition meets opportunity.<br>
-        Events in one place create consequences in another.
-      </p>
-
-      <p>Everything moves.</p>
-
-      <p>Everything connects.</p>
-
-      <p class="highlight">This is <strong>THE WORLD CURRENT</strong>.</p>
-
-      <p>
-        We will not chase everything simply because it is new.
-      </p>
-
-      <p>We will not mistake noise for significance.</p>
-
-      <p>We will look further.</p>
-
-      <p>We will ask what matters.</p>
-
-      <p>
-        We will recognise achievement wherever it happens and significance
-        wherever it emerges.
-      </p>
-
-      <p>
-        We will remain curious about the unfamiliar, attentive to the remarkable
-        and open to a world larger than any one place, industry or point of view.
-      </p>
-
-      <p>
-        Because what deserves attention is not always what demands it most loudly.
-      </p>
-
-      <p>
-        And what appears to be a moment can become something much greater.
-      </p>
-
-      <p>
-        A turning point.<br>
-        A legacy.<br>
-        A piece of history.
-      </p>
-
-      <p class="highlight"><strong>DAXYREN exists for those moments.</strong></p>
-
-      <p>
-        For the people shaping their fields.<br>
-        For the ideas changing possibilities.<br>
-        For the achievements that redefine expectations.<br>
-        For the events whose significance will outlast the headlines surrounding them.
-      </p>
-
-      <p>And for readers who want more than information.</p>
-
-      <p>
-        Readers who want to understand the world they are living through.
-      </p>
-
-      <p>We believe perspective has value.</p>
-
-      <p>We believe context has value.</p>
-
-      <p>We believe discernment has value.</p>
-
-      <p>And above all:</p>
-
-      <p class="highlight">
-        <strong>We believe what matters deserves to be recognised.</strong>
-      </p>
-
-      <p>The world will keep moving.</p>
-
-      <p>
-        New stories will emerge.<br>
-        New names will become known.<br>
-        New achievements will become landmarks.<br>
-        New moments will become history.
-      </p>
-
-      <p class="highlight">
-        <strong>DAXYREN will be there to recognise them.</strong>
-      </p>
-
-      <p>
-        To look beyond the noise.<br>
-        To see beyond the moment.<br>
-        To bring the wider picture into focus.
-      </p>
-
-      <p>Because the world does not pause.</p>
-
-      <p>Neither does its story.</p>
-
-    </article>
-
-    <div class="perspective-end">
-      <strong>DAXYREN</strong>
-      <span>THE WORLD CURRENT</span>
-      <span>THE WORLD, WITHOUT PAUSE.</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- MONTHLY ARCHIVE -->
-
-<section class="archive" id="archive">
-  <div class="container">
-
-    <div class="eyebrow">The Publication</div>
-    <h2 class="heading">The Monthly Editions</h2>
-
-    <div class="archive-box">
-      <h3>November 2026</h3>
-
-      <p>
-        The current monthly edition of DAXYREN.
-      </p>
-
-      <p>
-        <strong>Available language: English</strong>
-      </p>
-
-      <p>
-        Each monthly edition contributes to a continuing chronicle
-        of a world in motion.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PUBLISHING ORGANIZATION -->
-
-<section class="publisher" id="publisher">
-  <div class="container">
-
-    <div class="publisher-inner">
-
-      <div class="publisher-copy">
-
-        <div class="eyebrow">Publishing Organization</div>
-
-        <h2>A publication of PHRINUSOMYIS.</h2>
-
-        <p>
-          PHRINUSOMYIS is an international sports organization headquartered
-          in New York, USA. DAXYREN is published within its organizational
-          publishing structure, with its own independent editorial identity.
-        </p>
-
-        <div class="publisher-links">
-
-          <a href="https://phrinusomyis.com/">
-            PHRINUSOMYIS Homepage
-          </a>
-
-          <a href="https://phrinusomyis.com/newsroom/newswire.html">
-            PHRINUSOMYIS Newswire
-          </a>
-
-          <a href="https://phrinusomyis.com/magazine/news">
-            PHRINUSOMYIS Magazine
-          </a>
-
-        </div>
-
-      </div>
-
-      <a href="https://phrinusomyis.com/"
-         target="_blank"
-         rel="noopener"
-         aria-label="Visit PHRINUSOMYIS">
-
-        <img
-          class="publisher-logo"
-          src="https://phrinusomyis.com/phrinusomyis_logo.png"
-          alt="PHRINUSOMYIS">
-
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a class="brand" href="#home" aria-label="DAXYREN home">
+        <img src="/daxyren-logo.png" alt="DAXYREN — The World Current">
       </a>
 
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-  <div class="container">
-
-    <div class="footer-main">
-
-      <div class="footer-brand">
-        <h2>DAXYREN</h2>
-        <p>THE WORLD CURRENT</p>
-      </div>
-
-      <nav class="footer-navigation" aria-label="Footer navigation">
+      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
         <a href="#home">Home</a>
-        <a href="#latest-issue">The Magazine</a>
-        <a href="#about">About</a>
-        <a href="#archive">Archive</a>
-        <a href="https://phrinusomyis.com/">PHRINUSOMYIS</a>
+        <a href="#current-issue">Current Issue</a>
+        <a href="#perspective">Perspective</a>
+        <a href="#scope">Editorial Scope</a>
+        <a href="#publisher">Publishing</a>
       </nav>
 
+      <div class="header-tools">
+        <label for="site-language" class="skip-link">Select website language</label>
+        <select id="site-language" class="language-select" aria-label="Select website language">
+          <option value="en" selected>English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="ar">العربية</option>
+          <option value="zh-CN">中文</option>
+          <option value="ru">Русский</option>
+          <option value="pt">Português</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+          <option value="tr">Türkçe</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="th">ไทย</option>
+          <option value="pl">Polski</option>
+          <option value="sv">Svenska</option>
+          <option value="fi">Suomi</option>
+          <option value="da">Dansk</option>
+        </select>
+
+        <button class="menu-toggle" id="menu-toggle" type="button"
+          aria-label="Open navigation" aria-expanded="false"
+          aria-controls="main-navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="google_translate_element" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <!-- Opening identity -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-kicker eyebrow">DAXYREN · International Monthly</div>
+
+        <h1>
+          THE WORLD
+          <span>CURRENT.</span>
+        </h1>
+
+        <div class="hero-rule"></div>
+
+        <p class="hero-description">
+          The world is full of stories. DAXYREN brings you closer to the ones that matter.
+        </p>
+
+        <div class="hero-bottom">
+          <p>THE WORLD, WITHOUT PAUSE.</p>
+          <p><strong>Current Issue</strong> &nbsp;·&nbsp; November 2026</p>
+          <span class="hero-index">01 / 26</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial introduction -->
+    <section class="opening">
+      <div class="page-width opening-grid">
+
+        <div class="opening-label">
+          <span class="eyebrow">A world in motion</span>
+        </div>
+
+        <div class="opening-copy">
+          <h2>
+            Some moments pass.
+            <em>Others define their time.</em>
+          </h2>
+
+          <p>
+            The world is always becoming. Power changes hands. Ideas cross borders.
+            Records fall. Fortunes are made. Cultures evolve. New voices emerge,
+            and familiar places are seen anew.
+          </p>
+
+          <p>
+            DAXYREN is an international monthly devoted to the people, events,
+            ideas and achievements shaping our time. Its interest is not in
+            everything that happens. It is in what matters.
+          </p>
+
+          <p>
+            Across world affairs, business, sport, culture, innovation and
+            contemporary life, DAXYREN brings the consequential, remarkable
+            and enduring into focus.
+          </p>
+
+          <div class="opening-signature">The meaning within the moment</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Areas of coverage -->
+    <div class="worldline" aria-label="Editorial coverage">
+      <div class="worldline-inner">
+        <span>World Affairs</span><i></i>
+        <span>Business</span><i></i>
+        <span>Sport</span><i></i>
+        <span>Culture</span><i></i>
+        <span>Innovation</span><i></i>
+        <span>Contemporary Life</span>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>© 2026 DAXYREN. All rights reserved.</span>
-      <span>THE WORLD, WITHOUT PAUSE.</span>
-      <span>A publication of <strong>PHRINUSOMYIS</strong></span>
+    <!-- Current issue -->
+    <section class="current-issue" id="current-issue">
+      <div class="page-width">
+
+        <div class="issue-top">
+          <div class="issue-heading-wrap">
+            <span class="eyebrow">The monthly edition</span>
+            <h2 class="section-heading">The current issue.</h2>
+          </div>
+
+          <div class="issue-date">
+            Current edition
+            <strong>November 2026</strong>
+            English edition
+          </div>
+        </div>
+
+        <div class="cover-stage">
+
+          <article class="cover-item">
+            <div class="cover-frame">
+              <img
+                src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
+                alt="DAXYREN The World Current — November 2026, cover one"
+                loading="eager"
+                fetchpriority="high">
+            </div>
+            <div class="cover-caption">
+              <strong>The World Current</strong>
+              <span>November 2026 · Cover 01</span>
+            </div>
+          </article>
+
+          <article class="cover-item">
+            <div class="cover-frame">
+              <img
+                src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
+                alt="DAXYREN The World Current — November 2026, cover two"
+                loading="lazy">
+            </div>
+            <div class="cover-caption">
+              <strong>A second perspective</strong>
+              <span>November 2026 · Cover 02</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="issue-note">
+          <p>
+            Each monthly issue offers a considered portrait of its time:
+            stories, perspectives and subjects selected for their relevance,
+            significance and lasting interest.
+          </p>
+          <span class="issue-language">Edition language · English</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial perspective -->
+    <section class="perspective" id="perspective">
+      <div class="page-width perspective-grid">
+
+        <aside class="perspective-aside">
+          <span class="eyebrow">The editorial perspective</span>
+          <p>
+            Beyond the immediate headline lies the context, consequence
+            and human significance of the story.
+          </p>
+        </aside>
+
+        <div class="perspective-main">
+          <h2>
+            Not simply the story of the moment,
+            but <em>the meaning within it.</em>
+          </h2>
+
+          <p>
+            There is a difference between what happens and what deserves
+            to be remembered. DAXYREN follows that distinction.
+          </p>
+
+          <p>
+            It follows the currents moving through societies, economies,
+            institutions and everyday life. It recognises achievement,
+            examines change and gives attention to the ideas and events
+            that help define an era.
+          </p>
+
+          <p>
+            Its pages bring together different subjects and perspectives
+            without losing sight of the wider world they belong to.
+            Every issue is a considered record of a world in motion.
+          </p>
+
+          <div class="perspective-statement">
+            The present does not wait to become history.
+            It is becoming history now.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial scope -->
+    <section class="scope" id="scope">
+      <div class="page-width">
+
+        <div class="scope-heading">
+          <div>
+            <span class="eyebrow">The subjects shaping our time</span>
+            <h2 class="section-heading">A world without borders.</h2>
+          </div>
+          <p class="section-intro">
+            A broad editorial view of the forces, people and developments
+            influencing the world around us.
+          </p>
+        </div>
+
+        <div class="scope-grid">
+
+          <article class="scope-item">
+            <span class="scope-number">01</span>
+            <h3>World Affairs</h3>
+            <p>
+              The decisions, developments and turning points influencing
+              nations and the international landscape.
+            </p>
+          </article>
+
+          <article class="scope-item">
+            <span class="scope-number">02</span>
+            <h3>Business</h3>
+            <p>
+              Enterprise, markets, leadership and the ideas transforming
+              industries and economic life.
+            </p>
+          </article>
+
+          <article class="scope-item">
+            <span class="scope-number">03</span>
+            <h3>Sport</h3>
+            <p>
+              Competition, performance, sporting achievement and the
+              people shaping the world of sport.
+            </p>
+          </article>
+
+          <article class="scope-item">
+            <span class="scope-number">04</span>
+            <h3>Culture</h3>
+            <p>
+              The expressions, traditions, creative movements and
+              cultural moments that shape how people live.
+            </p>
+          </article>
+
+          <article class="scope-item">
+            <span class="scope-number">05</span>
+            <h3>Innovation</h3>
+            <p>
+              New thinking, discoveries and advances changing what is
+              possible across different fields.
+            </p>
+          </article>
+
+          <article class="scope-item">
+            <span class="scope-number">06</span>
+            <h3>Contemporary Life</h3>
+            <p>
+              People, places, ideas and experiences revealing the character
+              of the present age.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing statement -->
+    <section class="closing-thought">
+      <span class="eyebrow">The continuing chronicle</span>
+      <h2>
+        The world moves.
+        <em>Its significance deserves to be seen.</em>
+      </h2>
+      <p>
+        DAXYREN follows the currents of our time and recognises what matters
+        wherever it emerges.
+      </p>
+    </section>
+
+    <!-- Publishing identity -->
+    <section class="publisher" id="publisher">
+      <div class="page-width publisher-inner">
+
+        <div class="publisher-copy">
+          <span class="eyebrow">Publishing identity</span>
+          <h2>A distinct editorial voice. A wider institutional home.</h2>
+          <p>
+            DAXYREN is a publication of PHRINUSOMYIS. It maintains its own
+            magazine identity, editorial perspective and monthly publication,
+            within the wider publishing structure of the international
+            sports organization.
+          </p>
+
+          <div class="publisher-links">
+            <a href="https://phrinusomys.com/">PHRINUSOMYIS Homepage</a>
+            <a href="https://phrinusomys.com/newsroom/newswire.html">Newswire</a>
+            <a href="https://phrinusomys.com/magazine/news">PHRINUSOMYIS Magazine</a>
+          </div>
+        </div>
+
+        <div class="publisher-mark">
+          <img
+            src="https://phrinusomys.com/phrinusomys_logo.png"
+            alt="PHRINUSOMYIS logo"
+            loading="lazy">
+          <span>Published by PHRINUSOMYIS</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+          <img src="/daxyren-logo.png" alt="DAXYREN">
+          <p>
+            The people, events, ideas and achievements shaping our time.
+            THE WORLD, WITHOUT PAUSE.
+          </p>
+        </div>
+
+        <div class="footer-nav-wrap">
+
+          <div class="footer-column">
+            <h3>Explore DAXYREN</h3>
+            <a href="#home">Home</a>
+            <a href="#current-issue">Current Issue</a>
+            <a href="#perspective">Perspective</a>
+            <a href="#scope">Editorial Scope</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>PHRINUSOMYIS</h3>
+            <a href="https://phrinusomys.com/">Organization Homepage</a>
+            <a href="https://phrinusomys.com/newsroom/newswire.html">Newswire</a>
+            <a href="https://phrinusomys.com/magazine/news">Magazine</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="copyright-year">2026</span> <strong>DAXYREN</strong>. All rights reserved.</span>
+        <span>THE WORLD CURRENT · THE WORLD, WITHOUT PAUSE.</span>
+        <span>A publication of PHRINUSOMYIS.</span>
+      </div>
+
     </div>
+  </footer>
 
-  </div>
-</footer>
+  <script>
+    /* Mobile navigation */
+    (function () {
+      const toggle = document.getElementById("menu-toggle");
+      const navigation = document.getElementById("main-navigation");
 
-<script>
-/* MOBILE NAVIGATION */
+      if (!toggle || !navigation) return;
 
-(function () {
-  const button = document.getElementById("menuButton");
-  const menu = document.getElementById("navMenu");
+      function closeMenu() {
+        navigation.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation");
+      }
 
-  button.addEventListener("click", function () {
-    const open = menu.classList.toggle("open");
-    button.setAttribute("aria-expanded", String(open));
-    button.textContent = open ? "CLOSE" : "MENU";
-  });
+      toggle.addEventListener("click", function () {
+        const isOpen = navigation.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        toggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation" : "Open navigation"
+        );
+      });
 
-  menu.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      menu.classList.remove("open");
-      button.setAttribute("aria-expanded", "false");
-      button.textContent = "MENU";
+      navigation.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) closeMenu();
+      });
+    })();
+
+    /* Footer year */
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+
+    /* Google Translate */
+    function getTranslateCookie() {
+      const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
+      return match ? decodeURIComponent(match[1]) : "";
+    }
+
+    function setTranslateCookie(language) {
+      const value = language === "en" ? "" : "/en/" + language;
+      const hostname = window.location.hostname;
+      const domainParts = hostname.split(".");
+      const rootDomain = domainParts.length > 1
+        ? "." + domainParts.slice(-2).join(".")
+        : hostname;
+
+      document.cookie =
+        "googtrans=" + value +
+        ";path=/;max-age=" + (language === "en" ? "0" : "31536000") +
+        ";SameSite=Lax";
+
+      if (rootDomain !== hostname) {
+        document.cookie =
+          "googtrans=" + value +
+          ";path=/;domain=" + rootDomain +
+          ";max-age=" + (language === "en" ? "0" : "31536000") +
+          ";SameSite=Lax";
+      }
+    }
+
+    function applySavedLanguage() {
+      const saved = getTranslateCookie();
+      const selector = document.getElementById("site-language");
+
+      if (!selector) return;
+
+      if (saved) {
+        const parts = saved.split("/");
+        const language = parts[parts.length - 1];
+        if (language && selector.querySelector('option[value="' + language + '"]')) {
+          selector.value = language;
+        }
+      }
+    }
+
+    function googleTranslateElementInit() {
+      if (!window.google || !google.translate) return;
+
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+          autoDisplay: false
+        },
+        "google_translate_element"
+      );
+
+      applySavedLanguage();
+    }
+
+    document.getElementById("site-language").addEventListener("change", function () {
+      const language = this.value;
+
+      if (language === "en") {
+        setTranslateCookie("en");
+        window.location.reload();
+        return;
+      }
+
+      setTranslateCookie(language);
+      window.location.reload();
     });
-  });
-})();
+  </script>
 
-/* 21-LANGUAGE WEBSITE TRANSLATION */
-
-(function () {
-  const languageSelect = document.getElementById("languageSelect");
-
-  const supportedLanguages = [
-    "en", "fr", "es", "de", "ar", "zh-CN", "ru", "pt",
-    "ja", "ko", "it", "nl", "tr", "hi", "id", "vi",
-    "th", "pl", "sv", "fi", "da"
-  ];
-
-  function setLanguageCookie(language) {
-    const value = language === "en" ? "/en/en" : "/en/" + language;
-    const cookie = "googtrans=" + value + ";path=/;max-age=31536000;SameSite=Lax";
-    document.cookie = cookie;
-
-    if (location.hostname) {
-      document.cookie = cookie + ";domain=" + location.hostname;
-    }
-  }
-
-  function getSavedLanguage() {
-    const match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
-    return match ? decodeURIComponent(match[1]) : "en";
-  }
-
-  const savedLanguage = getSavedLanguage();
-
-  if (supportedLanguages.includes(savedLanguage)) {
-    languageSelect.value = savedLanguage;
-  }
-
-  languageSelect.addEventListener("change", function () {
-    const language = this.value;
-
-    if (!supportedLanguages.includes(language)) return;
-
-    if (language === "en") {
-      document.cookie =
-        "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
-
-      document.cookie =
-        "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=" +
-        location.hostname;
-
-      location.reload();
-      return;
-    }
-
-    setLanguageCookie(language);
-    location.reload();
-  });
-
-})();
-
-/* GOOGLE TRANSLATION SERVICE */
-
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: "en",
-    includedLanguages:
-      "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-    autoDisplay: false
-  }, "google_translate_element");
-}
-
-(function () {
-  const script = document.createElement("script");
-  script.src =
-    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-  script.async = true;
-  document.head.appendChild(script);
-})();
-</script>
+  <script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    async>
+  </script>
 
 </body>
 </html>
