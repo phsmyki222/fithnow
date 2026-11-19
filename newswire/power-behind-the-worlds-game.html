@@ -175,8 +175,8 @@ body.translated-ltr, body.translated-rtl {
 .lead-copy{background:var(--intro-bg);border:1px solid var(--border);padding:27px;display:flex;flex-direction:column;justify-content:center}
 .lead-copy h2{font-family:var(--serif);font-size:clamp(27px,3vw,39px);line-height:1.08;color:var(--heading);font-weight:500;margin:12px 0}
 .lead-copy p{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--text)}
-.read-button{align-self:flex-start;margin-top:13px;background:var(--button-bg);color:var(--button-text);border:0;padding:12px 18px;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700}
-.read-button:hover{background:var(--accent-strong)}
+.read-button{align-self:flex-start;margin-top:13px;background:var(--button-bg);color:var(--button-text);border:0;padding:12px 18px;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;display:inline-block}
+.read-button:hover{background:var(--accent-strong);color:var(--button-text)}
 .section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;border-bottom:1px solid var(--border-strong);padding-bottom:12px;margin:0 0 23px}
 .section-heading h2{font-family:var(--serif);font-size:clamp(27px,3vw,37px);font-weight:500;color:var(--heading);margin:0}
 .section-heading span{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-secondary)}
@@ -246,6 +246,14 @@ td strong{color:var(--heading)}
 .editorial-photo img{width:100%;height:auto;max-height:520px;object-fit:cover;cursor:zoom-in}
 .editorial-photo figcaption{padding:10px 13px;color:var(--text-secondary);font-size:10px;line-height:1.5}
 .story-photo{width:100%;height:175px;object-fit:cover;border-bottom:1px solid var(--border)}
+
+/* DAXYREN Spotlight Banner Inside Section */
+.daxyren-spotlight{display:grid;grid-template-columns:minmax(220px,.75fr) minmax(0,1.25fr);gap:24px;background:var(--surface);border:1px solid var(--border-strong);padding:24px;align-items:center;box-shadow:var(--shadow-small)}
+.daxyren-spotlight-media{border:1px solid var(--border);background:var(--surface-alt);overflow:hidden}
+.daxyren-spotlight-media img{width:100%;height:340px;object-fit:contain;background:#050505}
+.daxyren-spotlight-copy h3{font-family:var(--serif);font-size:clamp(26px,3.2vw,36px);color:var(--heading);font-weight:500;margin:10px 0 12px;line-height:1.15}
+.daxyren-spotlight-copy p{font-family:var(--serif);font-size:16px;color:var(--text);line-height:1.7;margin:0 0 16px}
+.daxyren-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 
 /* =========================================================
    SOLO IMMERSIVE 1-UP MAGAZINE THEATER WITH UNRESTRICTED FULL-CONTAIN IMAGE
@@ -345,7 +353,7 @@ td strong{color:var(--heading)}
 .solo-mag-image-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Guarantees 100% full picture is shown without cutting off any part */
+  object-fit: contain;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   background: #050505;
 }
@@ -452,6 +460,7 @@ td strong{color:var(--heading)}
 .lead-image img{min-height:280px;max-height:440px}
 .story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .two-column{grid-template-columns:1fr}
+.daxyren-spotlight{grid-template-columns:1fr}
 .solo-mag-image-wrap { height: 480px; }
 }
 @media(max-width:560px){
@@ -517,7 +526,7 @@ td strong{color:var(--heading)}
   <a href="#lead">Lead Story</a><a href="#football">Football</a><a href="#fifa">Governance</a>
   <a href="#cricket">Cricket</a><a href="#tennis">Tennis</a><a href="#golf">Golf</a>
   <a href="#darts">Darts</a><a href="#basketball">Basketball</a><a href="#motorsport">Motorsport</a>
-  <a href="#roundup">Across Sport</a><a href="#perspective">Perspective</a><a href="#magazineTheater">Magazine Collection</a>
+  <a href="#roundup">Across Sport</a><a href="#daxyren-feature">DAXYREN™</a><a href="#perspective">Perspective</a><a href="#magazineTheater">Magazine Collection</a>
  </div>
 </nav>
 
@@ -717,7 +726,7 @@ td strong{color:var(--heading)}
    <p class="standfirst">Bryson DeChambeau is set to join the DP World Tour as a Category 1 member for the 2027 season following the decision by LIV Golf to wind down operations after losing its Saudi financial support.</p>
    <button class="read-button" onclick="toggleArticle('golf-detail',this)">Read full report</button>
   </div>
-  <article class="article-full" id="golf-detail"><div class="eyebrow">Golf report · Tour realignment</div><h2>DeChambeau's next competitive chapter takes shape</h2><p class="standfirst">The movement of Bryson DeChambeau towards the DP World Tour is one of the clearest individual consequences of the decision to wind down LIV Golf operations.</p><p>DeChambeau is set to join the DP World Tour as a Category 1 member for 2027. The development follows LIV Golf's decision to wind down its operations after losing Saudi financial support. The change represents a major adjustment for players whose recent schedules and commercial arrangements were built around the breakaway circuit.</p><p>The route back into established tour structures is not identical for every former LIV player. DeChambeau's DP World Tour membership is a specific arrangement and should not be taken as evidence that all players will receive the same status or access.</p><p>There is also a separate question concerning the PGA Tour. DeChambeau is ineligible for the PGA Tour for at least 12 months after his final LIV appearance, according to the reported terms of his situation. That restriction means his 2027 calendar will require careful planning around the opportunities available through the DP World Tour and other eligible events.</p><h3>A wider structural consequence</h3><p>The LIV project altered professional golf by offering players a different competitive schedule, financial model and team-based presentation. Its winding down leaves questions about player contracts, tournament investment, tour membership and the future organisation of elite men's golf.</p><p>For the established tours, the immediate challenge is not simply to welcome players back. It is to determine how the competitive calendar can accommodate returning talent without undermining existing members or the structures that remained in place during the split.</p><p>For players, the uncertainty is practical. Membership categories, eligibility windows, event access and ranking opportunities will shape the next phase of their careers. The DeChambeau development is therefore important both as an individual move and as a sign of how the professional game is being reorganised.</p><button class="article-close" onclick="toggleArticle('golf-detail')">Close report</button></article>
+  <article class="article-full" id="golf-detail"><div class="eyebrow">Golf report · Tour realignment</div><h2>DeChambeau's next competitive chapter takes shape</h2><p class="standfirst">The movement of Bryson DeChambeau towards the DP World Tour is one of the clearest individual consequences of the decision to wind down LIV Golf operations.</p><p>DeChambeau is set to join the DP World Tour as a Category 1 member for the 2027. The development follows LIV Golf's decision to wind down its operations after losing Saudi financial support. The change represents a major adjustment for players whose recent schedules and commercial arrangements were built around the breakaway circuit.</p><p>The route back into established tour structures is not identical for every former LIV player. DeChambeau's DP World Tour membership is a specific arrangement and should not be taken as evidence that all players will receive the same status or access.</p><p>There is also a separate question concerning the PGA Tour. DeChambeau is ineligible for the PGA Tour for at least 12 months after his final LIV appearance, according to the reported terms of his situation. That restriction means his 2027 calendar will require careful planning around the opportunities available through the DP World Tour and other eligible events.</p><h3>A wider structural consequence</h3><p>The LIV project altered professional golf by offering players a different competitive schedule, financial model and team-based presentation. Its winding down leaves questions about player contracts, tournament investment, tour membership and the future organisation of elite men's golf.</p><p>For the established tours, the immediate challenge is not simply to welcome players back. It is to determine how the competitive calendar can accommodate returning talent without undermining existing members or the structures that remained in place during the split.</p><p>For players, the uncertainty is practical. Membership categories, eligibility windows, event access and ranking opportunities will shape the next phase of their careers. The DeChambeau development is therefore important both as an individual move and as a sign of how the professional game is being reorganised.</p><button class="article-close" onclick="toggleArticle('golf-detail')">Close report</button></article>
  </section>
 
  <section class="content-section" id="darts">
@@ -788,6 +797,41 @@ td strong{color:var(--heading)}
   <article class="article-full" id="nfl-detail"><div class="eyebrow">NFL · Monday Night Football</div><h2>Chargers take a narrow victory over Baltimore</h2><p class="standfirst">The Los Angeles Chargers defeated the Baltimore Ravens 23–20 in a close Monday Night Football contest.</p><p>A three-point margin made the game a test of execution in the decisive moments. The Chargers emerged with the win, while Baltimore was left to assess another difficult result. The match was reported as ending an 11-game losing streak for Los Angeles and extending the Ravens' run of defeats to five.</p><p>Those streak figures should be read in the context of the team's wider season and the official league record. The result itself is clear: Los Angeles won 23–20, and the narrow margin underlines how little separated the teams on the night.</p><button class="article-close" onclick="toggleArticle('nfl-detail')">Close report</button></article>
   <article class="article-full" id="hockey-detail"><div class="eyebrow">Ice hockey · Digital operations</div><h2>Website disruption puts sports technology resilience in focus</h2><p class="standfirst">Reports that the International Ice Hockey Federation's website was taken offline have drawn attention to the digital systems on which international sport increasingly depends.</p><p>At the time of this edition, reports attributed the disruption to a possible cyberattack. The precise cause and responsibility should not be treated as confirmed without a formal statement from the IIHF or a verified technical investigation.</p><p>The broader issue is relevant regardless of the eventual explanation. International federations rely on digital services for fixtures, results, accreditation, media information, governance documents and communication with national associations. A disruption can therefore affect more than public-facing news pages.</p><p>Sporting bodies need resilient infrastructure, tested recovery procedures and clear communication protocols. The incident is a reminder that digital continuity has become part of the operational foundation of modern sport.</p><button class="article-close" onclick="toggleArticle('hockey-detail')">Close context</button></article>
   <article class="article-full" id="global-detail"><div class="eyebrow">International perspective</div><h2>Sport is a connected system, not a collection of isolated competitions</h2><p>In the same week, football has produced a national-team result with commercial significance, a presidential contest has brought governance into sharper focus, tennis has debated the allocation of resources between disciplines, golf has confronted the consequences of a changing investment model, and Formula 1 has moved into the final phase of its season.</p><p>These developments are not identical, but they share a common theme: the sporting product is shaped by more than what happens during competition. It is influenced by governance, finance, media rights, athlete pathways, commercial partners and the institutions that organise participation.</p><p>Understanding sport internationally requires attention to all of these layers. A match result can be decisive on the field while also carrying consequences for a federation, a commercial agreement or the next generation of athletes.</p><button class="article-close" onclick="toggleArticle('global-detail')">Close perspective</button></article>
+ </section>
+
+ <!-- =========================================================
+      DAXYREN™ FEATURE SECTION — STORY, IMAGE & DIRECT LINK
+      ========================================================= -->
+ <section class="content-section" id="daxyren-feature">
+  <div class="section-heading"><h2>DAXYREN™ — THE WORLD CURRENT</h2><span>International Magazine · Sport, Business, Culture &amp; Affairs</span></div>
+  <div class="daxyren-spotlight">
+   <a class="daxyren-spotlight-media" href="https://phrinusomyis.com/daxyren">
+    <img src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg" alt="DAXYREN™ — THE WORLD CURRENT Cover" loading="lazy">
+   </a>
+   <div class="daxyren-spotlight-copy">
+    <div class="eyebrow">Editorial Feature · The World, Without Pause.</div>
+    <h3>Where big sporting moments meet the wider currents of the world</h3>
+    <p>Every week on the field, court, course, and circuit brings results that echo far beyond the final whistle. Through <strong>DAXYREN™ — THE WORLD CURRENT</strong>, those sporting turning points are placed alongside global affairs, business, culture, and innovation—looking past the noise to capture what truly matters.</p>
+    <div class="daxyren-actions">
+     <a class="read-button" href="https://phrinusomyis.com/daxyren">Read &amp; Explore DAXYREN™ →</a>
+     <button class="read-button" onclick="toggleArticle('daxyren-story',this)">Read feature story</button>
+    </div>
+   </div>
+  </div>
+
+  <article class="article-full" id="daxyren-story">
+   <div class="eyebrow">Special Feature · DAXYREN™</div>
+   <h2>Why sport's biggest nights belong to a larger world story</h2>
+   <div class="article-meta"><span>DAXYREN™</span><span>THE WORLD CURRENT</span><span>International Feature</span></div>
+   <p class="standfirst">A decisive goal, a championship run, or a shifting governance battle rarely stays inside a single stadium. It connects to how people live, compete, build, and pay attention around the world.</p>
+   <p>When a major match ends or a long-standing partnership reaches a turning point, the immediate score tells only part of what happened. Behind every headline sits a broader current: shifting commercial power, new generations stepping onto global stages, and communities watching moments that feel bigger than a single afternoon.</p>
+   <p><strong>DAXYREN™ — THE WORLD CURRENT</strong> follows those connections across sport, business, culture, innovation, and world affairs. Instead of treating each field as an isolated island, it looks at how movements in one arena shape expectations in another.</p>
+   <p>Continue directly to the official <strong>DAXYREN™</strong> page to explore the monthly editions, release schedule, and full editorial perspective.</p>
+   <div class="daxyren-actions">
+    <a class="read-button" href="https://phrinusomyis.com/daxyren">Go to DAXYREN™ Official Page →</a>
+    <button class="article-close" onclick="toggleArticle('daxyren-story')">Close story</button>
+   </div>
+  </article>
  </section>
 
  <section class="content-section" id="perspective">
@@ -882,6 +926,7 @@ td strong{color:var(--heading)}
     <div class="footer-links">
      <a href="https://phrinusomyis.com/newswire/news">Return to Newswire</a>
      <a href="https://phrinusomyis.com/">Official Organization</a>
+     <a href="https://phrinusomyis.com/daxyren">DAXYREN™</a>
      <a href="mailto:media@phrinusomyis.com?subject=PHRINUSOMYIS%20Newswire%20-%20Media%20and%20Editorial%20Enquiry">Media & Editorial Enquiries</a>
     </div>
    </div>
@@ -938,7 +983,7 @@ function closeLightbox(event){
  if(event)event.stopPropagation();
  document.getElementById("lightbox").classList.remove("open");
 }
-document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo").forEach(img=>{
+document.querySelectorAll(".lead-image img,.editorial-photo img,.story-photo,.daxyren-spotlight-media img").forEach(img=>{
  img.style.cursor="zoom-in";
  img.addEventListener("click",()=>openLightbox(img.src,img.alt));
 });
@@ -1046,9 +1091,8 @@ function renderMagazine(index) {
   const mag = magazines[index];
   const colorSpec = rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
   
-  // Smooth transition animation
   soloCard.style.animation = "none";
-  soloCard.offsetHeight; // trigger reflow
+  soloCard.offsetHeight;
   soloCard.style.animation = "cardFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
 
   soloCard.href = mag.url;
@@ -1060,7 +1104,6 @@ function renderMagazine(index) {
   soloQuote.textContent = `"${mag.quote}"`;
   activeNum.textContent = mag.num;
 
-  // Apply dynamic rainbow background lighting and glow
   theater.style.setProperty("--theater-bg", colorSpec.bg);
   theater.style.setProperty("--theater-glow", colorSpec.glowSoft);
   soloCard.style.setProperty("--card-glow", colorSpec.glow);
@@ -1079,7 +1122,7 @@ function prevSlide() {
 
 function startAutoSlide() {
   stopAutoSlide();
-  autoSlideInterval = setInterval(nextSlide, 5000); // Automatically slides every 5 seconds
+  autoSlideInterval = setInterval(nextSlide, 5000);
 }
 
 function stopAutoSlide() {
@@ -1091,19 +1134,17 @@ function stopAutoSlide() {
 
 prevBtn.addEventListener("click", () => {
   prevSlide();
-  startAutoSlide(); // Reset timer on manual interaction
+  startAutoSlide();
 });
 
 nextBtn.addEventListener("click", () => {
   nextSlide();
-  startAutoSlide(); // Reset timer on manual interaction
+  startAutoSlide();
 });
 
-// Pause auto-slide when hovering over the theater
 theater.addEventListener("mouseenter", stopAutoSlide);
 theater.addEventListener("mouseleave", startAutoSlide);
 
-// Initialize first slide and start automatic movement
 renderMagazine(0);
 startAutoSlide();
 
