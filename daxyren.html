@@ -403,6 +403,7 @@
         "offers": {
           "@type": "Offer",
           "name": "DAXYREN™ Hard Copy Edition (Available December 2026)",
+          "price": "0",
           "priceCurrency": "USD",
           "availability": "https://schema.org/PreOrder",
           "availabilityStarts": "2026-12-01",
@@ -682,7 +683,6 @@
       gap: 22px;
     }
 
-    /* Slightly increased both organization logos (width & height) */
     .daxyren-logo-link img {
       height: 86px;
       width: auto;
@@ -1000,7 +1000,7 @@
     }
 
     /* =========================================================
-       COVER SHOWCASE: FULL BOX RESTORED + RAINBOW COLOR BEHIND COVER
+       COVER SHOWCASE: SOFT RAINBOW BEHIND IMAGE + SOFT RAINBOW FULL BOX
        ========================================================= */
     .editions-section {
       padding: 120px 0 130px;
@@ -1059,7 +1059,7 @@
       background: var(--bg-panel);
       border: 1px solid var(--gold-line);
       padding: clamp(18px, 2.4vw, 32px);
-      box-shadow: 0 36px 95px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 36px 95px rgba(0, 0, 0, 0.35);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1071,28 +1071,30 @@
       transform: translateY(-4px);
     }
 
-    /* Full outer box uses uniform surface tone; color cycles directly behind the cover image */
+    /* Full outer box uses its own gentle, non-sharp rainbow tone per column */
     .cover-canvas {
       position: relative;
       min-height: clamp(560px, 68vw, 940px);
       flex: 1;
-      background-color: var(--bg-obsidian);
+      background-color: var(--full-box-rainbow-bg, #e6ece9);
       border: 1px solid var(--gold-dim);
-      padding: clamp(20px, 2.6vw, 34px);
+      padding: clamp(22px, 2.8vw, 38px);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: background-color 1.1s ease, border-color 0.35s ease;
     }
 
+    /* Frame directly behind the magazine cover image uses its own distinct soft rainbow color per column */
     .cover-backdrop-frame {
       position: relative;
       width: 100%;
       padding: clamp(18px, 2.4vw, 30px);
-      background-color: var(--cover-rainbow-bg, #b8293d);
+      background-color: var(--cover-rainbow-bg, #f3dede);
       border: 1px solid var(--gold-line);
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
-      transition: background-color 0.75s ease, border-color 0.35s ease;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
+      transition: background-color 1.1s ease, border-color 0.35s ease;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1104,7 +1106,7 @@
       max-height: 1120px;
       object-fit: contain;
       cursor: zoom-in;
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.52);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
       transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -1918,10 +1920,10 @@
           </div>
         </div>
 
-        <!-- Enlarged Cover Showcase: Full Box Restored + 50 Rainbow Colors Behind Cover -->
+        <!-- Enlarged Cover Showcase: Soft Rainbow Behind Each Cover + Soft Rainbow Full Box -->
         <div class="covers-monument">
           <article class="cover-showcase">
-            <div class="cover-canvas">
+            <div class="cover-canvas" data-box-column="0">
               <div class="cover-backdrop-frame" data-cover-column="0">
                 <img
                   src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
@@ -1936,7 +1938,7 @@
           </article>
 
           <article class="cover-showcase">
-            <div class="cover-canvas">
+            <div class="cover-canvas" data-box-column="1">
               <div class="cover-backdrop-frame" data-cover-column="1">
                 <img
                   src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
@@ -2426,14 +2428,15 @@
     });
 
     /* =========================================================
-       50 RAINBOW COLORS BEHIND EACH COVER (EVERY 3 SECONDS,
-       DIFFERENT PER COLUMN & ADAPTED TO ALL 10 THEMES)
+       SOFT, LOW-TONE RAINBOW PALETTE BEHIND EACH COVER + ON FULL BOX
+       - Changes automatically every 30 seconds (30000ms)
+       - Distinct soft rainbow color behind each cover and each full box
+       - Adapts smoothly across all 10 reading themes
        ========================================================= */
     (function () {
-      const TOTAL_COLORS = 50;
-      const rainbow50 = Array.from({ length: TOTAL_COLORS }, function (_, i) {
-        const hue = Math.round((i * 360) / TOTAL_COLORS);
-        return hue;
+      const RAINBOW_STEPS = 24;
+      const hues = Array.from({ length: RAINBOW_STEPS }, function (_, i) {
+        return Math.round((i * 360) / RAINBOW_STEPS);
       });
 
       const lightThemes = {
@@ -2442,38 +2445,51 @@
         platinum: true
       };
 
-      const frames = document.querySelectorAll(".cover-backdrop-frame");
-      if (!frames.length) return;
+      const coverFrames = document.querySelectorAll(".cover-backdrop-frame");
+      const fullBoxes = document.querySelectorAll(".cover-canvas");
+      if (!coverFrames.length && !fullBoxes.length) return;
 
       let currentTheme = "black";
       let stepIndex = 0;
 
-      function getRainbowColor(hue, themeKey) {
+      // Soft, muted rainbow tones: low saturation + light/gentle luminance so nothing looks sharp or loud
+      function softCoverColor(hue, themeKey) {
         if (lightThemes[themeKey]) {
-          return "hsl(" + hue + ", 72%, 38%)";
+          return "hsl(" + hue + ", 28%, 84%)";
         }
-        return "hsl(" + hue + ", 78%, 42%)";
+        return "hsl(" + hue + ", 26%, 78%)";
       }
 
-      function renderRainbowFrames() {
-        frames.forEach(function (frame, colIdx) {
-          const offset = (colIdx + 1) * Math.floor(TOTAL_COLORS / 2);
-          const colorIndex = (stepIndex + (colIdx * offset)) % TOTAL_COLORS;
-          const hue = rainbow50[colorIndex];
-          frame.style.setProperty("--cover-rainbow-bg", getRainbowColor(hue, currentTheme));
+      // Very soft, low-intensity full box background tone (distinct from behind-cover frame)
+      function softFullBoxColor(hue, themeKey) {
+        if (lightThemes[themeKey]) {
+          return "hsl(" + hue + ", 20%, 91%)";
+        }
+        return "hsl(" + hue + ", 18%, 86%)";
+      }
+
+      function renderSoftRainbow() {
+        coverFrames.forEach(function (frame, colIdx) {
+          const coverHueIdx = (stepIndex + (colIdx * 7) + 2) % RAINBOW_STEPS;
+          frame.style.setProperty("--cover-rainbow-bg", softCoverColor(hues[coverHueIdx], currentTheme));
+        });
+
+        fullBoxes.forEach(function (box, colIdx) {
+          const boxHueIdx = (stepIndex + (colIdx * 11) + 13) % RAINBOW_STEPS;
+          box.style.setProperty("--full-box-rainbow-bg", softFullBoxColor(hues[boxHueIdx], currentTheme));
         });
       }
 
       window.daxyrenSyncCoverTheme = function (themeKey) {
         currentTheme = themeKey || "black";
-        renderRainbowFrames();
+        renderSoftRainbow();
       };
 
-      renderRainbowFrames();
+      renderSoftRainbow();
       window.setInterval(function () {
-        stepIndex = (stepIndex + 1) % TOTAL_COLORS;
-        renderRainbowFrames();
-      }, 3000);
+        stepIndex = (stepIndex + 1) % RAINBOW_STEPS;
+        renderSoftRainbow();
+      }, 30000);
     })();
 
     /* =========================================================
