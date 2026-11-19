@@ -388,13 +388,25 @@
         "@type": "Product",
         "@id": "https://phrinusomyis.com/daxyren#print-edition",
         "name": "DAXYREN™ — THE WORLD CURRENT Hard Copy Edition",
-        "description": "No hard copy in November 2026; hard copies open in December 2026 with expanded content beyond the PDF (more pages and exclusive physical material), ordered directly on the website and shipped straight to the destination via printing partnership. Pricing announced at launch; from January 2027, print editions return to paid.",
+        "description": "No hard copy in November 2026; hard copies open in December 2026 with expanded content beyond the PDF (more pages and exclusive physical material), ordered directly on the website with direct-to-destination shipping via printing partnership. Pricing announced at launch; from January 2027, print editions return to paid.",
         "category": "Printed magazine",
+        "brand": {
+          "@type": "Brand",
+          "name": "DAXYREN™"
+        },
         "isRelatedTo": {
           "@id": "https://phrinusomyis.com/daxyren#magazine"
         },
         "manufacturer": {
           "@id": "https://phrinusomyis.com/daxyren#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "name": "DAXYREN™ Hard Copy Edition (Available December 2026)",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder",
+          "availabilityStarts": "2026-12-01",
+          "url": "https://phrinusomyis.com/daxyren#editions"
         }
       },
       {
@@ -670,6 +682,7 @@
       gap: 22px;
     }
 
+    /* Slightly increased both organization logos (width & height) */
     .daxyren-logo-link img {
       height: 86px;
       width: auto;
@@ -987,14 +1000,12 @@
     }
 
     /* =========================================================
-       COVER SHOWCASE WITH TALLER BOX & 50/50 MIRROR COLOR SECTION
+       COVER SHOWCASE: FULL BOX RESTORED + RAINBOW COLOR BEHIND COVER
        ========================================================= */
     .editions-section {
       padding: 120px 0 130px;
-      background:
-        linear-gradient(90deg, var(--mirror-left, #12110e) 0%, var(--mirror-left, #12110e) 50%, var(--mirror-right, #171510) 50%, var(--mirror-right, #171510) 100%);
+      background: var(--bg-obsidian);
       border-bottom: 1px solid var(--gold-dim);
-      transition: background 0.7s ease;
     }
 
     .editions-header {
@@ -1060,32 +1071,44 @@
       transform: translateY(-4px);
     }
 
+    /* Full outer box uses uniform surface tone; color cycles directly behind the cover image */
     .cover-canvas {
       position: relative;
       min-height: clamp(560px, 68vw, 940px);
       flex: 1;
-      background:
-        linear-gradient(90deg, var(--box-left, #181612) 0%, var(--box-left, #181612) 50%, var(--box-right, #121519) 50%, var(--box-right, #121519) 100%);
+      background-color: var(--bg-obsidian);
       border: 1px solid var(--gold-dim);
       padding: clamp(20px, 2.6vw, 34px);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.7s ease;
     }
 
-    .cover-canvas img {
+    .cover-backdrop-frame {
+      position: relative;
+      width: 100%;
+      padding: clamp(18px, 2.4vw, 30px);
+      background-color: var(--cover-rainbow-bg, #b8293d);
+      border: 1px solid var(--gold-line);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      transition: background-color 0.75s ease, border-color 0.35s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-backdrop-frame img {
       width: 100%;
       height: auto;
-      max-height: 1180px;
+      max-height: 1120px;
       object-fit: contain;
       cursor: zoom-in;
-      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.48);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.52);
       transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .cover-showcase:hover .cover-canvas img {
+    .cover-showcase:hover .cover-backdrop-frame img {
       transform: scale(1.012);
     }
 
@@ -1895,14 +1918,16 @@
           </div>
         </div>
 
-        <!-- Enlarged Cover Showcase with 50/50 Mirror Color Display -->
+        <!-- Enlarged Cover Showcase: Full Box Restored + 50 Rainbow Colors Behind Cover -->
         <div class="covers-monument">
           <article class="cover-showcase">
             <div class="cover-canvas">
-              <img
-                src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
-                alt="DAXYREN™ — THE WORLD CURRENT, November 2026 Edition Cover 01"
-                loading="eager">
+              <div class="cover-backdrop-frame" data-cover-column="0">
+                <img
+                  src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
+                  alt="DAXYREN™ — THE WORLD CURRENT, November 2026 Edition Cover 01"
+                  loading="eager">
+              </div>
             </div>
             <div class="cover-meta-bar">
               <h3>THE WORLD CURRENT — Cover 01</h3>
@@ -1912,10 +1937,12 @@
 
           <article class="cover-showcase">
             <div class="cover-canvas">
-              <img
-                src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
-                alt="DAXYREN™ — THE WORLD CURRENT, November 2026 Edition Cover 02"
-                loading="eager">
+              <div class="cover-backdrop-frame" data-cover-column="1">
+                <img
+                  src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
+                  alt="DAXYREN™ — THE WORLD CURRENT, November 2026 Edition Cover 02"
+                  loading="eager">
+              </div>
             </div>
             <div class="cover-meta-bar">
               <h3>THE WORLD CURRENT — Cover 02</h3>
@@ -2388,7 +2415,7 @@
       document.getElementById("coverLightbox").classList.remove("open");
     }
 
-    document.querySelectorAll(".cover-canvas img").forEach(function (img) {
+    document.querySelectorAll(".cover-backdrop-frame img").forEach(function (img) {
       img.addEventListener("click", function () {
         openCoverLightbox(img.src, img.alt);
       });
@@ -2399,48 +2426,54 @@
     });
 
     /* =========================================================
-       50/50 MIRROR COLOR SHIFT FOR SECTION & COVER BOXES
+       50 RAINBOW COLORS BEHIND EACH COVER (EVERY 3 SECONDS,
+       DIFFERENT PER COLUMN & ADAPTED TO ALL 10 THEMES)
        ========================================================= */
     (function () {
-      const mirrorPairs = [
-        ["#15130f", "#10151c"],
-        ["#0f1815", "#191216"],
-        ["#17131a", "#0f1718"],
-        ["#191510", "#11141f"],
-        ["#111914", "#1b1315"],
-        ["#14151c", "#191611"],
-        ["#181215", "#0f1816"],
-        ["#121719", "#1a1410"]
-      ];
-      let idx = 0;
-      const section = document.querySelector(".editions-section");
-      const canvases = document.querySelectorAll(".cover-canvas");
-      if (!section && !canvases.length) return;
+      const TOTAL_COLORS = 50;
+      const rainbow50 = Array.from({ length: TOTAL_COLORS }, function (_, i) {
+        const hue = Math.round((i * 360) / TOTAL_COLORS);
+        return hue;
+      });
 
-      function cycleMirrorColors() {
-        const [leftA, rightA] = mirrorPairs[idx % mirrorPairs.length];
-        const [leftB, rightB] = mirrorPairs[(idx + 3) % mirrorPairs.length];
+      const lightThemes = {
+        ivory: true,
+        whiteblue: true,
+        platinum: true
+      };
 
-        if (section) {
-          section.style.setProperty("--mirror-left", leftA);
-          section.style.setProperty("--mirror-right", rightA);
+      const frames = document.querySelectorAll(".cover-backdrop-frame");
+      if (!frames.length) return;
+
+      let currentTheme = "black";
+      let stepIndex = 0;
+
+      function getRainbowColor(hue, themeKey) {
+        if (lightThemes[themeKey]) {
+          return "hsl(" + hue + ", 72%, 38%)";
         }
-
-        canvases.forEach(function (el, cIdx) {
-          if (cIdx % 2 === 0) {
-            el.style.setProperty("--box-left", rightA);
-            el.style.setProperty("--box-right", leftA);
-          } else {
-            el.style.setProperty("--box-left", leftB);
-            el.style.setProperty("--box-right", rightB);
-          }
-        });
-
-        idx++;
+        return "hsl(" + hue + ", 78%, 42%)";
       }
 
-      cycleMirrorColors();
-      window.setInterval(cycleMirrorColors, 4200);
+      function renderRainbowFrames() {
+        frames.forEach(function (frame, colIdx) {
+          const offset = (colIdx + 1) * Math.floor(TOTAL_COLORS / 2);
+          const colorIndex = (stepIndex + (colIdx * offset)) % TOTAL_COLORS;
+          const hue = rainbow50[colorIndex];
+          frame.style.setProperty("--cover-rainbow-bg", getRainbowColor(hue, currentTheme));
+        });
+      }
+
+      window.daxyrenSyncCoverTheme = function (themeKey) {
+        currentTheme = themeKey || "black";
+        renderRainbowFrames();
+      };
+
+      renderRainbowFrames();
+      window.setInterval(function () {
+        stepIndex = (stepIndex + 1) % TOTAL_COLORS;
+        renderRainbowFrames();
+      }, 3000);
     })();
 
     /* =========================================================
@@ -2538,7 +2571,8 @@
       };
 
       function applyTheme(themeKey) {
-        const t = themes[themeKey] || themes.black;
+        const key = themes[themeKey] ? themeKey : "black";
+        const t = themes[key];
         const root = document.documentElement;
         root.style.setProperty("--bg-void", t.voidBg);
         root.style.setProperty("--bg-obsidian", t.obsidian);
@@ -2554,11 +2588,15 @@
         root.style.setProperty("--accent-soft", t.soft);
 
         document.querySelectorAll(".theme-btn").forEach(function (btn) {
-          btn.classList.toggle("is-active", btn.getAttribute("data-theme") === themeKey);
+          btn.classList.toggle("is-active", btn.getAttribute("data-theme") === key);
         });
 
+        if (typeof window.daxyrenSyncCoverTheme === "function") {
+          window.daxyrenSyncCoverTheme(key);
+        }
+
         try {
-          localStorage.setItem("daxyren-appearance-theme", themeKey);
+          localStorage.setItem("daxyren-appearance-theme", key);
         } catch (e) {}
       }
 
