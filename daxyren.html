@@ -47,7 +47,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -488,20 +488,20 @@
     :root {
       --bg-void: #050505;
       --bg-obsidian: #0a0a09;
-      --bg-panel: #11110f;
-      --bg-card: #161512;
-      --gold: #c9a659;
-      --gold-bright: #ebd08b;
-      --gold-dim: rgba(201, 166, 89, 0.24);
-      --gold-line: rgba(201, 166, 89, 0.45);
-      --text-ivory: #f5f1e8;
-      --text-silver: #bdb7aa;
-      --text-muted: #847e72;
-      --accent-soft: rgba(201, 166, 89, 0.14);
-      --rainbow-glow: rgba(201, 166, 89, 0.22);
-      --rainbow-border: rgba(201, 166, 89, 0.48);
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --bg-panel: #121210;
+      --bg-card: #171613;
+      --gold: #d9b563;
+      --gold-bright: #f5da94;
+      --gold-dim: rgba(217, 181, 99, 0.32);
+      --gold-line: rgba(217, 181, 99, 0.58);
+      --text-ivory: #ffffff;
+      --text-silver: #eae5da;
+      --text-muted: #c4bdb0;
+      --accent-soft: rgba(217, 181, 99, 0.14);
+      --rainbow-glow: rgba(217, 181, 99, 0.24);
+      --rainbow-border: rgba(217, 181, 99, 0.55);
+      --display: "Arial Black", "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+      --sans: "Plus Jakarta Sans", Arial, "Helvetica Neue", sans-serif;
       --container: 1520px;
     }
 
@@ -520,10 +520,13 @@
       margin: 0;
       background:
         radial-gradient(circle at 82% 8%, var(--accent-soft), transparent 38%),
-        radial-gradient(circle at 12% 48%, rgba(201, 166, 89, 0.045), transparent 42%),
+        radial-gradient(circle at 12% 48%, rgba(217, 181, 99, 0.05), transparent 42%),
         var(--bg-void);
       color: var(--text-ivory);
       font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
@@ -642,23 +645,24 @@
     .top-rail {
       background: var(--bg-void);
       border-bottom: 1px solid var(--gold-dim);
-      padding: 10px 24px;
+      padding: 12px 24px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.22em;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-silver);
+      color: var(--text-ivory);
       text-align: center;
     }
 
     .top-rail strong {
+      font-family: var(--display);
       color: var(--gold-bright);
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .top-rail span.dot {
@@ -719,22 +723,24 @@
     .under-badge-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
     .under-badge-text span {
-      font-size: 8px;
-      letter-spacing: 0.22em;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
 
     .under-badge-text strong {
-      font-size: 11px;
-      letter-spacing: 0.18em;
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold-bright);
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .nav-links {
@@ -745,11 +751,11 @@
     }
 
     .nav-links a {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-silver);
+      color: var(--text-ivory);
       padding: 8px 0;
       position: relative;
       transition: color 0.25s ease;
@@ -761,7 +767,7 @@
       left: 0;
       right: 0;
       bottom: 2px;
-      height: 1px;
+      height: 2px;
       background: var(--gold-bright);
       transform: scaleX(0);
       transform-origin: left;
@@ -784,11 +790,12 @@
 
     .lang-picker {
       background: var(--bg-panel);
-      border: 1px solid var(--gold-dim);
+      border: 1px solid var(--gold-line);
       color: var(--text-ivory);
-      padding: 9px 14px;
-      font-size: 10px;
-      letter-spacing: 0.1em;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       cursor: pointer;
     }
 
@@ -799,11 +806,13 @@
 
     .mobile-btn {
       display: none;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       background: transparent;
-      border: 1px solid var(--gold-dim);
+      border: 1px solid var(--gold-line);
       color: var(--gold-bright);
+      font-size: 20px;
+      font-weight: 800;
       cursor: pointer;
     }
 
@@ -811,7 +820,7 @@
     .theme-strip {
       background: var(--bg-panel);
       border-bottom: 1px solid var(--gold-dim);
-      padding: 12px 0;
+      padding: 14px 0;
     }
 
     .theme-strip-inner {
@@ -823,26 +832,28 @@
     }
 
     .theme-strip-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-bright);
     }
 
     .theme-choices {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
     }
 
     .theme-btn {
       background: var(--bg-obsidian);
       border: 1px solid var(--gold-dim);
-      color: var(--text-silver);
-      padding: 6px 10px;
-      font-size: 9px;
-      letter-spacing: 0.08em;
+      color: var(--text-ivory);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -853,7 +864,7 @@
       background: var(--gold-bright);
       color: var(--bg-void);
       border-color: var(--gold-bright);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     /* Editorial Eyebrow */
@@ -861,24 +872,25 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.26em;
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-bright);
     }
 
     .kicker::before {
       content: "";
       width: 32px;
-      height: 1px;
-      background: var(--gold);
+      height: 2px;
+      background: var(--gold-bright);
     }
 
     /* Hero Stage */
     .hero-stage {
       position: relative;
-      padding: 108px 0 112px;
+      padding: 100px 0 108px;
       border-bottom: 1px solid var(--gold-dim);
       overflow: hidden;
     }
@@ -891,7 +903,7 @@
         linear-gradient(var(--gold-dim) 1px, transparent 1px),
         linear-gradient(90deg, var(--gold-dim) 1px, transparent 1px);
       background-size: 84px 84px;
-      opacity: 0.22;
+      opacity: 0.18;
       mask-image: radial-gradient(circle at 50% 45%, #000 35%, transparent 88%);
       pointer-events: none;
     }
@@ -906,38 +918,40 @@
     }
 
     .hero-title {
-      margin: 26px 0 0;
-      font-family: var(--serif);
-      font-size: clamp(64px, 9.8vw, 146px);
-      font-weight: 400;
-      line-height: 0.86;
-      letter-spacing: -0.045em;
+      margin: 24px 0 0;
+      font-family: var(--display);
+      font-size: clamp(48px, 7.6vw, 112px);
+      font-weight: 900;
+      line-height: 0.96;
+      letter-spacing: -0.02em;
       color: var(--text-ivory);
     }
 
     .hero-title span {
       display: block;
       color: var(--gold-bright);
-      font-style: italic;
-      font-size: 0.84em;
+      font-style: normal;
+      font-size: 0.92em;
     }
 
     .hero-subline {
-      margin-top: 30px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.28em;
+      margin-top: 26px;
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-bright);
     }
 
     .hero-lead {
-      margin: 24px 0 0;
-      max-width: 620px;
-      font-family: var(--serif);
-      font-size: clamp(22px, 2.4vw, 30px);
-      line-height: 1.48;
-      color: var(--text-silver);
+      margin: 22px 0 0;
+      max-width: 640px;
+      font-family: var(--sans);
+      font-size: clamp(19px, 2vw, 23px);
+      font-weight: 600;
+      line-height: 1.65;
+      color: var(--text-ivory);
     }
 
     .hero-card {
@@ -948,9 +962,10 @@
     }
 
     .hero-card-tag {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold-bright);
       margin-bottom: 14px;
@@ -958,17 +973,18 @@
 
     .hero-card h2 {
       margin: 0 0 14px;
-      font-family: var(--serif);
-      font-size: 32px;
-      font-weight: 400;
-      line-height: 1.15;
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.25;
       color: var(--text-ivory);
     }
 
     .hero-card p {
       margin: 0 0 22px;
-      font-size: 13px;
-      line-height: 1.85;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.75;
       color: var(--text-silver);
     }
 
@@ -984,7 +1000,7 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 16px;
-      font-size: 11px;
+      font-size: 14px;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--gold-dim);
     }
@@ -996,14 +1012,16 @@
 
     .schedule-row span {
       color: var(--text-muted);
-      letter-spacing: 0.14em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      font-size: 9px;
+      font-size: 12px;
+      font-weight: 700;
     }
 
     .schedule-row strong {
       color: var(--gold-bright);
-      font-weight: 600;
+      font-weight: 800;
+      font-size: 14px;
       text-align: right;
     }
 
@@ -1011,7 +1029,7 @@
        MONUMENTAL SINGLE-CARD COVER STAGE WITH AUTO RAINBOW BACKDROP
        ========================================================= */
     .editions-section {
-      padding: 120px 0 130px;
+      padding: 112px 0 124px;
       background: var(--bg-obsidian);
       border-bottom: 1px solid var(--gold-dim);
     }
@@ -1021,39 +1039,42 @@
       justify-content: space-between;
       align-items: flex-end;
       gap: 40px;
-      margin-bottom: 60px;
+      margin-bottom: 56px;
     }
 
     .editions-header h2 {
       margin: 18px 0 0;
-      font-family: var(--serif);
-      font-size: clamp(40px, 5.4vw, 74px);
-      font-weight: 400;
-      line-height: 1.02;
-      letter-spacing: -0.035em;
+      font-family: var(--display);
+      font-size: clamp(34px, 4.6vw, 60px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text-ivory);
     }
 
     .complimentary-pill {
       border: 1px solid var(--gold-line);
       background: var(--bg-panel);
-      padding: 18px 26px;
-      max-width: 440px;
+      padding: 20px 26px;
+      max-width: 460px;
     }
 
     .complimentary-pill strong {
       display: block;
-      font-size: 10px;
-      letter-spacing: 0.22em;
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold-bright);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .complimentary-pill span {
       display: block;
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--text-silver);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.65;
+      color: var(--text-ivory);
     }
 
     /* Outer stage with automatic cycling rainbow ambient backdrop */
@@ -1111,17 +1132,17 @@
 
     .cover-caption-box h3 {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(26px, 3vw, 34px);
-      font-weight: 400;
+      font-family: var(--display);
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 900;
       color: var(--text-ivory);
     }
 
     .cover-caption-box p {
-      margin: 4px 0 0;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
+      margin: 6px 0 0;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold-bright);
     }
@@ -1141,10 +1162,10 @@
       background: var(--bg-obsidian);
       border: 1px solid var(--gold-line);
       color: var(--gold-bright);
-      padding: 11px 18px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.25s ease;
@@ -1174,7 +1195,7 @@
     .release-box {
       background: var(--bg-panel);
       border: 1px solid var(--gold-line);
-      padding: 40px;
+      padding: 38px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1182,13 +1203,14 @@
 
     .release-status {
       display: inline-block;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--bg-void);
       background: var(--gold-bright);
-      padding: 6px 12px;
+      padding: 8px 14px;
       margin-bottom: 20px;
       width: fit-content;
     }
@@ -1200,25 +1222,27 @@
     }
 
     .release-box h3 {
-      margin: 0 0 12px;
-      font-family: var(--serif);
-      font-size: 34px;
-      font-weight: 400;
+      margin: 0 0 14px;
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.2;
       color: var(--text-ivory);
     }
 
     .release-box p {
       margin: 0 0 26px;
-      font-size: 14px;
-      line-height: 1.85;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.75;
       color: var(--text-silver);
     }
 
     .release-specs {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      padding: 18px 0;
+      gap: 18px;
+      padding: 20px 0;
       border-top: 1px solid var(--gold-dim);
       border-bottom: 1px solid var(--gold-dim);
       margin-bottom: 28px;
@@ -1226,17 +1250,18 @@
 
     .release-specs div span {
       display: block;
-      font-size: 9px;
-      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .release-specs div strong {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-ivory);
-      font-weight: 600;
+      font-weight: 800;
     }
 
     .download-action-area {
@@ -1250,10 +1275,11 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 17px 28px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
+      padding: 18px 28px;
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       border: 1px solid var(--gold-bright);
       background: var(--gold-bright);
@@ -1281,16 +1307,17 @@
     }
 
     .download-caption {
-      font-size: 11px;
+      font-size: 14px;
+      font-weight: 600;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* =========================================================
        SINGLE-COLUMN EDITORIAL CHAPTERS WITH SCROLL-FOLLOWING HEADLINES
        ========================================================= */
     .editorial-chapter {
-      padding: 125px 0;
+      padding: 116px 0;
       border-bottom: 1px solid var(--gold-dim);
       position: relative;
     }
@@ -1300,7 +1327,7 @@
     }
 
     .single-column-reader {
-      max-width: 820px;
+      max-width: 840px;
       margin-inline: auto;
       position: relative;
     }
@@ -1326,20 +1353,20 @@
     }
 
     .scroll-follow-header .live-kicker {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-bright);
       white-space: nowrap;
     }
 
     .scroll-follow-header .live-headline {
-      font-family: var(--serif);
-      font-size: clamp(19px, 2.2vw, 26px);
-      font-weight: 500;
-      color: var(--gold-bright);
-      letter-spacing: -0.02em;
+      font-family: var(--sans);
+      font-size: clamp(16px, 1.8vw, 20px);
+      font-weight: 800;
+      color: var(--text-ivory);
       text-align: right;
     }
 
@@ -1351,52 +1378,55 @@
 
     .chapter-intro-block .chapter-sub-lead {
       margin: 18px 0 0;
-      font-family: var(--serif);
-      font-size: clamp(21px, 2.2vw, 26px);
-      line-height: 1.55;
-      color: var(--text-silver);
+      font-family: var(--sans);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700;
+      line-height: 1.65;
+      color: var(--text-ivory);
     }
 
     .prose-stream h2 {
       margin: 0 0 34px;
-      font-family: var(--serif);
-      font-size: clamp(40px, 5vw, 68px);
-      font-weight: 400;
-      line-height: 1.08;
-      letter-spacing: -0.035em;
+      font-family: var(--display);
+      font-size: clamp(32px, 4.2vw, 52px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
       color: var(--text-ivory);
     }
 
     .prose-stream h2 em {
       color: var(--gold-bright);
-      font-style: italic;
+      font-style: normal;
     }
 
     .prose-stream p[data-follow-headline] {
-      margin: 0 0 24px;
-      font-family: var(--serif);
-      font-size: clamp(20px, 2vw, 24px);
-      line-height: 1.75;
+      margin: 0 0 26px;
+      font-family: var(--sans);
+      font-size: clamp(18px, 1.9vw, 21px);
+      font-weight: 600;
+      line-height: 1.8;
       color: var(--text-silver);
     }
 
     .prose-stream p strong {
       color: var(--text-ivory);
-      font-weight: 600;
+      font-weight: 800;
     }
 
     .prose-cadence {
       margin: 34px 0;
       padding: 26px 0 26px 28px;
-      border-left: 2px solid var(--gold);
+      border-left: 3px solid var(--gold-bright);
       display: grid;
-      gap: 10px;
+      gap: 12px;
     }
 
     .prose-cadence span {
-      font-family: var(--serif);
-      font-size: clamp(22px, 2.3vw, 28px);
-      line-height: 1.45;
+      font-family: var(--sans);
+      font-size: clamp(19px, 2vw, 23px);
+      font-weight: 800;
+      line-height: 1.5;
       color: var(--text-ivory);
     }
 
@@ -1407,32 +1437,33 @@
     }
 
     .prose-closing-lockup .mark-title {
-      font-family: var(--serif);
-      font-size: 32px;
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 900;
       letter-spacing: 0.04em;
       color: var(--gold-bright);
     }
 
     .prose-closing-lockup .mark-sub {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-ivory);
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .prose-closing-lockup .mark-quote {
-      margin-top: 18px;
-      font-family: var(--serif);
-      font-size: 23px;
-      font-style: italic;
+      margin-top: 16px;
+      font-family: var(--sans);
+      font-size: 19px;
+      font-weight: 700;
       color: var(--text-silver);
     }
 
     /* Editorial Scope Grid */
     .scope-section {
-      padding: 120px 0;
+      padding: 112px 0;
       border-bottom: 1px solid var(--gold-dim);
     }
 
@@ -1441,22 +1472,24 @@
       justify-content: space-between;
       align-items: flex-end;
       gap: 32px;
-      margin-bottom: 58px;
+      margin-bottom: 56px;
     }
 
     .scope-top h2 {
       margin: 18px 0 0;
-      font-family: var(--serif);
-      font-size: clamp(38px, 4.8vw, 66px);
-      font-weight: 400;
-      line-height: 1.05;
+      font-family: var(--display);
+      font-size: clamp(32px, 4.2vw, 54px);
+      font-weight: 900;
+      line-height: 1.12;
+      color: var(--text-ivory);
     }
 
     .scope-top p {
-      max-width: 480px;
+      max-width: 500px;
       margin: 0;
-      font-size: 14px;
-      line-height: 1.85;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.75;
       color: var(--text-silver);
     }
 
@@ -1481,30 +1514,32 @@
 
     .scope-cell span {
       display: block;
-      font-family: var(--serif);
+      font-family: var(--display);
       font-size: 18px;
-      color: var(--gold);
-      margin-bottom: 24px;
+      font-weight: 900;
+      color: var(--gold-bright);
+      margin-bottom: 20px;
     }
 
     .scope-cell h3 {
       margin: 0 0 12px;
-      font-family: var(--serif);
-      font-size: 28px;
-      font-weight: 400;
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 900;
       color: var(--text-ivory);
     }
 
     .scope-cell p {
       margin: 0;
-      font-size: 13px;
-      line-height: 1.85;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.75;
       color: var(--text-silver);
     }
 
     /* Institutional Publishing Relationship Section */
     .publishing-section {
-      padding: 115px 0;
+      padding: 112px 0;
       background: var(--bg-obsidian);
       border-bottom: 1px solid var(--gold-dim);
     }
@@ -1518,17 +1553,18 @@
 
     .publishing-copy h2 {
       margin: 20px 0 22px;
-      font-family: var(--serif);
-      font-size: clamp(36px, 4.4vw, 58px);
-      font-weight: 400;
-      line-height: 1.12;
+      font-family: var(--display);
+      font-size: clamp(30px, 3.8vw, 48px);
+      font-weight: 900;
+      line-height: 1.18;
       color: var(--text-ivory);
     }
 
     .publishing-copy p {
       margin: 0 0 20px;
-      font-size: 15px;
-      line-height: 1.9;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.8;
       color: var(--text-silver);
       max-width: 650px;
     }
@@ -1541,11 +1577,11 @@
     }
 
     .active-links-row a {
-      padding: 14px 22px;
+      padding: 15px 22px;
       border: 1px solid var(--gold-line);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-ivory);
       transition: all 0.25s ease;
@@ -1589,19 +1625,21 @@
     }
 
     .crest-card-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold-bright);
     }
 
     .crest-card p {
       margin: 0;
-      font-size: 12px;
-      line-height: 1.8;
-      color: var(--text-muted);
-      max-width: 340px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.75;
+      color: var(--text-silver);
+      max-width: 360px;
     }
 
     /* Footer */
@@ -1627,10 +1665,11 @@
 
     .footer-identity p {
       margin: 0;
-      max-width: 440px;
-      font-family: var(--serif);
-      font-size: 20px;
-      line-height: 1.65;
+      max-width: 460px;
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.75;
       color: var(--text-silver);
     }
 
@@ -1642,18 +1681,20 @@
 
     .footer-col h4 {
       margin: 0 0 18px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold-bright);
     }
 
     .footer-col a {
       display: block;
-      margin-bottom: 12px;
-      font-size: 12px;
-      color: var(--text-silver);
+      margin-bottom: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-ivory);
       transition: color 0.2s ease;
     }
 
@@ -1668,14 +1709,16 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
-      font-size: 10px;
-      letter-spacing: 0.14em;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text-silver);
     }
 
     .footer-base strong {
       color: var(--gold-bright);
+      font-weight: 800;
     }
 
     /* Cover Lightbox */
@@ -1708,10 +1751,11 @@
       background: var(--gold-bright);
       color: var(--bg-void);
       border: 0;
-      padding: 12px 18px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      padding: 14px 20px;
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       cursor: pointer;
     }
@@ -1958,7 +2002,7 @@
                 <h3 id="activeCoverTitle">THE WORLD CURRENT — Cover 01</h3>
                 <p id="activeCoverMeta">November 2026 · Free PDF</p>
               </div>
-              <span id="activeCoverCounter" style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);">Cover 01 of 02</span>
+              <span id="activeCoverCounter" style="font-size:13px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-silver);">Cover 01 of 02</span>
             </div>
           </div>
 
@@ -2445,8 +2489,6 @@
 
     /* =========================================================
        SINGLE-CARD COVER SWITCHER + AUTO-CHANGING RAINBOW BOX GLOW
-       - Cover image stays crisp and uncropped inside its frame
-       - Rainbow backdrop color around the box changes automatically
        ========================================================= */
     (function () {
       const covers = [
@@ -2564,59 +2606,59 @@
     })();
 
     /* =========================================================
-       10-THEME APPEARANCE ENGINE
+       10-THEME APPEARANCE ENGINE (HIGH-READABILITY CONTRAST)
        ========================================================= */
     (function () {
       const themes = {
         black: {
-          voidBg: "#050505", obsidian: "#0a0a09", panel: "#11110f",
-          ivory: "#f5f1e8", silver: "#bdb7aa", muted: "#847e72",
-          gold: "#c9a659", bright: "#ebd08b", dim: "rgba(201, 166, 89, 0.24)", line: "rgba(201, 166, 89, 0.45)", soft: "rgba(201, 166, 89, 0.08)"
+          voidBg: "#050505", obsidian: "#0a0a09", panel: "#121210",
+          ivory: "#ffffff", silver: "#eae5da", muted: "#c4bdb0",
+          gold: "#d9b563", bright: "#f5da94", dim: "rgba(217, 181, 99, 0.32)", line: "rgba(217, 181, 99, 0.58)", soft: "rgba(217, 181, 99, 0.10)"
         },
         ivory: {
           voidBg: "#f3f0e7", obsidian: "#fffdf7", panel: "#e9e4d7",
-          ivory: "#25231f", silver: "#4d483f", muted: "#686257",
-          gold: "#a9853f", bright: "#8c6b2e", dim: "rgba(139, 107, 46, 0.25)", line: "rgba(139, 107, 46, 0.52)", soft: "rgba(169, 133, 63, 0.10)"
+          ivory: "#11100e", silver: "#26231e", muted: "#3d3931",
+          gold: "#8c6b2e", bright: "#6e521f", dim: "rgba(110, 82, 31, 0.30)", line: "rgba(110, 82, 31, 0.58)", soft: "rgba(140, 107, 46, 0.10)"
         },
         blue: {
           voidBg: "#050e1a", obsidian: "#071426", panel: "#0d2038",
-          ivory: "#edf4ff", silver: "#c3d4ea", muted: "#9bb2ce",
-          gold: "#3d91df", bright: "#8fc5ff", dim: "rgba(80, 155, 220, 0.28)", line: "rgba(80, 155, 220, 0.55)", soft: "rgba(61, 145, 223, 0.12)"
+          ivory: "#ffffff", silver: "#e1ecfa", muted: "#b8cde6",
+          gold: "#5ea8ef", bright: "#a8d4ff", dim: "rgba(94, 168, 239, 0.34)", line: "rgba(94, 168, 239, 0.62)", soft: "rgba(94, 168, 239, 0.12)"
         },
         whiteblue: {
           voidBg: "#f7f9fc", obsidian: "#ffffff", panel: "#edf2f8",
-          ivory: "#182538", silver: "#3a4c64", muted: "#526176",
-          gold: "#2765a5", bright: "#153b69", dim: "rgba(39, 101, 165, 0.22)", line: "rgba(39, 101, 165, 0.48)", soft: "rgba(39, 101, 165, 0.08)"
+          ivory: "#0e1724", silver: "#1f2d40", muted: "#35465c",
+          gold: "#1d5691", bright: "#103259", dim: "rgba(29, 86, 145, 0.28)", line: "rgba(29, 86, 145, 0.55)", soft: "rgba(29, 86, 145, 0.08)"
         },
         charcoal: {
           voidBg: "#121416", obsidian: "#17191b", panel: "#202326",
-          ivory: "#f1f0eb", silver: "#c8c7c0", muted: "#9d9d96",
-          gold: "#c6a45a", bright: "#e2c77e", dim: "rgba(198, 164, 90, 0.26)", line: "rgba(198, 164, 90, 0.52)", soft: "rgba(198, 164, 90, 0.10)"
+          ivory: "#ffffff", silver: "#e6e5de", muted: "#c2c1ba",
+          gold: "#d4b268", bright: "#f0d58c", dim: "rgba(212, 178, 104, 0.32)", line: "rgba(212, 178, 104, 0.58)", soft: "rgba(212, 178, 104, 0.10)"
         },
         emerald: {
           voidBg: "#05130f", obsidian: "#071b16", panel: "#0d2820",
-          ivory: "#edf7f0", silver: "#c2ddd0", muted: "#9ab8a8",
-          gold: "#55b987", bright: "#a8e0c0", dim: "rgba(85, 185, 135, 0.26)", line: "rgba(85, 185, 135, 0.55)", soft: "rgba(85, 185, 135, 0.11)"
+          ivory: "#ffffff", silver: "#ddf2e7", muted: "#b3d4c3",
+          gold: "#68cc9a", bright: "#b8f0d0", dim: "rgba(104, 204, 154, 0.32)", line: "rgba(104, 204, 154, 0.60)", soft: "rgba(104, 204, 154, 0.11)"
         },
         rose: {
           voidBg: "#180e11", obsidian: "#211418", panel: "#2d1b21",
-          ivory: "#fff0f1", silver: "#e3c8cf", muted: "#c4a3ab",
-          gold: "#c77b92", bright: "#efb8c6", dim: "rgba(199, 123, 146, 0.28)", line: "rgba(199, 123, 146, 0.55)", soft: "rgba(199, 123, 146, 0.11)"
+          ivory: "#ffffff", silver: "#f5e1e6", muted: "#d9bcc3",
+          gold: "#db8fa6", bright: "#ffc9d7", dim: "rgba(219, 143, 166, 0.34)", line: "rgba(219, 143, 166, 0.60)", soft: "rgba(219, 143, 166, 0.11)"
         },
         midnight: {
           voidBg: "#050d14", obsidian: "#07121b", panel: "#0c1d2a",
-          ivory: "#edf8fc", silver: "#c0d8e4", muted: "#98b3c2",
-          gold: "#42bfd4", bright: "#8ce4f2", dim: "rgba(66, 191, 212, 0.28)", line: "rgba(66, 191, 212, 0.55)", soft: "rgba(66, 191, 212, 0.11)"
+          ivory: "#ffffff", silver: "#dcf0f7", muted: "#b2cfd9",
+          gold: "#5cd4e8", bright: "#a6f0fc", dim: "rgba(92, 212, 232, 0.34)", line: "rgba(92, 212, 232, 0.60)", soft: "rgba(92, 212, 232, 0.11)"
         },
         burgundy: {
           voidBg: "#14070d", obsidian: "#1c0b12", panel: "#2a111b",
-          ivory: "#fff0f0", silver: "#e3c4cb", muted: "#c29fa7",
-          gold: "#b85c70", bright: "#edb2bb", dim: "rgba(184, 92, 112, 0.28)", line: "rgba(184, 92, 112, 0.55)", soft: "rgba(184, 92, 112, 0.11)"
+          ivory: "#ffffff", silver: "#f5dde2", muted: "#d6b6bd",
+          gold: "#d17589", bright: "#ffc4ce", dim: "rgba(209, 117, 137, 0.34)", line: "rgba(209, 117, 137, 0.60)", soft: "rgba(209, 117, 137, 0.11)"
         },
         platinum: {
           voidBg: "#e7e9eb", obsidian: "#f5f6f7", panel: "#dce0e4",
-          ivory: "#20272e", silver: "#3e4954", muted: "#59636d",
-          gold: "#71879b", bright: "#354d65", dim: "rgba(70, 91, 110, 0.24)", line: "rgba(70, 91, 110, 0.50)", soft: "rgba(113, 135, 155, 0.10)"
+          ivory: "#12161a", silver: "#242b33", muted: "#3d4650",
+          gold: "#4a637a", bright: "#1f354a", dim: "rgba(74, 99, 122, 0.30)", line: "rgba(74, 99, 122, 0.56)", soft: "rgba(74, 99, 122, 0.10)"
         }
       };
 
@@ -2662,8 +2704,6 @@
 
     /* =========================================================
        SCHEDULED RELEASE & DOWNLOAD ACTIVATION CONTROLLER
-       - November 2026: Free PDF access 28–30 Nov 2026
-       - December 2026: Free PDF access 19–20 Dec 2026
        ========================================================= */
     (function () {
       const now = new Date();
