@@ -6,26 +6,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101317">
 
-<title>DAXYREN | THE WORLD CURRENT</title>
+<title>DAXYREN™ | THE WORLD CURRENT</title>
+<meta name="description" content="DAXYREN is an international monthly magazine bringing the people, events, ideas and achievements shaping our time into focus.">
+<meta name="robots" content="index, follow">
 
-<meta name="description" content="DAXYREN is an international monthly magazine devoted to the people, events, ideas and achievements shaping our time. THE WORLD CURRENT.">
-<meta name="keywords" content="DAXYREN, The World Current, international magazine, world affairs, business, sport, culture, innovation">
+<meta property="og:type" content="website">
 <meta property="og:title" content="DAXYREN | THE WORLD CURRENT">
 <meta property="og:description" content="The world is full of stories. DAXYREN brings you closer to the ones that matter.">
-<meta property="og:type" content="website">
 <meta property="og:image" content="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg">
 
 <style>
 :root {
-  --ink: #101317;
-  --ink-soft: #1b2025;
-  --paper: #f4f1e9;
-  --paper-dark: #e8e3d8;
-  --white: #ffffff;
-  --gold: #b99a62;
-  --gold-light: #d5bd91;
-  --muted: #8c8c87;
-  --line: rgba(185,154,98,.32);
+  --black: #111417;
+  --black2: #1b2024;
+  --cream: #f3f0e8;
+  --cream2: #e9e4d9;
+  --gold: #b69a68;
+  --gold-light: #d5c09a;
+  --text: #252720;
+  --muted: #77766e;
+  --line: rgba(182,154,104,.35);
   --serif: Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
 }
@@ -38,15 +38,19 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 100px;
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
   font-family: var(--sans);
+  background: var(--cream);
+  color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
+}
+
+body, button, select {
+  font-family: var(--sans);
 }
 
 a {
@@ -54,649 +58,652 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 button, select {
   font: inherit;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
 .container {
-  width: min(1160px, 90%);
-  margin: auto;
+  width: min(1240px, 91%);
+  margin: 0 auto;
 }
 
 .eyebrow {
   color: var(--gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
   text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
 }
 
-.section-heading {
+.heading {
   font-family: var(--serif);
-  font-size: clamp(34px, 5vw, 58px);
   font-weight: 400;
+  font-size: clamp(38px, 5.5vw, 67px);
   line-height: 1.12;
   letter-spacing: -1.5px;
 }
 
-.section-intro {
-  max-width: 620px;
-  color: #686861;
-  font-size: 15px;
-  margin-top: 18px;
+.gold-line {
+  width: 58px;
+  height: 1px;
+  background: var(--gold);
+  margin: 28px 0;
 }
 
 /* HEADER */
 
-header {
-  background: var(--ink);
-  color: var(--white);
+.site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: var(--black);
+  color: white;
   border-bottom: 1px solid var(--line);
 }
 
-.utility-bar {
-  min-height: 38px;
-  border-bottom: 1px solid rgba(255,255,255,.09);
+.topbar {
+  min-height: 37px;
+  padding: 5px 4.5%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 5px 5%;
+  align-items: center;
   gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
-.utility-label {
-  color: #c5c1b7;
-  font-size: 10px;
-  letter-spacing: 1.5px;
+.topbar-label {
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  color: #c4c0b6;
   text-transform: uppercase;
 }
 
-.language-control {
+.language-area {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #cfcac0;
-  font-size: 11px;
+  gap: 9px;
+  font-size: 10px;
+  color: #d5d0c5;
+  letter-spacing: 1px;
 }
 
-.language-control select {
-  background: #1b2025;
-  color: white;
-  border: 1px solid rgba(255,255,255,.22);
+.language-area select {
+  max-width: 150px;
   padding: 6px 9px;
-  border-radius: 2px;
-  outline: none;
-  max-width: 155px;
+  background: #20252a;
+  color: white;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 0;
   font-size: 11px;
+  outline: none;
 }
 
-.main-nav {
+.navigation {
   min-height: 82px;
+  padding: 10px 4.5%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 10px 5%;
+  align-items: center;
+  gap: 25px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 13px;
-  min-width: 190px;
+  flex-shrink: 0;
 }
 
-.brand img {
-  width: 56px;
-  height: 56px;
+.brand-logo {
+  width: 54px;
+  height: 54px;
   object-fit: contain;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.brand-text strong {
+.brand-name {
+  display: block;
   font-family: var(--serif);
   font-size: 25px;
   letter-spacing: 2px;
-  font-weight: 500;
+  line-height: 1.1;
 }
 
-.brand-text span {
+.brand-tag {
+  display: block;
+  margin-top: 5px;
   color: var(--gold-light);
   font-size: 8px;
-  letter-spacing: 2.4px;
-  margin-top: 5px;
+  letter-spacing: 2.5px;
 }
 
-.nav-links {
+.nav-menu {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 25px;
+  gap: 27px;
 }
 
-.nav-links a {
-  color: #e6e3dc;
-  font-size: 11px;
-  letter-spacing: 1px;
+.nav-menu a {
+  color: #e7e4dc;
+  font-size: 10px;
+  letter-spacing: 1.1px;
   text-transform: uppercase;
-  transition: color .25s;
+  transition: color .2s;
 }
 
-.nav-links a:hover {
+.nav-menu a:hover {
   color: var(--gold-light);
 }
 
-.menu-toggle {
+.menu-button {
   display: none;
+  background: transparent;
   color: white;
   border: 1px solid var(--line);
-  background: transparent;
-  padding: 8px 12px;
+  padding: 9px 13px;
+  font-size: 10px;
+  letter-spacing: 1px;
   cursor: pointer;
 }
 
 /* HERO */
 
 .hero {
-  background: var(--ink);
+  position: relative;
+  min-height: 650px;
+  background:
+    radial-gradient(ellipse at 83% 43%, rgba(182,154,104,.17), transparent 43%),
+    linear-gradient(115deg, #101316 10%, #1c2226 100%);
   color: white;
-  min-height: 630px;
   display: flex;
   align-items: center;
-  position: relative;
   overflow: hidden;
 }
 
-.hero::before {
+.hero::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 80% 50%, rgba(185,154,98,.14), transparent 43%),
-    linear-gradient(110deg, #101317 10%, #171c21 100%);
+  width: 540px;
+  height: 540px;
+  border: 1px solid rgba(182,154,104,.11);
+  border-radius: 50%;
+  right: -170px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 55px rgba(182,154,104,.025),
+              0 0 0 110px rgba(182,154,104,.018);
 }
 
-.hero-inner {
+.hero-content {
   position: relative;
-  z-index: 1;
-  padding: 105px 0 115px;
-  max-width: 850px;
+  z-index: 2;
+  padding: 105px 0;
+  max-width: 900px;
 }
 
 .hero-kicker {
   color: var(--gold-light);
-  font-size: 11px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  font-size: 10px;
+  margin-bottom: 26px;
 }
 
 .hero h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(65px, 12vw, 135px);
-  line-height: .95;
+  font-size: clamp(68px, 12vw, 145px);
   letter-spacing: -5px;
+  line-height: .94;
 }
 
-.hero-subtitle {
-  color: var(--gold-light);
+.hero-tagline {
   font-family: var(--serif);
-  font-size: clamp(18px, 3vw, 28px);
+  color: var(--gold-light);
+  font-size: clamp(18px, 3vw, 27px);
   letter-spacing: 5px;
-  margin-top: 20px;
-}
-
-.hero-rule {
-  width: 70px;
-  height: 1px;
-  background: var(--gold);
-  margin: 35px 0;
+  margin-top: 23px;
 }
 
 .hero-description {
-  max-width: 580px;
-  color: #d0cec8;
+  max-width: 610px;
+  color: #d4d1c9;
   font-family: var(--serif);
-  font-size: clamp(20px, 3vw, 26px);
-  line-height: 1.55;
+  font-size: clamp(20px, 2.8vw, 27px);
+  line-height: 1.6;
 }
 
-.hero-bottom {
+.hero-actions {
   display: flex;
-  align-items: center;
+  gap: 13px;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 42px;
+  margin-top: 38px;
 }
 
-.primary-button,
-.secondary-button {
+.button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 13px 22px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
+  min-height: 46px;
+  padding: 12px 21px;
   text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  font-weight: 700;
   transition: .25s;
 }
 
-.primary-button {
+.button-gold {
   background: var(--gold);
-  color: var(--ink);
+  color: var(--black);
   border: 1px solid var(--gold);
 }
 
-.primary-button:hover {
+.button-gold:hover {
   background: var(--gold-light);
 }
 
-.secondary-button {
+.button-outline {
   border: 1px solid rgba(255,255,255,.4);
   color: white;
 }
 
-.secondary-button:hover {
-  border-color: var(--gold);
+.button-outline:hover {
+  border-color: var(--gold-light);
   color: var(--gold-light);
 }
 
-/* INTRODUCTION */
+/* EDITORIAL INTRODUCTION */
 
-.introduction {
-  padding: 105px 0;
+.intro {
   text-align: center;
-  background: var(--paper);
+  padding: 110px 0;
 }
 
-.introduction .section-heading {
+.intro .heading {
   max-width: 850px;
-  margin: 18px auto;
+  margin: 20px auto;
 }
 
-.introduction p {
-  max-width: 700px;
-  margin: 22px auto 0;
-  color: #62625d;
+.intro-copy {
+  max-width: 720px;
+  margin: 25px auto 0;
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #696960;
 }
 
-/* ISSUE */
+/* LATEST ISSUE */
 
-.issue-section {
-  background: var(--ink-soft);
+.latest-issue {
+  background: var(--black2);
   color: white;
-  padding: 105px 0;
+  padding: 105px 0 100px;
 }
 
-.issue-header {
+.issue-heading {
   text-align: center;
-  margin-bottom: 55px;
+  margin-bottom: 65px;
 }
 
-.issue-header .section-heading {
-  margin-top: 14px;
-}
-
-.issue-header p {
-  color: #bcbab2;
+.issue-heading .heading {
   margin-top: 15px;
-  font-size: 14px;
 }
 
-.cover-grid {
+.issue-heading p {
+  color: #c2beb5;
+  font-size: 13px;
+  margin-top: 13px;
+}
+
+.covers {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 350px));
-  justify-content: center;
-  gap: 35px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 48px;
+  max-width: 1060px;
+  margin: 0 auto;
 }
 
-.cover-card {
+.cover-item {
   text-align: center;
+  min-width: 0;
 }
 
-.cover-frame {
-  background: #252a2e;
-  padding: 12px;
-  border: 1px solid rgba(185,154,98,.35);
+.cover-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #171a1d;
+  border: 1px solid rgba(182,154,104,.35);
+  padding: 7px;
   transition: transform .3s;
 }
 
-.cover-frame:hover {
-  transform: translateY(-7px);
+.cover-image:hover {
+  transform: translateY(-5px);
 }
 
-.cover-frame img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  background: #303438;
+.cover-caption {
+  padding-top: 20px;
 }
 
-.cover-card h3 {
+.cover-caption h3 {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
-  margin-top: 22px;
 }
 
-.cover-card p {
-  color: #b6b3aa;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  margin-top: 7px;
+.cover-caption p {
+  margin-top: 6px;
+  color: #c3bcae;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.issue-note {
+.issue-language {
   text-align: center;
-  margin-top: 45px;
-  color: #d0cec8;
-  font-size: 13px;
+  margin-top: 55px;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  color: #d5d0c6;
 }
 
-.issue-note strong {
+.issue-language strong {
   color: var(--gold-light);
 }
 
 /* EDITORIAL STATEMENT */
 
-.editorial-statement {
-  padding: 110px 0;
-  background: var(--paper-dark);
+.statement {
+  padding: 115px 0;
   text-align: center;
+  background: var(--cream2);
 }
 
-.editorial-statement blockquote {
-  max-width: 880px;
+.statement blockquote {
+  max-width: 900px;
   margin: 25px auto;
   font-family: var(--serif);
-  font-size: clamp(27px, 5vw, 48px);
+  font-size: clamp(29px, 5vw, 53px);
   line-height: 1.35;
-  color: #262722;
+  color: #282922;
 }
 
-.editorial-statement blockquote strong {
-  color: #927442;
-  font-weight: 400;
+.statement blockquote span {
+  color: #927748;
 }
 
-.editorial-statement .signature {
-  color: #77766e;
-  font-size: 10px;
-  letter-spacing: 3px;
+.statement-signature {
   margin-top: 30px;
+  color: #77756c;
+  font-size: 9px;
+  letter-spacing: 3px;
 }
 
-/* BRAND STORY */
+/* ABOUT */
 
-.story-section {
-  background: var(--paper);
+.about {
   padding: 110px 0;
+  background: var(--cream);
 }
 
-.story-layout {
+.about-grid {
   display: grid;
   grid-template-columns: .7fr 1.3fr;
   gap: 80px;
   align-items: start;
 }
 
-.story-aside {
+.about-heading {
   position: sticky;
   top: 130px;
 }
 
-.story-aside .section-heading {
-  margin-top: 16px;
+.about-heading .heading {
+  margin-top: 18px;
 }
 
-.story-aside p {
-  color: #77766e;
-  margin-top: 20px;
+.about-heading p {
+  color: var(--muted);
   font-size: 13px;
+  margin-top: 20px;
 }
 
-.long-copy {
+.about-text {
   font-family: var(--serif);
   font-size: 18px;
   line-height: 1.95;
-  color: #383932;
+  color: #373830;
 }
 
-.long-copy p {
-  margin-bottom: 22px;
+.about-text p {
+  margin-bottom: 23px;
 }
 
-.long-copy .emphasis {
-  font-size: 24px;
-  color: #987a48;
-  line-height: 1.5;
+.about-text .accent {
+  font-size: 25px;
+  line-height: 1.55;
+  color: #987c4e;
 }
 
-.long-copy .brand-ending {
-  margin-top: 42px;
-  padding-top: 30px;
+.about-text .closing {
   border-top: 1px solid var(--line);
+  margin-top: 45px;
+  padding-top: 28px;
   font-family: var(--sans);
-  letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 2;
+  letter-spacing: 2px;
 }
 
-/* MANIFESTO */
+/* OUR PERSPECTIVE */
 
-.manifesto-section {
-  background: var(--ink);
-  color: white;
+.perspective {
   padding: 110px 0;
+  background: var(--black);
+  color: white;
 }
 
-.manifesto-header {
+.perspective-heading {
   text-align: center;
-  margin-bottom: 65px;
+  margin-bottom: 60px;
 }
 
-.manifesto-header .section-heading {
-  margin-top: 15px;
+.perspective-heading .heading {
+  margin-top: 16px;
 }
 
-.manifesto-copy {
-  max-width: 750px;
+.perspective-text {
+  max-width: 760px;
   margin: auto;
   text-align: center;
   font-family: var(--serif);
   font-size: 20px;
   line-height: 1.9;
-  color: #e0ddd5;
+  color: #e2dfd7;
 }
 
-.manifesto-copy p {
-  margin-bottom: 20px;
+.perspective-text p {
+  margin-bottom: 21px;
 }
 
-.manifesto-copy strong {
+.perspective-text strong {
   color: var(--gold-light);
   font-weight: 400;
 }
 
-.manifesto-copy .manifesto-highlight {
+.perspective-text .highlight {
   font-size: 29px;
-  color: var(--gold-light);
   line-height: 1.5;
-  margin: 36px 0;
+  margin: 37px 0;
+  color: var(--gold-light);
 }
 
-.manifesto-signature {
+.perspective-end {
   border-top: 1px solid var(--line);
-  max-width: 450px;
+  max-width: 430px;
   margin: 55px auto 0;
   padding-top: 35px;
   text-align: center;
 }
 
-.manifesto-signature strong {
-  display: block;
+.perspective-end strong {
   font-family: var(--serif);
+  font-weight: 400;
   font-size: 37px;
   letter-spacing: 3px;
-  font-weight: 400;
 }
 
-.manifesto-signature span {
+.perspective-end span {
   display: block;
   color: var(--gold-light);
+  font-size: 10px;
   letter-spacing: 3px;
-  font-size: 11px;
-  margin-top: 9px;
+  margin-top: 10px;
 }
 
 /* ARCHIVE */
 
-.archive-section {
-  padding: 90px 0;
+.archive {
+  padding: 95px 0;
   text-align: center;
-  background: var(--paper-dark);
+  background: var(--cream2);
 }
 
-.archive-panel {
-  max-width: 750px;
+.archive-box {
+  max-width: 760px;
   margin: 35px auto 0;
-  padding: 35px;
+  padding: 38px;
+  background: rgba(255,255,255,.42);
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.4);
 }
 
-.archive-panel h3 {
+.archive-box h3 {
   font-family: var(--serif);
-  font-size: 27px;
+  font-size: 29px;
   font-weight: 400;
 }
 
-.archive-panel p {
-  color: #737269;
-  font-size: 13px;
-  margin-top: 10px;
-}
-
-/* ORGANIZATION */
-
-.organization-section {
-  background: #eae6dc;
-  padding: 70px 0;
-}
-
-.organization-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 35px;
-}
-
-.organization-copy {
-  max-width: 650px;
-}
-
-.organization-copy h2 {
-  font-family: var(--serif);
-  font-size: 30px;
-  font-weight: 400;
-  margin-top: 10px;
-}
-
-.organization-copy p {
-  color: #65645d;
+.archive-box p {
+  color: #77766e;
   font-size: 13px;
   margin-top: 12px;
 }
 
-.organization-logo {
-  width: 125px;
-  max-height: 100px;
+/* PUBLISHING ORGANIZATION */
+
+.publisher {
+  background: #e7e2d7;
+  padding: 65px 0;
+}
+
+.publisher-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+.publisher-copy {
+  max-width: 720px;
+}
+
+.publisher-copy h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 400;
+  margin-top: 11px;
+}
+
+.publisher-copy p {
+  color: #65645d;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+.publisher-logo {
+  width: 145px;
+  max-height: 115px;
   object-fit: contain;
 }
 
-.organization-links {
+.publisher-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 25px;
+  gap: 10px;
+  margin-top: 22px;
 }
 
-.organization-links a {
-  padding: 10px 15px;
-  background: var(--ink);
+.publisher-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
   color: white;
+  padding: 11px 14px;
   font-size: 9px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: .25s;
+  transition: .2s;
 }
 
-.organization-links a:hover {
-  background: #8f7447;
+.publisher-links a:hover {
+  background: #8d744b;
 }
 
 /* FOOTER */
 
-footer {
-  background: #0b0e11;
+.footer {
+  background: #0a0d10;
   color: white;
   padding: 65px 0 25px;
 }
 
-.footer-top {
+.footer-main {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 35px;
   padding-bottom: 45px;
 }
 
 .footer-brand h2 {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 400;
   letter-spacing: 3px;
 }
 
 .footer-brand p {
-  color: var(--gold-light);
   font-size: 10px;
+  color: var(--gold-light);
   letter-spacing: 3px;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
-.footer-links {
+.footer-navigation {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
+  gap: 20px;
 }
 
-.footer-links a {
-  color: #d0cec8;
+.footer-navigation a {
+  color: #c9c6be;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.footer-links a:hover {
+.footer-navigation a:hover {
   color: var(--gold-light);
 }
 
@@ -706,8 +713,8 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
-  color: #898982;
+  gap: 13px;
+  color: #96948c;
   font-size: 10px;
 }
 
@@ -716,160 +723,220 @@ footer {
   font-weight: 400;
 }
 
-/* GOOGLE TRANSLATE */
+/* TRANSLATION WIDGET */
 
 #google_translate_element {
   position: absolute;
-  left: -9999px;
-  top: -9999px;
+  left: -10000px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .goog-te-banner-frame,
-.goog-te-gadget-icon,
 .goog-logo-link,
-.goog-te-gadget span {
+.goog-te-gadget-icon {
   display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0 !important;
 }
 
 body {
   top: 0 !important;
 }
 
-.skiptranslate {
-  display: none !important;
-}
-
-html.translated-ltr,
-html.translated-rtl {
-  margin-top: 0 !important;
+.skiptranslate iframe {
+  visibility: hidden !important;
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 900px) {
-  .nav-links {
-    gap: 14px;
+@media (max-width: 950px) {
+  .nav-menu {
+    gap: 15px;
   }
 
-  .nav-links a {
+  .nav-menu a {
     font-size: 9px;
   }
 
-  .story-layout {
+  .about-grid {
     grid-template-columns: 1fr;
     gap: 35px;
   }
 
-  .story-aside {
+  .about-heading {
     position: static;
   }
 }
 
-@media (max-width: 680px) {
-  .utility-bar {
-    padding: 6px 5%;
+@media (max-width: 700px) {
+  .topbar {
+    padding: 6px 4%;
   }
 
-  .utility-label {
+  .topbar-label {
     font-size: 8px;
-    letter-spacing: 1px;
+    letter-spacing: .8px;
   }
 
-  .language-control {
-    font-size: 9px;
+  .language-area {
+    gap: 5px;
+    font-size: 8px;
   }
 
-  .language-control select {
-    max-width: 125px;
+  .language-area select {
+    max-width: 118px;
     font-size: 10px;
+    padding: 5px;
   }
 
-  .main-nav {
+  .navigation {
     min-height: 70px;
+    padding: 9px 4%;
   }
 
-  .brand img {
+  .brand-logo {
     width: 43px;
     height: 43px;
   }
 
-  .brand-text strong {
+  .brand-name {
     font-size: 20px;
   }
 
-  .brand-text span {
+  .brand-tag {
     font-size: 7px;
   }
 
-  .menu-toggle {
+  .menu-button {
     display: block;
   }
 
-  .nav-links {
+  .nav-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: #101317;
+    background: var(--black);
     padding: 18px 5% 25px;
+    border-top: 1px solid var(--line);
     flex-direction: column;
     align-items: flex-start;
-    border-top: 1px solid var(--line);
+    gap: 15px;
   }
 
-  .nav-links.active {
+  .nav-menu.open {
     display: flex;
   }
 
-  .nav-links a {
+  .nav-menu a {
     font-size: 11px;
-    padding: 7px 0;
   }
 
   .hero {
     min-height: 560px;
   }
 
-  .hero-inner {
+  .hero-content {
     padding: 85px 0;
   }
 
   .hero h1 {
+    font-size: clamp(61px, 15vw, 100px);
     letter-spacing: -3px;
   }
 
-  .introduction,
-  .issue-section,
-  .story-section,
-  .manifesto-section {
-    padding: 75px 0;
+  .hero-tagline {
+    letter-spacing: 3px;
   }
 
-  .cover-grid {
-    grid-template-columns: minmax(0, 330px);
-    gap: 35px;
+  .intro,
+  .latest-issue,
+  .about,
+  .perspective {
+    padding: 78px 0;
   }
 
-  .organization-inner {
+  .covers {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 45px;
+    max-width: 520px;
+  }
+
+  .cover-item {
+    width: 100%;
+  }
+
+  .cover-image {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .cover-caption h3 {
+    font-size: 21px;
+  }
+
+  .statement {
+    padding: 80px 0;
+  }
+
+  .about-text {
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .perspective-text {
+    font-size: 18px;
+  }
+
+  .publisher-inner {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .organization-logo {
-    width: 100px;
+  .publisher-logo {
+    width: 110px;
   }
 
-  .footer-top {
+  .publisher-links {
     flex-direction: column;
+    align-items: stretch;
+  }
+
+  .publisher-links a {
+    min-height: 42px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+  }
+
+  .footer-navigation {
+    gap: 16px;
   }
 
   .footer-bottom {
     flex-direction: column;
   }
+}
 
-  .manifesto-copy {
-    font-size: 18px;
+@media (max-width: 380px) {
+  .topbar-label {
+    max-width: 120px;
+  }
+
+  .language-area label {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 58px;
   }
 }
 
@@ -878,8 +945,8 @@ html.translated-rtl {
     scroll-behavior: auto;
   }
 
-  * {
-    transition: none !important;
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
   }
 }
 </style>
@@ -889,13 +956,14 @@ html.translated-rtl {
 
 <div id="google_translate_element"></div>
 
-<header>
-  <div class="utility-bar">
-    <span class="utility-label">An international monthly magazine</span>
+<header class="site-header">
 
-    <div class="language-control">
+  <div class="topbar">
+    <span class="topbar-label">An international monthly magazine</span>
+
+    <div class="language-area">
       <label for="languageSelect">LANGUAGE</label>
-      <select id="languageSelect" aria-label="Choose website language">
+      <select id="languageSelect" aria-label="Select preferred website language">
         <option value="en">English</option>
         <option value="fr">Français</option>
         <option value="es">Español</option>
@@ -921,171 +989,191 @@ html.translated-rtl {
     </div>
   </div>
 
-  <div class="main-nav">
-    <a class="brand" href="#home" aria-label="DAXYREN homepage">
-      <img src="/daxyren-logo.png" alt="DAXYREN logo">
-      <span class="brand-text">
-        <strong>DAXYREN</strong>
-        <span>THE WORLD CURRENT</span>
+  <div class="navigation">
+
+    <a href="#home" class="brand" aria-label="DAXYREN home">
+      <img src="/daxyren-logo.png" class="brand-logo" alt="DAXYREN">
+      <span>
+        <span class="brand-name">DAXYREN</span>
+        <span class="brand-tag">THE WORLD CURRENT</span>
       </span>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+    <button class="menu-button" id="menuButton"
+      aria-expanded="false" aria-controls="navMenu">
       MENU
     </button>
 
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-menu" id="navMenu">
       <a href="#home">Home</a>
-      <a href="#latest-issue">Latest Issue</a>
-      <a href="#brand-story">Brand Story</a>
-      <a href="#manifesto">Manifesto</a>
+      <a href="#latest-issue">The Magazine</a>
+      <a href="#about">About</a>
       <a href="#archive">Archive</a>
-      <a href="#organization">PHRINUSOMYIS</a>
+      <a href="#publisher">PHRINUSOMYIS</a>
     </nav>
+
   </div>
 </header>
 
 <main>
 
+<!-- OPENING -->
+
 <section class="hero" id="home">
   <div class="container">
-    <div class="hero-inner">
+    <div class="hero-content">
+
       <div class="hero-kicker">An international monthly magazine</div>
 
       <h1>DAXYREN</h1>
 
-      <div class="hero-subtitle">THE WORLD CURRENT</div>
+      <div class="hero-tagline">THE WORLD CURRENT</div>
 
-      <div class="hero-rule"></div>
+      <div class="gold-line"></div>
 
       <p class="hero-description">
         The world is full of stories. DAXYREN brings you closer to the ones that matter.
       </p>
 
-      <div class="hero-bottom">
-        <a class="primary-button" href="#latest-issue">Discover the Latest Issue</a>
-        <a class="secondary-button" href="#brand-story">Discover DAXYREN</a>
+      <div class="hero-actions">
+        <a href="#latest-issue" class="button button-gold">
+          Explore the Current Issue
+        </a>
+
+        <a href="#about" class="button button-outline">
+          Discover DAXYREN
+        </a>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="introduction">
-  <div class="container">
-    <div class="eyebrow">The world, without pause.</div>
+<!-- EDITORIAL INTRODUCTION -->
 
-    <h2 class="section-heading">
-      A wider perspective on a world in motion.
+<section class="intro">
+  <div class="container">
+
+    <div class="eyebrow">The World Current</div>
+
+    <h2 class="heading">
+      The world is always becoming.
     </h2>
 
-    <p>
-      Across world affairs, business, sport, culture, innovation and contemporary life,
-      DAXYREN brings the consequential, the remarkable and the enduring into focus.
+    <p class="intro-copy">
+      Power changes hands. Ideas cross borders. Records fall. Fortunes are made.
+      Cultures evolve. New voices emerge, and familiar places are seen anew.
     </p>
+
+    <div class="gold-line" style="margin:30px auto"></div>
+
+    <p class="intro-copy">
+      Some moments pass. Others define their time.
+      DAXYREN exists to recognise the difference.
+    </p>
+
   </div>
 </section>
 
-<section class="issue-section" id="latest-issue">
+<!-- CURRENT MAGAZINE -->
+
+<section class="latest-issue" id="latest-issue">
   <div class="container">
 
-    <div class="issue-header">
-      <div class="eyebrow">The Magazine</div>
-      <h2 class="section-heading">November 2026</h2>
+    <div class="issue-heading">
+      <div class="eyebrow">The Monthly Edition</div>
+      <h2 class="heading">November 2026</h2>
       <p>The current issue of DAXYREN</p>
     </div>
 
-    <div class="cover-grid">
+    <div class="covers">
 
-      <article class="cover-card">
-        <div class="cover-frame">
-          <img
-            src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
-            alt="DAXYREN November 2026 magazine cover one"
-            loading="eager">
+      <article class="cover-item">
+        <img
+          class="cover-image"
+          src="/daxyren-the-world-current-magazine-november-2026-cover-1.jpg"
+          alt="DAXYREN November 2026 magazine cover, first cover"
+          loading="eager">
+        <div class="cover-caption">
+          <h3>DAXYREN</h3>
+          <p>November 2026 · Cover One</p>
         </div>
-        <h3>November 2026</h3>
-        <p>Cover One</p>
       </article>
 
-      <article class="cover-card">
-        <div class="cover-frame">
-          <img
-            src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
-            alt="DAXYREN November 2026 magazine cover two"
-            loading="lazy">
+      <article class="cover-item">
+        <img
+          class="cover-image"
+          src="/daxyren-the-world-current-magazine-november-2026-cover-2.jpg"
+          alt="DAXYREN November 2026 magazine cover, second cover"
+          loading="lazy">
+        <div class="cover-caption">
+          <h3>DAXYREN</h3>
+          <p>November 2026 · Cover Two</p>
         </div>
-        <h3>November 2026</h3>
-        <p>Cover Two</p>
       </article>
 
     </div>
 
-    <p class="issue-note">
-      <strong>LANGUAGE: ENGLISH</strong><br>
-      The November 2026 magazine edition is currently available in English.
-    </p>
+    <div class="issue-language">
+      CURRENT EDITION: <strong>ENGLISH</strong>
+    </div>
 
   </div>
 </section>
 
-<section class="editorial-statement">
+<!-- CORE EDITORIAL IDEA -->
+
+<section class="statement">
   <div class="container">
-    <div class="eyebrow">The DAXYREN Perspective</div>
+
+    <div class="eyebrow">A Perspective on the World</div>
 
     <blockquote>
-      The world is full of stories.
-      <strong>DAXYREN brings you closer to the ones that matter.</strong>
+      Its interest is not in everything that happens.
+      <span>It is in what matters.</span>
     </blockquote>
 
-    <div class="signature">DAXYREN · THE WORLD CURRENT</div>
+    <div class="statement-signature">
+      DAXYREN · THE WORLD CURRENT
+    </div>
+
   </div>
 </section>
 
-<section class="story-section" id="brand-story">
+<!-- ABOUT DAXYREN -->
+
+<section class="about" id="about">
   <div class="container">
-    <div class="story-layout">
 
-      <aside class="story-aside">
-        <div class="eyebrow">Our Identity</div>
-        <h2 class="section-heading">The Brand Story</h2>
-        <p>
-          The identity, editorial purpose and perspective of DAXYREN.
-        </p>
-      </aside>
+    <div class="about-grid">
 
-      <article class="long-copy">
-
-        <p>The world is always becoming.</p>
+      <div class="about-heading">
+        <div class="eyebrow">About DAXYREN</div>
+        <h2 class="heading">A world in motion. A wider perspective.</h2>
 
         <p>
-          Power changes hands. Ideas cross borders. Records fall. Fortunes are made.
-          Cultures evolve. New voices emerge, and familiar places are seen anew.
+          People, events, ideas and achievements shaping our time.
         </p>
+      </div>
 
-        <p>Some moments pass.</p>
-
-        <p>Others define their time.</p>
-
-        <p class="emphasis"><strong>DAXYREN exists to recognise the difference.</strong></p>
+      <article class="about-text">
 
         <p>
-          DAXYREN is an international monthly devoted to the people, events, ideas and
-          achievements shaping our time.
+          DAXYREN is an international monthly devoted to the people, events,
+          ideas and achievements shaping our time.
         </p>
-
-        <p>Its interest is not in everything that happens.</p>
-
-        <p class="emphasis"><strong>It is in what matters.</strong></p>
 
         <p>
-          Across world affairs, business, sport, culture, innovation and contemporary
-          life, DAXYREN brings the consequential, the remarkable and the enduring
-          into focus.
+          Across world affairs, business, sport, culture, innovation and
+          contemporary life, DAXYREN brings the consequential, the remarkable
+          and the enduring into focus.
         </p>
 
-        <p>Not simply the story of the moment, but the meaning within it.</p>
+        <p>
+          Not simply the story of the moment, but the meaning within it.
+        </p>
 
-        <p>This is <strong>THE WORLD CURRENT</strong>.</p>
+        <p class="accent">This is THE WORLD CURRENT.</p>
 
         <p>
           A considered perspective on a world in motion, observed with discernment
@@ -1093,83 +1181,90 @@ html.translated-rtl {
         </p>
 
         <p>
-          Every edition looks beyond individual headlines to the forces, personalities
-          and achievements giving the present its character. Different fields meet.
-          Different places connect. Stories that might otherwise appear separate
-          become part of a wider picture.
+          Every edition looks beyond individual headlines to the forces,
+          personalities and achievements giving the present its character.
+          Different fields meet. Different places connect. Stories that might
+          otherwise appear separate become part of a wider picture.
         </p>
-
-        <p>Because the world does not unfold in categories.</p>
-
-        <p>Neither does DAXYREN.</p>
 
         <p>
-          An achievement in sport can transcend its arena. An idea can cross continents.
-          A business decision can alter industries. A cultural moment can define a
-          generation. A discovery can change what comes next.
+          Because the world does not unfold in categories.
+          Neither does DAXYREN.
         </p>
-
-        <p>DAXYREN follows these currents, recognising significance wherever it emerges.</p>
-
-        <p>It does not seek to capture everything.</p>
-
-        <p class="emphasis"><strong>It seeks to capture what deserves to endure.</strong></p>
 
         <p>
-          Each issue stands on its own as a considered portrait of its time. Together,
-          the issues form something greater: a continuing chronicle of a world in
-          motion and the people, ideas and moments that shaped it.
+          An achievement in sport can transcend its arena. An idea can cross
+          continents. A business decision can alter industries. A cultural
+          moment can define a generation. A discovery can change what comes next.
         </p>
-
-        <p>Because the present does not wait to become history.</p>
-
-        <p class="emphasis"><strong>It is becoming history now.</strong></p>
-
-        <p>DAXYREN exists within that space between the moment and its meaning.</p>
-
-        <p>To look beyond the noise.</p>
-
-        <p>To recognise what matters.</p>
-
-        <p>To connect what may appear unconnected.</p>
-
-        <p>And to bring the wider world into perspective.</p>
 
         <p>
-          Month after month, DAXYREN records not simply what happened, but what was
-          worth understanding, remembering and revisiting.
+          DAXYREN follows these currents, recognising significance wherever it emerges.
         </p>
 
-        <p>The world will change.</p>
+        <p>
+          It does not seek to capture everything. It seeks to capture
+          <strong>what deserves to endure.</strong>
+        </p>
 
-        <p>The stories will change.</p>
+        <p>
+          Each issue stands on its own as a considered portrait of its time.
+          Together, the issues form something greater: a continuing chronicle
+          of a world in motion and the people, ideas and moments that shaped it.
+        </p>
 
-        <p>The people shaping it will change.</p>
+        <p>
+          Because the present does not wait to become history.
+          <strong>It is becoming history now.</strong>
+        </p>
 
-        <p>The purpose remains.</p>
+        <p>
+          DAXYREN exists within that space between the moment and its meaning.
+        </p>
 
-        <p class="emphasis"><strong>To recognise what matters.</strong></p>
+        <p>
+          To look beyond the noise. To recognise what matters.
+          To connect what may appear unconnected. And to bring the wider
+          world into perspective.
+        </p>
 
-        <div class="brand-ending">
+        <p>
+          Month after month, DAXYREN records not simply what happened,
+          but what was worth understanding, remembering and revisiting.
+        </p>
+
+        <p>
+          The world will change. The stories will change.
+          The people shaping it will change.
+        </p>
+
+        <p class="accent">
+          The purpose remains. To recognise what matters.
+        </p>
+
+        <div class="closing">
           <strong>DAXYREN</strong><br>
           THE WORLD CURRENT<br>
           THE WORLD, WITHOUT PAUSE.
         </div>
 
       </article>
+
     </div>
   </div>
 </section>
 
-<section class="manifesto-section" id="manifesto">
+<!-- EDITORIAL PRINCIPLES -->
+
+<section class="perspective">
   <div class="container">
 
-    <div class="manifesto-header">
-      <div class="eyebrow">What We Believe</div>
-      <h2 class="section-heading">The Manifesto</h2>
+    <div class="perspective-heading">
+      <div class="eyebrow">Our Perspective</div>
+      <h2 class="heading">What matters deserves to be recognised.</h2>
     </div>
 
-    <article class="manifesto-copy">
+    <article class="perspective-text">
 
       <p>The world does not stand still.</p>
 
@@ -1191,7 +1286,7 @@ html.translated-rtl {
 
       <p>Some of it will define our time.</p>
 
-      <p class="manifesto-highlight"><strong>We believe the difference matters.</strong></p>
+      <p class="highlight"><strong>We believe the difference matters.</strong></p>
 
       <p>We believe the world deserves more than attention.</p>
 
@@ -1199,7 +1294,9 @@ html.translated-rtl {
 
       <p>We believe knowing what happened is only the beginning.</p>
 
-      <p>Understanding why it matters is where the story becomes meaningful.</p>
+      <p>
+        Understanding why it matters is where the story becomes meaningful.
+      </p>
 
       <p>We believe no single subject explains the world.</p>
 
@@ -1215,9 +1312,11 @@ html.translated-rtl {
 
       <p>Everything connects.</p>
 
-      <p class="manifesto-highlight">This is <strong>THE WORLD CURRENT</strong>.</p>
+      <p class="highlight">This is <strong>THE WORLD CURRENT</strong>.</p>
 
-      <p>We will not chase everything simply because it is new.</p>
+      <p>
+        We will not chase everything simply because it is new.
+      </p>
 
       <p>We will not mistake noise for significance.</p>
 
@@ -1226,8 +1325,8 @@ html.translated-rtl {
       <p>We will ask what matters.</p>
 
       <p>
-        We will recognise achievement wherever it happens and significance wherever
-        it emerges.
+        We will recognise achievement wherever it happens and significance
+        wherever it emerges.
       </p>
 
       <p>
@@ -1235,9 +1334,13 @@ html.translated-rtl {
         and open to a world larger than any one place, industry or point of view.
       </p>
 
-      <p>Because what deserves attention is not always what demands it most loudly.</p>
+      <p>
+        Because what deserves attention is not always what demands it most loudly.
+      </p>
 
-      <p>And what appears to be a moment can become something much greater.</p>
+      <p>
+        And what appears to be a moment can become something much greater.
+      </p>
 
       <p>
         A turning point.<br>
@@ -1245,7 +1348,7 @@ html.translated-rtl {
         A piece of history.
       </p>
 
-      <p class="manifesto-highlight"><strong>DAXYREN exists for those moments.</strong></p>
+      <p class="highlight"><strong>DAXYREN exists for those moments.</strong></p>
 
       <p>
         For the people shaping their fields.<br>
@@ -1256,7 +1359,9 @@ html.translated-rtl {
 
       <p>And for readers who want more than information.</p>
 
-      <p>Readers who want to understand the world they are living through.</p>
+      <p>
+        Readers who want to understand the world they are living through.
+      </p>
 
       <p>We believe perspective has value.</p>
 
@@ -1266,7 +1371,7 @@ html.translated-rtl {
 
       <p>And above all:</p>
 
-      <p class="manifesto-highlight">
+      <p class="highlight">
         <strong>We believe what matters deserves to be recognised.</strong>
       </p>
 
@@ -1279,7 +1384,9 @@ html.translated-rtl {
         New moments will become history.
       </p>
 
-      <p class="manifesto-highlight"><strong>DAXYREN will be there to recognise them.</strong></p>
+      <p class="highlight">
+        <strong>DAXYREN will be there to recognise them.</strong>
+      </p>
 
       <p>
         To look beyond the noise.<br>
@@ -1293,7 +1400,7 @@ html.translated-rtl {
 
     </article>
 
-    <div class="manifesto-signature">
+    <div class="perspective-end">
       <strong>DAXYREN</strong>
       <span>THE WORLD CURRENT</span>
       <span>THE WORLD, WITHOUT PAUSE.</span>
@@ -1302,58 +1409,81 @@ html.translated-rtl {
   </div>
 </section>
 
-<section class="archive-section" id="archive">
-  <div class="container">
-    <div class="eyebrow">The Publication</div>
-    <h2 class="section-heading">The Monthly Archive</h2>
+<!-- MONTHLY ARCHIVE -->
 
-    <div class="archive-panel">
+<section class="archive" id="archive">
+  <div class="container">
+
+    <div class="eyebrow">The Publication</div>
+    <h2 class="heading">The Monthly Editions</h2>
+
+    <div class="archive-box">
       <h3>November 2026</h3>
+
       <p>
-        The current DAXYREN issue. The monthly archive will document each edition
-        as it is published.
+        The current monthly edition of DAXYREN.
       </p>
-      <p><strong>Available edition: English</strong></p>
+
+      <p>
+        <strong>Available language: English</strong>
+      </p>
+
+      <p>
+        Each monthly edition contributes to a continuing chronicle
+        of a world in motion.
+      </p>
     </div>
+
   </div>
 </section>
 
-<section class="organization-section" id="organization">
-  <div class="container">
-    <div class="organization-inner">
+<!-- PUBLISHING ORGANIZATION -->
 
-      <div class="organization-copy">
-        <div class="eyebrow">Organizational Association</div>
-        <h2>Published by PHRINUSOMYIS</h2>
+<section class="publisher" id="publisher">
+  <div class="container">
+
+    <div class="publisher-inner">
+
+      <div class="publisher-copy">
+
+        <div class="eyebrow">Publishing Organization</div>
+
+        <h2>A publication of PHRINUSOMYIS.</h2>
 
         <p>
-          DAXYREN is presented in association with PHRINUSOMYIS, an international
-          sports organization headquartered in New York, USA.
+          PHRINUSOMYIS is an international sports organization headquartered
+          in New York, USA. DAXYREN is published within its organizational
+          publishing structure, with its own independent editorial identity.
         </p>
 
-        <div class="organization-links">
-          <a href="https://phrinusomyis.com/" target="_blank" rel="noopener">
+        <div class="publisher-links">
+
+          <a href="https://phrinusomyis.com/">
             PHRINUSOMYIS Homepage
           </a>
 
-          <a href="https://phrinusomyis.com/newsroom/newswire.html"
-             target="_blank" rel="noopener">
+          <a href="https://phrinusomyis.com/newsroom/newswire.html">
             PHRINUSOMYIS Newswire
           </a>
 
-          <a href="https://phrinusomyis.com/magazine/news"
-             target="_blank" rel="noopener">
+          <a href="https://phrinusomyis.com/magazine/news">
             PHRINUSOMYIS Magazine
           </a>
+
         </div>
+
       </div>
 
-      <a href="https://phrinusomyis.com/" target="_blank" rel="noopener"
+      <a href="https://phrinusomyis.com/"
+         target="_blank"
+         rel="noopener"
          aria-label="Visit PHRINUSOMYIS">
+
         <img
-          class="organization-logo"
+          class="publisher-logo"
           src="https://phrinusomyis.com/phrinusomyis_logo.png"
-          alt="PHRINUSOMYIS organization logo">
+          alt="PHRINUSOMYIS">
+
       </a>
 
     </div>
@@ -1362,29 +1492,32 @@ html.translated-rtl {
 
 </main>
 
-<footer>
+<!-- FOOTER -->
+
+<footer class="footer">
   <div class="container">
 
-    <div class="footer-top">
+    <div class="footer-main">
+
       <div class="footer-brand">
         <h2>DAXYREN</h2>
         <p>THE WORLD CURRENT</p>
       </div>
 
-      <nav class="footer-links" aria-label="Footer navigation">
+      <nav class="footer-navigation" aria-label="Footer navigation">
         <a href="#home">Home</a>
-        <a href="#latest-issue">Latest Issue</a>
-        <a href="#brand-story">Brand Story</a>
-        <a href="#manifesto">Manifesto</a>
+        <a href="#latest-issue">The Magazine</a>
+        <a href="#about">About</a>
         <a href="#archive">Archive</a>
-        <a href="#organization">PHRINUSOMYIS</a>
+        <a href="https://phrinusomyis.com/">PHRINUSOMYIS</a>
       </nav>
+
     </div>
 
     <div class="footer-bottom">
       <span>© 2026 DAXYREN. All rights reserved.</span>
       <span>THE WORLD, WITHOUT PAUSE.</span>
-      <span>Published by <strong>PHRINUSOMYIS</strong></span>
+      <span>A publication of <strong>PHRINUSOMYIS</strong></span>
     </div>
 
   </div>
@@ -1393,24 +1526,81 @@ html.translated-rtl {
 <script>
 /* MOBILE NAVIGATION */
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+(function () {
+  const button = document.getElementById("menuButton");
+  const menu = document.getElementById("navMenu");
 
-menuToggle.addEventListener("click", function () {
-  const isOpen = navLinks.classList.toggle("active");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "CLOSE" : "MENU";
-});
-
-document.querySelectorAll(".nav-links a").forEach(function(link) {
-  link.addEventListener("click", function() {
-    navLinks.classList.remove("active");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "MENU";
+  button.addEventListener("click", function () {
+    const open = menu.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(open));
+    button.textContent = open ? "CLOSE" : "MENU";
   });
-});
 
-/* GOOGLE TRANSLATE INITIALIZATION */
+  menu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      menu.classList.remove("open");
+      button.setAttribute("aria-expanded", "false");
+      button.textContent = "MENU";
+    });
+  });
+})();
+
+/* 21-LANGUAGE WEBSITE TRANSLATION */
+
+(function () {
+  const languageSelect = document.getElementById("languageSelect");
+
+  const supportedLanguages = [
+    "en", "fr", "es", "de", "ar", "zh-CN", "ru", "pt",
+    "ja", "ko", "it", "nl", "tr", "hi", "id", "vi",
+    "th", "pl", "sv", "fi", "da"
+  ];
+
+  function setLanguageCookie(language) {
+    const value = language === "en" ? "/en/en" : "/en/" + language;
+    const cookie = "googtrans=" + value + ";path=/;max-age=31536000;SameSite=Lax";
+    document.cookie = cookie;
+
+    if (location.hostname) {
+      document.cookie = cookie + ";domain=" + location.hostname;
+    }
+  }
+
+  function getSavedLanguage() {
+    const match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+    return match ? decodeURIComponent(match[1]) : "en";
+  }
+
+  const savedLanguage = getSavedLanguage();
+
+  if (supportedLanguages.includes(savedLanguage)) {
+    languageSelect.value = savedLanguage;
+  }
+
+  languageSelect.addEventListener("change", function () {
+    const language = this.value;
+
+    if (!supportedLanguages.includes(language)) return;
+
+    if (language === "en") {
+      document.cookie =
+        "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+
+      document.cookie =
+        "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=" +
+        location.hostname;
+
+      location.reload();
+      return;
+    }
+
+    setLanguageCookie(language);
+    location.reload();
+  });
+
+})();
+
+/* GOOGLE TRANSLATION SERVICE */
 
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
@@ -1421,34 +1611,7 @@ function googleTranslateElementInit() {
   }, "google_translate_element");
 }
 
-const languageSelect = document.getElementById("languageSelect");
-
-languageSelect.addEventListener("change", function() {
-  const language = this.value;
-
-  if (language === "en") {
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname + ";";
-    location.reload();
-    return;
-  }
-
-  const selectGoogleLanguage = function() {
-    const googleSelect = document.querySelector(".goog-te-combo");
-
-    if (googleSelect) {
-      googleSelect.value = language;
-      googleSelect.dispatchEvent(new Event("change"));
-    }
-  };
-
-  selectGoogleLanguage();
-  setTimeout(selectGoogleLanguage, 700);
-});
-
-/* LOAD TRANSLATION SERVICE */
-
-(function() {
+(function () {
   const script = document.createElement("script");
   script.src =
     "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
