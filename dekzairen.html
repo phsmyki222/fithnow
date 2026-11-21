@@ -546,6 +546,17 @@
       max-width: 100%;
     }
 
+    /* Transparent cutout logo styling — logo itself with no background box */
+    .logo-cutout {
+      background: transparent !important;
+      background-color: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -701,6 +712,15 @@
       display: flex;
       align-items: center;
       gap: 22px;
+      background: transparent;
+    }
+
+    .dekzairen-logo-link {
+      display: inline-flex;
+      align-items: center;
+      background: transparent !important;
+      padding: 0;
+      border: 0;
     }
 
     .dekzairen-logo-link img {
@@ -720,6 +740,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      background: transparent;
     }
 
     .under-badge img {
@@ -1609,23 +1630,23 @@
       border-color: var(--gold-bright);
     }
 
-    .crest-card {
-      border: 1px solid var(--gold-line);
-      background: var(--bg-panel);
-      padding: 44px 36px;
+    .crest-lockup-clean {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 22px;
+      background: transparent;
+      padding: 24px 12px;
     }
 
     .crest-card-logos {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 28px;
+      gap: 32px;
       flex-wrap: wrap;
+      background: transparent;
     }
 
     .crest-card-logos img.dek-mark {
@@ -1649,13 +1670,13 @@
       color: var(--gold-bright);
     }
 
-    .crest-card p {
+    .crest-lockup-clean p {
       margin: 0;
       font-size: 15px;
       font-weight: 600;
       line-height: 1.75;
       color: var(--text-silver);
-      max-width: 360px;
+      max-width: 380px;
     }
 
     /* Footer */
@@ -1670,6 +1691,10 @@
       gap: 50px;
       padding-bottom: 52px;
       border-bottom: 1px solid var(--gold-dim);
+    }
+
+    .footer-identity {
+      background: transparent;
     }
 
     .footer-identity img {
@@ -1874,11 +1899,11 @@
     <div class="masthead-inner">
       <div class="dual-crest">
         <a class="dekzairen-logo-link" href="#top" aria-label="DEKZAIREN™ Home">
-          <img src="/dekzairen-logo.png" alt="DEKZAIREN™ company logo">
+          <img class="logo-cutout" src="/dekzairen-logo.png" alt="DEKZAIREN™ company logo">
         </a>
         <div class="crest-divider" aria-hidden="true"></div>
         <a class="under-badge" href="https://phrinusomyis.com/" aria-label="MIRROR HOUSE Magazine Published under PHRINUSOMYIS™">
-          <img src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS™ Emblem">
+          <img class="logo-cutout" src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS™ Emblem">
           <div class="under-badge-text">
             <span>MIRROR HOUSE Under</span>
             <strong>PHRINUSOMYIS™</strong>
@@ -2400,10 +2425,10 @@
           </div>
         </div>
 
-        <div class="crest-card">
+        <div class="crest-lockup-clean">
           <div class="crest-card-logos">
-            <img class="dek-mark" src="/dekzairen-logo.png" alt="DEKZAIREN™ company logo" loading="lazy">
-            <img class="phr-mark" src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS™ Emblem" loading="lazy">
+            <img class="logo-cutout dek-mark" src="/dekzairen-logo.png" alt="DEKZAIREN™ company logo" loading="lazy">
+            <img class="logo-cutout phr-mark" src="/phrinusomyis_logo.png" alt="PHRINUSOMYIS™ Emblem" loading="lazy">
           </div>
           <div class="crest-card-label">MIRROR HOUSE Published Under PHRINUSOMYIS™</div>
           <p>
@@ -2420,7 +2445,7 @@
     <div class="shell">
       <div class="footer-top">
         <div class="footer-identity">
-          <img src="/dekzairen-logo.png" alt="DEKZAIREN™ company logo">
+          <img class="logo-cutout" src="/dekzairen-logo.png" alt="DEKZAIREN™ company logo">
           <p>
             <strong>DEKZAIREN™</strong> is the company behind <strong>MIRROR HOUSE</strong> — our monthly magazine covering headlines, featured stories, interviews, photography, articles and monthly editorial coverage across sport, business, culture, innovation and global affairs.
           </p>
