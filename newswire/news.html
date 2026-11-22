@@ -412,6 +412,69 @@
       background: var(--accent);
     }
 
+    /* =====================================================
+       WEEKLY EDITION SPOTLIGHT ("ABOUT THIS")
+    ===================================================== */
+
+    .about-weekly-section {
+      margin-bottom: 42px;
+      padding: 32px 34px;
+      border: 1px solid var(--border-strong);
+      border-left: 4px solid var(--accent);
+      background: var(--surface);
+      box-shadow: var(--shadow-small);
+    }
+
+    .about-weekly-section h2 {
+      margin: 0 0 14px;
+      color: var(--heading);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .about-weekly-section p {
+      margin: 0 0 18px;
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.85;
+      max-width: 900px;
+    }
+
+    .about-weekly-story {
+      margin: 18px 0 24px !important;
+      padding: 18px 22px;
+      background: var(--intro-bg);
+      border-left: 3px solid var(--accent);
+      color: var(--text-secondary) !important;
+      font-style: italic;
+    }
+
+    .weekly-edition-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 20px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      background: var(--button-bg);
+      color: var(--button-text);
+      font-family: var(--font-interface);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background .2s ease, color .2s ease, transform .2s ease, border-color .2s ease;
+    }
+
+    .weekly-edition-button:hover {
+      transform: translateY(-2px);
+      background: var(--button-hover);
+      border-color: var(--button-hover);
+      color: var(--button-text);
+    }
+
     .section-label {
       display: inline-block;
       margin-bottom: 17px;
@@ -526,8 +589,6 @@
       line-height: 1.35;
     }
 
-    /* Editorial question — visually distinct, still in the article */
-
     .editorial-question {
       position: relative;
       margin: 40px 0;
@@ -557,8 +618,6 @@
       font-weight: 800;
       letter-spacing: 2px;
     }
-
-    /* Pull quote — integrated into the reading journey */
 
     .editorial-pullquote {
       margin: 42px 0;
@@ -1200,393 +1259,117 @@
     }
 
     /* =====================================================
-       THEME 01 — BLACK AUTHORITY
+       THEMES 01 — 10
     ===================================================== */
 
     body[data-theme="original"] {
       color-scheme: dark;
-
-      --page-bg: #080808;
-      --surface: #111111;
-      --surface-alt: #191919;
-      --surface-raised: #202020;
-
-      --text: #f3f0e8;
-      --text-secondary: #b9b4a8;
-      --heading: #e6cb7a;
-
-      --accent: #c9a646;
-      --accent-strong: #e6cb7a;
-      --accent-soft: rgba(201,166,70,.16);
-
-      --link: #e6cb7a;
-      --link-hover: #ffffff;
-
-      --button-bg: #c9a646;
-      --button-text: #080808;
-      --button-hover: #e6cb7a;
-
-      --border: rgba(201,166,70,.30);
-      --border-strong: rgba(201,166,70,.60);
-
-      --intro-bg: #17150f;
-      --closing-bg: #17150f;
-      --label-bg: #282113;
-      --label-text: #e6cb7a;
-
-      --shadow: 0 18px 55px rgba(0,0,0,.38);
-      --shadow-small: 0 7px 25px rgba(0,0,0,.25);
+      --page-bg: #080808; --surface: #111111; --surface-alt: #191919; --surface-raised: #202020;
+      --text: #f3f0e8; --text-secondary: #b9b4a8; --heading: #e6cb7a;
+      --accent: #c9a646; --accent-strong: #e6cb7a; --accent-soft: rgba(201,166,70,.16);
+      --link: #e6cb7a; --link-hover: #ffffff; --button-bg: #c9a646; --button-text: #080808; --button-hover: #e6cb7a;
+      --border: rgba(201,166,70,.30); --border-strong: rgba(201,166,70,.60);
+      --intro-bg: #17150f; --closing-bg: #17150f; --label-bg: #282113; --label-text: #e6cb7a;
+      --shadow: 0 18px 55px rgba(0,0,0,.38); --shadow-small: 0 7px 25px rgba(0,0,0,.25);
     }
-
-    /* =====================================================
-       THEME 02 — WHITE EDITORIAL
-    ===================================================== */
 
     body[data-theme="white"] {
       color-scheme: light;
-
-      --page-bg: #f5f3ed;
-      --surface: #ffffff;
-      --surface-alt: #eeece5;
-      --surface-raised: #ffffff;
-
-      --text: #24231f;
-      --text-secondary: #66635c;
-      --heading: #795a19;
-
-      --accent: #a47c25;
-      --accent-strong: #846019;
-      --accent-soft: rgba(164,124,37,.12);
-
-      --link: #846019;
-      --link-hover: #302e29;
-
-      --button-bg: #24231f;
-      --button-text: #ffffff;
-      --button-hover: #a47c25;
-
-      --border: rgba(164,124,37,.27);
-      --border-strong: rgba(164,124,37,.48);
-
-      --intro-bg: #efede5;
-      --closing-bg: #eeece5;
-      --label-bg: #f0eadb;
-      --label-text: #795a19;
-
-      --shadow: 0 12px 35px rgba(0,0,0,.055);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.035);
+      --page-bg: #f5f3ed; --surface: #ffffff; --surface-alt: #eeece5; --surface-raised: #ffffff;
+      --text: #24231f; --text-secondary: #66635c; --heading: #795a19;
+      --accent: #a47c25; --accent-strong: #846019; --accent-soft: rgba(164,124,37,.12);
+      --link: #846019; --link-hover: #302e29; --button-bg: #24231f; --button-text: #ffffff; --button-hover: #a47c25;
+      --border: rgba(164,124,37,.27); --border-strong: rgba(164,124,37,.48);
+      --intro-bg: #efede5; --closing-bg: #eeece5; --label-bg: #f0eadb; --label-text: #795a19;
+      --shadow: 0 12px 35px rgba(0,0,0,.055); --shadow-small: 0 5px 22px rgba(0,0,0,.035);
     }
-
-    /* =====================================================
-       THEME 03 — DIGITAL BLUE
-    ===================================================== */
 
     body[data-theme="digital-blue"] {
       color-scheme: dark;
-
-      --page-bg: #071b35;
-      --surface: #102b4b;
-      --surface-alt: #153657;
-      --surface-raised: #19446d;
-
-      --text: #eaf3ff;
-      --text-secondary: #b8cde2;
-      --heading: #ffffff;
-
-      --accent: #36a8ff;
-      --accent-strong: #75c4ff;
-      --accent-soft: rgba(54,168,255,.16);
-
-      --link: #64bbff;
-      --link-hover: #ffffff;
-
-      --button-bg: #007bff;
-      --button-text: #ffffff;
-      --button-hover: #1599ff;
-
-      --border: rgba(100,187,255,.25);
-      --border-strong: rgba(100,187,255,.55);
-
-      --intro-bg: #102c4c;
-      --closing-bg: #102c4c;
-      --label-bg: #163f67;
-      --label-text: #a8d9ff;
-
-      --shadow: 0 12px 35px rgba(0,0,0,.30);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.22);
+      --page-bg: #071b35; --surface: #102b4b; --surface-alt: #153657; --surface-raised: #19446d;
+      --text: #eaf3ff; --text-secondary: #b8cde2; --heading: #ffffff;
+      --accent: #36a8ff; --accent-strong: #75c4ff; --accent-soft: rgba(54,168,255,.16);
+      --link: #64bbff; --link-hover: #ffffff; --button-bg: #007bff; --button-text: #ffffff; --button-hover: #1599ff;
+      --border: rgba(100,187,255,.25); --border-strong: rgba(100,187,255,.55);
+      --intro-bg: #102c4c; --closing-bg: #102c4c; --label-bg: #163f67; --label-text: #a8d9ff;
+      --shadow: 0 12px 35px rgba(0,0,0,.30); --shadow-small: 0 5px 22px rgba(0,0,0,.22);
     }
-
-    /* =====================================================
-       THEME 04 — WHITE AND BLUE
-    ===================================================== */
 
     body[data-theme="white-blue"] {
       color-scheme: light;
-
-      --page-bg: #f1f6fc;
-      --surface: #ffffff;
-      --surface-alt: #e7f0fa;
-      --surface-raised: #ffffff;
-
-      --text: #26384d;
-      --text-secondary: #64778c;
-      --heading: #003366;
-
-      --accent: #007bff;
-      --accent-strong: #0056a8;
-      --accent-soft: rgba(0,123,255,.11);
-
-      --link: #0066cc;
-      --link-hover: #003366;
-
-      --button-bg: #003366;
-      --button-text: #ffffff;
-      --button-hover: #007bff;
-
-      --border: rgba(0,70,135,.20);
-      --border-strong: rgba(0,102,204,.48);
-
-      --intro-bg: #e5effa;
-      --closing-bg: #e7f0fa;
-      --label-bg: #dcecff;
-      --label-text: #003f80;
-
-      --shadow: 0 12px 35px rgba(0,51,102,.07);
-      --shadow-small: 0 5px 22px rgba(0,51,102,.045);
+      --page-bg: #f1f6fc; --surface: #ffffff; --surface-alt: #e7f0fa; --surface-raised: #ffffff;
+      --text: #26384d; --text-secondary: #64778c; --heading: #003366;
+      --accent: #007bff; --accent-strong: #0056a8; --accent-soft: rgba(0,123,255,.11);
+      --link: #0066cc; --link-hover: #003366; --button-bg: #003366; --button-text: #ffffff; --button-hover: #007bff;
+      --border: rgba(0,70,135,.20); --border-strong: rgba(0,102,204,.48);
+      --intro-bg: #e5effa; --closing-bg: #e7f0fa; --label-bg: #dcecff; --label-text: #003f80;
+      --shadow: 0 12px 35px rgba(0,51,102,.07); --shadow-small: 0 5px 22px rgba(0,51,102,.045);
     }
-
-    /* =====================================================
-       THEME 05 — CHARCOAL EXECUTIVE
-    ===================================================== */
 
     body[data-theme="charcoal"] {
       color-scheme: dark;
-
-      --page-bg: #202020;
-      --surface: #292929;
-      --surface-alt: #343434;
-      --surface-raised: #3c3c3c;
-
-      --text: #e6e1d6;
-      --text-secondary: #b6b1a5;
-      --heading: #f0d47e;
-
-      --accent: #d1ad50;
-      --accent-strong: #f0d47e;
-      --accent-soft: rgba(209,173,80,.15);
-
-      --link: #e3c574;
-      --link-hover: #ffffff;
-
-      --button-bg: #d1ad50;
-      --button-text: #202020;
-      --button-hover: #f0d47e;
-
-      --border: rgba(209,173,80,.32);
-      --border-strong: rgba(209,173,80,.58);
-
-      --intro-bg: #30302c;
-      --closing-bg: #30302c;
-      --label-bg: #39352b;
-      --label-text: #f0d47e;
-
-      --shadow: 0 12px 35px rgba(0,0,0,.28);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.20);
+      --page-bg: #202020; --surface: #292929; --surface-alt: #343434; --surface-raised: #3c3c3c;
+      --text: #e6e1d6; --text-secondary: #b6b1a5; --heading: #f0d47e;
+      --accent: #d1ad50; --accent-strong: #f0d47e; --accent-soft: rgba(209,173,80,.15);
+      --link: #e3c574; --link-hover: #ffffff; --button-bg: #d1ad50; --button-text: #202020; --button-hover: #f0d47e;
+      --border: rgba(209,173,80,.32); --border-strong: rgba(209,173,80,.58);
+      --intro-bg: #30302c; --closing-bg: #30302c; --label-bg: #39352b; --label-text: #f0d47e;
+      --shadow: 0 12px 35px rgba(0,0,0,.28); --shadow-small: 0 5px 22px rgba(0,0,0,.20);
     }
-
-    /* =====================================================
-       THEME 06 — EMERALD INSTITUTION
-    ===================================================== */
 
     body[data-theme="emerald"] {
       color-scheme: dark;
-
-      --page-bg: #063b32;
-      --surface: #0b4a3e;
-      --surface-alt: #125b4c;
-      --surface-raised: #176c58;
-
-      --text: #e8f5ee;
-      --text-secondary: #b9d8ca;
-      --heading: #ffffff;
-
-      --accent: #77d6b2;
-      --accent-strong: #a2e9ce;
-      --accent-soft: rgba(119,214,178,.15);
-
-      --link: #9ce5c9;
-      --link-hover: #ffffff;
-
-      --button-bg: #77d6b2;
-      --button-text: #063b32;
-      --button-hover: #a2e9ce;
-
-      --border: rgba(162,233,206,.24);
-      --border-strong: rgba(162,233,206,.50);
-
-      --intro-bg: #0c4b3e;
-      --closing-bg: #0c4b3e;
-      --label-bg: #145c4b;
-      --label-text: #b7f0d9;
-
-      --shadow: 0 12px 35px rgba(0,0,0,.25);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.18);
+      --page-bg: #063b32; --surface: #0b4a3e; --surface-alt: #125b4c; --surface-raised: #176c58;
+      --text: #e8f5ee; --text-secondary: #b9d8ca; --heading: #ffffff;
+      --accent: #77d6b2; --accent-strong: #a2e9ce; --accent-soft: rgba(119,214,178,.15);
+      --link: #9ce5c9; --link-hover: #ffffff; --button-bg: #77d6b2; --button-text: #063b32; --button-hover: #a2e9ce;
+      --border: rgba(162,233,206,.24); --border-strong: rgba(162,233,206,.50);
+      --intro-bg: #0c4b3e; --closing-bg: #0c4b3e; --label-bg: #145c4b; --label-text: #b7f0d9;
+      --shadow: 0 12px 35px rgba(0,0,0,.25); --shadow-small: 0 5px 22px rgba(0,0,0,.18);
     }
-
-    /* =====================================================
-       THEME 07 — ROSE EDITORIAL
-    ===================================================== */
 
     body[data-theme="rose"] {
       color-scheme: light;
-
-      --page-bg: #f8eef1;
-      --surface: #fff9fa;
-      --surface-alt: #f2dfe5;
-      --surface-raised: #ffffff;
-
-      --text: #46333a;
-      --text-secondary: #80636e;
-      --heading: #632d40;
-
-      --accent: #ad6a7a;
-      --accent-strong: #854b5e;
-      --accent-soft: rgba(173,106,122,.13);
-
-      --link: #854b5e;
-      --link-hover: #632d40;
-
-      --button-bg: #632d40;
-      --button-text: #ffffff;
-      --button-hover: #ad6a7a;
-
-      --border: rgba(173,106,122,.28);
-      --border-strong: rgba(173,106,122,.52);
-
-      --intro-bg: #f2dfe5;
-      --closing-bg: #f2dfe5;
-      --label-bg: #f0d9e0;
-      --label-text: #632d40;
-
-      --shadow: 0 12px 35px rgba(99,45,64,.075);
-      --shadow-small: 0 5px 22px rgba(99,45,64,.045);
+      --page-bg: #f8eef1; --surface: #fff9fa; --surface-alt: #f2dfe5; --surface-raised: #ffffff;
+      --text: #46333a; --text-secondary: #80636e; --heading: #632d40;
+      --accent: #ad6a7a; --accent-strong: #854b5e; --accent-soft: rgba(173,106,122,.13);
+      --link: #854b5e; --link-hover: #632d40; --button-bg: #632d40; --button-text: #ffffff; --button-hover: #ad6a7a;
+      --border: rgba(173,106,122,.28); --border-strong: rgba(173,106,122,.52);
+      --intro-bg: #f2dfe5; --closing-bg: #f2dfe5; --label-bg: #f0d9e0; --label-text: #632d40;
+      --shadow: 0 12px 35px rgba(99,45,64,.075); --shadow-small: 0 5px 22px rgba(99,45,64,.045);
     }
-
-    /* =====================================================
-       THEME 08 — MIDNIGHT TECHNOLOGY
-    ===================================================== */
 
     body[data-theme="midnight"] {
       color-scheme: dark;
-
-      --page-bg: #101b35;
-      --surface: #172744;
-      --surface-alt: #203653;
-      --surface-raised: #294464;
-
-      --text: #e8f1ff;
-      --text-secondary: #b6c7dd;
-      --heading: #ffffff;
-
-      --accent: #00e5ff;
-      --accent-strong: #6af1ff;
-      --accent-soft: rgba(0,229,255,.14);
-
-      --link: #69eaff;
-      --link-hover: #ffffff;
-
-      --button-bg: #00a6c7;
-      --button-text: #071b35;
-      --button-hover: #00e5ff;
-
-      --border: rgba(0,229,255,.23);
-      --border-strong: rgba(0,229,255,.52);
-
-      --intro-bg: #172b48;
-      --closing-bg: #172b48;
-      --label-bg: #203b5b;
-      --label-text: #83f0ff;
-
-      --shadow: 0 12px 35px rgba(0,0,0,.30);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.23);
+      --page-bg: #101b35; --surface: #172744; --surface-alt: #203653; --surface-raised: #294464;
+      --text: #e8f1ff; --text-secondary: #b6c7dd; --heading: #ffffff;
+      --accent: #00e5ff; --accent-strong: #6af1ff; --accent-soft: rgba(0,229,255,.14);
+      --link: #69eaff; --link-hover: #ffffff; --button-bg: #00a6c7; --button-text: #071b35; --button-hover: #00e5ff;
+      --border: rgba(0,229,255,.23); --border-strong: rgba(0,229,255,.52);
+      --intro-bg: #172b48; --closing-bg: #172b48; --label-bg: #203b5b; --label-text: #83f0ff;
+      --shadow: 0 12px 35px rgba(0,0,0,.30); --shadow-small: 0 5px 22px rgba(0,0,0,.23);
     }
-
-    /* =====================================================
-       THEME 09 — BURGUNDY DISTINCTION
-    ===================================================== */
 
     body[data-theme="burgundy"] {
       color-scheme: dark;
-
-      --page-bg: #401c2a;
-      --surface: #512535;
-      --surface-alt: #633044;
-      --surface-raised: #71384e;
-
-      --text: #f3e6e9;
-      --text-secondary: #d6b8c0;
-      --heading: #ffffff;
-
-      --accent: #e6b7c1;
-      --accent-strong: #f4d5dc;
-      --accent-soft: rgba(230,183,193,.15);
-
-      --link: #f0cbd3;
-      --link-hover: #ffffff;
-
-      --button-bg: #e6b7c1;
-      --button-text: #401c2a;
-      --button-hover: #f4d5dc;
-
-      --border: rgba(230,183,193,.26);
-      --border-strong: rgba(230,183,193,.52);
-
-      --intro-bg: #522637;
-      --closing-bg: #522637;
-      --label-bg: #673448;
-      --label-text: #f4d5dc;
-
-      --shadow: 0 12px 35px rgba(0,0,0,.28);
-      --shadow-small: 0 5px 22px rgba(0,0,0,.21);
+      --page-bg: #401c2a; --surface: #512535; --surface-alt: #633044; --surface-raised: #71384e;
+      --text: #f3e6e9; --text-secondary: #d6b8c0; --heading: #ffffff;
+      --accent: #e6b7c1; --accent-strong: #f4d5dc; --accent-soft: rgba(230,183,193,.15);
+      --link: #f0cbd3; --link-hover: #ffffff; --button-bg: #e6b7c1; --button-text: #401c2a; --button-hover: #f4d5dc;
+      --border: rgba(230,183,193,.26); --border-strong: rgba(230,183,193,.52);
+      --intro-bg: #522637; --closing-bg: #522637; --label-bg: #673448; --label-text: #f4d5dc;
+      --shadow: 0 12px 35px rgba(0,0,0,.28); --shadow-small: 0 5px 22px rgba(0,0,0,.21);
     }
-
-    /* =====================================================
-       THEME 10 — PLATINUM CLASSIC
-    ===================================================== */
 
     body[data-theme="platinum"] {
       color-scheme: light;
-
-      --page-bg: #e9ebee;
-      --surface: #f8f9fa;
-      --surface-alt: #dce1e7;
-      --surface-raised: #ffffff;
-
-      --text: #29333d;
-      --text-secondary: #64748b;
-      --heading: #293e55;
-
-      --accent: #526e8b;
-      --accent-strong: #354f69;
-      --accent-soft: rgba(82,110,139,.13);
-
-      --link: #405f7e;
-      --link-hover: #1e344a;
-
-      --button-bg: #293e55;
-      --button-text: #ffffff;
-      --button-hover: #526e8b;
-
-      --border: rgba(64,86,109,.23);
-      --border-strong: rgba(64,86,109,.48);
-
-      --intro-bg: #dfe5eb;
-      --closing-bg: #dfe5eb;
-      --label-bg: #d5dde6;
-      --label-text: #293e55;
-
-      --shadow: 0 12px 35px rgba(35,55,75,.075);
-      --shadow-small: 0 5px 22px rgba(35,55,75,.045);
+      --page-bg: #e9ebee; --surface: #f8f9fa; --surface-alt: #dce1e7; --surface-raised: #ffffff;
+      --text: #29333d; --text-secondary: #64748b; --heading: #293e55;
+      --accent: #526e8b; --accent-strong: #354f69; --accent-soft: rgba(82,110,139,.13);
+      --link: #405f7e; --link-hover: #1e344a; --button-bg: #293e55; --button-text: #ffffff; --button-hover: #526e8b;
+      --border: rgba(64,86,109,.23); --border-strong: rgba(64,86,109,.48);
+      --intro-bg: #dfe5eb; --closing-bg: #dfe5eb; --label-bg: #d5dde6; --label-text: #293e55;
+      --shadow: 0 12px 35px rgba(35,55,75,.075); --shadow-small: 0 5px 22px rgba(35,55,75,.045);
     }
 
     /* =====================================================
@@ -1594,276 +1377,77 @@
     ===================================================== */
 
     @media (max-width: 850px) {
-      .article-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-      }
-
-      .article-sidebar {
-        position: static;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .sidebar-card {
-        margin: 0;
-      }
-
-      .brand img {
-        width: 49px;
-        height: 49px;
-      }
-
-      .theme-options {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .newswire-masthead {
-        min-height: 300px;
-      }
+      .article-layout { grid-template-columns: minmax(0, 1fr); gap: 35px; }
+      .article-sidebar { position: static; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .sidebar-card { margin: 0; }
+      .brand img { width: 49px; height: 49px; }
+      .theme-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .newswire-masthead { min-height: 300px; }
     }
 
     @media (max-width: 560px) {
-      body {
-        font-size: 16px;
-        line-height: 1.8;
-      }
-
-      .header-inner {
-        padding: 15px 18px;
-        gap: 12px;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .header-actions {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .brand {
-        gap: 10px;
-      }
-
-      .brand img {
-        width: 43px;
-        height: 43px;
-      }
-
-      .brand-name {
-        font-size: 13px;
-        letter-spacing: 1.2px;
-      }
-
-      .brand-tagline {
-        font-size: 8px;
-        letter-spacing: 1.5px;
-      }
-
-      .header-link {
-        font-size: 9px;
-        letter-spacing: .5px;
-      }
-
-      .page-shell {
-        padding: 24px 18px 45px;
-      }
-
-      .breadcrumbs {
-        font-size: 10px;
-      }
-
-      .newswire-masthead {
-        min-height: 280px;
-        padding: 32px 23px;
-      }
-
-      .masthead-kicker {
-        font-size: 9px;
-        letter-spacing: 2.5px;
-      }
-
-      .masthead-title {
-        font-size: 36px;
-        letter-spacing: -1px;
-      }
-
-      .masthead-description {
-        font-size: 16px;
-      }
-
-      .masthead-signature {
-        font-size: 8px;
-        letter-spacing: 1.3px;
-      }
-
-      h1 {
-        font-size: 34px;
-        letter-spacing: -.8px;
-      }
-
-      .article-intro {
-        padding: 19px;
-        font-size: 17px;
-      }
-
-      .article-body p {
-        font-size: 16px;
-        line-height: 1.85;
-      }
-
-      .article-body p:first-of-type::first-letter {
-        font-size: 49px;
-      }
-
-      .article-body h2 {
-        font-size: 22px;
-      }
-
-      .editorial-question {
-        padding: 19px;
-        font-size: 22px !important;
-      }
-
-      .editorial-pullquote {
-        padding: 22px 15px;
-        font-size: 23px;
-      }
-
-      .article-closing {
-        padding: 22px;
-      }
-
-      .article-closing p {
-        font-size: 18px;
-      }
-
-      .article-sidebar {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .share-section {
-        align-items: stretch;
-      }
-
-      .share-label {
-        flex-basis: 100%;
-      }
-
-      .action-button {
-        flex: 1 1 auto;
-      }
-
-      .issuance {
-        padding: 20px;
-      }
-
-      .issuance-row {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 2px;
-      }
-
-      .footer-inner {
-        padding: 24px 18px;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .reading-preferences,
-      .language-section {
-        margin-left: 18px;
-        margin-right: 18px;
-      }
-
-      .reading-preferences {
-        padding: 19px;
-      }
-
-      .theme-options {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 9px;
-      }
-
-      .theme-button {
-        min-height: 95px;
-        font-size: 9px;
-      }
-
-      .language-section {
-        align-items: stretch;
-      }
-
-      .language-select {
-        width: 100%;
-        min-width: 0;
-      }
+      body { font-size: 16px; line-height: 1.8; }
+      .header-inner { padding: 15px 18px; gap: 12px; flex-direction: column; align-items: flex-start; }
+      .header-actions { width: 100%; justify-content: space-between; }
+      .brand { gap: 10px; }
+      .brand img { width: 43px; height: 43px; }
+      .brand-name { font-size: 13px; letter-spacing: 1.2px; }
+      .brand-tagline { font-size: 8px; letter-spacing: 1.5px; }
+      .header-link { font-size: 9px; letter-spacing: .5px; }
+      .page-shell { padding: 24px 18px 45px; }
+      .breadcrumbs { font-size: 10px; }
+      .about-weekly-section { padding: 22px 20px; }
+      .newswire-masthead { min-height: 280px; padding: 32px 23px; }
+      .masthead-kicker { font-size: 9px; letter-spacing: 2.5px; }
+      .masthead-title { font-size: 36px; letter-spacing: -1px; }
+      .masthead-description { font-size: 16px; }
+      .masthead-signature { font-size: 8px; letter-spacing: 1.3px; }
+      h1 { font-size: 34px; letter-spacing: -.8px; }
+      .article-intro { padding: 19px; font-size: 17px; }
+      .article-body p { font-size: 16px; line-height: 1.85; }
+      .article-body p:first-of-type::first-letter { font-size: 49px; }
+      .article-body h2 { font-size: 22px; }
+      .editorial-question { padding: 19px; font-size: 22px !important; }
+      .editorial-pullquote { padding: 22px 15px; font-size: 23px; }
+      .article-closing { padding: 22px; }
+      .article-closing p { font-size: 18px; }
+      .article-sidebar { grid-template-columns: minmax(0, 1fr); }
+      .share-section { align-items: stretch; }
+      .share-label { flex-basis: 100%; }
+      .action-button { flex: 1 1 auto; }
+      .issuance { padding: 20px; }
+      .issuance-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+      .footer-inner { padding: 24px 18px; align-items: flex-start; flex-direction: column; }
+      .reading-preferences, .language-section { margin-left: 18px; margin-right: 18px; }
+      .reading-preferences { padding: 19px; }
+      .theme-options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+      .theme-button { min-height: 95px; font-size: 9px; }
+      .language-section { align-items: stretch; }
+      .language-select { width: 100%; min-width: 0; }
     }
 
-    /* =====================================================
-       PRINT PRESENTATION
-    ===================================================== */
-
     @media print {
-      body {
-        background: #ffffff !important;
-        color: #111111 !important;
-      }
-
-      .site-header,
-      .top-rule,
-      .breadcrumbs,
-      .newswire-masthead,
-      .article-sidebar,
-      .share-section,
-      .site-footer,
-      .reading-preferences,
-      .language-section {
+      body { background: #ffffff !important; color: #111111 !important; }
+      .site-header, .top-rule, .breadcrumbs, .newswire-masthead, .about-weekly-section,
+      .article-sidebar, .share-section, .site-footer, .reading-preferences, .language-section {
         display: none !important;
       }
-
-      .page-shell {
-        max-width: none;
-        padding: 0;
-      }
-
-      h1,
-      .article-body h2,
-      .article-closing p,
-      .issuance-value,
-      .editorial-question,
-      .editorial-pullquote {
+      .page-shell { max-width: none; padding: 0; }
+      h1, .article-body h2, .article-closing p, .issuance-value, .editorial-question, .editorial-pullquote {
         color: #111111 !important;
       }
-
-      .article-layout {
-        display: block;
+      .article-layout { display: block; }
+      .article-intro, .article-closing, .issuance, .editorial-question, .editorial-pullquote {
+        background: #ffffff !important; break-inside: avoid;
       }
-
-      .article-intro,
-      .article-closing,
-      .issuance,
-      .editorial-question,
-      .editorial-pullquote {
-        background: #ffffff !important;
-        break-inside: avoid;
-      }
-
-      a {
-        color: #111111;
-      }
+      a { color: #111111; }
     }
   </style>
 </head>
 
 <body data-theme="original">
 
-  <!-- GOOGLE TRANSLATE ENGINE -->
   <div id="google_translate_element" aria-hidden="true"></div>
-
-  <!-- =====================================================
-       SITE HEADER
-  ====================================================== -->
 
   <header class="site-header">
     <div class="header-inner">
@@ -1881,8 +1465,8 @@
       </a>
 
       <div class="header-actions">
-        <a class="header-link" href="https://phrinusomyis.com/newswire/power-behind-the-worlds-game">
-          Power Behind The World's Game ↗
+        <a class="header-link" href="./power-behind-the-worlds-game-week-47-november-2026.html">
+          Week 47 Edition ↗
         </a>
         <a class="header-link" href="https://phrinusomyis.com/">
           Official Website ↗
@@ -1894,10 +1478,6 @@
   </header>
 
   <main class="page-shell">
-
-    <!-- =====================================================
-         LANGUAGE SELECTOR
-    ====================================================== -->
 
     <section class="language-section" aria-label="Website language">
       <div class="language-information">
@@ -1943,11 +1523,6 @@
       ></span>
     </section>
 
-    <!-- =====================================================
-         TEN MASTER READING THEMES
-         BLACK AUTHORITY IS THE DEFAULT
-    ====================================================== -->
-
     <section class="reading-preferences" aria-label="Reading appearance preferences">
       <h2 class="preferences-heading">Choose Your Reading Appearance</h2>
 
@@ -1957,113 +1532,48 @@
       </p>
 
       <div class="theme-options">
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="original"
-          aria-pressed="true"
-        >
+        <button class="theme-button" type="button" data-theme-choice="original" aria-pressed="true">
           <span class="theme-swatch swatch-black"><span></span><span></span><span></span></span>
           Black Authority
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="white"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="white" aria-pressed="false">
           <span class="theme-swatch swatch-editorial"><span></span><span></span><span></span></span>
           White Editorial
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="digital-blue"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="digital-blue" aria-pressed="false">
           <span class="theme-swatch swatch-blue"><span></span><span></span><span></span></span>
           Digital Blue
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="white-blue"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="white-blue" aria-pressed="false">
           <span class="theme-swatch swatch-whiteblue"><span></span><span></span><span></span></span>
           White and Blue
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="charcoal"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="charcoal" aria-pressed="false">
           <span class="theme-swatch swatch-charcoal"><span></span><span></span><span></span></span>
           Charcoal Executive
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="emerald"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="emerald" aria-pressed="false">
           <span class="theme-swatch swatch-emerald"><span></span><span></span><span></span></span>
           Emerald Institution
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="rose"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="rose" aria-pressed="false">
           <span class="theme-swatch swatch-rose"><span></span><span></span><span></span></span>
           Rose Editorial
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="midnight"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="midnight" aria-pressed="false">
           <span class="theme-swatch swatch-midnight"><span></span><span></span><span></span></span>
           Midnight Technology
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="burgundy"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="burgundy" aria-pressed="false">
           <span class="theme-swatch swatch-burgundy"><span></span><span></span><span></span></span>
           Burgundy Distinction
         </button>
-
-        <button
-          class="theme-button"
-          type="button"
-          data-theme-choice="platinum"
-          aria-pressed="false"
-        >
+        <button class="theme-button" type="button" data-theme-choice="platinum" aria-pressed="false">
           <span class="theme-swatch swatch-platinum"><span></span><span></span><span></span></span>
           Platinum Classic
         </button>
-
       </div>
     </section>
-
-    <!-- =====================================================
-         BREADCRUMBS
-    ====================================================== -->
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
@@ -2072,10 +1582,6 @@
       <span>›</span>
       <span aria-current="page">The Next Chapter of Competitive Sport</span>
     </nav>
-
-    <!-- =====================================================
-         NEWSWIRE MASTHEAD
-    ====================================================== -->
 
     <section class="newswire-masthead" aria-label="PHRINUSOMYIS Newswire">
       <span class="masthead-kicker">PHRINUSOMYIS™ Official Newswire</span>
@@ -2097,8 +1603,22 @@
     </section>
 
     <!-- =====================================================
-         ARTICLE HEADING
+         ABOUT THIS & WEEKLY EDITION — SHORT STORY + BUTTON
     ====================================================== -->
+
+    <section class="about-weekly-section" id="about-weekly" aria-label="About this weekly series">
+      <span class="section-label">About This · Weekly Edition</span>
+      <h2>The Power Behind the World's Game — Week 47 · 2026</h2>
+      <p>
+        Every week, <strong>The Power Behind the World's Game</strong> continues as the recurring weekly sports edition of <strong>PHRINUSOMYIS™ Newswire</strong>, bringing together match results, governance shifts, commercial moves, and cross-sport developments under one consistent series title and weekly date stamp.
+      </p>
+      <p class="about-weekly-story">
+        A final whistle never closes the story on its own: in Berlin, a five-goal second half reshapes a group and closes a seventy-year chapter; in governance and across global circuits, decisions made off the field set the stage for what follows next week.
+      </p>
+      <a class="weekly-edition-button" href="./power-behind-the-worlds-game-week-47-november-2026.html">
+        Read Week 47 Edition (16–22 November 2026) →
+      </a>
+    </section>
 
     <div class="page-heading" id="newswire">
       <span class="section-label">Official Newswire</span>
@@ -2107,10 +1627,6 @@
 
       <div class="heading-rule"></div>
     </div>
-
-    <!-- =====================================================
-         ARTICLE AND SIDEBAR
-    ====================================================== -->
 
     <div class="article-layout">
 
@@ -2252,10 +1768,6 @@
 
         </div>
 
-        <!-- =================================================
-             ARTICLE ACTIONS
-        ================================================== -->
-
         <section class="share-section" aria-label="Article actions">
           <span class="share-label">Share this article</span>
 
@@ -2279,11 +1791,6 @@
           ></span>
         </section>
 
-        <!-- =================================================
-             OFFICIAL ISSUANCE
-             FOUNDER FIELD REMOVED
-        ================================================== -->
-
         <section class="issuance" aria-labelledby="issuance-title">
           <h2 id="issuance-title">Official Issuance</h2>
 
@@ -2299,10 +1806,6 @@
         </section>
 
       </article>
-
-      <!-- ===================================================
-           SIDEBAR
-      ==================================================== -->
 
       <aside class="article-sidebar" aria-label="Newswire information">
 
@@ -2328,7 +1831,7 @@
           </p>
 
           <p style="margin-top: 14px;">
-            <a href="https://phrinusomyis.com/newswire/power-behind-the-worlds-game">
+            <a href="./power-behind-the-worlds-game-week-47-november-2026.html">
               Power Behind The World's Game ↗
             </a>
           </p>
@@ -2338,6 +1841,9 @@
           <h2>In This Article</h2>
 
           <ul class="sidebar-nav">
+            <li>
+              <a href="#about-weekly">About this weekly series</a>
+            </li>
             <li>
               <a href="#article-content">The history of sport</a>
             </li>
@@ -2357,10 +1863,6 @@
     </div>
   </main>
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
   <footer class="site-footer">
     <div class="footer-inner">
 
@@ -2377,85 +1879,39 @@
     </div>
   </footer>
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
   <script>
     (function () {
       "use strict";
 
-      /* ==========================================
-         TEN MASTER THEME CONTROLS
-         BLACK AUTHORITY IS THE DEFAULT
-      ========================================== */
-
-      const themeButtons =
-        document.querySelectorAll("[data-theme-choice]");
-
+      const themeButtons = document.querySelectorAll("[data-theme-choice]");
       const validThemes = [
-        "original",
-        "white",
-        "digital-blue",
-        "white-blue",
-        "charcoal",
-        "emerald",
-        "rose",
-        "midnight",
-        "burgundy",
-        "platinum"
+        "original", "white", "digital-blue", "white-blue", "charcoal",
+        "emerald", "rose", "midnight", "burgundy", "platinum"
       ];
-
       const defaultTheme = "original";
 
       function applyTheme(theme) {
         if (!validThemes.includes(theme)) {
           theme = defaultTheme;
         }
-
         document.body.setAttribute("data-theme", theme);
-
         themeButtons.forEach(function (button) {
-          const selected =
-            button.dataset.themeChoice === theme;
-
-          button.setAttribute(
-            "aria-pressed",
-            String(selected)
-          );
+          const selected = button.dataset.themeChoice === theme;
+          button.setAttribute("aria-pressed", String(selected));
         });
-
-        const themeColor =
-          document.querySelector('meta[name="theme-color"]');
-
+        const themeColor = document.querySelector('meta[name="theme-color"]');
         const themeColors = {
-          "original": "#080808",
-          "white": "#f5f3ed",
-          "digital-blue": "#071b35",
-          "white-blue": "#f1f6fc",
-          "charcoal": "#202020",
-          "emerald": "#063b32",
-          "rose": "#f8eef1",
-          "midnight": "#101b35",
-          "burgundy": "#401c2a",
+          "original": "#080808", "white": "#f5f3ed", "digital-blue": "#071b35",
+          "white-blue": "#f1f6fc", "charcoal": "#202020", "emerald": "#063b32",
+          "rose": "#f8eef1", "midnight": "#101b35", "burgundy": "#401c2a",
           "platinum": "#e9ebee"
         };
-
         if (themeColor) {
-          themeColor.setAttribute(
-            "content",
-            themeColors[theme]
-          );
+          themeColor.setAttribute("content", themeColors[theme]);
         }
-
         try {
-          localStorage.setItem(
-            "phrinusomyis-reading-theme",
-            theme
-          );
-        } catch (error) {
-          /* Theme still works without browser storage. */
-        }
+          localStorage.setItem("phrinusomyis-reading-theme", theme);
+        } catch (error) {}
       }
 
       themeButtons.forEach(function (button) {
@@ -2465,25 +1921,14 @@
       });
 
       try {
-        const savedTheme = localStorage.getItem(
-          "phrinusomyis-reading-theme"
-        );
-
+        const savedTheme = localStorage.getItem("phrinusomyis-reading-theme");
         applyTheme(savedTheme || defaultTheme);
       } catch (error) {
         applyTheme(defaultTheme);
       }
 
-      /* ==========================================
-         GOOGLE TRANSLATE
-      ========================================== */
-
-      const languageSelector =
-        document.getElementById("language-selector");
-
-      const languageStatus =
-        document.getElementById("language-status");
-
+      const languageSelector = document.getElementById("language-selector");
+      const languageStatus = document.getElementById("language-status");
       let selectedLanguage = "";
 
       function updateLanguageStatus(message) {
@@ -2496,220 +1941,122 @@
 
       function setGoogleLanguage(language, attempts) {
         attempts = attempts || 0;
-
         const combo = getGoogleTranslateCombo();
-
         if (!combo) {
           if (attempts < 40) {
             window.setTimeout(function () {
               setGoogleLanguage(language, attempts + 1);
             }, 300);
           } else {
-            updateLanguageStatus(
-              "The translation service is taking longer than expected to load. Please try again."
-            );
+            updateLanguageStatus("The translation service is taking longer than expected to load. Please try again.");
           }
-
           return;
         }
-
         combo.value = language;
-
-        combo.dispatchEvent(
-          new Event("change", { bubbles: true })
-        );
-
+        combo.dispatchEvent(new Event("change", { bubbles: true }));
         selectedLanguage = language;
-
         if (language === "") {
-          updateLanguageStatus(
-            "Original English publication selected."
-          );
+          updateLanguageStatus("Original English publication selected.");
         } else {
-          updateLanguageStatus(
-            "Translation requested. Please allow the page a moment to update."
-          );
+          updateLanguageStatus("Translation requested. Please allow the page a moment to update.");
         }
       }
 
       languageSelector.addEventListener("change", function () {
         const language = languageSelector.value;
-
-        if (language === selectedLanguage) {
-          return;
-        }
-
-        updateLanguageStatus(
-          "Applying your language preference..."
-        );
-
+        if (language === selectedLanguage) return;
+        updateLanguageStatus("Applying your language preference...");
         setGoogleLanguage(language);
       });
 
       window.googleTranslateElementInit = function () {
         if (!window.google || !window.google.translate) {
-          updateLanguageStatus(
-            "Translation service is unavailable at the moment."
-          );
+          updateLanguageStatus("Translation service is unavailable at the moment.");
           return;
         }
-
         new google.translate.TranslateElement(
           {
             pageLanguage: "en",
-            includedLanguages:
-              "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
+            includedLanguages: "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
             autoDisplay: false,
             multilanguagePage: false
           },
           "google_translate_element"
         );
-
-        updateLanguageStatus(
-          "English is the original publication language."
-        );
+        updateLanguageStatus("English is the original publication language.");
       };
-
-      /* ==========================================
-         GOOGLE TRANSLATE — BANNER AND POP-OUT
-         PROTECTION
-      ========================================== */
 
       function restorePagePosition() {
         const html = document.documentElement;
         const body = document.body;
-
-        if (!html || !body) {
-          return;
-        }
-
-        if (html.style.top !== "0px") {
-          html.style.setProperty("top", "0px", "important");
-        }
-
-        if (html.style.marginTop !== "0px") {
-          html.style.setProperty("margin-top", "0px", "important");
-        }
-
-        if (html.style.paddingTop !== "0px") {
-          html.style.setProperty("padding-top", "0px", "important");
-        }
-
-        if (body.style.top !== "0px") {
-          body.style.setProperty("top", "0px", "important");
-        }
-
-        if (body.style.marginTop !== "0px") {
-          body.style.setProperty("margin-top", "0px", "important");
-        }
-
-        if (body.style.paddingTop !== "0px") {
-          body.style.setProperty("padding-top", "0px", "important");
-        }
+        if (!html || !body) return;
+        if (html.style.top !== "0px") html.style.setProperty("top", "0px", "important");
+        if (html.style.marginTop !== "0px") html.style.setProperty("margin-top", "0px", "important");
+        if (html.style.paddingTop !== "0px") html.style.setProperty("padding-top", "0px", "important");
+        if (body.style.top !== "0px") body.style.setProperty("top", "0px", "important");
+        if (body.style.marginTop !== "0px") body.style.setProperty("margin-top", "0px", "important");
+        if (body.style.paddingTop !== "0px") body.style.setProperty("padding-top", "0px", "important");
       }
 
       function removeGooglePopouts() {
         const unwantedSelectors = [
-          "iframe.goog-te-banner-frame",
-          ".goog-te-banner-frame",
-          ".goog-te-balloon-frame",
-          "iframe.goog-te-balloon-frame",
-          ".goog-te-menu-frame",
-          "iframe.goog-te-menu-frame",
-          ".goog-te-ftab-frame",
-          "#goog-gt-tt",
-          ".goog-tooltip",
-          ".goog-te-tooltip-container"
+          "iframe.goog-te-banner-frame", ".goog-te-banner-frame", ".goog-te-balloon-frame",
+          "iframe.goog-te-balloon-frame", ".goog-te-menu-frame", "iframe.goog-te-menu-frame",
+          ".goog-te-ftab-frame", "#goog-gt-tt", ".goog-tooltip", ".goog-te-tooltip-container"
         ];
-
         unwantedSelectors.forEach(function (selector) {
           document.querySelectorAll(selector).forEach(function (element) {
-            if (!element.closest("#google_translate_element")) {
-              element.remove();
-            }
+            if (!element.closest("#google_translate_element")) element.remove();
           });
         });
-
         restorePagePosition();
       }
 
       removeGooglePopouts();
 
-      const translationObserver =
-        new MutationObserver(function () {
-          removeGooglePopouts();
-        });
+      const translationObserver = new MutationObserver(function () {
+        removeGooglePopouts();
+      });
 
-      translationObserver.observe(
-        document.documentElement,
-        {
-          childList: true,
-          subtree: true,
-          attributes: true,
-          attributeFilter: ["style", "class"]
-        }
-      );
+      translationObserver.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style", "class"]
+      });
 
       window.addEventListener("load", removeGooglePopouts);
       window.addEventListener("resize", removeGooglePopouts);
       window.addEventListener("scroll", restorePagePosition);
 
-      /* ==========================================
-         ARTICLE SHARING
-      ========================================== */
-
-      const articleUrl =
-        "https://phrinusomyis.com/newsroom/newswire.html";
-
-      const articleTitle =
-        "PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT";
-
-      const shareButton =
-        document.getElementById("share-button");
-
-      const copyButton =
-        document.getElementById("copy-button");
-
-      const printButton =
-        document.getElementById("print-button");
-
-      const status =
-        document.getElementById("share-status");
+      const articleUrl = "https://phrinusomyis.com/newsroom/newswire.html";
+      const articleTitle = "PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT";
+      const shareButton = document.getElementById("share-button");
+      const copyButton = document.getElementById("copy-button");
+      const printButton = document.getElementById("print-button");
+      const status = document.getElementById("share-status");
 
       function showStatus(message) {
         status.textContent = message;
       }
 
       shareButton.addEventListener("click", async function () {
-        const shareData = {
-          title: articleTitle,
-          text: articleTitle,
-          url: articleUrl
-        };
-
+        const shareData = { title: articleTitle, text: articleTitle, url: articleUrl };
         if (navigator.share) {
           try {
             await navigator.share(shareData);
-
             showStatus("Share options opened.");
           } catch (error) {
             if (error && error.name !== "AbortError") {
-              showStatus(
-                "Sharing was not completed. You can copy the article link instead."
-              );
+              showStatus("Sharing was not completed. You can copy the article link instead.");
             }
           }
         } else {
           try {
             await navigator.clipboard.writeText(articleUrl);
-
-            showStatus(
-              "Article link copied. You can now share it."
-            );
+            showStatus("Article link copied. You can now share it.");
           } catch (error) {
-            showStatus(
-              "Use the Copy Link button to copy the article address."
-            );
+            showStatus("Use the Copy Link button to copy the article address.");
           }
         }
       });
@@ -2717,43 +2064,27 @@
       copyButton.addEventListener("click", async function () {
         try {
           await navigator.clipboard.writeText(articleUrl);
-
           showStatus("Article link copied successfully.");
         } catch (error) {
-          const temporaryInput =
-            document.createElement("textarea");
-
+          const temporaryInput = document.createElement("textarea");
           temporaryInput.value = articleUrl;
           temporaryInput.setAttribute("readonly", "");
-
           temporaryInput.style.position = "fixed";
           temporaryInput.style.opacity = "0";
-
           document.body.appendChild(temporaryInput);
-
           temporaryInput.select();
-
-          const copied =
-            document.execCommand("copy");
-
+          const copied = document.execCommand("copy");
           temporaryInput.remove();
-
-          showStatus(
-            copied
-              ? "Article link copied successfully."
-              : "Copy the link from your browser address bar."
-          );
+          showStatus(copied ? "Article link copied successfully." : "Copy the link from your browser address bar.");
         }
       });
 
       printButton.addEventListener("click", function () {
         window.print();
       });
-
     })();
   </script>
 
-  <!-- GOOGLE TRANSLATE SCRIPT -->
   <script
     src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
     async
