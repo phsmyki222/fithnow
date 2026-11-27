@@ -31,7 +31,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://translate.google.com" crossorigin>
+<link rel="preconnect" href="https://translate.googleapis.com" crossorigin>
 <link rel="dns-prefetch" href="https://translate.google.com">
+<link rel="dns-prefetch" href="https://translate.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -150,6 +152,8 @@
  --border:rgba(201,166,70,.30);
  --border-strong:rgba(201,166,70,.60);
  --intro-bg:#17150f;
+ --label-bg:#282113;
+ --label-text:#e6cb7a;
  --shadow:0 25px 70px rgba(0,0,0,.70);
  --shadow-small:0 7px 25px rgba(0,0,0,.25);
  --serif:Georgia,"Times New Roman",serif;
@@ -168,9 +172,10 @@ html{
 }
 
 body{
- position:relative !important;
+ position:static !important;
  top:0 !important;
  margin:0 !important;
+ padding-top:0 !important;
  background:var(--page-bg);
  color:var(--text);
  font-family:var(--sans);
@@ -401,10 +406,9 @@ button{cursor:pointer}
    ========================================================= */
 
 #google_translate_element{
- display:block !important;
  position:fixed !important;
  left:-10000px !important;
- top:0 !important;
+ top:-10000px !important;
  width:1px !important;
  height:1px !important;
  max-width:1px !important;
@@ -441,14 +445,17 @@ iframe.goog-te-balloon-frame,
 .goog-te-ftab,
 .goog-te-ftab-link,
 .goog-te-menu2,
-.goog-te-menu2-item{
+.goog-te-menu2-item,
+.skiptranslate iframe{
  display:none !important;
  visibility:hidden !important;
  opacity:0 !important;
  pointer-events:none !important;
 }
 
-.goog-text-highlight{
+.goog-text-highlight,
+font[style*="background-color: rgb(255, 255, 0)"],
+font[style*="background-color: yellow"]{
  background:transparent !important;
  background-color:transparent !important;
  box-shadow:none !important;
@@ -462,8 +469,16 @@ iframe.goog-te-balloon-frame,
  line-height:0 !important;
 }
 
-.goog-te-gadget .goog-te-combo{
- visibility:visible !important;
+body > .skiptranslate{
+ position:fixed !important;
+ left:-10000px !important;
+ top:-10000px !important;
+ width:1px !important;
+ height:1px !important;
+ overflow:hidden !important;
+ visibility:hidden !important;
+ opacity:0 !important;
+ pointer-events:none !important;
 }
 
 html,
@@ -478,7 +493,7 @@ body.translated-rtl{
 }
 
 body{
- position:relative !important;
+ position:static !important;
 }
 
 /* =========================================================
@@ -961,6 +976,8 @@ body{
  background:var(--surface);
  color:var(--text);
  font-size:10px;
+ letter-spacing:.7px;
+ border-radius:var(--radius);
 }
 
 .theme-choice.active{
@@ -1197,8 +1214,8 @@ body{
   <select
    class="language-select"
    id="language-selector"
-   aria-label="Choose publication language">
-   <option value="">English — Original</option>
+   aria-label="Choose publication language (21 languages)">
+   <option value="en">English — Original</option>
    <option value="fr">Français — French</option>
    <option value="es">Español — Spanish</option>
    <option value="de">Deutsch — German</option>
@@ -1225,7 +1242,7 @@ body{
    class="language-status"
    id="language-status"
    role="status"
-   aria-live="polite"></span>
+   aria-live="polite">English is the original publication language.</span>
  </section>
 
  <div class="breadcrumb">
@@ -1280,7 +1297,7 @@ body{
 
    <a
     class="latest-image"
-    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026">
+    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026.html">
 
     <span class="latest-label">
      Current Edition · Week 48
@@ -1319,7 +1336,7 @@ body{
 
     <a
      class="button"
-     href="https://phrinusomyis.com/news/inflection-sports/week-48-2026">
+     href="https://phrinusomyis.com/news/inflection-sports/week-48-2026.html">
      Read Week 48 · 2026 →
     </a>
 
@@ -1344,7 +1361,7 @@ body{
 
    <a
     class="feature-card"
-    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026#lead">
+    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026.html#lead">
 
     <img
      src="https://phrinusomyis.com/champions-league-week-48-2026.jpeg"
@@ -1371,7 +1388,7 @@ body{
 
    <a
     class="feature-card"
-    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026#basketball">
+    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026.html#basketball">
 
     <img
      src="https://phrinusomyis.com/minnesota-basketball-week-48-2026.jpeg"
@@ -1398,7 +1415,7 @@ body{
 
    <a
     class="feature-card"
-    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026#motorsport">
+    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026.html#motorsport">
 
     <img
      src="https://phrinusomyis.com/formula-1-qatar-2026.jpeg"
@@ -1442,7 +1459,7 @@ body{
 
    <a
     class="edition-card"
-    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026">
+    href="https://phrinusomyis.com/news/inflection-sports/week-48-2026.html">
 
     <div class="edition-number">
      Latest · Week 48
@@ -1468,7 +1485,7 @@ body{
 
    <a
     class="edition-card"
-    href="https://phrinusomyis.com/news/inflection-sports/week-47-2026">
+    href="https://phrinusomyis.com/news/inflection-sports/week-47-2026.html">
 
     <div class="edition-number">
      Previous · Week 47
@@ -1732,7 +1749,7 @@ body{
  </section>
 
  <!-- ======================================================
-      APPEARANCE
+      APPEARANCE (ALL 10 THEMES)
       ====================================================== -->
 
  <section class="content-section" id="appearance">
@@ -1742,43 +1759,17 @@ body{
    <span>Choose a visual edition</span>
   </div>
 
-  <div class="theme-panel">
-
-   <button
-    type="button"
-    class="theme-choice active"
-    data-theme="black">
-    01 · Black Authority
-   </button>
-
-   <button
-    type="button"
-    class="theme-choice"
-    data-theme="ivory">
-    02 · White Editorial
-   </button>
-
-   <button
-    type="button"
-    class="theme-choice"
-    data-theme="blue">
-    03 · Digital Blue
-   </button>
-
-   <button
-    type="button"
-    class="theme-choice"
-    data-theme="emerald">
-    04 · Emerald Institution
-   </button>
-
-   <button
-    type="button"
-    class="theme-choice"
-    data-theme="burgundy">
-    05 · Burgundy Distinction
-   </button>
-
+  <div class="theme-panel" id="themePanel">
+   <button type="button" class="theme-choice active" data-theme="black">01 · Black Authority</button>
+   <button type="button" class="theme-choice" data-theme="ivory">02 · White Editorial</button>
+   <button type="button" class="theme-choice" data-theme="blue">03 · Digital Blue</button>
+   <button type="button" class="theme-choice" data-theme="whiteblue">04 · White and Blue</button>
+   <button type="button" class="theme-choice" data-theme="charcoal">05 · Charcoal Executive</button>
+   <button type="button" class="theme-choice" data-theme="emerald">06 · Emerald Institution</button>
+   <button type="button" class="theme-choice" data-theme="rose">07 · Rose Editorial</button>
+   <button type="button" class="theme-choice" data-theme="midnight">08 · Midnight Technology</button>
+   <button type="button" class="theme-choice" data-theme="burgundy">09 · Burgundy Distinction</button>
+   <button type="button" class="theme-choice" data-theme="platinum">10 · Platinum Classic</button>
   </div>
 
  </section>
@@ -1811,7 +1802,7 @@ body{
 
     <div class="footer-links">
      <a href="https://phrinusomyis.com/news/inflection-sports/">INFLECTION SPORTS™ Home</a>
-     <a href="https://phrinusomyis.com/news/inflection-sports/week-48-2026">Latest Edition</a>
+     <a href="https://phrinusomyis.com/news/inflection-sports/week-48-2026.html">Latest Edition</a>
      <a href="https://phrinusomyis.com/news/">PHRINUSOMYIS™ NEWS</a>
      <a href="https://phrinusomyis.com/">PHRINUSOMYIS™ Official</a>
      <a href="https://phrinusomyis.com/dekzairen">DEKZAIREN™</a>
@@ -1897,202 +1888,225 @@ function copyPage(){
    21-LANGUAGE TRANSLATION & POP-OUT PROTECTION
    ========================================================= */
 
-let cleanupScheduled = false;
+(function(){
+ "use strict";
+ const translateLanguages = "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da";
+ const GOOGLE_TRANSLATE_CONTAINER = "google_translate_element";
+ const LANGUAGE_SELECTOR = "language-selector";
+ const LANGUAGE_STATUS = "language-status";
+ let translateInitialized = false;
+ let languageListenerAttached = false;
+ let cleanupScheduled = false;
+ let retryCount = 0;
+ let retryTimer = null;
+ const MAX_RETRIES = 45;
+ const RETRY_INTERVAL = 250;
 
-function restorePagePosition(){
- const html = document.documentElement;
- const body = document.body;
- if(html.style.top) html.style.removeProperty("top");
- if(html.style.marginTop) html.style.removeProperty("margin-top");
- if(html.style.paddingTop) html.style.removeProperty("padding-top");
- if(body.style.top) body.style.removeProperty("top");
- if(body.style.marginTop) body.style.removeProperty("margin-top");
- if(body.style.paddingTop) body.style.removeProperty("padding-top");
-}
+ function updateStatus(message){
+  const statusEl = document.getElementById(LANGUAGE_STATUS);
+  if(statusEl) statusEl.textContent = message;
+ }
 
-function removeGooglePopouts(){
- cleanupScheduled = false;
- const frames = document.querySelectorAll(
-  "iframe.goog-te-banner-frame, .goog-te-banner-frame, .goog-te-balloon-frame, iframe.goog-te-balloon-frame, .goog-te-menu-frame, iframe.goog-te-menu-frame, #goog-gt-tt"
- );
- for(let i = 0; i < frames.length; i++){
-  const el = frames[i];
-  if(!el.closest("#google_translate_element")){
-   el.remove();
+ function restorePagePosition(){
+  const html = document.documentElement;
+  const body = document.body;
+  if(!html || !body) return;
+  html.style.setProperty("top", "0", "important");
+  html.style.setProperty("margin-top", "0", "important");
+  html.style.setProperty("padding-top", "0", "important");
+  body.style.setProperty("top", "0", "important");
+  body.style.setProperty("margin-top", "0", "important");
+  body.style.setProperty("padding-top", "0", "important");
+  body.style.setProperty("position", "static", "important");
+ }
+
+ function removeGooglePopouts(){
+  cleanupScheduled = false;
+  const frames = document.querySelectorAll(
+   "iframe.goog-te-banner-frame, .goog-te-banner-frame, .goog-te-balloon-frame, iframe.goog-te-balloon-frame, .goog-te-menu-frame, iframe.goog-te-menu-frame, #goog-gt-tt, .goog-te-tooltip-container"
+  );
+  for(let i = 0; i < frames.length; i++){
+   const el = frames[i];
+   if(!el.closest("#" + GOOGLE_TRANSLATE_CONTAINER)){
+    el.remove();
+   }
   }
+  restorePagePosition();
  }
- restorePagePosition();
-}
 
-function scheduleCleanup(){
- if(cleanupScheduled) return;
- cleanupScheduled = true;
- window.requestAnimationFrame(removeGooglePopouts);
-}
-
-const languageSelector = document.getElementById("language-selector");
-const languageStatus = document.getElementById("language-status");
-let selectedLanguage = "";
-
-function updateLanguageStatus(message){
- if(languageStatus) languageStatus.textContent = message;
-}
-
-function getGoogleTranslateCombo(){
- return document.querySelector(".goog-te-combo");
-}
-
-function setGoogleLanguage(language, attempts){
- attempts = attempts || 0;
- const combo = getGoogleTranslateCombo();
- if(!combo){
-  if(attempts < 35){
-   window.setTimeout(function(){
-    setGoogleLanguage(language, attempts + 1);
-   }, 250);
-  }else{
-   updateLanguageStatus("Translation service is taking longer than expected. Please try again.");
-  }
-  return;
+ function scheduleCleanup(){
+  if(cleanupScheduled) return;
+  cleanupScheduled = true;
+  window.requestAnimationFrame(removeGooglePopouts);
  }
- combo.value = language;
- combo.dispatchEvent(new Event("change", { bubbles: true }));
- selectedLanguage = language;
- updateLanguageStatus(
-  language === ""
-   ? "Original English publication selected."
-   : "Translation requested. Updating page..."
- );
- scheduleCleanup();
-}
 
-if(languageSelector){
- languageSelector.addEventListener("change", function(){
-  const language = languageSelector.value;
-  if(language === selectedLanguage) return;
-  updateLanguageStatus("Applying your language preference...");
-  setGoogleLanguage(language);
- });
-}
-
-window.googleTranslateElementInit = function(){
- if(!window.google || !window.google.translate){
-  updateLanguageStatus("Translation service is unavailable at the moment.");
-  return;
+ function clearGoogTransCookie(){
+  try{
+   document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+   const hostParts = window.location.hostname.split(".");
+   if(hostParts.length > 1){
+    const rootDomain = "." + hostParts.slice(-2).join(".");
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + rootDomain + ";";
+   }
+  }catch(e){}
  }
- new google.translate.TranslateElement(
-  {
-   pageLanguage: "en",
-   includedLanguages: "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-   autoDisplay: false,
-   multilanguagePage: false
-  },
-  "google_translate_element"
- );
- updateLanguageStatus("English is the original publication language.");
- scheduleCleanup();
-};
 
-const translationObserver = new MutationObserver(function(mutations){
- for(let i = 0; i < mutations.length; i++){
-  const target = mutations[i].target;
-  if(target && target.id === "google_translate_element") continue;
-  if(target === document.body || target === document.documentElement || mutations[i].addedNodes.length){
+ function setGoogTransCookie(lang){
+  try{
+   const val = "/en/" + lang;
+   document.cookie = "googtrans=" + val + "; path=/;";
+   const hostParts = window.location.hostname.split(".");
+   if(hostParts.length > 1){
+    const rootDomain = "." + hostParts.slice(-2).join(".");
+    document.cookie = "googtrans=" + val + "; path=/; domain=" + rootDomain + ";";
+   }
+  }catch(e){}
+ }
+
+ function getGoogleCombo(){
+  return document.querySelector("#" + GOOGLE_TRANSLATE_CONTAINER + " .goog-te-combo") || document.querySelector(".goog-te-combo");
+ }
+
+ function setGoogleLanguage(language, attempts){
+  attempts = attempts || 0;
+  const supported = translateLanguages.split(",");
+  if(!supported.includes(language)) return;
+
+  const selector = document.getElementById(LANGUAGE_SELECTOR);
+  if(selector) selector.value = language;
+
+  if(language === "en"){
+   clearGoogTransCookie();
+   const combo = getGoogleCombo();
+   if(combo){
+    combo.value = "en";
+    combo.dispatchEvent(new Event("change", { bubbles: true }));
+   }
+   if(document.documentElement.classList.contains("translated-ltr") || document.documentElement.classList.contains("translated-rtl")){
+    window.location.reload();
+    return;
+   }
+   updateStatus("English is the original publication language.");
    scheduleCleanup();
-   break;
+   return;
+  }
+
+  setGoogTransCookie(language);
+  const combo = getGoogleCombo();
+  if(!combo){
+   if(attempts < MAX_RETRIES){
+    window.setTimeout(function(){
+     setGoogleLanguage(language, attempts + 1);
+    }, RETRY_INTERVAL);
+   }else{
+    updateStatus("Translation service is taking longer than expected. Please try again.");
+   }
+   return;
+  }
+
+  combo.value = language;
+  combo.dispatchEvent(new Event("change", { bubbles: true }));
+  updateStatus("Translation applied. Updating page...");
+  scheduleCleanup();
+ }
+
+ function attachLanguageListener(){
+  const selector = document.getElementById(LANGUAGE_SELECTOR);
+  if(!selector || languageListenerAttached) return;
+  selector.addEventListener("change", function(){
+   updateStatus("Applying your language preference...");
+   setGoogleLanguage(selector.value, 0);
+  });
+  languageListenerAttached = true;
+ }
+
+ function initializeGoogleTranslate(){
+  const container = document.getElementById(GOOGLE_TRANSLATE_CONTAINER);
+  if(!container) return;
+  if(!window.google || !window.google.translate || !window.google.translate.TranslateElement){
+   if(retryTimer || retryCount >= MAX_RETRIES) return;
+   retryTimer = window.setInterval(function(){
+    retryCount++;
+    if(window.google && window.google.translate && window.google.translate.TranslateElement){
+     window.clearInterval(retryTimer);
+     retryTimer = null;
+     initializeGoogleTranslate();
+    }
+   }, RETRY_INTERVAL);
+   return;
+  }
+  if(translateInitialized){
+   attachLanguageListener();
+   return;
+  }
+  try{
+   new window.google.translate.TranslateElement({
+    pageLanguage: "en",
+    includedLanguages: translateLanguages,
+    autoDisplay: false,
+    multilanguagePage: false
+   }, GOOGLE_TRANSLATE_CONTAINER);
+   translateInitialized = true;
+   attachLanguageListener();
+   updateStatus("English is the original publication language.");
+   scheduleCleanup();
+  }catch(err){
+   updateStatus("Translation service is unavailable at the moment.");
   }
  }
-});
 
-translationObserver.observe(document.documentElement, {
- childList: true,
- subtree: false,
- attributes: true,
- attributeFilter: ["style", "class"]
-});
+ window.googleTranslateElementInit = function(){
+  initializeGoogleTranslate();
+ };
 
-window.addEventListener("load", scheduleCleanup, { once: true });
+ const translationObserver = new MutationObserver(function(mutations){
+  for(let i = 0; i < mutations.length; i++){
+   const target = mutations[i].target;
+   if(target && target.id === GOOGLE_TRANSLATE_CONTAINER) continue;
+   if(target === document.body || target === document.documentElement || mutations[i].addedNodes.length){
+    scheduleCleanup();
+    break;
+   }
+  }
+ });
+
+ translationObserver.observe(document.documentElement, {
+  childList: true,
+  subtree: false,
+  attributes: true,
+  attributeFilter: ["style", "class"]
+ });
+
+ attachLanguageListener();
+
+ if(document.readyState === "loading"){
+  document.addEventListener("DOMContentLoaded", function(){
+   initializeGoogleTranslate();
+   scheduleCleanup();
+  }, { once: true });
+ }else{
+  initializeGoogleTranslate();
+  scheduleCleanup();
+ }
+
+ window.addEventListener("load", scheduleCleanup, { once: true });
+})();
 
 /* =========================================================
-   READING THEMES
+   READING THEMES (ALL 10)
    ========================================================= */
 
 const themes={
-
- black:{
-  bg:"#080808",
-  surface:"#111111",
-  alt:"#191919",
-  text:"#f3f0e8",
-  muted:"#b9b4a8",
-  heading:"#e6cb7a",
-  accent:"#c9a646",
-  border:"rgba(201,166,70,.30)",
-  strong:"rgba(201,166,70,.60)",
-  intro:"#17150f",
-  button:"#c9a646",
-  buttonText:"#080808"
- },
-
- ivory:{
-  bg:"#f3f0e7",
-  surface:"#fffdf7",
-  alt:"#e9e4d7",
-  text:"#25231f",
-  muted:"#686257",
-  heading:"#8c6b2e",
-  accent:"#a9853f",
-  border:"rgba(139,107,46,.28)",
-  strong:"rgba(139,107,46,.58)",
-  intro:"#e9e1d0",
-  button:"#9d7938",
-  buttonText:"#fffdf7"
- },
-
- blue:{
-  bg:"#071426",
-  surface:"#0d2038",
-  alt:"#122a47",
-  text:"#edf4ff",
-  muted:"#a9bdd5",
-  heading:"#8fc5ff",
-  accent:"#3d91df",
-  border:"rgba(80,155,220,.35)",
-  strong:"rgba(80,155,220,.65)",
-  intro:"#10243d",
-  button:"#398bd2",
-  buttonText:"#061426"
- },
-
- emerald:{
-  bg:"#071b16",
-  surface:"#0d2820",
-  alt:"#12372b",
-  text:"#edf7f0",
-  muted:"#a9c6b5",
-  heading:"#a8e0c0",
-  accent:"#55b987",
-  border:"rgba(85,185,135,.32)",
-  strong:"rgba(85,185,135,.65)",
-  intro:"#102d22",
-  button:"#55b987",
-  buttonText:"#071b16"
- },
-
- burgundy:{
-  bg:"#1c0b12",
-  surface:"#2a111b",
-  alt:"#391824",
-  text:"#fff0f0",
-  muted:"#d0b1b8",
-  heading:"#edb2bb",
-  accent:"#b85c70",
-  border:"rgba(184,92,112,.34)",
-  strong:"rgba(184,92,112,.65)",
-  intro:"#32151f",
-  button:"#b85c70",
-  buttonText:"#1c0b12"
- }
+ black:{bg:"#080808",surface:"#111111",alt:"#191919",raised:"#202020",text:"#f3f0e8",muted:"#b9b4a8",heading:"#e6cb7a",accent:"#c9a646",border:"rgba(201,166,70,.30)",strong:"rgba(201,166,70,.60)",intro:"#17150f",label:"#282113",labelText:"#e6cb7a",button:"#c9a646",buttonText:"#080808"},
+ ivory:{bg:"#f3f0e7",surface:"#fffdf7",alt:"#e9e4d7",raised:"#ded7c8",text:"#25231f",muted:"#686257",heading:"#8c6b2e",accent:"#a9853f",border:"rgba(139,107,46,.28)",strong:"rgba(139,107,46,.58)",intro:"#e9e1d0",label:"#e5dac1",labelText:"#74531e",button:"#9d7938",buttonText:"#fffdf7"},
+ blue:{bg:"#071426",surface:"#0d2038",alt:"#122a47",raised:"#193656",text:"#edf4ff",muted:"#a9bdd5",heading:"#8fc5ff",accent:"#3d91df",border:"rgba(80,155,220,.35)",strong:"rgba(80,155,220,.65)",intro:"#10243d",label:"#193957",labelText:"#a8d5ff",button:"#398bd2",buttonText:"#061426"},
+ whiteblue:{bg:"#f7f9fc",surface:"#ffffff",alt:"#edf2f8",raised:"#dfe8f3",text:"#182538",muted:"#526176",heading:"#153b69",accent:"#2765a5",border:"rgba(39,101,165,.25)",strong:"rgba(39,101,165,.55)",intro:"#eaf0f7",label:"#dce8f5",labelText:"#1d4d7d",button:"#245f9d",buttonText:"#ffffff"},
+ charcoal:{bg:"#17191b",surface:"#202326",alt:"#292d30",raised:"#343a3e",text:"#f1f0eb",muted:"#b7b7b0",heading:"#e2c77e",accent:"#c6a45a",border:"rgba(198,164,90,.30)",strong:"rgba(198,164,90,.6)",intro:"#252522",label:"#353126",labelText:"#e4ca83",button:"#c6a45a",buttonText:"#17191b"},
+ emerald:{bg:"#071b16",surface:"#0d2820",alt:"#12372b",raised:"#1b4938",text:"#edf7f0",muted:"#a9c6b5",heading:"#a8e0c0",accent:"#55b987",border:"rgba(85,185,135,.32)",strong:"rgba(85,185,135,.65)",intro:"#102d22",label:"#1b4332",labelText:"#b8edce",button:"#55b987",buttonText:"#071b16"},
+ rose:{bg:"#211418",surface:"#2d1b21",alt:"#39232b",raised:"#4a2b36",text:"#fff0f1",muted:"#d0b5bb",heading:"#efb8c6",accent:"#c77b92",border:"rgba(199,123,146,.32)",strong:"rgba(199,123,146,.65)",intro:"#321e26",label:"#482a35",labelText:"#f0c1cf",button:"#c77b92",buttonText:"#211418"},
+ midnight:{bg:"#07121b",surface:"#0c1d2a",alt:"#102a3a",raised:"#17384b",text:"#edf8fc",muted:"#a8c0cc",heading:"#8ce4f2",accent:"#42bfd4",border:"rgba(66,191,212,.32)",strong:"rgba(66,191,212,.65)",intro:"#102432",label:"#173746",labelText:"#9cecf4",button:"#42bfd4",buttonText:"#07121b"},
+ burgundy:{bg:"#1c0b12",surface:"#2a111b",alt:"#391824",raised:"#4a202f",text:"#fff0f0",muted:"#d0b1b8",heading:"#edb2bb",accent:"#b85c70",border:"rgba(184,92,112,.34)",strong:"rgba(184,92,112,.65)",intro:"#32151f",label:"#48202c",labelText:"#f0c1c9",button:"#b85c70",buttonText:"#1c0b12"},
+ platinum:{bg:"#e7e9eb",surface:"#f5f6f7",alt:"#dce0e4",raised:"#cbd1d7",text:"#20272e",muted:"#59636d",heading:"#354d65",accent:"#71879b",border:"rgba(70,91,110,.28)",strong:"rgba(70,91,110,.55)",intro:"#dfe4e8",label:"#d2dbe2",labelText:"#354d65",button:"#526c83",buttonText:"#ffffff"}
 };
 
 function setTheme(name){
@@ -2102,6 +2116,7 @@ function setTheme(name){
  root.style.setProperty("--page-bg",t.bg);
  root.style.setProperty("--surface",t.surface);
  root.style.setProperty("--surface-alt",t.alt);
+ root.style.setProperty("--surface-raised",t.raised);
  root.style.setProperty("--text",t.text);
  root.style.setProperty("--text-secondary",t.muted);
  root.style.setProperty("--heading",t.heading);
@@ -2114,6 +2129,8 @@ function setTheme(name){
  root.style.setProperty("--border",t.border);
  root.style.setProperty("--border-strong",t.strong);
  root.style.setProperty("--intro-bg",t.intro);
+ root.style.setProperty("--label-bg",t.label);
+ root.style.setProperty("--label-text",t.labelText);
 
  document.querySelectorAll(".theme-choice").forEach(button=>{
   button.classList.toggle(
