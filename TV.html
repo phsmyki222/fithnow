@@ -3,25 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>PHRINUSOMYIS TV — 24/7 Digital Broadcast Platform</title>
+  <title>PHRINUSOMYIS TV</title>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
   <style>
     :root {
-      --bg-deep: #05070d;
-      --bg-panel: rgba(14, 20, 34, 0.82);
-      --bg-card: rgba(16, 23, 38, 0.84);
-      --border-subtle: rgba(255, 255, 255, 0.14);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --status-live: #ef4444;
-      --status-soon: #f59e0b;
-      --status-replay: #38bdf8;
-      --status-offline: #64748b;
-      --slot-accent: #38bdf8;
-      --slot-accent-alt: #6366f1;
-      --pad-x: clamp(14px, 3.2vw, 48px);
-      --title-size: clamp(1.75rem, 4.2vw, 3.8rem);
-      --body-size: clamp(0.95rem, 1.45vw, 1.25rem);
+      --ch-color: #ef4444;
+      --ch-glow: rgba(239, 68, 68, 0.45);
+      --ch-bg-a: #14080c;
+      --ch-bg-b: #060913;
     }
 
     * {
@@ -32,932 +21,536 @@
     }
 
     html, body {
-      width: 100%;
-      min-height: 100%;
-      background: var(--bg-deep);
-      color: var(--text-main);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      overflow-x: hidden;
-    }
-
-    .broadcast-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      background:
-        radial-gradient(circle at 16% 20%, color-mix(in srgb, var(--slot-accent) 24%, transparent), transparent 48%),
-        radial-gradient(circle at 84% 80%, color-mix(in srgb, var(--slot-accent-alt) 20%, transparent), transparent 52%),
-        linear-gradient(160deg, #05070d 0%, #090e1a 55%, #04060a 100%);
-      transition: background 0.7s ease;
-    }
-
-    .scanlines {
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      opacity: 0.07;
-      background-image: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.65) 0px,
-        rgba(255, 255, 255, 0.65) 1px,
-        transparent 1px,
-        transparent 4px
-      );
-    }
-
-    .tv-shell {
-      position: relative;
-      z-index: 2;
-      min-height: 100dvh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: max(12px, env(safe-area-inset-top)) var(--pad-x) max(14px, env(safe-area-inset-bottom));
-      gap: 16px;
-    }
-
-    /* Top Header */
-    .top-header {
-      position: sticky;
-      top: max(6px, env(safe-area-inset-top));
-      z-index: 30;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 18px;
-      background: rgba(7, 11, 20, 0.9);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(14px);
-    }
-
-    .brand-cluster {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .channel-mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      font-size: clamp(0.85rem, 1.2vw, 1.05rem);
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      color: #ffffff;
-    }
-
-    .live-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--status-soon);
-      box-shadow: 0 0 10px var(--status-soon);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: var(--bg-panel);
-      border: 1px solid var(--border-subtle);
-      font-size: clamp(0.74rem, 1vw, 0.9rem);
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-    }
-
-    .status-badge {
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .status-LIVE {
-      background: rgba(239, 68, 68, 0.2);
-      color: #fca5a5;
-      border: 1px solid rgba(239, 68, 68, 0.55);
-    }
-
-    .status-COMING_SOON {
-      background: rgba(245, 158, 11, 0.2);
-      color: #fde68a;
-      border: 1px solid rgba(245, 158, 11, 0.5);
-    }
-
-    .status-REPLAY {
-      background: rgba(56, 189, 248, 0.2);
-      color: #bae6fd;
-      border: 1px solid rgba(56, 189, 248, 0.5);
-    }
-
-    .status-OFFLINE {
-      background: rgba(100, 116, 139, 0.22);
-      color: #cbd5e1;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn, .nav-link {
-      min-height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background: var(--bg-panel);
-      color: var(--text-main);
-      border: 1px solid var(--border-subtle);
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: clamp(0.76rem, 1.05vw, 0.92rem);
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
-    }
-
-    .btn:hover, .btn:focus-visible, .nav-link:hover, .nav-link:focus-visible {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(255, 255, 255, 0.35);
-      outline: none;
-    }
-
-    .btn:active, .nav-link:active {
-      transform: scale(0.98);
-    }
-
-    .nav-link {
-      border-color: color-mix(in srgb, var(--slot-accent) 45%, var(--border-subtle));
-    }
-
-    /* Main Stage */
-    .stage {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 1.4fr 0.9fr;
-      gap: clamp(16px, 2.6vw, 36px);
-      align-items: stretch;
-    }
-
-    .feature-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      padding: clamp(20px, 3.2vw, 44px);
-      backdrop-filter: blur(16px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 20px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-    }
-
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .channel-eyebrow {
-      font-size: clamp(0.78rem, 1.05vw, 0.95rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      color: var(--slot-accent);
-    }
-
-    .headline {
-      font-size: var(--title-size);
-      line-height: 1.08;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin: 8px 0 12px;
-    }
-
-    .description {
-      font-size: var(--body-size);
-      line-height: 1.55;
-      color: var(--text-muted);
-      max-width: 64ch;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 12px;
-    }
-
-    .info-box {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 14px;
-      padding: 12px 14px;
-    }
-
-    .info-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .info-val {
-      font-size: clamp(0.9rem, 1.2vw, 1.08rem);
-      font-weight: 700;
-    }
-
-    .progress-track {
-      width: 100%;
-      height: 5px;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--slot-accent);
-      transition: width 0.25s linear;
-    }
-
-    /* 7-Channel Guide */
-    .guide-panel {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      padding: clamp(16px, 2.2vw, 26px);
-      backdrop-filter: blur(16px);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .guide-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .guide-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .channel-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      max-height: 58dvh;
-      overflow-y: auto;
-      padding-right: 2px;
-    }
-
-    .channel-item {
-      width: 100%;
-      min-height: 54px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 13px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-main);
-      text-align: left;
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
-
-    .channel-item:hover {
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .channel-item.active {
-      background: rgba(255, 255, 255, 0.11);
-      border-color: var(--slot-accent);
-    }
-
-    .channel-item-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .channel-item-meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    /* Active Video Mode */
-    video#streamPlayer {
-      display: none;
-      position: fixed;
-      inset: 0;
       width: 100vw;
       height: 100dvh;
-      object-fit: contain;
+      overflow: hidden;
       background: #000000;
-      z-index: 5;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      user-select: none;
     }
 
-    body.video-mode video#streamPlayer {
+    /* Full-Screen TV Canvas */
+    .tv-screen {
+      position: relative;
+      width: 100vw;
+      height: 100dvh;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    /* Broadcast Motion Canvas (when no video feed is active) */
+    .motion-canvas {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 35%, var(--ch-glow), transparent 45%),
+        radial-gradient(circle at 22% 78%, rgba(255, 255, 255, 0.06), transparent 50%),
+        linear-gradient(135deg, var(--ch-bg-a) 0%, var(--ch-bg-b) 100%);
+      transition: background 0.8s ease;
+    }
+
+    .sweep-beam {
+      position: absolute;
+      top: -30%;
+      left: -35%;
+      width: 55%;
+      height: 160%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.035),
+        rgba(255, 255, 255, 0.07),
+        transparent
+      );
+      transform: rotate(18deg);
+      animation: beamSweep 9s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes beamSweep {
+      0% { left: -45%; }
+      100% { left: 120%; }
+    }
+
+    .grid-horizon {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: clamp(48px, 6vw, 96px) clamp(48px, 6vw, 96px);
+      mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
+      pointer-events: none;
+    }
+
+    .center-broadcast-mark {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      pointer-events: none;
+    }
+
+    .center-network {
+      font-size: clamp(1.8rem, 5.5vw, 5.2rem);
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.75);
+    }
+
+    .center-sub {
+      margin-top: 10px;
+      font-size: clamp(0.85rem, 1.5vw, 1.25rem);
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* Live Video Stream */
+    video#tvVideo {
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000000;
+    }
+
+    body.has-video video#tvVideo {
       display: block;
     }
 
-    body.video-mode .feature-card,
-    body.video-mode .guide-panel,
-    body.video-mode .broadcast-backdrop,
-    body.video-mode .scanlines {
+    body.has-video .motion-canvas {
       display: none;
     }
 
-    body.video-mode .tv-shell {
+    /* Top-Left Broadcast Bug */
+    .tv-bug {
       position: fixed;
-      inset: 0;
-      z-index: 10;
-      pointer-events: none;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.72),
-        transparent 22%,
-        transparent 80%,
-        rgba(0, 0, 0, 0.76)
-      );
-    }
-
-    body.video-mode .top-header,
-    body.video-mode .bottom-bar {
-      pointer-events: auto;
-    }
-
-    .bottom-bar {
+      top: max(16px, env(safe-area-inset-top));
+      left: max(16px, env(safe-area-inset-left));
+      z-index: 20;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
       gap: 10px;
-      padding: 11px 16px;
-      border-radius: 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(12px);
-      font-size: clamp(0.78rem, 1.05vw, 0.94rem);
+      padding: 8px 14px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.65);
+      border-left: 4px solid var(--ch-color);
+      backdrop-filter: blur(8px);
     }
 
-    @media (max-width: 980px) {
-      .stage {
-        grid-template-columns: 1fr;
-      }
-      .channel-list {
-        max-height: none;
-      }
+    .bug-brand {
+      font-size: clamp(0.82rem, 1.2vw, 1.05rem);
+      font-weight: 900;
+      letter-spacing: 0.1em;
     }
 
-    @media (min-width: 1600px) {
-      .tv-shell {
-        max-width: 1920px;
-        margin: 0 auto;
+    .bug-tag {
+      font-size: clamp(0.68rem, 0.95vw, 0.82rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--ch-color);
+      color: #ffffff;
+    }
+
+    /* Top-Right Minimal Controls */
+    .tv-remote {
+      position: fixed;
+      top: max(16px, env(safe-area-inset-top));
+      right: max(16px, env(safe-area-inset-right));
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rm-btn, .rm-link {
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(0, 0, 0, 0.62);
+      color: #ffffff;
+      font-size: clamp(0.72rem, 0.95vw, 0.85rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .rm-btn:hover, .rm-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Channel Zap OSD (Top Center on Channel Switch) */
+    .zap-osd {
+      position: fixed;
+      top: max(68px, calc(env(safe-area-inset-top) + 52px));
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      z-index: 25;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: clamp(0.78rem, 1.1vw, 0.95rem);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .zap-osd.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* TV Lower-Third Graphic */
+    .lower-third {
+      position: fixed;
+      left: max(16px, env(safe-area-inset-left));
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 20;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      pointer-events: none;
+    }
+
+    .lower-bar {
+      max-width: min(760px, 88vw);
+      background: linear-gradient(90deg, rgba(6, 9, 18, 0.94) 0%, rgba(6, 9, 18, 0.78) 100%);
+      border-left: 5px solid var(--ch-color);
+      border-radius: 0 10px 10px 0;
+      padding: clamp(10px, 1.6vw, 16px) clamp(14px, 2.2vw, 24px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .lower-ch-line {
+      font-size: clamp(0.7rem, 0.95vw, 0.85rem);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ch-color);
+      margin-bottom: 3px;
+    }
+
+    .lower-title {
+      font-size: clamp(1.05rem, 2.2vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .lower-clock {
+      padding: 7px 12px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: clamp(0.72rem, 1vw, 0.88rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .lower-third {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .tv-remote {
+        top: auto;
+        bottom: max(76px, calc(env(safe-area-inset-bottom) + 64px));
+        right: max(12px, env(safe-area-inset-right));
       }
     }
   </style>
 </head>
 <body>
-  <div class="broadcast-backdrop"></div>
-  <div class="scanlines"></div>
-
-  <video id="streamPlayer" autoplay muted playsinline controlslist="nodownload"></video>
-
-  <div class="tv-shell" id="tvShell">
-    <header class="top-header" aria-label="PHRINUSOMYIS TV Header">
-      <div class="brand-cluster">
-        <div class="channel-mark">
-          <span class="live-dot" id="headerDot"></span>
-          <span>PHRINUSOMYIS TV</span>
-        </div>
-        <div class="pill">24/7</div>
-        <div class="pill" id="clockBadge">UTC --:--:--</div>
-        <span class="status-badge status-COMING_SOON" id="headerStatusBadge">COMING SOON</span>
+  <div class="tv-screen" id="tvScreen">
+    <div class="motion-canvas">
+      <div class="sweep-beam"></div>
+      <div class="grid-horizon"></div>
+      <div class="center-broadcast-mark">
+        <div class="center-network">PHRINUSOMYIS TV</div>
+        <div class="center-sub" id="centerChannelName">PHRINUSOMYIS LIVE</div>
       </div>
+    </div>
 
-      <nav class="controls" aria-label="Broadcast Controls">
-        <a class="nav-link" href="https://phrinusomyis.com">Main Site</a>
-        <button class="btn" id="prevBtn" type="button">Prev</button>
-        <button class="btn" id="nextBtn" type="button">Next</button>
-        <button class="btn" id="pauseBtn" type="button">Pause</button>
-        <button class="btn" id="muteBtn" type="button" style="display:none;">Unmute</button>
-        <button class="btn" id="fullscreenBtn" type="button">Fullscreen</button>
-      </nav>
-    </header>
+    <video id="tvVideo" autoplay muted playsinline></video>
+  </div>
 
-    <main class="stage">
-      <section class="feature-card" id="featureCard">
-        <div>
-          <div class="meta-row">
-            <span class="channel-eyebrow" id="channelEyebrow">CHANNEL</span>
-            <span class="status-badge status-COMING_SOON" id="cardStatusBadge">COMING SOON</span>
-          </div>
-          <h1 class="headline" id="programTitle">Loading PHRINUSOMYIS TV...</h1>
-          <p class="description" id="programDescription"></p>
-        </div>
+  <div class="tv-bug">
+    <span class="bug-brand">PHRINUSOMYIS TV</span>
+    <span class="bug-tag" id="bugStatus">COMING SOON</span>
+  </div>
 
-        <div>
-          <div class="info-grid" style="margin-bottom: 14px;">
-            <div class="info-box">
-              <div class="info-label">24/7 Schedule Window</div>
-              <div class="info-val" id="scheduleWindow">--:--</div>
-            </div>
-            <div class="info-box">
-              <div class="info-label">Screen Format</div>
-              <div class="info-val" id="screenProfile">Detecting...</div>
-            </div>
-            <div class="info-box">
-              <div class="info-label">Broadcast Feed</div>
-              <div class="info-val" id="feedModeLabel">Slate Preview</div>
-            </div>
-          </div>
-          <div class="progress-track" aria-hidden="true">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
-        </div>
-      </section>
+  <div class="zap-osd" id="zapOsd">CH 01 • PHRINUSOMYIS LIVE</div>
 
-      <aside class="guide-panel" aria-label="PHRINUSOMYIS TV Channels">
-        <div class="guide-header">
-          <span class="guide-title">Channels & 24/7 Lineup</span>
-          <span class="channel-item-meta" id="syncModeLabel">24h UTC Clock</span>
-        </div>
-        <div class="channel-list" id="channelList"></div>
-      </aside>
-    </main>
+  <div class="tv-remote">
+    <button class="rm-btn" id="prevChBtn" type="button">CH-</button>
+    <button class="rm-btn" id="nextChBtn" type="button">CH+</button>
+    <button class="rm-btn" id="unmuteBtn" type="button" style="display:none;">SOUND</button>
+    <button class="rm-btn" id="fsBtn" type="button">FULL</button>
+    <a class="rm-link" href="https://phrinusomyis.com">SITE</a>
+  </div>
 
-    <footer class="bottom-bar">
-      <div id="bottomMessage">PHRINUSOMYIS TV — 24/7 Multi-Channel Broadcast Platform</div>
-      <div id="cycleCounter">Next slate in --s</div>
-    </footer>
+  <div class="lower-third">
+    <div class="lower-bar">
+      <div class="lower-ch-line" id="lowerMeta">CH 01 • PHRINUSOMYIS LIVE • 00:00–04:00 UTC</div>
+      <div class="lower-title" id="lowerTitle">24/7 Flagship Broadcast</div>
+    </div>
+    <div class="lower-clock" id="tvClock">00:00:00 UTC</div>
   </div>
 
   <script>
-    /**
-     * Configured PHRINUSOMYIS TV channels.
-     * - startHourUtc / endHourUtc: 24-hour UTC window (0–24) for real 24/7 schedule awareness.
-     * - status: "LIVE" | "COMING_SOON" | "REPLAY" | "OFFLINE"
-     *   (Automatically shifts to "OFFLINE" if a configured streamUrl errors or stalls.)
-     * - streamUrl: supports HLS (.m3u8) or MP4 (.mp4). Leave "" until feed is connected.
-     * - slateSeconds: duration of each slate screen when no video is playing.
-     */
     const CHANNELS = [
       {
-        id: "phrinusomyis-live",
+        code: "CH 01",
         name: "PHRINUSOMYIS LIVE",
-        startHourUtc: 0,
-        endHourUtc: 4,
-        status: "COMING_SOON",
-        title: "PHRINUSOMYIS LIVE — Flagship 24/7 Feed",
-        description:
-          "Primary live broadcast channel for PHRINUSOMYIS dispatches, major announcements, and continuous round-the-clock coverage.",
-        accent: "#ef4444",
-        accentAlt: "#f59e0b",
-        slateSeconds: 12,
-        streamUrl: ""
+        startH: 0,
+        endH: 4,
+        status: "COMING SOON",
+        program: "24/7 Flagship Broadcast",
+        color: "#ef4444",
+        glow: "rgba(239, 68, 68, 0.42)",
+        bgA: "#1a080c",
+        bgB: "#050811",
+        url: ""
       },
       {
-        id: "competitions",
+        code: "CH 02",
         name: "COMPETITIONS",
-        startHourUtc: 4,
-        endHourUtc: 8,
-        status: "COMING_SOON",
-        title: "COMPETITIONS — Championship & Match Coverage",
-        description:
-          "Dedicated competition broadcasts, tournament builds, and athletic matchups formatted for mobile, desktop, and television displays.",
-        accent: "#f59e0b",
-        accentAlt: "#ef4444",
-        slateSeconds: 12,
-        streamUrl: ""
+        startH: 4,
+        endH: 8,
+        status: "COMING SOON",
+        program: "Championship & Match Coverage",
+        color: "#f59e0b",
+        glow: "rgba(245, 158, 11, 0.38)",
+        bgA: "#1b1106",
+        bgB: "#060810",
+        url: ""
       },
       {
-        id: "sports-report",
+        code: "CH 03",
         name: "SPORTS REPORT",
-        startHourUtc: 8,
-        endHourUtc: 11,
-        status: "COMING_SOON",
-        title: "SPORTS REPORT — Daily Briefings & Standings",
-        description:
-          "Structured sports news, event updates, and analytical reports airing across the 24-hour broadcast day.",
-        accent: "#38bdf8",
-        accentAlt: "#22d3ee",
-        slateSeconds: 12,
-        streamUrl: ""
+        startH: 8,
+        endH: 11,
+        status: "COMING SOON",
+        program: "Daily Briefings & Standings",
+        color: "#38bdf8",
+        glow: "rgba(56, 189, 248, 0.38)",
+        bgA: "#071624",
+        bgB: "#050811",
+        url: ""
       },
       {
-        id: "inflection-sports",
+        code: "CH 04",
         name: "INFLECTION SPORTS",
-        startHourUtc: 11,
-        endHourUtc: 14,
-        status: "COMING_SOON",
-        title: "INFLECTION SPORTS — Perspectives & Features",
-        description:
-          "In-depth sports commentary, tactical breakdowns, and turning-point stories from the PHRINUSOMYIS broadcast ecosystem.",
-        accent: "#34d399",
-        accentAlt: "#38bdf8",
-        slateSeconds: 12,
-        streamUrl: ""
+        startH: 11,
+        endH: 14,
+        status: "COMING SOON",
+        program: "Features & Tactical Perspectives",
+        color: "#10b981",
+        glow: "rgba(16, 185, 129, 0.38)",
+        bgA: "#061a14",
+        bgB: "#050811",
+        url: ""
       },
       {
-        id: "original-programmes",
+        code: "CH 05",
         name: "ORIGINAL PROGRAMMES",
-        startHourUtc: 14,
-        endHourUtc: 18,
-        status: "COMING_SOON",
-        title: "ORIGINAL PROGRAMMES — Signature Series",
-        description:
-          "Original productions, studio specials, and recurring series created specifically for PHRINUSOMYIS TV.",
-        accent: "#a78bfa",
-        accentAlt: "#f472b6",
-        slateSeconds: 12,
-        streamUrl: ""
+        startH: 14,
+        endH: 18,
+        status: "COMING SOON",
+        program: "Signature Series & Specials",
+        color: "#a855f7",
+        glow: "rgba(168, 85, 247, 0.4)",
+        bgA: "#150924",
+        bgB: "#050811",
+        url: ""
       },
       {
-        id: "documentaries",
+        code: "CH 06",
         name: "DOCUMENTARIES",
-        startHourUtc: 18,
-        endHourUtc: 21,
-        status: "COMING_SOON",
-        title: "DOCUMENTARIES — Long-Form Investigations",
-        description:
-          "Extended documentary features exploring history, culture, institutions, and the people shaping the broadcast world.",
-        accent: "#fbbf24",
-        accentAlt: "#a78bfa",
-        slateSeconds: 12,
-        streamUrl: ""
+        startH: 18,
+        endH: 21,
+        status: "COMING SOON",
+        program: "Long-Form Broadcast Films",
+        color: "#eab308",
+        glow: "rgba(234, 179, 8, 0.35)",
+        bgA: "#191506",
+        bgB: "#050811",
+        url: ""
       },
       {
-        id: "replays",
+        code: "CH 07",
         name: "REPLAYS",
-        startHourUtc: 21,
-        endHourUtc: 24,
+        startH: 21,
+        endH: 24,
         status: "REPLAY",
-        title: "REPLAYS — Encore Broadcasts & Archives",
-        description:
-          "Full-length encores and rebroadcasts of key programmes so viewers across every time zone can catch major editions.",
-        accent: "#60a5fa",
-        accentAlt: "#818cf8",
-        slateSeconds: 12,
-        streamUrl: ""
+        program: "24/7 Encore & Archive Rotation",
+        color: "#60a5fa",
+        glow: "rgba(96, 165, 250, 0.38)",
+        bgA: "#091326",
+        bgB: "#050811",
+        url: ""
       }
     ];
 
-    const STATUS_LABELS = {
-      LIVE: "LIVE",
-      COMING_SOON: "COMING SOON",
-      REPLAY: "REPLAY",
-      OFFLINE: "OFFLINE"
-    };
+    const tvScreen = document.getElementById("tvScreen");
+    const tvVideo = document.getElementById("tvVideo");
+    const centerChannelName = document.getElementById("centerChannelName");
+    const bugStatus = document.getElementById("bugStatus");
+    const zapOsd = document.getElementById("zapOsd");
+    const lowerMeta = document.getElementById("lowerMeta");
+    const lowerTitle = document.getElementById("lowerTitle");
+    const tvClock = document.getElementById("tvClock");
 
-    const STATUS_COLORS = {
-      LIVE: "#ef4444",
-      COMING_SOON: "#f59e0b",
-      REPLAY: "#38bdf8",
-      OFFLINE: "#64748b"
-    };
+    const prevChBtn = document.getElementById("prevChBtn");
+    const nextChBtn = document.getElementById("nextChBtn");
+    const unmuteBtn = document.getElementById("unmuteBtn");
+    const fsBtn = document.getElementById("fsBtn");
 
-    const streamPlayer = document.getElementById("streamPlayer");
-    const tvShell = document.getElementById("tvShell");
-    const headerDot = document.getElementById("headerDot");
-    const headerStatusBadge = document.getElementById("headerStatusBadge");
-    const cardStatusBadge = document.getElementById("cardStatusBadge");
-    const clockBadge = document.getElementById("clockBadge");
-    const channelEyebrow = document.getElementById("channelEyebrow");
-    const programTitle = document.getElementById("programTitle");
-    const programDescription = document.getElementById("programDescription");
-    const scheduleWindow = document.getElementById("scheduleWindow");
-    const screenProfile = document.getElementById("screenProfile");
-    const feedModeLabel = document.getElementById("feedModeLabel");
-    const progressFill = document.getElementById("progressFill");
-    const channelList = document.getElementById("channelList");
-    const bottomMessage = document.getElementById("bottomMessage");
-    const cycleCounter = document.getElementById("cycleCounter");
-    const syncModeLabel = document.getElementById("syncModeLabel");
-
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const pauseBtn = document.getElementById("pauseBtn");
-    const muteBtn = document.getElementById("muteBtn");
-    const fullscreenBtn = document.getElementById("fullscreenBtn");
-
-    let activeIndex = 0;
-    let isPaused = false;
-    let manualOverride = false;
-    let elapsedSec = 0;
-    let lastFrame = performance.now();
-    let hlsInstance = null;
-    const runtimeStatusMap = {};
+    let currentIdx = 0;
+    let hls = null;
+    let zapTimer = null;
 
     function pad2(n) {
       return String(n).padStart(2, "0");
     }
 
-    function formatWindow(startH, endH) {
-      return `${pad2(startH)}:00 – ${pad2(endH % 24)}:00 UTC`;
+    function showZap(ch) {
+      zapOsd.textContent = `${ch.code} • ${ch.name}`;
+      zapOsd.classList.add("show");
+      clearTimeout(zapTimer);
+      zapTimer = setTimeout(() => zapOsd.classList.remove("show"), 1600);
     }
 
-    function getScheduledChannelIndex() {
-      const now = new Date();
-      const utcHour = now.getUTCHours() + now.getUTCMinutes() / 60 + now.getUTCSeconds() / 3600;
-      const idx = CHANNELS.findIndex((ch) => utcHour >= ch.startHourUtc && utcHour < ch.endHourUtc);
-      return idx >= 0 ? idx : 0;
-    }
-
-    function getEffectiveStatus(channel) {
-      return runtimeStatusMap[channel.id] || channel.status || "COMING_SOON";
-    }
-
-    function applyStatusBadge(el, status) {
-      el.className = `status-badge status-${status}`;
-      el.textContent = STATUS_LABELS[status] || status;
-    }
-
-    function detectScreenProfile() {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      if (w >= 1920 || (w >= 1280 && Math.max(w, h) >= 1280)) {
-        return `Big TV / Full HD (${w}×${h})`;
+    function clearVideo() {
+      if (hls) {
+        hls.destroy();
+        hls = null;
       }
-      if (w >= 981) {
-        return `Desktop / Laptop (${w}×${h})`;
-      }
-      return `Mobile / Android (${w}×${h})`;
+      tvVideo.pause();
+      tvVideo.removeAttribute("src");
+      tvVideo.load();
+      document.body.classList.remove("has-video");
+      unmuteBtn.style.display = "none";
     }
 
-    function destroyHls() {
-      if (hlsInstance) {
-        hlsInstance.destroy();
-        hlsInstance = null;
-      }
-    }
+    function attachStream(url, ch) {
+      clearVideo();
+      if (!url) return;
 
-    function stopVideoFeed() {
-      destroyHls();
-      streamPlayer.pause();
-      streamPlayer.removeAttribute("src");
-      streamPlayer.load();
-      document.body.classList.remove("video-mode");
-      muteBtn.style.display = "none";
-    }
-
-    function fallbackToSlate(channel, reasonText) {
-      runtimeStatusMap[channel.id] = "OFFLINE";
-      stopVideoFeed();
-      feedModeLabel.textContent = "Slate Fallback";
-      bottomMessage.textContent = reasonText || `${channel.name} stream unavailable — showing schedule slate`;
-      renderChannel(activeIndex, false);
-    }
-
-    function startVideoFeed(channel) {
-      const url = (channel.streamUrl || "").trim();
-      if (!url) {
-        stopVideoFeed();
-        return false;
-      }
-
-      destroyHls();
-      document.body.classList.add("video-mode");
-      muteBtn.style.display = "inline-flex";
-      streamPlayer.muted = true;
-      muteBtn.textContent = "Unmute";
-      feedModeLabel.textContent = url.includes(".m3u8") ? "HLS Live Stream" : "MP4 Stream";
+      document.body.classList.add("has-video");
+      unmuteBtn.style.display = "inline-flex";
+      tvVideo.muted = true;
+      unmuteBtn.textContent = "SOUND";
 
       const isHls = url.includes(".m3u8");
       if (isHls && window.Hls && window.Hls.isSupported()) {
-        hlsInstance = new window.Hls({ enableWorker: true });
-        hlsInstance.loadSource(url);
-        hlsInstance.attachMedia(streamPlayer);
-        hlsInstance.on(window.Hls.Events.MANIFEST_PARSED, () => {
-          streamPlayer.play().catch(() => {});
-        });
-        hlsInstance.on(window.Hls.Events.ERROR, (_event, data) => {
+        hls = new window.Hls({ enableWorker: true });
+        hls.loadSource(url);
+        hls.attachMedia(tvVideo);
+        hls.on(window.Hls.Events.MANIFEST_PARSED, () => tvVideo.play().catch(() => {}));
+        hls.on(window.Hls.Events.ERROR, (_e, data) => {
           if (data && data.fatal) {
-            fallbackToSlate(channel, `${channel.name} HLS feed offline — switched to slate`);
+            clearVideo();
+            bugStatus.textContent = "OFFLINE";
           }
         });
-      } else if (isHls && streamPlayer.canPlayType("application/vnd.apple.mpegurl")) {
-        streamPlayer.src = url;
-        streamPlayer.play().catch(() => {});
+      } else if (isHls && tvVideo.canPlayType("application/vnd.apple.mpegurl")) {
+        tvVideo.src = url;
+        tvVideo.play().catch(() => {});
       } else {
-        streamPlayer.src = url;
-        streamPlayer.play().catch(() => {});
+        tvVideo.src = url;
+        tvVideo.play().catch(() => {});
       }
-
-      return true;
     }
 
-    streamPlayer.addEventListener("error", () => {
-      const ch = CHANNELS[activeIndex];
-      if (ch && ch.streamUrl) {
-        fallbackToSlate(ch, `${ch.name} playback error — switched to slate`);
-      }
+    tvVideo.addEventListener("error", () => {
+      clearVideo();
+      bugStatus.textContent = "OFFLINE";
     });
 
-    streamPlayer.addEventListener("stalled", () => {
-      const ch = CHANNELS[activeIndex];
-      if (ch && ch.streamUrl) {
-        bottomMessage.textContent = `${ch.name} feed buffering / stalled...`;
-      }
-    });
+    function tuneChannel(idx, triggerZap = true) {
+      currentIdx = ((idx % CHANNELS.length) + CHANNELS.length) % CHANNELS.length;
+      const ch = CHANNELS[currentIdx];
 
-    function renderGuide() {
-      channelList.innerHTML = "";
-      const scheduledIdx = getScheduledChannelIndex();
+      document.documentElement.style.setProperty("--ch-color", ch.color);
+      document.documentElement.style.setProperty("--ch-glow", ch.glow);
+      document.documentElement.style.setProperty("--ch-bg-a", ch.bgA);
+      document.documentElement.style.setProperty("--ch-bg-b", ch.bgB);
 
-      CHANNELS.forEach((ch, idx) => {
-        const status = getEffectiveStatus(ch);
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = `channel-item ${idx === activeIndex ? "active" : ""}`;
-        const onAirTag = idx === scheduledIdx ? " • ON SLOT" : "";
-        btn.innerHTML = `
-          <div>
-            <div class="channel-item-title">${ch.name}</div>
-            <div class="channel-item-meta">${formatWindow(ch.startHourUtc, ch.endHourUtc)}${onAirTag}</div>
-          </div>
-          <span class="status-badge status-${status}">${STATUS_LABELS[status] || status}</span>
-        `;
-        btn.addEventListener("click", () => {
-          manualOverride = true;
-          syncModeLabel.textContent = "Manual Channel";
-          renderChannel(idx, true);
-        });
-        channelList.appendChild(btn);
-      });
+      centerChannelName.textContent = ch.name;
+      bugStatus.textContent = ch.status;
+      lowerMeta.textContent = `${ch.code} • ${ch.name} • ${pad2(ch.startH)}:00–${pad2(ch.endH % 24)}:00 UTC`;
+      lowerTitle.textContent = ch.program;
+
+      attachStream((ch.url || "").trim(), ch);
+      if (triggerZap) showZap(ch);
     }
 
-    function renderChannel(index, resetTimer = true) {
-      activeIndex = ((index % CHANNELS.length) + CHANNELS.length) % CHANNELS.length;
-      if (resetTimer) {
-        elapsedSec = 0;
-        lastFrame = performance.now();
-      }
-
-      const ch = CHANNELS[activeIndex];
-      const status = getEffectiveStatus(ch);
-
-      document.documentElement.style.setProperty("--slot-accent", ch.accent);
-      document.documentElement.style.setProperty("--slot-accent-alt", ch.accentAlt);
-
-      headerDot.style.background = STATUS_COLORS[status] || "#f59e0b";
-      headerDot.style.boxShadow = `0 0 10px ${STATUS_COLORS[status] || "#f59e0b"}`;
-
-      applyStatusBadge(headerStatusBadge, status);
-      applyStatusBadge(cardStatusBadge, status);
-
-      channelEyebrow.textContent = ch.name;
-      programTitle.textContent = ch.title;
-      programDescription.textContent = ch.description;
-      scheduleWindow.textContent = formatWindow(ch.startHourUtc, ch.endHourUtc);
-      screenProfile.textContent = detectScreenProfile();
-
-      const hasStream = Boolean(ch.streamUrl && ch.streamUrl.trim() !== "");
-      if (hasStream && status !== "OFFLINE") {
-        feedModeLabel.textContent = "Video Stream";
-        bottomMessage.textContent = `${ch.name} — ${ch.title}`;
-        startVideoFeed(ch);
-      } else {
-        stopVideoFeed();
-        feedModeLabel.textContent = status === "OFFLINE" ? "Offline Slate" : "Broadcast Slate";
-        bottomMessage.textContent = `${ch.name} (${STATUS_LABELS[status]}) — ${formatWindow(ch.startHourUtc, ch.endHourUtc)}`;
-      }
-
-      renderGuide();
-    }
-
-    prevBtn.addEventListener("click", () => {
-      manualOverride = true;
-      syncModeLabel.textContent = "Manual Channel";
-      renderChannel(activeIndex - 1, true);
-    });
-
-    nextBtn.addEventListener("click", () => {
-      manualOverride = true;
-      syncModeLabel.textContent = "Manual Channel";
-      renderChannel(activeIndex + 1, true);
-    });
-
-    pauseBtn.addEventListener("click", () => {
-      isPaused = !isPaused;
-      lastFrame = performance.now();
-      pauseBtn.textContent = isPaused ? "Resume" : "Pause";
-      if (document.body.classList.contains("video-mode")) {
-        if (isPaused) streamPlayer.pause();
-        else streamPlayer.play().catch(() => {});
-      }
-    });
-
-    muteBtn.addEventListener("click", () => {
-      streamPlayer.muted = !streamPlayer.muted;
-      muteBtn.textContent = streamPlayer.muted ? "Unmute" : "Mute";
-      if (!streamPlayer.paused) {
-        streamPlayer.play().catch(() => {});
-      }
-    });
-
-    fullscreenBtn.addEventListener("click", async () => {
-      const target = document.body.classList.contains("video-mode") ? streamPlayer : tvShell;
-      const reqFs =
-        target.requestFullscreen ||
-        target.webkitRequestFullscreen ||
-        document.documentElement.requestFullscreen ||
-        document.documentElement.webkitRequestFullscreen;
-      const exitFs = document.exitFullscreen || document.webkitExitFullscreen;
-
-      try {
-        if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-          if (reqFs) {
-            await reqFs.call(target);
-          } else {
-            cycleCounter.textContent = "Rotate device or use browser menu for fullscreen";
-          }
-        } else if (exitFs) {
-          await exitFs.call(document);
-        }
-      } catch (_) {
-        cycleCounter.textContent = "Fullscreen blocked by browser — rotate screen for full view";
-      }
-    });
-
-    function updateClock() {
+    function getScheduledIdx() {
       const now = new Date();
-      clockBadge.textContent = `UTC ${now.toUTCString().slice(17, 25)}`;
-      screenProfile.textContent = detectScreenProfile();
-
-      if (!manualOverride && !isPaused) {
-        const scheduledIdx = getScheduledChannelIndex();
-        if (scheduledIdx !== activeIndex) {
-          renderChannel(scheduledIdx, true);
-        }
-      }
+      const h = now.getUTCHours() + now.getUTCMinutes() / 60 + now.getUTCSeconds() / 3600;
+      const found = CHANNELS.findIndex((c) => h >= c.startH && h < c.endH);
+      return found >= 0 ? found : 0;
     }
 
-    function tick(now) {
-      const dt = (now - lastFrame) / 1000;
-      lastFrame = now;
+    prevChBtn.addEventListener("click", () => tuneChannel(currentIdx - 1, true));
+    nextChBtn.addEventListener("click", () => tuneChannel(currentIdx + 1, true));
 
-      const ch = CHANNELS[activeIndex];
-      const isVideoPlaying = document.body.classList.contains("video-mode");
-
-      if (isVideoPlaying) {
-        progressFill.style.width = "100%";
-        cycleCounter.textContent = `${ch.name} active`;
-      } else if (isPaused) {
-        cycleCounter.textContent = "Paused";
-      } else {
-        elapsedSec += dt;
-        const dur = Math.max(5, ch.slateSeconds || 12);
-        progressFill.style.width = `${Math.min(100, (elapsedSec / dur) * 100)}%`;
-        const rem = Math.max(0, Math.ceil(dur - elapsedSec));
-        cycleCounter.textContent = `Next slate in ${rem}s`;
-
-        if (elapsedSec >= dur) {
-          renderChannel(activeIndex + 1, true);
-        }
-      }
-
-      requestAnimationFrame(tick);
-    }
-
-    updateClock();
-    renderChannel(getScheduledChannelIndex(), true);
-    setInterval(updateClock, 1000);
-    window.addEventListener("resize", () => {
-      screenProfile.textContent = detectScreenProfile();
+    unmuteBtn.addEventListener("click", () => {
+      tvVideo.muted = !tvVideo.muted;
+      unmuteBtn.textContent = tvVideo.muted ? "SOUND" : "MUTE";
+      tvVideo.play().catch(() => {});
     });
-    requestAnimationFrame(tick);
+
+    fsBtn.addEventListener("click", async () => {
+      const target = document.body.classList.contains("has-video") ? tvVideo : tvScreen;
+      const req = target.requestFullscreen || target.webkitRequestFullscreen || document.documentElement.requestFullscreen;
+      const exit = document.exitFullscreen || document.webkitExitFullscreen;
+      try {
+        if (!document.fullscreenElement && !document.webkitFullscreenElement && req) {
+          await req.call(target);
+        } else if (exit) {
+          await exit.call(document);
+        }
+      } catch (_) {}
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ChannelUp") tuneChannel(currentIdx + 1, true);
+      if (e.key === "ArrowLeft" || e.key === "ChannelDown") tuneChannel(currentIdx - 1, true);
+    });
+
+    setInterval(() => {
+      const now = new Date();
+      tvClock.textContent = `${pad2(now.getUTCHours())}:${pad2(now.getUTCMinutes())}:${pad2(now.getUTCSeconds())} UTC`;
+    }, 1000);
+
+    tuneChannel(getScheduledIdx(), false);
   </script>
 </body>
 </html>
