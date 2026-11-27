@@ -54,7 +54,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 120px;
+    scroll-padding-top: 104px;
 }
 
 body {
@@ -63,7 +63,7 @@ body {
     background: var(--paper);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 a {
@@ -263,6 +263,7 @@ font[style*="vertical-align"] {
     position: absolute;
     top: calc(100% + 13px);
     right: 0;
+    z-index: 1200;
     width: 225px;
     max-height: 360px;
     overflow-y: auto;
@@ -459,7 +460,7 @@ font[style*="vertical-align"] {
 
 .policy-sidebar {
     position: sticky;
-    top: 115px;
+    top: 104px;
     align-self: start;
 }
 
@@ -514,6 +515,7 @@ font[style*="vertical-align"] {
 .policy-intro {
     padding-bottom: 38px;
     border-bottom: 1px solid var(--line);
+    scroll-margin-top: 104px;
 }
 
 .policy-intro .intro-label {
@@ -543,7 +545,7 @@ font[style*="vertical-align"] {
 .policy-section {
     padding: 38px 0;
     border-bottom: 1px solid var(--line);
-    scroll-margin-top: 120px;
+    scroll-margin-top: 104px;
 }
 
 .section-heading {
@@ -863,6 +865,10 @@ font[style*="vertical-align"] {
         --header-height: 72px;
     }
 
+    html {
+        scroll-padding-top: 92px;
+    }
+
     .container {
         width: min(100% - 38px, var(--max-width));
     }
@@ -925,6 +931,11 @@ font[style*="vertical-align"] {
 
     .sidebar-nav a.active::before {
         left: 0;
+    }
+
+    .policy-intro,
+    .policy-section {
+        scroll-margin-top: 92px;
     }
 
     .footer-main {
@@ -1096,7 +1107,7 @@ font[style*="vertical-align"] {
 
         <nav class="desktop-nav" aria-label="Main navigation">
             <a href="/">Home</a>
-            <a href="/newsroom/newswire.html">Newswire</a>
+            <a href="/news/">News</a>
             <a href="/magazine/news">Magazine</a>
             <a href="/contact">Contact</a>
             <a href="/policy" aria-current="page">Privacy</a>
@@ -1164,7 +1175,7 @@ font[style*="vertical-align"] {
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
         <a href="/">Home</a>
-        <a href="/newsroom/newswire.html">Newswire</a>
+        <a href="/news/">News</a>
         <a href="/magazine/news">Magazine</a>
         <a href="/contact">Contact</a>
         <a href="/policy" aria-current="page">Privacy Policy</a>
@@ -1590,7 +1601,7 @@ font[style*="vertical-align"] {
                     PHRINUSOMYIS™ produces and administers official
                     communications, editorial material and publications,
                     including PHRINUSOMYIS™ Magazine and its official
-                    Newswire channel.
+                    News channel.
                 </p>
 
                 <p>
@@ -1889,7 +1900,7 @@ font[style*="vertical-align"] {
 
         <div class="footer-column">
             <h4>Official Channels</h4>
-            <a href="/newsroom/newswire.html">Newswire</a>
+            <a href="/news/">News</a>
             <a href="/magazine/news">Magazine</a>
             <a href="/">Sports</a>
             <a href="/">ZEAVIQ SPORTS™</a>
@@ -2135,12 +2146,14 @@ const policySections = document.querySelectorAll(
 const policyLinks = document.querySelectorAll("#policyNavigation a");
 
 function updatePolicyNavigation() {
-    let currentSection = "";
+    const header = document.querySelector(".site-header");
+    const threshold = (header ? header.offsetHeight : 82) + 48;
+    let currentSection = policySections.length ? policySections[0].id : "";
 
     policySections.forEach(function (section) {
         const sectionTop = section.getBoundingClientRect().top;
 
-        if (sectionTop <= 170) {
+        if (sectionTop <= threshold) {
             currentSection = section.id;
         }
     });
@@ -2175,8 +2188,10 @@ backToTop.addEventListener("click", function () {
 
 /* COPYRIGHT YEAR */
 
-document.getElementById("copyrightYear").textContent =
-    new Date().getFullYear();
+const copyrightYear = document.getElementById("copyrightYear");
+if (copyrightYear) {
+    copyrightYear.textContent = String(new Date().getFullYear());
+}
 
 
 /* RESTORE TRANSLATION INTERFACE PROTECTION */
