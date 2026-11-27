@@ -15,7 +15,7 @@
   <meta name="language" content="en, fr, es, de, ar, zh-CN, ru, pt, ja, ko, it, nl, tr, hi, id, vi, th, pl, sv, fi, da">
   <meta name="content-language" content="en, fr, es, de, ar, zh-CN, ru, pt, ja, ko, it, nl, tr, hi, id, vi, th, pl, sv, fi, da">
   <meta name="article:published_time" content="2026-11-26T07:30:00-05:00">
-  <meta name="article:modified_time" content="2026-11-26T16:07:00-05:00">
+  <meta name="article:modified_time" content="2026-11-26T19:08:00-05:00">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PHRINUSOMYIS™">
   <meta property="og:title" content="PHRINUSOMYIS™ NEWS — REPORTING THE WORLD BEYOND PHRINUSOMYIS™">
@@ -96,7 +96,7 @@
         "description": "Official news hub of PHRINUSOMYIS™ — reporting the world beyond PHRINUSOMYIS™ with independent reporting, publications and analysis across international sport and the wider world.",
         "url": "https://phrinusomyis.com/news/",
         "datePublished": "2026-11-26T07:30:00-05:00",
-        "dateModified": "2026-11-26T16:07:00-05:00",
+        "dateModified": "2026-11-26T19:08:00-05:00",
         "inLanguage": "en",
         "availableLanguage": [
           "English", "French", "Spanish", "German", "Arabic", "Chinese", "Russian",
@@ -130,7 +130,7 @@
                 "@type": "NewsArticle",
                 "headline": "INFLECTION SPORTS™ — Week 48 · 2026",
                 "datePublished": "2026-11-26T07:30:00-05:00",
-                "dateModified": "2026-11-26T16:07:00-05:00",
+                "dateModified": "2026-11-26T19:08:00-05:00",
                 "url": "https://phrinusomyis.com/news/inflection-sports/week-48-2026",
                 "isPartOf": {
                   "@type": "CreativeWorkSeries",
@@ -154,7 +154,7 @@
                 "@type": "NewsArticle",
                 "headline": "The Power Behind the World's Game — Week 47 · 2026",
                 "datePublished": "2026-11-20T09:00:00-05:00",
-                "dateModified": "2026-11-26T16:07:00-05:00",
+                "dateModified": "2026-11-26T19:08:00-05:00",
                 "url": "https://phrinusomyis.com/news/inflection-sports/week-47-2026",
                 "isPartOf": {
                   "@type": "CreativeWorkSeries",
@@ -178,7 +178,7 @@
                 "@type": "Article",
                 "headline": "PHRINUSOMYIS™: THE NEXT CHAPTER OF COMPETITIVE SPORT",
                 "datePublished": "2026-11-26T07:30:00-05:00",
-                "dateModified": "2026-11-26T16:07:00-05:00",
+                "dateModified": "2026-11-26T19:08:00-05:00",
                 "url": "https://phrinusomyis.com/news/next-chapter-of-competitive-sport",
                 "publisher": { "@id": "https://phrinusomyis.com/#organization" }
               }
@@ -311,6 +311,7 @@
       z-index: 5;
       border-bottom: 1px solid var(--border);
       background: var(--surface);
+      transition: background-color .22s ease, border-color .22s ease;
     }
 
     .header-inner {
@@ -392,7 +393,7 @@
         90deg,
         transparent,
         var(--accent),
-        #f2dfaa,
+        var(--accent-strong),
         var(--accent),
         transparent
       );
@@ -442,15 +443,15 @@
       background:
         radial-gradient(
           ellipse at 85% 25%,
-          rgba(201,166,70,.18),
-          transparent 38%
+          var(--accent-soft),
+          transparent 42%
         ),
         radial-gradient(
           ellipse at 15% 100%,
-          rgba(201,166,70,.09),
-          transparent 42%
+          var(--accent-soft),
+          transparent 48%
         ),
-        linear-gradient(120deg, #080808 0%, #15130e 55%, #080808 100%);
+        linear-gradient(125deg, var(--surface) 0%, var(--intro-bg) 55%, var(--surface-alt) 100%);
 
       box-shadow: var(--shadow);
     }
@@ -463,12 +464,12 @@
       height: 390px;
       right: -100px;
       top: -130px;
-      border: 1px solid rgba(201,166,70,.23);
+      border: 1px solid var(--border);
       border-radius: 50%;
       box-shadow:
-        0 0 0 24px rgba(201,166,70,.035),
-        0 0 0 50px rgba(201,166,70,.025),
-        0 0 0 78px rgba(201,166,70,.018);
+        0 0 0 24px var(--accent-soft),
+        0 0 0 50px var(--accent-soft),
+        0 0 0 78px var(--accent-soft);
     }
 
     .news-masthead::after {
@@ -483,7 +484,7 @@
         90deg,
         transparent,
         var(--accent),
-        #f2dfaa,
+        var(--accent-strong),
         var(--accent),
         transparent
       );
@@ -502,7 +503,7 @@
     .masthead-title {
       max-width: 780px;
       margin: 0;
-      color: #f5f0df;
+      color: var(--heading);
       font-family: var(--font-interface);
       font-size: clamp(34px, 5.5vw, 66px);
       font-weight: 800;
@@ -514,7 +515,7 @@
     .masthead-description {
       max-width: 640px;
       margin: 22px 0 0;
-      color: #c9c0aa;
+      color: var(--text);
       font-family: var(--font-editorial);
       font-size: 18px;
       line-height: 1.75;
@@ -527,7 +528,7 @@
       gap: 12px;
       margin-top: 32px;
 
-      color: #e6cb7a;
+      color: var(--heading);
       font-family: var(--font-interface);
       font-size: 10px;
       font-weight: 800;
@@ -824,7 +825,7 @@
       background: var(--surface);
 
       box-shadow: var(--shadow-small);
-      transition: background .22s ease;
+      transition: background .22s ease, border-color .22s ease;
     }
 
     .sidebar-card h2 {
@@ -980,7 +981,7 @@
       padding: 29px;
 
       border: 1px solid var(--border-strong);
-      background: var(--surface);
+      background: var(--closing-bg);
 
       box-shadow: var(--shadow-small);
     }
@@ -1028,6 +1029,7 @@
     .site-footer {
       border-top: 1px solid var(--border);
       background: var(--surface);
+      transition: background-color .22s ease, border-color .22s ease;
     }
 
     .footer-inner {
@@ -1145,7 +1147,7 @@
     .theme-button[aria-pressed="true"] {
       border: 2px solid var(--accent);
       box-shadow: 0 0 0 3px var(--accent-soft);
-      background: var(--surface);
+      background: var(--surface-raised);
     }
 
     .theme-swatch {
@@ -1324,7 +1326,12 @@
       pointer-events: none !important;
     }
 
-    .goog-text-highlight {
+    .goog-text-highlight,
+    font[style*="background-color: rgb(255, 255, 0)"],
+    font[style*="background-color: yellow"],
+    font[style*="background-color:#ffff00"],
+    span[style*="background-color: rgb(255, 255, 0)"],
+    span[style*="background-color: yellow"] {
       background: transparent !important;
       background-color: transparent !important;
       box-shadow: none !important;
@@ -1536,7 +1543,7 @@
 
 <body data-theme="original">
 
-  <div id="google_translate_element" aria-hidden="true"></div>
+  <div id="google_translate_element" class="notranslate" translate="no" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="header-inner">
@@ -1549,14 +1556,14 @@
           loading="eager"
         >
         <span>
-          <span class="brand-name">PHRINUSOMYIS™</span>
-          <span class="brand-tagline">COMMANDING THE WORLD STAGE™</span>
+          <span class="brand-name" translate="no">PHRINUSOMYIS™</span>
+          <span class="brand-tagline" translate="no">COMMANDING THE WORLD STAGE™</span>
         </span>
       </a>
 
       <div class="header-actions">
         <a class="header-link" href="https://phrinusomyis.com/news/inflection-sports/">
-          INFLECTION SPORTS™ ↗
+          <span translate="no">INFLECTION SPORTS™</span> ↗
         </a>
         <a class="header-link" href="https://phrinusomyis.com/news/inflection-sports/week-48-2026">
           Week 48 Edition ↗
@@ -1578,11 +1585,11 @@
 
   <main class="page-shell">
 
-    <section class="language-section" aria-label="Website language">
+    <section class="language-section notranslate" translate="no" aria-label="Website language">
       <div class="language-information">
         <span class="language-title">Read in your language</span>
         <span class="language-subtitle">
-          English is the original language of this publication.
+          English is the original language of this publication (21 languages supported).
         </span>
       </div>
 
@@ -1591,7 +1598,7 @@
         id="language-selector"
         aria-label="Choose publication language"
       >
-        <option value="">English — Original</option>
+        <option value="en">English — Original</option>
         <option value="fr">Français — French</option>
         <option value="es">Español — Spanish</option>
         <option value="de">Deutsch — German</option>
@@ -1622,54 +1629,54 @@
       ></span>
     </section>
 
-    <section class="reading-preferences" aria-label="Reading appearance preferences">
+    <section class="reading-preferences notranslate" translate="no" aria-label="Reading appearance preferences">
       <h2 class="preferences-heading">Choose Your Reading Appearance</h2>
 
       <p class="preferences-description">
-        Select the reading appearance that is most comfortable for you.
-        Your selection changes the presentation of the entire publication.
+        Select any of the 10 reading themes below.
+        Your selection updates the entire publication and is saved automatically.
       </p>
 
       <div class="theme-options">
         <button class="theme-button" type="button" data-theme-choice="original" aria-pressed="true">
           <span class="theme-swatch swatch-black"><span></span><span></span><span></span></span>
-          Black Authority
+          01 · Black Authority
         </button>
         <button class="theme-button" type="button" data-theme-choice="white" aria-pressed="false">
           <span class="theme-swatch swatch-editorial"><span></span><span></span><span></span></span>
-          White Editorial
+          02 · White Editorial
         </button>
         <button class="theme-button" type="button" data-theme-choice="digital-blue" aria-pressed="false">
           <span class="theme-swatch swatch-blue"><span></span><span></span><span></span></span>
-          Digital Blue
+          03 · Digital Blue
         </button>
         <button class="theme-button" type="button" data-theme-choice="white-blue" aria-pressed="false">
           <span class="theme-swatch swatch-whiteblue"><span></span><span></span><span></span></span>
-          White and Blue
+          04 · White and Blue
         </button>
         <button class="theme-button" type="button" data-theme-choice="charcoal" aria-pressed="false">
           <span class="theme-swatch swatch-charcoal"><span></span><span></span><span></span></span>
-          Charcoal Executive
+          05 · Charcoal Executive
         </button>
         <button class="theme-button" type="button" data-theme-choice="emerald" aria-pressed="false">
           <span class="theme-swatch swatch-emerald"><span></span><span></span><span></span></span>
-          Emerald Institution
+          06 · Emerald Institution
         </button>
         <button class="theme-button" type="button" data-theme-choice="rose" aria-pressed="false">
           <span class="theme-swatch swatch-rose"><span></span><span></span><span></span></span>
-          Rose Editorial
+          07 · Rose Editorial
         </button>
         <button class="theme-button" type="button" data-theme-choice="midnight" aria-pressed="false">
           <span class="theme-swatch swatch-midnight"><span></span><span></span><span></span></span>
-          Midnight Technology
+          08 · Midnight Technology
         </button>
         <button class="theme-button" type="button" data-theme-choice="burgundy" aria-pressed="false">
           <span class="theme-swatch swatch-burgundy"><span></span><span></span><span></span></span>
-          Burgundy Distinction
+          09 · Burgundy Distinction
         </button>
         <button class="theme-button" type="button" data-theme-choice="platinum" aria-pressed="false">
           <span class="theme-swatch swatch-platinum"><span></span><span></span><span></span></span>
-          Platinum Classic
+          10 · Platinum Classic
         </button>
       </div>
     </section>
@@ -1681,25 +1688,25 @@
     </nav>
 
     <section class="news-masthead" aria-label="PHRINUSOMYIS News">
-      <span class="masthead-kicker">PHRINUSOMYIS™ Official News</span>
+      <span class="masthead-kicker"><span translate="no">PHRINUSOMYIS™</span> Official News</span>
 
       <h2 class="masthead-title">
-        Reporting the world beyond PHRINUSOMYIS™.
+        Reporting the world beyond <span translate="no">PHRINUSOMYIS™</span>.
       </h2>
 
       <p class="masthead-description">
-        Independent reporting, publications and analysis across international sport and the wider world—with direct routing to INFLECTION SPORTS™, weekly editions, and our 3000 BC to today competitive-sport story under News.
+        Independent reporting, publications and analysis across international sport and the wider world—with direct routing to <span translate="no">INFLECTION SPORTS™</span>, weekly editions, and our 3000 BC to today competitive-sport story under News.
       </p>
 
       <div class="masthead-signature">
         <span></span>
-        COMMANDING THE WORLD STAGE™
+        <span translate="no">COMMANDING THE WORLD STAGE™</span>
         <span></span>
       </div>
     </section>
 
     <div class="page-heading" id="news-hub">
-      <span class="section-label">PHRINUSOMYIS™ News</span>
+      <span class="section-label"><span translate="no">PHRINUSOMYIS™</span> News</span>
 
       <h1>NEWS</h1>
 
@@ -1716,22 +1723,22 @@
 
         <div class="article-body" id="news-story">
           <p>
-            <strong>NEWS</strong> is not limited to announcements about <strong>PHRINUSOMYIS™</strong>. It covers what happens across international sport and the wider world—bringing together recurring editions of <strong>INFLECTION SPORTS™</strong> (<strong>THE MOMENTS THAT CHANGE THE GAME.</strong>), starting with <strong>Week 48</strong> and <strong>Week 47</strong>, alongside future publications under <strong>/news/</strong>.
+            <strong>NEWS</strong> is not limited to announcements about <strong translate="no">PHRINUSOMYIS™</strong>. It covers what happens across international sport and the wider world—bringing together recurring editions of <strong translate="no">INFLECTION SPORTS™</strong> (<strong translate="no">THE MOMENTS THAT CHANGE THE GAME.</strong>), starting with <strong>Week 48</strong> and <strong>Week 47</strong>, alongside future publications under <strong>/news/</strong>.
           </p>
           <p>
-            Alongside weekly coverage, our standalone story under <strong>/news/next-chapter-of-competitive-sport</strong> traces competitive sport from <strong>3000 BC</strong> to the modern era and explains why <strong>PHRINUSOMYIS™</strong> follows its own independent direction in live competition.
+            Alongside weekly coverage, our standalone story under <strong>/news/next-chapter-of-competitive-sport</strong> traces competitive sport from <strong>3000 BC</strong> to the modern era and explains why <strong translate="no">PHRINUSOMYIS™</strong> follows its own independent direction in live competition.
           </p>
         </div>
 
         <!-- =====================================================
-             NEWS STANDALONE STORY CARD (3000 BC -> TODAY)
+             NEWS STANDALONE STORY CARD (3000 BC -> PRESENT)
         ====================================================== -->
 
         <section class="manifesto-feature-card" id="manifesto-dispatch" aria-label="Standalone competitive sport story under News">
           <span class="section-label">Standalone News Story · 3000 BC to Today</span>
-          <h2>PHRINUSOMYIS™: The Next Chapter of Competitive Sport</h2>
+          <h2><span translate="no">PHRINUSOMYIS™</span>: The Next Chapter of Competitive Sport</h2>
           <p>
-            Read the dedicated standalone story under News tracing competitive sport from <strong>3000 BC</strong> to the modern era—and examining why <strong>PHRINUSOMYIS™</strong> follows its own independent direction in live competition.
+            Read the dedicated standalone story under News tracing competitive sport from <strong>3000 BC</strong> to the modern era—and examining why <strong translate="no">PHRINUSOMYIS™</strong> follows its own independent direction in live competition.
           </p>
           <p class="manifesto-quote">
             “The past explains how humanity arrived at this moment, but it cannot determine the full course of what comes next.”
@@ -1754,15 +1761,15 @@
         ====================================================== -->
 
         <div class="editions-header" id="weekly-editions">
-          <h2 class="editions-heading">INFLECTION SPORTS™ Weekly Editions</h2>
-          <span class="series-line">THE MOMENTS THAT CHANGE THE GAME.</span>
+          <h2 class="editions-heading"><span translate="no">INFLECTION SPORTS™</span> Weekly Editions</h2>
+          <span class="series-line" translate="no">THE MOMENTS THAT CHANGE THE GAME.</span>
         </div>
 
         <section class="weekly-editions-grid" aria-label="Weekly sports editions">
 
           <article class="about-weekly-section" id="week-48-spotlight">
             <span class="section-label">Current Weekly Edition · Week 48</span>
-            <h3>INFLECTION SPORTS™ — Week 48 · 2026</h3>
+            <h3><span translate="no">INFLECTION SPORTS™</span> — Week 48 · 2026</h3>
             <p>
               Covering <strong>23–29 November 2026</strong>, Week 48 tracks decisive margins and shifting momentum across European football, NBA regular-season runs, and Formula 1's move to Lusail for the Qatar Grand Prix.
             </p>
@@ -1798,7 +1805,7 @@
           <span class="section-label">Ecosystem Routing</span>
           <h2>Homepage &amp; Magazine</h2>
           <p>
-            Move directly between the <strong>PHRINUSOMYIS™ Homepage</strong>, the <strong>Magazine</strong> section, and the standalone <strong>Next Chapter of Competitive Sport</strong> story under News without losing your place.
+            Move directly between the <strong translate="no">PHRINUSOMYIS™</strong> Homepage, the <strong>Magazine</strong> section, and the standalone <strong>Next Chapter of Competitive Sport</strong> story under News without losing your place.
           </p>
           <div class="routing-actions">
             <a class="weekly-edition-button" href="https://phrinusomyis.com/">
@@ -1813,7 +1820,7 @@
           </div>
         </section>
 
-        <section class="share-section" aria-label="News actions">
+        <section class="share-section notranslate" translate="no" aria-label="News actions">
           <span class="share-label">Share this page</span>
 
           <button class="action-button" id="share-button" type="button">
@@ -1841,12 +1848,12 @@
 
           <div class="issuance-row">
             <span class="issuance-label">Issued by</span>
-            <span class="issuance-value">PHRINUSOMYIS™</span>
+            <span class="issuance-value" translate="no">PHRINUSOMYIS™</span>
           </div>
 
           <div class="issuance-row">
             <span class="issuance-label">President</span>
-            <span class="issuance-value">Victor Seth AMUNTHLIA</span>
+            <span class="issuance-value" translate="no">Victor Seth AMUNTHLIA</span>
           </div>
         </section>
 
@@ -1864,8 +1871,8 @@
             loading="lazy"
           >
 
-          <div class="sidebar-brand">PHRINUSOMYIS™</div>
-          <p class="sidebar-motto">COMMANDING THE WORLD STAGE™</p>
+          <div class="sidebar-brand" translate="no">PHRINUSOMYIS™</div>
+          <p class="sidebar-motto" translate="no">COMMANDING THE WORLD STAGE™</p>
         </section>
 
         <section class="sidebar-card">
@@ -1874,7 +1881,7 @@
           <ul class="sidebar-nav">
             <li>
               <a href="https://phrinusomyis.com/news/inflection-sports/">
-                INFLECTION SPORTS™ Hub ↗
+                <span translate="no">INFLECTION SPORTS™</span> Hub ↗
               </a>
             </li>
             <li>
@@ -1884,12 +1891,12 @@
             </li>
             <li>
               <a href="https://phrinusomyis.com/news/inflection-sports/week-48-2026">
-                INFLECTION SPORTS™ Week 48 ↗
+                <span translate="no">INFLECTION SPORTS™</span> Week 48 ↗
               </a>
             </li>
             <li>
               <a href="https://phrinusomyis.com/news/inflection-sports/week-47-2026">
-                INFLECTION SPORTS™ Week 47 ↗
+                <span translate="no">INFLECTION SPORTS™</span> Week 47 ↗
               </a>
             </li>
             <li>
@@ -1938,14 +1945,14 @@
     <div class="footer-inner">
 
       <div class="footer-copy">
-        <strong>PHRINUSOMYIS™</strong><br>
-        COMMANDING THE WORLD STAGE™.<br>
-        © 2026 PHRINUSOMYIS™. All rights reserved.
+        <strong translate="no">PHRINUSOMYIS™</strong><br>
+        <span translate="no">COMMANDING THE WORLD STAGE™.</span><br>
+        © 2026 <span translate="no">PHRINUSOMYIS™</span>. All rights reserved.
       </div>
 
       <div class="footer-links">
         <a class="footer-link" href="https://phrinusomyis.com/news/inflection-sports/">
-          INFLECTION SPORTS™ ↗
+          <span translate="no">INFLECTION SPORTS™</span> ↗
         </a>
         <a class="footer-link" href="https://phrinusomyis.com/news/next-chapter-of-competitive-sport">
           3000 BC Story ↗
@@ -1966,7 +1973,7 @@
       "use strict";
 
       /* =====================================================
-         10 READING THEMES
+         10 READING THEMES (COMPLETE & PERSISTENT)
       ===================================================== */
       const themeButtons = document.querySelectorAll("[data-theme-choice]");
       const validThemes = [
@@ -1974,9 +1981,15 @@
         "emerald", "rose", "midnight", "burgundy", "platinum"
       ];
       const themeColors = {
-        "original": "#080808", "white": "#f5f3ed", "digital-blue": "#071b35",
-        "white-blue": "#f1f6fc", "charcoal": "#202020", "emerald": "#063b32",
-        "rose": "#f8eef1", "midnight": "#101b35", "burgundy": "#401c2a",
+        "original": "#080808",
+        "white": "#f5f3ed",
+        "digital-blue": "#071b35",
+        "white-blue": "#f1f6fc",
+        "charcoal": "#202020",
+        "emerald": "#063b32",
+        "rose": "#f8eef1",
+        "midnight": "#101b35",
+        "burgundy": "#401c2a",
         "platinum": "#e9ebee"
       };
       const defaultTheme = "original";
@@ -2012,25 +2025,54 @@
       }
 
       /* =====================================================
-         FAST POSITION RESTORE & GOOGLE TRANSLATE CLEANUP
+         FAST POSITION RESTORE & GOOGLE TRANSLATE ENGINE
       ===================================================== */
+      const supportedLanguages = [
+        "en", "fr", "es", "de", "ar", "zh-CN", "ru", "pt", "ja", "ko",
+        "it", "nl", "tr", "hi", "id", "vi", "th", "pl", "sv", "fi", "da"
+      ];
       let cleanupScheduled = false;
 
       function restorePagePosition() {
         const html = document.documentElement;
         const body = document.body;
-        if (html.style.top) html.style.removeProperty("top");
-        if (html.style.marginTop) html.style.removeProperty("margin-top");
-        if (html.style.paddingTop) html.style.removeProperty("padding-top");
-        if (body.style.top) body.style.removeProperty("top");
-        if (body.style.marginTop) body.style.removeProperty("margin-top");
-        if (body.style.paddingTop) body.style.removeProperty("padding-top");
+        if (!html || !body) return;
+        html.style.setProperty("top", "0", "important");
+        html.style.setProperty("margin-top", "0", "important");
+        html.style.setProperty("padding-top", "0", "important");
+        body.style.setProperty("top", "0", "important");
+        body.style.setProperty("margin-top", "0", "important");
+        body.style.setProperty("padding-top", "0", "important");
+        body.style.setProperty("position", "relative", "important");
+      }
+
+      function clearGoogTransCookie() {
+        try {
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          const hostParts = window.location.hostname.split(".");
+          if (hostParts.length > 1) {
+            const rootDomain = "." + hostParts.slice(-2).join(".");
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + rootDomain + ";";
+          }
+        } catch (error) {}
+      }
+
+      function setGoogTransCookie(lang) {
+        try {
+          const val = "/en/" + lang;
+          document.cookie = "googtrans=" + val + "; path=/;";
+          const hostParts = window.location.hostname.split(".");
+          if (hostParts.length > 1) {
+            const rootDomain = "." + hostParts.slice(-2).join(".");
+            document.cookie = "googtrans=" + val + "; path=/; domain=" + rootDomain + ";";
+          }
+        } catch (error) {}
       }
 
       function removeGooglePopouts() {
         cleanupScheduled = false;
         const frames = document.querySelectorAll(
-          "iframe.goog-te-banner-frame, .goog-te-banner-frame, .goog-te-balloon-frame, iframe.goog-te-balloon-frame, .goog-te-menu-frame, iframe.goog-te-menu-frame, #goog-gt-tt"
+          "iframe.goog-te-banner-frame, .goog-te-banner-frame, .goog-te-balloon-frame, iframe.goog-te-balloon-frame, .goog-te-menu-frame, iframe.goog-te-menu-frame, #goog-gt-tt, .goog-te-tooltip-container"
         );
         for (let i = 0; i < frames.length; i++) {
           const el = frames[i];
@@ -2049,21 +2091,44 @@
 
       const languageSelector = document.getElementById("language-selector");
       const languageStatus = document.getElementById("language-status");
-      let selectedLanguage = "";
+      let selectedLanguage = "en";
 
       function updateLanguageStatus(message) {
         if (languageStatus) languageStatus.textContent = message;
       }
 
       function getGoogleTranslateCombo() {
-        return document.querySelector(".goog-te-combo");
+        return document.querySelector("#google_translate_element .goog-te-combo") || document.querySelector(".goog-te-combo");
       }
 
       function setGoogleLanguage(language, attempts) {
         attempts = attempts || 0;
+        if (!supportedLanguages.includes(language)) return;
+
+        if (language === "en") {
+          clearGoogTransCookie();
+          const combo = getGoogleTranslateCombo();
+          if (combo) {
+            combo.value = "en";
+            combo.dispatchEvent(new Event("change", { bubbles: true }));
+          }
+          selectedLanguage = "en";
+          if (
+            document.documentElement.classList.contains("translated-ltr") ||
+            document.documentElement.classList.contains("translated-rtl")
+          ) {
+            window.location.reload();
+            return;
+          }
+          updateLanguageStatus("Original English publication selected.");
+          scheduleCleanup();
+          return;
+        }
+
+        setGoogTransCookie(language);
         const combo = getGoogleTranslateCombo();
         if (!combo) {
-          if (attempts < 35) {
+          if (attempts < 40) {
             window.setTimeout(function () {
               setGoogleLanguage(language, attempts + 1);
             }, 250);
@@ -2075,37 +2140,39 @@
         combo.value = language;
         combo.dispatchEvent(new Event("change", { bubbles: true }));
         selectedLanguage = language;
-        updateLanguageStatus(
-          language === ""
-            ? "Original English publication selected."
-            : "Translation requested. Updating page..."
-        );
+        updateLanguageStatus("Translation applied (" + language + ").");
         scheduleCleanup();
       }
 
-      languageSelector.addEventListener("change", function () {
-        const language = languageSelector.value;
-        if (language === selectedLanguage) return;
-        updateLanguageStatus("Applying your language preference...");
-        setGoogleLanguage(language);
-      });
+      if (languageSelector) {
+        languageSelector.addEventListener("change", function () {
+          const language = languageSelector.value;
+          if (language === selectedLanguage) return;
+          updateLanguageStatus("Applying your language preference...");
+          setGoogleLanguage(language, 0);
+        });
+      }
 
       window.googleTranslateElementInit = function () {
-        if (!window.google || !window.google.translate) {
+        if (!window.google || !window.google.translate || !window.google.translate.TranslateElement) {
           updateLanguageStatus("Translation service is unavailable at the moment.");
           return;
         }
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: "en,fr,es,de,ar,zh-CN,ru,pt,ja,ko,it,nl,tr,hi,id,vi,th,pl,sv,fi,da",
-            autoDisplay: false,
-            multilanguagePage: false
-          },
-          "google_translate_element"
-        );
-        updateLanguageStatus("English is the original publication language.");
-        scheduleCleanup();
+        try {
+          new window.google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+              includedLanguages: supportedLanguages.join(","),
+              autoDisplay: false,
+              multilanguagePage: false
+            },
+            "google_translate_element"
+          );
+          updateLanguageStatus("English is the original publication language.");
+          scheduleCleanup();
+        } catch (error) {
+          updateLanguageStatus("Translation service encountered an initialization issue.");
+        }
       };
 
       const translationObserver = new MutationObserver(function (mutations) {
@@ -2139,50 +2206,56 @@
       const status = document.getElementById("share-status");
 
       function showStatus(message) {
-        status.textContent = message;
+        if (status) status.textContent = message;
       }
 
-      shareButton.addEventListener("click", async function () {
-        if (navigator.share) {
-          try {
-            await navigator.share({ title: articleTitle, text: articleTitle, url: articleUrl });
-            showStatus("Share options opened.");
-          } catch (error) {
-            if (error && error.name !== "AbortError") {
-              showStatus("Sharing was not completed. You can copy the page link instead.");
+      if (shareButton) {
+        shareButton.addEventListener("click", async function () {
+          if (navigator.share) {
+            try {
+              await navigator.share({ title: articleTitle, text: articleTitle, url: articleUrl });
+              showStatus("Share options opened.");
+            } catch (error) {
+              if (error && error.name !== "AbortError") {
+                showStatus("Sharing was not completed. You can copy the page link instead.");
+              }
+            }
+          } else {
+            try {
+              await navigator.clipboard.writeText(articleUrl);
+              showStatus("Page link copied. You can now share it.");
+            } catch (error) {
+              showStatus("Use the Copy Link button to copy the page address.");
             }
           }
-        } else {
+        });
+      }
+
+      if (copyButton) {
+        copyButton.addEventListener("click", async function () {
           try {
             await navigator.clipboard.writeText(articleUrl);
-            showStatus("Page link copied. You can now share it.");
+            showStatus("Page link copied successfully.");
           } catch (error) {
-            showStatus("Use the Copy Link button to copy the page address.");
+            const temporaryInput = document.createElement("textarea");
+            temporaryInput.value = articleUrl;
+            temporaryInput.setAttribute("readonly", "");
+            temporaryInput.style.position = "fixed";
+            temporaryInput.style.opacity = "0";
+            document.body.appendChild(temporaryInput);
+            temporaryInput.select();
+            const copied = document.execCommand("copy");
+            temporaryInput.remove();
+            showStatus(copied ? "Page link copied successfully." : "Copy the link from your browser address bar.");
           }
-        }
-      });
+        });
+      }
 
-      copyButton.addEventListener("click", async function () {
-        try {
-          await navigator.clipboard.writeText(articleUrl);
-          showStatus("Page link copied successfully.");
-        } catch (error) {
-          const temporaryInput = document.createElement("textarea");
-          temporaryInput.value = articleUrl;
-          temporaryInput.setAttribute("readonly", "");
-          temporaryInput.style.position = "fixed";
-          temporaryInput.style.opacity = "0";
-          document.body.appendChild(temporaryInput);
-          temporaryInput.select();
-          const copied = document.execCommand("copy");
-          temporaryInput.remove();
-          showStatus(copied ? "Page link copied successfully." : "Copy the link from your browser address bar.");
-        }
-      });
-
-      printButton.addEventListener("click", function () {
-        window.print();
-      });
+      if (printButton) {
+        printButton.addEventListener("click", function () {
+          window.print();
+        });
+      }
     })();
   </script>
 
