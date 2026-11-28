@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>PHRINUSOMYIS TV</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
+  <style>
+    :root {
+      --ch-color: #ef4444;
+      --ch-glow: rgba(239, 68, 68, 0.45);
+      --ch-bg-a: #14080c;
+      --ch-bg-b: #060913;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100dvh;
+      overflow: hidden;
+      background: #000000;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      user-select: none;
+    }
+
+    .tv-screen {
+      position: relative;
+      width: 100vw;
+      height: 100dvh;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    .motion-canvas {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 35%, var(--ch-glow), transparent 45%),
+        radial-gradient(circle at 22% 78%, rgba(255, 255, 255, 0.06), transparent 50%),
+        linear-gradient(135deg, var(--ch-bg-a) 0%, var(--ch-bg-b) 100%);
+      transition: background 0.8s ease;
+    }
+
+    .sweep-beam {
+      position: absolute;
+      top: -30%;
+      left: -35%;
+      width: 55%;
+      height: 160%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.035),
+        rgba(255, 255, 255, 0.07),
+        transparent
+      );
+      transform: rotate(18deg);
+      animation: beamSweep 9s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes beamSweep {
+      0% { left: -45%; }
+      100% { left: 120%; }
+    }
+
+    .grid-horizon {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: clamp(48px, 6vw, 96px) clamp(48px, 6vw, 96px);
+      mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
+      pointer-events: none;
+    }
+
+    .center-broadcast-mark {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      pointer-events: none;
+    }
+
+    .center-network {
+      font-size: clamp(1.8rem, 5.5vw, 5.2rem);
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.75);
+    }
+
+    .center-sub {
+      margin-top: 10px;
+      font-size: clamp(0.85rem, 1.5vw, 1.25rem);
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    video#tvVideo {
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000000;
+    }
+
+    body.has-video video#tvVideo {
+      display: block;
+    }
+
+    body.has-video .motion-canvas {
+      display: none;
+    }
+
+    .tv-bug {
+      position: fixed;
+      top: max(16px, env(safe-area-inset-top));
+      left: max(16px, env(safe-area-inset-left));
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.65);
+      border-left: 4px solid var(--ch-color);
+      backdrop-filter: blur(8px);
+    }
+
+    .bug-brand {
+      font-size: clamp(0.82rem, 1.2vw, 1.05rem);
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    .bug-tag {
+      font-size: clamp(0.68rem, 0.95vw, 0.82rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--ch-color);
+      color: #ffffff;
+    }
+
+    .tv-remote {
+      position: fixed;
+      top: max(16px, env(safe-area-inset-top));
+      right: max(16px, env(safe-area-inset-right));
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rm-btn, .rm-link {
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(0, 0, 0, 0.62);
+      color: #ffffff;
+      font-size: clamp(0.72rem, 0.95vw, 0.85rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .rm-btn:hover, .rm-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .zap-osd {
+      position: fixed;
+      top: max(68px, calc(env(safe-area-inset-top) + 52px));
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      z-index: 25;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: clamp(0.78rem, 1.1vw, 0.95rem);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .zap-osd.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .lower-third {
+      position: fixed;
+      left: max(16px, env(safe-area-inset-left));
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 20;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      pointer-events: none;
+    }
+
+    .lower-bar {
+      max-width: min(760px, 88vw);
+      background: linear-gradient(90deg, rgba(6, 9, 18, 0.94) 0%, rgba(6, 9, 18, 0.78) 100%);
+      border-left: 5px solid var(--ch-color);
+      border-radius: 0 10px 10px 0;
+      padding: clamp(10px, 1.6vw, 16px) clamp(14px, 2.2vw, 24px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .lower-ch-line {
+      font-size: clamp(0.7rem, 0.95vw, 0.85rem);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ch-color);
+      margin-bottom: 3px;
+    }
+
+    .lower-title {
+      font-size: clamp(1.05rem, 2.2vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .lower-clock {
+      padding: 7px 12px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: clamp(0.72rem, 1vw, 0.88rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .lower-third {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .tv-remote {
+        top: auto;
+        bottom: max(76px, calc(env(safe-area-inset-bottom) + 64px));
+        right: max(12px, env(safe-area-inset-right));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="tv-screen" id="tvScreen">
+    <div class="motion-canvas">
+      <div class="sweep-beam"></div>
+      <div class="grid-horizon"></div>
+      <div class="center-broadcast-mark">
+        <div class="center-network">PHRINUSOMYIS TV</div>
+        <div class="center-sub" id="centerChannelName">PHRINUSOMYIS LIVE</div>
+      </div>
+    </div>
+
+    <video id="tvVideo" autoplay muted playsinline></video>
+  </div>
+
+  <div class="tv-bug">
+    <span class="bug-brand">PHRINUSOMYIS TV</span>
+    <span class="bug-tag" id="bugStatus">LIVE</span>
+  </div>
+
+  <div class="zap-osd" id="zapOsd">CH 01 • PHRINUSOMYIS LIVE</div>
+
+  <div class="tv-remote">
+    <button class="rm-btn" id="prevChBtn" type="button">CH-</button>
+    <button class="rm-btn" id="nextChBtn" type="button">CH+</button>
+    <button class="rm-btn" id="unmuteBtn" type="button" style="display:none;">SOUND</button>
+    <button class="rm-btn" id="fsBtn" type="button">FULL</button>
+    <a class="rm-link" href="https://phrinusomyis.com">SITE</a>
+  </div>
+
+  <div class="lower-third">
+    <div class="lower-bar">
+      <div class="lower-ch-line" id="lowerMeta">CH 01 • PHRINUSOMYIS LIVE • 00:00–04:00 UTC</div>
+      <div class="lower-title" id="lowerTitle">24/7 Flagship Broadcast</div>
+    </div>
+    <div class="lower-clock" id="tvClock">00:00:00 UTC</div>
+  </div>
+
+  <script>
+    const CHANNELS = [
+      {
+        code: "CH 01",
+        name: "PHRINUSOMYIS LIVE",
+        startH: 0,
+        endH: 4,
+        status: "LIVE",
+        program: "24/7 Flagship Broadcast",
+        color: "#ef4444",
+        glow: "rgba(239, 68, 68, 0.42)",
+        bgA: "#1a080c",
+        bgB: "#050811",
+        url: "https://your-stream-server.example/live/channel1.m3u8"
+      },
+      {
+        code: "CH 02",
+        name: "COMPETITIONS",
+        startH: 4,
+        endH: 8,
+        status: "COMING SOON",
+        program: "Championship & Match Coverage",
+        color: "#f59e0b",
+        glow: "rgba(245, 158, 11, 0.38)",
+        bgA: "#1b1106",
+        bgB: "#060810",
+        url: ""
+      },
+      {
+        code: "CH 03",
+        name: "SPORTS REPORT",
+        startH: 8,
+        endH: 11,
+        status: "COMING SOON",
+        program: "Daily Briefings & Standings",
+        color: "#38bdf8",
+        glow: "rgba(56, 189, 248, 0.38)",
+        bgA: "#071624",
+        bgB: "#050811",
+        url: ""
+      },
+      {
+        code: "CH 04",
+        name: "INFLECTION SPORTS",
+        startH: 11,
+        endH: 14,
+        status: "COMING SOON",
+        program: "Features & Tactical Perspectives",
+        color: "#10b981",
+        glow: "rgba(16, 185, 129, 0.38)",
+        bgA: "#061a14",
+        bgB: "#050811",
+        url: ""
+      },
+      {
+        code: "CH 05",
+        name: "ORIGINAL PROGRAMMES",
+        startH: 14,
+        endH: 18,
+        status: "COMING SOON",
+        program: "Signature Series & Specials",
+        color: "#a855f7",
+        glow: "rgba(168, 85, 247, 0.4)",
+        bgA: "#150924",
+        bgB: "#050811",
+        url: ""
+      },
+      {
+        code: "CH 06",
+        name: "DOCUMENTARIES",
+        startH: 18,
+        endH: 21,
+        status: "COMING SOON",
+        program: "Long-Form Broadcast Films",
+        color: "#eab308",
+        glow: "rgba(234, 179, 8, 0.35)",
+        bgA: "#191506",
+        bgB: "#050811",
+        url: ""
+      },
+      {
+        code: "CH 07",
+        name: "REPLAYS",
+        startH: 21,
+        endH: 24,
+        status: "REPLAY",
+        program: "24/7 Encore & Archive Rotation",
+        color: "#60a5fa",
+        glow: "rgba(96, 165, 250, 0.38)",
+        bgA: "#091326",
+        bgB: "#050811",
+        url: ""
+      }
+    ];
+
+    const tvScreen = document.getElementById("tvScreen");
+    const tvVideo = document.getElementById("tvVideo");
+    const centerChannelName = document.getElementById("centerChannelName");
+    const bugStatus = document.getElementById("bugStatus");
+    const zapOsd = document.getElementById("zapOsd");
+    const lowerMeta = document.getElementById("lowerMeta");
+    const lowerTitle = document.getElementById("lowerTitle");
+    const tvClock = document.getElementById("tvClock");
+
+    const prevChBtn = document.getElementById("prevChBtn");
+    const nextChBtn = document.getElementById("nextChBtn");
+    const unmuteBtn = document.getElementById("unmuteBtn");
+    const fsBtn = document.getElementById("fsBtn");
+
+    let currentIdx = 0;
+    let hls = null;
+    let zapTimer = null;
+
+    function pad2(n) {
+      return String(n).padStart(2, "0");
+    }
+
+    function showZap(ch) {
+      zapOsd.textContent = `${ch.code} • ${ch.name}`;
+      zapOsd.classList.add("show");
+      clearTimeout(zapTimer);
+      zapTimer = setTimeout(() => zapOsd.classList.remove("show"), 1600);
+    }
+
+    function clearVideo() {
+      if (hls) {
+        hls.destroy();
+        hls = null;
+      }
+      tvVideo.pause();
+      tvVideo.removeAttribute("src");
+      tvVideo.load();
+      document.body.classList.remove("has-video");
+      unmuteBtn.style.display = "none";
+    }
+
+    function attachStream(url, ch) {
+      clearVideo();
+      if (!url) return;
+
+      document.body.classList.add("has-video");
+      unmuteBtn.style.display = "inline-flex";
+      tvVideo.muted = true;
+      unmuteBtn.textContent = "SOUND";
+
+      const isHls = url.includes(".m3u8");
+      if (isHls && window.Hls && window.Hls.isSupported()) {
+        hls = new window.Hls({ enableWorker: true });
+        hls.loadSource(url);
+        hls.attachMedia(tvVideo);
+        hls.on(window.Hls.Events.MANIFEST_PARSED, () => tvVideo.play().catch(() => {}));
+        hls.on(window.Hls.Events.ERROR, (_e, data) => {
+          if (data && data.fatal) {
+            clearVideo();
+            bugStatus.textContent = "OFFLINE";
+          }
+        });
+      } else if (isHls && tvVideo.canPlayType("application/vnd.apple.mpegurl")) {
+        tvVideo.src = url;
+        tvVideo.play().catch(() => {});
+      } else {
+        tvVideo.src = url;
+        tvVideo.play().catch(() => {});
+      }
+    }
+
+    tvVideo.addEventListener("error", () => {
+      clearVideo();
+      bugStatus.textContent = "OFFLINE";
+    });
+
+    function tuneChannel(idx, triggerZap = true) {
+      currentIdx = ((idx % CHANNELS.length) + CHANNELS.length) % CHANNELS.length;
+      const ch = CHANNELS[currentIdx];
+
+      document.documentElement.style.setProperty("--ch-color", ch.color);
+      document.documentElement.style.setProperty("--ch-glow", ch.glow);
+      document.documentElement.style.setProperty("--ch-bg-a", ch.bgA);
+      document.documentElement.style.setProperty("--ch-bg-b", ch.bgB);
+
+      centerChannelName.textContent = ch.name;
+      bugStatus.textContent = ch.status;
+      lowerMeta.textContent = `${ch.code} • ${ch.name} • ${pad2(ch.startH)}:00–${pad2(ch.endH % 24)}:00 UTC`;
+      lowerTitle.textContent = ch.program;
+
+      attachStream((ch.url || "").trim(), ch);
+      if (triggerZap) showZap(ch);
+    }
+
+    prevChBtn.addEventListener("click", () => tuneChannel(currentIdx - 1, true));
+    nextChBtn.addEventListener("click", () => tuneChannel(currentIdx + 1, true));
+
+    unmuteBtn.addEventListener("click", () => {
+      tvVideo.muted = !tvVideo.muted;
+      unmuteBtn.textContent = tvVideo.muted ? "SOUND" : "MUTE";
+      tvVideo.play().catch(() => {});
+    });
+
+    fsBtn.addEventListener("click", async () => {
+      const target = document.body.classList.contains("has-video") ? tvVideo : tvScreen;
+      const req = target.requestFullscreen || target.webkitRequestFullscreen || document.documentElement.requestFullscreen;
+      const exit = document.exitFullscreen || document.webkitExitFullscreen;
+      try {
+        if (!document.fullscreenElement && !document.webkitFullscreenElement && req) {
+          await req.call(target);
+        } else if (exit) {
+          await exit.call(document);
+        }
+      } catch (_) {}
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ChannelUp") tuneChannel(currentIdx + 1, true);
+      if (e.key === "ArrowLeft" || e.key === "ChannelDown") tuneChannel(currentIdx - 1, true);
+    });
+
+    setInterval(() => {
+      const now = new Date();
+      tvClock.textContent = `${pad2(now.getUTCHours())}:${pad2(now.getUTCMinutes())}:${pad2(now.getUTCSeconds())} UTC`;
+    }, 1000);
+
+    tuneChannel(0, false);
+  </script>
+</body>
+</html>
