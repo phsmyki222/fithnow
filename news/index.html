@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHRINUSOMYIS™ News | Latest News, Features &amp; INFLECTION SPORTS™</title>
-  <link rel="canonical" href="https://phrinusomyis.com/news/">
-  <meta name="application-name" content="PHRINUSOMYIS™">
-  <meta name="author" content="PHRINUSOMYIS™">
-  <meta name="publisher" content="PHRINUSOMYIS™">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>PHRINUSOMYIS™ News | INFLECTION SPORTS™ &amp; PHRINUSOMYIS TV</title>
+
+  <link
+    rel="canonical"
+    href="https://phrinusomyis.com/news/"
+  >
+
+  <meta
+    name="application-name"
+    content="PHRINUSOMYIS™"
+  >
+
+  <meta
+    name="author"
+    content="PHRINUSOMYIS™"
+  >
+
+  <meta
+    name="publisher"
+    content="PHRINUSOMYIS™"
+  >
+
   <meta
     name="robots"
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -18,38 +40,54 @@
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   >
 
-  <meta name="theme-color" content="#080808">
+  <meta
+    name="theme-color"
+    content="#080808"
+  >
 
   <meta
     name="description"
-    content="Latest news, features and publications from PHRINUSOMYIS™, including INFLECTION SPORTS™ and coverage of significant developments across international sport."
+    content="Latest news, INFLECTION SPORTS™, features and official updates from PHRINUSOMYIS™, with access to PHRINUSOMYIS TV for international sports television and broadcasting."
   >
 
   <meta
     name="keywords"
-    content="PHRINUSOMYIS News, INFLECTION SPORTS, international sport, sports news, competitive sport, sports organisation, global sport"
+    content="PHRINUSOMYIS News, PHRINUSOMYIS TV, INFLECTION SPORTS, international sports broadcasting, international sport, sports news, competitive sport"
   >
 
-  <meta http-equiv="content-language" content="en">
+  <meta
+    http-equiv="content-language"
+    content="en"
+  >
 
   <!-- =====================================================
        OPEN GRAPH
   ====================================================== -->
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="PHRINUSOMYIS™">
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:site_name"
+    content="PHRINUSOMYIS™"
+  >
 
   <meta
     property="og:title"
-    content="PHRINUSOMYIS™ News | Latest News, Features &amp; INFLECTION SPORTS™"
+    content="PHRINUSOMYIS™ News | INFLECTION SPORTS™ &amp; PHRINUSOMYIS TV"
   >
 
   <meta
     property="og:description"
-    content="Latest news, features and publications from PHRINUSOMYIS™, including INFLECTION SPORTS™ and coverage of significant developments across international sport."
+    content="News, INFLECTION SPORTS™ and official updates from PHRINUSOMYIS™, together with access to PHRINUSOMYIS TV."
   >
 
-  <meta property="og:url" content="https://phrinusomyis.com/news/">
+  <meta
+    property="og:url"
+    content="https://phrinusomyis.com/news/"
+  >
 
   <meta
     property="og:image"
@@ -61,22 +99,28 @@
     content="PHRINUSOMYIS™ — COMMANDING THE WORLD STAGE™"
   >
 
-  <meta property="og:locale" content="en_US">
+  <meta
+    property="og:locale"
+    content="en_US"
+  >
 
   <!-- =====================================================
        X / TWITTER
   ====================================================== -->
 
-  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
 
   <meta
     name="twitter:title"
-    content="PHRINUSOMYIS™ News | Latest News, Features &amp; INFLECTION SPORTS™"
+    content="PHRINUSOMYIS™ News | INFLECTION SPORTS™ &amp; PHRINUSOMYIS TV"
   >
 
   <meta
     name="twitter:description"
-    content="News, features and publications from PHRINUSOMYIS™, including INFLECTION SPORTS™ and international sports coverage."
+    content="News, INFLECTION SPORTS™ and official updates from PHRINUSOMYIS™, with direct access to PHRINUSOMYIS TV."
   >
 
   <meta
@@ -96,6 +140,7 @@
   <link
     rel="icon"
     type="image/png"
+    sizes="48x48"
     href="https://phrinusomyis.com/phrinusomyis_logo.png"
   >
 
@@ -124,29 +169,96 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "SportsOrganization",
+        "@type": [
+          "Organization",
+          "SportsOrganization"
+        ],
         "@id": "https://phrinusomyis.com/#organization",
         "name": "PHRINUSOMYIS™",
+        "alternateName": "PHRINUSOMYIS",
         "url": "https://phrinusomyis.com/",
         "slogan": "COMMANDING THE WORLD STAGE™",
+        "description": "PHRINUSOMYIS™ is an international sports organisation.",
         "logo": {
-          "@type": "ImageObject",
-          "@id": "https://phrinusomyis.com/#logo",
-          "url": "https://phrinusomyis.com/phrinusomyis_logo.png",
-          "caption": "PHRINUSOMYIS™"
+          "@id": "https://phrinusomyis.com/#logo"
         },
         "founder": {
           "@type": "Person",
           "@id": "https://phrinusomyis.com/#founder",
           "name": "Victor Seth AMUNTHLIA"
         },
-        "description": "PHRINUSOMYIS™ is an international sports organisation."
+        "brand": [
+          {
+            "@id": "https://phrinusomyis.com/#inflection-sports"
+          },
+          {
+            "@id": "https://tv.phrinusomyis.com/#brand"
+          }
+        ],
+        "subjectOf": {
+          "@id": "https://tv.phrinusomyis.com/#broadcast-service"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://phrinusomyis.com/#logo",
+        "url": "https://phrinusomyis.com/phrinusomyis_logo.png",
+        "contentUrl": "https://phrinusomyis.com/phrinusomyis_logo.png",
+        "caption": "PHRINUSOMYIS™"
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://phrinusomyis.com/#inflection-sports",
+        "name": "INFLECTION SPORTS™",
+        "alternateName": "INFLECTION SPORTS",
+        "description": "The weekly all-sports publication covering what happened, why it matters and the moments that changed the game.",
+        "url": "https://phrinusomyis.com/news/inflection-sports/"
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://tv.phrinusomyis.com/#brand",
+        "name": "PHRINUSOMYIS TV",
+        "url": "https://tv.phrinusomyis.com/",
+        "description": "The international sports television and broadcasting service of PHRINUSOMYIS.",
+        "logo": {
+          "@id": "https://tv.phrinusomyis.com/#logo"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://tv.phrinusomyis.com/#logo",
+        "url": "https://tv.phrinusomyis.com/phrinusomyis-tv-logo.png",
+        "contentUrl": "https://tv.phrinusomyis.com/phrinusomyis-tv-logo.png",
+        "caption": "PHRINUSOMYIS TV"
+      },
+      {
+        "@type": "BroadcastService",
+        "@id": "https://tv.phrinusomyis.com/#broadcast-service",
+        "name": "PHRINUSOMYIS TV",
+        "broadcastDisplayName": "PHRINUSOMYIS TV",
+        "url": "https://tv.phrinusomyis.com/",
+        "description": "The international sports television and broadcasting service of PHRINUSOMYIS, presenting sporting coverage, competitions, sports reporting, original programmes, documentaries and replays.",
+        "provider": {
+          "@id": "https://phrinusomyis.com/#organization"
+        },
+        "broadcaster": {
+          "@id": "https://phrinusomyis.com/#organization"
+        },
+        "brand": {
+          "@id": "https://tv.phrinusomyis.com/#brand"
+        },
+        "inLanguage": "en",
+        "broadcastTimezone": "UTC",
+        "mainEntityOfPage": {
+          "@id": "https://tv.phrinusomyis.com/#broadcast-page"
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://phrinusomyis.com/#website",
         "url": "https://phrinusomyis.com/",
         "name": "PHRINUSOMYIS™",
+        "alternateName": "PHRINUSOMYIS",
         "publisher": {
           "@id": "https://phrinusomyis.com/#organization"
         },
@@ -176,6 +288,20 @@
         ]
       },
       {
+        "@type": "WebPage",
+        "@id": "https://tv.phrinusomyis.com/#broadcast-page",
+        "url": "https://tv.phrinusomyis.com/",
+        "name": "PHRINUSOMYIS TV",
+        "description": "The official online destination for the international sports television and broadcasting service of PHRINUSOMYIS.",
+        "mainEntity": {
+          "@id": "https://tv.phrinusomyis.com/#broadcast-service"
+        },
+        "publisher": {
+          "@id": "https://phrinusomyis.com/#organization"
+        },
+        "inLanguage": "en"
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": "https://phrinusomyis.com/news/#breadcrumbs",
         "itemListElement": [
@@ -198,7 +324,7 @@
         "@id": "https://phrinusomyis.com/news/#news",
         "url": "https://phrinusomyis.com/news/",
         "name": "PHRINUSOMYIS™ News",
-        "description": "Latest news, features and publications from PHRINUSOMYIS™, including INFLECTION SPORTS™ and coverage of significant developments across international sport.",
+        "description": "Latest news, INFLECTION SPORTS™, features and official updates from PHRINUSOMYIS™, with access to PHRINUSOMYIS TV.",
         "inLanguage": "en",
         "isPartOf": {
           "@id": "https://phrinusomyis.com/#website"
@@ -209,12 +335,26 @@
         "breadcrumb": {
           "@id": "https://phrinusomyis.com/news/#breadcrumbs"
         },
+        "about": [
+          {
+            "@id": "https://phrinusomyis.com/#organization"
+          },
+          {
+            "@id": "https://phrinusomyis.com/#inflection-sports"
+          },
+          {
+            "@id": "https://tv.phrinusomyis.com/#broadcast-service"
+          }
+        ],
+        "subjectOf": {
+          "@id": "https://tv.phrinusomyis.com/#broadcast-service"
+        },
         "mainEntity": {
           "@type": "ItemList",
           "@id": "https://phrinusomyis.com/news/#latest",
           "name": "Latest from PHRINUSOMYIS™ News",
           "itemListOrder": "https://schema.org/ItemListOrderDescending",
-          "numberOfItems": 3,
+          "numberOfItems": 4,
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -233,6 +373,12 @@
               "position": 3,
               "url": "https://phrinusomyis.com/news/inflection-sports/week-47-2026",
               "name": "INFLECTION SPORTS™ — Week 47 · 2026"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "url": "https://tv.phrinusomyis.com/",
+              "name": "PHRINUSOMYIS TV"
             }
           ]
         }
@@ -242,11 +388,6 @@
   </script>
 
   <style>
-    /* =====================================================
-       PHRINUSOMYIS™ NEWS
-       INSTITUTIONAL EDITORIAL PRESENTATION
-    ===================================================== */
-
     :root {
       color-scheme: dark;
 
@@ -397,9 +538,7 @@
 
     .brand-name {
       display: block;
-
       color: var(--text);
-
       font-family: var(--font-interface);
       font-size: 17px;
       font-weight: 800;
@@ -410,9 +549,7 @@
     .brand-tagline {
       display: block;
       margin-top: 4px;
-
       color: var(--accent);
-
       font-family: var(--font-interface);
       font-size: 9px;
       font-weight: 800;
@@ -456,6 +593,10 @@
       border-color: var(--accent);
     }
 
+    .header-link-tv {
+      border-color: var(--border-strong);
+    }
+
     .top-rule {
       height: 3px;
 
@@ -481,9 +622,7 @@
 
     .breadcrumbs {
       margin-bottom: 28px;
-
       color: var(--text-secondary);
-
       font-family: var(--font-interface);
       font-size: 11px;
       letter-spacing: .5px;
@@ -575,9 +714,7 @@
 
     .masthead-kicker {
       margin-bottom: 20px;
-
       color: var(--accent);
-
       font-family: var(--font-interface);
       font-size: 10px;
       font-weight: 800;
@@ -588,9 +725,7 @@
     .masthead-title {
       max-width: 820px;
       margin: 0;
-
       color: var(--heading);
-
       font-family: var(--font-interface);
       font-size: clamp(34px, 5.5vw, 66px);
       font-weight: 800;
@@ -602,9 +737,7 @@
     .masthead-description {
       max-width: 700px;
       margin: 22px 0 0;
-
       color: var(--text);
-
       font-family: var(--font-editorial);
       font-size: 18px;
       line-height: 1.75;
@@ -619,7 +752,6 @@
       margin-top: 32px;
 
       color: var(--heading);
-
       font-family: var(--font-interface);
       font-size: 10px;
       font-weight: 800;
@@ -639,7 +771,6 @@
 
     .section-label {
       display: inline-block;
-
       margin-bottom: 17px;
       padding: 7px 13px;
 
@@ -662,9 +793,7 @@
 
     h1 {
       margin: 0;
-
       color: var(--heading);
-
       font-size: clamp(34px, 5vw, 56px);
       font-weight: 700;
       line-height: 1.12;
@@ -715,11 +844,8 @@
     .article-intro::before {
       content: "LATEST NEWS";
       display: block;
-
       margin-bottom: 12px;
-
       color: var(--accent);
-
       font-family: var(--font-interface);
       font-size: 9px;
       font-weight: 800;
@@ -748,9 +874,7 @@
 
     .featured-story h2 {
       margin: 0 0 14px;
-
       color: var(--heading);
-
       font-size: clamp(24px, 3vw, 34px);
       font-weight: 700;
       line-height: 1.25;
@@ -759,9 +883,7 @@
 
     .featured-story p {
       margin: 0 0 20px;
-
       color: var(--text);
-
       font-size: 17px;
       line-height: 1.85;
     }
@@ -822,7 +944,6 @@
 
     .primary-button:hover {
       transform: translateY(-2px);
-
       background: var(--button-hover);
       border-color: var(--button-hover);
       color: var(--button-text);
@@ -835,7 +956,6 @@
 
     .secondary-button:hover {
       transform: translateY(-2px);
-
       background: var(--accent);
       border-color: var(--accent);
       color: var(--button-text);
@@ -857,9 +977,7 @@
 
     .editions-heading {
       margin: 0;
-
       color: var(--heading);
-
       font-size: clamp(24px, 3vw, 34px);
       font-weight: 700;
       line-height: 1.25;
@@ -867,7 +985,6 @@
 
     .series-line {
       color: var(--accent);
-
       font-family: var(--font-interface);
       font-size: 10px;
       font-weight: 800;
@@ -879,7 +996,6 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
-
       margin-bottom: 36px;
     }
 
@@ -898,9 +1014,7 @@
 
     .edition-card h3 {
       margin: 0 0 12px;
-
       color: var(--heading);
-
       font-size: clamp(21px, 2.4vw, 28px);
       font-weight: 700;
       line-height: 1.25;
@@ -908,9 +1022,7 @@
 
     .edition-card p {
       margin: 0 0 16px;
-
       color: var(--text);
-
       font-size: 16px;
       line-height: 1.8;
     }
@@ -933,6 +1045,190 @@
     }
 
     /* =====================================================
+       PHRINUSOMYIS TV
+    ===================================================== */
+
+    .tv-broadcast-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+
+      margin: 42px 0;
+      padding: 40px 38px;
+
+      border: 1px solid var(--border-strong);
+      border-left: 4px solid var(--accent);
+
+      background:
+        radial-gradient(
+          circle at 88% 18%,
+          var(--accent-soft),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 8% 100%,
+          var(--accent-soft),
+          transparent 38%
+        ),
+        linear-gradient(
+          135deg,
+          var(--page-bg) 0%,
+          var(--surface) 58%,
+          var(--intro-bg) 100%
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .tv-broadcast-card::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+
+      width: 290px;
+      height: 290px;
+
+      top: -125px;
+      right: -85px;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 22px var(--accent-soft),
+        0 0 0 48px var(--accent-soft);
+    }
+
+    .tv-broadcast-card::after {
+      content: "";
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 2px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        var(--accent-strong),
+        var(--accent),
+        transparent
+      );
+    }
+
+    .tv-broadcast-identity {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 16px;
+
+      margin-bottom: 22px;
+    }
+
+    .tv-broadcast-mark {
+      color: var(--heading);
+      font-family: var(--font-interface);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+    }
+
+    .tv-broadcast-status {
+      padding-left: 16px;
+
+      border-left: 1px solid var(--border-strong);
+
+      color: var(--accent);
+      font-family: var(--font-interface);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .tv-broadcast-card h2 {
+      max-width: 780px;
+      margin: 0 0 18px;
+
+      color: var(--heading);
+
+      font-size: clamp(27px, 3.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .tv-broadcast-card > p {
+      max-width: 780px;
+      margin: 0 0 18px;
+
+      color: var(--text);
+
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .tv-editorial-line {
+      color: var(--text-secondary) !important;
+      font-style: italic;
+    }
+
+    .tv-watch-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+
+      min-height: 48px;
+      padding: 12px 22px;
+
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+
+      background: var(--accent);
+      color: var(--button-text);
+
+      font-family: var(--font-interface);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+
+      transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+    }
+
+    .tv-watch-button:hover {
+      transform: translateY(-2px);
+      background: var(--accent-strong);
+      border-color: var(--accent-strong);
+      color: var(--button-text);
+    }
+
+    .tv-watch-icon {
+      display: inline-grid;
+      place-items: center;
+
+      width: 21px;
+      height: 21px;
+
+      border: 1px solid currentColor;
+      border-radius: 50%;
+
+      font-size: 8px;
+      line-height: 1;
+
+      padding-left: 1px;
+    }
+
+    /* =====================================================
        PUBLICATIONS
     ===================================================== */
 
@@ -949,9 +1245,7 @@
 
     .publications-card h2 {
       margin: 0 0 14px;
-
       color: var(--heading);
-
       font-size: clamp(24px, 3vw, 34px);
       font-weight: 700;
       line-height: 1.25;
@@ -959,9 +1253,7 @@
 
     .publications-card p {
       margin: 0 0 22px;
-
       color: var(--text);
-
       font-size: 17px;
       line-height: 1.85;
     }
@@ -987,9 +1279,7 @@
 
     .sidebar-card h2 {
       margin: 0 0 15px;
-
       color: var(--heading);
-
       font-family: var(--font-interface);
       font-size: 11px;
       font-weight: 800;
@@ -1000,9 +1290,7 @@
 
     .sidebar-card p {
       margin: 0;
-
       color: var(--text-secondary);
-
       font-size: 14px;
       line-height: 1.8;
     }
@@ -1045,7 +1333,6 @@
 
     .sidebar-brand {
       color: var(--text);
-
       font-family: var(--font-interface);
       font-size: 13px;
       font-weight: 800;
@@ -1055,14 +1342,49 @@
 
     .sidebar-motto {
       margin-top: 5px !important;
-
       color: var(--accent) !important;
-
       font-family: var(--font-interface);
       font-size: 9px !important;
       font-weight: 800;
       letter-spacing: 2.5px;
       text-align: center;
+    }
+
+    .sidebar-tv {
+      border-color: var(--border-strong);
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          var(--accent-soft),
+          transparent 38%
+        ),
+        var(--surface);
+    }
+
+    .sidebar-tv-mark {
+      display: block;
+      margin-bottom: 9px;
+
+      color: var(--accent);
+
+      font-family: var(--font-interface);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .sidebar-tv-link {
+      display: inline-flex;
+      margin-top: 15px;
+
+      color: var(--heading);
+
+      font-family: var(--font-interface);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     /* =====================================================
@@ -1084,9 +1406,7 @@
 
     .share-label {
       margin-right: 8px;
-
       color: var(--text-secondary);
-
       font-family: var(--font-interface);
       font-size: 10px;
       font-weight: 800;
@@ -1125,7 +1445,6 @@
 
     .action-button:hover {
       transform: translateY(-2px);
-
       background: var(--button-hover);
       border-color: var(--button-hover);
       color: var(--button-text);
@@ -1134,9 +1453,7 @@
     .share-status {
       flex-basis: 100%;
       min-height: 20px;
-
       color: var(--accent-strong);
-
       font-family: var(--font-interface);
       font-size: 11px;
     }
@@ -1169,7 +1486,6 @@
 
     .language-title {
       color: var(--heading);
-
       font-family: var(--font-interface);
       font-size: 11px;
       font-weight: 800;
@@ -1179,7 +1495,6 @@
 
     .language-subtitle {
       color: var(--text-secondary);
-
       font-family: var(--font-interface);
       font-size: 11px;
     }
@@ -1204,9 +1519,7 @@
     .language-status {
       flex-basis: 100%;
       min-height: 17px;
-
       color: var(--accent-strong);
-
       font-family: var(--font-interface);
       font-size: 10px;
     }
@@ -1227,9 +1540,7 @@
 
     .preferences-heading {
       margin: 0 0 9px;
-
       color: var(--heading);
-
       font-family: var(--font-interface);
       font-size: 12px;
       font-weight: 800;
@@ -1239,9 +1550,7 @@
 
     .preferences-description {
       margin: 0 0 20px;
-
       color: var(--text-secondary);
-
       font-family: var(--font-interface);
       font-size: 12px;
       line-height: 1.7;
@@ -1285,9 +1594,7 @@
 
     .theme-button[aria-pressed="true"] {
       border: 2px solid var(--accent);
-
       background: var(--surface-raised);
-
       box-shadow: 0 0 0 3px var(--accent-soft);
     }
 
@@ -1370,7 +1677,6 @@
 
     .footer-copy {
       color: var(--text-secondary);
-
       font-family: var(--font-interface);
       font-size: 10px;
       line-height: 1.9;
@@ -1390,7 +1696,6 @@
 
     .footer-link {
       color: var(--link);
-
       font-family: var(--font-interface);
       font-size: 10px;
       font-weight: 800;
@@ -1862,6 +2167,20 @@
         padding: 22px 20px;
       }
 
+      .tv-broadcast-card {
+        padding: 25px 21px;
+      }
+
+      .tv-broadcast-status {
+        flex-basis: 100%;
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .tv-watch-button {
+        width: 100%;
+      }
+
       .article-sidebar {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -1899,7 +2218,6 @@
 
       .footer-inner {
         padding: 24px 18px;
-
         align-items: flex-start;
         flex-direction: column;
       }
@@ -2012,6 +2330,14 @@
           href="https://phrinusomyis.com/news/inflection-sports/"
         >
           <span translate="no">INFLECTION SPORTS™</span>
+        </a>
+
+        <a
+          class="header-link header-link-tv"
+          href="https://tv.phrinusomyis.com/"
+          aria-label="Watch PHRINUSOMYIS TV"
+        >
+          Watch TV
         </a>
 
         <a
@@ -2276,9 +2602,9 @@
       </h2>
 
       <p class="masthead-description">
-        Latest news, features and publications from PHRINUSOMYIS™, together
-        with reporting on the events, performances and decisions shaping
-        international sport.
+        Latest news, features and publications from PHRINUSOMYIS™,
+        together with reporting on the events, performances and
+        decisions shaping international sport.
       </p>
 
       <div class="masthead-signature">
@@ -2319,9 +2645,10 @@
       <article class="article">
 
         <p class="article-intro">
-          Follow the latest from PHRINUSOMYIS™ and INFLECTION SPORTS™,
-          including international sports coverage, features and official
-          updates.
+          Follow the latest from PHRINUSOMYIS™ and
+          INFLECTION SPORTS™, including international sports
+          coverage, features, official updates and access to
+          PHRINUSOMYIS TV.
         </p>
 
         <!-- =================================================
@@ -2344,14 +2671,16 @@
           </h2>
 
           <p>
-            A perspective on the development of competitive sport and the
-            independent direction PHRINUSOMYIS™ is taking in the design,
-            governance and experience of live competition.
+            A perspective on the development of competitive sport
+            and the independent direction PHRINUSOMYIS™ is taking
+            in the design, governance and experience of live
+            competition.
           </p>
 
           <blockquote class="featured-quote">
-            “The past explains how humanity arrived at this moment, but it
-            cannot determine the full course of what comes next.”
+            “The past explains how humanity arrived at this moment,
+            but it cannot determine the full course of what comes
+            next.”
           </blockquote>
 
           <div class="routing-actions">
@@ -2409,15 +2738,17 @@
             </h3>
 
             <p>
-              The weekly international sports edition for 23–29 November,
-              following the results and performances carrying consequence
-              across football, basketball and motorsport.
+              The weekly international sports edition for 23–29
+              November, following the results and performances
+              carrying consequence across football, basketball
+              and motorsport.
             </p>
 
             <p class="edition-summary">
-              Real Madrid's five-goal Champions League performance, Liverpool's
-              three-goal victory in Bruges, Lille's result against Bayern Munich
-              and a 142-point night for Minnesota lead the edition.
+              Real Madrid's five-goal Champions League performance,
+              Liverpool's three-goal victory in Bruges, Lille's
+              result against Bayern Munich and a 142-point night
+              for Minnesota lead the edition.
             </p>
 
             <a
@@ -2444,15 +2775,15 @@
             </h3>
 
             <p>
-              The 16–22 November edition brought together defining results,
-              international competition and developments beyond the field
-              of play.
+              The 16–22 November edition brought together defining
+              results, international competition and developments
+              beyond the field of play.
             </p>
 
             <p class="edition-summary">
-              Germany's five-goal second half in Berlin led a week that also
-              carried consequential developments across governance and
-              international sport.
+              Germany's five-goal second half in Berlin led a week
+              that also carried consequential developments across
+              governance and international sport.
             </p>
 
             <a
@@ -2463,6 +2794,75 @@
             </a>
 
           </article>
+
+        </section>
+
+        <!-- =================================================
+             PHRINUSOMYIS TV
+        ================================================== -->
+
+        <section
+          class="tv-broadcast-card"
+          id="phrinusomyis-tv"
+          aria-labelledby="phrinusomyis-tv-title"
+        >
+
+          <div class="tv-broadcast-identity">
+
+            <span
+              class="tv-broadcast-mark"
+              translate="no"
+            >
+              PHRINUSOMYIS TV
+            </span>
+
+            <span class="tv-broadcast-status">
+              International Sports Broadcasting
+            </span>
+
+          </div>
+
+          <h2 id="phrinusomyis-tv-title">
+            The television and broadcasting service of
+            <span translate="no">PHRINUSOMYIS</span>
+          </h2>
+
+          <p>
+            PHRINUSOMYIS TV is the international sports television
+            and broadcasting service of PHRINUSOMYIS. Its
+            programming brings together sporting coverage,
+            competitions, sports reporting, original programmes,
+            documentaries and replays within one official broadcast
+            destination.
+          </p>
+
+          <p class="tv-editorial-line">
+            The service extends the sporting and editorial work of
+            PHRINUSOMYIS to television, providing a direct place to
+            follow its competitions, reporting and the moments that
+            change the game.
+          </p>
+
+          <div class="routing-actions">
+
+            <a
+              class="tv-watch-button"
+              href="https://tv.phrinusomyis.com/"
+              aria-label="Watch PHRINUSOMYIS TV"
+            >
+
+              <span
+                class="tv-watch-icon"
+                aria-hidden="true"
+              >
+                ▶
+              </span>
+
+              Watch PHRINUSOMYIS TV
+
+            </a>
+
+          </div>
 
         </section>
 
@@ -2485,8 +2885,8 @@
           </h2>
 
           <p>
-            Explore PHRINUSOMYIS™ publications and continue to the
-            organisation's principal platforms.
+            Continue to PHRINUSOMYIS™ publications, international
+            sports reporting and official platforms.
           </p>
 
           <div class="routing-actions">
@@ -2496,6 +2896,13 @@
               href="https://phrinusomyis.com/news/inflection-sports/"
             >
               INFLECTION SPORTS™ →
+            </a>
+
+            <a
+              class="secondary-button"
+              href="https://tv.phrinusomyis.com/"
+            >
+              PHRINUSOMYIS TV →
             </a>
 
             <a
@@ -2609,7 +3016,8 @@
 
             <li>
               <a href="https://phrinusomyis.com/news/inflection-sports/week-48-2026">
-                <span translate="no">INFLECTION SPORTS™</span> · Week 48
+                <span translate="no">INFLECTION SPORTS™</span>
+                · Week 48
               </a>
             </li>
 
@@ -2621,11 +3029,38 @@
 
             <li>
               <a href="https://phrinusomyis.com/news/inflection-sports/week-47-2026">
-                <span translate="no">INFLECTION SPORTS™</span> · Week 47
+                <span translate="no">INFLECTION SPORTS™</span>
+                · Week 47
               </a>
             </li>
 
           </ul>
+
+        </section>
+
+        <section class="sidebar-card sidebar-tv">
+
+          <span
+            class="sidebar-tv-mark"
+            translate="no"
+          >
+            PHRINUSOMYIS TV
+          </span>
+
+          <h2>International Sports Broadcasting</h2>
+
+          <p>
+            The official television and broadcasting service of
+            PHRINUSOMYIS.
+          </p>
+
+          <a
+            class="sidebar-tv-link"
+            href="https://tv.phrinusomyis.com/"
+            aria-label="Watch PHRINUSOMYIS TV"
+          >
+            Watch TV →
+          </a>
 
         </section>
 
@@ -2644,6 +3079,12 @@
             <li>
               <a href="#weekly-editions">
                 INFLECTION SPORTS™
+              </a>
+            </li>
+
+            <li>
+              <a href="#phrinusomyis-tv">
+                PHRINUSOMYIS TV
               </a>
             </li>
 
@@ -2706,6 +3147,13 @@
           href="https://phrinusomyis.com/news/inflection-sports/"
         >
           <span translate="no">INFLECTION SPORTS™</span>
+        </a>
+
+        <a
+          class="footer-link"
+          href="https://tv.phrinusomyis.com/"
+        >
+          PHRINUSOMYIS TV
         </a>
 
         <a
@@ -3178,7 +3626,7 @@
         "https://phrinusomyis.com/news/";
 
       const pageTitle =
-        "PHRINUSOMYIS™ News | Latest News, Features & INFLECTION SPORTS™";
+        "PHRINUSOMYIS™ News | INFLECTION SPORTS™ & PHRINUSOMYIS TV";
 
       const shareButton =
         document.getElementById(
@@ -3222,6 +3670,7 @@
             );
 
           temporaryInput.value = pageUrl;
+
           temporaryInput.setAttribute(
             "readonly",
             ""
